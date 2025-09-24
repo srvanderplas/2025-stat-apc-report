@@ -45,7 +45,7 @@ Section @sec-planning provides an alternative plan to situate the Statistics dep
 
 - July 1, 2018 - Statistics Department fully separates from CAS and is 100% located within IANR. 
 
-- 2020 - Statistics department designs an undergraduate major in Statistics and Data Analytics at the request of CASNR Dean Tiffany Heng-Moss
+- Fall 2019 - Statistics department begins to design an undergraduate major in Statistics and Data Analytics at the request of CASNR Dean Tiffany Heng-Moss
 
 - Fall 2021 - [Statistics and Data Analytics major approved by the Board of Regents](https://ccpe.nebraska.gov/sites/default/files/UNL%20Creation%20BS%20in%20Stats%20%20Data%20Analytics_08162021.pdf)
 
