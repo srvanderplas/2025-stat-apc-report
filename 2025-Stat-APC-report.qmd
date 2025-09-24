@@ -1,0 +1,98 @@
+---
+title: "Statistics: An Essential Department for a Modern R1 University"
+date: today
+---
+
+# Introduction
+
+## Current Budget Proposal
+
+On September 11, 2025, the Statistics Department was informed that it had been proposed for elimination under the Chancellor's [budget reduction proposal](https://budgetprocess.unl.edu/proposed-budget-reductions/). 
+
+>     When the process is invoked, the Chancellor3 will provide a framework document that describes the issue(s), including a rationale for the proposed reduction(s), the scope of the reduction/reallocation, and a desired timeline for completing the review process and implementing the changes. The document will be made available to the Chancellor’s Executive Leadership Team and the following shared governance partners: the Academic Planning Committee (APC), the deans, the Executive Committee of the UNL Faculty Senate, appropriate representatives of the Staff Senate, and appropriate representatives of the Association of Students of the University of Nebraska (ASUN).
+
+The rationale for the proposed reductions provided in the budget reduction plan is as follows:
+
+> The proposed plan would eliminate a standalone Department of Statistics offering BS, MS, and PhD degrees and moves the university toward a distributed model that leverages expertise embedded across IANR, UNL and the NU system. The plan proposes to strategically deploy a portion of the state-appropriated funds to continue to offer selected undergraduate and graduate courses and provide coordinated statistical consulting.  Budget reductions would be achieved through the elimination of positions (12 FTE).
+
+That is, the only rationale offered is that the Chancellor proposes to move towards a distributed model that "leverages expertise embedded across IANR, UNL, and the NU system". 
+
+The remainder of this section provides a brief history of the Statistics Department and associated graduate and undergraduate programs and examines the other resources available within the NU system. 
+Section @sec-metrics examines the metrics used to evaluate the performance of the department and makes the case that reliance on these metrics demonstrates the importance of accounting for random variation and contextual information when interpreting data.
+Section @sec-peer-analysis discusses the presence of statistics departments across major research universities within the AAU, Big Ten, and R1, examining the viability of a distributed model based on data from peer institutions.
+
+Section @sec-program-analysis examines the programs housed within the Statistics department as well as important contributions made by the department to other programs, and evaluates the impact of closing the department on the university and the state. 
+
+Section @sec-planning provides an alternative plan to situate the Statistics department within the university in a way that will best position UNL to rejoin the AAU and best serve the state of Nebraska by strengthening research, teaching, and extension missions of the university. 
+
+
+## History of the Department
+<!-- https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1000&context=statisticsdeptdocs -->
+
+- 1957 - Statistics Laboratory founded at UNL, funded by the Agricultural Experiment Station to provide design, analysis, and data processing services to researchers. 
+
+- 1968 - [UNL attempts to create a School of Computational Sciences with two departments: Computer Science and Statistics, but it fails. As a result, the Mathematics Department becomes the Department of Mathematics and Statistics](https://math.unl.edu/statistics-history-unl/).
+
+- 1978 - Statistics Laboratory renamed the Biometrics and Information Systems Center
+
+- 1987 - Biometrics and Information Systems Center divided into the Biometrics Center and IANR Computing.
+
+- 1989 - Department of Biometry established from the Biometrics Center
+
+- 1991 - [Graduate degree program in Biometry established (MS) with the intent to offer a PhD program in the near future](https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1000&context=statisticsdeptdocs).
+
+- 2003 - Statistics Department founded, merging Department of Biometry (IANR) with the Statistics faculty from the Department of Mathematics and Statistics. PhD program started. 
+
+- July 1, 2018 - Statistics Department fully separates from CAS and is 100% located within IANR. 
+
+- 2020 - Statistics department designs an undergraduate major in Statistics and Data Analytics at the request of CASNR Dean Tiffany Heng-Moss
+
+- Fall 2021 - [Statistics and Data Analytics major approved by the Board of Regents](https://ccpe.nebraska.gov/sites/default/files/UNL%20Creation%20BS%20in%20Stats%20%20Data%20Analytics_08162021.pdf)
+
+- June 2022 - [Data Science Major approved by Board of Regents with programs in CASNR, CAS, and Engineering](https://ccpe.nebraska.gov/sites/default/files/AP_UNL%20Data%20Sciences%20BA%20BS%20Proposal.pdf)
+
+- Fall 2022 - First Statistics and Data Analytics freshman cohort begins classes
+
+- Spring 2026 - First Statistics and Data Analytics cohort expected to graduate
+
+
+Earliest PhDs:
+
+- [William C. Bridges, Jr. 1984 Statistics and Genetics](https://www.clemson.edu/science/academics/departments/mathstat/about/profiles/wbrdgs)
+- 
+
+
+Circa 1998, "Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments." https://math.unl.edu/statistics-history-unl/
+
+## NU System Statistics Expertise
+
+There are several units within UNL that maintain some Statistical expertise in-house, in addition to programs in Biostatistics at UNMC and Statistics and Data Science at UNO. 
+
+At UNL, in addition to the Statistics department, there are the following areas of expertise: 
+
+- the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement
+- the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods
+
+The Biostatistics department at UNMC lists several areas of statistics research within the department: Bayesian statistics, clinical study design, causal inference, high dimensional data and machine learning, survival data analysis, spatial statistics, statistics education, bioinformatics and statistical genetics, stochastic modeling. However, when digging deeper into the lists of publications in each of these topics, it becomes immediately apparent that 
+
+
+# Metrics
+
+
+
+
+# Peer Analysis
+
+
+
+
+# Program Analysis
+
+
+
+
+# Planning for the Future
+
+
+
+
