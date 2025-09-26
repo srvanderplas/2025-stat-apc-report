@@ -184,6 +184,16 @@ Collaboration between statisticians produces good statistics research, but this 
 
 ## Research
 
+The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate a research entities research performance with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, (2) recognition from the community in form of citations and awards, and (3) federal sponsoring of research projects measured by the number of grants and their amounts.
+
+Different disciplines operate differently - books are more important in the humanities, while conference papers are the norm in computer science because even journal article publication moves too slow. 
+The weighting of each of these measures is therefore adjusted using discipline specific weightings which  are based on a factor analysis performed by Academic Analytics. 
+
+The UNL research z-score is created by standardizing each input measure with respect to all departments on campus before computing an unweighted average of each component z-score to form a single research index for each department.
+
+This is fundamentally problematic, as the SRI measure used by academic analytics not only incorporates many of the components used (federal expenditures, awards, books, citations), but also because the discipline-specific weightings are intended to allow for 
+
+
 
 ## Teaching
 
