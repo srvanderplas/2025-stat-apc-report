@@ -122,7 +122,7 @@ There are several units within UNL that maintain some statistical expertise in-h
 At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research:
 
 - the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. 
-- the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology. 
+- the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology, but they do survey research. 
 - the Economics department. Econometrics has some overlap with Statistics. There are three faculty (Yifan Gong, Christopher Mann, Federico Zincenko) who mention Econometrics as a research area within this department. 
 - the Actuarial Science program. Three tenured or tenure-track faculty (Colin Ramsay, Mostafa Mashayekhi, Graham Liu) affiliated with Actuarial Science have Ph.D.s in Statistics or Actuarial Science. 
 - the Supply Chain Management & Analytics program. None of the faculty have Ph.D.s in Statistics, but seven tenured or tenure-track faculty have degrees in business analytics, operations management, or supply chain management. These degrees are not comparable to statistics in terms of theoretical training that would support development of new statistical methodology but might suffice to cover some of the coursework currently offered in the Statistics department.
@@ -189,16 +189,6 @@ Collaboration between statisticians produces good statistics research, but this 
 
 ## Research
 
-The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate a research entities research performance with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, (2) recognition from the community in form of citations and awards, and (3) federal sponsoring of research projects measured by the number of grants and their amounts.
-
-Different disciplines operate differently - books are more important in the humanities, while conference papers are the norm in computer science because even journal article publication moves too slow. 
-The weighting of each of these measures is therefore adjusted using discipline specific weightings which  are based on a factor analysis performed by Academic Analytics. 
-
-The UNL research z-score is created by standardizing each input measure with respect to all departments on campus before computing an unweighted average of each component z-score to form a single research index for each department.
-
-This is fundamentally problematic, as the SRI measure used by academic analytics not only incorporates many of the components used (federal expenditures, awards, books, citations), but also because the discipline-specific weightings are intended to allow for 
-
-
 
 ## Teaching
 
@@ -211,6 +201,11 @@ This is fundamentally problematic, as the SRI measure used by academic analytics
 
 # Peer Analysis {#sec-peer-analysis}
 
+```{r}
+library(readxl)
+
+universities <- read_excel("data-analysis/data/University Statistics Departments.xlsx", sheet = 2)
+```
 
 
 
@@ -240,7 +235,9 @@ Circa 1998, "Demand for statistics instruction at both the graduate and undergra
 
 
 
-# Appendix
+# Appendix {.appendix}
+
+## Statistics Faculty in the UN System
 
 ```{r}
 #| label: tbl-unmc-biostats
@@ -335,3 +332,59 @@ select(tmp, name, role, phd, degree) |>
 
 ```
 
+
+## Problems with the Metrics {#sec-metric-problems}
+
+### Data Quality
+
+There are many data quality problems which were discovered after the Chancellor's proposal but which have not been corrected. 
+The poor data quality and documentation of the data used to assemble the quantitative metrics, and the reliance on this data in the face of identified data quality issues and systematic biases clearly indicates that the administration's committment to metric-driven improvement is at best limited to metrics that can be easily pulled from databases with minimal quality control. 
+
+XXX Need specific examples XXX
+
+### Use of Scholarly Research Index {#sec-metric-sri-problems}
+
+The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate a research entities research performance with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, (2) recognition from the community in form of citations and awards, and (3) federal sponsoring of research projects measured by the number of grants and their amounts.
+
+Different disciplines operate differently - books are more important in the humanities, while conference papers are the norm in computer science because even journal article publication moves too slow. 
+The weighting of each of these measures is therefore adjusted using discipline specific weightings which  are based on a factor analysis performed by Academic Analytics. 
+Academic Analytics then provides a SRI percentile score which compares each department to the other departments in its field, as the SRI measure is ultimately intended to be a way to compare departments within the same field. 
+
+The UNL research z-score is created by standardizing each input measure with respect to all departments on campus before computing an unweighted average of each component z-score to form a single research index for each department.
+This is fundamentally problematic, as the SRI measure used by academic analytics not only incorporates many of the components used (federal expenditures, awards, books, citations), but also because the discipline-specific weightings are intended to allow for comparison within-disciplines, and they are being used here as a cross-discipline comparison. 
+That is, the z-score method indicates a fundamental understanding of both the Academic Analytics (and AAU) metrics and the appropriate use of statistical methods. 
+It would be quite reasonable to use the SRI percentile for each department, which compares the department's research reputation relative to other departments in the same area, compute a normal quantile from the percentile, and then use that z-score to represent the department's research reputation. 
+This would also allow for use when averaging z-scores from other research metrics to produce a single research summary; which is a practice that is reductive and not particularly effective, but is also not definitively wrong. 
+
+### Custom UNL Research Metrics 
+
+Moving past SRI, however, it is clear that there was some attempt to create a secondary SRI-like index with UNL data that accounts for some of the holes in Academic Analytics. 
+There are many well known issues with Academic Analytics: only some journals are indexed, only NSF and NIH grants count for federal funding, excluding USDA, NIJ, DOE, NIST, and other sources of federally funded grant money, and only certain discipline-specific awards are counted as prestigious.
+
+However, while UNL insists they did not weight the metrics used (as if that is an indication of unbiasedness), the number of variables measuring similar dimensions of research productivity certainly create an implicit weighting. 
+
+There are three different indicators of grant budget contributions. 
+It's unclear why the `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` indicator was divided by total state appropriated budget, but the numbers for Statistics grants do not seem to be in the right ballpark. 
+For instance, if we multiply the 0.362 value for statistics (before it is converted to a z-score) by the state permanent budget from 2025-26,  we get `r 0.362*1329241`. 
+One PI in the department brought in 1.2 million dollars in grant money during the 2020-2024 period, so we can .
+
+`research_awards_growth_inc_nuf_fy20_fy24` looks at the percentage of growth of grant money attributable to the unit. 
+Given that the grant totals are unreliable, it isn't surprising that this percentage is also off, but the fact that the statistics department number is -455843.15 suggests that this isn't a percentage at all and that there are some fundamentally problematic calculation errors (or the codebook is wrong, which also seems possible, particularly given the duplication of the entries for the last two research metrics). 
+
+`p1_expenditures_normalized` seems to include some of the information in `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`, which would double-count the awards from NSF and NIH indexed by Academic Analytics (in addition to counting them a third fractional time via SRI). 
+However, again, these numbers do not seem to be calculated as described. 
+We cannot find any evidence of accounting for faculty members with secondary appointments in the department, nor can we make the numbers generated for Statistics make sense given our self-reported data.
+
+
+`awards_normalized` would be directly reported by Academic Analytics and is already accounted for in the SRI metric. It is clear that the codebook was not checked for correctness by administration, either, given that the normalization is reported twice - it is unclear whether we to calculate this by dividing by the squared TT-FTE metric or by just the number of TT FTEs in the department. This metric is likely to be highly influenced by time in role and years since Ph.D., disadvantaging departments which are relatively young compared to those with a higher percentage of full professors. It should also be noted that not all professional organization awards are indexed by Academic Analytics, which represents a systematic bias when this metric is used to compare across departments and disciplines. 
+
+`books_normalized` is again Academic Analytics data that has been factored into SRI already. This data is publisher reported, and not always correct (one member of our department had the 2nd edition of his book reported as having the year of the first edition, so it just doesn't count). As some disciplines do not preference books and instead publish articles or conference papers, using this metric to compare across disciplines (via z-score calculation) is absolutely preferencing book-focused departments. 
+
+`citations_normalized` has the same description as `books_normalized`; however, the numbers are not the same, so we presume this also uses Academic Analytics data for citations. Going into Academic Analytics, the citation data appears to include citations from journals which Acad Analytics indexes to journals which Acad. Analytics indexes, where the journal article was published between 2020 and 2023 and the citation occurred between 2020 and 2023. This is again a highly discipline-dependent metric -- in fast-moving disciplines, such as Computer Science, a good paper will be cited many times within the first six months, while in slower disciplines, a paper might not be cited until 3 years later. 
+
+
+What is not included in UNL's custom metrics is just as telling as what is included: they do NOT include any measure of articles published (beyond citations) and they don't include any measures of conference papers published. 
+This has the effect of biasing the metrics toward book-centric disciplines at the expense of article centric disciplines. 
+When combined with the fact that grant award totals vary widely between disciplines (for instance, Statistics doesn't require any lab equipment or supplies, so grants tend to fund students, travel, and summer salary), the metrics assembled by UNL are fundamentally unsuitable for cross-discipline comparisons. 
+Pitting departments against each other using these metrics could be the result of a lack of understanding of statistics, or it could be that the metrics were assembled to produce a specific set of acceptable outcomes. 
+In either case, however, it does not reflect particularly well on the UNL administration. 

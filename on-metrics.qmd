@@ -1,0 +1,54 @@
+---
+title: "The Myth of Equally Weighted Research Metrics"
+format: pdf
+---
+
+Here is the description of the research metrics released to departments over the summer:
+
+- `sri`: Academic Analytics SRI score when comparing units to Public AAU Institutions. If a unit has multiple SRI scores available, they were averaged.
+- `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`: Average sponsored awards for FY20-24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation, for purpose codes research, teaching and public service divided by total state appropriated budget.
+- `research_awards_growth_inc_nuf_fy20_fy24`: Growth of sponsored research awards from FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This was calculated by taking the dollar growth over the time period of FY24 – FY20 as a percentage of total growth for the institution resulting in that unit’s share of the overall growth dollars for the institution over the reported time period.
+- `p1_expenditures_normalized`: The average competitively funded federal research support as defined by the AAU membership policy, federal research expenditures less USDA research expenditures adding in awards from USDA Agriculture Food and Research Initiative (AFRI). Expenditures and AFRI awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments. This is normalized by the average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center.
+- `awards_normalized`: NCR highly prestigious awards, including national academy memberships in engineering, medicine and science. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only awards for T/TT faculty in benchmarked AcA units is reported to the AAU. This is normalized by the average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center. This is normalized by the average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center.
+- `books_normalized`: The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. This is normalized by the average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center.
+- `citations_normalized`: The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. This is normalized by the average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center.
+
+Metrics were normalized by FTEs that are tenure track (whether or not they had a research appointment -- that is, professors of practice with research appointments were not included), but minority members of departments with tenure homes elsewhere were (apparently) not included. 
+
+
+SRI is a metric assembled by Academic Analytics. It is a weighted average of research indicators, where the weighting corresponds to discipline norms (as determined by a factor analysis). 
+Thus, it makes sense to consider SRI scores within a single discipline, and to use the relative percentile SRI score to compare departments across discipline. 
+Comparisons on the direct SRI measure across departments are nonsensical. 
+Some units have both book-focused and article-focused components -- the university reports that they average the two SRI scores, which does not represent a peer university's view of the reputation of the department -- for that, it would be more approriate to take the maximum, because peer departments would know whether a department has more book people or article people.
+
+UNL has used public AAU universities as a comparison group to get a custom SRI score. 
+For instance, Statistics is in approximately the 75th percentile of the default R1/R2 university comparison group in Academic Analytics. 
+However, when compared with AAU universities, we are in the 36th percentile. 
+(This information can only be acquired using the departmental access to Academic Analytics - contact Heike Hofmann for some details about how to do this).
+
+
+---
+
+Moving past SRI, however, it is clear that there was some attempt to create a secondary SRI-like index with UNL data that accounts for some of the holes in Academic Analytics (and there are many). 
+
+There are three different indicators of grant budget contributions. 
+It's unclear why the `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` indicator was divided by total state appropriated budget, but the numbers for Statistics grants are all over the place. For instance, if we multiply the 0.362 value for statistics (before it is converted to a z-score) by the state permanent budget from 2025-26,  we get `r 0.362*1329241`. One PI in the department brought in 1.2 million dollars in grant money during the 2020-2024 period.
+
+
+`research_awards_growth_inc_nuf_fy20_fy24` looks at the percentage of growth of grant money attributable to the unit. Given that the grant totals are unreliable, it isn't surprising that this percentage is also off, but the fact that the statistics department number is -455843.15 suggests that this isn't a percentage at all and that there are some fundamentally problematic calculation errors (or the codebook is wrong, which also seems possible, particularly given the duplication of the entries for the last two research metrics). 
+
+`p1_expenditures_normalized` seems to include some of the information in `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`, which would double-count the awards from NSF and NIH indexed by Academic Analytics (in addition to counting them a third fractional time via SRI). However, again, these numbers do not seem to be calculated as described. We cannot find any evidence of accounting for faculty members with secondary appointments in the department, nor can we make the numbers generated for Statistics make sense given our self-reported data.
+
+
+`awards_normalized` would be directly reported by Academic Analytics and is already accounted for in the SRI metric. It is clear that the codebook was not checked for correctness by administration, either, given that the normalization is reported twice - it is unclear whether we to calculate this by dividing by the squared TT-FTE metric or by just the number of TT FTEs in the department. This metric is likely to be highly influenced by time in role and years since Ph.D., disadvantaging departments which are relatively young compared to those with a higher percentage of full professors. It should also be noted that not all professional organization awards are indexed by Academic Analytics, which represents a systematic bias when this metric is used to compare across departments and disciplines. 
+
+`books_normalized` is again Academic Analytics data that has been factored into SRI already. This data is publisher reported, and not always correct (one member of our department had the 2nd edition of his book reported as having the year of the first edition, so it just doesn't count). As some disciplines do not preference books and instead publish articles or conference papers, using this metric to compare across disciplines (via z-score calculation) is absolutely preferencing book-focused departments. 
+
+`citations_normalized` has the same description as `books_normalized`; however, the numbers are not the same, so we presume this also uses Academic Analytics data for citations. Going into Academic Analytics, the citation data appears to include citations from journals which Acad Analytics indexes to journals which Acad. Analytics indexes, where the journal article was published between 2020 and 2023 and the citation occurred between 2020 and 2023. This is again a highly discipline-dependent metric -- in fast-moving disciplines, such as Computer Science, a good paper will be cited many times within the first six months, while in slower disciplines, a paper might not be cited until 3 years later. 
+
+
+What is not included in UNL's custom metrics is just as telling as what is included: they do NOT include any measure of articles published (beyond citations) and they don't include any measures of conference papers published. 
+This has the effect of biasing the metrics toward book-centric disciplines at the expense of article centric disciplines. 
+When combined with the fact that grant award totals vary widely between disciplines (for instance, Statistics doesn't require any lab equipment or supplies, so grants tend to fund students, travel, and summer salary), the metrics assembled by UNL are fundamentally unsuitable for cross-discipline comparisons. 
+Pitting departments against each other using these metrics could be the result of a lack of understanding of statistics, or it could be that the metrics were assembled to produce a specific set of acceptable outcomes. 
+In either case, however, it does not reflect particularly well on the UNL administration. 
