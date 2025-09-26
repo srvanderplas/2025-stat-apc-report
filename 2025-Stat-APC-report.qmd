@@ -157,21 +157,26 @@ University of Nebraska Kearney has a mathematics and statistics department which
 
 ## The Role of a Statistics Department
 
-A statistics department serves a different role within an institution than a biostatistics department within a medical school. 
-On the instructional side, a statistics department provides both general education courses and quantitative courses required for many different disciplines, in addition to the courses necessary for its own programs. 
-Many of these courses serve both statistics majors and non-statistics majors, sometimes at both an undergraduate and graduate level. 
-This is a much wider variety than found within a medical school and a biostatistics department, resulting in a much broader set of statistical courses and expertise than are present in most biostatistics departments. 
+A statistics department provides a number of services within the campus ecosystem apart from its own programs (which often exist in part to facilitate providing these services efficiently, as demonstrated in the 1993 Biometry Self-Study report). 
+Statistics is an essential component of undergraduate quantitative literacy; over 20% of UNL undergraduates take Stat 218 to fulfill their Ace 3 requirements. 
+In addition, Statistics supports additional quantitative coursework for other departments: Stat 318 and 380, as well as Stat 462 and Stat 463, which are an essential component of the Actuarial Sciences program. 
+At the graduate level, the department provides additional critical training, not just in statistical methods (Stat 801, 802) but also in computing and the use of software packages for data analysis and visualization (Stat 850). 
+These courses facilitate research across the university, in a way that is difficult to 
+There is considerable potential for growth in enrollment in Stat 850 in particular: it already consists of approximately 50% statistics students and 50% outside students, and it is helpful for students in agronomy, biological sciences, engineering, psychology, and sociology. 
+In addition to introductory courses, however, graduate students in other departments may need additional course work in experimental design and specific areas of statistical methodology, such as Bayesian statistics. 
+Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately. 
 
+It is more efficient to offer courses in linear mixed models under a statistics prefix than to teach separate courses for Agronomy, Animal Science, Engineering, Psychology, and Sociology across five departments with five instructors. 
+While it may be necessary to offer two courses to accommodate lack of linear algebra or calculus prerequisite work in some disciplines, nthis is still a substantial savings over offering five separate courses. 
+The examples which are used in the courses can be varied fairly easily to accommodate multiple disciplines simultaneously. 
+One failing of a distributed model where statisticians are embedded within each department is that it results in duplication of effort across departments, and if departments cannot hire someone with statistical expertise AND domain expertise, then it becomes difficult for that department to meet the needs of both students and faculty. 
 
-It is more efficient to offer courses in linear mixed models under a statistics prefix than to teach separate courses for Agronomy, Animal Science, Engineering, Psychology, and Sociology across five departments. 
-While it may be necessary to offer two separate courses based on mathematical sophistication, the examples which are used in the courses can be varied to accommodate multiple disciplines simultaneously. 
-One failing of a distributed model where statisticians are embedded within each department is that it results in duplication of effort across departments. 
 
 
 On the research side, a statistics department should have collaborations with many scientific departments across campus, assisting with the development of new methodology as well as consulting on the appropriate established methodology to use. 
 This dual collaboration and consulting function of a statistics department is critical for ensuring that the scientific results published by researchers are valid.
-A scientific research university without a group of statisticians is as difficult to imagine as a university known for its engineering programs that doesn't have a mathematics department to assist with teaching calculus and differential equations or a physics department. 
-While biostatistics departments are generally composed of individuals who do statistics relevant to medical school research (survival analysis, clinical trials, causal inference), statistics departments typically have experts in experimental design (agricultural designs, engineering factorial experiments, and social science quasi-experiments), statistical computing, data visualization, Bayesian modeling, statistical genetics, quality control, and even operations research. 
+A scientific research university without a group of statisticians is as difficult to imagine as a university known for its engineering programs that doesn't have a mathematics department to assist with teaching calculus and differential equations or a physics department to teach statics and mechanics. 
+While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, and causal inference,  statistics departments typically have experts in experimental design relevant to important programs across campus: at UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, and  (agricultural designs, engineering factorial experiments, and social science quasi-experiments), statistical computing, data visualization, Bayesian modeling, statistical genetics, quality control, and even operations research. 
 A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are collocated. 
 In addition, decentralized statisticians exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics. 
 Collaboration between statisticians produces good statistics research, but this is difficult or impossible to prioritize under a distributed or service model. 
