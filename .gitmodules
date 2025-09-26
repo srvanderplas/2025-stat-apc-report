@@ -1,0 +1,3 @@
+[submodule "data-analysis"]
+	path = data-analysis
+	url = git@github.com:heike/dept-defense.git

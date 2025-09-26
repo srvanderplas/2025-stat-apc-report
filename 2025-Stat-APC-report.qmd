@@ -119,7 +119,7 @@ Section @sec-planning provides an alternative plan to situate the Statistics dep
 
 There are several units within UNL that maintain some statistical expertise in-house, in addition to programs in Biostatistics at UNMC and Statistics and Data Science at UNO. 
 
-At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research: 
+At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research:
 
 - the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. 
 - the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology. 
@@ -133,20 +133,20 @@ Faculty within the College of Business (Econometrics, Actuarial Science, Supply 
 
 Ultimately, however, there are clearly insufficient FTEs available at UNL in statistics-adjacent fields that could reasonably take over the teaching, collaboration, consulting, and research functions which are fulfilled by the Department of Statistics, particularly when the existing demands on those FTEs are considered. 
 
+The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Biomedical Informatics.
+Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D. from the Statistics department at UNL (see @tbl-unmc-biostats for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. 
+While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.
 
-
-The Biostatistics department at UNMC lists several areas of statistics research within the department: Bayesian statistics, clinical study design, causal inference, high dimensional data and machine learning, survival data analysis, spatial statistics, statistics education, bioinformatics and statistical genetics, stochastic modeling.
-Fourteen of the sixteen tenured or tenure-track faculty members at UNMC received their Ph.D. from a Statistics department^[Dr. Christopher Wichman, received his Ph.D. in Biostatistics from UNMC, and Dr. Jerrod Anzalone received his Ph.D. in Biomedical Informatics from UNMC.], and five of the sixteen received their Ph.D. from the Statistics department at UNL (see @tbl-unmc-biostats for a full list). 
-While Biostatisticians at UNMC do valuable work that contributes to research methodology in Statistics, many of the listed papers were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics!
 Biostatisticians apply statistical methods to medicine, and must cultivate a specific set of skills for collaborating with doctors that are distinct from collaboration skills required for working with other academic disciplines. 
 A Biostatistics department is not sufficient to serve as the center of a statistical practice that supports the many non-medical disciplines that are important to the state of Nebraska: agriculture, animal science, population genetics (animal and plant), engineering, social sciences, education, business, physics, chemistry, and biology. 
-@sec-peer-analysis includes an analysis of peer R1 and AAU institutions, many of whom maintain both statistics and biostatistics departments. 
+@sec-peer-analysis includes a discussion of peer R1 and AAU institutions, many of whom maintain both statistics and biostatistics departments. 
 
-Finally, there is a Mathematics department at UNO which offers statistics coursework and a data science program. 
+There is also a Mathematics department at UNO which offers statistics coursework and a data science program. 
 Of the 18 tenured and tenure-track faculty in this department, there are three with statistics Ph.D.s (see @tbl-uno-math for a full list).
 UNO is not an R1 university, and faculty there have a much heavier teaching load than faculty at UNL; consequently, it stands to reason that the UNO Mathematics department would not be able to significantly alleviate the statistics need across the university that would be created through the proposed elimination of the Statistics department in favor of a distributed model. 
 
-University of Nebraska Kearney has a mathematics and statistics department which does not appear to contain any statisticians, according to the research interests listed on the faculty web pages. Moreover, as UNK does not have a statistics program at any level, it stands to reason that UNK Mathematics & Statistics faculty will not be able to help UNL with its proposal to use a distributed model for the university's statistics instruction, collaboration, consulting, and research needs. 
+The University of Nebraska - Kearney has a mathematics and statistics department which does not appear to contain any statisticians, according to the research interests listed on the faculty web pages. 
+Moreover, as UNK does not have a statistics program at any level, it stands to reason that UNK Mathematics & Statistics faculty will not be able to help UNL with its proposal to use a distributed model for the university's statistics instruction, collaboration, consulting, and research needs. 
 
 
 **Conclusion**: The Chancellor's proposal to move to a distributed model with statistics expertise located within relevant departments around the university will require hiring additional faculty, reducing the 12 FTE savings from the elimination of the Statistics department. 
@@ -187,7 +187,26 @@ Collaboration between statisticians produces good statistics research, but this 
 
 # Metrics {#sec-metrics}
 
+## Research
 
+The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate a research entities research performance with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, (2) recognition from the community in form of citations and awards, and (3) federal sponsoring of research projects measured by the number of grants and their amounts.
+
+Different disciplines operate differently - books are more important in the humanities, while conference papers are the norm in computer science because even journal article publication moves too slow. 
+The weighting of each of these measures is therefore adjusted using discipline specific weightings which  are based on a factor analysis performed by Academic Analytics. 
+
+The UNL research z-score is created by standardizing each input measure with respect to all departments on campus before computing an unweighted average of each component z-score to form a single research index for each department.
+
+This is fundamentally problematic, as the SRI measure used by academic analytics not only incorporates many of the components used (federal expenditures, awards, books, citations), but also because the discipline-specific weightings are intended to allow for 
+
+
+
+## Teaching
+
+## Consulting
+
+## Collaboration
+
+## Uncaptured Information
 
 
 # Peer Analysis {#sec-peer-analysis}
