@@ -509,7 +509,6 @@ really <- list(
             hjust=0.5,
             size = 5, nudge_y = -0.35)) 
 
-ppl + ofcourse  + really
   
 ```
 
