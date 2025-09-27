@@ -16,10 +16,27 @@ library(purrr)
 library(stringr)
 library(tidyr)
 library(tibble)
+library(readr)
+library(ggplot2)
 ```
 
 # Introduction
 
+::: callout
+### Summary
+
+- The Chancellor's proposal to move to a distributed model with statistics expertise located within relevant departments around the university will require hiring additional faculty in various departments, significantly reducing the 12 FTE savings from the elimination of the Statistics department. 
+- There is not sufficient capacity on any other UN system campus to sufficiently meet the research, teaching, and extension missions of the university with regard to statistics demand at UNL. 
+- The distributed model promotes duplication of classes and expertise across departments, at a time when we should be increasing efficiency. 
+- Statistics at UNL has tried many different models. The reasons for creating a separate statistics department are still relevant today: visibility, efficiency, and the importance of offering statistics programs.
+
+
+The more efficient path forward is to keep the Statistics department but to locate it in a place where it can best serve the entire university, rather than solely IANR. 
+The 1968 plan to locate Statistics and Computer Science within a School of Computing might be the right model. 
+Joint and courtesy appointments from outside of Statistics could be used to build stronger ties with other Statistics-adjacent departments, including those located on City campus. 
+IANR should continue to contribute support to the SC3L (consulting group) to ensure that collaboration and consulting demand from IANR continues to be met. 
+
+:::
 
 On September 11, 2025, the Statistics Department was informed that it had been proposed for elimination under the Chancellor's [budget reduction proposal](https://budgetprocess.unl.edu/proposed-budget-reductions/). 
 
@@ -30,22 +47,38 @@ The rationale for the proposed reductions provided in the budget reduction plan 
 > The proposed plan would eliminate a standalone Department of Statistics offering BS, MS, and PhD degrees and moves the university toward a distributed model that leverages expertise embedded across IANR, UNL and the NU system. The plan proposes to strategically deploy a portion of the state-appropriated funds to continue to offer selected undergraduate and graduate courses and provide coordinated statistical consulting.  Budget reductions would be achieved through the elimination of positions (12 FTE).
 
 That is, the only rationale offered is that the Chancellor proposes to move towards a distributed model that "leverages expertise embedded across IANR, UNL, and the NU system". 
-The distributed model has been tried before at UNL within IANR, and the end result was the creation of a stand-alone statistics department, though only after nearly every other possible model was proposed. 
-@sec-department-role-history provides a brief history of the Statistics Department and its associated graduate and undergraduate programs, along with the rationale used to motivate past changes to the department structure. 
+The distributed model has been tried before at UNL, within both IANR and the College of Arts and Sciences, and the end result was the creation of a stand-alone statistics department (though only after nearly every other possible model was proposed and attempted). 
 
 
-Section @sec-metrics examines the metrics used to evaluate the performance of the department and makes the case that reliance on these metrics demonstrates the importance of accounting for random variation and contextual information when interpreting data.
-Section @sec-peer-analysis discusses the presence of statistics departments across major research universities within the AAU, Big Ten, and R1, examining the viability of a distributed model based on data from peer institutions.
+@sec-dept-analysis discusses statistics from the perspective of the UN System. 
+@sec-history-dept provides a brief history of the Statistics Department at UNL and its associated graduate and undergraduate programs, along with the rationale used to motivate past changes to the department structure. This historical data is used  to assess the plan to move toward a distributed model of embedding statisticians within other departments on campus.  
+@sec-role-dept examines the role of the Statistics Department on campus, outlining its interactions with the teaching, research, and extension missions within the university.
+@sec-nu-stats examines other clusters of statistical expertise within the University of Nebraska system, including related departments at UNL, Biostatistics at UNMC and Mathematics departments at UNO and UNK. 
+These additional clusters of statistical knowledge are then assessed to determine whether it is possible to replace the functions of the Statistics department with existing statistical resources distributed across the NU system, without hiring additional FTEs and reducing the savings from the proposed elimination of the department. 
+
+
+Section @sec-metrics examines the metrics used to evaluate the performance of the department and makes the case that the reliance on these metrics demonstrates the importance of accounting for random variation and contextual information when interpreting data -- that is, that the Statistics department is a necessary component of decision making across the university.
+
+Section @sec-peer-analysis discusses the presence of statistics departments within the AAU, Big Ten, R1, and land-grant classifications, examining the viability of a distributed model based on data from peer institutions.
 
 Section @sec-program-analysis examines the programs housed within the Statistics department as well as important contributions made by the department to other programs, and evaluates the impact of closing the department on the university and the state. 
 
-Section @sec-planning provides an alternative plan to situate the Statistics department within the university in a way that will best position UNL to rejoin the AAU and best serve the state of Nebraska by strengthening research, teaching, and extension missions of the university. 
+Section @sec-planning provides an alternative plan to situate the Statistics department within the university in a way that will best position UNL to rejoin the AAU and serve the state of Nebraska by strengthening research, teaching, and extension missions of the university. 
 
-# The UNL Statistics Department {#sec-department-role-history}
-## History of the Department
+Throughout this report, additional resources and references are directly linked (rather than providing a bibliography and formal citations) to ensure that APC has the necessary information immediately available. 
+
+# The UNL Statistics Department {#sec-dept-analysis}
+## History of the Department {#sec-history-dept}
 <!-- https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1000&context=statisticsdeptdocs -->
 
 - 1957 - Statistics Laboratory founded at UNL under Dr. Charles Gardner, funded by the Agricultural Experiment Station to provide design, analysis, and data processing services to researchers. 
+
+::: {.callout collapse=true}
+### Consulting Headcount Comparison
+
+Under the current proposal, only one FTE would be responsible for statistical consulting, across the UNL campus. 
+This reduction would take UNL back to 1957 in the amount of statistical consulting assistance available across campus. Without graduate students at the SC3L, who currently provide over 100 hours per week of dedicated consulting time, the preservation of a single FTE for statistical consulting represents a dramatic reduction in capacity during a period of greatly increased demand across IANR as well as the wider university.
+:::
 
 - 1968 - [UNL attempts to create a School of Computational Sciences with two departments: Computer Science and Statistics, but it fails. Instead, the Mathematics Department is renamed the Department of Mathematics and Statistics to account for the growing relevance of Statistics across the university.](https://math.unl.edu/statistics-history-unl/).
 
@@ -67,44 +100,61 @@ Section @sec-planning provides an alternative plan to situate the Statistics dep
 
 - 1990 - The Board of Regents approves an MS program in Biometry ([1993 Biometry Self-Study](https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1000&context=statisticsdeptdocs), page 20).
 
-- 1993 - The Mathematics APR Report recommends creation of a separate department of statistics, citing the following reasons ([2001 Mathematics & Statistics APR Self-Study](https://www.math.unl.edu/~dpitts2/APR/apr.pdf), pg 147):
+- 1993 - The Mathematics APR Report recommends creation of a separate department of statistics ([2001 Mathematics & Statistics APR Self-Study](https://www.math.unl.edu/~dpitts2/APR/apr.pdf), pg 147)
+
+::: {.callout collapse=true}
+### Motivation for Stand-alone Statistics Department
 
     - Retention: faculty left after only a few years because of lack of recognition of statistics as a discipline by the university.
     - A separate department will strengthen the research and teaching in statistics
     - A separate department will enrich the research of statisticians who are currently in the departments of Mathematics and Biometry
+:::
     
 - 2000 - A largely-autonomous Division of Statistics is created within the Department of Mathematics and Statistics with a focus area in survey sampling to support the Gallup Research Center. Some faculty transfer tenure homes into the department from Biometry and Sociology ([2001 Mathematics & Statistics APR Self-Study](https://www.math.unl.edu/~dpitts2/APR/apr.pdf), pg 14).
 
 - 2003 - The Statistics Department is founded from the Department of Biometry (IANR) and the Statistics faculty from the Department of Mathematics and Statistics ([2005 Statistics APR](2005-STAT-APR-Report.pdf), pg 3)
 
-- 2003 - A Statistics PhD program is created within the newly-formed Statistics Department. Reasons motivating the PhD Program's initiation:
+- 2003 - A Statistics PhD program is created within the newly-formed Statistics Department. 
+
+::: {.callout collapse=true}
+### Reasons motivating the PhD Program's initiation:
 
     - Recruit better graduate students
     - Enhance ability to do research using PhD graduate students
     - Enhance consulting via both research and satisfying increasing consulting demand using well-trained and supervised graduate students.
     - PhD students can lead graduate course labs for MS students, reducing the instructional burden on faculty
     - PhD students enhance professional development for faculty by facilitating research and consulting collaborations
+    
+:::
 
-- 2005 - [APR Team recommends](2005-STAT-APR-Report.pdf):
-    - Better integration with city campus so that the newly-formed department is not viewed as an East Campus biometry program. 
-    - Outreach to social scientists on City campus to build collaborations.
-    - Assessment of the need for statistics coursework in other departments along with the need for consulting and research method support. 
+- 2005 - [APR Team recommends](2005-STAT-APR-Report.pdf) better integration and outreach to city campus and assessment of service teaching needs in other departments. 
 
-- 2013 - [APR Team recommends](2013-STAT-APR-Report.pdf):
+- 2013 - [APR Team recommends](2013-STAT-APR-Report.pdf) reducing graduate program enrollment, creation of an undergraduate and 3+2 BS+MS program. 
+
+::: {.callout collapse=true}
+### Specific Recommendations
     - Graduate program enrollment reductions (no more than 5/1 student/faculty ratio)
     - More collaborative and cross-listed courses with Departments of Mathematics and Computer Science.
     - Creation of an undergraduate program and a 2+3 BS+MS statistics program.
     - Use of Online/blended delivery and flipped classroom approaches to improve learning and reduce instructional costs.
     - Hiring a Professor of Practice position to cover program administration, advising, and instructional needs.
-    
+:::
+
 - July 1, 2018 - The Statistics department fully separates from the College of Arts and Sciences and is 100% supported by the Institute of Agriculture and Natural Resources. 
 
 - Fall 2019 - The Statistics department begins to design an undergraduate major in Statistics and Data Analytics at the request of CASNR Dean Tiffany Heng-Moss and in response to the recommendations from the 2013 APR. 
 
-- 2021 - [APR team recommends](2021-STAT-APR-Report.pdf):
+- 2021 - [APR team recommends](2021-STAT-APR-Report.pdf) increase in number of tenure-track faculty and departmental administration to ensure program success.
+
+::: {.callout collapse=true}
+
+### Specific Recommendations
+
     - Expansion of the department to 20 tenure-track FTEs plus additional teaching faculty to ensure that there are enough faculty to grow the undergraduate programs in Statistics and Data Analytics and Data Science.
     - Restructuring the SC3L (consulting group) to charge repeat clients, while allowing a limited number of free visits.
     - Expanding the department administration to accommodate the increased number of faculty and the challenges of administration of BS, MS, and Ph.D. programs in Statistics, BS programs in Data Science, and the advisors necessary to support the new programs. 
+
+:::
     
 - Fall 2021 - [Statistics and Data Analytics major approved by the Board of Regents](https://ccpe.nebraska.gov/sites/default/files/UNL%20Creation%20BS%20in%20Stats%20%20Data%20Analytics_08162021.pdf)
 
@@ -115,21 +165,73 @@ Section @sec-planning provides an alternative plan to situate the Statistics dep
 - Spring 2026 - First Statistics and Data Analytics cohort expected to graduate
 
 
+
+
+
+## The Role of a Statistics Department {#sec-role-dept}
+
+A statistics department provides a number of services within the campus ecosystem apart from its own programs (which often exist to provide these services efficiently, as demonstrated in the 1993 Biometry Self-Study report). 
+Statistics is an essential component of undergraduate quantitative literacy; over 20% of UNL undergraduates take Stat 218 to fulfill their Ace 3 requirements. 
+In addition, Statistics supports additional quantitative coursework for other departments: Stat 318 and 380, as well as Stat 462 and Stat 463, which are an essential component of the Actuarial Sciences program. 
+At the graduate level, the department provides additional critical training in statistical methods (Stat 801, 802) and in computing and the use of software packages for data analysis and visualization (Stat 850). 
+These courses facilitate research across the university, in a way that is difficult to explicitly measure: by training graduate researchers in other disciplines, we facilitate high quality research in those disciplines. 
+<!-- However, we could do this at a larger scale by growing enrollment in Stat 850: it already consists of approximately 50% statistics students and 50% outside students, and it is helpful for students in agronomy, biological sciences, engineering, psychology, and sociology.  -->
+In addition to introductory courses, however, graduate students in other departments often need additional course work in experimental design and specific areas of statistical methodology, such as Bayesian statistics or statistical genetics. 
+Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately. 
+
+It is more efficient to offer courses in linear mixed models under a statistics prefix than to teach separate courses for Agronomy, Animal Science, Engineering, Psychology, and Sociology across five departments with five instructors. 
+While it may be necessary to offer two courses (one which accommodates the lack of linear algebra or calculus prerequisite work), this is still a substantial savings over offering five separate courses. 
+<!-- The examples which are used in the courses can be varied fairly easily to accommodate multiple disciplines simultaneously.  -->
+One failing of a distributed model where statisticians are embedded within each department is that it results in duplication of effort across departments, and if departments cannot hire someone with statistical expertise AND domain expertise, then it becomes difficult for that department to meet the needs of both students and faculty. 
+
+> The training my own students receive from Statistics -- from coursework, from collaborators, and from Statistics faculty on their thesis and dissertation committees -- is essential to our ability to win and execute upon large federal research awards. Our institute's capacity to train students whose expertise bridges quantitative techniques and in the field understanding of crop systems is why I receive e-mails from Corteva, Syngenta, and Bayer asking when my next lab's next PhDs will be graduating.    
+> -- [James Schnable, Letter to APC](letters/James Schnable.pdf)
+
+On the research side, a statistics department should have collaborations with many scientific departments across campus, assisting with the development of new methodology as well as consulting on the appropriate established methodology to use. 
+This dual collaboration and consulting function of a statistics department is critical for ensuring that the scientific results published by researchers are valid and for accelerating progress within other fields.
+A major research university without a statistics department is as difficult to imagine as a university known for its engineering programs that doesn't have a mathematics department to assist with teaching calculus and differential equations or a physics department to teach statics and mechanics. 
+
+
+> Statistics is the midwife to all other departments. UNL has a strong agricultural mission and a proud track record in agronomy. So does statistics. My field was started by Sir Ronald Fisher, who worked to analyze agricultural data at the Rothamsted Experimental Station before moving on to University College London and eventually the University of Cambridge. The work that Fisher did laid the mathematical foundation for continual improvement of yields. His co-founding of statistical genetics has been the basis for nearly all improvement in agriculture over the last 100 years (aside from the Haber-Bosch process, which gave us plentiful fertilizer).
+> But statistics doesn't just feed agronomy. It provided the necessary confirmation of the Higgs boson in physics. It undergirds the risk analyses that drive medical therapies, business decisions, insurance, and the amelioration of climate change. English professors use latent Dirichlet allocation to identify themes in literature. Philosophy faculty study the implications of Bayes' Rule for rationality and coherence. Chemists, entomologists and historians all employ statistics on a regular basis, either on their own or through collaboration with research statisticians.
+> -- [David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow](letters/David Banks.pdf)
+
+While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, and causal inference,  statistics departments typically have experts in experimental design relevant to important programs across campus: at UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, statistical computing and simulation, Bayesian methodology, and operations research.
+A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are collocated. 
+Under a distributed model, someone might have to search directory information within 12-15 departments^[As we have tried to do when assembling this report -- it is not an easy or efficient process.], and it is likely that they  may not find the right person in any case. 
+
+Decentralized statisticians also exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics. 
+As an example, the charts and graphs used to show the metrics of each UNL department were created with `ggplot2` and `plotly`, both tools developed at Iowa State under the supervision of Dr. Heike Hofmann, who is now in the UNL Statistics department. 
+It is hard to imagine such tools being developed under a distributed model: they are the product of statistics research, and they are now used across quantitative disciplines. 
+Similarly, tools like `rmarkdown`, `knitr`, and `quarto` (which were used to assemble the charts into a document that was shared across the university) were research products of the Iowa State Statistics department in the same era, and they are now gold-standard tools for reproducible research across the sciences, in addition to making reporting easier within e.g. business and administrative units. 
+Within UNL, these tools are used in agronomy, agricultural economics, biosystems engineering, the School of Natural Resources, journalism, and psychology^[This is only a partial list assembled from members of the R User Group on campus and other collaborators -- there may well be others.]. 
+Collaboration between statisticians produces research that makes science better and more efficient for everyone, but this is difficult or impossible to prioritize under a distributed or service model where embedded statisticians are evaluated based on discipline-specific contributions.
+
+> A centralized Statistics Department provides essential consulting, collaboration, and
+training for research across all colleges. Dispersing faculty into a "distributed model" weakens this role and undermines interdisciplinary strength.
+> -- [Brani Vidakovic, H.O. Hartley Chair and Department Head, Department of Statistics, Texas A&M University](letters/LetterVidakovic_TAMU.pdf)
+
+However, we can also evaluate the purported efficiency of a distributed model by examining the resources currently available across the NU system in Statistics. 
+If there is excess capacity of faculty with statistical expertise outside the Statistics department, then perhaps the inefficiencies of workin in the distributed model would be countered by the savings from eliminating the department.
+However, this is not the case, as demonstrated in the next section. 
+
+
 ## NU System Statistics Expertise
 
 There are several units within UNL that maintain some statistical expertise in-house, in addition to programs in Biostatistics at UNMC and Statistics and Data Science at UNO. 
 
 At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research:
 
-- the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. 
-- the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology, but they do survey research. 
+- the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. However, they clearly have expertise in some aspects of statistics and measurement. 
+- the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology, but they do survey research and have expertise that isn't currently available within the Statistics department. 
 - the Economics department. Econometrics has some overlap with Statistics. There are three faculty (Yifan Gong, Christopher Mann, Federico Zincenko) who mention Econometrics as a research area within this department. 
+- the Agricultural Economics department. There is some overlap with statistics in discipline, but it is difficult to identify any specific faculty who might have the expertise and interest to do Statistics work. None of the faculty appear to have Ph.D.s in Statistics. 
 - the Actuarial Science program. Three tenured or tenure-track faculty (Colin Ramsay, Mostafa Mashayekhi, Graham Liu) affiliated with Actuarial Science have Ph.D.s in Statistics or Actuarial Science. 
 - the Supply Chain Management & Analytics program. None of the faculty have Ph.D.s in Statistics, but seven tenured or tenure-track faculty have degrees in business analytics, operations management, or supply chain management. These degrees are not comparable to statistics in terms of theoretical training that would support development of new statistical methodology but might suffice to cover some of the coursework currently offered in the Statistics department.
 <!-- Yunxia (Peter) Zhu, Yingchao Lan, Erkut Sonmez, Scott Swenseth, Esma Gel, Wesley Boyce, Shengchao Zhuang -->
 
 @sec-metrics discusses the ways that the Statistics department interacts with other portions of campus. 
-Faculty within the College of Business (Econometrics, Actuarial Science, Supply Chain Management & Analytics) represent perhaps the closest group outside of the Statistics department within UNL, but none have degrees in Statistics, and while some of the courses taught in the College of Business may touch on topics such as forecasting, simulation, and modeling, the faculty within the college have specialized to apply these techniques to business and finance. 
+Faculty within the College of Business (Econometrics, Actuarial Science, Supply Chain Management & Analytics) represent perhaps the closest group outside of the Statistics department within UNL, but none have degrees in Statistics, and while some of the courses taught in the College of Business may touch on topics such as forecasting, simulation, and modeling, the faculty within the college have specialized to apply these techniques to business and finance, and it seems unlikely that they have extra capacity. 
 
 Ultimately, however, there are clearly insufficient FTEs available at UNL in statistics-adjacent fields that could reasonably take over the teaching, collaboration, consulting, and research functions which are fulfilled by the Department of Statistics, particularly when the existing demands on those FTEs are considered. 
 
@@ -147,40 +249,6 @@ UNO is not an R1 university, and faculty there have a much heavier teaching load
 
 The University of Nebraska - Kearney has a mathematics and statistics department which does not appear to contain any statisticians, according to the research interests listed on the faculty web pages. 
 Moreover, as UNK does not have a statistics program at any level, it stands to reason that UNK Mathematics & Statistics faculty will not be able to help UNL with its proposal to use a distributed model for the university's statistics instruction, collaboration, consulting, and research needs. 
-
-
-**Conclusion**: The Chancellor's proposal to move to a distributed model with statistics expertise located within relevant departments around the university will require hiring additional faculty, reducing the 12 FTE savings from the elimination of the Statistics department. 
-
-
-
-
-
-## The Role of a Statistics Department
-
-A statistics department provides a number of services within the campus ecosystem apart from its own programs (which often exist in part to facilitate providing these services efficiently, as demonstrated in the 1993 Biometry Self-Study report). 
-Statistics is an essential component of undergraduate quantitative literacy; over 20% of UNL undergraduates take Stat 218 to fulfill their Ace 3 requirements. 
-In addition, Statistics supports additional quantitative coursework for other departments: Stat 318 and 380, as well as Stat 462 and Stat 463, which are an essential component of the Actuarial Sciences program. 
-At the graduate level, the department provides additional critical training, not just in statistical methods (Stat 801, 802) but also in computing and the use of software packages for data analysis and visualization (Stat 850). 
-These courses facilitate research across the university, in a way that is difficult to 
-There is considerable potential for growth in enrollment in Stat 850 in particular: it already consists of approximately 50% statistics students and 50% outside students, and it is helpful for students in agronomy, biological sciences, engineering, psychology, and sociology. 
-In addition to introductory courses, however, graduate students in other departments may need additional course work in experimental design and specific areas of statistical methodology, such as Bayesian statistics. 
-Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately. 
-
-It is more efficient to offer courses in linear mixed models under a statistics prefix than to teach separate courses for Agronomy, Animal Science, Engineering, Psychology, and Sociology across five departments with five instructors. 
-While it may be necessary to offer two courses to accommodate lack of linear algebra or calculus prerequisite work in some disciplines, nthis is still a substantial savings over offering five separate courses. 
-The examples which are used in the courses can be varied fairly easily to accommodate multiple disciplines simultaneously. 
-One failing of a distributed model where statisticians are embedded within each department is that it results in duplication of effort across departments, and if departments cannot hire someone with statistical expertise AND domain expertise, then it becomes difficult for that department to meet the needs of both students and faculty. 
-
-
-
-On the research side, a statistics department should have collaborations with many scientific departments across campus, assisting with the development of new methodology as well as consulting on the appropriate established methodology to use. 
-This dual collaboration and consulting function of a statistics department is critical for ensuring that the scientific results published by researchers are valid.
-A scientific research university without a group of statisticians is as difficult to imagine as a university known for its engineering programs that doesn't have a mathematics department to assist with teaching calculus and differential equations or a physics department to teach statics and mechanics. 
-While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, and causal inference,  statistics departments typically have experts in experimental design relevant to important programs across campus: at UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, and  (agricultural designs, engineering factorial experiments, and social science quasi-experiments), statistical computing, data visualization, Bayesian modeling, statistical genetics, quality control, and even operations research. 
-A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are collocated. 
-In addition, decentralized statisticians exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics. 
-Collaboration between statisticians produces good statistics research, but this is difficult or impossible to prioritize under a distributed or service model. 
-
 
 
 
@@ -201,18 +269,141 @@ Collaboration between statisticians produces good statistics research, but this 
 
 # Peer Analysis {#sec-peer-analysis}
 
+
 ```{r}
+#| include: false
 library(readxl)
 
-universities <- read_excel("data-analysis/data/University Statistics Departments.xlsx", sheet = 2)
+universities <- read_excel("data-analysis/data/University Statistics Departments.xlsx", sheet = 2) |>
+  mutate(Name=str_remove(Name, ", The$")|>
+           str_replace_all(" ?[,-]{1,} ?", " ") |>
+           str_replace_all("A & M", "A&M") |>
+           str_replace_all("St Louis", "St. Louis") |>
+           str_replace_all("Illinois Urbana Champaign", "Illinois at Urbana Champaign") |>
+           str_remove_all(" in the City of New York") |>
+           str_remove_all(".Seattle.Campus|.Knoxville|.Columbia|.Fort.Collins|.at.Raleigh|.College.Station|.Ann.Arbor|.Pittsburgh.Campus") |> 
+           str_remove_all(" and Agricultural & Mechani.*") |> 
+           str_remove_all("/Anschutz Medical Campus") |>
+           str_remove_all(" Main Campus$") |> str_trim()) 
+universities <- universities |>
+  set_names(str_replace_all(names(universities), "[ /]", "_")) |>
+  mutate(Bachelors_Statistics = if_else(Bachelors_Statistics=="NA", NA_character_, Bachelors_Statistics)) |>
+  mutate(has_some_stat = !is.na(Statistics) | !is.na(Biostatistics) | !is.na(Data_Science),
+         has_non_biostat = !is.na(Statistics) | !is.na(Data_Science),
+         has_non_biostat_non_medical =  !has_non_biostat & is.na(Bachelors_Statistics))
+
+r1 <- filter(universities, R1)
+
+landgrant <- filter(universities, Land_Grant)
+big10 <- filter(universities, Big_Ten)
+aau <- filter(universities, AAU)
+
+stat_acad_anal <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv") |>
+  mutate(institutionname=str_remove(institutionname, ", The$")|>
+           str_replace_all(" ?[,-]{1,} ?", " ") |>
+           str_replace_all("Carolina Charlotte", "Carolina at Charlotte") |>
+           str_remove_all(".Knoxville|.University.Park|.State.University.of.New.York$") |> str_trim())
+joint_data <- full_join(universities, stat_acad_anal, by = c("Name" = "institutionname")) |>
+  mutate(R2 = is.na(R1)) |>
+  mutate(R1 = if_else(is.na(R1), FALSE, R1),
+         Big_Ten = if_else(is.na(Big_Ten), FALSE, Big_Ten),
+         AAU = if_else(is.na(AAU), FALSE, AAU)) |>
+  select(Name, Classification:Statistics, unitname, everything()) |>
+  mutate(Bachelors_Statistics = if_else(Bachelors_Statistics=="NA", NA_character_, Bachelors_Statistics),
+         Bachelors_Statistics = if_else(Bachelors_Statistics=="TRUE", "Statistics", Bachelors_Statistics))
+
 ```
 
+There is an incredible diversity of both names and structures for housing statisticians within institutions across R1 and AAU universities. 
+For the purposes of this analysis, there are two characteristics which seem to be particularly important: 
+
+- A group of statisticians located in the same department (whether that is called Statistics, Data Science, or Mathematics & Statistics), where 
+- The department offers programs in Statistics at the undergraduate or graduate level
+
+We exclude from this "big tent" biostatistics departments, not because they don't serve a similar role, but because many universities have both Statistics and Biostatistics departments^[The statistics department is typically on the main campus and the biostatistics department is typically located within the medical school organizational structure.], so we have tracked Biostatistics separately. 
+Note that this differs from the Academic Analytics tracking of Statistics as a discipline, but the conclusions of this analysis are largely the same whether using their methods or ours. 
+
+Of the `r nrow(r1)` R1 universities, 
+only `r sum(!r1$has_some_stat)` does not have a stand-alone statistics, biostatistics, or data science department.
+If we exclude biostatistics, only `r sum(!r1$has_non_biostat)` do not have a stand-alone statistics or data science department, and of these, `r sum(r1$has_non_biostat_non_medical)` are medical schools which do not grant undergraduate degrees outside of the health sciences^[R1 Universities offering non-medical undergraduate degrees without a Statistics or Data Science department: `r filter(r1, !has_non_biostat, !has_non_biostat_non_medical)$Name |> paste(collapse = ", ")`.    
+Medical institutions with only a biostatistics presence on campus: `r filter(r1, !has_non_biostat, has_non_biostat_non_medical)$Name |> paste(collapse = ", ")`]. 
+
+> Agencies such as NIH, NSF, USDA, and DOE expect a strong institutional presence in
+statistics when awarding large research grants. Eliminating the department will send a
+negative signal to funders, and the resulting shortfall in research funding will, over time, exceed the current budget savings.    
+> -- [Brani Vidakovic, Chair, Texas A&M and former Program Director, National Science Foundation](letters/LetterVidakovic_TAMU.pdf)
+
+If we instead consider our `r nrow(landgrant)` land-grant peers, 
+all `r sum(landgrant$has_some_stat)` have a stand-alone statistics or data science department, and `r sum(is.na(landgrant$Biostatistics))` also have a biostatistics department. 
+That is, UNL would be alone among land-grant institutions if the proposed elimination of the Statistics department goes through.
+
+> Disbanding Statistics would immediately weaken UNL’s standing as a comprehensive, research‐intensive institution. It would jeopardize collaborations across colleges, with federal agencies, industry, and other universities, and risk signaling a retreat from UNL’s land-grant mission.
+> -- [Thomas Lee, Distinguished Professor of Statistics, UC Davis](letters/UNL_Statistics_Support_Letter_ThomasLee.pdf)
+
+If instead we compare to the `r nrow(aau)` AAU universities,
+all `r sum(aau$has_some_stat)` have a stand-alone statistics, biostatistics, or data science department and only `r sum(!aau$has_non_biostat)` do not have a statistics or data science department^[AAU universities without a statistics or data science department: `r filter(aau, !has_non_biostat)$Name |> paste(collapse = ", ")`].
+
+Faculty outside the department of Statistics recognize the essential function we serve and the threat to the University's standing among its peers if the Statistics department is eliminated: 
+
+> Every AAU member university and every Big Ten university maintains a Department of Statistics (or an equivalent stand-alone unit) as a core component of their research infrastructure. Eliminating ours would immediately place UNL at a disadvantage relative to our peers and signal a retreat from the standards of excellence required for AAU membership.    
+> -- [David Hyten, Letter to APC](letters/Letter of support for Stats department_Hyten.pdf)
+
+And this assessment is shared by the chairs of other Big Ten statistics departments: 
+
+> Moreover, dissolving the Statistics Department will make it difficult, if not impossible, for UNL to achieve its goal of rejoining the Association of American Universities (AAU).
+> -- [Big Ten Statistics Department Chairs](letters/Big10_UNL_Letter.pdf)
+
+
+While it is often desireable to be unique in a field, eliminating the statistics department would be more akin to notoriety. 
+Statistics expertise is **essential** to the function of a modern R1 land-grant institution, particularly in a state where there is not another competing R1 institution which might serve researchers at both schools.
+We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its R1 status threatened.
+The proposed elimination of the department has threatened UNL's international reputation, but going through with that elimination would have dire consequences for the institution's standing among its peers.
+
+> Statistics is the backbone of modern research across all fields, from agriculture and medicine to engineering and social sciences. The expertise provided by statisticians is essential for designing experiments, analyzing data, and interpreting results. Without a dedicated Statistics Department, UNL will lose its competitive edge in research and innovation, and a fall in research quality and rankings is inevitable.
+> -- Rob Hyndman, Monash University, Australia. 
+
+The Statistics department has assembled letters from a truly international array of scientists and statisticians, each expressing opposition and confusion as to the elimination of the Statistics department. 
+Hungarian statisticians, Pakistani historians and statisticians, 
+
+
+Statistics departments provide many services which are essential to modern research universities. 
+At UNL, the statistics department also provides unique, valuable, and essential programs within the educational ecosystem of Nebraska. 
+In addition, the department provides essential support for many other programs across the university. 
+These contributions are discussed in @sec-program-analysis.
 
 
 # Program Analysis {#sec-program-analysis}
 
 
+## Effects of Proposed Cuts 
 
+*This section was contributed by Petronela Radu, Chair of the Mathematics Department*
+
+Cutting the Department of Statistics will have significant and lasting effects on the undergraduate program in the Department of Mathematics.
+Elimination of courses will be most deeply felt by students majoring in CAS Data Science and by students pursuing the Statistics and Data Science Option and Mathematical Finance Option within the Mathematics major.
+We were relieved to see IANR’s plan to continue to offer STAT 218, 318, 380, 462, and 463, which means there would be sufficient Statistics courses offered to complete the Data Science major and the Math major on the Mathematical Finance and the Statistics and Data Science options. 
+However, the Statistical Modeling focus area of the Data Science major would likely need to be eliminated or greatly revised considering the proposed cuts. 
+There would also be far fewer Statistics course options available with the Statistics and Data Science option of the Math major.
+
+As of the beginning of the fall 2025 semester, a total of 26 students had declared a Math major within the Statistics and Data Science option, and 21 students had declared within the Mathematical Finance option.
+The number of students graduating in the former option has been continuously increasing since the introduction of this option in 2020.
+The CAS Data Science major has seen even more dramatic increases, with 17 declared majors in the fall of 2023, 59 declared majors in the fall of 2024, and 83 declared majors in the fall of 2025.
+The curriculum for these majors is well-balanced between Math, Computer Science, and Statistics courses, with input and shared leadership among all three departments, and we view this major as one of the most interdisciplinary majors in the university. 
+Losing the statistics department would be a significant blow to this valued interdisciplinarity.
+
+One motivating factor for the steep growth curve of the Data Science program is a strong positive jobs outlook.
+This field is highly regarded across disciplines.
+In a 2023 conversation with Stephen Cooper, the former Director of the Raikes program, he declared that within five years, he expected most Raikes students would have Data Science as one of their majors.
+Cutting one of the three pillars of the Data Science major would almost certainly hamper this growth.
+Students graduating within the Statistics and Data Science option of the Math major have thus far had excellent internship and career prospects.
+When they graduate, we ask students to fill out a voluntary exit survey, and in 2024 and 2025, students in this option have reported completing internships at companies such as Kiewit, 84.51°, the Federal Reserve Bank of Kansas City, and they report having jobs as data scientists, software engineers, and a number of other positions.  
+This field and its employment prospects are enjoying a wave of growth and popularity, and we can choose to grow with it, or we can hamstring our efforts with cuts that may ultimately prove to be shortsighted.
+
+Finally, we understand that statistics courses will continue to be taught at UNL, but we have grave concerns about the long-term ability of the university to attract high-achieving statistics faculty with modern knowledge about a quickly evolving field, the type of faculty members who can provide high-quality instruction to our majors and who have the expertise to lead undergraduate research projects in data science.  
+The department has been in conversations about our curriculum with Bill Anderson, a retired data science expert who held leadership positions at Microsoft, United Healthcare, and Ford, and who has consulted for senior design groups within the Raikes School. 
+In a recent meeting, Bill reported that the use of statistics in the real world is dramatically changing.  
+The meteoric rise of AI tools has enabled data scientists to implement new solutions with unprecedented speed, but according to Bill, these solutions require statistics for measurement – to determine to what extent new techniques are working and whether they are reliable, ethical, and fair – and the industry has not yet fully realized this need. 
+Our Data Science majors, with their unique synthesis of mathematical, computing, and statistical knowledge are well-positioned to be leaders in their fields upon graduating from UNL, and without a thriving Department of Statistics, we may not be able to continue making this assertion with confidence.
 
 # Planning for the Future {#sec-planning}
 
