@@ -49,12 +49,11 @@ The rationale for the proposed reductions provided in the budget reduction plan 
 That is, the only rationale offered is that the Chancellor proposes to move towards a distributed model that "leverages expertise embedded across IANR, UNL, and the NU system". 
 The distributed model has been tried before at UNL, within both IANR and the College of Arts and Sciences, and the end result was the creation of a stand-alone statistics department (though only after nearly every other possible model was proposed and attempted). 
 
-
-@sec-dept-analysis discusses statistics from the perspective of the UN System. 
-@sec-history-dept provides a brief history of the Statistics Department at UNL and its associated graduate and undergraduate programs, along with the rationale used to motivate past changes to the department structure. This historical data is used  to assess the plan to move toward a distributed model of embedding statisticians within other departments on campus.  
-@sec-role-dept examines the role of the Statistics Department on campus, outlining its interactions with the teaching, research, and extension missions within the university.
-@sec-nu-stats examines other clusters of statistical expertise within the University of Nebraska system, including related departments at UNL, Biostatistics at UNMC and Mathematics departments at UNO and UNK. 
-These additional clusters of statistical knowledge are then assessed to determine whether it is possible to replace the functions of the Statistics department with existing statistical resources distributed across the NU system, without hiring additional FTEs and reducing the savings from the proposed elimination of the department. 
+@sec-dept-analysis discusses statistics within the University of Nebraska System, with a focus on the University of Nebraska -- Lincoln. 
+@sec-history-dept provides a brief history of the Statistics Department at UNL and its associated graduate and undergraduate programs, along with the rationale used to motivate past changes to the department structure. 
+This historical data is used to assess the plan to move toward a distributed model of embedding statisticians within other departments on campus.  
+@sec-role-dept examines the role of the Statistics Department on campus, outlining its interactions with the teaching, research, and extension missions within the university. @sec-nu-stats examines other clusters of statistical expertise within the University of Nebraska system, including related departments at UNL, Biostatistics at UNMC and Mathematics departments at UNO and UNK. 
+These additional clusters of statistical knowledge are critically assessed to determine whether any other unit or the combination of all other units have the capacity to replace the functions of the Statistics department without hiring additional FTEs and reducing the savings from the proposed elimination of the department. 
 
 
 Section @sec-metrics examines the metrics used to evaluate the performance of the department and makes the case that the reliance on these metrics demonstrates the importance of accounting for random variation and contextual information when interpreting data -- that is, that the Statistics department is a necessary component of decision making across the university.
@@ -105,9 +104,9 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 ::: {.callout collapse=true}
 ### Motivation for Stand-alone Statistics Department
 
-    - Retention: faculty left after only a few years because of lack of recognition of statistics as a discipline by the university.
-    - A separate department will strengthen the research and teaching in statistics
-    - A separate department will enrich the research of statisticians who are currently in the departments of Mathematics and Biometry
+  - Retention: faculty left after only a few years because of lack of recognition of statistics as a discipline by the university.
+  - A separate department will strengthen the research and teaching in statistics
+  - A separate department will enrich the research of statisticians who are currently in the departments of Mathematics and Biometry
 :::
     
 - 2000 - A largely-autonomous Division of Statistics is created within the Department of Mathematics and Statistics with a focus area in survey sampling to support the Gallup Research Center. Some faculty transfer tenure homes into the department from Biometry and Sociology ([2001 Mathematics & Statistics APR Self-Study](2001-MathStats-Apr-SelfStudy.pdf), pg 14).
@@ -119,11 +118,11 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 ::: {.callout collapse=true}
 ### Reasons motivating the PhD Program's initiation:
 
-    - Recruit better graduate students
-    - Enhance ability to do research using PhD graduate students
-    - Enhance consulting via both research and satisfying increasing consulting demand using well-trained and supervised graduate students.
-    - PhD students can lead graduate course labs for MS students, reducing the instructional burden on faculty
-    - PhD students enhance professional development for faculty by facilitating research and consulting collaborations
+  - Recruit better graduate students
+  - Enhance ability to do research using PhD graduate students
+  - Enhance consulting via both research and satisfying increasing consulting demand using well-trained and supervised graduate students.
+  - PhD students can lead graduate course labs for MS students, reducing the instructional burden on faculty
+  - PhD students enhance professional development for faculty by facilitating research and consulting collaborations
     
 :::
 
@@ -133,11 +132,13 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 
 ::: {.callout collapse=true}
 ### Specific Recommendations
-    - Graduate program enrollment reductions (no more than 5/1 student/faculty ratio)
-    - More collaborative and cross-listed courses with Departments of Mathematics and Computer Science.
-    - Creation of an undergraduate program and a 2+3 BS+MS statistics program.
-    - Use of Online/blended delivery and flipped classroom approaches to improve learning and reduce instructional costs.
-    - Hiring a Professor of Practice position to cover program administration, advising, and instructional needs.
+
+  - Graduate program enrollment reductions (no more than 5/1 student/faculty ratio)
+  - More collaborative and cross-listed courses with Departments of Mathematics and Computer Science.
+  - Creation of an undergraduate program and a 2+3 BS+MS statistics program.
+  - Use of Online/blended delivery and flipped classroom approaches to improve learning and reduce instructional costs.
+  - Hiring a Professor of Practice position to cover program administration, advising, and instructional needs.
+  
 :::
 
 - July 1, 2018 - The Statistics department fully separates from the College of Arts and Sciences and is 100% supported by the Institute of Agriculture and Natural Resources. 
@@ -206,7 +207,7 @@ If there is excess capacity of faculty with statistical expertise outside the St
 However, this is not the case, as demonstrated in the next section. 
 
 
-## NU System Statistics Expertise
+## NU System Statistics Expertise {#sec-nu-stats}
 
 There are several units within UNL that maintain some statistical expertise in-house, in addition to programs in Biostatistics at UNMC and Statistics and Data Science at UNO. 
 
@@ -257,6 +258,260 @@ Ultimately, these issues are not particularly relevant to the importance of the 
 
 ## Research
 
+The Scholarly Research Index (SRI) is a measure developed by Academic Analytics 
+to evaluate the research performance of individuals and entities with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, 
+(2) recognition from the community in form of citations and awards, and 
+(3) federal sponsoring of research projects measured by the number of grants and their amounts.
+
+Different disciplines operate differently. 
+The weighting of each of these measures is discipline specific (based on a factor analysis by Academic Analytics); the weights for statistics are shown in @tbl-metrics-aa-stat-weights.
+
+::: column-margin
+
+| Category    | Weight |
+|-------------|-------:|
+| Articles    | 18     |
+| Awards      | 19     |
+| Books       | 5      |
+| Chapters    | 5      |
+| Citations   | 20     |
+| Conf Procs  | 11     |
+| Grant $     | 22     |
+| Patents     | 0      |
+| Trials      | 0      |
+| **Total**   | **100** |
+
+: Academic Analytics weights used to evaluate statistics department research performance and impact. {#tbl-metrics-aa-stat-weights}
+
+:::
+
+UNL Statistics has (based on data through December 2023) an SRI of 0.4 based on all R1 and R2 institutions tracked by Academic Analytics. 
+Academic Analytics also offers the ability to compute an SRI based on a custom comparison group; using only AAU universities, the department's custom SRI is -0.1.
+
+Importantly, however, because SRI is the result of discipline-specific weights, it **cannot** be effectively compared across departments.
+Each discipline has a different distribution of SRI values, and comparing across disciplines without accounting for these distributional differences is not only incorrect but extremely misleading. 
+@fig-sri-percentile-all-departments shows the SRI percentile for each department on campus when compared to other R1 and R2 departments. 
+While several departments which have been proposed to be eliminated are indeed performing below the median, many departments are also above-average in their respective fields. 
+We teach statistics students to carefully consider the appropriate comparison population and the real-world meaning of the numbers they use in analyses; it is important that UNL's administration does the same.
+After all, it is less important that Statistics publishes the same amount of papers or generates the same amount of grant funding as Physics, because grants in those fields cover different things (statisticians don't need particle accelerators very frequently) and publication norms are also different.
+What matters is whether departments are doing good work as measured by comparisons to the appropriate peers, both actual and aspirational. 
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-height: 10
+#| fig-width: 9
+#| fig-cap: "UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked."
+#| label: fig-sri-percentile-all-depts
+
+
+unl_depts <- read_csv("data-analysis/data/Institution - Comparing Units - Departments.csv")
+
+unl_depts <-unl_depts |> 
+  separate_wider_delim(
+    cols=Discipline, delim=" - ", names=c("Toss", "Focus"), 
+    too_few="align_start") |>
+  mutate(
+    Focus = ifelse(is.na(Focus), "Single Discipline", Focus),
+    short_name = gsub(", Department of","", Unit), 
+    short_name = gsub(",? (Johnny Carson )?School of","", short_name),
+    short_name = gsub(" Engineering", " Engr", short_name),
+    short_name = gsub(" Program", "", short_name)) |>
+  select(-Toss) # toss the left-over string
+
+
+unl_depts_sum <- unl_depts |> 
+  group_by(Unit, short_name) |> 
+  summarize(`SRI Percentile` = max(`SRI Percentile`)) |> 
+  ungroup()
+  
+eliminate <- c("Statistics", 
+               "Educational Administration", 
+               "Landscape Architecture", 
+               "Community and Regional Planning", 
+               "Earth and Atmospheric Sciences",
+               "Textiles, Merchandising, and Fashion Design")
+
+merger1 <- c("Agricultural Economics", "Agricultural Leadership, Education and Communication")
+merger2 <- c("Entomology", "Plant Pathology")
+
+
+unl_depts_sum <- unl_depts_sum |> 
+  mutate(Unit = reorder(factor(Unit), `SRI Percentile`, function(x) median(x))) |>
+  mutate(Quintile = cut_number((-1)*`SRI Percentile`, 5),
+         Proposed = ifelse(short_name %in% eliminate, "Eliminate", 
+                           ifelse(short_name %in% merger1, "Merger1",
+                                 ifelse(short_name %in% merger2, "Merger2", "Not Mentioned"))))
+
+unl_depts_sum |>
+  ggplot(aes(x = `SRI Percentile`, y = Unit)) + 
+  geom_point(size = 3, aes(colour = Proposed)) + 
+  geom_text(aes(x = `SRI Percentile`, label = short_name, colour = Proposed), nudge_x = -2, hjust = 1) + 
+  theme_bw() + 
+  ylab("") + 
+  ggtitle("Units at UNL ranked by SRI Percentile compared to all Academic Analytics peers") +
+  facet_grid(Quintile~., space="free", scale="free") +
+  theme(strip.text = element_text(size=0)) + 
+  scale_x_continuous(limits = c(0, 100), expand=expand_scale(mult = c(.1, 0), add = c(.1, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
+        plot.title.position = "plot", legend.location = "plot", legend.position = c(0, 1), legend.justification = c(-0.01, 1.01)) + 
+  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40"))
+
+```
+
+UNL's ranking indicates that our research productivity and recognition is better than 75% of other R1 and R2 institutions. 
+
+If we look at our SRI compared to other groups of Statistics departments (@fig-sri-by-class), we find that we are performing better than several well-respected AAU and Big Ten institutions. 
+That is, if the Statistics department is eliminated, this is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions. 
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7.5
+#| fig-cap: "SRI for Statistics research performed at each institution. UNL is performing near the top of non-AAU R1 institutions, and well above many AAU statistics departments."
+#| label: fig-sri-by-class
+#| message: false
+#| warning: false
+#| echo: false
+
+
+unis <- read_csv("data-analysis/data/Institution - Comparing Institutions.csv")
+stats_r12 <- read_csv("data-analysis/data/Statistics, Department of - Benchmarking - R12.csv")
+stats_full <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv")
+
+
+r12 <- unis |> slice(grep("Doctoral Universities", Carnegie)) |>
+  mutate(`AAU Member` = ifelse(is.na(`AAU Member`), " Not", `AAU Member`))
+r12 <- r12 |> left_join(stats_r12 |> select(Institution_Id,Unit, SRI), by = c("Institution_id"="Institution_Id")) 
+stats_full <- stats_full |> left_join(unis |> select(Institution_id, Carnegie, `AAU Member`, `Land Grant`), 
+                        by = c("institutionid"="Institution_id"))
+
+colors <- tibble(
+  institutionname = c("University of Nebraska - Lincoln", 
+                      "Stanford University", 
+                      "University of California, Berkeley", 
+                      "Harvard University",
+                      "Purdue University",
+                      "Michigan State University",
+                      "Iowa State University",
+                      "University of Virginia", 
+                      "University of Maryland, College Park",
+                      "Virginia Polytechnic Institute and State University",
+                      "Ohio State University, The",
+                      "University of California, Irvine", 
+                      "Texas A&M University", 
+                      "University of South Florida",
+                      "Indiana University - Bloomington"),
+  shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
+                "Mich. State", "ISU", "UVA", "Maryland", "Virginia Tech", 
+                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana"),
+  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", "#18453b", "#c8102e", "#232D4B", "#e21833", "#68293b", "#BA0C2F", "#0C2340", "#500000", "#006747", "#990000"),
+  nudge_x = c(0, 0, 0.05, .05, 0, 
+              -0.05, 0, 0, -0.05, .175, 
+              0, 0, .15, 0, -0.125),
+  nudge_y = c(0.2, -0.15, 0.2, 0.3, 0.25, 
+              -0.35, -0.2, -0.25, -0.25, -0.15, 
+              0.35, -0.15, -0.4, -0.15, -0.075)
+)
+
+stats_full_dot <- stats_full |>
+  select(institutionname, facultycount, sri, Carnegie, `AAU Member`) |>
+  mutate(
+    Carnegie_short = 
+      ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+             ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+    Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  ) |>
+  left_join(colors) |>
+  mutate(color = if_else(is.na(color), "grey", color),
+         nudge_x = if_else(is.na(nudge_x), 0, nudge_x),
+         nudge_y = if_else(is.na(nudge_y), 0, nudge_y)) |>
+  mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other")))
+
+stats_full_dot |> 
+  ggplot(aes(x = sri, y = Carnegie_short)) + 
+  geom_dotplot(aes(fill = color), 
+               dotsize=.4, stackdir = "center", binwidth = 0.1, stackgroups = T)  + 
+  scale_fill_identity() + 
+  scale_color_identity() + 
+  facet_grid(classification~., scale="free", space="free") + 
+  theme_bw() + 
+  xlab("SRI") + ylab("") + 
+  ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
+  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, color != "grey"),
+            nudge_x = filter(stats_full_dot, color != "grey")$nudge_x, 
+            nudge_y = filter(stats_full_dot, color != "grey")$nudge_y) 
+
+```
+
+
+```{r fig.width= 10, warning = FALSE, message = FALSE, fig.height=7, }
+newadj <- tibble(
+  shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
+                "Mich. State", "ISU", "UVA", "Maryland", "Virginia Tech", 
+                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana"),
+  nudge_x2 = c(0, 0, 0, 0, 1, 
+              0, 0, 0, 0, 0, 
+              0, -2, 3, 0, -4),
+  nudge_y2 = c(0.2, -0.15, 0.2, -0.4, 0.1, 
+              -0.35, -0.2, 0.2, 0.1, -0.2, 
+              0.35, -0.2, -0.2, -0.1, 0)
+)
+
+
+stats_full_dot <- stats_full_dot |>
+  select(-nudge_x2, -nudge_y2) |>
+  left_join(newadj) 
+
+stats_full_dot |>
+  ggplot(aes(x = facultycount, y = Carnegie_short, fill = color)) + 
+  geom_dotplot(stackdir = "center", binwidth = 1, stackgroups = T)  +  
+  facet_grid(classification~., scale="free", space="free") + 
+  theme_bw() + 
+  scale_color_identity() + scale_fill_identity() + 
+  xlab("Number of Faculty") + ylab("") + 
+  ggtitle("Size of Statistics Departments by Carnegie Classification and AAU membership") +
+  geom_text(
+    aes(label = shortname, color = color), 
+    data = filter(stats_full_dot, color != "grey"),
+    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x2, 
+    nudge_y = filter(stats_full_dot, color != "grey")$nudge_y2)
+
+# need different colours
+ofcourse <- list(
+  geom_text(aes(label = "Stanford"), 
+            stats_full |> slice(grep("Stanford", institutionname)),
+            size = 5, nudge_y = 0.15),
+  geom_text(aes(label = "Berkeley"), stats_full |> slice(grep("Berkeley", institutionname)),
+            size = 5, nudge_y = 0.35, nudge_x = 0.1),
+  geom_text(aes(label = "Harvard"), stats_full |> slice(grep("Harvard", institutionname)),
+            size = 5, nudge_y = -0.25, nudge_x = 0.1)) 
+
+really <- list(
+  geom_text(aes(label = "Purdue"), 
+            stats_full |> slice(grep("Purdue", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5, nudge_x = 0.05,
+            size = 5, nudge_y = 0.35),
+  geom_text(aes(label = "Michigan State"), 
+            stats_full |> slice(grep("Michigan State", institutionname)),
+            hjust=0.5,
+            size = 5, nudge_y = 0.55),
+  geom_text(aes(label = "ISU"), 
+            stats_full |> slice(grep("Iowa State", institutionname)),
+            hjust=0.5,
+            size = 5, nudge_y = -0.35),
+  geom_text(aes(label = "UVA"), 
+            stats_full |> slice(grep("Virginia", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5,
+            size = 5, nudge_y = -0.35),
+  geom_text(aes(label = "Maryland"), 
+            stats_full |> slice(grep("Maryland", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5,
+            size = 5, nudge_y = -0.35)) 
+
+ppl + ofcourse  + really
+  
+```
 
 ## Teaching
 
@@ -540,11 +795,48 @@ XXX Need specific examples XXX
 
 ### Use of Scholarly Research Index {#sec-metric-sri-problems}
 
-The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate a research entities research performance with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, (2) recognition from the community in form of citations and awards, and (3) federal sponsoring of research projects measured by the number of grants and their amounts.
+#### Combination of Multiple SRI Values
 
-Different disciplines operate differently - books are more important in the humanities, while conference papers are the norm in computer science because even journal article publication moves too slow. 
-The weighting of each of these measures is therefore adjusted using discipline specific weightings which  are based on a factor analysis performed by Academic Analytics. 
-Academic Analytics then provides a SRI percentile score which compares each department to the other departments in its field, as the SRI measure is ultimately intended to be a way to compare departments within the same field. 
+Some departments have multiple SRI scores generated by Academic Analytics. 
+
+In some disciplines, departments might be book-focused or article focused, or might have members with different focuses. 
+Examples in @fig-sri-multiple-values include Communication Studies, Sociology, Advertising, Landscape Architecture, Interior Design, and Broadcasting, among others. 
+
+Another reason a department might have multiple SRI scores is that it is composed of multiple different disciplines. 
+Examples in @fig-sri-multiple-values include Agronomy & Horticulture, Earth and Atmospheric Sciences, the School of Computing, Physics and Astronomy, and Electrical and Computer Engineering.
+
+```{r message = FALSE, fig.height=10, fig.width = 9}
+#| fig-cap: Some Units at UNL have multiple SRI values, either because different departments focus on books or articles within the discipline, or because departments have faculty from multiple disciplines. 
+#| label: fig-sri-multi-values
+
+unl_depts |> 
+  mutate(short_name = reorder(factor(short_name), `SRI Percentile`, median)) |>
+  ggplot(aes(x = `SRI Percentile`, y = short_name)) + 
+  geom_point(size = 4, aes(colour = Focus), alpha = 0.75) + 
+  annotate("point", x = filter(unl_depts, short_name=="Statistics")$`SRI Percentile`, y = "Statistics", color = "black", shape = 1, size=4) + 
+           theme_bw() + 
+  ylab("") + 
+  ggtitle("Units at UNL, ranked by their standing compared to all AcA - monitored peers") +
+  scale_colour_manual(values = c("#d00000", "steelblue", "grey70")) + 
+  theme(legend.position = "bottom", plot.title.position = "plot")
+
+```
+
+When there are two different norms within a discipline, SRI scores were reportedly averaged to create a mean SRI value. 
+This is incorrect - because these values have different distributions, averaging them does not produce a meaningful result with a valid comparison distribution. 
+A more reasonable combination method would be to evaluate each score to get a distributional measure (quantile, percentile, rank), and then to take the maximum  of that measure - the departments peers would know what the focus area of the department is and which focus would be more appropriate. 
+
+In the case of a hybrid department, the scores were also averaged. 
+This approach is also not reasonable, as SRI distributions are not the same across disciplines. 
+It is critically important to go through the distribution, calculating a rank, percentile, or quantile rather than using averages. 
+Then, if the goal is to assess the department's performance, two reasonable approaches could be used to aggregate the percentile or quantile scores:
+
+- take a weighted average of the percentile or quantile scores, with weight determined by the composition of the department. 
+- take the maximum of the percentile or quantile scores in order to assess the overall opinion of the work done within the department in a community of peers. This makes more sense if the goal is to model how other people see UNL's departments, as people tend to remember outstanding work in the field more than they remember or consider average work. 
+
+
+
+### Problems with Overall Z-scores
 
 The UNL research z-score is created by standardizing each input measure with respect to all departments on campus before computing an unweighted average of each component z-score to form a single research index for each department.
 This is fundamentally problematic, as the SRI measure used by academic analytics not only incorporates many of the components used (federal expenditures, awards, books, citations), but also because the discipline-specific weightings are intended to allow for comparison within-disciplines, and they are being used here as a cross-discipline comparison. 
