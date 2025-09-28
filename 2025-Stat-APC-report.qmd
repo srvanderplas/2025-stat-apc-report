@@ -368,7 +368,7 @@ That is, if the Statistics department is eliminated, this is likely to hurt UNL'
 ```{r}
 #| fig-width: 10
 #| fig-height: 7.5
-#| fig-cap: "SRI for Statistics research performed at each institution. UNL is performing near the top of non-AAU R1 institutions, and well above many AAU statistics departments."
+#| fig-cap: "Research performance (SRI percentile) of units by classification. UNL is performing extremely well compared to its peers and has better performance than many AAU institutions."
 #| label: fig-sri-by-class
 #| message: false
 #| warning: false
@@ -401,17 +401,21 @@ colors <- tibble(
                       "University of California, Irvine", 
                       "Texas A&M University", 
                       "University of South Florida",
-                      "Indiana University - Bloomington"),
+                      "Indiana University - Bloomington",
+                      "University of North Carolina Charlotte"),
   shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
                 "Mich. State", "ISU", "UVA", "Maryland", "Virginia Tech", 
-                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana"),
-  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", "#18453b", "#c8102e", "#232D4B", "#e21833", "#68293b", "#BA0C2F", "#0C2340", "#500000", "#006747", "#990000"),
+                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana",
+                "UNC Charlotte"),
+  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", "#18453b", "#c8102e", "#232D4B", "#e21833", "#68293b", "#BA0C2F", "#0C2340", "#500000", "#006747", "#990000", "#005035"),
   nudge_x = c(0, 0, 0.05, .05, 0, 
-              -0.05, 0, 0, -0.05, .175, 
-              0, 0, .15, 0, -0.125),
+              -0.05, 0, 0, -0.05, .19, 
+              0, 0, .17, 0, -0.125,
+              NA),
   nudge_y = c(0.2, -0.15, 0.2, 0.3, 0.25, 
               -0.35, -0.2, -0.25, -0.25, -0.15, 
-              0.35, -0.15, -0.4, -0.15, -0.075)
+              0.35, -0.15, -0.4, -0.15, -0.075,
+              NA)
 )
 
 stats_full_dot <- stats_full |>
@@ -423,9 +427,7 @@ stats_full_dot <- stats_full |>
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |>
   left_join(colors) |>
-  mutate(color = if_else(is.na(color), "grey", color),
-         nudge_x = if_else(is.na(nudge_x), 0, nudge_x),
-         nudge_y = if_else(is.na(nudge_y), 0, nudge_y)) |>
+  mutate(color = if_else(is.na(color), "grey", color)) |>
   mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other")))
 
 stats_full_dot |> 
@@ -438,30 +440,78 @@ stats_full_dot |>
   theme_bw() + 
   xlab("SRI") + ylab("") + 
   ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
-  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, color != "grey"),
-            nudge_x = filter(stats_full_dot, color != "grey")$nudge_x, 
-            nudge_y = filter(stats_full_dot, color != "grey")$nudge_y) 
+  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, color != "grey" & !is.na(nudge_x)),
+            nudge_x = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_x, 
+            nudge_y = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_y) 
 
 ```
 
+What is remarkable is that UNL does all of this with a department that is very small relative to its peers, as shown in @fig-size-by-class. 
+It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty while keeping research productivity high. 
 
-```{r fig.width= 10, warning = FALSE, message = FALSE, fig.height=7, }
-newadj <- tibble(
+```{r}
+#| fig-width: 10
+#| fig-height: 7.5
+#| fig-cap: "Size of Statistics-related Units at each institution. UNL is managing to handle all of its BS, MS, and PhD programs within a department that is extremely small relative to peer institutions at both R1 and AAU institutions."
+#| label: fig-size-by-class
+#| message: false
+#| warning: false
+#| echo: false
+
+
+colors <- tibble(
+  institutionname = c("University of Nebraska - Lincoln", 
+                      "Stanford University", 
+                      "University of California, Berkeley", 
+                      "Harvard University",
+                      "Purdue University",
+                      "Arizona State University",
+                      "Iowa State University",
+                      "University of Virginia", 
+                      "University of Maryland, College Park",
+                      "Virginia Polytechnic Institute and State University",
+                      "Ohio State University, The",
+                      "University of California, Irvine", 
+                      "Texas A&M University", 
+                      "Boston University",
+                      "Indiana University - Bloomington",
+                      "University of North Carolina Charlotte",
+                      "University of Massachusetts Amherst",
+                      "Auburn University",
+                      "North Dakota State University",
+                      "Duke University"),
   shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
-                "Mich. State", "ISU", "UVA", "Maryland", "Virginia Tech", 
-                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana"),
-  nudge_x2 = c(0, 0, 0, 0, 1, 
-              0, 0, 0, 0, 0, 
-              0, -2, 3, 0, -4),
-  nudge_y2 = c(0.2, -0.15, 0.2, -0.4, 0.1, 
-              -0.35, -0.2, 0.2, 0.1, -0.2, 
-              0.35, -0.2, -0.2, -0.1, 0)
-)
+                "Arizona State", "ISU", "UVA", "Maryland", "Virginia Tech", 
+                "Ohio State", "UC Irvine", "Texas A&M", "Boston U", "Indiana",
+                "UNC Charlotte", "UMass", "Auburn", "NDSU", "Duke"),
+  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", 
+            "#8C1D40", "#c8102e", "#232D4B", "#e21833", "#68293b", 
+            "#BA0C2F", "#0C2340", "#500000", "#CC0000", "#990000", 
+            "#005035", "#881c1c", "#0C2340", "#0a5640", "#003087"),
+  nudge_x = c( 0,  2,  0,  0,  1, 
+               0,  0,  0,  0,  3, 
+               0, -2,  3,  0, -4,
+              -2,  3,  0,  0,  -1),
+  nudge_y = c( 0.2 , -0.2, -0.3, -0.4,  0.1 , 
+              -0.1 , -0.1,  0.2,  0.1, -0.25, 
+               0.25, -0.2, -0.2, -0.1,  0   ,
+              -0.2 ,  0  ,  0.1, -0.2,  -0.2)
+) 
 
+stats_full_dot <- stats_full |>
+  select(institutionname, unitname, facultycount, sri, Carnegie, `AAU Member`) |>
+  mutate(
+    Carnegie_short = 
+      ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+             ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+    Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  ) |>
+  left_join(colors) |>
+  mutate(color = if_else(is.na(color), "grey", color)) |>
+  mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other"))) |>
+  arrange(institutionname, unitname) |>
+  mutate(shortname = if_else(shortname == "UNC Charlotte", paste(shortname, str_remove(unitname, ",.*$") |> str_replace("Mathematics and Statistics", "Math & Stats"), sep = "\n"), shortname))
 
-stats_full_dot <- stats_full_dot |>
-  select(-nudge_x2, -nudge_y2) |>
-  left_join(newadj) 
 
 stats_full_dot |>
   ggplot(aes(x = facultycount, y = Carnegie_short, fill = color)) + 
@@ -474,41 +524,8 @@ stats_full_dot |>
   geom_text(
     aes(label = shortname, color = color), 
     data = filter(stats_full_dot, color != "grey"),
-    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x2, 
-    nudge_y = filter(stats_full_dot, color != "grey")$nudge_y2)
-
-# need different colours
-ofcourse <- list(
-  geom_text(aes(label = "Stanford"), 
-            stats_full |> slice(grep("Stanford", institutionname)),
-            size = 5, nudge_y = 0.15),
-  geom_text(aes(label = "Berkeley"), stats_full |> slice(grep("Berkeley", institutionname)),
-            size = 5, nudge_y = 0.35, nudge_x = 0.1),
-  geom_text(aes(label = "Harvard"), stats_full |> slice(grep("Harvard", institutionname)),
-            size = 5, nudge_y = -0.25, nudge_x = 0.1)) 
-
-really <- list(
-  geom_text(aes(label = "Purdue"), 
-            stats_full |> slice(grep("Purdue", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5, nudge_x = 0.05,
-            size = 5, nudge_y = 0.35),
-  geom_text(aes(label = "Michigan State"), 
-            stats_full |> slice(grep("Michigan State", institutionname)),
-            hjust=0.5,
-            size = 5, nudge_y = 0.55),
-  geom_text(aes(label = "ISU"), 
-            stats_full |> slice(grep("Iowa State", institutionname)),
-            hjust=0.5,
-            size = 5, nudge_y = -0.35),
-  geom_text(aes(label = "UVA"), 
-            stats_full |> slice(grep("Virginia", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5,
-            size = 5, nudge_y = -0.35),
-  geom_text(aes(label = "Maryland"), 
-            stats_full |> slice(grep("Maryland", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5,
-            size = 5, nudge_y = -0.35)) 
-
+    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x, 
+    nudge_y = filter(stats_full_dot, color != "grey")$nudge_y)
 
   
 ```
