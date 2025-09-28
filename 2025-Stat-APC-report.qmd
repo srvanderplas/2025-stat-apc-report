@@ -85,21 +85,21 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 
 - 1972 - Statistics courses are transferred to the Statistics laboratory from Agronomy. Several new faculty are hired due to growing demand for consulting services and additional courses. 
 
-- Early 1970s - A Ph.D. program in statistics is discussed involving faculty from Math, Biometrics, Educational Psychology, and other departments ([1993 Biometry Department Self-Study](1993-Biometry-APR-SelfStudy.pdf), page 30). 
+- Early 1970s - A Ph.D. program in statistics is discussed involving faculty from Math, Biometrics, Educational Psychology, and other departments ([1993 Biometry Department Self-Study](documentation/1993-Biometry-APR-SelfStudy.pdf), page 30). 
 
 - 1978 - The Statistics Laboratory is renamed the Biometrics and Information Systems Center.
 
-- 1985 - A committee is formed to study the feasibility of combining the Statistics portion of the Mathematics Department and the Biometrics Department into a Department of Statistics ([1993 Biometry Department Self-Study](1993-Biometry-APR-SelfStudy.pdf), page 31).
+- 1985 - A committee is formed to study the feasibility of combining the Statistics portion of the Mathematics Department and the Biometrics Department into a Department of Statistics ([1993 Biometry Department Self-Study](documentation/1993-Biometry-APR-SelfStudy.pdf), page 31).
 
-- 1987 - The Biometrics and Information Systems Center is divided into the Biometrics Center and IANR Computing, as recommended in 1985 self-study ([1993 Biometry Department  Self-Study](1993-Biometry-APR-SelfStudy.pdf), page 31).
+- 1987 - The Biometrics and Information Systems Center is divided into the Biometrics Center and IANR Computing, as recommended in 1985 self-study ([1993 Biometry Department  Self-Study](documentation/1993-Biometry-APR-SelfStudy.pdf), page 31).
 
-- 1988 - The Division of Statistics is established as a subgroup within the Department of Mathematics and Statistics ([2001 Mathematics & Statistics Department Self-Study](2001-MathStats-Apr-SelfStudy.pdf))
+- 1988 - The Division of Statistics is established as a subgroup within the Department of Mathematics and Statistics ([2001 Mathematics & Statistics Department Self-Study](documentation/2001-MathStats-Apr-SelfStudy.pdf))
 
-- 1989 - The Department of Biometry is established from the Biometrics Center. Faculty from the Biometrics Center hold academic appointments in the Biometry department. ([1993 Biometry Self-Study](1993-Biometry-APR-SelfStudy.pdf), page 9)
+- 1989 - The Department of Biometry is established from the Biometrics Center. Faculty from the Biometrics Center hold academic appointments in the Biometry department. ([1993 Biometry Self-Study](documentation/1993-Biometry-APR-SelfStudy.pdf), page 9)
 
-- 1990 - The Board of Regents approves an MS program in Biometry ([1993 Biometry Self-Study](1993-Biometry-APR-SelfStudy.pdf), page 20).
+- 1990 - The Board of Regents approves an MS program in Biometry ([1993 Biometry Self-Study](documentation/1993-Biometry-APR-SelfStudy.pdf), page 20).
 
-- 1993 - The Mathematics APR Report recommends creation of a separate department of statistics ([2001 Mathematics & Statistics APR Self-Study](2001-MathStats-Apr-SelfStudy.pdf), pg 147)
+- 1993 - The Mathematics APR Report recommends creation of a separate department of statistics ([2001 Mathematics & Statistics APR Self-Study](documentation/2001-MathStats-Apr-SelfStudy.pdf), pg 147)
 
 ::: {.callout collapse=true}
 ### Motivation for Stand-alone Statistics Department
@@ -109,9 +109,9 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
   - A separate department will enrich the research of statisticians who are currently in the departments of Mathematics and Biometry
 :::
     
-- 2000 - A largely-autonomous Division of Statistics is created within the Department of Mathematics and Statistics with a focus area in survey sampling to support the Gallup Research Center. Some faculty transfer tenure homes into the department from Biometry and Sociology ([2001 Mathematics & Statistics APR Self-Study](2001-MathStats-Apr-SelfStudy.pdf), pg 14).
+- 2000 - A largely-autonomous Division of Statistics is created within the Department of Mathematics and Statistics with a focus area in survey sampling to support the Gallup Research Center. Some faculty transfer tenure homes into the department from Biometry and Sociology ([2001 Mathematics & Statistics APR Self-Study](documentation/2001-MathStats-Apr-SelfStudy.pdf), pg 14).
 
-- 2003 - The Statistics Department is founded from the Department of Biometry (IANR) and the Statistics faculty from the Department of Mathematics and Statistics ([2005 Statistics APR](2005-STAT-APR-Report.pdf), pg 3)
+- 2003 - The Statistics Department is founded from the Department of Biometry (IANR) and the Statistics faculty from the Department of Mathematics and Statistics ([2005 Statistics APR](documentation/2005-STAT-APR-Report.pdf), pg 3)
 
 - 2003 - A Statistics PhD program is created within the newly-formed Statistics Department. 
 
@@ -126,9 +126,9 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
     
 :::
 
-- 2005 - [APR Team recommends](2005-STAT-APR-Report.pdf) better integration and outreach to city campus and assessment of service teaching needs in other departments. 
+- 2005 - [APR Team recommends](documentation/2005-STAT-APR-Report.pdf) better integration and outreach to city campus and assessment of service teaching needs in other departments. 
 
-- 2013 - [APR Team recommends](2013-STAT-APR-Report.pdf) reducing graduate program enrollment and creation of an undergraduate and 3+2 BS+MS program. 
+- 2013 - [APR Team recommends](documentation/2013-STAT-APR-Report.pdf) reducing graduate program enrollment and creation of an undergraduate and 3+2 BS+MS program. 
 
 ::: {.callout collapse=true}
 ### Specific Recommendations
@@ -145,7 +145,7 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 
 - Fall 2019 - The Statistics department begins to design an undergraduate major in Statistics and Data Analytics at the request of CASNR Dean Tiffany Heng-Moss and in response to the recommendations from the 2013 APR. 
 
-- 2021 - [APR team recommends](2021-STAT-APR-Report.pdf) increasing the number of tenure-track faculty to 20, hiring several teaching faculty to increase instructional efficiency and capacity, and adding departmental administrators to ensure program success.
+- 2021 - [APR team recommends](documentation/2021-STAT-APR-Report.pdf) increasing the number of tenure-track faculty to 20, hiring several teaching faculty to increase instructional efficiency and capacity, and adding departmental administrators to ensure program success.
     
 - Fall 2021 - [Statistics and Data Analytics major approved by the Board of Regents](https://ccpe.nebraska.gov/sites/default/files/UNL%20Creation%20BS%20in%20Stats%20%20Data%20Analytics_08162021.pdf)
 
@@ -360,7 +360,7 @@ unl_depts_sum |>
 
 ```
 
-UNL's ranking indicates that our research productivity and recognition is better than 75% of other R1 and R2 institutions. 
+UNL's ranking indicates that the Statistics department's research productivity and recognition is better than 75% of other R1 and R2 institutions. 
 
 If we look at our SRI compared to other groups of Statistics departments (@fig-sri-by-class), we find that we are performing better than several well-respected AAU and Big Ten institutions. 
 That is, if the Statistics department is eliminated, this is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions. 
@@ -401,21 +401,17 @@ colors <- tibble(
                       "University of California, Irvine", 
                       "Texas A&M University", 
                       "University of South Florida",
-                      "Indiana University - Bloomington",
-                      "University of North Carolina Charlotte"),
+                      "Indiana University - Bloomington"),
   shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
                 "Mich. State", "ISU", "UVA", "Maryland", "Virginia Tech", 
-                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana",
-                "UNC Charlotte"),
-  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", "#18453b", "#c8102e", "#232D4B", "#e21833", "#68293b", "#BA0C2F", "#0C2340", "#500000", "#006747", "#990000", "#005035"),
+                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana"),
+  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", "#18453b", "#c8102e", "#232D4B", "#e21833", "#68293b", "#BA0C2F", "#0C2340", "#500000", "#006747", "#990000"),
   nudge_x = c(0, 0, 0.05, .05, 0, 
               -0.05, 0, 0, -0.05, .19, 
-              0, 0, .17, 0, -0.125,
-              NA),
+              0, 0, .17, 0, -0.125),
   nudge_y = c(0.2, -0.15, 0.2, 0.3, 0.25, 
               -0.35, -0.2, -0.25, -0.25, -0.15, 
-              0.35, -0.15, -0.4, -0.15, -0.075,
-              NA)
+              0.35, -0.15, -0.4, -0.15, -0.075)
 )
 
 stats_full_dot <- stats_full |>
@@ -447,7 +443,7 @@ stats_full_dot |>
 ```
 
 What is remarkable is that UNL does all of this with a department that is very small relative to its peers, as shown in @fig-size-by-class. 
-It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty while keeping research productivity high. 
+It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty (and with only a 30% FTE teaching professor of practice appointment) while keeping research productivity high. 
 
 ```{r}
 #| fig-width: 10
@@ -586,7 +582,7 @@ joint_data <- full_join(universities, stat_acad_anal, by = c("Name" = "instituti
 
 ```
 
-There is an incredible diversity of both names and structures for housing statisticians within institutions across R1 and AAU universities. 
+There is an incredible diversity of both names and structures for housing statisticians within units across R1 and AAU universities. 
 For the purposes of this analysis, there are two characteristics which seem to be particularly important: 
 
 - A group of statisticians located in the same department (whether that is called Statistics, Data Science, or Mathematics & Statistics), where 
@@ -650,6 +646,56 @@ These contributions are discussed in @sec-program-analysis.
 
 
 # Program Analysis {#sec-program-analysis}
+The APC procedures specify criteria for the reduction or elimination of academic programs: 
+
+V1.1. Criteria in support of reduction or elimination
+
+  1. The program’s present and probable future demand is insufficient to justify its maintenance at existing levels of support. Insufficient demand may be indicated by significant decline in one or more of these areas over a protracted period:
+    1. the number of completed applications for admission to the program;
+    2. the student credit hours generated in lower division, upper division, professional, and/or graduate level courses in the program;
+    3. the number of students who complete majors or degrees in the program;
+    4. in the case of instructional programs designed to prepare graduates for specific employment, the market demand for graduates of the program;
+    5. in the case of service programs, the level of demand for the service provided;
+    6. in the case of research programs, the quality and quantity of research being conducted;
+    7. in the case of research programs, the level of external funding, given the relative availability of funds.
+    
+Of the fastest growing occupations identified by the Bureau of Labor Statistics, Data Scienctists, Actuaries, and Operations research analysts are 4th, 8th, and 9th, respectively. All involve statistical training, and many data science jobs are jobs which would have been advertised as requiring statistics even 5 years ago. However, even if we confine ourself to Statisticians, the BLS expects 9% growth in statistics positions over the next decade, which is considerably faster growth than most other professions. 
+Thus, we can see that the market demand for graduates of our programs at all levels is there. 
+In addition, while statistics does not pull in grants which are comparable in size to those in lab-based sciences that require laboratory equipment, AI is one of the stated research priorities of the current administration. 
+Most deep learning and large language models are built on a fundamental foundation of statistics. 
+
+While we are early in our undergraduate program, and have not yet existed long enough to graduate our first class, we expect that the increased demand for data scientists and statisticians should result in increased enrollment in the program over the near term, so long as we have sufficient support from the university for advertising and recruiting. 
+Of course, it is easier to recruit students when it is possible to make statements about graduates having found jobs, or continued on to graduate school. For instance, we can advertise our Ph.D. program by saying that all graduates have found employment in their field, whether in academia, government, or industry. 
+It is somewhat harder to recruit new students before the program has graduated its first class.
+This is one reason why the NE Coordinating Commission for Postsecondary Education rules state that new programs should not be evaluated before they have been open for 5 years. XXX Cite XXX
+
+It will take some work to undo the damage from the public proposal to eliminate the program, but we believe the economic conditions are sufficient to make this a worthwhile investment for UNL. 
+@sec-future discusses several options for the future of the program which could mitigate this obstacle and could significantly improve enrollment in the program. 
+
+
+
+    2. The program would normally be expected to be accredited but is not; or it is exposed to a substantial risk of loss of accreditation. If the program is not appropriate for accreditation, the program has been deemed to be of a quality or size that raises questions concerning its viability or continuation.
+    3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
+      1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
+      2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
+    4. The instructional productivity of a program is substantially less than the average for UNL as a whole. The level of instruction and the mode of instruction appropriate to the program shall be considered, including particularly the average number of contact hours carried by the faculty.
+    5. The program’s reduction or elimination will not substantially impair the viability or quality of other UNL programs.
+    6. The program’s contribution to the UNL missions of instruction, research, and service is sufficiently marginal not to justify maintenance of its present size.
+  2. Criteria indicating that elimination is inadvisable
+    1. The program has achieved a national or international reputation for quality as indicated by objective evaluations.
+    2. The program supplies significant instruction, research, or service that UNL is better equipped to supply than other colleges or universities.
+    3. The program is the only one of its kind within the State of Nebraska.
+    4. The program is an essential program for every university.
+    5. The program’s elimination would have a substantially negative impact on education and societal concerns in Nebraska.
+    6. The program’s elimination would result in substantial loss of revenue currently derived from grants, contracts, endowments or gifts.
+    7. The program represents a substantial capital investment in specialized physical plant or equipment that could not be effectively redirected to alternative uses.
+    8. The program is central to maintaining the university’s affirmative action goals.
+    9. The program gives the University of Nebraska-Lincoln its distinctive character.
+  3. Criteria indicating that reduction is inadvisable
+    1. The program’s nature is such that reduction would impair the critical mass necessary to have adequate quality.
+    2. The program cannot be reduced without a substantial risk to accreditation.
+    3. Current projections indicate that demand for the program or its graduates will increase substantially within the next five years.
+    4. Scholarly research or creative activity of the faculty within this program, as shown by publications, creative productions, honors and awards, external funding, or other objective measure, is higher than others in the same or related peer disciplines.
 
 
 ## Effects of Proposed Cuts 
@@ -802,6 +848,33 @@ select(tmp, name, role, phd, degree) |>
 
 
 ## Problems with the Metrics {#sec-metric-problems}
+
+### Provision of Data and Interactive Consultation Process
+
+APC Procedures Section 2.2:
+
+> Information used in the reallocation and reduction process must be made available to the budget planning participants and affected programs in a timely manner so that corrections and explanations can be made before it is released to the public.
+
+
+APC Procedures Section 2.3:
+
+> The process shall ensure that administrators, faculty, students, and staff are consulted. A shared definition of the word “consultation” is essential to ensure there is ample opportunity for advice prior to recommendations being developed. Consultation is **more than just giving and receiving information**; it allows all parties the opportunity and the time necessary to **explore and offer alternatives before administrative decisions are made**. Deans, directors,2 chairs and heads shall follow procedures as stipulated in their college and unit bylaws and allow advice, input, and discussion by faculty, staff, and, to the extent appropriate, students prior to proposals being submitted by unit administrators. Such consultation is intended to give administrators, students, staff, and faculty an opportunity for substantive interactions that go beyond simply sharing information.
+> One of the keys to the success of this process will be the manner with which the information considered at various stages is handled. In the early stages, it will be critical that those individuals responsible for developing budget reduction/reallocation proposals have an opportunity for candid discussions regarding the wide range of options open to them. Such candor is likely to occur only if participants are assured that the discussions will remain confidential. As the process moves forward and proposals are developed, it is essential that the scope of these working discussions expand to include units potentially affected by the proposals prior to public release.
+
+Throughout this process, units have been unable to access the data used to compute the metrics. 
+The Statistics department has identified that some of the grant numbers used seem to be incorrect, but have not been able to get the source numbers or computations from ORI. XXX TBD -- meeting tomorrow XXX
+Moreover, the numbers for SCH seem to be off by a factor of 10 in 2020 relative to what they should be. 
+The department has made enquiries about these issues, but has not made any progress with the making corrections component of the process. 
+
+Now, the statistics department received their own metrics in June, but, without any contextual information, it is hard to interpret the values (even with the codebook). 
+As any statistician knows, a single data point (particularly in a multi-dimensional domain) is useless; data gains power only through comparison to relevant reference distributions.
+The inability to consult with upper administration and to correct data and processes which are not reliable is *critical* to a fair budget process. 
+The statistics department has been denied this chance.
+
+In addition, it appears that the registrar and the graduate college have been instructed not to provide departments with any data related to the budget process. XXX Attach emails from EDAD XXX
+This creates an us-vs-them environment where departments proposed for elimination are frozen out of the university and not allowed to share in governance processes or counter the facts presented within the proposal.
+This is not how the APC process should unfold.
+
 
 ### Data Quality
 
