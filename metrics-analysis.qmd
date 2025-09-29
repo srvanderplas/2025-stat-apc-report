@@ -1,0 +1,458 @@
+---
+title: "Department Metrics"
+format: html
+---
+
+# General Descriptors
+## Identifiers
+1.1.1 `lowest_level_key` Numeric key of lowest level unit.
+1.1.2 `lowest_level_short_name` Short name of lowest level unit.
+1.1.3 `lowest_level_name` Full name of lowest level unit.
+1.2 `vcvp` Vice Chancellor that unit belongs to: EVC or IANR.
+1.3 `college` College for units that belong to a college.
+1.4 `department` Department for units that belong to an academic department.
+1.5 `has_finance_org` Indicator variable: 1 if the unit has a financial org, 0 otherwise.
+1.6 `has_acad_org` Indicator variable: 1 if the unit has a academic org, 0 otherwise.
+1.7 `has_hr_org` Indicator variable: 1 if the unit has a HR org, 0 otherwise.
+1.8 `acad_end_year` Academic ending year. E.g., 2024 for 2023-2024 AY.
+
+## Budget
+
+
+1.17 `original_sa_budget` Original state-aided budget (total). Original budget includes all permanent funding as of July 1. Temporary funding and cash carryforwards are excluded. This also shows up at Budget in final metrics.
+1.18 `original_sa_budget_gse` Original state-aided budget with General State-Aided fund subtype.
+1.19 `original_sa_budget_dt` Original state-aided budget with Differential Tuition fund subtype.
+1.20 `original_sa_budget_poe` Original state-aided budget with Programs of Excellence fund subtype.
+1.21 `original_sa_budget_other` Original state-aided budget with other fund subtypes, including Distance Education, Facilities & Administrative, Tobacco and etc.
+
+---
+
+1.32 `teaching_outlay` Appointment budgeted salary * appointment teaching apportionment (%) summed for unit.
+1.95 `instruction_budget` Original state-aided budget multiplied by teaching fte as a percentage of total fte for unit.
+
+1.33 `research_outlay` Appointment budgeted salary * appointment research apportionment (%) summed for unit.
+1.96 `research_budget` Original state-aided budget multiplied by research fte as a percentage of total fte for unit.
+
+1.34 `service_outlay` Appointment budgeted salary * appointment service apportionment (%) summed for unit.
+1.97 `service_budget` Original state-aided budget multiplied by service fte as a percentage of total fte for unit.
+
+1.35 `extension_outlay` Appointment budgeted salary * appointment extension apportionment (%) summed for unit.
+1.98 `extension_budget` Original state-aided budget multiplied by extension fte as a percentage of total fte for unit.
+
+1.36 `admin_outlay` Appointment budgeted salary * appointment administration apportionment (%) summed for unit.
+1.99 `admin_budget` Original state-aided budget multiplied by admin fte as a percentage of total fte for unit.
+
+---
+
+1.72 `budget_from_evc_file_state_appropriated_budget` State-aided budget.
+
+
+1.991 `total_realizable_base_tuition_less_budget` This is estimated by `total_realizable_base_tuition` (1.49) less original state-aided budget, apportioned for `percent_teaching` (also `instruction_budget`, see 1.95 above).
+
+
+## Appointments & Headcount
+
+1.9 `appointment_apportionment_fte` Total apportioned FTE across all appointments.
+
+
+1.10 `appointment_apportionment_percent_teaching_fte` Sum of faculty teaching apportionment by appointment times FTE by unit.
+1.11 `appointment_apportionment_percent_research_fte` Sum of faculty research apportionment by appointment times FTE by unit.
+1.12 `appointment_apportionment_percent_service_fte` Sum of faculty service apportionment by appointment times FTE by unit.
+1.13 `appointment_apportionment_percent_extension_fte` Sum of faculty extension apportionment by appointment times FTE by unit.
+1.14 `appointment_apportionment_percent_admin_fte` Sum of faculty admin apportionment by appointment times FTE by unit.
+
+1.15 `total_instructor_fte` Sum of `appointment_apportionment_fte` by unit.
+
+---
+
+1.37 `percent_teaching` `sum(appointment_apportionment_percent_teaching_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no teaching apportionment.
+1.38 `percent_research` `sum(appointment_apportionment_percent_research_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no research apportionment.
+1.39 `percent_service` `sum(appointment_apportionment_percent_service_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no service apportionment.
+1.40 `percent_extension` `sum(appointment_apportionment_percent_extension_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no extension apportionment.
+1.41 `percent_admin` `sum(appointment_apportionment_percent_admin_fte) / sum(appointment_apportionment_fte) for unit`. This is set to zero when there is no admin apportionment.
+
+---
+
+1.66 `t_tt_headcount_2014_2023_avg` The average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center. Headcounts were assigned to departments using the HR tenure org unit.
+
+::: callout
+
+Our department had a long-time Professor of Practice, Kathy Hanford, who had a research and teaching apportionment and was the professor in charge of the SC3L. She retired at the end of 2023, so she *should* be included in most of our metrics, but isn't because she was not tenure track. 
+She does, however, count against our budget. 
+Her research productivity, grant productivity, and collaborations across campus should count when evaluating the department's importance within UNL, but they do not currently. 
+The focus on tenure track positions to the exclusion of all others is incredibly damaging, particularly when a department is as small as we are. 
+If Kathy had been hired more recently, the position would have likely been tenure track (and when the position was posted to find her replacement, it was posted as tenure track). 
+The current head of SC3L, Dr. Reka Howard, is an associate professor in the department.
+
+:::
+
+
+1.50 `vsip_eligible_n` The count of VSIP-eligible tenure-track faculty as of summer, 2026. If this follows past methodology, this is the count of faculty who:
+
+- are tenured
+- are 62 years of age as of their eligibility date: June 30, 2026 (FY contract length) or August 27, 2026 (AY contract length)
+- have 10 years of service as of their eligibility date
+
+This is an estimate. At present, it is impossible to determine how many would meet the final criterion: No accepted retirement contract/letter in place.
+
+1.51 `vsip_eligible_pct` The proportion of the unit’s tenure-track faculty who would be eligible for VSIP in summer, 2026.
+
+
+
+# Teaching
+
+## Enrollment
+
+1.42 `U_major_n` Count of undergraduate majors, including non-primary majors.
+1.44 `G_major_n` Count of graduate majors, including non-primary majors.
+1.46 `P_major_n` Count of professional majors, including non-primary majors.
+1.87 `majors` Sum of U, G, and P majors (all majors).
+
+---
+
+1.22 `major_completions_bachelor_degree` Count of all Bachelors completions within major (including non-primary majors).
+1.24 `major_completions_two_years_college` Count of all graduate certificate completions within major (including non-primary majors).
+1.26 `major_completions_masters_degree` Count of all Masters completions within major (including non-primary majors).
+1.28 `major_completions_doctorate_degree` Count of all Doctorate completions within major (including non-primary majors).
+1.30 `major_completions_post_masters` Count of all Post Masters completions within major (including non-primary majors).
+
+---
+
+1.43 `U_primary_major_n` Count of undergraduate primary majors.
+1.45 `G_primary_major_n` Count of graduate primary majors.
+1.47 `P_primary_major_n` Count of professional primary majors.
+
+---
+
+1.23 `degree_n_bachelor_degree` Count of all Bachelors degrees with attached major (primary)
+1.25 `degree_n_two_years_college` Count of all graduate certificates with attached major (primary).
+1.27 `degree_n_masters_degree` Count of all Masters degrees with attached major (primary).
+1.29 `degree_n_doctorate_degree` Count of all Doctorate degrees with attached major (primary).
+1.31 `degree_n_post_masters` Count of all Post Masters degrees with attached major (primary).
+
+1.88 `degrees` Sum of Bachelors, Masters, Doctorate, and Post Masters primary degrees
+
+---
+
+
+1.89 `ratio_completions_majors` Ratio of all degree completions (all majors attached to a degree) to all majors, including non-primary.
+
+---
+
+1.871 `minors_U` Count of all undergraduate students in one or more minors offered by the unit.
+1.872 `minors_G` Count of all graduate students in one or more minors offered by the unit.
+
+---
+
+
+1.86 `enrollment` Sum of U, G, and P unduplicated AY headcount
+1.94 `average_enrollment` Mean of unduplicated enrollment headcount by unit.
+
+---
+
+1.93 `all_majors_share_growth` Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.
+
+
+1.53 `retention_rate` First-year to second-year retention rate (cohort = AY - 1).
+
+1.54 `avg_retention_rate` Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.
+
+1.55 `grad_rate6` Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.
+
+1.56 `avg_grad6` Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.
+
+
+## SCH & Tuition
+
+
+1.48 `sch` Sum of course SCH by owner of course subject code.
+
+
+1.49 `total_realizable_base_tuition` sch by course career and student residency times base tuition rate. For AY2024, these rates were:
+Career | Resident | Non-resident
+--- | --- | ---
+UG | \$268 | \$859
+G/P |  \$353 | \$1031
+
+1.52 `instructor_sch` The logic for Instructional SCH is:
+- If a course prefix maps to a “unit” that is instructed by a faculty member with an appointment in that “unit” then the SCH will be assigned to that “unit”.
+- If a course prefix maps to a “unit” that is instructed by a faculty member WITHOUT an appointment in that “unit” then the SCH will be assigned to the “unit” where the faculty member has their largest percentage of appointment (primary appointment home).
+- If a course maps to a “unit” that is instructed by a faculty member without an appointment e.g., no instructor of record recorded, then the SCH is assigned to the “unit” according to the course prefix. 
+
+
+1.84 `instructional_sch` Sum of SCH attributed to instructors’ home departments. The formula takes the percentages designated to each instructor in Peoplesoft.
+`Sum(Section SCH x Instructor %)`
+
+![](images/instructional-sch-calc.png)
+
+
+1.90 `instructional_sch_to_instructional_fte` Instructional SCH divided by apportioned teaching FTE
+
+1.91 `average_instructional_sch` Mean of instructional SCH by unit.
+
+1.92 `instructional_sch_4Y_share_growth` Change in share (percentage) of total instructional SCH from AY2020 to AY2024.
+
+
+## Ratios
+
+1.85 `budget_to_sch` total original state aided budget divided by SCH
+
+1.16 `instructional_sch_to_instructional_fte` Sum of each instructor’s section instruction percentage times section sch by home department of appointment divided by `total_instructor_fte.`
+
+
+# Research
+
+1.57 `research_average` (Research Average z-score) Average research z-score with non-departmental units (including Dean’s offices) removed.
+
+1.58 `research_avg_z_score_equally_weighted` Alternate calculation of research average with non-departmental units included in population with zero research productivity.
+
+1.83 `comments` Comments from ORI regarding research metrics, their crosswalk to instructional units, etc.
+
+## SRI
+
+1.82 `sri_aau_public_peers` Academic Analytics SRI score when comparing units to Public AAU Institutions. If a unit has multiple SRI scores available, they were averaged.
+
+
+> The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate the research performance of individuals and entities with respect to 
+> 
+> 1. scholarly products, such as conference proceedings, research articles, books, and book chapters, 
+> 2. recognition from the community in form of citations and awards, and 
+> 3. federal sponsoring of research projects measured by the number of grants and their amounts.
+> 
+> Different disciplines operate differently. 
+> The weighting of each of these measures is therefore adjusted discipline specific (based on a factor analysis by Academic Analytics). 
+
+1.59 `sri_aau_public_peers_z_score` Z score of sri_aau_public_peers
+
+
+::: callout
+### SRI Problem 1 - Averaging Multiple SRI scores
+
+Some departments have multiple SRI scores generated by Academic Analytics. 
+
+In some disciplines, departments might be book-focused or article focused, or might have members with different focuses. 
+Examples in @fig-sri-multiple-values include Communication Studies, Sociology, Advertising, Landscape Architecture, Interior Design, and Broadcasting, among others. 
+
+Another reason a department might have multiple SRI scores is that it is composed of multiple different disciplines. 
+Examples in @fig-sri-multiple-values include Agronomy & Horticulture, Earth and Atmospheric Sciences, the School of Computing, Physics and Astronomy, and Electrical and Computer Engineering.
+
+```{r message = FALSE, fig.height=10, fig.width = 9}
+#| fig-cap: Some Units at UNL have multiple SRI values, either because different departments focus on books or articles within the discipline, or because departments have faculty from multiple disciplines. 
+#| label: fig-sri-multi-values
+
+unl_depts |> 
+  mutate(short_name = reorder(factor(short_name), `SRI Percentile`, median)) |>
+  ggplot(aes(x = `SRI Percentile`, y = short_name)) + 
+  geom_point(size = 4, aes(colour = Focus), alpha = 0.75) + 
+  annotate("point", x = filter(unl_depts, short_name=="Statistics")$`SRI Percentile`, y = "Statistics", color = "black", shape = 1, size=4) + 
+           theme_bw() + 
+  ylab("") + 
+  ggtitle("Units at UNL, ranked by their standing compared to all AcA - monitored peers") +
+  scale_colour_manual(values = c("#d00000", "steelblue", "grey70")) + 
+  theme(legend.position = "bottom", plot.title.position = "plot")
+
+```
+
+When there are two different norms within a discipline, SRI scores were reportedly averaged to create a mean SRI value. 
+This is incorrect - because these values have different distributions, averaging them does not produce a meaningful result with a valid comparison distribution. 
+A more reasonable combination method would be to evaluate each score to get a distributional measure (quantile, percentile, rank), and then to take the maximum  of that measure - the departments peers would know what the focus area of the department is and which focus would be more appropriate. 
+
+In the case of a hybrid department, the scores were also averaged. 
+This approach is also not reasonable, as SRI distributions are not the same across disciplines. 
+It is critically important to go through the distribution, calculating a rank, percentile, or quantile rather than using averages. 
+Then, if the goal is to assess the department's performance, two reasonable approaches could be used to aggregate the percentile or quantile scores:
+
+- take a weighted average of the percentile or quantile scores, with weight determined by the composition of the department. 
+- take the maximum of the percentile or quantile scores in order to assess the overall opinion of the work done within the department in a community of peers. This makes more sense if the goal is to model how other people see UNL's departments, as people tend to remember outstanding work in the field more than they remember or consider average work. 
+
+:::
+
+::: callout
+### SRI Problem 2 - Cross-Department Comparisons
+
+It is **completely inappropriate** to use SRI values to compare departments to other departments within the same university. 
+SRI values have a distribution that is discipline specific, with different means and variances. 
+As-is they are not comparable outside of that distribution, as shown in @tbl-sri-incomparable
+
+
+```{r}
+#| label: tbl-sri-incomparable
+unl_depts |> filter(SRI==.4) |>
+  select(Unit, SRI, `SRI Percentile`, `Number of Units`, `SRI Rank`) |>
+  arrange(desc(`SRI Percentile`)) |>
+  knitr::kable(caption="Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree.")
+```
+
+Calculating a mean and standard deviation to create a z-score for SRI values across disciplines destroys any information which could have been found in the SRI measure.
+
+Note that this is *not* an objection to SRI as a concept. 
+It seems that SRI is a more fair method of comparison than other attempts to replicate SRI used in this process, because at least all departments across a discipline are compared using the same (sometimes flawed) data^[Academic Analytics analysts are very aware of the flaws in their data. If UNL wants to improve as an institution, one way to facilitate that would be to have PIs to ask e.g. federal grant agencies other than NIH and NSF to report data to Academic Analytics, as this would likely help us.].
+As it is, the metrics assembled by UNL, while applied to all departments equally, have unequal effects on different departments because the metrics used favor one discipline over another due to norms within that discipline.
+The problem with SRI is that it must be used in the context for which it was intended: comparing departments to other similar departments. 
+
+**Problem** Under the UNL proposed method (using the SRI relative to public AAU institutions), it seems that custom SRI is used instead of percentile. This renders any calculations done on SRI, and any calculations which use `sri_aau_public_peers` or `sri_aau_public_peers_z_score`, functionally meaningless as they are not comparing values drawn from the same distribution to each other. Without a common reference distribution, it is inappropriate to pool values by calculating a common mean and variance, and then to use that common mean and variance to produce a z-score. 
+
+**Solution** SRI should be converted to a percentile (or corresponding quantile, if the goal is a z-score), and in disciplines without sufficient comparison departments, there will be a lot of variability in the percentile (which should be treated as an estimate). 
+
+**Theory & Statistical Rationale**
+The Glivenko-Cantelli theorem guarantees that as  $n\rightarrow\infty$ the empirical CDF (eCDF) converges to the distribution CDF [demonstration via WolframAlpha](https://demonstrations.wolfram.com/ConvergenceOfTheEmpiricalDistributionFunctionOfASample/). 
+While there is no guideline for sufficient $n$, the eCDF will be extremely blocky and step-function like at first, and as $n$ increases, the average distance between discontinuity points will decrease, producing an increasingly smooth function. 
+The variance of the estimated percentile can be estimated by treating the percentile as a proportion and using a [binomial confidence interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval) to get a sense of the variability. Then, this binomial confidence interval can be mapped back to normal quantiles if a z-score range is desired.  
+
+
+:::
+
+
+## Awards
+
+
+1.68 `awards_ltd_2023_total` NCR highly prestigious awards, including national academy memberships in engineering, medicine and science. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only awards for T/TT faculty in benchmarked AcA units is reported to the AAU. Highly prestigious awards are tracked over the life of the faculty member’s career and are credited to the institution where they are currently employed. Once a faculty member retires or leaves an institution, their highly prestigious awards are no longer included in the data reported to AAU. Put another way, the highly prestigious awards follow the faculty member.
+From the AAU Membership Policy: AAU collects the number of faculty members by institution receiving awards, fellowships, and memberships in the National Research Council (NRC) list of highly prestigious awards that included: research/scholarship awards, teaching awards, prestigious fellowships or memberships in honorary societies. Each data year represents the faculty’s lifetime honors and awards, not new honors and awards. University of Maryland, College Park data includes University of Maryland, Baltimore beginning in 2019. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced under a license agreement with Academic Analytics. http://academicanalytics.com/ . The list of the NRC highly prestigious awards can be found at: National Research Council List of Highly Prestigious Awards | Association of
+American Universities (AAU). Memberships in the National Academies (NAS, NAE, NAM) compiled from the membership lists of each academy; lists can be found at: National Academy of Sciences: http://www.nasonline.org/member-directory/, National Academy of Engineering: http://www.nae.edu/default.aspx?id=20412, National Academy of Medicine: https://nam.edu/directory-search-form/
+
+
+::: callout
+
+Award comparisons should be made within discipline, not across disciplines, as the AAU list of prestigious awards does not include the [AERA](https://www.aera.net/About-AERA/AERA-Awards) awards for education. 
+As the national academies listed do not induct professors teaching in education, it is irrational to compare e.g. the physics department, whose members could conceivably be inducted into the NAS, NAE, or both depending on the subfield. 
+This is one reason why Academic Analytics compares within discipline and not across disciplines.
+
+:::
+
+1.79 `awards_normalized` `awards_ltd_2023_total` divided by `t_tt_headcount_2014_2023_avg.`
+
+1.63 `awards_normalized_z_score` Z score of `awards_normalized` Normalized highly prestigious awards, fellowships and memberships as defined by the AAU membership policy for awards received LTD up to 2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+## Books
+
+
+1.69 `books_2014_2023_total` The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. Book publications reported to AAU by AcA include books, casebooks, edited volumes, encyclopedias, and textbooks. AcA book types not reported include journals, proceedings, study guides and book chapters. Book publications are credited to departments based on the author’s HR tenure org unit. From the AAU Membership Policy:
+The total number of books published by the institution for the most recent ten-year period. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced
+under a license agreement with Academic Analytics. http://academicanalytics.com/
+
+
+
+1.80 `books_normalized` `books_2014_2023_total` divided by `t_tt_headcount_2014_2023_avg.`
+
+1.64 `books_normalized_z_score` Z score of `books_normalized` Normalized book publications as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+
+## Citations
+
+1.70 `citations_2014_2023_avg` The average number of citations on peer-reviewed articles for the most recent ten-year period. AcA reports citations in the year of the publication. Citations for articles coauthored by more than one UNL faculty member have been split equally across authors. AAU uses Web of Science InCites for the citations data. UNL does not currently subscribe to InCites and so is using Academic Analytics to track and report this data. Citations are credited to departments based on the author’s HR tenure org unit. From the AAU Membership Policy: Average number of times an institution’s Web of Science Documents have collectively been cited for the most recent ten-year period. InCitesTM, Clarivate (2023). Web of Science. ® These data are reproduced under a license agreement from Clarivate. http://incites.clarivate.com/
+
+1.81 `citations_normalized` `citations_2014_2023_avg` divided by `t_tt_headcount_2014_2023_avg.`
+
+1.65 `citations_normalized_z_score` Z score of `citations_normalized` Normalized citations as defined by the AAU membership policy (using Academic Analytics as a proxy for InCites) for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+## Research Awards Inc NUF
+
+1.74 `research_awards_growth_inc_nuf_fy2020_total_research_awards` Total sponsored research awards received in FY2020. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+
+1.75 `research_awards_growth_inc_nuf_fy2024_total_research_awards` Total sponsored research awards received in FY2024. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+
+1.76 `research_awards_growth_inc_nuf_fy20_fy24` `research_awards_growth_inc_nuf_fy2024_total_research_awards` minus
+`research_awards_growth_inc_nuf_fy2020_total_research_awards` Growth of sponsored research awards from FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This was calculated by taking the dollar growth over the time period of FY24 – FY20 as a percentage of total growth for the institution resulting in that unit’s share of the overall growth dollars for the institution over the reported time period.
+
+1.77 `research_awards_growth_inc_nuf_percent_of_total` `research_awards_growth_inc_nuf_fy20_fy24` for the department/unit divided by `research_awards_growth_inc_nuf_fy20_fy24` for UNL as a whole
+
+1.61 `research_awards_growth_inc_nuf_z_score` Z score of `research_awards_growth_inc_nuf_fy20_fy24`
+
+
+## Total Sponsored Awards Inc NUF RSCH PUB SERV TEACH
+
+1.71 `average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` Average annual sponsored awards received in FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. Purpose codes reported include research, teaching and public service which are summed and divided by total state appropriated budget. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+
+
+1.73 `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` `Average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` divided by `budget_from_evc_file_state_appropriated_budget` Average sponsored awards for FY20-24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation, for purpose codes research, teaching and public service divided by total state appropriated budget.
+
+1.60 `awards_budget_inc_nuf_z_score` Z score of `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`
+
+## P1 Expenditures
+
+1.67 `p1_expenditures_2014_2023_avg` The average competitively funded federal research support as defined by the AAU membership policy, federal research expenditures less USDA research expenditures adding in awards from USDA Agriculture Food and Research Initiative (AFRI). Expenditures and AFRI awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+From the AAU Membership Policy: Competitively funded federal research support: federal R&D expenditures. A ten-year average of federal research expenditures (including S&E and non-S&E) adjusted to exclude USDA formula-allocated research expenditures. This indicator includes obligations for the AFRI program funded by USDA. National Science Foundation (NSF) Survey of Research and Development Expenditures at Universities and Colleges/Higher Education Research and Development Survey (HERD), data for the most recently available ten-year average. AFRI Obligations, data for the ten years that match the years from HERD. 
+
+1.78 `p1_expenditures_normalized` `p1_expenditures_2014_2023_avg` divided by `t_tt_headcount_2014_2023_avg.`
+
+
+1.62 `p1_expenditures_normalized_z_score` Z score of `p1_expenditures_normalized` Normalized competitively funded federal research expenditures as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+
+# Instructional Z-scores in Institutional Metrics
+
+All z-scores (also known as standardized or normalized scores) were calculated as the
+difference of the actual metric and the mean of the metric for included units divided by the
+standard deviation of the included units’ metrics. 
+
+It measures the number of standard deviations a metric is from the mean. 
+In a normal distribution, approximately two-thirds of scores fall within +/- 1 standard deviation of the mean. 
+Approximately 95% of cases fall within +/- 1.96 standard deviations of the mean. 
+Traditionally – but not universally – cases beyond the 1.96 standard deviation threshold are considered outliers.
+
+::: callout
+### Instructional Z-score Problem
+
+While standardizing scores is common practice in some circumstances, it is problematic as used here, in part because it assumes that there is a single common distribution used for these values. 
+For instance, disciplines that only have graduate programs cannot be assumed to have the same distribution of SCH because of much lower numbers of graduate students. 
+It is utterly ridiculous to compare these programs to programs such as math or english who teach large numbers of nonmajor undergraduate service courses and will have SCH values on a vastly different scale. 
+Departments **do not** have quantities which can be said to be "identically distributed" (in statistical parlance) even if you assume that the instructional metrics are reflective of a distribution of department performance, because not every department is competing in every pool.
+At minimum, it would be necessary to do some assessment of whether a course is primarily taken by majors or nonmajors, and then compare service teaching load separately from major teaching load, and undergraduate hours separately from graduate hours. 
+Even under this system, it is probably necessary to "bin" departments based on the number of service courses taught/required on an annual basis, because e.g. Math will teach Calc 1, 2, 3, but Chemistry might teach an elective introductory course that counts for a science prerequisite, and the structural differences between these two departments and their relationship to other majors offered on campus matter significantly. 
+While these factors are related to department productivity, no amount of work by the EDAD department is going to ensure that they teach every undergraduate STEM major an introductory service course, and as such it is ridiculous to compare SCH between EDAD and MATH or PHYS or STAT. 
+
+Moreover, the description of interpretation implies that these are normally distributed variables, but e.g. share of growth is necessarily confined to a value between 0 and 1, which is decidedly not normal because the normal distribution has support over the entire real line (that is, every value between $-\infty$ and $\infty$ has a positive, theoretically non-zero probability, though of course the values far from the mean of the distribution are expected to be infinitesimal). 
+
+When a metric consists of a ratio of two values, as many of these metrics do, it is even less likely that the random quantity has a normal distribution. In fact, if the numerator and denominator are both standard normally distributed, the ratio is Cauchy distributed, and Cauchy variables do not have estimable means or variance -- you can calculate a value for observed data, but it does not mean anything and is not an estimator of any useful quantity. While the problem is not quite as dramatic when the means of both distributions are nonzero, it is still important to be cautious because there are a number of different [ratio distributions](https://en.wikipedia.org/wiki/Ratio_distribution) which might be relevant and not all of them are "nice". 
+This might be expected to be the case with a variable like `budget_to_sch_2024`. 
+
+Ultimately, just because you *can* calculate a z-value doesn't ensure that it has meaning in the context of the data. 
+Even if it would *seem* to have meaning, and every point is taken from the same reference distribution, if the values are ratios, it would probably be good to check with a statistician before proceeding, because it is *very* easy to end up in a nonsensical mathematical situation. 
+
+:::
+
+2.10 `instructional_average` Mean of instructional z-scores.
+2.11 `research_average` (Research Average z-score) Mean of research z-scores
+2.12 `overall_average` Mean of instructional and research average z-scores.
+
+---
+
+2.1 `zinstructional_sch_4Y_share_growth` Standardized `instructional_sch_4Y_share_growth`
+2.2 `zall_majors_share_growth` Standardized `all_majors_share_growth`
+2.3 `zinstructional_sch_2024` Standardized `instructional_sch_2024`
+2.4 `ztotal_majors_n_2024` Standardized `total_majors_n_2024`
+2.5 `zinstructional_sch_to_instructional_fte_2024` Standardized `instructional_sch_to_instructional_fte_2024`
+2.6 `zbudget_to_sch_2024` Standardized `budget_to_sch_2024`
+2.7 `znet_realizable_tuition_less_budget_2024` Standardized `net_realizable_tuition_less_budget_2024`
+2.8 `zavg_retention_rate_2024` Standardized `avg_retention_rate_2024`
+2.9 `zratio_completions_majors_2024` Standardized completions (all majors) to majors.
+
+---
+
+2.14 `instruction_weight` `percent_teaching / (percent_teaching + percent_research)`. This is set to zero when the denominator is zero.
+2.15 `research_weight` `percent_research / (percent_teaching + percent_research)`. This is set to zero when the denominator is zero.
+2.13 `weighted_overall_average` Mean of `instructional_average` and research average weighted by `instruction_weight` and `research_weight` respectively.
+
+---
+
+2.16 `mad_instructional_sch_4Y_share_growth` Standardized `instructional_sch_4Y_share_growth` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.17 `mad_all_majors_share_growth` Standardized `all_majors_share_growth` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.18 `mad_instructional_sch_2024` Standardized `instructional_sch_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.19 `mad_total_majors_n_2024` Standardized `total_majors_n_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.20 `mad_instructional_sch_to_instructional_fte_2024` Standardized `instructional_sch_to_instructional_fte_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.21 `mad_budget_to_sch_2024` Standardized `budget_to_sch_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.22 `mad_net_realizable_tuition_less_budget_2024` Standardized `net_realizable_tuition_less_budget_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.23 `mad_avg_retention_rate_2024` Standardized `avg_retention_rate_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+2.24 `mad_ratio_completions_majors_2024` Standardized completions (all majors) to majors using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+---
+
+2.25 `pool_znstructional_sch_4Y_share_growth` Standardized `instructional_sch_4Y_share_growth` within discipline pool.
+2.26 `pool_zall_majors_share_growth` Standardized `all_majors_share_growth` within discipline pool.
+2.27 `pool_zinstructional_sch_2024` Standardized `instructional_sch_2024` within discipline pool.
+2.28 `pool_ztotal_majors_n_2024` Standardized `total_majors_n_2024` within discipline pool.
+2.29 `pool_zinstructional_sch_to_instructional_fte_2024` Standardized `instructional_sch_to_instructional_fte_2024` within discipline pool.
+2.30 `pool_zbudget_to_sch_2024` Standardized `budget_to_sch_2024` within discipline pool.
+2.31 `pool_znet_realizable_tuition_less_budget_2024` Standardized `net_realizable_tuition_less_budget_2024` within discipline pool.
+2.32 `pool_zavg_retention_rate_2024` Standardized `avg_retention_rate_2024` within discipline pool.
+2.9 `pool_zratio_completions_majors_2024` Standardized completions (all majors) to majors within discipline pool.
