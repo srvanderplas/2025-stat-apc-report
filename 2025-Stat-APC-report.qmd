@@ -5,6 +5,12 @@ message: false
 error: false
 echo: false
 number-sections: true
+format:
+  html: default
+  pdf: 
+    documentclass: article
+    header-includes:
+      - \usepackage{fullpage}
 ---
 
 ```{r setup}
@@ -646,10 +652,17 @@ These contributions are discussed in @sec-program-analysis.
 
 
 # Program Analysis {#sec-program-analysis}
-The APC procedures specify criteria for the reduction or elimination of academic programs: 
 
->V1.1. Criteria in support of reduction or elimination
->  1. The program’s present and probable future demand is insufficient to justify its maintenance at existing levels of support. Insufficient demand may be indicated by significant decline in one or more of these areas over a protracted period:
+## APC Criteria
+
+The APC procedures specify criteria for the reduction or elimination of academic programs. 
+We will address each set of criteria separately to both show that the criteria in support of reduction or elimination are not met and to show that the criteria indicating that elimination is inadvisable are satisfied. 
+These are taken from APC [Criteria for program evaluation](https://apc.unl.edu/procedures-be-invoked-significant-budget-reallocations-and-reductions/criteria/). 
+
+### Addressing the Criteria in Support of Reduction
+
+>  1. The program’s present and probable future demand is insufficient to justify its maintenance at existing levels of support. Insufficient demand may be indicated by significant decline in one or more of these areas over a protracted period:    
+> 
 >    1. the number of completed applications for admission to the program;
 >    2. the student credit hours generated in lower division, upper division, professional, and/or graduate level courses in the program;
 >    3. the number of students who complete majors or degrees in the program;
@@ -657,8 +670,8 @@ The APC procedures specify criteria for the reduction or elimination of academic
 >    5. in the case of service programs, the level of demand for the service provided;
 >    6. in the case of research programs, the quality and quantity of research being conducted;
 >    7. in the case of research programs, the level of external funding, given the relative availability of funds.
-    
-Of the fastest growing occupations identified by the Bureau of Labor Statistics, Data Scienctists, Actuaries, and Operations research analysts are 4th, 8th, and 9th, respectively. All involve statistical training, and many data science jobs are jobs which would have been advertised as requiring statistics even 5 years ago. However, even if we confine ourself to Statisticians, the BLS expects 9% growth in statistics positions over the next decade, which is considerably faster growth than most other professions. 
+
+Of the fastest growing occupations identified by the Bureau of Labor Statistics, Data Scienctists, Actuaries, and Operations research analysts are 4th, 8th, and 9th, respectively. All involve statistical training, and many data science jobs would have been advertised as requiring a statistics degree even 5 years ago. However, even if we confine ourself to Statisticians, the BLS expects 9% growth in statistics positions over the next decade, which is considerably faster growth than most other professions. 
 Thus, we can see that the market demand for graduates of our programs at all levels is there. 
 In addition, while statistics does not pull in grants which are comparable in size to those in lab-based sciences that require laboratory equipment, AI is one of the stated research priorities of the current administration. 
 Most deep learning and large language models are built on a fundamental foundation of statistics. 
@@ -672,8 +685,6 @@ Given the demand for statistics and data science education, Criteria 1.1.1.1-7 c
 It will take some work to undo the damage from the public proposal to eliminate the program, but we believe the economic conditions are sufficient to make this a worthwhile investment for UNL. 
 @sec-future discusses several options for the future of the program which could mitigate this obstacle and could significantly improve enrollment in the program. ]. 
 
-
-
 >  2. The program would normally be expected to be accredited but is not; or it is exposed to a substantial risk of loss of accreditation. If the program is not appropriate for accreditation, the program has been deemed to be of a quality or size that raises questions concerning its viability or continuation.
 
 The graduate statistics program at UNL has been increasing in ranking over the past 5-10 years. It is seen as a small-but-quality program within our discipline, and our graduates all get jobs working within their field of study, whether in industry, government, or academia. 
@@ -684,28 +695,79 @@ While our undergraduate curriculum is still young, it was favorably evaluated at
 > "The undergraduate program plan is an outstanding one -- we are impressed by the vision and effort that has gone into this already. We think this is very important for UNL and the State of Nebraska, given the enormous demand for people who are highly trained in statistics. Based on what has been observed nationwide, we expect this program to grow very quickly -- potentially to hundreds of majors in the near future. Hence, developing and teaching thee courses, as well as addressing student advising needs will require considerable resources in terms of faculty and staff. It is important to be cognizant of the amount of time and effort to build this program. We note that three members of the external review team are in large statistics departments that have many more tenure-track faculty and teaching faculty than Statistics at Nebraska. Even with our resources, we have found it to be a challenging undertaking to find the people hours necessary to build new majors." - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
 
 Thus, we do not believe criteria 1.1.2 applies to the statistics department; it should not be used to support our elimination. 
-    
-    3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
-      1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
-      2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
-    4. The instructional productivity of a program is substantially less than the average for UNL as a whole. The level of instruction and the mode of instruction appropriate to the program shall be considered, including particularly the average number of contact hours carried by the faculty.
-    5. The program’s reduction or elimination will not substantially impair the viability or quality of other UNL programs.
-    6. The program’s contribution to the UNL missions of instruction, research, and service is sufficiently marginal not to justify maintenance of its present size.
-  2. Criteria indicating that elimination is inadvisable
-    1. The program has achieved a national or international reputation for quality as indicated by objective evaluations.
-    2. The program supplies significant instruction, research, or service that UNL is better equipped to supply than other colleges or universities.
-    3. The program is the only one of its kind within the State of Nebraska.
-    4. The program is an essential program for every university.
-    5. The program’s elimination would have a substantially negative impact on education and societal concerns in Nebraska.
-    6. The program’s elimination would result in substantial loss of revenue currently derived from grants, contracts, endowments or gifts.
-    7. The program represents a substantial capital investment in specialized physical plant or equipment that could not be effectively redirected to alternative uses.
-    8. The program is central to maintaining the university’s affirmative action goals.
-    9. The program gives the University of Nebraska-Lincoln its distinctive character.
-  3. Criteria indicating that reduction is inadvisable
-    1. The program’s nature is such that reduction would impair the critical mass necessary to have adequate quality.
-    2. The program cannot be reduced without a substantial risk to accreditation.
-    3. Current projections indicate that demand for the program or its graduates will increase substantially within the next five years.
-    4. Scholarly research or creative activity of the faculty within this program, as shown by publications, creative productions, honors and awards, external funding, or other objective measure, is higher than others in the same or related peer disciplines.
+
+
+>    3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
+> 
+>      1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
+>       2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
+
+
+At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). 
+The undergraduate program requires 51 hours of statistics coursework, making it unique within the ecosystem of undergraduate statistics programs; this was a factor for several of our current students who chose UNL over other options. 
+
+The department has developed the new courses for this program (typically without course releases, representing a significant increase in effective teaching workload), and has implemented this program without any of the promised increases in TT faculty or professors of practice to assist with the additional courses. 
+These additional courses may be captured in the metrics in some ways -- it is possible that research output might have decreased slightly given the large increase in teaching and course design load, as was predicted by the review team in the 2021 APR if we did not continue to increase the department size to manage the increased course load. 
+
+> The main resources needed to implement the undergraduate Statistics and Data Analytics major and the forthcoming Statistical Data Science major are people and energy. The major requires the development of a considerable number of new courses. To develop these courses with only the existing faculty would require major sacrificees to faculty research programs and to their ability to collaborate with IANR and other faculty at UNL. New faculty will need to be hired to develop coursework for the majors.
+> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+It is also possible that the average course size may have decreased in the department over the last 3-4 years due to the large increase in new courses along with a relatively small set of cohorts as the major started but before we could advertise the job and graduate school placements of our graduates (we will have a couple of students graduating early in December and the rest of the first cohort graduating in May).
+However, we have done this at the request of our leadership, and the program we designed is both unique and well-regarded by our peers.  
+
+> The development of new undergraduate majors is very important not only to UNL but more broadly to the state of Nebraska given the urgent need for highly trained statisticians and data scientists. Furthermore, this program will generate substantial resources for IANR; the department needs resources to develop, deliver, and grow these programs. 
+> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+
+>    4. The instructional productivity of a program is substantially less than the average for UNL as a whole. The level of instruction and the mode of instruction appropriate to the program shall be considered, including particularly the average number of contact hours carried by the faculty.
+
+
+
+>    5. The program’s reduction or elimination will not substantially impair the viability or quality of other UNL programs.
+
+
+>    6. The program’s contribution to the UNL missions of instruction, research, and service is sufficiently marginal not to justify maintenance of its present size.
+
+
+
+### Addressing the Criteria Indicating that Elimination is Inadvisable
+
+>    1. The program has achieved a national or international reputation for quality as indicated by objective evaluations.
+
+>    2. The program supplies significant instruction, research, or service that UNL is better equipped to supply than other colleges or universities.
+
+
+>    3. The program is the only one of its kind within the State of Nebraska.
+
+
+>    4. The program is an essential program for every university.
+
+>    5. The program’s elimination would have a substantially negative impact on education and societal concerns in Nebraska.
+
+>    6. The program’s elimination would result in substantial loss of revenue currently derived from grants, contracts, endowments or gifts.
+
+>    7. The program represents a substantial capital investment in specialized physical plant or equipment that could not be effectively redirected to alternative uses.
+
+>    8. The program is central to maintaining the university’s affirmative action goals.
+
+>    9. The program gives the University of Nebraska-Lincoln its distinctive character.
+
+
+### Addressing Criteria Indicating that Reduction is Inadvisable
+
+
+>    1. The program’s nature is such that reduction would impair the critical mass necessary to have adequate quality.
+
+
+>    2. The program cannot be reduced without a substantial risk to accreditation.
+
+
+>    3. Current projections indicate that demand for the program or its graduates will increase substantially within the next five years.
+
+
+>    4. Scholarly research or creative activity of the faculty within this program, as shown by publications, creative productions, honors and awards, external funding, or other objective measure, is higher than others in the same or related peer disciplines.
+
+
 
 
 ## Effects of Proposed Cuts 
@@ -738,20 +800,23 @@ In a recent meeting, Bill reported that the use of statistics in the real world 
 The meteoric rise of AI tools has enabled data scientists to implement new solutions with unprecedented speed, but according to Bill, these solutions require statistics for measurement – to determine to what extent new techniques are working and whether they are reliable, ethical, and fair – and the industry has not yet fully realized this need. 
 Our Data Science majors, with their unique synthesis of mathematical, computing, and statistical knowledge are well-positioned to be leaders in their fields upon graduating from UNL, and without a thriving Department of Statistics, we may not be able to continue making this assertion with confidence.
 
-# Planning for the Future {#sec-planning}
+
+## Undergraduate Program
 
 
+## MS Program
 
 
+## Ph.D. Program
+
+# Unimodal vs. Distributed Statistics Model
 
 Circa 1998, "Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments." https://math.unl.edu/statistics-history-unl/
 
 
 "Being housed entirely in IANR clarifies the flow of resources to the department and will ensure follow-through on commitments made to the department." - 2021 APR Report
 
-"The development of new undergraduate majors is very important not only to UNL but more broadly to the state of Nebraska given the urgent need for highly trained statisticians and data scientists. Furthermore, this program will generate substantial resources for IANR; the department needs resources to develop, deliver, and grow these programs." - 2021 APR Report
-
-"The main resources needed to implement the undergraduate Statistics and Data Analytics major and the forthcoming Statistical Data Science major are people and energy. The major requires the development of a considerable number of new courses. To develop these courses with only the existing faculty would require major sacrificees to faculty research programs and to their ability to collaborate with IANR and other faculty at UNL. New faculty will need to be hired to develop coursework for the majors."
+# Planning for the Future {#sec-planning}
 
 
 
