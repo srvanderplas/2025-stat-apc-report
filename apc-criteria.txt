@@ -34,11 +34,23 @@ should not be recommended for reduction or elimination.
       5. in the case of service programs, the level of demand for the service provided;
       6. in the case of research programs, the quality and quantity of research being conducted;
       7. in the case of research programs, the level of external funding, given the relative availability of funds.
-    2. The program would normally be expected to be accredited but is not; or it is exposed to a substantial risk of loss of accreditation. If the program is not appropriate for accreditation, the program has been deemed to be of a quality or size that raises questions concerning its viability or continuation.
-    3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
-      1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
-      2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
-    4. The instructional productivity of a program is substantially less than the average for UNL as a whole. The level of instruction and the mode of instruction appropriate to the program shall be considered, including particularly the average number of contact hours carried by the faculty.
+    2. The program would normally be expected to be accredited but is not;
+    or it is exposed to a substantial risk of loss of accreditation.
+    If the program is not appropriate for accreditation, the program has been deemed to
+    be of a quality or size that raises questions concerning its viability or continuation.
+    3. The program’s productivity relative to the university’s investment in faculty, staff, and
+    equipment, facilities, or other resources has declined significantly.
+      1. In the case of instructional programs, a significant decline in productivity might be
+      indicated by a decrease in the generation of student credit hours of all courses per
+      full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment
+      trends and by a low level of student credit hours per full-time equivalent (FTE) faculty
+      in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
+      2. In the case of non-instructional programs, productivity shall, where possible, be
+      measured in terms of units of output appropriate to the program’s mission.
+    4. The instructional productivity of a program is substantially less than the average for
+    UNL as a whole. The level of instruction and the mode of instruction appropriate to the
+    program shall be considered, including particularly the average number of contact hours
+    carried by the faculty.
     5. The program’s reduction or elimination will not substantially impair the viability or quality of other UNL programs.
     6. The program’s contribution to the UNL missions of instruction, research, and service is sufficiently marginal not to justify maintenance of its present size.
   2. Criteria indicating that elimination is inadvisable
