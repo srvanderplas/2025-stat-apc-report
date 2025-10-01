@@ -72,14 +72,51 @@ format:
 
 1.72 `budget_from_evc_file_state_appropriated_budget` State-aided budget.
 
-
 1.991 `total_realizable_base_tuition_less_budget` This is estimated by `total_realizable_base_tuition` (1.49) less original state-aided budget, apportioned for `percent_teaching` (also `instruction_budget`, see 1.95 above).
 
 
 ## Appointments & Headcount
+::: callout
+
+### Apportionment problem: Partial-year data not included
+
+This information seems to have been assembled from a source that does not take into account mid-year hires. 
+Susan Vanderplas started at UNL in January 2020 and has a 20% Extension appointment, so for the 2019-2020 academic year, she would have been paid for between 5 and 6 months, depending on how 9-month contracts are handled. 
+The Details tab of the metrics show a 0.0 percent extension FTE appointment for 2020, with subsequent years matching the 0.200 in the appointment.
+
+:::
+
+::: callout
+### Headcount problem: Lack of Public Data Confirmation
+
+There is relatively little clarity to be had about how apportionment was counted in these metrics. 
+The only public data available to us is the [UN System Budget & Salary Information](https://nebraska.edu/offices-policies/business-finance/budget-and-planning), which contains spreadsheets ("Budgeted Employees as of...") and PDF documents ("University of Nebraska Salary Information"). Historical data is available.
+
+The salary **spreadsheets** appear to show the cost distribution for a position (e.g. where the money comes from), but only when the position is more complicated than just having funding from multiple departments indicating a partial appointment, as shown in @fig-salary-sources. 
+This happens most frequently when someone has administrative responsibilities in addition to standard research or teaching responsibilities. 
+
+![An example of someone with multiple salary sources -- a fellowship, a normal professor salary, and a director position that comes from non-state-aided funds.](images/salary-position-info.png){#fig-salary-sources}
+
+The **PDF tables of salary information** show a set of information that sometimes matches, but sometimes does not.
+
+![](images/roster-position-info.png){#fig-position-information}
+
+It seems *likely* that the proportions in the FTE column (next from the last) of @fig-position-information would represent the apportionment, but that doesn't seem to always match what the individual understood their apportionment to be. 
+When apportionments change, the university is supposed to provide written notice of the new contractual arrangement and it should be signed. 
+In at least one case in Statistics, we could not find paperwork to match the effort allocation reported in the PDF FTE column.
+More importantly, however, it seems that the FTE column in the PDF doesn't match the information assembled by the office of research and innovation to allocate research productivity to departments.
+
+What this boils down to is that the Statistics department cannot get administration to explain why their numbers for people (and fractional people) in the department don't match the administrations numbers. 
+That is, we don't even count department members the same way!
+Note that the individuals in question are longstanding members of the department who have e.g. taught Statistics courses, advised students, served on hiring committees - this issue spans most of the decade of research productivity metrics, and as a result, the impact cannot be assumed to be insignificant.
+
+Perhaps if we could get data which matches our paperwork (if those columns exist in a database) and compare the different metrics, it would be possible to agree on a standard methodology for apportioning research productivity. 
+These decisions happen in every data analysis, but we teach our students to (1) document the options which existed, (2) justify their selection of a particular option, and (3) conduct a sensitivity analysis after the analysis to see how much the results change based on the selection of a different way to measure a variable. 
+The Office of Research and Innovation apparently did not do any of these things -- and they also will not provide us with the data to validate their numbers ourselves. 
+
+:::
 
 1.9 `appointment_apportionment_fte` Total apportioned FTE across all appointments.
-
 
 1.10 `appointment_apportionment_percent_teaching_fte` Sum of faculty teaching apportionment by appointment times FTE by unit.
 
@@ -92,6 +129,52 @@ format:
 1.14 `appointment_apportionment_percent_admin_fte` Sum of faculty admin apportionment by appointment times FTE by unit.
 
 1.15 `total_instructor_fte` Sum of `appointment_apportionment_fte` by unit.
+
+::: callout
+
+### Instructor FTE Problem
+
+This metric definition doesn't make any sense. There is a single column of `appointment_apportionment_fte` for each unit. 
+
+If instead, this is intended to mean the sum of `appointment_apportionment_percent_teaching_fte` through `appointment_apportionment_percent_admin_fte`, it doesn't make sense either, because those values should sum to `appointment_apportionment_fte` instead.
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-instructor-fte
+
+library(dplyr)
+library(magrittr)
+library(readxl)
+metrics <- read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet="Detail")
+options(knitr.kable.NA = '')
+
+tmp <- metrics |>
+group_by(lowest_level_short_name, department) |>
+  mutate(instructor_appointment_ratio = total_instructor_fte/appointment_apportionment_fte) |>
+ungroup() |>
+  filter(acad_end_year == 2024 & total_instructor_fte>0) |>
+  select(department, total_instructor_fte, appointment_apportionment_fte, instructor_appointment_ratio) |>
+  na.omit() |>
+  arrange(desc(instructor_appointment_ratio)) |>
+  mutate(rank = 1:n()) |>
+  select(rank, department, ratio = instructor_appointment_ratio)
+
+bind_rows(
+  head(tmp, 15),
+  data.frame(rank = NA, department = "...", ratio = NA),
+  tail(tmp, 15)
+) |> 
+set_names(c("Rank", "Dept", "Ratio")) |>
+knitr::kable(digits = c(0, 0, 3), caption = "Top and Bottom 15 departments by ratio of total instructor FTE to appointment apportionment FTE. Only departments with nonzero total instructor FTE are included.") 
+```
+
+It is not clear what this is measuring, but departments which seem to have more extension-focused non-teaching appointments seem to be lower on the list. 
+Departments which have more professors of practice seem to be higher on the list. 
+
+:::
 
 ---
 
@@ -110,6 +193,7 @@ format:
 1.66 `t_tt_headcount_2014_2023_avg` The average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center. Headcounts were assigned to departments using the HR tenure org unit.
 
 ::: callout
+### Research Contributions by NTT Professors
 
 Our department had a long-time Professor of Practice, Kathy Hanford, who had a research and teaching apportionment and was the professor in charge of the SC3L. She retired at the end of 2023, so she *should* be included in most of our metrics, but isn't because she was not tenure track. 
 She does, however, count against our budget. 
@@ -117,6 +201,16 @@ Her research productivity, grant productivity, and collaborations across campus 
 The focus on tenure track positions to the exclusion of all others is incredibly damaging, particularly when a department is as small as we are. 
 If Kathy had been hired more recently, the position would have likely been tenure track (and when the position was posted to find her replacement, it was posted as tenure track). 
 The current head of SC3L, Dr. Reka Howard, is an associate professor in the department.
+:::
+
+::: callout
+
+### Per-capita measures
+
+Different denominators are used to measure per-capita productivity in teaching and research across the analysis. 
+In some cases, these are reasonable (e.g. it is reasonable to use total teaching FTE to calculate SCH per FTE values), but in others, these differences seem to arise primarily from the desire to conform to Academic Analytics or AAU metrics. 
+While it is understandable that our administration wants to use metrics from other organizations rather than develop their own (this document exists because they don't have the statistics training to design effective measures of variables of interest), this leads to significant and strange differences in productivity measures.
+It would be a far more coherent overall **analysis** if admin had used a single set of FTE measures consistently, rather than switching these measures up for different variables. 
 
 :::
 
@@ -131,9 +225,24 @@ This is an estimate. At present, it is impossible to determine how many would me
 
 1.51 `vsip_eligible_pct` The proportion of the unit’s tenure-track faculty who would be eligible for VSIP in summer, 2026.
 
+::: callout
+### VSIP percentage
 
+Tracking this makes sense, but it's unclear how this metric might factor into a final decision to combine or eliminate departments. Is it better to eliminate a department with a high percentage of VSIP eligible faculty, since the department might not be able to function after VSIP anyways? Or would it be better to eliminate a department without VSIP eligible faculty, since those savings won't be double-counted by both VSIP and the elimination of the department, as the current analysis seems to do for the departments which will be combined (ALEC and Agricultural Economics, Entomology and Plant Pathology). 
+
+:::
 
 # Teaching
+
+::: callout
+### Data Lockout and Validation
+
+It is hard to validate the teaching metrics, because the administration has directed the registrar's office and the graduate college "not to distribute data related to proposed budget reductions at this time" ([email between Sarah Zuckerman and Debra Hope, Graduate College](documentation/Fw_ Sarah Z - EDAD Data Request.eml)). 
+
+The Statistics department had similar trouble getting data from Chad Brasil, though most of it could be assembled (sometimes manually) using published Tableau dashboards. 
+As a result, it is much harder to comment on or validate the teaching metrics. 
+There are likely similar problems with the way variables were assembled, but because of the administrative lockout, we cannot do the necessary detective work to identify those problems.
+:::
 
 ## Enrollment
 
@@ -181,6 +290,18 @@ This is an estimate. At present, it is impossible to determine how many would me
 
 1.89 `ratio_completions_majors` Ratio of all degree completions (all majors attached to a degree) to all majors, including non-primary.
 
+::: callout
+### Completions to Majors for New Programs
+
+The statistics department has a new undergraduate program that, for AY 2024 (the last AY with statistics), had two cohorts of students. 
+These students are included in the denominator as majors, but could not possibly have completed the program. As a result, of course, the department looks like we have a large dropout rate or are otherwise performing poorly. 
+
+It would be more reasonable to exclude new majors from this count until the program is mature and has all cohorts filled. 
+In prior years, the statistics department has  hovered around a 25% - 28% completion ratio, which reflects that our MS students take approximately 2 years to finish and our Ph.D. students take between 4 and 6 years to finish. We fully expect that our ratio will return to about that level when our undergraduate program is mature (if, of course, the university decides to keep this program), but it will likely decrease until that point, because we continued adding students who will take 4 years to graduate in AY 2025, and our first cohort is not expected to graduate until 2026. 
+
+:::
+
+
 ---
 
 1.871 `minors_U` Count of all undergraduate students in one or more minors offered by the unit.
@@ -207,12 +328,28 @@ This is an estimate. At present, it is impossible to determine how many would me
 
 1.56 `avg_grad6` Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.
 
+::: callout
+### Graduation Rates Shouldn't Be Pooled
+
+Most undergraduate programs take 4 years to complete. Most MS programs take 1-2 years to complete. Ph.D. programs vary considerably, but post-MS work might take between 2 to 4 years to complete, assuming the MS work transfers.
+
+It is utterly confusing, then, to compute six-year graduation rates when the expected time to degree completion is so widely variable -- six years is enough time for 5 different MS cohorts to complete their degrees, but only 2-3 undergraduate and Ph.D. cohorts! It's also not uncommon for statistics students to get an MS and a PhD within 6 years - are those students counted twice?
+
+Ultimately, graduation rates should be computed separately for each program, and if those are then averaged somehow that would be at least potentially sensible. But it is important to consider expected time to degree when computing graduation rates. 
+
+:::
 
 ## SCH & Tuition
 
 
 1.48 `sch` Sum of course SCH by owner of course subject code.
 
+::: callout
+### 2020 anomalies
+
+The SCH reported for AY 2020 are almost universally off by a factor of around 10. This anomaly needs to be tracked down and investigated, because while it may not affect any department differently, it puts the provenance of the data and the quality control measures in question.
+Systematic errors are a red flag to go back and consider whether the data quality is sufficiently high to be making decisions based on this data.
+:::
 
 1.49 `total_realizable_base_tuition` sch by course career and student residency times base tuition rate. For AY2024, these rates were:
 Career | Resident | Non-resident
@@ -242,12 +379,33 @@ G/P |  \$353 | \$1031
 
 ## Ratios
 
+::: callout
+### Ratios are Stochastic Nightmares
+
+The variability of calculated ratios complicates statistical analysis. 
+
+If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other "statistical moments" (these variables have a Cauchy distribution, which does not have a mean). 
+This does not mean that you can't take the average of Cauchy distributed random variables -- it only means that that number does not have any real-world meaning. 
+
+Even when the variables don't have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value. 
+
+:::
+
 1.85 `budget_to_sch` total original state aided budget divided by SCH
 
 1.16 `instructional_sch_to_instructional_fte` Sum of each instructor’s section instruction percentage times section sch by home department of appointment divided by `total_instructor_fte.`
 
 
 # Research
+
+::: callout
+### Z-scores for research
+
+There are so many problems with the constitutent components of the research metrics (even before they are standardized) that the resulting research average z-score is utterly unreliable and not useful for cross-department comparison. 
+
+Fundamentally, as statisticians, if you take the average of standardized garbage, you still get garbage. Garbage in, garbage out, or GIGO, is a fairly standard abbreviation used to describe this problem.
+
+:::
 
 1.57 `research_average` (Research Average z-score) Average research z-score with non-departmental units (including Dean’s offices) removed.
 
@@ -273,18 +431,19 @@ G/P |  \$353 | \$1031
 
 
 ::: callout
+
 ### SRI Problem 1 - Averaging Multiple SRI scores
 
 Some departments have multiple SRI scores generated by Academic Analytics. 
 
 In some disciplines, departments might be book-focused or article focused, or might have members with different focuses. 
-Examples in @fig-sri-multiple-values include Communication Studies, Sociology, Advertising, Landscape Architecture, Interior Design, and Broadcasting, among others. 
+Examples in @fig-sri-multi-values include Communication Studies, Sociology, Advertising, Landscape Architecture, Interior Design, and Broadcasting, among others. 
 
 Another reason a department might have multiple SRI scores is that it is composed of multiple different disciplines. 
-Examples in @fig-sri-multiple-values include Agronomy & Horticulture, Earth and Atmospheric Sciences, the School of Computing, Physics and Astronomy, and Electrical and Computer Engineering.
+Examples in @fig-sri-multi-values include Agronomy & Horticulture, Earth and Atmospheric Sciences, the School of Computing, Physics and Astronomy, and Electrical and Computer Engineering.
 
 ```{r}
-#| fig-cap: Some Units at UNL have multiple SRI values, either because different departments focus on books or articles within the discipline, or because departments have faculty from multiple disciplines. 
+#| fig-cap: Some units at UNL have multiple SRI values, either because different departments focus on books or articles within the discipline, or because departments have faculty from multiple disciplines. 
 #| label: fig-sri-multi-values
 #| fig-width: 8
 #| fig-height: 10
@@ -360,6 +519,7 @@ Then, if the goal is to assess the department's performance, two reasonable appr
 :::
 
 ::: callout
+
 ### SRI Problem 2 - Cross-Department Comparisons
 
 It is **completely inappropriate** to use SRI values to compare departments to other departments within the same university. 
@@ -370,19 +530,35 @@ As-is they are not comparable outside of that distribution, as shown in @tbl-sri
 ```{r}
 #| label: tbl-sri-incomparable
 #| echo: false
+#| tbl-cap: "Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree."
 unl_depts |> filter(SRI==.4) |>
   select(Unit, SRI, `SRI Percentile`, `Number of Units`, `SRI Rank`) |>
   arrange(desc(`SRI Percentile`)) |>
-  knitr::kable(caption="Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree.")
+  knitr::kable()
 ```
 
 Calculating a mean and standard deviation to create a z-score for SRI values across disciplines destroys any information which could have been found in the SRI measure.
 
 Note that this is *not* an objection to SRI as a concept. 
-It seems that SRI is a more fair method of comparison than other attempts to replicate SRI used in the budget reduction process, because at least all departments across a discipline are compared using the same (sometimes flawed) data^[Academic Analytics analysts are very aware of the flaws in their data. If UNL wants to improve as an institution, one way to facilitate that would be to have PIs to ask e.g. federal grant agencies other than NIH and NSF to report data to Academic Analytics, as this would likely help us.].
+It seems that SRI is a more fair method of comparison than other attempts to replicate SRI used in the budget reduction process, because at least all departments across a discipline are compared using the same (sometimes flawed) data^[Academic Analytics analysts are very aware of the flaws in their data. If UNL wants to improve as an institution, one way to facilitate that would be to have PIs to ask e.g. federal grant agencies other than NIH and NSF to report data to Academic Analytics, as this would likely help us. Another option is for UNL to actually talk to analysts at Academic Analytics and to ensure that UNL follows statistical validation procedures that are as well thought out as AcA's procedures.].
 As it is, the metrics assembled by UNL, while applied to all departments equally, have unequal effects on different departments because the metrics used favor one discipline over another due to norms within that discipline.
 The problem with SRI is that it must be used in the context for which it was intended: comparing departments to other similar departments.
-The misuse of SRI results in eliminating programs which compare perfectly well to both Academic Analytics institutions and to AAU peers, as shown in @fig-sri-percentile-all-departments. 
+The misuse of SRI results in eliminating programs which compare perfectly well to both Academic Analytics institutions and to AAU peers, as shown in @fig-sri-percentile-all-depts. 
+
+While we do not have access to the complete data for all departments and their comparison units, we do have access to the statistics data, which is shown in @fig-sri-by-class. 
+The statistics department's SRI value is at the top of the non-AAU R1 institutions, and is well within the bounds of the SRI range of AAU institutions.
+Note that we would not expect that a department be at the top of the AAU university SRI values (which is why the custom SRI score isn't that useful, though the percentile is somewhat helpful) -- what is necessary is for the department's SRI to be above the minimum (preferably comfortably above) of the comparable AAU department SRI values. 
+
+**Problem** Under the UNL proposed method (using the SRI relative to public AAU institutions), it seems that custom SRI is used instead of percentile. This renders any calculations done on SRI, and any calculations which use `sri_aau_public_peers` or `sri_aau_public_peers_z_score`, functionally meaningless as they are not comparing values drawn from the same distribution to each other. Without a common reference distribution, it is inappropriate to pool values by calculating a common mean and variance, and then to use that common mean and variance to produce a z-score. 
+
+**Solution** SRI should be converted to a percentile (or corresponding quantile, if the goal is a z-score), and in disciplines without sufficient comparison departments, there will be a lot of variability in the percentile (which should be treated as an estimate). 
+SRI should be used to evaluate research productivity instead of attempting to create a multi-metric that adds additional weight to awards, books, citations, and grants x3, as Academic Analytics has already done the factor analysis to determine which of these are relevant to which disciplines. 
+
+**Theory & Statistical Rationale**
+The Glivenko-Cantelli theorem guarantees that as  $n\rightarrow\infty$ the empirical CDF (eCDF) converges to the distribution CDF [demonstration via WolframAlpha](https://demonstrations.wolfram.com/ConvergenceOfTheEmpiricalDistributionFunctionOfASample/). 
+While there is no guideline for sufficient $n$, the eCDF will be extremely blocky and step-function like at first, and as $n$ increases, the average distance between discontinuity points will decrease, producing an increasingly smooth function. 
+The variance of the estimated percentile can be estimated by treating the percentile as a proportion and using a [binomial confidence interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval) to get a sense of the variability. Then, this binomial confidence interval can be mapped back to normal quantiles if a z-score range is desired.  
+
 
 ```{r}
 #| message: false
@@ -408,10 +584,6 @@ unl_depts_sum |>
   scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40"))
 
 ```
-
-While we do not have access to the complete data for all departments and their comparison units, we do have access to the statistics data, which is shown in @fig-sri-by-class. 
-The statistics department's SRI value is at the top of the non-AAU R1 institutions, and is well within the bounds of the SRI range of AAU institutions.
-Note that we would not expect that a department be at the top of the AAU university SRI values (which is why the custom SRI score isn't that useful, though the percentile is somewhat helpful) -- what is necessary is for the department's SRI to be above the minimum (preferably comfortably above) of the comparable AAU department SRI values. 
 
 ```{r}
 #| fig-width: 10
@@ -489,16 +661,6 @@ stats_full_dot |>
             nudge_y = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_y) 
 
 ```
-
-**Problem** Under the UNL proposed method (using the SRI relative to public AAU institutions), it seems that custom SRI is used instead of percentile. This renders any calculations done on SRI, and any calculations which use `sri_aau_public_peers` or `sri_aau_public_peers_z_score`, functionally meaningless as they are not comparing values drawn from the same distribution to each other. Without a common reference distribution, it is inappropriate to pool values by calculating a common mean and variance, and then to use that common mean and variance to produce a z-score. 
-
-**Solution** SRI should be converted to a percentile (or corresponding quantile, if the goal is a z-score), and in disciplines without sufficient comparison departments, there will be a lot of variability in the percentile (which should be treated as an estimate). 
-
-**Theory & Statistical Rationale**
-The Glivenko-Cantelli theorem guarantees that as  $n\rightarrow\infty$ the empirical CDF (eCDF) converges to the distribution CDF [demonstration via WolframAlpha](https://demonstrations.wolfram.com/ConvergenceOfTheEmpiricalDistributionFunctionOfASample/). 
-While there is no guideline for sufficient $n$, the eCDF will be extremely blocky and step-function like at first, and as $n$ increases, the average distance between discontinuity points will decrease, producing an increasingly smooth function. 
-The variance of the estimated percentile can be estimated by treating the percentile as a proportion and using a [binomial confidence interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval) to get a sense of the variability. Then, this binomial confidence interval can be mapped back to normal quantiles if a z-score range is desired.  
-
 
 :::
 
@@ -587,6 +749,44 @@ Comparing departments on normalized citations ensures that these discipline-spec
 
 ## Research Awards Inc NUF
 
+::: callout
+### Grant Metric Problems
+
+All of the grant metrics are affected by a common flaw: disciplines do not (usually) compete against each other within a university for awards^[The Fulbright program might be one common exception, as it allows applications from many different disciplines. However, this would likely fall under "Awards" more generally instead of research awards/grants.]. Rather, the English department might get awards from the National Endowment for the Arts or various private foundations. The Physics department likely gets grants primarily from NSF, and Engineering departments have some options - NSF, Dept of Energy, Department of Defense. Life sciences might get grants from NSF, but also NIH, CDC, Dept of Health, and the Veterans Administration. Agriculture grants will primarily come from USDA but may also come from NSF, NIH,  and others because ultimately agriculture spans both applied and hard science topics across a wide range of applications. 
+
+What is important about this is that the amount of funding available (and size of available grants) is dramatically different between departments. That is, departments cannot be thought of as one single population!
+It is clear that someone putting these metrics together paid enough attention in a statistics class to remember how to compute a z-score, but apparently they missed the part where it makes no sense to compute z-scores when you don't have a defined reference population. 
+Or, in this case, when you absurdly claim that something that is clearly a mixture of several populations can be used as a single reference population.
+
+Ignoring population heterogeneity (having multiple groups with different values in a population) is a common precursor to [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox), where a trend of the overall data reverses direction once the groups are accounted for in the model.
+Without the raw data for the individuals across the university, we cannot conclusively demonstrate that this is what is happening, but it seems possible. 
+Alternate explanations are that the data quality is not particularly good (also possible).
+In any case, the research award metrics ultimately cannot be used for doing more than differentiating low-grant fields from high-grant fields. 
+
+In addition, smaller departments will have more variability in grant funding year-to-year than larger departments. When funding rates are low (10-20%), small departments may have $0 grant funding in one year and several awards come through in subsequent years, while large departments will have a more consistent funding level. 
+While it is not clear how funding is counted on an annual basis (e.g. whether `research_awards_growth_inc_nuf_fy2020_total_research_awards` counts awards which started in 2020, were awarded in 2020, or incremental funding on multi-year awards that happened to be received by the university in 2020), if funding is counted at the award level and not the amount received per year, this measure gets to be even more "lumpy" and inconsistent from year to year. 
+When taking a ratio of differences, as in `research_awards_growth_inc_nuf_percent_of_total`, this inconsistent behavior becomes even more problematic. It would be far better to fit a trend line with 4 or even 10 years of per-capita funding data to each department, and then do inference based on the slope of that line, generating a confidence interval or even a z-score for the slope of the line.
+Note that we do *not* recommend comparing departments based on that z-score, because the amount of funding available will be conditional on the department discipline, and picking winners and losers within UNL based on federal grant funding availability is short-sighted. Metrics are useful for description even when they are not used for inference. 
+
+:::
+
+::: callout
+
+### Problems with `research_awards_growth_inc_nuf_fy20_fy24`
+
+Of all of the random variables created in this analysis, the most problematic from a statistical theory perspective might be `research_awards_growth_inc_nuf_fy20_fy24`.
+This is the ratio of two differences, where we might reasonably model each value in the numerator as a normal random variable with mean $\mu_d$ and standard deviation $\sigma_d$ ($d$ for department), and each value in the denominator as random variables with mean $\mu_u$ and standard deviation $\sigma_u$ ($u$ for university). The problem with this is that the two differences, $\mu_{d,2024} - \mu_{d,2020}$  and $\mu_{u,2024} - \mu_{u,2020}$ have mean zero, which leads to a $\frac{0}{0}$ situation that is mathematically undefined.
+
+In statistical terms, if the numerator and denominator have mean 0, then the random variable representing the ratio is **Cauchy** distributed. Cauchy distributions are heavy-tailed (values far away from the mean are much more likely than they would be with a normal distribution), that is, they generate extreme values more frequency. 
+Cauchy distributions are difficult to work with because they do not have a (meaningful) mean or a standard deviation. 
+It is possible to generate draws from a Cauchy distribution, and even to take the mean and standard deviation of those draws, but the values do not describe anything useful about the underlying data. The mean will never converge to a single value, even with a million or billion samples, unlike nearly every other common distribution.
+
+As a result, calculating the z-score for something that has or might be expected to have a Cauchy distribution is fundamentally problematic, because neither the mean or the standard deviation will have any real-world meaning or even be numerically stable. The Central Limit Theorem requires that variables have finite variance precisely because of the counterexample of the Cauchy distribution.
+
+Cauchy random variables are typically not covered in undergraduate math-stat and probability courses, except perhaps a mention in passing. That they arise so readily in this type of analysis is just another example why it is fundamentally necessary to have graduate statistical training or oversight in order to use complex functions of random variables to make practical decisions that will hold up under scrutiny. 
+
+:::
+
 1.74 `research_awards_growth_inc_nuf_fy2020_total_research_awards` Total sponsored research awards received in FY2020. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
 
 1.75 `research_awards_growth_inc_nuf_fy2024_total_research_awards` Total sponsored research awards received in FY2024. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
@@ -631,6 +831,7 @@ Approximately 95% of cases fall within +/- 1.96 standard deviations of the mean.
 Traditionally – but not universally – cases beyond the 1.96 standard deviation threshold are considered outliers.
 
 ::: callout
+
 ### Instructional Z-score Problem
 
 While standardizing scores is common practice in some circumstances, it is problematic as used here, in part because it assumes that there is a single common distribution used for these values. 
@@ -643,7 +844,7 @@ While these factors are related to department productivity, no amount of work by
 
 Moreover, the description of interpretation implies that these are normally distributed variables, but e.g. share of growth is necessarily confined to a value between 0 and 1, which is decidedly not normal because the normal distribution has support over the entire real line (that is, every value between $-\infty$ and $\infty$ has a positive, theoretically non-zero probability, though of course the values far from the mean of the distribution are expected to be infinitesimal). 
 
-When a metric consists of a ratio of two values, as many of these metrics do, it is even less likely that the random quantity has a normal distribution. In fact, if the numerator and denominator are both standard normally distributed, the ratio is Cauchy distributed, and Cauchy variables do not have estimable means or variance -- you can calculate a value for observed data, but it does not mean anything and is not an estimator of any useful quantity. While the problem is not quite as dramatic when the means of both distributions are nonzero, it is still important to be cautious because there are a number of different [ratio distributions](https://en.wikipedia.org/wiki/Ratio_distribution) which might be relevant and not all of them are "nice". 
+When a metric consists of a ratio of two values, as many of these metrics do, it is even less likely that the random quantity has a normal distribution. In fact, if the numerator and denominator both have mean zero, the ratio is Cauchy distributed, and Cauchy variables do not have estimable means or variance -- you can calculate a value for observed data, but it does not mean anything or converge to anything and is not an estimator of any useful quantity. While the problem is not quite as dramatic when the means of both distributions are nonzero, it is still important to be cautious because there are a number of different [ratio distributions](https://en.wikipedia.org/wiki/Ratio_distribution) which might be relevant and not all of them are "nice". 
 This might be expected to be the case with a variable like `budget_to_sch_2024`. 
 
 Ultimately, just because you *can* calculate a z-value doesn't ensure that it has meaning in the context of the data. 
