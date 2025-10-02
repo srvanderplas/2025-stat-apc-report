@@ -1,10 +1,20 @@
 ---
-title: "Department Metrics"
+title: "An Analysis of the Metrics Used in the 2025 Budget Reduction Proposal"
+number-sections: true
 format: 
   html: default
   pdf: default
   docx: default
 ---
+
+This document contains a reorganized version of the code book provided to departments.
+The code book describes how the various measures used to evaluate departments were assembled and calculated.
+Measure definitions have been rearranged to form coherent categories (the [original document](documentation/Measure Definitions 5_16_25.pdf) is difficult to follow in part because derivative measures are sometimes not close to their inputs). 
+
+::: {.callout}
+Comments on the validity of various measures are contained in highlighted blocks to differentiate them from the official metric definitions.
+In most cases, these comments are focused on the problems discovered by the Statistics department, however, it seems likely that most issues cut across many departments.
+:::
 
 # General Descriptors
 ## Identifiers
@@ -787,6 +797,7 @@ Cauchy random variables are typically not covered in undergraduate math-stat and
 
 :::
 
+
 1.74 `research_awards_growth_inc_nuf_fy2020_total_research_awards` Total sponsored research awards received in FY2020. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
 
 1.75 `research_awards_growth_inc_nuf_fy2024_total_research_awards` Total sponsored research awards received in FY2024. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
@@ -794,7 +805,9 @@ Cauchy random variables are typically not covered in undergraduate math-stat and
 1.76 `research_awards_growth_inc_nuf_fy20_fy24` `research_awards_growth_inc_nuf_fy2024_total_research_awards` minus
 `research_awards_growth_inc_nuf_fy2020_total_research_awards` Growth of sponsored research awards from FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This was calculated by taking the dollar growth over the time period of FY24 – FY20 as a percentage of total growth for the institution resulting in that unit’s share of the overall growth dollars for the institution over the reported time period.
 
+
 1.77 `research_awards_growth_inc_nuf_percent_of_total` `research_awards_growth_inc_nuf_fy20_fy24` for the department/unit divided by `research_awards_growth_inc_nuf_fy20_fy24` for UNL as a whole
+
 
 1.61 `research_awards_growth_inc_nuf_z_score` Z score of `research_awards_growth_inc_nuf_fy20_fy24`
 
@@ -805,6 +818,14 @@ Cauchy random variables are typically not covered in undergraduate math-stat and
 
 
 1.73 `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` `Average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` divided by `budget_from_evc_file_state_appropriated_budget` Average sponsored awards for FY20-24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation, for purpose codes research, teaching and public service divided by total state appropriated budget.
+
+::: callout
+### Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
+It's unclear why the `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` indicator was divided by total state appropriated budget, but the numbers for Statistics grants are all over the place. 
+For instance, if we multiply the 0.362 value for statistics (before it is converted to a z-score) by the state permanent budget from 2025-26,  we get `r 0.362*1329241`. 
+One PI in the department brought in 1.2 million dollars in grant money during the 2020-2024 period.
+Thus, we have had a difficult time validating these numbers in any way. 
+:::
 
 1.60 `awards_budget_inc_nuf_z_score` Z score of `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`
 
