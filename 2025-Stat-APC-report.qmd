@@ -791,8 +791,8 @@ Thus, we do not believe criteria 1.1.2 applies to the statistics department; it 
 
 > 3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
 > 
->   1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
->   2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
+>    1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
+>    2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
 
 
 At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). 
@@ -804,7 +804,7 @@ These additional courses may be captured in the metrics in some ways -- it is po
 > The main resources needed to implement the undergraduate Statistics and Data Analytics major and the forthcoming Statistical Data Science major are people and energy. The major requires the development of a considerable number of new courses. To develop these courses with only the existing faculty would require major sacrificees to faculty research programs and to their ability to collaborate with IANR and other faculty at UNL. New faculty will need to be hired to develop coursework for the majors.
 > - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
 
-It is also possible that the average course size may have decreased in the department over the last 3-4 years due to the large increase in new courses along with a relatively small set of cohorts as the major started but before we could advertise the job and graduate school placements of our graduates (we will have a couple of students graduating early in December and the rest of the first cohort graduating in May).
+It is also possible that the average course size may have decreased in the department over the last 3-4 years due to the large increase in new courses along with relatively small initial cohorts as the major started but before we could advertise the job and graduate school placements of our graduates (we will have a couple of students graduating early in December and the rest of the first cohort graduating in May).
 However, we have done this at the request of our leadership, and the program we designed is both unique and well-regarded by our peers.  
 
 > The development of new undergraduate majors is very important not only to UNL but more broadly to the state of Nebraska given the urgent need for highly trained statisticians and data scientists. Furthermore, this program will generate substantial resources for IANR; the department needs resources to develop, deliver, and grow these programs. 
@@ -907,7 +907,7 @@ Circa 1998, "Demand for statistics instruction at both the graduate and undergra
 
 "Being housed entirely in IANR clarifies the flow of resources to the department and will ensure follow-through on commitments made to the department." - 2021 APR Report
 
-# Planning for the Future {#sec-planning}
+# Planning for the Future {#sec-future}
 
 
 
