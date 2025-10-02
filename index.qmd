@@ -1,0 +1,8 @@
+---
+title: "Statistics Department Documentation - 2025 Budget Reduction Proposal"
+format: html
+---
+
+[Report to APC](2025-Stat-APC-report)
+
+[Metrics Analysis](metrics-analysis)
