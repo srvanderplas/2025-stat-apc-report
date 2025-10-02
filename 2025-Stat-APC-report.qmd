@@ -5,6 +5,8 @@ message: false
 error: false
 echo: false
 number-sections: true
+toc-depth: 3
+toc: true
 format:
   html: default
   pdf: 
@@ -24,6 +26,10 @@ library(tidyr)
 library(tibble)
 library(readr)
 library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
 ```
 
 # Introduction
@@ -534,57 +540,6 @@ stats_full_dot |>
 
 ## Teaching
 
-```{r}
-#| include: false
-library(readxl)
-teaching1 <- read_xlsx("data-analysis/data/2-Statistics Impacts - Teaching.xlsx", sheet = 1)
-```
-
-The statistics department teaches courses which are required for degree programs across the university. 
-
-> The plan proposes to strategically deploy a portion of state-appropriated funds to continue to offer: 
-> 
-> - Critical student competencies. Undergraduate and graduate students would continue to gain essential skills in statistics and data analytics for their future careers. We anticipate course offerings would include STAT 218, STAT 380, STAT 801, STAT 802, STAT 870, complemented by additional coursework in R programming, bioinformatics, computational biology, quantitative genetics/genomics, and data analysis interpretation and visualization offered through other units. 
-
-Unfortunately, the budget proposal has massively under-estimated the importance of statistics in curricula across campus, as shown in @tbl-stat-courses-reqd.
-
-```{r}
-#| label: tbl-stat-courses-reqd
-#| message: false
-#| echo: false
-#| warning: false
-library(magrittr)
-library(knitr)
-library(kableExtra)
-tmp <- teaching1 |>
-  set_names(c("Program", "Level", "College", "Classes")) |>
-  mutate(Level = str_replace_all(Level, c("Undergrad" = "UG", "Grad" = "G"))) |>
-  mutate(highlight = str_detect(Program, "Digital.Agriculture|Actuarial|Data.Science|Agricultural.Economics|Finance") |> as.numeric())
-
-select(tmp, -highlight) |>
-  kable(rownames = F, caption="Statistics courses required by other programs across campus. The budget proposal calls for maintaining some statistics courses; programs which require courses that will not be offered are highlighted.") |>
-  kable_styling(latex_options = "striped") |>
-  row_spec(which(tmp$highlight == 1), background = "yellow") |>
-  column_spec(1, width = "15em") |>
-  column_spec(4, width = "15em")
-```
-
-In addition to the listed courses, many graduate statistics courses are taken as electives (or graduate committee-level requirements) to ensure that students have appropriate quantitative training for their research topics and fields. 
-Courses like Stat 850 -- Computing Tools for Statistics -- teach R and python "data wrangling" skills, data visualization, reproducible research, and statistical simulation. 
-The undergraduate computing sequence, Stat 151, 251, and 351, are similarly useful across multiple disciplines, though these courses were developed for the statistics undergraduate program. 
-Relatively quickly after the courses were created, the Digital Agriculture minor was created with the requirement that students take Stat 151 and 251. 
-Similarly, we believe that Stat 349, Technical Skills for Statisticians, might be useful to students in Computer Science who need a technical writing course, though this potential was only identified recently, and we would need to get ACE 2 certification for the course.  
-
-Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. 
-Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. 
-The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician" - Nate Silver, Joint Statistical Meetings, 2013 have been uttered at different points as the phrase "data science" caught on. 
-
-The proposed budget reduction plan does not account for the costs of teaching Stat 218, 380, 801, 802, and 870. 
-Currently, some of these courses are taught by graduate TAs, who will no longer exist if the graduate program is closed. 
-The remainder of the courses are taught by Statistics faculty, who are slated to be eliminated as well.
-The one remaining head of consulting cannot physically teach all of the sections of Stat 218 which are currently taught, let alone teaching 380, 801, 802, and 870 on top of the Stat 218 courses.
-Stat 218 is taken by approximately 20% of undergraduates at UNL and is an extremely important course for building quantitative literacy among undergraduate students. 
-Without a plan to ensure that Stat 218 is taught by people who understand statistical pedagogy, this proposal will majorly weaken quantitative education at UNL and diminish the value of a UNL degree. 
 
 ## Consulting
 
@@ -602,9 +557,7 @@ The current proposal maintains 1 FTE of the current 13 FTE in the Statistics dep
 #| message: false
 #| warning: false
 #| echo: false
-options(knitr.kable.NA = '')
 
-library(readxl)
 consulting <- read_xlsx("data-analysis/data/SC3L_client_count.xlsx", col_types = c("numeric", "text", "numeric", "skip", "skip", "skip")) |>
   mutate(Department = str_remove(Department, "Department of ") |> str_replace("Arts and Sciences", "CAS") |>
            str_replace("SVMBS", "SVBMS") |> str_replace("Services", "Sciences")) |>
@@ -864,6 +817,8 @@ However, we have done this at the request of our leadership, and the program we 
 
 ## Effects of Proposed Cuts on Outside Programs
 
+### Mathematics
+
 [*This section was contributed by Alex Zupan, Undergraduate Chair, Mathematics, and Doug Pellatz, Senior Academic Advisor, College of Arts and Sciences*](documentation/Effects of Proposed Cuts to Undergraduate Program-Math.docx)
 
 Cutting the Department of Statistics will have significant and lasting effects on the undergraduate program in the Department of Mathematics.
@@ -892,6 +847,60 @@ In a recent meeting, Bill reported that the use of statistics in the real world 
 The meteoric rise of AI tools has enabled data scientists to implement new solutions with unprecedented speed, but according to Bill, these solutions require statistics for measurement – to determine to what extent new techniques are working and whether they are reliable, ethical, and fair – and the industry has not yet fully realized this need. 
 Our Data Science majors, with their unique synthesis of mathematical, computing, and statistical knowledge are well-positioned to be leaders in their fields upon graduating from UNL, and without a thriving Department of Statistics, we may not be able to continue making this assertion with confidence.
 
+### University-Wide Impact
+
+```{r}
+#| include: false
+library(readxl)
+teaching1 <- read_xlsx("data-analysis/data/2-Statistics Impacts - Teaching.xlsx", sheet = 1)
+```
+
+The statistics department teaches courses which are required for degree programs across the university. 
+
+> The plan proposes to strategically deploy a portion of state-appropriated funds to continue to offer: 
+> 
+> - Critical student competencies. Undergraduate and graduate students would continue to gain essential skills in statistics and data analytics for their future careers. We anticipate course offerings would include STAT 218, STAT 380, STAT 801, STAT 802, STAT 870, complemented by additional coursework in R programming, bioinformatics, computational biology, quantitative genetics/genomics, and data analysis interpretation and visualization offered through other units. 
+
+Unfortunately, the budget proposal has massively under-estimated the importance of statistics in curricula across campus, as shown in @tbl-stat-courses-reqd.
+
+```{r}
+#| label: tbl-stat-courses-reqd
+#| message: false
+#| echo: false
+#| warning: false
+library(magrittr)
+library(knitr)
+library(kableExtra)
+tmp <- teaching1 |>
+  set_names(c("Program", "Level", "College", "Classes")) |>
+  mutate(Level = str_replace_all(Level, c("Undergrad" = "UG", "Grad" = "G"))) |>
+  mutate(highlight = str_detect(Program, "Digital.Agriculture|Actuarial|Data.Science|Agricultural.Economics|Finance,.PhD") |> as.numeric())
+
+select(tmp, -highlight) |>
+  kable(rownames = F, caption="Statistics courses required by other programs across campus. The budget proposal calls for maintaining some statistics courses; programs which require courses that will not be offered are highlighted.") |>
+  kable_styling(latex_options = "striped") |>
+  row_spec(which(tmp$highlight == 1), background = "yellow") |>
+  column_spec(1, width = "15em") |>
+  column_spec(4, width = "15em")
+```
+
+In addition to the listed courses, many graduate statistics courses are taken as electives (or graduate committee-level requirements) to ensure that students have appropriate quantitative training for their research topics and fields. 
+Courses like Stat 850 -- Computing Tools for Statistics -- teach R and python "data wrangling" skills, data visualization, reproducible research, and statistical simulation. 
+The undergraduate computing sequence, Stat 151, 251, and 351, are similarly useful across multiple disciplines, though these courses were developed for the statistics undergraduate program. 
+Relatively quickly after the courses were created, the Digital Agriculture minor was created with the requirement that students take Stat 151 and 251. 
+Similarly, we believe that Stat 349, Technical Skills for Statisticians, might be useful to students in Computer Science who need a technical writing course, though this potential was only identified recently, and we would need to get ACE 2 certification for the course.  
+
+Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. 
+Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. 
+The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician" - Nate Silver, Joint Statistical Meetings, 2013 have been uttered at different points as the phrase "data science" caught on. 
+
+The proposed budget reduction plan does not account for the costs of teaching Stat 218, 380, 801, 802, and 870. 
+Currently, some of these courses are taught by graduate TAs, who will no longer exist if the graduate program is closed. 
+The remainder of the courses are taught by Statistics faculty, who are slated to be eliminated as well.
+The one remaining head of consulting cannot physically teach all of the sections of Stat 218 which are currently taught, let alone teaching 380, 801, 802, and 870 on top of the Stat 218 courses.
+Stat 218 is taken by approximately 20% of undergraduates at UNL and is an extremely important course for building quantitative literacy among undergraduate students. 
+Without a plan to ensure that Stat 218 is taught by people who understand statistical pedagogy, this proposal will majorly weaken quantitative education at UNL and diminish the value of a UNL degree. 
+
 ## Undergraduate Program
 
 
@@ -913,7 +922,7 @@ Circa 1998, "Demand for statistics instruction at both the graduate and undergra
 
 
 
-# Appendix {.appendix}
+# Appendix
 
 ## Statistics Faculty in the UN System
 
@@ -1044,8 +1053,38 @@ This is not how the APC process should unfold.
 
 There are many data quality problems which were discovered after the Chancellor's proposal but which have not been corrected. 
 The poor data quality and documentation of the data used to assemble the quantitative metrics, and the reliance on this data in the face of identified data quality issues and systematic biases clearly indicates that the administration's committment to metric-driven improvement is at best limited to metrics that can be easily pulled from databases with minimal quality control. 
+However, it is difficult to verify or correct data quality issues (as is required by the APC process -- departments must be given the opportunity to correct the metrics and explain their performance) when the administration has instructed departments around campus not to share data associated with the budget reduction process^[.
 
-XXX Need specific examples XXX
+Moreover, it is clear that whoever designed the data reduction method used in this analysis had internalized the idea of variable standardization but was unfamiliar with the central goal of statistics: interpreting and understanding data within it's real-world context.
+No amount of numerical sophistication will fix an underlying mismatch between the data which is available and the data needed to answer the question of interest. 
+The questions of interest to UNL should be:
+
+- "which departments perform poorly relative to their peers?" followed by 
+- "which departments have relatively little impact on other departments within the university and could thus be eliminated without cascading failures?"
+
+Instead, the analysis focuses on identifying departments which are different from other departments at UNL across a variety of metrics intended for discipline-specific comparisons. 
+It is reasonable, for instance, to compare the per-capita grant funding brought in by one Statistics department to the per-capita grant funding brought in by another Statistics department at a different university. 
+It would even be reasonable to compute this quantity for many departments across the country and to assemble a distribution of values or rank the department of interest compared to its peers. 
+
+However, apart from the SRI metric, which will be addressed separately, this is not what has been done, and it demonstrates a fundamental lack of understanding of the concept of a population: 
+
+> a set of similar items or events which is of interest for some question or experiment. A statistical population can be a group of existing objects or a hypothetical and potentially infinite group of objects conceived as a generalization from experience. -- [Wikipedia, definition of "statistical population"](https://en.wikipedia.org/wiki/Statistical_population)
+
+That is, whoever created the statistical analysis methodology did not account for the fact that all departments in the analysis are not similar. 
+For instance, instructional metrics are computed without regard to whether a department offers service courses at the undergraduate or graduate level (and how many of those courses are offered or required by other departments). 
+This leads to nonsensical comparisons, such as comparing the EDAD department, which is graduate-only and doesn't have service courses, to the English department, which teaches courses at all levels and has many service courses and electives as part of its portfolio. 
+Ultimately, it is not reasonable to expect that the EDAD department would offer undergraduate courses in educational administration, a field that requires a graduate degree (for good reason). 
+Thus, it is also not reasonable to explicitly compare these departments and their constitutent programs and course offerings.
+As graduate students are only a fraction of the students on campus, it is not reasonable to compare SCH generated at the graduate level in one department to SCH generated at both undergraduate and graduate levels in others.
+
+This problem persists across research funding. 
+SRI, a measure created by Academic Analytics, is perhaps the exception to this rule, but only in that it accounts for discipline-specific norms with respect to research outputs. 
+Unfortunately, UNL's administration used a custom SRI value which compares UNL departments to public AAU institutions, and then took that value and used it to compare UNL departments to each other across discipline boundaries.
+@sec-metric-sri-problems has more detail on SRI, but the broader issue of comparing numbers across departments which are not fundamentally similar is pervasive throughout both the research and instructional metrics. 
+For instance, grants in English are not similarly sized to those in Physics and Astronomy, Agronomy, or Engineering, because English professors typically do not require large amounts of expensive equipment to complete their research.
+As a result, it does not make sense to group these departments into the same distribution, which is what the analysis implicitly does by calculating a z-score for each variable. 
+
+
 
 ### Use of Scholarly Research Index {#sec-metric-sri-problems}
 
