@@ -588,6 +588,21 @@ Without a plan to ensure that Stat 218 is taught by people who understand statis
 
 ## Consulting
 
+```{r}
+#| label: tbl-sc3l-clients
+#| message: false
+#| warning: false
+#| echo: false
+options(knitr.kable.NA = '')
+
+library(readxl)
+consulting <- read_xlsx("data-analysis/data/SC3L_client_count.xlsx", col_types = c("numeric", "text", "numeric", "skip", "skip", "skip")) |>
+  filter(Department != "Total")
+consulting |> pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum) |>
+  kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNO, UNMC, and UNK.")
+```
+
+
 ## Collaboration
 
 ## Uncaptured Information
