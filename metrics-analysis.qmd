@@ -1,9 +1,9 @@
 ---
 title: "Department Metrics"
 format: 
+  html: default
   pdf: default
   docx: default
-  html: default
 ---
 
 # General Descriptors
