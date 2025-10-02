@@ -1,0 +1,1157 @@
+Received: from DM6PR08MB6393.namprd08.prod.outlook.com (2603:10b6:5:1e8::15)
+ by BN6PR08MB3332.namprd08.prod.outlook.com with HTTPS; Fri, 12 Sep 2025
+ 18:44:20 +0000
+Received: from SJ0PR13CA0046.namprd13.prod.outlook.com (2603:10b6:a03:2c2::21)
+ by DM6PR08MB6393.namprd08.prod.outlook.com (2603:10b6:5:1e8::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Fri, 12 Sep
+ 2025 18:44:13 +0000
+Received: from CO1PEPF000044F5.namprd05.prod.outlook.com
+ (2603:10b6:a03:2c2:cafe::8e) by SJ0PR13CA0046.outlook.office365.com
+ (2603:10b6:a03:2c2::21) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9137.7 via Frontend Transport; Fri,
+ 12 Sep 2025 18:44:13 +0000
+Authentication-Results: spf=pass (sender IP is 52.128.42.45)
+ smtp.mailfrom=em-2456422.unl.edu; dkim=fail (body hash did not verify)
+ header.d=unl.edu;dkim=fail (body hash did not verify)
+ header.d=acems2.com;dmarc=pass action=none header.from=unl.edu;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of em-2456422.unl.edu
+ designates 52.128.42.45 as permitted sender) receiver=protection.outlook.com;
+ client-ip=52.128.42.45; helo=d13c.emsend1.com; pr=C
+Received: from mx0a-00246402.pphosted.com (148.163.147.197) by
+ CO1PEPF000044F5.mail.protection.outlook.com (10.167.241.75) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9115.13 via Frontend Transport; Fri, 12 Sep 2025 18:44:13 +0000
+Received: from pps.filterd (m0136266.ppops.net [127.0.0.1])
+	by mx0a-00246402.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58CGJwc8021282
+	for <susan.vanderplas@unl.edu>; Fri, 12 Sep 2025 13:44:12 -0500
+Authentication-Results-Original: ppops.net;	spf=pass
+ smtp.mailfrom=bounce-2456422-1548-21256-susan.vanderplas=unl.edu@em-2456422.unl.edu;
+	dkim=pass header.d=unl.edu header.s=acdkim1;	dkim=pass header.d=acems2.com
+ header.s=acdkim1
+Received: from d13c.emsend1.com (d13c.emsend1.com [52.128.42.45])
+	by mx0a-00246402.pphosted.com (PPS) with ESMTPS id 490hpy1ece-24
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <susan.vanderplas@unl.edu>; Fri, 12 Sep 2025 13:44:12 -0500 (CDT)
+X-KumoRef: eyJfQF8iOiJcXF8vIiwicmVjaXBpZW50Ijoic3VzYW4udmFuZGVycGxhc0B1bmwuZWR1In0=
+DKIM-Signature: v=1; a=rsa-sha256; d=unl.edu; s=acdkim1; c=relaxed/relaxed;
+	bh=7DJwnluWr/YD36CtG3GPzskX+sk+BVNbeDNhSzSYNa8=;
+	h=from:to:subject:date:mime-version:content-type:sender:cc:date:message-id:
+		list-unsubscribe:list-unsubscribe-post; t=1757702630; x=1757789030;
+	b=Au7w7cMn7waUQBr93sHs2OPq1JCC2IFQ/RE2XHMIu3ZR8ruDeR8/VcdD8lpZ5j+9Gp1we/ZPJ
+	oggSfSqBp+HaQBikXNf0rtIgBA0RyKjXRTiqDdVdwcKJ/4mxBCz7wqkKaaPXevD9o1PhFlLk0HK
+	gliTVnBrV6lk3fiEaaU22nldTwvrSVaG3Usg9MUUlcWDRtKbroHRU2w09I4oOrr+e6M0JNHnrez
+	z1HgDgy2u6d77Dt7xbA6Cx1FGV/wsquSETMuAyHottLMSygz7pUkJoWr280WVDchUbCAil2PzUx
+	KT3fZgfaqcDXEig4hZIo9TqoQqOeTvgUiTOs2c6LvWTQ==;
+DKIM-Signature: v=1; a=rsa-sha256; d=acems2.com; s=acdkim1; c=relaxed/relaxed;
+	bh=7DJwnluWr/YD36CtG3GPzskX+sk+BVNbeDNhSzSYNa8=;
+	h=from:to:subject:date:mime-version:content-type:sender:cc:date:message-id:
+		list-unsubscribe:list-unsubscribe-post; t=1757702630; x=1757789030;
+	b=okoZhnA7nzmz2hQO/Tmx/m52ClkQ2xOtwQJsszEubQpt8Oc14/WG6X/5M2MekWLlzV35UFzqj
+	esz+/3LC11Kx0uu2mFWelsPXxvuQH5h01bN93wuRQo1wsQLpOGIcN7hhlOtJDwmml4M503/mn/J
+	2W3y8KrRUb4NMWR+MBciqeS3dgp4dKwiXhtOOJB+jetqnPXypZiTWVOz4hT6nzR+7PZioYDPXqj
+	Io1JQqK9B5LLXWXRvrRreo3ca0/2H0j42MC7jQFEXLqztwBUNzSIIg6mwggzZAXHYm/4/EIWQxR
+	HryhqmhDoDqTA75uUcq3iRJhSeT6Y9ENjtLqsSzzfLhQ==;
+CFBL-Address: fbl-report@acems1.com; report=arf
+X-Mailer: ActiveCampaign Mailer
+Received: from cell-3-bdb674f6f-9jb85 (10.65.103.34)
+  by acems1.com (KumoMTA 10.0.70.56) 
+  with ESMTP id 6c5aeb65900811f0b22412e6bae2a577 for <susan.vanderplas@unl.edu>;
+  Fri, 12 Sep 2025 18:43:50 +0000
+Date: Fri, 12 Sep 2025 18:43:50 +0000 (GMT)
+From: IANR Vice Chancellor's Office <IANR@unl.edu>
+To: susan.vanderplas@unl.edu
+Message-ID: <772549079.3083031.1757702630046@cell-3-bdb674f6f-9jb85>
+Subject: Chancellor's Proposed Budget Reduction Plan
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3083030_659756964.1757702630046"
+X-DKIM-Options: s=acdkim1
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Virtual-Mta: d12c.emsend1.com
+X-250ok-CID: 2456422-1548
+List-Unsubscribe: <https://unl233.activehosted.com/box.php?nl=30&c=1548&m=1635&s=36e06e2267ac5928e036fb0a0b2da581&funcml=unsub2&luha=1>,<mailto:unsubscribe-5c67ebfd3d04596af8169957c12e163c-1548-36e06e2267ac5928e036fb0a0b2da581@d12c.emsend1.com>
+Feedback-ID: 2456422:activecampaign
+X-Sending-Engine: Hedwig PCS
+X-Report-Abuse: Please report abuse to abuse@activecampaign.com
+X-mid: c3VzYW4udmFuZGVycGxhc0B1bmwuZWR1ICwgYzE1NDggLCBtMTYzNSAsIHMxMTEw
+X-Proofpoint-GUID: wcRSeLvaVYGLLRpZrU3fjH1GyYvMz15D
+X-CLX-Response: 1TFkXGB4ZEQpMehcYHxIRCllEF2xDQGlnUwVtf2xcEQpYWBduTh4fTh9gTVN
+ seREKeE4XbVNGQl9oc3pNT30RCnlMF2JpaHprexMSe3xLEQpDSBcHGx0bEQpDWRcHHhwaEQpDSR
+ caBBoaGhEKWU0XZ2ZyEQpZSRcacRoQGncGGBgZcRscExAadwYYGgYaEQpZXhdsbHkRCklGF0RPS
+ FhLWUFLRkNESUVGRHVCRVleT04YEQpJRxd4T00RCkNOF11JeHlPZlxLfHNtZmZ4WnBYfxlMQGIb
+ bVNzXGdQGx9uEQpYXBcfBBoEHhoTBRsaBBsbGgQbGR4EGR4QGx4aHxoRCl5ZF0wBTRxyEQpNXBc
+ ZGhgRCkxaF2lobU1NXREKTEYXb2tra2trEQpCTxdnGV59aR9QfEJMGhEKQ1oXHxgEGxgSBB4YBB
+ 4fEQpCXhcbEQpCRhdgbQV9bUdGEl9EGhEKQkcXZWlOAUt8HkB/ZkMRCkJcFxsRCl5OFxsRCkJLF
+ 21TRkJfaHN6TU99EQpCSRdtU0ZCX2hzek1PfREKQkUXbxlYZ2ITG11YH0QRCkJOF21TRkJfaHN6
+ TU99EQpCTBduTh4fTh9gTVNseREKQmwXeh1+SxtyQ2ZTfmkRCkJAF2xDGENGck5dEk9HEQpCWBd
+ tSRkaS0kYbgFnchEKWlgXGxoRCnlDF21afWxYT2xbTV8dEQpZSxcbGRMYHBEKcGgXelscWh95fR
+ tTYBgQGhEKcGgXYUdgW2FoYRNnXgEQBxsSEQpwaBdje216Eh1jYFBYEhAaEQpwaBdsbxxSb3lMZ
+ 19hWRAaEQpwaBdnH0hNQ0NnThljeRAaEQpwaBduYF1cfkJwBXxbHBAaEQpwaBdpWBlTXXl9ZWVI
+ ZBAaEQpwaBdkUnhrbR1cbUlMBRAaEQpwfRdpbWZnU1lvGWhSYRAaEQpwfRdsclheTXNbcnpEXRA
+ aEQpwfRdjeWBOW2hJcgFwHhAaEQpwfRdsHRhNZmkYWBJFThAaEQpwfRdpGU9gZ1hQGRoFQhAaEQ
+ pwfRdjBR5raERnfGEcXRAaEQpwfRdoWHt9f2laYkNsfRAaEQpwfRdhHVJGZ15/ZWhnYhAaEQpwf
+ RdgTEwaWXNyT3xzbhAaEQpwfRdpQX16W05GfmNlWhAaEQpwfRdgTHNlTGNPaVlvSRAaEQpwfxdg
+ XHMTU1h8Rn5QUxAZHREKcF8XZX9Ce2kaGX9wYG4QGhEKcH8Xa2leeBJ5TVtvWkkQGx4SEQpwXxd
+ sclheTXNbcnpEXRAaEQpwfxdtaR97XWJoa0BzWBAbGxoRCnBfF2VZaWdGTn1sZmYdEBoRCnB/F2
+ FPHxl5SWlceRpmEBIZEQpwXxdmGkRbcxl6bkxyWBAaEQpwfxdvG0FoemNmHkhmExAdGxEKcF8Xb
+ V1CH15kT2JeHnwQGhEKcH8XYVwZc0J5b3lCQF4QGxoaEQpwXxdnaH1yH3tuRBIeXBAaEQpwXxdm
+ Q0d8cmJ4GXx6WRAaEQpwXxduTgFIWWxbRUJFfBAZGhEKcH8XbRtMWBldE117XV4QGxIRCnBfF2x
+ oQEEBUHJoUn1HEBoRCnB/F2ZlHVlfZXhZT15TEB8ZEQpwXxdlZxNcWlIba0xDaxAaEQpwbBd6aG
+ hcb11hf2gdWxAaEQptfhcaEQpYTRdLESA=
+X-Authority-Analysis: v=2.4 cv=Cuu/cm4D c=1 sm=1 tr=0 ts=68c469fc b=1 cx=c_pps
+ a=h7CF52D0FNPnFWkGiPWQtg==:117 a=h7CF52D0FNPnFWkGiPWQtg==:17
+ a=yJojWOMRYYMA:10 a=8m3jt7JJx10A:10 a=x7bEGLp0ZPQA:10 a=Ijs6-Pz6rsYA:10
+ a=w9MwUxSJNc0A:10 a=MLdEQryxAAAA:8 a=FpL-cDdLAAAA:8 a=3j4BkbkPAAAA:8
+ a=JqEG_dyiAAAA:8 a=BkpHzsgbAAAA:8 a=lymaMkSsAAAA:8 a=G5oZYuUlAn4Q6Lz-i9EA:9
+ a=QEXdDO2ut3YA:10 a=qYZQGNZPAAAA:8 a=XMcNLDuyAAAA:8 a=MIFanduTAAAA:8
+ a=jlcP9ZSzr5GgREFwXkQA:9 a=cy0kP5WBQyMxyu0h:21 a=_W_S_7VecoQA:10
+ a=Ru97nHiPDtp4odn3vKgu:22 a=VmL9gV1b1JXMv2Qi3hFU:22 a=sJ4V-eEOM1furjnXJLQZ:22
+ a=0hmcF2QPpWTojkgBgRrM:22 a=L5lYD7rR-2yHGwSfU_DD:22 a=tEVDqMtgm1n8-sPz4qZT:22
+X-CLX-Shades: MLX
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDA4MSBTYWx0ZWRfX2DoObKe/Upg3
+ GOEL5UuouQRxx6G7JeQfrmSrJJ/O8GgSZPVdkA4jYX+bcBQnR/KTxIX8bA+UCvgRX8EQlDOm9Y1
+ gaejul2CirZ0hb7+BxDxmIA1zv/nQl44Pbf1puYsSD4Y75+zLH3B0/JY12Le87wBTEqE0vqMyD/
+ Zp6iZfSDwBnuqDQap782vra9BR2LJ2kSzrwhOmzDRegY5FvE1OZrvHhi/4CtSEU55ddciHeJ8A7
+ H2bd/O2KnXHjLl0OS8QaDLa1GGZbUzEPMZsAmuxiBY1/EG1MAeeavRt8Mx43Tt9A+VuO87heWs2
+ rINzbTWzahkFEy+EryQERbnaP+QyDvuAj356B9nI3osfc0vOTN8XHQQpDUezLfiKn+SxAbLcTzW
+ hq9k44dhqLf8JTmvXWIrB6nCGdtnrnlgSpH4UeiLk3u7/6KNruOazO9w2t9b+McGYBav/wVI
+X-Proofpoint-ORIG-GUID: wcRSeLvaVYGLLRpZrU3fjH1GyYvMz15D
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-12_07,2025-09-12_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=258 clxscore=243 bulkscore=0 impostorscore=0 adultscore=0
+ suspectscore=0 phishscore=0 spamscore=0 malwarescore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=inbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2509060081 domainage_hfrom=13926
+Return-Path: bounce-2456422-1548-21256-susan.vanderplas=unl.edu@em-2456422.unl.edu
+X-MS-Exchange-Organization-ExpirationStartTime: 12 Sep 2025 18:44:13.3141
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 0c5d8634-4629-48c9-add7-08ddf22c5e6c
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: fddb01ad-4983-436e-ab35-1af043b818c9:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-SkipListedInternetSender: ip=[52.128.42.45];domain=d13c.emsend1.com
+X-MS-Exchange-ExternalOriginalInternetSender: ip=[52.128.42.45];domain=d13c.emsend1.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CO1PEPF000044F5:EE_|DM6PR08MB6393:EE_|BN6PR08MB3332:EE_
+X-MS-Exchange-Organization-AuthSource: CO1PEPF000044F5.namprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 0c5d8634-4629-48c9-add7-08ddf22c5e6c
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|69100299015|82310400026|4022899009|1032899013|13003099007|2066899003|8096899003|20209132999003;
+X-Forefront-Antispam-Report: CIP:148.163.147.197;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:d13c.emsend1.com;PTR:d13c.emsend1.com;CAT:NONE;SFS:(13230040)(69100299015)(82310400026)(4022899009)(1032899013)(13003099007)(2066899003)(8096899003)(20209132999003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Sep 2025 18:44:13.1836
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0c5d8634-4629-48c9-add7-08ddf22c5e6c
+X-MS-Exchange-CrossTenant-Id: fddb01ad-4983-436e-ab35-1af043b818c9
+X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF000044F5.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR08MB6393
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:07.6506193
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9094.017
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:1;jmr:0;auth:0;dest:C;OFR:CustomRules;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?eUpqM0RSNW9SdkJtMTFXMnIyd3B1ektpT0hleWlDVUZucWRIUkE0ZHZublhZ?=
+ =?utf-8?B?Qk91QXkrMlc4bTNWd0tVakUwRVRaV05MUFhMTklhdmlKaGh1cUttTVd1d2tu?=
+ =?utf-8?B?N0VOZUlscEE4aVk1NEV4OFN2azhIaFU5MmphMS9xcVliMWlQMDJrSEpxaGR5?=
+ =?utf-8?B?QU54WkF1RjZqKzJ3azZMUjUyUURiOXQ2WCtXSjRxRVNBK0xhemo1R2FEZGdZ?=
+ =?utf-8?B?SmUwTzExWE83TnE4eXcyZUhrU0JUcTFnQXgxTXpFdVhRWkNEZDBpS0ZnaHhh?=
+ =?utf-8?B?dEpCaDczSjBKYUV4dHdwZmlJOXZJaEMvTUZ6OFFTd09RWThDYkxuK1RvTTFX?=
+ =?utf-8?B?N0hEemoyWkVQRUVDeHNWUkVKRUdLUzJ0Q0s1aUUvTlYxQSsxS3hOTHBDRTJ4?=
+ =?utf-8?B?ditjdDREN3F3cUZjUHdKQ0d6VUN1b01wMTRySzJTdUlBeW1NKzNQSXBhVjdw?=
+ =?utf-8?B?YjVKV3BJYTdZSWNYaTRGYmcxWXV3ZTJVdEpWd3pLY3cvQmNDN3pXRTRzVnR6?=
+ =?utf-8?B?bmJGU3RWek02WDhSZmpuM2FBSXB6VjA4RFRPNFVFaTMvUHFGUmxQZ1JKb0p6?=
+ =?utf-8?B?OGd4aHBkVEQ2ZTZDV3RxTDg0QVhNeWFORVRCSVRBTWxEc0puT0YrMmdNQVFU?=
+ =?utf-8?B?WmZOR0YycUJ4ZnUrL2JCNUJvcjliVUdWWWxrek5nNmcwV1hndEpPRWkwbEhJ?=
+ =?utf-8?B?bGpYYUZwQnlNMXI2elpGYkw5YWxtTitQY2ZkaEFqeWFuMWZnMnYyZ0t3K01t?=
+ =?utf-8?B?WTBqdzNMZWprZ1djNWY2YVBvRVp1UExkcngxQ21heE9MYThmMURFenNheHd2?=
+ =?utf-8?B?d3ByVnkvQlpGR01FVVVaQUl3S1B6VXlHVUNocCtSR1R0VURRdGUwNnlONngx?=
+ =?utf-8?B?MUliek1tcnNoUWdWS1hnaXJGVXEzSXB5dndPOGk4RXo0TkQ1RFkvZjd4eXdZ?=
+ =?utf-8?B?MHFxZEhNK0VYN3ZVRm9RQWxqWUhTMmFzbmhPcmkxVXNRYVo4bFJ0eXNEeXhy?=
+ =?utf-8?B?alJkSkZBQmZDTkwwRmJva2tZakRWYVRFMTNzS0ViYnJaZDNwQ2I5blBzNmtS?=
+ =?utf-8?B?OC92Zno2VlU2QzdvZkRDZ0FMelhicEZyTjlCWDJZdTRDRGIvbHNDeVB0S2Fy?=
+ =?utf-8?B?Y0lkWkEwY3ZWUG5zOUJMSjJqbXBPNnhxMFNBdXRxbmE5d1NtR3ZOWUtVS0dK?=
+ =?utf-8?B?NzVNZ1ptcFBkN0ptMEY0eGM0Um9iWkFUdjJ4UzdUc2JNUFJpQkNDU3hsZzVn?=
+ =?utf-8?B?dmN5SlJ5U05kRDI1RXpSYlVLMlJ6d25qbE9PMTlwb2xtbUxhczJMaUxUU29Z?=
+ =?utf-8?B?Qyt0S3E2UlY2VEVqNlVxaTg0dm1adDE4ek4vbVltNm5uVmlYZWxwMm1kK093?=
+ =?utf-8?B?YWRLQmdtN25iRHhDOFFJYXFudGRVWklxdmNQVk9WNklvcjVYOERnVGZGVlpK?=
+ =?utf-8?B?SU92ZFFDREw0WFhPWS8yelFyN0NvYXdoczhhb1ZvQnIzTWplbXdsdnFnUy9X?=
+ =?utf-8?B?b3IzOWNaRk5QdFRUeklOaU52Ump0bmovTi9BN3ZQQzhDK1lDelh2ZklRZFdi?=
+ =?utf-8?Q?UGw5/9/sVWYLjDxqMWC77Xuc8=3D?=
+MIME-Version: 1.0
+
+------=_Part_3083030_659756964.1757702630046
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+A message from IANR leadership View email in web browser https://urldefense=
+.com/v3/__https://unl233.acemlnb.com/lt.php?x=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6=
+ovN9xk*thX8HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HGIFie6m__;fn5-!!PvXuogZ4sRB2p-t=
+U!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85artV59=
+LkzIlMo9g$=20
+
+http://ianr.unl.edu =20
+
+Sept. 12, 2025
+
+Dear IANR faculty and staff,
+
+Earlier today, University of Nebraska=E2=80=93Lincoln Chancellor Rodney Ben=
+nett shared his proposed budget reductions. We want to follow up with you t=
+o outline the proposed changes that will specifically impact our IANR commu=
+nity. Please remember that the public release of these reductions is just o=
+ne step of the budget reduction process. At this point these are recommenda=
+tions only=E2=80=94not final decisions.
+
+The recommendations specific to IANR include:
+
+Department of Statistics
+
+The proposed plan would eliminate a standalone Department of Statistics off=
+ering BS, MS, and PhD degrees and moves the university toward a distributed=
+ model that leverages expertise embedded across IANR, UNL and the NU system=
+. The plan proposes to strategically deploy a portion of state-appropriated=
+ funds to continue to offer:=20
+
+* Critical student competencies. Undergraduate and graduate students would =
+continue to gain essential skills in statistics and data analytics for thei=
+r future careers. We anticipate course offerings would include STAT 218, ST=
+AT 380, STAT 801, STAT 802, STAT 870, complemented by additional coursework=
+ in R programming, bioinformatics, computational biology, quantitative gene=
+tics/genomics, and data analysis interpretation and visualization offered t=
+hrough other units.=20
+
+* Coordinated statistical consulting. Through the Statistical Cross-Discipl=
+inary Collaboration and Consultation Lab (SC3L) Help Desk, services would b=
+e available to support laboratory, greenhouse, and field research conducted=
+ by IANR faculty, staff, post-docs, and students, as well as other units.
+
+Budget reductions would be achieved through the elimination of positions (1=
+2 FTE).=20
+
+Departments of Entomology and Plant Pathology
+
+The Departments of Entomology and Plant Pathology would be integrated withi=
+n a new interdisciplinary school. This integration would ensure that resear=
+ch, Extension, and teaching remain aligned with workforce priorities and th=
+e long-term vitality of Nebraska=E2=80=99s economy and communities. MS and =
+PhD degrees in Entomology and Plant Pathology would continue to be offered.=
+ If the Chancellor=E2=80=99s budget plan is approved by the Board of Regent=
+s, the faculty from the two units, working alongside administration, would =
+have the 2026 spring semester to develop the framework for the new school=
+=E2=80=94including the name and faculty governance structures. Budget reduc=
+tions would be realized through natural attrition, including the Voluntary =
+Separation Incentive Program (VSIP).=20
+
+Departments of Agricultural Economics and Agricultural Leadership, Educatio=
+n and Communication
+
+The Departments of Agricultural Economics and Agricultural Leadership, Educ=
+ation, and Communication (ALEC) would be integrated within a new interdisci=
+plinary school. This integration would ensure that expertise within these d=
+epartments is retained within IANR, and research, Extension, and teaching p=
+rogramming is aligned with workforce priorities and the long-term vitality =
+of Nebraska=E2=80=99s economy and communities.  Current BS, MS, and PhD deg=
+ree pathways would continue to be offered. If the Chancellor=E2=80=99s budg=
+et plan is approved by the Board of Regents, the faculty from the two units=
+, working alongside administration, would have the 2026 spring semester to =
+develop the framework for the new school=E2=80=94including the name and fac=
+ulty governance structures. Budget reductions would be realized through nat=
+ural attrition, including the Voluntary Separation Incentive Program (VSIP).
+
+The Chancellor=E2=80=99s budget reduction plan also proposes the eliminatio=
+n of the Department of Textiles, Merchandising and Fashion Design, which in=
+cludes faculty with appointments in Nebraska Extension and the Agricultural=
+ Research Division.
+
+Again, none of the proposals outlined above has been finalized, and there w=
+ill be opportunities for faculty, staff, students, and stakeholders to weig=
+h in before any action is taken. The Academic Planning Committee (APC) will=
+ gather input through public sessions and online submissions before Chancel=
+lor Bennett submits his recommendations to the Board of Regents for approva=
+l. More information is available on UNL=E2=80=99s budget process website ht=
+tps://budgetprocess.unl.edu/ .=20
+
+The Chancellor=E2=80=99s budget reduction plan includes changes that impact=
+ people, programs, and passions in deeply personal ways across the Universi=
+ty of Nebraska-Lincoln. Please know we are committed to supporting IANR and=
+ the broader community as we navigate this difficult process together.=20
+
+We have profound trust in the resilience, creativity, and dedication of our=
+ faculty, staff, and students. Together, even in this challenging moment, w=
+e will continue to serve Nebraska with excellence and purpose.
+
+Thank you for all that you do, and for the heart and commitment you bring t=
+o IANR every day.=20
+
+Sincerely,
+
+IANR SLT =E2=80=93 Charlie, Derek, Tom, Rich, Jeff, Cara and Tiffany
+
+https://urldefense.com/v3/__https://www.facebook.com/unlianr__;!!PvXuogZ4sR=
+B2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85a=
+rtV59LlMpzqj5w$ =20
+
+=C2=A0
+
+https://urldefense.com/v3/__https://twitter.com/UNL_IANR__;!!PvXuogZ4sRB2p-=
+tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85artV5=
+9LnlXfFBww$ =20
+
+=C2=A0
+
+https://urldefense.com/v3/__https://www.instagram.com/unl_ianr/__;!!PvXuogZ=
+4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T=
+85artV59Lki8F7BVA$ =20
+
+=C2=A0
+
+https://ianr.unl.edu/ =20
+
+Copyright =C2=A9 2024, All rights reserved.=20
+
+The University of Nebraska does not discriminate based upon any protected s=
+tatus. Please see go.unl.edu/nondiscrimination http://go.unl.edu/nondiscrim=
+ination .
+_________________
+
+Sent to: susan.vanderplas@unl.edu
+
+Unsubscribe:
+https://urldefense.com/v3/__http://unl233.activehosted.com/proc.php?c=3D154=
+8&m=3D1635&s=3D36e06e2267ac5928e036fb0a0b2da581&d=3D1110&v=3D2&nl=3D30&act=
+=3Dunsub__;!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCr=
+AdiYb76Y0FtkJtf0Vm-T85artV59Lmam788PQ$=20
+
+IANR, 300 Agricultural Hall, Lincoln, NE 68583-0708, United States=
+
+------=_Part_3083030_659756964.1757702630046
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta http-equiv=3D"Content-Language" content=3D"en-us">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta name=3D"format-detection" content=3D"date=3Dno">
+<meta name=3D"format-detection" content=3D"address=3Dno">
+<meta name=3D"format-detection" content=3D"email=3Dno">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, minimal-ui, initia=
+l-scale=3D1.0, maximum-scale=3D1.0, user-scalable=3D0;">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<style data-ac-keep=3D"true"> .ExternalClass { width: 100%; background: inh=
+erit; background-color: inherit; } .ExternalClass, .ExternalClass p, .Exter=
+nalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {=
+ line-height: 100%; } .ExternalClass p, .ExternalClass ul, .ExternalClass o=
+l { Margin: 0; } .undoreset div p, .undoreset p { margin-bottom: 20px; } di=
+v[class^=3D"aolmail_divbody"] { overflow: auto; } [owa] #ac-footer { paddin=
+g: 20px 0px !important; background: inherit; background-color: inherit; } a=
+[x-apple-data-detectors] { color: inherit !important; text-decoration: none=
+ !important; font-size: inherit !important; font-family: inherit !important=
+; font-weight: inherit !important; line-height: inherit !important; } @-ms-=
+viewport { width: device-width; } </style>
+<style data-ac-keep=3D"true">
+@media only screen and (max-width: 600px) { /*-----------------------------=
+--------------------------------------------*\ Abandoned Cart widget \*----=
+--------------------------------------------------------------------*/ .td_=
+abandoned-cart img {display: block;padding-right: 0 !important;padding-bott=
+om: 0 !important;width: 100% !important;max-width: 100% !important;height: =
+auto !important;} body { padding: 0!important; font-size:1em!important; } *=
+ { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing:=
+ border-box; } *[class].divbody {-webkit-text-size-adjust:none !important;}=
+ *[class].td_picture img {width:auto !important;} *[class].td_text { line-h=
+eight: 110%; } *[class].td_button { width: auto; } /* Collapse all block el=
+ements */ :not(.body) table { display: block!important; float:none!importan=
+t; border-collapse:collapse !important; width:100% !important; min-width:10=
+0% !important; clear:both!important; } :not(.body) thead, :not(.body) tbody=
+, :not(.body) tr { display:block!important; float:none!important; width:100=
+% !important; } :not(.body) th, :not(.body) td, :not(.body) p { display:blo=
+ck!important; float:none!important; width:100% !important; clear:both!impor=
+tant; } /* Remove browser default styling for elements */ ul, ol { margin-l=
+eft: 20px; margin-bottom: 10px; margin-top: 10px; -webkit-margin-before: 0;=
+ -webkit-margin-after: 0; -webkit-padding-start: 0; } /* Set default height=
+ for spacer once collapse */ *[class].spacer { height: auto!important; } a[=
+href^=3Ddate]{ color:inherit !important; text-decoration:none !important;} =
+a[href^=3Dtelephone]{ color:inherit !important; text-decoration:none !impor=
+tant;} a[href^=3Daddress]{ color:inherit !important; text-decoration:none !=
+important;} a[href^=3Demail]{ color:inherit !important; text-decoration:non=
+e !important;} /* Default table cell height */ td[height=3D"14"]{height:14p=
+x!important;font-size:14px!important;line-height:14px!important;}
+td[height=3D"0"]{height:0px!important;font-size:0px!important;line-height:0=
+px!important;}
+td[height=3D"12"]{height:12px!important;font-size:12px!important;line-heigh=
+t:12px!important;} /*------------------------------------------------------=
+-------------------*\ Product Widget \*------------------------------------=
+-------------------------------------*/ .td_product div, .td_product .produ=
+cts-display { float: none !important; display: block !important; width: 100=
+% !important; Margin-bottom: 20px !important; } .td_product img { width: 10=
+0% !important; max-width: 100% !important; } /* Default social icons */ *[c=
+lass].ac-social-icon-16 {width:16px !important; height:16px !important;} *[=
+class].ac-social-icon-24 {width:24px !important; height:24px !important;} *=
+[class].ac-social-icon-28 {width:28px !important; height:28px !important;} =
+*[class].__ac_social_icons { margin-right: 0px !important; } }
+</style>
+<style data-ac-keep=3D"true"> @media only screen and (max-width: 320px) { #=
+layout-row26553 img { width: 100% !important; height: auto !important; max-=
+width: 320px !important; } #layout-row26555 img { width: 100% !important; h=
+eight: auto !important; max-width: 320px !important; } table, tbody, td, .d=
+ivbody { display: table !important; width: 100% !important; max-width: 100%=
+ !important; } .td_rss .rss-item img.iphone_large_image { width: auto !impo=
+rtant; } u + .body { display: table !important; width: 100vw !important; mi=
+n-width: 100vw !important; } u + .body table { display: table !important; w=
+idth: 100% !important; min-width: 100% !important; } u + .body td { display=
+: block !important; width: 100% !important; min-width: 100% !important; } u=
+ + .body img { display: inline-block !important; margin: auto !important; w=
+idth: auto !important; vertical-align: bottom !important; } u + .body cente=
+r { display: block !important; margin: auto !important; width: 100% !import=
+ant; min-width: 100% !important; text-align: center !important; } u + .body=
+ table._ac_social_table, u + .body table._ac_social_table td, u + .body tab=
+le._ac_social_table div, u + .body table._ac_social_table a { display: inli=
+ne-block !important; margin: auto !important; width: auto !important; min-w=
+idth: auto !important; text-align: center !important; } u + .body table._ac=
+_social_table img { display: inline-block !important; margin: auto !importa=
+nt; width: 32px !important; min-width: 32px !important; max-width: 32px !im=
+portant; }
+}
+@media only screen and (max-width: 375px) { #layout-row26553 img { width: 1=
+00% !important; height: auto !important; max-width: 375px !important; } #la=
+yout-row26555 img { width: 100% !important; height: auto !important; max-wi=
+dth: 375px !important; } table, tbody, td, .divbody { display: table !impor=
+tant; width: 100% !important; max-width: 100% !important; } .td_rss .rss-it=
+em img.iphone_large_image { width: auto !important; } u + .body { display: =
+table !important; width: 100vw !important; min-width: 100vw !important; } u=
+ + .body table { display: table !important; width: 100% !important; min-wid=
+th: 100% !important; } u + .body td { display: block !important; width: 100=
+% !important; min-width: 100% !important; } u + .body img { display: inline=
+-block !important; margin: auto !important; width: auto !important; vertica=
+l-align: bottom !important; } u + .body center { display: block !important;=
+ margin: auto !important; width: 100% !important; min-width: 100% !importan=
+t; text-align: center !important; } u + .body table._ac_social_table, u + .=
+body table._ac_social_table td, u + .body table._ac_social_table div, u + .=
+body table._ac_social_table a { display: inline-block !important; margin: a=
+uto !important; width: auto !important; min-width: auto !important; text-al=
+ign: center !important; } u + .body table._ac_social_table img { display: i=
+nline-block !important; margin: auto !important; width: 32px !important; mi=
+n-width: 32px !important; max-width: 32px !important; }
+}
+@media only screen and (max-width: 414px) { #layout-row26553 img { width: 1=
+00% !important; height: auto !important; max-width: 414px !important; } #la=
+yout-row26555 img { width: 100% !important; height: auto !important; max-wi=
+dth: 414px !important; } table, tbody, td, .divbody { display: table !impor=
+tant; width: 100% !important; max-width: 100% !important; } .td_rss .rss-it=
+em img.iphone_large_image { width: auto !important; } u + .body { display: =
+table !important; width: 100vw !important; min-width: 100vw !important; } u=
+ + .body table { display: table !important; width: 100% !important; min-wid=
+th: 100% !important; } u + .body td { display: block !important; width: 100=
+% !important; min-width: 100% !important; } u + .body img { display: inline=
+-block !important; margin: auto !important; width: auto !important; vertica=
+l-align: bottom !important; } u + .body center { display: block !important;=
+ margin: auto !important; width: 100% !important; min-width: 100% !importan=
+t; text-align: center !important; } u + .body table._ac_social_table, u + .=
+body table._ac_social_table td, u + .body table._ac_social_table div, u + .=
+body table._ac_social_table a { display: inline-block !important; margin: a=
+uto !important; width: auto !important; min-width: auto !important; text-al=
+ign: center !important; } u + .body table._ac_social_table img { display: i=
+nline-block !important; margin: auto !important; width: 32px !important; mi=
+n-width: 32px !important; max-width: 32px !important; }
+}
+@media only screen and (max-width: 667px) { #layout-row26553 img { width: 1=
+00% !important; height: auto !important; max-width: 667px !important; } #la=
+yout-row26555 img { width: 100% !important; height: auto !important; max-wi=
+dth: 650px !important; } table, tbody, td, .divbody { display: table !impor=
+tant; width: 100% !important; max-width: 100% !important; } .td_rss .rss-it=
+em img.iphone_large_image { width: auto !important; } u + .body { display: =
+table !important; width: 100vw !important; min-width: 100vw !important; } u=
+ + .body table { display: table !important; width: 100% !important; min-wid=
+th: 100% !important; } u + .body td { display: block !important; width: 100=
+% !important; min-width: 100% !important; } u + .body img { display: inline=
+-block !important; margin: auto !important; width: auto !important; vertica=
+l-align: bottom !important; } u + .body center { display: block !important;=
+ margin: auto !important; width: 100% !important; min-width: 100% !importan=
+t; text-align: center !important; } u + .body table._ac_social_table, u + .=
+body table._ac_social_table td, u + .body table._ac_social_table div, u + .=
+body table._ac_social_table a { display: inline-block !important; margin: a=
+uto !important; width: auto !important; min-width: auto !important; text-al=
+ign: center !important; } u + .body table._ac_social_table img { display: i=
+nline-block !important; margin: auto !important; width: 32px !important; mi=
+n-width: 32px !important; max-width: 32px !important; }
+} </style><!--[if !mso]><!-- webfonts --> <!--<![endif]--> <!--[if lt mso 1=
+2]> <![endif]--> <!--[if gte mso 9]>
+<xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:Pixel=
+sPerInch> </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+</head>
+<body id=3D"ac-designer" class=3D"body" style=3D"font-family: Arial; line-h=
+eight: 1.1; margin: 0px; background-color: #eae9e6; width: 100%; text-align=
+: center;">
+<div style=3D"display: none !important; padding: 0; height: 1px; font-size:=
+ 1px; background-color: inherit !important; opacity: 0; color: transparent;=
+ mso-line-height-rule: exactly; line-height:1px; mso-hide:all;">
+A message from IANR leadership=20
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C
+</div>
+</div>
+<div class=3D"divbody" style=3D"margin: 0px; outline: none; padding: 0px; c=
+olor: #000000; font-family: arial; line-height: 1.1; width: 100%; backgroun=
+d-color: #eae9e6; background: #eae9e6; text-align: center;">
+<table class=3D"template-table" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" align=3D"left" style=3D"-ms-text-size-adjust: auto; -=
+webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; =
+min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-c=
+olor: #eae9e6; background: #eae9e6;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td align=3D"center" valign=3D"top" width=3D"100%" style=3D"mso-line-height=
+-rule: exactly;">
+<table class=3D"template-table" border=3D"0" width=3D"652" bgcolor=3D"#e3e3=
+e2" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; bo=
+rder-collapse: collapse; font-size: 14px; min-width: auto; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; border-spacing: 0;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td width=3D"652" bgcolor=3D"#e3e3e2" style=3D"mso-line-height-rule: exactl=
+y; padding: 1px;">
+<table class=3D"template-table" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"650" bgcolor=3D"#eae9e6" style=3D"-ms-text-size-adjust: aut=
+o; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14=
+px; min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-widt=
+h: 650px;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout_table_26f397a457bfd2274ffe462efa6d93f07f308d20" valign=3D"=
+top" align=3D"center" width=3D"650" style=3D"mso-line-height-rule: exactly;=
+ background-color: #ffffff;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout lay=
+out-table root-table" width=3D"650" style=3D"-ms-text-size-adjust: auto; -w=
+ebkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; m=
+in-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-co=
+lor: #ffffff;">
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26559" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row26559" class=3D"layout layout-row widget _widget_text s=
+tyle26559" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0; b=
+ackground-color: #eae9e6;">
+<td id=3D"layout-row-padding26559" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly; background-color: #eae9e6; padding: 15px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div23986" class=3D"td_text td_block" valign=3D"top" align=3D=
+"left" width=3D"620" style=3D"mso-line-height-rule: exactly; margin: 0; out=
+line: none; padding: 0; color: inherit; font-size: 12px; font-weight: inher=
+it; line-height: 1; text-decoration: inherit; font-family: arial;">
+<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: right;">
+<a href=3D"https://urldefense.com/v3/__https://unl233.acemlnb.com/lt.php?x=
+=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HG=
+IFie6m__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAM=
+CrAdiYb76Y0FtkJtf0Vm-T85artV59LkzIlMo9g$" style=3D"margin: 0; outline: none=
+; padding: 0; color: #d00000; text-decoration: underline;"><span style=3D"c=
+olor: #d00000; font-size: inherit; font-weight: inherit; line-height: inher=
+it; text-decoration: inherit;">View email in web browser</span></a>
+<br>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26553" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row26553" class=3D"layout layout-row widget _widget_pictur=
+e " align=3D"left" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding26553" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"left" valign=3D"top" width=3D"650" style=3D=
+"mso-line-height-rule: exactly;"><a href=3D"https://urldefense.com/v3/__htt=
+ps://unl233.acemlnb.com/lt.php?x=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HD=
+U3LND5F*yUy.0eFw2HRziNTxkvYyX6HGIFie62__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WC=
+z_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85artV59Lli1FGUPA$" s=
+tyle=3D"margin: 0; outline: none; padding: 0; color: #d00000; display: bloc=
+k; min-width: 100%;"><img src=3D"https://unl233.img-us10.com/public//93462d=
+f42721e03dac1047d5b0b0c139.jpeg?r=3D1362060830" alt=3D"Institute of Agricul=
+ture and Natural Resources" width=3D"650" style=3D"border: none; display: b=
+lock; outline: none; width: 650px; opacity: 1; max-width: 100%;"></a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26552" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row26552" class=3D"layout layout-row widget _widget_text s=
+tyle26552" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0; b=
+ackground-color: #ffffff;">
+<td id=3D"layout-row-padding26552" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly; background-color: #ffffff; padding: 30px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div23979" class=3D"td_text td_block" valign=3D"top" align=3D=
+"left" width=3D"590" style=3D"line-height: 140%; mso-line-height-rule: exac=
+tly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px;=
+ font-weight: inherit; line-height: 1.4; text-decoration: inherit; font-fam=
+ily: arial;">
+<div style=3D"line-height: 140%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: 14px; font-weight: inherit; line-height: 1.4; text-d=
+ecoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"1.4=
+">
+<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit;" class=3D"">
+<div class=3D"" style=3D"margin: 0; outline: none; padding: 0; color: inher=
+it; font-size: inherit; font-weight: inherit; line-height: inherit; text-de=
+coration: inherit;">
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit;" class=3D"">Sept. 12, 2025<br=
+><br></span>
+</div>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">Dear IANR faculty and staff,</span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;">Earlier =
+today, University of Nebraska=E2=80=93Lincoln Chancellor Rodney Bennett sha=
+red his proposed budget reductions. We want to follow up with you to outlin=
+e the proposed changes that will specifically impact our IANR community. Pl=
+ease remember that the public release of these reductions is just one step =
+of the budget reduction process. At this point these are</span><span style=
+=3D"color: #000000; font-size: inherit; font-weight: inherit; line-height: =
+inherit; text-decoration: inherit; font-family: arial;"> </span><em style=
+=3D"margin: 0; outline: none; padding: 0;"><span style=3D"color: #000000; f=
+ont-size: inherit; font-weight: inherit; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial;">recommendations only</span></em><span st=
+yle=3D"color: #000000; font-size: inherit; font-weight: inherit; line-heigh=
+t: inherit; text-decoration: inherit; font-family: arial;">=E2=80=94not fin=
+al decisions.</span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">The recommendations specific to IANR include:</span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<b style=3D"margin: 0; outline: none; padding: 0;"><span style=3D"color: #0=
+00000; font-size: inherit; font-weight: inherit; line-height: inherit; text=
+-decoration: inherit; font-family: arial;">Department of Statistics</span><=
+/b>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;">The prop=
+osed plan would eliminate a standalone Department of Statistics offering BS=
+, MS, and PhD degrees and moves the university toward a distributed model t=
+hat leverages expertise embedded across IANR, UNL and the NU system. The pl=
+an proposes to strategically deploy a portion of state-appropriated funds t=
+o continue to offer: </span>
+</div>
+<br>
+<ul style=3D"margin: 0 0 0 40px; padding: 0;">
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0 0 3px;"><span style=3D"color: #000000; font-size: inherit; f=
+ont-weight: inherit; line-height: inherit; text-decoration: inherit; font-f=
+amily: arial; text-align: inherit;">Critical student competencies. Undergra=
+duate and graduate students would continue to gain essential skills in stat=
+istics and data analytics for their future careers. We anticipate course of=
+ferings would include STAT 218, STAT 380, STAT 801, STAT 802, STAT 870, com=
+plemented by additional coursework in R programming, bioinformatics, comput=
+ational biology, quantitative genetics/genomics, and data analysis interpre=
+tation and visualization offered through other units. </span></li>
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0 0 3px;"><span style=3D"color: #000000; font-size: inherit; f=
+ont-weight: inherit; line-height: inherit; text-decoration: inherit; font-f=
+amily: arial; text-align: inherit;">Coordinated statistical consulting. Thr=
+ough the Statistical Cross-Disciplinary Collaboration and Consultation Lab =
+(SC3L) Help Desk, services would be available to support laboratory, greenh=
+ouse, and field research conducted by IANR faculty, staff, post-docs, and s=
+tudents, as well as other units.</span></li>
+</ul>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+""><br>
+Budget reductions would be achieved through the elimination of positions (1=
+2 FTE). </span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<b style=3D"margin: 0; outline: none; padding: 0;"><span style=3D"color: #0=
+00000; font-size: inherit; font-weight: inherit; line-height: inherit; text=
+-decoration: inherit; font-family: arial;">Departments of Entomology and Pl=
+ant Pathology</span></b>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;">The Depa=
+rtments of Entomology and Plant Pathology would be integrated within a new =
+interdisciplinary school. This integration would ensure that research, Exte=
+nsion, and teaching remain aligned with workforce priorities and the long-t=
+erm vitality of Nebraska=E2=80=99s economy and communities. MS and PhD degr=
+ees in Entomology and Plant Pathology would continue to be offered. </span>=
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;">If the C=
+hancellor=E2=80=99s budget plan is approved by the Board of Regents, the fa=
+culty from the two units, working alongside administration, would have the =
+2026 spring semester to develop the framework for the new school=E2=80=94in=
+cluding the name and faculty governance structures. Budget reductions would=
+ be realized through natural attrition, including the Voluntary Separation =
+Incentive Program (VSIP). </span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<b style=3D"margin: 0; outline: none; padding: 0;"><span style=3D"color: #0=
+00000; font-size: inherit; font-weight: inherit; line-height: inherit; text=
+-decoration: inherit; font-family: arial;">Departments of Agricultural Econ=
+omics and Agricultural Leadership, Education and Communication</span></b>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;">The Depa=
+rtments of Agricultural Economics and Agricultural Leadership, Education, a=
+nd Communication (ALEC) would be integrated within a new interdisciplinary =
+school. This integration would ensure that expertise within these departmen=
+ts is retained within IANR, and research, Extension, and teaching programmi=
+ng is aligned with workforce priorities and the long-term vitality of Nebra=
+ska=E2=80=99s economy and communities. </span><span style=3D"color: #000000=
+; font-size: inherit; font-weight: inherit; line-height: inherit; text-deco=
+ration: inherit; font-family: arial;"> </span><span style=3D"color: #000000=
+; font-size: inherit; font-weight: inherit; line-height: inherit; text-deco=
+ration: inherit; font-family: arial;">Current BS, MS, and PhD degree pathwa=
+ys would continue to be offered. </span><span style=3D"color: #000000; font=
+-size: inherit; font-weight: inherit; line-height: inherit; text-decoration=
+: inherit; font-family: arial;">If the Chancellor=E2=80=99s budget plan is =
+approved by the Board of Regents, the faculty from the two units, working a=
+longside administration, would have the 2026 spring semester to develop the=
+ framework for the new school=E2=80=94including the name and faculty govern=
+ance structures. Budget reductions would be realized through natural attrit=
+ion, including the Voluntary Separation Incentive Program (VSIP).</span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">The Chancellor=E2=80=99s budget reduction plan also proposes the elimina=
+tion of the Department of Textiles, Merchandising and Fashion Design, which=
+ includes faculty with appointments in Nebraska Extension and the Agricultu=
+ral Research Division.</span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: inherit; font-weight: 400; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;">Again, n=
+one of the proposals outlined above has been finalized, and there will be o=
+pportunities for faculty, staff, students, and stakeholders to weigh in bef=
+ore any action is taken. The Academic Planning Committee (APC) will gather =
+input through public sessions and online submissions before Chancellor Benn=
+ett submits his recommendations to the Board of Regents for approval. More =
+information is available on </span><a href=3D"https://urldefense.com/v3/__h=
+ttps://unl233.acemlnb.com/lt.php?x=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8=
+HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HGIFif6m__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-=
+WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85artV59LlsrOF1kg$"=
+ style=3D"margin: 0; outline: none; padding: 0; color: #d00000; text-decora=
+tion: underline;" data-ac-default-color=3D"1" target=3D"_blank"><span style=
+=3D"color: inherit; font-size: inherit; font-weight: inherit; line-height: =
+inherit; text-decoration: inherit; font-family: arial;">UNL=E2=80=99s budge=
+t process website</span></a><span style=3D"color: #000000; font-size: inher=
+it; font-weight: inherit; line-height: inherit; text-decoration: inherit; f=
+ont-family: arial;">. </span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">The Chancellor=E2=80=99s budget reduction plan includes changes that imp=
+act people, programs, and passions in deeply personal ways across the Unive=
+rsity of Nebraska-Lincoln. Please know we are committed to supporting IANR =
+and the broader community as we navigate this difficult process together. <=
+/span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">We have profound trust in the resilience, creativity, and dedication of =
+our faculty, staff, and students. Together, even in this challenging moment=
+, we will continue to serve Nebraska with excellence and purpose.</span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">Thank you for all that you do, and for the heart and commitment you brin=
+g to IANR every day. </span>
+</div>
+<br>
+<div style=3D"margin: 0 0in 0 0in; outline: none; padding: 0; color: #00000=
+0; font-size: 14px; font-weight: 400; line-height: inherit; text-decoration=
+: inherit; font-family: arial; font-style: normal; text-align: start;">
+<span style=3D"color: #000000; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial;" class=3D=
+"">Sincerely,</span>
+</div>
+<br class=3D""><span style=3D"color: #000000; font-size: inherit; font-weig=
+ht: 400; line-height: inherit; text-decoration: inherit; font-family: arial=
+; font-style: normal;" class=3D"">IANR SLT =E2=80=93 Charlie, Derek, Tom, R=
+ich, Jeff, Cara and Tiffany</span>
+<br class=3D"">
+</div>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true"data-ac-inline=3D"false"> #text_div23979, #text=
+_div23979 div { line-height: 140% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26558" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row26558" class=3D"layout layout-row widget _widget_text s=
+tyle26558" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0; b=
+ackground-color: #ffffff;">
+<td id=3D"layout-row-padding26558" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly; background-color: #ffffff; padding: 9px 9px 9px 30px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div23985" class=3D"td_text td_block" valign=3D"top" align=3D=
+"left" width=3D"611" style=3D"line-height: 140%; mso-line-height-rule: exac=
+tly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px;=
+ font-weight: inherit; line-height: 1.4; text-decoration: inherit; font-fam=
+ily: arial;">
+<div style=3D"line-height: 140%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: 17px; font-weight: inherit; line-height: 1.4; text-d=
+ecoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"1.4=
+">
+<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit;">
+<br>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true"data-ac-inline=3D"false"> #text_div23985, #text=
+_div23985 div { line-height: 140% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26555" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row26555" class=3D"layout layout-row widget _widget_pictur=
+e " align=3D"left" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding26555" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"left" valign=3D"top" width=3D"650" style=3D=
+"mso-line-height-rule: exactly;"><img src=3D"https://unl233.img-us10.com/pu=
+blic//0f31f19c7b57d0278f47e8d93cacde64.jpeg?r=3D923167769" width=3D"650" st=
+yle=3D"display: block; border: none; outline: none; width: 650px; opacity: =
+1; max-width: 100%;"></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26557" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 5px; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row26557" class=3D"layout layout-row widget _widget_social=
+ style26557" style=3D"mso-line-height-rule: exactly; background-color: #fff=
+fff;">
+<td id=3D"layout-row-padding26557" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly; background-color: #ffffff; padding: 10px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td style=3D"mso-line-height-rule: exactly;">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" style=3D"-ms-text=
+-size-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: collap=
+se; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td width=3D"650" align=3D"left" style=3D"mso-line-height-rule: exactly;">
+<center style=3D"margin: 0; outline: none; padding: 0; font-size: 0px;">
+<table class=3D"_ac_social_table" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: =
+100%; border-collapse: collapse; font-size: 0; min-width: auto!important; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; margin: auto!important; displa=
+y: inline-block!important; text-align: center!important;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://urldefense.com/v3/__https://unl233.acemlnb.com/lt.php?x=
+=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HG=
+IFie6U__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAM=
+CrAdiYb76Y0FtkJtf0Vm-T85artV59Lm8BzMnXg$" id=3D"facebook" class=3D"__ac_soc=
+ial_icon_link" style=3D"margin: 0; outline: none; padding: 0; color: #d0000=
+0;"><img src=3D"https://unl233.img-us3.com/_social_/flat-dark-round-faceboo=
+k.png" border=3D"0" alt=3D"Facebook" width=3D"34" style=3D"border: none;"><=
+/a>
+</div></td>
+<td width=3D"10" style=3D"mso-line-height-rule: exactly; display: inline-bl=
+ock!important; font-size: 0; width: 10px!important;">&nbsp;</td>
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://urldefense.com/v3/__https://unl233.acemlnb.com/lt.php?x=
+=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HG=
+IFie7m__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAM=
+CrAdiYb76Y0FtkJtf0Vm-T85artV59LmFIP4U_g$" id=3D"twitter" class=3D"__ac_soci=
+al_icon_link" style=3D"margin: 0; outline: none; padding: 0; color: #d00000=
+;"><img src=3D"https://unl233.img-us3.com/_social_/flat-dark-round-twitter.=
+png" border=3D"0" alt=3D"Twitter" width=3D"34" style=3D"border: none;"></a>
+</div></td>
+<td width=3D"10" style=3D"mso-line-height-rule: exactly; display: inline-bl=
+ock!important; font-size: 0; width: 10px!important;">&nbsp;</td>
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://urldefense.com/v3/__https://unl233.acemlnb.com/lt.php?x=
+=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HG=
+IFie72__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAM=
+CrAdiYb76Y0FtkJtf0Vm-T85artV59Lmmy3x0vQ$" id=3D"instagram" class=3D"__ac_so=
+cial_icon_link" style=3D"margin: 0; outline: none; padding: 0; color: #d000=
+00;"><img src=3D"https://unl233.img-us3.com/_social_/flat-dark-round-instag=
+ram.png" border=3D"0" alt=3D"Instagram" width=3D"34" style=3D"border: none;=
+"></a>
+</div></td>
+<td width=3D"10" style=3D"mso-line-height-rule: exactly; display: inline-bl=
+ock!important; font-size: 0; width: 10px!important;">&nbsp;</td>
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://urldefense.com/v3/__https://unl233.acemlnb.com/lt.php?x=
+=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HDU3LND5F*yUy.0eFw2HRziNTxkvYyX6HG=
+IFif5m__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAM=
+CrAdiYb76Y0FtkJtf0Vm-T85artV59LkeCtGpbw$" id=3D"website" class=3D"__ac_soci=
+al_icon_link" style=3D"margin: 0; outline: none; padding: 0; color: #d00000=
+;"><img src=3D"https://unl233.img-us3.com/_social_/flat-dark-round-website.=
+png" border=3D"0" alt=3D"Website" width=3D"34" style=3D"border: none;"></a>
+</div></td>
+</tr>
+</table>
+</center></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #ffffff;">
+<td id=3D"layout-row-margin26556" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 5px; background-color: #ffffff;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row26556" class=3D"layout layout-row widget _widget_html s=
+tyle26556" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding26556" valign=3D"top" style=3D"mso-line-height-=
+rule: exactly; padding: 10px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"html_div23983" width=3D"620" align=3D"left" style=3D"mso-line-hei=
+ght-rule: exactly;">
+<table style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%;=
+ border-collapse: collapse; font-size: 14px; min-width: 100%; mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td style=3D"mso-line-height-rule: exactly;"><span style=3D"color: rgb(0, 0=
+, 0); font-family: arial; font-size: 12px; font-style: normal; font-weight:=
+ normal;"> Copyright =C2=A9 2024, All rights reserved. <br><br>
+The University of Nebraska does not discriminate based upon any protected s=
+tatus. Please see <a href=3D"https://urldefense.com/v3/__https://unl233.ace=
+mlnb.com/lt.php?x=3D3DZy*GDGJ6WZ6KF7ydDMgRNw3X6ovN9xk*thX8HDU3LND5F*yUy.0eF=
+w2HRziNTxkvYyX6HGIFif52__;fn5-!!PvXuogZ4sRB2p-tU!FhnrKPHd-WCz_BrLgLcQ3aztDJ=
+RUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85artV59LkJ5RFi7w$" style=3D"margin:=
+ 0; outline: none; padding: 0; color: #d00000;">go.unl.edu/nondiscriminatio=
+n</a>. </span></td>
+<td style=3D"mso-line-height-rule: exactly; width: 122px!important;"><img s=
+rc=3D"https://content.app-us1.com/a8E7m/2022/03/02/f48002ba-3b5c-45c6-bc16-=
+12883817ec34.png?r=3D1443246666"></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</div>
+<br>
+<div id=3D"ac-footer" style=3D"clear:both;background-color:inherit;backgrou=
+nd:inherit;min-width:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding=
+:20px;color:#000000;font-size:11px;font-family:arial,helvetica,sans-serif;l=
+ine-height:140%;line-height:1.4;text-align:center;box-sizing:border-box;">
+<center>
+Sent to:<span style=3D"font-size:11px;font-family:arial,helvetica,sans-seri=
+f;font-weight:normal;text-decoration:none;outline:none;">susan.vanderplas@u=
+nl.edu</span>
+<br>
+<br><a href=3D"https://urldefense.com/v3/__http://unl233.activehosted.com/p=
+roc.php?c=3D1548&amp;m=3D1635&amp;s=3D36e06e2267ac5928e036fb0a0b2da581&amp;=
+d=3D1110&amp;v=3D2&amp;nl=3D30&amp;act=3Dunsub__;!!PvXuogZ4sRB2p-tU!FhnrKPH=
+d-WCz_BrLgLcQ3aztDJRUPA3l8-fzXZvzPAMCrAdiYb76Y0FtkJtf0Vm-T85artV59Lmam788PQ=
+$" style=3D"font-size:11px;font-family:arial,helvetica,sans-serif;font-weig=
+ht:bold;text-decoration:underline;"><span style=3D"font-weight:bold;text-de=
+coration:underline;">Unsubscribe</span></a>
+<br>
+<br>
+IANR, 300 Agricultural Hall, Lincoln, NE 68583-0708, United States
+</center>
+</div>
+<br>
+<img src=3D"https://unl233.acemlnb.com/lt.php?x=3D41Zi05HIJXkKHhVpytE8U.ag1=
+n6mjwAhku4xZ8XDIFbPDH0qyA1HhBFw3H4RxEMtzhptzK55Inac6.83~E1IU9" border=3D"0"=
+ width=3D"1" height=3D"1" style=3D"display:block;width:1px!important;min-wi=
+dth:1px!important;max-width:1px!important;height:1px!important;border:0;ove=
+rflow:hidden;">
+</body>
+</html>=
+
+------=_Part_3083030_659756964.1757702630046--
