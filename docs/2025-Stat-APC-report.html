@@ -34,6 +34,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="2025-Stat-APC-report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="2025-Stat-APC-report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="2025-Stat-APC-report_files/libs/bootstrap/bootstrap-032e220be364433605a2bb7b2b296306.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="2025-Stat-APC-report_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="2025-Stat-APC-report_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -261,9 +263,9 @@ Specific Recommendations
 </ul>
 <p><a href="#sec-metrics" class="quarto-xref">Section&nbsp;3</a> discusses the ways that the Statistics department interacts with other portions of campus. Faculty within the College of Business (Econometrics, Actuarial Science, Supply Chain Management &amp; Analytics) represent perhaps the closest group outside of the Statistics department within UNL, but none have degrees in Statistics, and while some of the courses taught in the College of Business may touch on topics such as forecasting, simulation, and modeling, the faculty within the college have specialized to apply these techniques to business and finance, and it seems unlikely that they have extra capacity.</p>
 <p>Ultimately, however, there are clearly insufficient FTEs available at UNL in statistics-adjacent fields that could reasonably take over the teaching, collaboration, consulting, and research functions which are fulfilled by the Department of Statistics, particularly when the existing demands on those FTEs are considered.</p>
-<p>The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Biomedical Informatics. Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D.&nbsp;from the Statistics department at UNL (see <a href="#tbl-unmc-biostats" class="quarto-xref">Table&nbsp;2</a> for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.</p>
+<p>The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Biomedical Informatics. Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D.&nbsp;from the Statistics department at UNL (see <a href="#tbl-unmc-biostats" class="quarto-xref">Table&nbsp;4</a> for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.</p>
 <p>Biostatisticians apply statistical methods to medicine, and must cultivate a specific set of skills for collaborating with doctors that are distinct from collaboration skills required for working with other academic disciplines. A Biostatistics department is not sufficient to serve as the center of a statistical practice that supports the many non-medical disciplines that are important to the state of Nebraska: agriculture, animal science, population genetics (animal and plant), engineering, social sciences, education, business, physics, chemistry, and biology. <a href="#sec-peer-analysis" class="quarto-xref">Section&nbsp;4</a> includes a discussion of peer R1 and AAU institutions, many of whom maintain both statistics and biostatistics departments.</p>
-<p>There is also a Mathematics department at UNO which offers statistics coursework and a data science program. Of the 18 tenured and tenure-track faculty in this department, there are three with statistics Ph.D.s (see <a href="#tbl-uno-math" class="quarto-xref">Table&nbsp;3</a> for a full list). UNO is not an R1 university, and faculty there have a much heavier teaching load than faculty at UNL; consequently, it stands to reason that the UNO Mathematics department would not be able to significantly alleviate the statistics need across the university that would be created through the proposed elimination of the Statistics department in favor of a distributed model.</p>
+<p>There is also a Mathematics department at UNO which offers statistics coursework and a data science program. Of the 18 tenured and tenure-track faculty in this department, there are three with statistics Ph.D.s (see <a href="#tbl-uno-math" class="quarto-xref">Table&nbsp;5</a> for a full list). UNO is not an R1 university, and faculty there have a much heavier teaching load than faculty at UNL; consequently, it stands to reason that the UNO Mathematics department would not be able to significantly alleviate the statistics need across the university that would be created through the proposed elimination of the Statistics department in favor of a distributed model.</p>
 <p>The University of Nebraska - Kearney has a mathematics and statistics department which does not appear to contain any statisticians, according to the research interests listed on the faculty web pages. Moreover, as UNK does not have a statistics program at any level, it stands to reason that UNK Mathematics &amp; Statistics faculty will not be able to help UNL with its proposal to use a distributed model for the university’s statistics instruction, collaboration, consulting, and research needs.</p>
 </section>
 </section>
@@ -386,9 +388,825 @@ Figure&nbsp;3: Size of Statistics-related Units at each institution. UNL is mana
 </section>
 <section id="teaching" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="teaching"><span class="header-section-number">3.2</span> Teaching</h2>
+<p>The statistics department teaches courses which are required for degree programs across the university.</p>
+<blockquote class="blockquote">
+<p>The plan proposes to strategically deploy a portion of state-appropriated funds to continue to offer:</p>
+<ul>
+<li>Critical student competencies. Undergraduate and graduate students would continue to gain essential skills in statistics and data analytics for their future careers. We anticipate course offerings would include STAT 218, STAT 380, STAT 801, STAT 802, STAT 870, complemented by additional coursework in R programming, bioinformatics, computational biology, quantitative genetics/genomics, and data analysis interpretation and visualization offered through other units.</li>
+</ul>
+</blockquote>
+<p>Unfortunately, the budget proposal has massively under-estimated the importance of statistics in curricula across campus, as shown in <a href="#tbl-stat-courses-reqd" class="quarto-xref">Table&nbsp;2</a>.</p>
+<div class="cell">
+<div id="tbl-stat-courses-reqd" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stat-courses-reqd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Statistics courses required by other programs across campus. The budget proposal calls for maintaining some statistics courses; programs which require courses that will not be offered are highlighted.
+</figcaption>
+<div aria-describedby="tbl-stat-courses-reqd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Program</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Level</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">College</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Fisheries and Wildlife</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218 or STAT 380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Forensic Science</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Environmental Science</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Animal Science</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Regional and Community Forestry</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218 or STAT 380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Agricultural Leadership, Education and Communication, Agricultural and Environmental Sciences Communication Option</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Grassland Systems</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Plant Biology</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Insect Science</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Agricultural Economics, Quantitative Analysis Option</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">CASNR</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Agricultural Systems Technology</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Biochemistry (CASNR), Computational and Systems Biochemistry Option</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CASNR</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Digital Agriculture Minor</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">CASNR</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 151, 251, 218</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Actuarial Science (CAS)</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">CAS</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 462, 463</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Biochemistry (CAS), Computational Biochemistry Option</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CAS</td>
+<td style="text-align: left; width: 15em;">STAT 218</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Meterology-Climatology</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CAS</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Actuarial Science (Business)</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">Business</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 462, 463</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Secondary Education: Mathematics</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CEHS</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Software Engineering</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">Engineering</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Computer Science</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">Engineering</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Mathematics, Education Option</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CAS</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Mathematics, Mathematical Biology Option</td>
+<td style="text-align: left;">UG</td>
+<td style="text-align: left;">CAS</td>
+<td style="text-align: left; width: 15em;">STAT 380</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Mathematics, Mathematical Finance Option</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">CAS</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Mathematics, Statistics and Data Science Option</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">CAS</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 380, 2 additional 300/400 level STAT courses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Data Science, CAS</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">CAS</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 218 or 380 + STAT 318 -or- STAT 101 + STAT 102; Included in focus areas: STAT 251, 351, 212, 301, 302, 325, 412, 414, 432, 443, 450, 462, 463, 464, 474, 475, 478, 468</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Data Science, Engineering</td>
+<td style="text-align: left; background-color: yellow !important;">UG</td>
+<td style="text-align: left; background-color: yellow !important;">Engineering</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 218 or 380 + STAT 318 -or- STAT 101 + STAT 102; Included in focus areas: STAT 251, 351, 212, 301, 302, 325, 412, 414, 432, 443, 450, 462, 463, 464, 474, 475, 478, 468</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Agricultural Economics, PhD</td>
+<td style="text-align: left; background-color: yellow !important;">G</td>
+<td style="text-align: left; background-color: yellow !important;">CASNR</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">STAT 882</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Complex Biosystems, PhD</td>
+<td style="text-align: left;">G</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left; width: 15em;">STAT 801</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Biomedical Engineering, PhD</td>
+<td style="text-align: left;">G</td>
+<td style="text-align: left;">Engineering</td>
+<td style="text-align: left; width: 15em;">3 credits of graduate level statistics</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 15em;">Biological Engineering, PhD</td>
+<td style="text-align: left;">G</td>
+<td style="text-align: left;">Engineering</td>
+<td style="text-align: left; width: 15em;">3 credits of graduate level statistics</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 15em;">Civil Engineering, PhD; specialization in Transportation</td>
+<td style="text-align: left;">G</td>
+<td style="text-align: left;">Engineering</td>
+<td style="text-align: left; width: 15em;">STAT 801</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: yellow !important; width: 15em;">Finance, PhD</td>
+<td style="text-align: left; background-color: yellow !important;">G</td>
+<td style="text-align: left; background-color: yellow !important;">Business</td>
+<td style="text-align: left; background-color: yellow !important; width: 15em;">9 credits in graduate level statistics</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>In addition to the listed courses, many graduate statistics courses are taken as electives (or graduate committee-level requirements) to ensure that students have appropriate quantitative training for their research topics and fields. Courses like Stat 850 – Computing Tools for Statistics – teach R and python “data wrangling” skills, data visualization, reproducible research, and statistical simulation. The undergraduate computing sequence, Stat 151, 251, and 351, are similarly useful across multiple disciplines, though these courses were developed for the statistics undergraduate program. Relatively quickly after the courses were created, the Digital Agriculture minor was created with the requirement that students take Stat 151 and 251. Similarly, we believe that Stat 349, Technical Skills for Statisticians, might be useful to students in Computer Science who need a technical writing course, though this potential was only identified recently, and we would need to get ACE 2 certification for the course.</p>
+<p>Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of “data science is a sexy word for statistician” - Nate Silver, Joint Statistical Meetings, 2013 have been uttered at different points as the phrase “data science” caught on.</p>
+<p>The proposed budget reduction plan does not account for the costs of teaching Stat 218, 380, 801, 802, and 870. Currently, some of these courses are taught by graduate TAs, who will no longer exist if the graduate program is closed. The remainder of the courses are taught by Statistics faculty, who are slated to be eliminated as well. The one remaining head of consulting cannot physically teach all of the sections of Stat 218 which are currently taught, let alone teaching 380, 801, 802, and 870 on top of the Stat 218 courses. Stat 218 is taken by approximately 20% of undergraduates at UNL and is an extremely important course for building quantitative literacy among undergraduate students. Without a plan to ensure that Stat 218 is taught by people who understand statistical pedagogy, this proposal will majorly weaken quantitative education at UNL and diminish the value of a UNL degree.</p>
 </section>
 <section id="consulting" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="consulting"><span class="header-section-number">3.3</span> Consulting</h2>
+<p>In 1957, the seeds of the Statistics Department were planted with the founding of the Statistical Laboratory, which would provide statistical computing and consulting services to IANR. The consulting mission of the laboratory motivated the creation of the MS program in Biometry and the Ph.D.&nbsp;program in Statistics so that the department could meet more of the demand for statistical consultation and assistance with experimental design and statistical computing tasks.</p>
+<blockquote class="blockquote">
+<p>…advanced graduate students can do routine statistical consulting on their own. This improves everybody’s access to statistical consulting and frees the faculty to concentrate on more difficult consulting problems. In Spring semester, 1993, Biometry instituted a “Help Desk” staffed by a graduate student. The response has been very good; she has been very busy with a variety of problems. - <a href="documentation/1993-Biometry-APR-SelfStudy.pdf">1993 Biometry APR Self-Study, pg 29</a></p>
+</blockquote>
+<p>It is important to note that even in 1993, it was clear that the 8 tenured or tenure-track faculty in Biometry could not meet the demand within IANR for statistical consulting. The current proposal maintains 1 FTE of the current 13 FTE in the Statistics department, which is well below even 1957 levels of funding and support.</p>
+<div class="cell">
+<div id="tbl-sc3l-clients" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sc3l-clients-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNO, UNMC, and UNK. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.
+</figcaption>
+<div aria-describedby="tbl-sc3l-clients-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 63%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Department</th>
+<th style="text-align: right;">2020</th>
+<th style="text-align: right;">2021</th>
+<th style="text-align: right;">2022</th>
+<th style="text-align: right;">2023</th>
+<th style="text-align: right;">2024</th>
+<th style="text-align: right;">2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Agricultural Economics</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Agricultural Leadership, Education and Communication</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Agronomy and Horticulture</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal Science</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Athletics</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Biochemistry</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Biological Systems Engineering</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Biology</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Biotechnology</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Birth Outcomes and Water Research</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CAS</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CEHS</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CYAF</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chemistry</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Civil and Environmental Engineering</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Communication Studies</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Computer Science and Engineering</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Criminology and Criminal Justice</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dental Hygiene</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EDPS</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Earth &amp; Atmospheric Sciences</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">English</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Entomology</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Environmental and Sustainability Studies</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Food Science and Technology</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Glenn Korff School of Music</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Growth &amp; Development</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marketing</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mathematics</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mechanical</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Music - Vocal Pedagogy</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">National Drought Mitigation Center</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NeDNR - Water Planning Division</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nebraska Forest Service</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Neurocarrus</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nutrition and Health Sciences</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Office of Academic and Student Affairs</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Office of Research</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oral Radiology</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Other</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Panhandle Research and Extension Center</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Philosophy</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Physics</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plant Pathology</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Political Science</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Psychology</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Public Policy Center</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SGIS-Anthropology</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SVBMS</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">School of Biological Sciences</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">School of Natural Resources</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sociology</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Southwest Fire and Rescue</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TLTE</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Testing Center</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Textile Science</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UNK Communication</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UNMC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">University Libraries</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>As <a href="#tbl-sc3l-clients" class="quarto-xref">Table&nbsp;3</a> shows, the SC3L handles a large number of projects over the course of a single year. Many of these projects are graduate research in other departments, and result in publications which only sometimes include the SC3L consultant and very rarely include any Statistics faculty. Thus, these contributions to the research activity across the university and system are simply not counted in the metrics, as graduate student papers are not counted in the department’s metrics.</p>
+<p>Moreover, Kathy Hanford, the head of the SC3L until her retirement in 2023, had a Professor of Practice position, which means her research outputs are not counted in the department’s contributions, both because she was not in a tenure-track position, and because she retired in December 2023 and was thus not in the department when the data were assembled.</p>
+<p>Currently, the SC3L employs five graduate students for 20 hours a week each, though they generally work on SC3L projects more than the 20 hours required by their assistantships. There is no way that the single FTE dedicated to the SC3L under the current budget can manage this workload. In addition, under the new rules imposed by IANR, this 100 hours per week (plus the SC3L director’s time) is devoted only to IANR projects. The demand for consulting services in other colleges and units is surely much higher.</p>
+<p>Without the graduate students supported by the SC3L, UNL risks publishing studies which are the product of faulty statistical analysis, or which employ sub-optimal experimental designs. This will slowly erode the reputation of other departments on campus, and will make UNL less competitive for federal funding. Ultimately, reducing the consulting resources on campus threatens the ability of UNL to maintain its status as a Big Ten, land-grant, AAU-aspiring R1 university.</p>
 </section>
 <section id="collaboration" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="collaboration"><span class="header-section-number">3.4</span> Collaboration</h2>
@@ -475,10 +1293,10 @@ Figure&nbsp;3: Size of Statistics-related Units at each institution. UNL is mana
 <p>Thus, we do not believe criteria 1.1.2 applies to the statistics department; it should not be used to support our elimination.</p>
 <blockquote class="blockquote">
 <ol start="3" type="1">
-<li>The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.</li>
+<li><p>The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.</p></li>
+<li><p>In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.</p></li>
+<li><p>In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.</p></li>
 </ol>
-<pre><code> 1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
-  2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.</code></pre>
 </blockquote>
 <p>At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). The undergraduate program requires 51 hours of statistics coursework, making it unique within the ecosystem of undergraduate statistics programs; this was a factor for several of our current students who chose UNL over other options.</p>
 <p>The department has developed the new courses for this program (typically without course releases, representing a significant increase in effective teaching workload), and has implemented this program without any of the promised increases in TT faculty or professors of practice to assist with the additional courses. These additional courses may be captured in the metrics in some ways – it is possible that research output might have decreased slightly given the large increase in teaching and course design load, as was predicted by the review team in the 2021 APR if we did not continue to increase the department size to manage the increased course load.</p>
@@ -577,9 +1395,9 @@ Figure&nbsp;3: Size of Statistics-related Units at each institution. UNL is mana
 </blockquote>
 </section>
 </section>
-<section id="effects-of-proposed-cuts" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="effects-of-proposed-cuts"><span class="header-section-number">5.2</span> Effects of Proposed Cuts</h2>
-<p><em>This section was contributed by Petronela Radu, Chair of the Mathematics Department</em></p>
+<section id="effects-of-proposed-cuts-on-outside-programs" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="effects-of-proposed-cuts-on-outside-programs"><span class="header-section-number">5.2</span> Effects of Proposed Cuts on Outside Programs</h2>
+<p><a href="documentation/Effects%20of%20Proposed%20Cuts%20to%20Undergraduate%20Program-Math.docx"><em>This section was contributed by Alex Zupan, Undergraduate Chair, Mathematics, and Doug Pellatz, Senior Academic Advisor, College of Arts and Sciences</em></a></p>
 <p>Cutting the Department of Statistics will have significant and lasting effects on the undergraduate program in the Department of Mathematics. Elimination of courses will be most deeply felt by students majoring in CAS Data Science and by students pursuing the Statistics and Data Science Option and Mathematical Finance Option within the Mathematics major. We were relieved to see IANR’s plan to continue to offer STAT 218, 318, 380, 462, and 463, which means there would be sufficient Statistics courses offered to complete the Data Science major and the Math major on the Mathematical Finance and the Statistics and Data Science options. However, the Statistical Modeling focus area of the Data Science major would likely need to be eliminated or greatly revised considering the proposed cuts. There would also be far fewer Statistics course options available with the Statistics and Data Science option of the Math major.</p>
 <p>As of the beginning of the fall 2025 semester, a total of 26 students had declared a Math major within the Statistics and Data Science option, and 21 students had declared within the Mathematical Finance option. The number of students graduating in the former option has been continuously increasing since the introduction of this option in 2020. The CAS Data Science major has seen even more dramatic increases, with 17 declared majors in the fall of 2023, 59 declared majors in the fall of 2024, and 83 declared majors in the fall of 2025. The curriculum for these majors is well-balanced between Math, Computer Science, and Statistics courses, with input and shared leadership among all three departments, and we view this major as one of the most interdisciplinary majors in the university. Losing the statistics department would be a significant blow to this valued interdisciplinarity.</p>
 <p>One motivating factor for the steep growth curve of the Data Science program is a strong positive jobs outlook. This field is highly regarded across disciplines. In a 2023 conversation with Stephen Cooper, the former Director of the Raikes program, he declared that within five years, he expected most Raikes students would have Data Science as one of their majors. Cutting one of the three pillars of the Data Science major would almost certainly hamper this growth. Students graduating within the Statistics and Data Science option of the Math major have thus far had excellent internship and career prospects. When they graduate, we ask students to fill out a voluntary exit survey, and in 2024 and 2025, students in this option have reported completing internships at companies such as Kiewit, 84.51°, the Federal Reserve Bank of Kansas City, and they report having jobs as data scientists, software engineers, and a number of other positions.<br>
@@ -598,8 +1416,8 @@ The meteoric rise of AI tools has enabled data scientists to implement new solut
 <h2 data-number="5.5" class="anchored" data-anchor-id="ph.d.-program"><span class="header-section-number">5.5</span> Ph.D.&nbsp;Program</h2>
 </section>
 </section>
-<section id="unimodal-vs.-distributed-statistics-model" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Unimodal vs.&nbsp;Distributed Statistics Model</h1>
+<section id="concentrated-vs.-distributed-statistics-model" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Concentrated vs.&nbsp;Distributed Statistics Model</h1>
 <p>Circa 1998, “Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments.” https://math.unl.edu/statistics-history-unl/</p>
 <p>“Being housed entirely in IANR clarifies the flow of resources to the department and will ensure follow-through on commitments made to the department.” - 2021 APR Report</p>
 </section>
@@ -617,7 +1435,7 @@ The meteoric rise of AI tools has enabled data scientists to implement new solut
 <div id="tbl-unmc-biostats" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-unmc-biostats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Tenured and tenure-track faculty in the Biostatistics Department at UNMC
+Table&nbsp;4: Tenured and tenure-track faculty in the Biostatistics Department at UNMC
 </figcaption>
 <div aria-describedby="tbl-unmc-biostats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -744,7 +1562,7 @@ Table&nbsp;2: Tenured and tenure-track faculty in the Biostatistics Department a
 <div id="tbl-uno-math" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-uno-math-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Tenured and Tenure-track faculty in the Mathematics Department at University of Nebraska – Omaha
+Table&nbsp;5: Tenured and Tenure-track faculty in the Mathematics Department at University of Nebraska – Omaha
 </figcaption>
 <div aria-describedby="tbl-uno-math-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">

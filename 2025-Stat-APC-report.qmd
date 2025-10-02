@@ -588,6 +588,15 @@ Without a plan to ensure that Stat 218 is taught by people who understand statis
 
 ## Consulting
 
+In 1957, the seeds of the Statistics Department were planted with the founding of the Statistical Laboratory, which would provide statistical computing and consulting services to IANR.
+The consulting mission of the laboratory motivated the creation of the MS program in Biometry and the Ph.D. program in Statistics so that the department could meet more of the demand for statistical consultation and assistance with experimental design and statistical computing tasks.
+
+>  ...advanced graduate students can do routine statistical consulting on their own. This improves everybody's access to statistical consulting and frees the faculty to concentrate on more difficult consulting problems.  In Spring semester, 1993, Biometry instituted a "Help Desk" staffed by a graduate student. The response has been very good; she has been very busy with a variety of problems. 
+> - [1993 Biometry APR Self-Study, pg 29](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+It is important to note that even in 1993, it was clear that the 8 tenured or tenure-track faculty in Biometry could not meet the demand within IANR for statistical consulting. 
+The current proposal maintains 1 FTE of the current 13 FTE in the Statistics department, which is well below even 1957 levels of funding and support. 
+
 ```{r}
 #| label: tbl-sc3l-clients
 #| message: false
@@ -597,11 +606,27 @@ options(knitr.kable.NA = '')
 
 library(readxl)
 consulting <- read_xlsx("data-analysis/data/SC3L_client_count.xlsx", col_types = c("numeric", "text", "numeric", "skip", "skip", "skip")) |>
+  mutate(Department = str_remove(Department, "Department of ") |> str_replace("Arts and Sciences", "CAS") |>
+           str_replace("SVMBS", "SVBMS") |> str_replace("Services", "Sciences")) |>
   filter(Department != "Total")
 consulting |> pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum) |>
-  kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNO, UNMC, and UNK.")
+  arrange(Department) |>
+  kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNO, UNMC, and UNK. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.")
 ```
 
+As @tbl-sc3l-clients shows, the SC3L handles a large number of projects over the course of a single year. Many of these projects are graduate research in other departments, and result in publications which only sometimes include the SC3L consultant and very rarely include any Statistics faculty. 
+Thus, these contributions to the research activity across the university and system are simply not counted in the metrics, as graduate student papers are not counted in the department's metrics. 
+
+Moreover, Kathy Hanford, the head of the SC3L until her retirement in 2023, had a Professor of Practice position, which means her research outputs are not counted in the department's contributions, both because she was not in a tenure-track position, and because she retired in December 2023 and was thus not in the department when the data were assembled. 
+
+Currently, the SC3L employs five graduate students for 20 hours a week each, though they generally work on SC3L projects more than the 20 hours required by their assistantships. 
+There is no way that the single FTE dedicated to the SC3L under the current budget can manage this workload. 
+In addition, under the new rules imposed by IANR, this 100 hours per week (plus the SC3L director's time) is devoted only to IANR projects. 
+The demand for consulting services in other colleges and units is surely much higher. 
+
+Without the graduate students supported by the SC3L, UNL risks publishing studies which are the product of faulty statistical analysis, or which employ sub-optimal experimental designs. 
+This will slowly erode the reputation of other departments on campus, and will make UNL less competitive for federal funding. 
+Ultimately, reducing the consulting resources on campus threatens the ability of UNL to maintain its status as a Big Ten, land-grant, AAU-aspiring R1 university. 
 
 ## Collaboration
 
@@ -837,9 +862,9 @@ However, we have done this at the request of our leadership, and the program we 
 
 
 
-## Effects of Proposed Cuts 
+## Effects of Proposed Cuts on Outside Programs
 
-*This section was contributed by Petronela Radu, Chair of the Mathematics Department*
+[*This section was contributed by Alex Zupan, Undergraduate Chair, Mathematics, and Doug Pellatz, Senior Academic Advisor, College of Arts and Sciences*](documentation/Effects of Proposed Cuts to Undergraduate Program-Math.docx)
 
 Cutting the Department of Statistics will have significant and lasting effects on the undergraduate program in the Department of Mathematics.
 Elimination of courses will be most deeply felt by students majoring in CAS Data Science and by students pursuing the Statistics and Data Science Option and Mathematical Finance Option within the Mathematics major.
@@ -867,7 +892,6 @@ In a recent meeting, Bill reported that the use of statistics in the real world 
 The meteoric rise of AI tools has enabled data scientists to implement new solutions with unprecedented speed, but according to Bill, these solutions require statistics for measurement – to determine to what extent new techniques are working and whether they are reliable, ethical, and fair – and the industry has not yet fully realized this need. 
 Our Data Science majors, with their unique synthesis of mathematical, computing, and statistical knowledge are well-positioned to be leaders in their fields upon graduating from UNL, and without a thriving Department of Statistics, we may not be able to continue making this assertion with confidence.
 
-
 ## Undergraduate Program
 
 
@@ -876,7 +900,7 @@ Our Data Science majors, with their unique synthesis of mathematical, computing,
 
 ## Ph.D. Program
 
-# Unimodal vs. Distributed Statistics Model
+# Concentrated vs. Distributed Statistics Model
 
 Circa 1998, "Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments." https://math.unl.edu/statistics-history-unl/
 
