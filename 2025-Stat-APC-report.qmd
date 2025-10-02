@@ -534,6 +534,58 @@ stats_full_dot |>
 
 ## Teaching
 
+```{r}
+#| include: false
+library(readxl)
+teaching1 <- read_xlsx("data-analysis/data/2-Statistics Impacts - Teaching.xlsx", sheet = 1)
+```
+
+The statistics department teaches courses which are required for degree programs across the university. 
+
+> The plan proposes to strategically deploy a portion of state-appropriated funds to continue to offer: 
+> 
+> - Critical student competencies. Undergraduate and graduate students would continue to gain essential skills in statistics and data analytics for their future careers. We anticipate course offerings would include STAT 218, STAT 380, STAT 801, STAT 802, STAT 870, complemented by additional coursework in R programming, bioinformatics, computational biology, quantitative genetics/genomics, and data analysis interpretation and visualization offered through other units. 
+
+Unfortunately, the budget proposal has massively under-estimated the importance of statistics in curricula across campus, as shown in @tbl-stat-courses-reqd.
+
+```{r}
+#| label: tbl-stat-courses-reqd
+#| message: false
+#| echo: false
+#| warning: false
+library(magrittr)
+library(knitr)
+library(kableExtra)
+tmp <- teaching1 |>
+  set_names(c("Program", "Level", "College", "Classes")) |>
+  mutate(Level = str_replace_all(Level, c("Undergrad" = "UG", "Grad" = "G"))) |>
+  mutate(highlight = str_detect(Program, "Digital.Agriculture|Actuarial|Data.Science|Agricultural.Economics|Finance") |> as.numeric())
+
+select(tmp, -highlight) |>
+  kable(rownames = F, caption="Statistics courses required by other programs across campus. The budget proposal calls for maintaining some statistics courses; programs which require courses that will not be offered are highlighted.") |>
+  kable_styling(latex_options = "striped") |>
+  row_spec(which(tmp$highlight == 1), background = "yellow") |>
+  column_spec(1, width = "15em") |>
+  column_spec(4, width = "15em")
+```
+
+In addition to the listed courses, many graduate statistics courses are taken as electives (or graduate committee-level requirements) to ensure that students have appropriate quantitative training for their research topics and fields. 
+Courses like Stat 850 -- Computing Tools for Statistics -- teach R and python "data wrangling" skills, data visualization, reproducible research, and statistical simulation. 
+The undergraduate computing sequence, Stat 151, 251, and 351, are similarly useful across multiple disciplines, though these courses were developed for the statistics undergraduate program. 
+Relatively quickly after the courses were created, the Digital Agriculture minor was created with the requirement that students take Stat 151 and 251. 
+Similarly, we believe that Stat 349, Technical Skills for Statisticians, might be useful to students in Computer Science who need a technical writing course, though this potential was only identified recently, and we would need to get ACE 2 certification for the course.  
+
+Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. 
+Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. 
+The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician" - Nate Silver, Joint Statistical Meetings, 2013 have been uttered at different points as the phrase "data science" caught on. 
+
+The proposed budget reduction plan does not account for the costs of teaching Stat 218, 380, 801, 802, and 870. 
+Currently, some of these courses are taught by graduate TAs, who will no longer exist if the graduate program is closed. 
+The remainder of the courses are taught by Statistics faculty, who are slated to be eliminated as well.
+The one remaining head of consulting cannot physically teach all of the sections of Stat 218 which are currently taught, let alone teaching 380, 801, 802, and 870 on top of the Stat 218 courses.
+Stat 218 is taken by approximately 20% of undergraduates at UNL and is an extremely important course for building quantitative literacy among undergraduate students. 
+Without a plan to ensure that Stat 218 is taught by people who understand statistical pedagogy, this proposal will majorly weaken quantitative education at UNL and diminish the value of a UNL degree. 
+
 ## Consulting
 
 ## Collaboration
@@ -679,7 +731,7 @@ Most deep learning and large language models are built on a fundamental foundati
 While we are early in our undergraduate program, and have not yet existed long enough to graduate our first class, we expect that the increased demand for data scientists and statisticians should result in increased enrollment in the program over the near term, so long as we have sufficient support from the university for advertising and recruiting. 
 Of course, it is easier to recruit students when it is possible to make statements about graduates having found jobs, or continued on to graduate school. For instance, we can advertise our Ph.D. program by saying that all graduates have found employment in their field, whether in academia, government, or industry. 
 It is somewhat harder to recruit new students before the program has graduated its first class.
-This is one reason why the NE Coordinating Commission for Postsecondary Education rules state that new programs should not be evaluated before they have been open for 5 years. XXX Cite XXX
+This is one reason why the [NE Coordinating Commission for Postsecondary Education](https://ccpe.nebraska.gov/sites/default/files/AP_Guidelines_Review%20of%20Existing%20Instructional%20Programs.pdf) rules require a five-year period to evaluate program enrollment and graduation rates. 
 
 Given the demand for statistics and data science education, Criteria 1.1.1.1-7 cannot be used to support elimination of the department^[
 It will take some work to undo the damage from the public proposal to eliminate the program, but we believe the economic conditions are sufficient to make this a worthwhile investment for UNL. 
@@ -697,10 +749,10 @@ While our undergraduate curriculum is still young, it was favorably evaluated at
 Thus, we do not believe criteria 1.1.2 applies to the statistics department; it should not be used to support our elimination. 
 
 
->    3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
+> 3. The program’s productivity relative to the university’s investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
 > 
->      1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
->       2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
+>   1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
+>   2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
 
 
 At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). 
