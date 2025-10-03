@@ -374,8 +374,9 @@ unl_depts_sum |>
 
 UNL's ranking indicates that the Statistics department's research productivity and recognition is better than 75% of other R1 and R2 institutions. 
 
-If we look at our SRI compared to other groups of Statistics departments (@fig-sri-by-class), we find that we are performing better than several well-respected AAU and Big Ten institutions. 
-That is, if the Statistics department is eliminated, this is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions. 
+Comparing the Statistics department's SRI to other Statistics departments (@fig-sri-by-class), it is clear that the UNL Statistics department performs better than several well-respected AAU and Big Ten institutions. 
+That is, if the Statistics department is eliminated, it is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions. 
+Instead, what is clear is that the Statistics department is performing within the range expected of statistics departments at AAU institutions.  
 
 ```{r}
 #| fig-width: 10
@@ -455,7 +456,7 @@ stats_full_dot |>
 ```
 
 What is remarkable is that UNL does all of this with a department that is very small relative to its peers, as shown in @fig-size-by-class. 
-It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty (and with only a 30% FTE teaching professor of practice appointment) while keeping research productivity high. 
+It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty (13 tenure-track professors and a 30% FTE teaching professor of practice) while keeping research productivity high. 
 
 ```{r}
 #| fig-width: 10
@@ -540,6 +541,33 @@ stats_full_dot |>
 
 ## Teaching
 
+The Statistics department has high-SCH service courses, which the budget proposal recognizes and plans to continue. 
+However, it is not clear how these courses will be taught - currently, they are taught by a combination of graduate students with training in statistics pedagogy and tenure-track faculty. 
+The [1993 Biometry APR Self Study](documentation/1993-Biometry-APR-SelfStudy.pdf) (pg 29) documented the challenges of appropriately staffing e.g. 801 and 802 labs when motivating their desire to start a Ph.D. program: 
+
+> Enhanced teaching. Biometry has a number of classes with labs. We are constantly struggling to place graduate students with an appropriate background as lab instructors. For example, our M.S. students are required to take BIOM 802 (Experimental Design), which has a lab. They cannot teach the lab until they have had the course themselves... In general, Ph.D. level graduate students can make a variety of contributions to the teaching program that faculty do not have the time to make and M.S. students lack the background to make.
+
+Currently, the Statistics department offers approximately 15 sections of Stat 218 (8 in fall, 7 in spring), in addition to 6 sections of Stat 380, and two sections of 801 (with 2 sections of lab each) and 802. Stat 870 is offered less frequently, so we will exclude it from this analysis. 
+The courses identified to be kept require 25 sections across 4 preps; we estimate that this would require at least 3 professors of practice to teach (assuming a 4-4 load) which are not accounted for by the current budget reduction plan. 
+These FTEs would need to be subtracted from the savings listed, yielding only 9 FTE savings for cutting four programs (BS in Statistics, BS in Data Science from CASNR, MS in Statistics, and Ph.D. in Statistics). 
+In addition, Stat 218, 380, 801, and 802 regularly benefit from statistical research (for instance, an experiential learning activity in Stat 218 is used to introduce data visualization topics to students), and these benefits would disappear if all statistics coursework was offered by teaching-only professors of practice. 
+We use professors of practice for this comparison rather than adjuncts both because it seems unlikely that 25 courses could be assigned to adjuncts with statistical training, given that most people with graduate degrees in Statistics can make more freelancing as data scientists than they would be compensated for teaching courses. 
+
+
+The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include courses not identified by IANR, such as Stat 462 and Stat 463, which are required for the Actuarial Science degree in Business and the Actuarial Science Mathematics concentration. 
+Two additional Stat 300/400 level courses are required for the Mathematics, Statistics, and Data Science focus area within the Math department beyond Stat 380. 
+The Digital Agriculture minor also requires Stat 151 and 251, computing courses developed for the Statistics undergraduate major. 
+The Agricultural Economics Ph.D. requires Stat 882, and the Finance Ph.D. requires 9 hours of graduate Statistics coursework (it is quite possible that Stat 882 and 883 would be preferable to 801 and 802 for Finance majors). 
+This analysis does not consider the fate of the Data Science programs in CAS and COE, which would lose the Statistics focus area that is primarily made up of courses designed for the Statistics and Data Analytics major and the Statistics minor. 
+In order to support these additional courses, an additional professor of practice would likely be required, reducing the FTE savings from eliminating the department to 8. 
+
+The department's teaching metrics are also not representative of recent changes we have made in order to be more efficient. 
+We have recently increased class sizes for Stat 218, but have not been able to increase section sizes beyond approximately 80 students per section due to a lack of availability for large lecture halls. In past years, Stat 218 sections were more often 30 or 45 students each -- we have made these changes to increase instructional efficiency as a result of the initial metrics, but of course none of these changes have been reflected in the numbers because data after 2024 is not included. 
+Similarly, we began offering Stat 801 and 802 online in order to better support outstate students in various IANR programs, but this new modality has not been available for long enough to change the enrollment metrics. 
+The department has been consistently working to increase instructional efficiency, even as we roll out a new undergraduate curriculum without additional FTE to support that program, however, it takes time to move our courses to larger city campus classrooms because of the relative lack of large classrooms on East campus, and ultimately there is a limit to the capacity of these classrooms that provides an upper limit on efficiency increases. 
+
+
+
 
 ## Consulting
 
@@ -583,7 +611,6 @@ Ultimately, reducing the consulting resources on campus threatens the ability of
 
 ## Collaboration
 
-## Uncaptured Information
 
 
 # Peer Analysis {#sec-peer-analysis}
