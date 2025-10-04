@@ -990,10 +990,15 @@ of statistical literacy is more acute than ever." -- [Brad Carlin, UNL Math & St
 
 While the APR reports are the closest we can come to objective evaluations, the time period over which evaluations can be obtained is limited, given that we have not had an undergraduate program for very long. 
 The department's rating in US News and World Report is #66. 
-While USNWR uses methodology that has frequently been criticized, we provide information here because it demonstrates both the growth of the field and the increased perception of the statistics department. 
+While USNWR uses methodology that has [frequently been criticized]https://www.insidehighered.com/opinion/views/2023/10/09/why-new-us-news-rankings-are-flawed-opinion), we provide information here because it demonstrates both the growth of the field and the increased perception of the statistics department. 
 In 2010, when rankings began for statistics programs, UNL was not listed (only 22 Statistics departments and 8 Biostat departments were included)^[USNWR does not archive past rankings, so this information was obtained from a contemporaneous [graduate cafe forum post](https://forum.thegradcafe.com/topic/12360-thoughts-on-new-rankings-for-stats-programs/), which is suboptimal but necessary for obtaining historical information.].
-In 2014, [UNL was listed as RNP (essentially, unranked)](https://web.archive.org/web/20170524203540/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4)
+In 2014, [UNL was listed as RNP (essentially, unranked)](https://web.archive.org/web/20170524203540/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4). 
+In 2018, [UNL was not listed at all](https://web.archive.org/web/20180525103026/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4) but the number of universities in the list had increased to 98 ranked statistics and/or biostatistics departments. 
+In 2022, [UNL was ranked 66th among 101 universities](https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings), indicating a steep increase in the perception of the department. 
 
+The rankings are updated every 4 years. 
+If UNL closes the statistics department, will it discover in May 2026 that we should have been a point of pride for the university?
+We strongly believe that under criteria 1.2.1, the department's reputation is sufficiently good to recommend against its elimination. 
 
 >    2. The program supplies significant instruction, research, or service that UNL is better equipped to supply than other colleges or universities.
 
@@ -1040,21 +1045,34 @@ Creighton | [BS Data Science](https://catalog.creighton.edu/undergraduate/arts-s
 Doane | [BS Math and Data Analytics](https://www.doane.edu/programs/mathematics-data-analytics) |  | 
 Hastings College | [BS Actuarial Science](https://www.hastings.edu/academics/undergraduate-majors/mathematics/) |  | 
 Nebraska Weslyan | [BS Data Analytics](https://www.nebrwesleyan.edu/academics/majors-and-minors/mathematics-and-computer-science/degrees/data-analytics-ba-bs-0) |  | In-major courses offered fully remote through other institutions.
-Bellevue University |  |  | 
-Bryan College of Health Sciences |  |  | 
-Clarkson College |  |  | 
-College of Saint Mary |  |  | 
-Concordia University |  |  | 
-Midland University |  |  | 
+Bellevue University | [BS Data Science](https://www.bellevue.edu/degrees/bachelor/data-science-bs/) | [MS Data Science](https://www.bellevue.edu/degrees/master/data-science-ms/) | Fully online, 36 hrs in-major
+College of Saint Mary |  |  | [Only Math BS](https://www.csm.edu/academics/arts-science/mathematics)
+Concordia University |  |  | [Only Math BA/BS](https://www.cune.edu/academics/undergraduate/mathematics/courses)
+Midland University |  |  | [Only Math BS](https://www.midlandu.edu/academics/luther-college-of-arts-sciences/mathematics/)
 Nebraska Methodist College |  |  | 
-Summit Christian College |  |  | 
-Union Adventist University |  |  | 
-York University |  |  | 
-: Colleges and Universities offering at 4-year degrees. NCTA only offers 2-year degrees and has been excluded from this analysis, though it also does not have any statistics training.
+Union Adventist University |  |  | [Only Applied Math BS](https://uau.edu/math)
+York University |  |  | [Only Math BA](https://www.york.edu/registrar/catalog/2023-2024-catalog.pdf#page=145)
+
+: Colleges and Universities offering at 4-year degrees. Institutions only offering theological degrees, medical degrees, or associates degrees have been excluded. 
 
 >    4. The program is an essential program for every university.
 
+Statistics programs and coursework are essential for every university with programs in science, technology, mathematics, and engineering; statistics coursework is also essential for developing quantitative reasoning skills in all undergraduate and graduate students. 
+
 >    5. The program’s elimination would have a substantially negative impact on education and societal concerns in Nebraska.
+
+In an era of misinformation and "alternative facts", the quantitative reasoning skills students gain from statistics courses are of primary importance, helping students evaluate claims and evidence using the scientific method. 
+In addition, however, Nebraska's economy is at least significantly based on agriculture. 
+The digital agriculture revolution has begun, and requires many more individuals to have some familiarity with data analysis and statistical computing skills. 
+The digital agriculture minor at UNL requires three Statistics courses, two of which are primarily statistical computing. 
+If the statistics program were eliminated, the minor's curriculum would have to change, and would likely require at least 6 hours of coursework in computer science or the development of corresponding courses within CASNR, but without the expertise of the statistics faculty (several of us specialize in various aspects of statistical computing). 
+
+> Although I have no discipline expertise in those other departments, I do know that Statistics has an advantage that none of the others possess. Because I wrote in support of the Department’s planned undergraduate program in February, 2021, I know that the first cohort of students is not expected to graduate until later this year or next. Evidence from our experience here at NC State University as well as from other math/stat/cs/quantitative departments across the United States, suggests very strongly that the nascent undergraduate program will grow by leaps and bounds. Simply stated, Statistics education and training is a growth industry and will be for some time (at least until AI replaces all of us). It strikes me as shortsighted to pull the rug out from under a program that in a few years time has very strong potential to be a dean’s and provost’s bragging point. In the four years since the decision was made to start the new undergraduate program, the reasons for doing so, the wisdom of doing so, and the ROI of doing so, have all strengthened considerably.
+> -- [Leonard A. Stefanski, Alumni Distinguished Professor, Statistics, NCSU](letters/Len Stefanski-NCSU.pdf)
+
+"Data Science" has likewise been a buzzword over the past decade, and the data science BS programs take approximately 1/3 of their coursework from Statistics. Data science without statistics has no Science -- statistics is the glue that holds the discipline together. The loss of the statistics department at UNL would seriously damage both the reputation of the program and the course offerings in Data Science, leading to difficulties across the College of Arts and Sciences and the School of Computing. 
+These programs are essential for Nebraska students to be able to obtain training in a growing field that is only more in demand as "AI" becomes the new buzzword. 
+Thus, under criteria 1.2.5, it is unwise to eliminate the statistics department. 
 
 >    6. The program’s elimination would result in substantial loss of revenue currently derived from grants, contracts, endowments or gifts.
 
@@ -1071,7 +1089,7 @@ The letters received during the APC feedback process make this argument better t
 
 It is clear that the reputation damage to UNL from eliminating the department will increase the scrutiny of grants written by UNL PIs at NSF, NIH, and other federal agencies. 
 In addition, UNL alumni recognize that eliminating statistics has a profound effect on the competitiveness of UNL programs, and this will have an effect on donations through the NU foundation as well as direct donations to the university. 
-As such, Criteria 1.2.6 supports APC recommending that UNL keep the Statistics department and programs intact. 
+As such, criteria 1.2.6 supports APC recommending that UNL keep the Statistics department and programs intact. 
 
 >    7. The program represents a substantial capital investment in specialized physical plant or equipment that could not be effectively redirected to alternative uses.
 
@@ -1079,22 +1097,40 @@ As such, Criteria 1.2.6 supports APC recommending that UNL keep the Statistics d
 
 >    9. The program gives the University of Nebraska-Lincoln its distinctive character.
 
+UNL is well known for agronomy, engineering, and business programs, including prestigious programs such as the Raikes school. 
+All of these fields heavily depend on statistics, and require coursework in statistics as well as input from statisticians to successfully compete for research grants. 
+While the department may not give UNL its distinctive character, it functions as very necessary but often invisible structural support for a number of UNL's most distinctive programs. 
+As a result, under criteria 1.2.9, the department should not be eliminated. 
 
 ### Addressing Criteria Indicating that Reduction is Inadvisable
 
 
 >    1. The program’s nature is such that reduction would impair the critical mass necessary to have adequate quality.
 
+The statistics department is operating on the minimum FTE which could reasonably offer programs at the undergraduate, MS, and Ph.D. levels. 
+Any reduction in headcount would force the department to choose between the undergraduate programs that are predicted to increase the profitability of the department in the future, and the graduate programs that facilitate the consulting, service, and research missions of the department. 
 
 >    2. The program cannot be reduced without a substantial risk to accreditation.
 
+Statistics programs are not externally accredited, but criteria 1.3.1 addresses the risks of reduction to our programs. 
 
 >    3. Current projections indicate that demand for the program or its graduates will increase substantially within the next five years.
 
+Every external opinion suggests that BS programs in Statistics and Data science are experiencing increasing enrollment and that economic demand for graduates of these programs is also increasing. 
+We strongly believe that enrollment in the statistics and data science programs will increase once we begin graduating students and can advertise based on their job or graduate school placement. 
+However, we will acknowledge that there is some friction in offering our undergraduate program within the College of Ag Science and Natural Resources. Current students suggest that CASNR prerequisites and general education requirements are unappealing relative to the freedom of CAS and COE requirements, which may account for the low enrollment in CASNR's data science program. 
+
+> Indeed, workforce realities cut the same way. Student demand for statistics and data science is sustained and high, and employers across tech, biotech, finance, climate, and government hire at every degree level. Closing a department in the face of that demand misaligns the university with student interest and employers’ need, ceding enrollments, tuition, and partnerships to peer institutions that are expanding, often by re-forming as “Statistics & Data Science” and integrating computation with inference.
+> -- [Michele Guindani, Professor, UCLA Biostatistics](letters/Guindani_UCLAbiostat.pdf)
+
+We think it likely that enrollment would be higher if our undergraduate program were located within the School of Computing (thinking back to the 1968 plan to create a School of Computing with Statistics and Computer Science departments) or within the College of Arts and Sciences. 
+Regardless, every expectation is that enrollment in our undergraduate programs will continue to increase for some time. Our graduate programs may increase in demand, but capacity will continue to be primarily determined by the number of faculty, as graduate students require a substantial investment of faculty time. 
+Thus, under criteria 1.3.3, reduction in the size of the department is inadvisable. 
 
 >    4. Scholarly research or creative activity of the faculty within this program, as shown by publications, creative productions, honors and awards, external funding, or other objective measure, is higher than others in the same or related peer disciplines.
 
-
+@fig-sri-by-class shows that UNL's statistics department has a scholarly research index (as computed by Academic Analytics) comparable to AAU universities and at the top of non-AAU R1 institutions. 
+This suggests that reduction is inadvisable under criteria 1.3.4. 
 
 
 ## Effects of Proposed Cuts on Outside Programs
@@ -1212,6 +1248,13 @@ The Statistics BS program has only been operating for 3 years, making an evaluat
 
 > As you will be aware, the department has recently established an innovative undergraduate programme designed to train the computationally skilled applied statisticians and data scientists that the private and public sectors everywhere (in my experience) are trying to find. The first cohort will graduate soon. The department has significant expertise in this area, and your institution is about to see the benefits. 
 > -- [Thomas Lumley, Chair of Biostatistics, Professor of Statistics, University of Auckland](letters/Thomas Lumley.pdf)
+
+Many of the internal and external letters urged the university to reinvest in the statistics department. 
+
+> This is not the moment to dismantle capacity—it is the moment to strengthen it. UNL should not only
+preserve but actively invest in the Statistics Department, building on its proven strengths in data science, analytics, and applied research. Doing so will ensure that UNL fulfills its mission as a land-
+grant institution, supports Nebraska’s industries, and positions the university for long-term success in an increasingly data-driven world.
+> -- [Zhenghong Tang, Professor and Associate Dean for Research and Innovation, College of Architecture](letters/Zhenghong Tang-CRPchairUNL.pdf)
 
 
 ## MS Program
