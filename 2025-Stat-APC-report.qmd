@@ -268,14 +268,14 @@ Moreover, as UNK does not have a statistics program at any level, it stands to r
 
 # Metrics {#sec-metrics}
 
-We begin this section by acknowledging that it is *hard* to assemble fully correct data that best represents our department, and that the task to assemble all of the (correct) data for all departments on campus is indeed a difficult one.
+We begin this section by acknowledging that it is *hard* to assemble fully correct data that correctly represents our department, and that the task to assemble all of the (correct) data for all departments and stand-alone programs on campus is indeed a difficult one.
 We teach several courses in our department which describe how to build a data pipeline, from collection to cleaning to visualization, and we believe having a resource on campus which can consult on these tasks is fundamentally important to both the research and administration of the university.
-Our students are taught to consider the impact of the decisions which are made during assembly of a data pipeline when conducting the resulting statistical analysis; it is this step that is most obviously missing from the metrics provided to APC to justify the budget reduction plan. 
-The department would be more than happy to assist with future projects evaluating the efficiency of units across campus, and integrating this data into a course as a service learning opportunity would have very real benefits.
+Our students are taught to consider the impact of the decisions which are made during assembly of a data pipeline when conducting the resulting statistical analysis and whether numbers are comparable and not an instance of "apples" to "oranges"; it is this step that is most obviously missing from the metrics provided to APC to justify the budget reduction plan. 
+The department would be more than happy to assist with future projects evaluating the performance of units across campus; integrating the methodology and data into a course as a service learning opportunity would have very real benefits.
 This data is both extremely interesting and provides an excellent demonstration of the importance of a variety of concepts from data documentation to reproducibility and the different varieties of messy data which often appear in real-world analyses. 
 
 However, we would be remiss if we did not note that administration has access to resources which have not been made available to departments seeking to understand how the relevant metrics were assembled. 
-Ultimately, these issues are not particularly relevant to the importance of the Statistics department within the University of Nebraska ecosystem, and so we will defer discussion of the most egregious issues to @sec-metric-problems^[Not all identified issues are outlined in that section, because our priority is in preserving our programs and department rather than engaging in pedantry. In addition, even reports posted on the internet have an effective size limit; we have opted to save paper and electrons and only detail the worst offenses in the data analysis which resulted in our unit being targeted for elimination.]. 
+Ultimately, these issues are not particularly relevant to the importance of the Statistics department within the University of Nebraska ecosystem, and so we will defer discussion of the most egregious issues to @sec-metric-problems^[Not all identified issues are outlined in that section, because our priority is in preserving our programs and department rather than engaging in pedantry. We have opted to save resources and only detail the worst offenses in the data analysis which resulted in our unit being targeted for elimination.]. 
 
 
 ## Research {#sec-metrics-research}
@@ -310,8 +310,11 @@ The weighting of each of these measures is discipline specific (based on a facto
 UNL Statistics has (based on data through December 2023) an SRI of 0.4 based on all R1 and R2 institutions tracked by Academic Analytics. 
 Academic Analytics also offers the ability to compute an SRI based on a custom comparison group; using only AAU universities, the department's custom SRI is -0.1.
 
-Importantly, however, because SRI is the result of discipline-specific weights, it **cannot** be effectively compared across departments.
-Each discipline has a different distribution of SRI values, and comparing across disciplines without accounting for these distributional differences is not only incorrect but extremely misleading. 
+Importantly, however, because SRI is the result of discipline-specific weights, it **cannot** be used as a faithful performance measure across disciplines directly. 
+Each discipline has a different distributional parameters (mean and standard deviation) for the SRI values. Comparing across disciplines without accounting for these distributional differences is not only incorrect but extremely misleading. 
+Academic Analytics stresses the importance of [using the SRI (and any other metric) only for comparisons within taxonomy peers](documentation/Scholarly Research Index (Peer Analysis_Benchmarking) _ Portal Support.pdf). This is violated two-fold with the metrics used in the performance across units: departments are not at the same taxonomy level as stand-alone programs; and 'peers' are defined discipline specific. 
+The document further elaborates the method for aggregating faculty within units. The key step here is to "Calculate each faculty member's rank within the taxonomy, for each metric". The discipline specific SRI rank is directly related to the SRI percentile.
+
 @fig-sri-percentile-all-depts shows the SRI percentile for each department on campus when compared to other R1 and R2 departments. 
 While several departments which have been proposed to be eliminated are indeed performing below the median, many departments are also above-average in their respective fields. 
 We teach statistics students to carefully consider the appropriate comparison population and the real-world meaning of the numbers they use in analyses; it is important that UNL's administration does the same.
