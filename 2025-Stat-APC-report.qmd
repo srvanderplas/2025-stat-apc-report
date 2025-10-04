@@ -563,7 +563,7 @@ The courses identified to be kept require 25 sections across 4 preps; we estimat
 These FTEs would need to be subtracted from the savings listed, yielding only 9 FTE savings for cutting four programs (BS in Statistics, BS in Data Science from CASNR, MS in Statistics, and Ph.D. in Statistics). 
 In addition, Stat 218, 380, 801, and 802 regularly benefit from statistical research (for instance, an experiential learning activity in Stat 218 is used to introduce data visualization topics to students), and these benefits would disappear if all statistics coursework was offered by teaching-only professors of practice. 
 We use professors of practice for this comparison rather than adjuncts both because it seems unlikely that 25 courses could be assigned to adjuncts with statistical training, given that most people with graduate degrees in Statistics can make more freelancing as data scientists than they would be compensated for teaching courses. 
-
+Certainly, it seems likely that the FTEs which are being eliminated will not be available to teach courses at adjunct rates. 
 
 The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include courses not identified by IANR, such as Stat 462 and Stat 463, which are required for the Actuarial Science degree in Business and the Actuarial Science Mathematics concentration. 
 Two additional Stat 300/400 level courses are required for the Mathematics, Statistics, and Data Science focus area within the Math department beyond Stat 380. 
