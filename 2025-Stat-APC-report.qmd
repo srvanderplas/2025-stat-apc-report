@@ -2,6 +2,7 @@
 title: "Statistics: An Essential Department for a Modern R1 University"
 date: today
 message: false
+warning: false
 error: false
 echo: false
 number-sections: true
@@ -953,8 +954,8 @@ Faculty in Statistics have helped to design extension web applications to share 
 
 In addition to those contributions to other disciplines research, research in statistics has the potential to impact both our field and other fields in interesting ways. 
 Statistics faculty regularly publish software packages to make our methodological research available to others.
-Some of the packages available on CRAN (a software repository for R statistical software) authored or coauthored by UNL faculty include `GGally` (103,575), `bulletr` (294), `cmcR` (483), `cmpsR` (317), `ggmosaic` (16,697), `ggparallel` (1,245), `ggpcp` (6,376), `lvplot` (3,511), `nullabor` (8,086), `productplots` (16,266), `qqplotr` (24,677), `rotations` (748), `toolmaRk` (213), `x3ptools` (1,379), `ggenealogy` (332), `highlightr` (176), `dmtl` (271), `tidychangepoint` (231). 
-Numbers shown in parentheses are the 30-day download counts as of October 4, 2025. 
+Some of the packages available on CRAN (a software repository for R statistical software) authored or coauthored by UNL faculty include: `GGally` (103,575), `bulletr` (294), `cmcR` (483), `cmpsR` (317), `ggmosaic` (16,697), `ggparallel` (1,245), `ggpcp` (6,376), `lvplot` (3,511), `nullabor` (8,086), `productplots` (16,266), `qqplotr` (24,677), `rotations` (748), `toolmaRk` (213), `x3ptools` (1,379), `ggenealogy` (332), `highlightr` (176), `dmtl` (271), `tidychangepoint` (231). 
+Numbers shown in parentheses are the 30-day download counts as of October 4, 2025 from CRAN repositories (additional downloads may have occurred via GitHub). 
 
 Section @sec-metrics-research details our research ranking compared to other statistics departments among AAU universities. 
 It is clear that our department is punching well above our weight per FTE across many different dimensions of the teaching, research, service, and extension missions at UNL. 
@@ -1053,7 +1054,13 @@ Nebraska Methodist College |  |  |
 Union Adventist University |  |  | [Only Applied Math BS](https://uau.edu/math)
 York University |  |  | [Only Math BA](https://www.york.edu/registrar/catalog/2023-2024-catalog.pdf#page=145)
 
-: Colleges and Universities offering at 4-year degrees. Institutions only offering theological degrees, medical degrees, or associates degrees have been excluded. 
+: Colleges and Universities offering undergraduate and graduate degrees in Nebraska. While some institutions offer programs in Data Science, UNL is the only university offering a BS, MS, or Ph.D. in Statistics. Institutions only offering theological degrees, medical degrees, or associates degrees have been excluded from this table to save space. {#tbl-stat-programs}
+
+@tbl-stat-programs demonstrates that UNL's statistics programs are unique within the state. 
+Other universities may offer programs in Data Science or Analytics, but these typically involve much less coursework in Statistics and will equip students for different jobs which focus on visualization or management of data rather than the analysis of data to produce useful insights. 
+@sec-ms-prog-analysis includes a discussion of how these undergraduate Data Science and Data Analytics programs actually drive demand for UNL's MS program, rather than competing with UNL's BS in Statistics and Data Analytics degree. 
+Clearly, under criteria 1.2.3, elimination of our department and its programs is inadvisable. 
+
 
 >    4. The program is an essential program for every university.
 
@@ -1234,9 +1241,12 @@ However, we do not think that this is the case: research output in the departmen
 
 What is clear is that the additional resources promised by IANR to allow the department to successfully develop, deliver, and grow the undergraduate SADM and Data Science programs never arrived. 
 Faculty have been so busy developing the courses to ensure that students can graduate on time that we have not had additional time or energy to devote to recruitment and outreach across campus. 
-The proposed elimination of the department before our program can even be effectively counted in the metrics may send a signal to departments across campus that new program development will put your department at risk during the inevitable next round of budget cuts. 
-Programs are also likely to be less willing to push the boundaries of what is currently possible and rely on promises of future resources from administrators. 
-Any new program development is an investment in the future of the university and an investment in the people of this state, which should pay dividends to the people of the state through increased economic activity, better educational opportunities, and increased quality of life. 
+The proposed elimination of our department sends signals across campus that:
+
+- new program development will put your department at risk during the inevitable next round of budget cuts, as the metrics won't account for the development of the program, and 
+- extending the department beyond current FTE on the promise of future resources is not a risk worth taking.
+
+New program development is an **investment** in the future of the university and an investment in the people of this state, which should pay dividends to the people of the state through increased economic activity, better educational opportunities, and increased quality of life. 
 Eliminating the statistics department before we can graduate our first cohorts of Statistics undergraduates is like buying a new stock offering high and selling during a dip, losing money and also the opportunity to capitalize on the gains as the stock matures. 
 
 
@@ -1257,7 +1267,10 @@ grant institution, supports Nebraska’s industries, and positions the universit
 > -- [Zhenghong Tang, Professor and Associate Dean for Research and Innovation, College of Architecture](letters/Zhenghong Tang-CRPchairUNL.pdf)
 
 
-## MS Program
+## MS Program {#sec-ms-prog-analysis}
+
+UNL's MS program serves as an integral part of the ecosystem of statistics and data science in Nebraska. 
+
 
 > Doane has maintained a productive relationship with UNL's Statistics graduate programs. We utilize Dr. Chris Bilder's excellent textbook in our MTH316 Categorical Analysis course, and several of our alumni have successfully matriculated to your program. Two of our alumni will complete their master's degrees this spring, fortunately before any potential program closure. Three of our current seniors are planning to apply this spring, assuming the program remains available. Our successful alumni who completed UNL's Statistics program include these leaders, who have risen to the top of their organizations: 
 > 
