@@ -30,6 +30,8 @@ library(knitr)
 options(knitr.kable.NA = '')
 library(kableExtra)
 library(readxl)
+theme_set(theme_bw())
+library(patchwork)
 ```
 
 # Introduction
@@ -276,7 +278,7 @@ However, we would be remiss if we did not note that administration has access to
 Ultimately, these issues are not particularly relevant to the importance of the Statistics department within the University of Nebraska ecosystem, and so we will defer discussion of the most egregious issues to @sec-metric-problems^[Not all identified issues are outlined in that section, because our priority is in preserving our programs and department rather than engaging in pedantry. In addition, even reports posted on the internet have an effective size limit; we have opted to save paper and electrons and only detail the worst offenses in the data analysis which resulted in our unit being targeted for elimination.]. 
 
 
-## Research
+## Research {#sec-metrics-research}
 
 The Scholarly Research Index (SRI) is a measure developed by Academic Analytics 
 to evaluate the research performance of individuals and entities with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, 
@@ -381,10 +383,8 @@ unl_depts_sum |>
 ```
 
 UNL's ranking indicates that the Statistics department's research productivity and recognition is better than 75% of other R1 and R2 institutions. 
-
 Comparing the Statistics department's SRI to other Statistics departments (@fig-sri-by-class), it is clear that the UNL Statistics department performs better than several well-respected AAU and Big Ten institutions. 
-That is, if the Statistics department is eliminated, it is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions. 
-Instead, what is clear is that the Statistics department is performing within the range expected of statistics departments at AAU institutions.  
+If the Statistics department is eliminated, it is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions, because we are performing within the range expected of statistics departments at AAU institutions. 
 
 ```{r}
 #| fig-width: 10
@@ -647,8 +647,6 @@ land-grant institution and contradicts the principles of academic excellence and
 
 ```{r}
 #| include: false
-library(readxl)
-
 universities <- read_excel("data-analysis/data/University Statistics Departments.xlsx", sheet = 2) |>
   mutate(Name=str_remove(Name, ", The$")|>
            str_replace_all(" ?[,-]{1,} ?", " ") |>
@@ -659,7 +657,8 @@ universities <- read_excel("data-analysis/data/University Statistics Departments
            str_remove_all(".Seattle.Campus|.Knoxville|.Columbia|.Fort.Collins|.at.Raleigh|.College.Station|.Ann.Arbor|.Pittsburgh.Campus") |> 
            str_remove_all(" and Agricultural & Mechani.*") |> 
            str_remove_all("/Anschutz Medical Campus") |>
-           str_remove_all(" Main Campus$") |> str_trim()) 
+           str_remove_all(" Main Campus$") |> str_trim()) |>
+  mutate(Public = str_detect(Classification, "Public"))
 universities <- universities |>
   set_names(str_replace_all(names(universities), "[ /]", "_")) |>
   mutate(Bachelors_Statistics = if_else(Bachelors_Statistics=="NA", NA_character_, Bachelors_Statistics)) |>
@@ -672,6 +671,8 @@ r1 <- filter(universities, R1)
 landgrant <- filter(universities, Land_Grant)
 big10 <- filter(universities, Big_Ten)
 aau <- filter(universities, AAU)
+pubaau <- filter(universities, AAU & Public)
+
 
 stat_acad_anal <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv") |>
   mutate(institutionname=str_remove(institutionname, ", The$")|>
@@ -746,7 +747,15 @@ And this assessment is shared by the chairs of other Big Ten statistics departme
 > -- [Big Ten Statistics Department Chairs](letters/Big10_UNL_Letter.pdf)
 
 
-While it is often desireable to be unique in a field, eliminating the statistics department would be more akin to notoriety. 
+### Public AAU Universities
+
+The administration has defined the `r nrow(pubaau)` public AAU universities to be their preferred comparison group. 
+All `r sum(pubaau$has_some_stat)` have a stand-alone statistics or data science department (excluding biostatistics), and `r sum(!is.na(pubaau$Biostatistics))` also have a biostatistics department. 
+Thus, even if UNL and UNMC merge at some point in the future, we will be in good company among other public AAU institutions in having both a Statistics and Biostatistics department, as these serve different functions. 
+
+## Conclusion
+
+While it is often desirable to be unique in a field, eliminating the statistics department would be more akin to notoriety. 
 Statistics expertise is **essential** to the function of a modern R1 land-grant institution, particularly in a state where there is not another competing R1 institution which might serve researchers at both schools.
 We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its R1 status threatened.
 The proposed elimination of the department has threatened UNL's international reputation, but going through with that elimination would have dire consequences for the institution's standing among its peers.
@@ -818,22 +827,34 @@ Thus, we do not believe criteria 1.1.2 applies to the statistics department; it 
 >    1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL’s peer institutions and/or similar programs at UNL.
 >    2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program’s mission.
 
+```{r}
+#| label: fig-instructional-sch-fte
+#| fig-cap: "The department's instructional SCH generated between 2020 and 2024 has not significantly decreased (a horizontal line can easily be drawn across the standard error band, indicating that the slope of the line is not significantly different from zero). The SCH per teaching FTE has stayed almost constant over the 5-year period evaluated in the budget process. Meanwhile, teaching FTE has declined, but the decline is also not statistically significant. What seems clear is that any decrease in instructional SCH generated directly correlates to the decrease in teaching FTE. Thus, the department's instructional productivity has remained consistent despite introducing the Statistics and Data Analytics BS program in 2022 and the Data Science BS program(s) across colleges in 2023."
+#| fig-width: 8
+#| fig-height: 3
+metrics <- read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet= "Detail")
+filter(metrics, department == "Statistics", college == "CASNR") |>
+  select(acad_end_year, instructional_sch, teaching_fte = appointment_apportionment_percent_teaching_fte) |>
+  mutate(sch_per_teaching_fte = instructional_sch/teaching_fte) |>
+  pivot_longer(-acad_end_year, names_to = "metric", values_to = "value") |>
+  ggplot(aes(x = acad_end_year, y= value, color = metric)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  ylab("") + 
+  facet_wrap(~metric, scales = "free_y") + guides(color = "none") + ylim(c(0, NA)) + 
+  geom_vline(aes(xintercept = 2022), linetype = "dotted") + 
+  annotate(geom = "text", x = 2022, y = 0, label = "SADM BS program begins")
 
-At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). 
-The undergraduate program requires 51 hours of statistics coursework, making it unique within the ecosystem of undergraduate statistics programs; this was a factor for several of our current students who chose UNL over other options. 
+```
 
-The department has developed the new courses for this program (typically without course releases, representing a significant increase in effective teaching workload), and has implemented this program without any of the promised increases in TT faculty or professors of practice to assist with the additional courses. 
-These additional courses may be captured in the metrics in some ways -- it is possible that research output might have decreased slightly given the large increase in teaching and course design load, as was predicted by the review team in the 2021 APR if we did not continue to increase the department size to manage the increased course load. 
+Figure @fig-instructional-sch-fte shows that the instructional productivity of the statistics department has not effectively changed (panel 2) over the 2020-2024 period. 
+We suspect that this quantity is likely to actually increase if numbers from 2024-25 and 2025-26 were included, as our programs are maturing and we have taken steps to increase class size and instructional efficiency since our new chair was hired in Summer 2024. 
+None of these changes are reflected in the assembled metrics. 
 
-> The main resources needed to implement the undergraduate Statistics and Data Analytics major and the forthcoming Statistical Data Science major are people and energy. The major requires the development of a considerable number of new courses. To develop these courses with only the existing faculty would require major sacrificees to faculty research programs and to their ability to collaborate with IANR and other faculty at UNL. New faculty will need to be hired to develop coursework for the majors.
-> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+However, we are not just an instructional program - we also have research, extension, and collaboration/service missions. Our productivity in these areas has also not decreased relative to the number of people in the department and their time in rank -- it is normal for younger faculty to have fewer collaborative relationships, as these develop over the course of a career and can require a significant years-long investment before meaningful products such as co-authored papers are produced.
 
-It is also possible that the average course size may have decreased in the department over the last 3-4 years due to the large increase in new courses along with relatively small initial cohorts as the major started but before we could advertise the job and graduate school placements of our graduates (we will have a couple of students graduating early in December and the rest of the first cohort graduating in May).
-However, we have done this at the request of our leadership, and the program we designed is both unique and well-regarded by our peers.  
-
-> The development of new undergraduate majors is very important not only to UNL but more broadly to the state of Nebraska given the urgent need for highly trained statisticians and data scientists. Furthermore, this program will generate substantial resources for IANR; the department needs resources to develop, deliver, and grow these programs. 
-> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
-
+On any of these criteria, however, the department's productivity has remained high relative to the standards of our field. 
+Thus, we do not believe criteria 1.1.3 apply to our department. 
 
 >    4. The instructional productivity of a program is substantially less than the average for UNL as a whole. The level of instruction and the mode of instruction appropriate to the program shall be considered, including particularly the average number of contact hours carried by the faculty.
 
@@ -844,8 +865,95 @@ Our instructional efficiency is comparable to other departments with similar pro
 
 >    5. The program’s reduction or elimination will not substantially impair the viability or quality of other UNL programs.
 
+The elimination of the statistics department **will damage** the viability of programs in Actuarial Science, Data Science, Agronomy, Agricultural Economics, and others, as shown in @tbl-stat-courses-reqd. 
+
+```{r}
+#| label: fig-stat-courses-majors
+#| fig-cap: "Statistics course average enrollment by major/nonmajor. Agronomy students . Stat 218 and 380 have been omitted to make comparisons easier. Many statistics courses serve students across a variety of outside programs."
+#| fig-width: 8
+#| fig-height: 5
+
+
+enrollment_counts <- read_xlsx("data-analysis/data/Enrollment Counts.xlsx", col_types = c("text", "numeric", "numeric", "numeric", "numeric", "text", "skip", "skip", "skip", "skip"))|>
+  select(Course:Agro) |>
+  rename(Agronomy = Agro) |>
+  mutate(Course_Number = str_extract(Course, ".*(\\d{3}).?", group = 1),
+         Course_Number = as.numeric(Course_Number)) |>
+  mutate(Graduate = Course_Number > 500) |>
+  mutate(Course = str_replace(Course, "\\.0$", ""))
+
+colors <- c("Stat" = "grey", "Other" = "#619cff", "Agronomy" = "#00ba38")
+
+ug <- filter(enrollment_counts, !Graduate) |>
+  group_by(Course_Number) |>
+  summarize(years = n(), Count = sum(Count, na.rm = T), NonMajor = sum(NonMajor, na.rm = T), Agronomy = sum(Agronomy, na.rm = T), Stat = Count - NonMajor, Other = NonMajor - Agronomy) |>
+  select(Course_Number, years, Stat, Other, Agronomy) |>
+  pivot_longer(-c(Course_Number, years), names_to = "Major", values_to = "Count") |>
+  mutate(Per_Year = Count/years,
+         Major = factor(Major, levels = c("Stat", "Agronomy", "Other" ), ordered = T)) |>
+  ggplot(aes(x = factor(Course_Number), y = Per_Year, fill = Major)) + 
+  geom_col(position = "stack", color = "black") + 
+  scale_fill_manual("Program", values = colors) +
+  ylab("Average Enrollment (Total Enrollment/# Years Offered)") + 
+  xlab("Undergrad Courses") + 
+  ylim(c(0,100)) + 
+  guides(fill = 'none') + coord_flip() + 
+  annotate(y = 50, x = "494", label = "462/463: MATH/ACTS students", geom = "text", vjust = 0.5, hjust = 0)+ 
+  annotate(y = 50, x = "318", label = "318: STAT minors & Data Science majors", geom = "text", vjust = 0.5, hjust = 0)
+
+grad <- filter(enrollment_counts, Graduate) |>
+  group_by(Course_Number) |>
+  summarize(years = n(), Count = sum(Count, na.rm = T), NonMajor = sum(NonMajor, na.rm = T), Agronomy = sum(Agronomy, na.rm = T), Stat = Count - NonMajor, Other = NonMajor - Agronomy) |>
+  select(Course_Number, years, Stat, Other, Agronomy) |>
+  pivot_longer(-c(Course_Number, years), names_to = "Major", values_to = "Count") |>
+  mutate(Per_Year = Count/years,
+         Major = factor(Major, levels = c("Stat", "Agronomy", "Other" ), ordered = T)) |>
+  ggplot(aes(x = factor(Course_Number), y = Per_Year, fill = Major)) + 
+  geom_col(position = "stack", color = "black") + 
+  scale_fill_manual("Program", values = colors) +
+  ylab("Average Enrollment (Total Enrollment/# Years Offered)") + 
+  xlab("Graduate Courses") + 
+  ylim(c(0,100)) + 
+  theme(legend.position = "inside", legend.position.inside = c(1, 1), legend.justification = c(1.01, 1.01)) + coord_flip() + 
+  annotate (y = 25, x = "811", label = "811/812: Teacher Education", geom = "text", hjust = 0, vjust = 0) 
+
+# enrollment_counts |> group_by(Graduate) |> summarize(courses = length(unique(Course_Number)))
+
+ug + grad + plot_layout(widths = c(16, 18), axes = "collect") + 
+  theme(legend.position.inside = c(1, 1))
+```
+
+In addition, specific graduate statistics courses other than Stat 801/802/870 are often required by committees in Agronomy, Engineering, and other disciplines.
+
+> My background is in quantitative genetics and plant improvement—I owned my own company for 30 years, worked for a multi-national corporation, and spent nearly 7 years as a faculty member in the Department of Agronomy and Horticulture... The proposal to eliminate the Department of Statistics at UN-L will deliver a severe blow to all the biological sciences at UN-L, but especially the Plant and Animal Sciences graduate programs (who already collaborate extensively to offer many courses together in these statistically related disciplines). It will effectively eliminate our ability to offer most graduate degrees in these disciplines, or relegate our graduate programs to the "minor leagues."
+> -- [Thomas C. Hoegemeyer, Ph.D.](letters/ThomasHoegemeyer.pdf)
+
+It is clear that the current proposal to eliminate all statistics courses on campus other than 218, 380, 801, 802, and 870 will dramatically hurt programs across campus. 
+Thus, under criteria 1.1.5, the program elimination cannot be justified. 
+
 
 >    6. The program’s contribution to the UNL missions of instruction, research, and service is sufficiently marginal not to justify maintenance of its present size.
+
+The Statistics department at UNL has around 13 FTE, and yet manages to offer a BS, MS, and Ph.D. program, undergraduate and graduate minors, and a large number of courses which are required or necessary for other degree programs. 
+This contribution to the teaching mission of the university is significant.
+
+However, the contributions of the statistics department extend to the research mission as well, though in statistics these contributions are considered service rather than research.
+While we train graduate students from other disciplines, we also have collaborations across campus, assisting other faculty and graduate students with their research.
+Many of these collaborations are not documented in coauthored papers or grants, because statisticians view collaboration and consulting as part of the job, and as long as it isn't a commitment involving large amounts of time (say, more than 1 day/week), we do not usually require compensation and simply hope that the collaboration will eventually lead to coauthored papers.
+
+Up until this budget reduction proposal, this "unseen" component of faculty labor seemed to be well understood in IANR, and was also reflected in P&T evaluations of statistics faculty. 
+Faculty in Statistics have helped to design extension web applications to share research findings from Biosystems Engineering with farmers, assisted with the visualization of observational data in Animal Science, discussed visualization methods with qualitative researchers in CEHS, and more. 
+
+In addition to those contributions to other disciplines research, research in statistics has the potential to impact both our field and other fields in interesting ways. 
+Statistics faculty regularly publish software packages to make our methodological research available to others.
+Some of the packages available on CRAN (a software repository for R statistical software) authored or coauthored by UNL faculty include `GGally` (103,575), `bulletr` (294), `cmcR` (483), `cmpsR` (317), `ggmosaic` (16,697), `ggparallel` (1,245), `ggpcp` (6,376), `lvplot` (3,511), `nullabor` (8,086), `productplots` (16,266), `qqplotr` (24,677), `rotations` (748), `toolmaRk` (213), `x3ptools` (1,379), `ggenealogy` (332), `highlightr` (176), `dmtl` (271), `tidychangepoint` (231). 
+Numbers shown in parentheses are the 30-day download counts as of October 4, 2025. 
+
+Section @sec-metrics-research details our research ranking compared to other statistics departments among AAU universities. 
+It is clear that our department is punching well above our weight per FTE across many different dimensions of the teaching, research, service, and extension missions at UNL. 
+We have been, for several years, the "little department that could". 
+As a result, we do not believe criteria 1.1.6 applies to our department either. 
+
 
 
 
@@ -976,6 +1084,32 @@ Stat 218 is taken by approximately 20% of undergraduates at UNL and is an extrem
 Without a plan to ensure that Stat 218 is taught by people who understand statistical pedagogy, this proposal will majorly weaken quantitative education at UNL and diminish the value of a UNL degree. 
 
 ## Undergraduate Program
+
+At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). 
+The undergraduate program requires 51 hours of statistics coursework, making it unique within the ecosystem of undergraduate statistics programs; this was a deciding factor for several of our current students who chose UNL over other universities offering statistics degrees. 
+
+The department has developed the new courses for this program^[Course development has occurred without course releases, representing a significant increase in effective teaching workload and requiring unpaid work during the summer and winter breaks to prepare 1-2 new preps every academic year for some of the faculty in the department.], and has implemented this program without any additional TT faculty or professors of practice positions intended to assist with the additional course load. 
+These additional courses may be reflected in the metrics in some ways -- it is possible that research output might have decreased slightly given the large increase in teaching and course design load, as was predicted by the review team in the 2021 APR if we did not continue to increase the department size to manage the increased course load. 
+
+> The main resources needed to implement the undergraduate Statistics and Data Analytics major and the forthcoming Statistical Data Science major are people and energy. The major requires the development of a considerable number of new courses. To develop these courses with only the existing faculty would require major sacrificees to faculty research programs and to their ability to collaborate with IANR and other faculty at UNL. New faculty will need to be hired to develop coursework for the majors.
+> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+However, we do not think that this is the case: research output in the department has been relatively steady over the last 5 years, and some of the faculty most burdened by course development have also had record numbers of publications accepted. 
+
+
+What is clear is that the additional resources promised by IANR to allow the department to successfully develop, deliver, and grow the undergraduate SADM and Data Science programs never arrived. 
+Faculty have been so busy developing the courses to ensure that students can graduate on time that we have not had additional time or energy to devote to recruitment and outreach across campus. 
+The proposed elimination of the department before our program can even be effectively counted in the metrics may send a signal to departments across campus that new program development will put your department at risk during the inevitable next round of budget cuts. 
+Programs are also likely to be less willing to push the boundaries of what is currently possible and rely on promises of future resources from administrators. 
+Any new program development is an investment in the future of the university and an investment in the people of this state, which should pay dividends to the people of the state through increased economic activity, better educational opportunities, and increased quality of life. 
+Eliminating the statistics department before we can graduate our first cohorts of Statistics undergraduates is like buying a new stock offering high and selling during a dip, losing money and also the opportunity to capitalize on the gains as the stock matures. 
+
+
+> The development of new undergraduate majors is very important not only to UNL but more broadly to the state of Nebraska given the urgent need for highly trained statisticians and data scientists. Furthermore, this program will generate substantial resources for IANR; the department needs resources to develop, deliver, and grow these programs. 
+> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+CCPE guidelines require that programs have been operating for at least 5 years (and more practically, 9 years) before evaluation, because 5-year graduation rates and cohort sizes are part of the evaluation criteria. 
+The Statistics BS program has only been operating for 3 years, making an evaluation of the program based on cohort sizes very premature. 
 
 
 ## MS Program
