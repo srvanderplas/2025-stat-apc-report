@@ -628,6 +628,27 @@ Ultimately, reducing the consulting resources on campus threatens the ability of
 
 ## Collaboration
 
+The Statistics department at UNL is currently well connected with other entities across UNL, mostly units on East Campus. @fig-aca-collaborations shows a network of collaborations as recorded by Academic Analytics.  
+
+What is missing from this view are any collaborations with members of the Statistics Department who were not included in Academic Analytics by an oversight of the UNL administration. Faculty might not have a research component in Statistics, but their professional practice in Statistics enables researchers across campus to do their research (Hanford, Stanke, Clarke). 
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-height: 10
+#| fig-width: 9
+#| fig-cap: "Network of collaborations by the members of the UNL Statistics Department with other units across UNL."
+#| label: fig-aca-collaborations
+
+knitr::include_graphics("images/AcA-Collaborations.png")
+```
+
+The number of grants might seem low, but only grants with a non-zero dollar contribution to a Statistics faculty member are included. The mission of the Statistics Department has been to first and foremost serve the institution. As such we have agreed to be involved in grants without being officially acknowledged by receiving a non-zero percentage of the incentive. Additionally, Statistics faculty are often involved less formally by advising joint students. 
+
+Collaborations across units have recently suffered from the retirement of highly-collaborative faculty. 
+The administration has (informally) pointed out to the Statistics Department the wish to see more collaborations. Recent hires were made by the Department, but collaborations need some time to build before any projects can be reasonably expected. 
+
 
 
 ## Economic Impact
