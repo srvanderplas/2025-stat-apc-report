@@ -348,8 +348,10 @@ unl_depts <-unl_depts |>
 
 
 unl_depts_sum <- unl_depts |> 
-  group_by(Unit, short_name) |> 
-  summarize(`SRI Percentile` = max(`SRI Percentile`)) |> 
+  group_by(Unit,  short_name, `Number of Units`) |> 
+  summarize(`SRI Percentile` = max(`SRI Percentile`),
+            `SRI Rank` = max(`SRI Rank`)
+            ) |> 
   ungroup()
   
 eliminate <- c("Statistics", 
@@ -368,7 +370,8 @@ unl_depts_sum <- unl_depts_sum |>
   mutate(Quintile = cut_number((-1)*`SRI Percentile`, 5),
          Proposed = ifelse(short_name %in% eliminate, "Eliminate", 
                            ifelse(short_name %in% merger1, "Merger1",
-                                 ifelse(short_name %in% merger2, "Merger2", "Not Mentioned"))))
+                                 ifelse(short_name %in% merger2, "Merger2", "Not Mentioned")))) |>
+  mutate(rank_label = sprintf("%d / %d", `SRI Rank`, `Number of Units`))
 
 unl_depts_sum |>
   ggplot(aes(x = `SRI Percentile`, y = Unit)) + 
@@ -379,10 +382,11 @@ unl_depts_sum |>
   ggtitle("Units at UNL ranked by SRI Percentile compared to all Academic Analytics peers") +
   facet_grid(Quintile~., space="free", scale="free") +
   theme(strip.text = element_text(size=0)) + 
-  scale_x_continuous(limits = c(0, 100), expand=expand_scale(mult = c(.1, 0), add = c(.1, 0))) +
+  scale_x_continuous(limits = c(0, 110), expand=expand_scale(mult = c(.1, 0), add = c(.1, 0))) +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
         plot.title.position = "plot", legend.location = "plot", legend.position = c(0, 1), legend.justification = c(-0.01, 1.01)) + 
-  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40"))
+  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) +
+  geom_text(aes(label=rank_label), x = 105, hjust=1, colour = "grey40")
 
 ```
 
