@@ -1012,7 +1012,7 @@ of statistical literacy is more acute than ever." -- [Brad Carlin, UNL Math & St
 
 While the APR reports are the closest we can come to objective evaluations, the time period over which evaluations can be obtained is limited, given that we have not had an undergraduate program for very long. 
 The department's rating in US News and World Report is #66. 
-While USNWR uses methodology that has [frequently been criticized]https://www.insidehighered.com/opinion/views/2023/10/09/why-new-us-news-rankings-are-flawed-opinion), we provide information here because it demonstrates both the growth of the field and the increased perception of the statistics department. 
+While USNWR uses methodology that has [frequently been criticized](https://www.insidehighered.com/opinion/views/2023/10/09/why-new-us-news-rankings-are-flawed-opinion), we provide information here because it demonstrates both the growth of the field and the increased perception of the statistics department. 
 In 2010, when rankings began for statistics programs, UNL was not listed (only 22 Statistics departments and 8 Biostat departments were included)^[USNWR does not archive past rankings, so this information was obtained from a contemporaneous [graduate cafe forum post](https://forum.thegradcafe.com/topic/12360-thoughts-on-new-rankings-for-stats-programs/), which is suboptimal but necessary for obtaining historical information.].
 In 2014, [UNL was listed as RNP (essentially, unranked)](https://web.archive.org/web/20170524203540/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4). 
 In 2018, [UNL was not listed at all](https://web.archive.org/web/20180525103026/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4) but the number of universities in the list had increased to 98 ranked statistics and/or biostatistics departments. 
@@ -1313,8 +1313,6 @@ Circa 1998, "Demand for statistics instruction at both the graduate and undergra
 > -- [Peggy Hart, Ph.D. Statistics, UNL. Associate Professor of Mathematics & Data Analytics, Doane University](letters/PeggyHart-UNLmathStatAlum_DoaneProf.pdf)
 
 
-
-"Being housed entirely in IANR clarifies the flow of resources to the department and will ensure follow-through on commitments made to the department." - 2021 APR Report
 
 # Planning for the Future {#sec-future}
 
