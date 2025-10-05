@@ -394,6 +394,9 @@ UNL's ranking indicates that the Statistics department's research productivity a
 Comparing the Statistics department's SRI to other Statistics departments (@fig-sri-by-class), it is clear that the UNL Statistics department performs better than several well-respected AAU and Big Ten institutions. 
 If the Statistics department is eliminated, it is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions, because we are performing within the range expected of statistics departments at AAU institutions. 
 
+> [Y]our statistics department is punching above its weight. Bertrand and Jennifer Clarke have written the bible on predictive statistics. When Covid-19 was at its height, Chris Bilder was advising the state of Nebraska on group testing, and his methodology was used. Bhaskar Bhattacharya has published seminal work in the Annals of Statistics, which is Holy Grail of mathematical statistics. Erin Blankenship is one of the world leaders in agricultural statistics. Heike Hofmann was recently hired from Iowa State, and she is a Fellow of the American Statistical Association, and there are several others in your department who outshine even her. 
+> -- [David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow](letters/David Banks.pdf)
+
 ```{r}
 #| fig-width: 10
 #| fig-height: 7.5
@@ -555,6 +558,12 @@ stats_full_dot |>
   
 ```
 
+
+> A central development in scientific publishing and scientific procedure over the last century has been the onset of data rich studies and the deployment of concepts and tools involving rigorous statistical methodology for data analysis. These concepts and tools have largely been invented, carried out, promoted, and taught in statistics departments nationwide and worldwide. Today there are hundreds of thousands of papers yearly in clinical medicine and computational science that publish their results and clinch their arguments with statistical tests and procedures.    
+>     
+> Although rigorous methods are demanding, difficult and in certain senses forbidding, they bring great benefits in terms of research efficiency. Instead of inconclusive research, in which we have no confidence, we get actual conclusions in which we have confidence. Still, some non-statisticians who have not been trained in these concepts and methods may not be aware of the threats to scientific validity which arise if the rigor is allowed to slip away. In fact, in the last decade we have become able to peruse the entire body of scientific literature as a dataset, and to recognize the uneven quality and rigor of studies, as well as the proliferation of poor studies, which contaminate the corpus and now begin to undermine public confidence and funding.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
 ## Teaching
 
 > I strongly urge the Academic Planning Committee to ... recognize that statistical education is not a “service” add-on but a foundational element in many academic disciplines, and a strategic asset for UNL and the State.
@@ -603,6 +612,10 @@ The consulting mission of the laboratory motivated the creation of the MS progra
 > - [1993 Biometry APR Self-Study, pg 29](documentation/1993-Biometry-APR-SelfStudy.pdf)
 
 It is important to note that even in 1993, it was clear that the 8 tenured or tenure-track faculty in Biometry could not meet the demand within IANR for statistical consulting. 
+
+> Yet the demand for statistical consulting and collaborative research is extensive at IANR. Any compromise in the quality of service provided by Biometry would translate as an immediate loss in the quality and quantity of research possible at IANR. 
+> - [1993 Biometry APR Self-Study, pg 34](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
 The current proposal maintains 1 FTE of the current 13 FTE in the Statistics department, which is well below even 1957 levels of funding and support. 
 
 ```{r}
@@ -620,25 +633,31 @@ consulting |> pivot_wider(names_from = "Year", values_from = "NumClients", value
   kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNO, UNMC, and UNK. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.")
 ```
 
-As @tbl-sc3l-clients shows, the SC3L handles a large number of projects over the course of a single year. Many of these projects are graduate research in other departments, and result in publications which only sometimes include the SC3L consultant and very rarely include any Statistics faculty. 
-Thus, these contributions to the research activity across the university and system are simply not counted in the metrics, as graduate student papers are not counted in the department's metrics. 
+As @tbl-sc3l-clients shows, the SC3L handles a large number of projects over the course of a single year. 
+Many of these projects are graduate research in other departments, and result in publications which only sometimes include the SC3L consultant and only rarely include any Statistics faculty. 
+**These contributions to the research activity across the university and system are simply not counted in the metrics**, as graduate student papers are not counted in the department's metrics. 
 
 Moreover, Kathy Hanford, the head of the SC3L until her retirement in 2023, had a Professor of Practice position, which means her research outputs are not counted in the department's contributions, both because she was not in a tenure-track position, and because she retired in December 2023 and was thus not in the department when the data were assembled. 
 
-Currently, the SC3L employs five graduate students for 20 hours a week each, though they generally work on SC3L projects more than the 20 hours required by their assistantships. 
+Currently, the SC3L employs five graduate students for 20 hours a week each, though they generally work on SC3L projects more than the 20 hours/week required by their funding. 
 There is no way that the single FTE dedicated to the SC3L under the current budget can manage this workload. 
-In addition, under the new rules imposed by IANR, this 100 hours per week (plus the SC3L director's time) is devoted only to IANR projects. 
-The demand for consulting services in other colleges and units is surely much higher. 
+In addition, under new rules imposed by IANR, this 100 hours per week (plus the SC3L director's time) is devoted only to IANR projects. 
+The demand for consulting services in other colleges and units is surely much higher!
+@sec-future discusses possible resolutions for the mismatch between IANR interests and the ability for all researchers at UNL to access statistical consulting services. 
+
+> Historians have looked into the practice of statistical data analysis during that earlier era. For example, Stephen Stigler of University of Chicago has an excellent article called “The History of Statistics in 1933”. He showed that in those days there were earnest and hard-working data analysts who were not schooled in the kinds of patterns one might see in noisy data that had explainable causes recurring again and again from study to study. Instead, there was a great deal of wasted time and effort in those days, when people just didn't understand what they were seeing. They either thought they were seeing something real that was only an artifact, or they were ignoring patterns and tendencies that were fundamental and very important but were overlooked through lack of the right tools or simple awareness.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
 
 Without the graduate students supported by the SC3L, UNL risks publishing studies which are the product of faulty statistical analysis, or which employ sub-optimal experimental designs. 
 This will slowly erode the reputation of other departments on campus, and will make UNL less competitive for federal funding. 
-Ultimately, reducing the consulting resources on campus threatens the ability of UNL to maintain its status as a Big Ten, land-grant, AAU-aspiring R1 university. 
+**Ultimately, reducing the consulting resources on campus threatens the ability of UNL to maintain its status as a Big Ten, land-grant, AAU-aspiring R1 university.**
 
 ## Collaboration
 
-The Statistics department at UNL is currently well connected with other entities across UNL, mostly units on East Campus. @fig-aca-collaborations shows a network of collaborations as recorded by Academic Analytics.  
-
-What is missing from this view are any collaborations with members of the Statistics Department who were not included in Academic Analytics by an oversight of the UNL administration. Faculty might not have a research component in Statistics, but their professional practice in Statistics enables researchers across campus to do their research (Hanford, Stanke, Clarke). 
+The Statistics department at UNL is currently well connected with other entities across UNL, mostly units on East Campus. 
+@fig-aca-collaborations shows a network of collaborations as recorded by Academic Analytics.  
+What is missing from this view are any collaborations with members of the Statistics Department who were not included in Academic Analytics by an oversight of the UNL administration. 
+Faculty (Hanford, Stanke, Clarke) might not have a research component in Statistics, but their professional practice in Statistics enables researchers across campus to do their research. 
 
 ```{r}
 #| message: false
@@ -652,11 +671,28 @@ What is missing from this view are any collaborations with members of the Statis
 knitr::include_graphics("images/AcA-Collaborations.png")
 ```
 
-The number of grants might seem low, but only grants with a non-zero dollar contribution to a Statistics faculty member are included. The mission of the Statistics Department has been to first and foremost serve the institution. As such we have agreed to be involved in grants without being officially acknowledged by receiving a non-zero percentage of the incentive. Additionally, Statistics faculty are often involved less formally by advising joint students. 
+The number of grants might seem low, but only grants with a non-zero dollar contribution to a Statistics faculty member are included.
+The mission of the Statistics Department has been to first and foremost serve the institution. 
+As such we have agreed to be involved in grants without being officially acknowledged by receiving a non-zero percentage of the incentive, and in some cases, we are not even formally listed on the grants. 
+Statistics faculty are also often involved by advising joint students, which is not documented in any of the metrics, though presumably that data is available to administration. 
 
-Collaborations across units have recently suffered from the retirement of highly-collaborative faculty. 
-The administration has (informally) pointed out to the Statistics Department the wish to see more collaborations. Recent hires were made by the Department, but collaborations need some time to build before any projects can be reasonably expected. 
+It seems that the research done within the statistics department -- that is, the research published in statistics journals, rather than domain journals -- is no longer considered "in alignment" with IANR and possibly UNL strategic goals. 
+If this is the case, IANR and UNL are making a horrible mistake, because there is not a clear divide between statistics research and domain-specific consulting. 
+The two co-evolve, as Statistics research is often the product of domain specific questions. 
+There is a cross-pollination effect whereby consulting projects raise statistics questions that are more abstract, leading to a split where the domain-level project is solved first and the more abstract problem is solved later and published in Statistics. 
+Then, the formal methodology in the statistics literature can be applied to other domains with similar problems and slight variations.
+This admittedly complex process takes time to bear fruit.
 
+Collaborations across units have suffered from the recent retirement of highly-collaborative faculty. 
+The administration has (informally) expressed a wish to see more collaborations within the Statistics Department, and while we are cognizant of this, collaborations take time to build before any measurable outcomes (papers, grants, students) can be documented. 
+All of the metrics used to analyze the department are lagging indicators -- the work is done more than a year before the paper is officially published^[Some journals in Statistics have a backlog of 2-3 years after the paper is accepted before it appears in print!] or the grant is submitted, and then there is another year or more before the product is officially documented by Academic Analytics. 
+
+UNL is large, and the East/City campus divide can make it difficult to find the right collaborators - while the UNL Statistics department has many people who are excellent in their niches, it can be hard for non-statisticians to determine which person has the right expertise for their project.
+It might be more effective for the administration to facilitate opportunities for new faculty to meet established researchers in other departments - "speed dating for statisticians?" to set up the right conditions for these interdisciplinary collaborations to grow and mature. 
+Alternately, a Statistics department with resources and additional capacity might host these events ourselves. 
+
+> With current staff and teaching commitments, any expansion of services is not reasonable. Any increase in one form of consulting or research activity will require either an increase in consulting resources or a reduction in some other activity. 
+> - [1993 Biometry APR Self-Study, pg 34](documentation/1993-Biometry-APR-SelfStudy.pdf)
 
 
 ## Economic Impact
@@ -1441,8 +1477,92 @@ Ultimately, the graduate programs at UNL are increasing in visibility and in aca
 
 # Concentrated vs. Distributed Statistics Model
 
-Circa 1998, "Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments." https://math.unl.edu/statistics-history-unl/
+## An Historical View of the Distributed Model
 
+> The effort now apparently underway at University of Nebraska—to disestablish the statistics
+department and disperse and/or scatter data analysis throughout campus—is a throwback to 100
+years ago and will only land us in the same situation as we encountered then.
+ -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+The administration's proposal to move to a distributed model for statistical expertise across the university is not a new one -- it has been tried before at UNL and describes the period between roughly 1900 and 2003, where statisticians within Math, Sociology, Psychology, Industrial Engineering, and Computer Science were scattered throughout City campus, and various incarnations of consulting service centers and the Biometry department served IANR's need for agricultural statistics support. 
+This model was not successful, both because funding was outpaced by demand and because it became challenging to recruit qualified statisticians without having a Statistics department. 
+
+> Maintaining the status quo will result in a decline of the quality of Biometry services. The decline will occur because of professional stagnation and because of exhaustion. Biometry faculty can only respond to a finite number of requests for their services. They are currently at that limit.
+> -- [1993 Biometry APR Self Study, pg 35](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+
+Consider these two stories from separate halves of campus detailing attempts to find a home for Statisticians across campus during the late 1960s and 1970s: 
+
+> [T]he proposal to create a separate department was broached anew in 1968 to Dean Peter McGrath of the Arts and Sciences College. He agreed that the proposal had merit and a decision was made to create a School of Computational Sciences in the College with two academic departments, namely Statistics and Computer Science. ... The administration then changed its mind and decided that the best alternative would be to recognize the existence of mathematical statistics as a program by changing the name of the Department of Mathematics to the Department of Mathematics and Statistics. 
+> -- [Statistics History at UNL (Math Department, ~1998)](https://math.unl.edu/statistics-history-unl/)
+
+> In the early 1970's, there was a discussion of an area program in statistics involving the statistical faculty from the Department of Mathematics, the Biometrics Center (now the Department of Biometry), the Department of Educational Psychology, and other departments having faculty statisticians. In 1985, a committee was formed to study the feasibility of combining the statistical faculty of the Department of Mathematics & Statistics and the Biometrics Center into a Department of Statistics. 
+> -- [1993 Biometry APR Self Study, pg 31](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+Obviously, the creation of a centralized department of Statistics did not actually happen until 2003. 
+The awkward split of responsibilities between Biometry and Statistics also made it difficult to form cross-campus collaborations. 
+These disadvantages are common knowledge within Statistics departments across the country, and are well documented both in our discipline's literature and within our oral history.
+
+> The lack of lifelong training of faculty devoted to rigorous data analysis and its methodology on campus means that it will be difficult for researchers seeking large interdisciplinary grants to find data analysis experts on campus and for graduate students, post docs etc. to find rigorous training. And that means that University of Nebraska will be at a disadvantage in competing for grants against other universities that continue to support strong, centralized statistics programs. Those programs produce an identifiable resource on campus that offers data analysis experts who can support work on campus funded by NIH, NSF and DOD.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+
+> "Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments." 
+> -- [Statistics History at UNL (Math Department, ~1998)](https://math.unl.edu/statistics-history-unl/)
+
+Clearly, the distributed model did not work as it initially evolved in departments across campus at UNL. However, we can briefly consider the pros and cons of each model (distributed and concentrated) to consider how it might look if implemented today.
+
+## Comparing the Distributed and Concentrated Models
+
+::: columns
+::: column
+![Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the decentralized model.](images/statistics-decentralized.excalidraw.png){#fig-decentralized-bubbles}
+
+Distributed Model:
+
+- Service courses are taught in departments across UNL: Psychology, Educational Psychology, Sociology, QQPM, Agronomy, Animal Science, SNR, Engineering, Computer Science, Mathematics
+- "Quant" experts are embedded in these departments:
+    - Teach domain-specific stat courses
+    - Provide all statistical advising for graduate students in their discipline
+    
+- No centralized mechanism to prevent duplication of effort across departments or to ensure minimum standards exist for statistical education
+
+- Consulting support is consistently under-funded, with waiting lists or other mechanisms to handle excess demand. 
+- Statistical support for grants is provided by non-statistics faculty or other institutions^[Recognizing, of course, that these other institutions will likely be outside of Nebraska.]. 
+- No statistics major exists at any level
+
+:::
+
+::: column
+![Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the centralized model.](images/statistics-central.excalidraw.png){#fig-cenetralized-bubbles}
+
+Centralized Model:
+
+- Service courses are taught primarily by the Statistics department with coordination from other departments to calibrate course offerings
+    - The department actively works with other units to prevent duplication of effort and increase efficiency.
+
+- Departments can (but do not have to) hire "quant" experts
+    - Split appointments used to handle joint courses and facilitate collaborative relationships between departments. 
+
+- Consulting is provided by the SC3L
+    - Funding can be provided from any college which wants to have statistical consulting resources available.
+    - Graduate students staff the SC3L desk, enhancing their statistical education and providing additional capacity for consulting across the university
+    
+- Statistical support for grants is provided by the Statistics department. The presence of a centralized department becomes a campus resource to be cited in NSF, NIH, etc. grant proposals. 
+
+- Statistics programs exist at the BS, MS, and Ph.D. level to increase the capacity for statistics assistance across campus. Graduates of these programs serve as advertisement for the good Statistics training available at UNL.
+
+:::
+:::
+
+> The few well-known statisticians in the country have positions elsewhere from which it would be impossible to dislodge them with the bait to be offered; for though the department wishes to have statistics taught as an auxiliary to the study of X, it feels that there must be no question of the tail wagging the dog, and that economy is appropriate in this connection
+> -- [Harold Hotelling, The Teaching of Statistics (1940)](documentation/Hotelling-TeachingStatistics-1940.pdf)
+
+The psychology department has tended to keep their statistics expertise in-house even with the existence of the Statistics department. 
+Yet, they have had some trouble finding someone to teach their courses on Multilevel modeling (or, in statistical parlance, linear mixed-effects models). 
+This highlights one major problem with the "distributed model" -- it is hard to find domain experts who are also experts in quantitative and statistical methods, and often, these experts demand more money than statisticians who are trained to work across a variety of domains. 
+Thus, the distributed model is in many ways set up to fail, as it makes assumptions about the availability of statistical expertise that are at odds with the economic demand for statistical skills in industry and government. 
+Ultimately, those who are interested in quantitative methods will often choose to get a more flexible degree in Statistics rather than a specialized degree in Quantitative Psychology, because they can "play in everyone's backyard" with the Statistics degree. 
 
 > After reviewing the provided rationale, I believe the "distributive model" being considered reflects a fundamental misunderstanding of statistics as a discipline, its potential growth and widespread relevance. While numerous disciplines certainly utilize statistical methods, these methods exist because of the dedicated work of professional statisticians. In a world where all organizations rely on analytics for decision-making, the role of statisticians in developing and validating new techniques is more crucial than ever. The statistics major recently established at UNL represents a forward-thinking investment in your university's future, since data-related careers continue to offer exceptional opportunities for graduates with four-year degrees.
 > -- [Peggy Hart, Ph.D. Statistics, UNL. Associate Professor of Mathematics & Data Analytics, Doane University](letters/PeggyHart-UNLmathStatAlum_DoaneProf.pdf)
@@ -1469,6 +1589,10 @@ Department of Statistics, consider applying the “distributed” model to Engli
 
 > This mention of athletics, though, does perhaps offer a way forward out of the current budget crisis. Since Nebraskans and our state elected officials (Governor, Board of Regents members and State Senators) seem as enthusiastic as ever about supporting UNL Athletics, maybe it’s high time the academic arm of UNL demand that the Athletics program begin paying an annual 'user fee' for the privilege of wearing the University of Nebraska brand. While academics are being mauled yet again, the cash reserves for football, basketball and volleyball seem bottomless. A ‘surcharge’  on the athletic programs sponging off our state’s Land Grant University and premier institution of Higher Education could well help close that $27.5 million shortfall that set this most recent bloodbath in motion. The football program, as you might recall, bought out Scott Frost’s contract for $15 million dollars without blinking an eye.
 > -- [Tim Rinne, Class of '79](letters/Tim_class_79-ocr.pdf)
+
+> As a matter of fairness, if you decide to cut any of your departments (not just statistics), you should cap every administrator's salary at your university at $100,000.
+> -- [David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow](letters/David Banks.pdf)
+
 
 # Appendix
 
