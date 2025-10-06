@@ -386,6 +386,23 @@ G/P |  \$353 | \$1031
 
 1.92 `instructional_sch_4Y_share_growth` Change in share (percentage) of total instructional SCH from AY2020 to AY2024.
 
+::: callout
+### Problem: Calculating the Share of Growth
+
+This is another variable which is likely Cauchy distributed (see @sec-probs-cauchy), that is, it is the statistical equivalent of dividing by zero - the mean of the numerator is likely to be zero (in distribution) and the mean of the denominator is likely to be zero (in distribution) -- each year's SCH would be expected to be sampled from the same distribution at the department and university level. 
+
+The problem is that these variables do not have a distribution mean and have infinite variance. 
+It is obviously possible to take the average of observations from this distribution, but the average will never converge (unlike samples from almost any other distribution - the average of an increasing number of samples will converge to the distribution mean, but only if the distribution has finite variance). 
+
+Taking a variable like this, and then calculating the mean and standard deviation across departments to standardize these variables makes this even more problematic, because it removes any meaningful information in the variable.
+Then, averaging these z-scores as part of an omnibus instructional z-score only serves to erase any meaningful information in the instructional z-score. 
+
+These problems exist in both the instructional and research z-scores, which renders the entire metric analysis statistically uninformative. Cauchy random variables are the bane of every statistics graduate student's existence - they are primarily useful for counterexamples in proofs, but when they pop up in practice, they are always a pain to deal with, and if you don't handle them correctly, they will ruin everything.
+
+Unfortunately, the UNL administration will learn this the hard way, either by acknowledging the issue and reworking the budget reduction plan, or by eliminating highly ranked and high-performing departments because of a badly-executed statistical analysis.
+
+:::
+
 
 ## Ratios
 
@@ -674,6 +691,43 @@ stats_full_dot |>
 
 :::
 
+::: callout
+### SRI Problem 3 - Comparison Groups and TMFD
+
+The case of Textiles, Merchandising, and Fashion Design illustrates the problem of comparison groups quite nicely.
+TMFD is in the bottom quintile - ranked 25 out of 41 peers - in @fig-sri-percentile-all-depts. 
+Except the department should have 127 peers, because every land-grant university has a similar department. 
+Looking more closely, we find that the peer group for the department in Academic Analytics is listed as "Consumer and Human Sciences, various". 
+Word of caution: whenever someone describes your work as 'something with', 'various', or 'whatever', they don't really know what you are doing.
+So why doesn't Academic Analytics know what TMDF does?
+
+
+Academic Analytics uses CIP (Classification of Instructional Programs) codes defined by the National Center for Education Statistics to create peer groups.
+Merely glancing over the [Textile related cip codes](https://nces.ed.gov/ipeds/cipcode/cipdetail.aspx?y=56&cipid=90647), it is clear that there are more fitting choices than ‘Consumer and Human Sciences, various’:
+
+| CIP Code   | Program Name                                 |
+|-----------|---------------------------------------------|
+| 19.0901   | Apparel and Textiles, General               |
+| 19.0902   | Apparel and Textile Manufacture             |
+| 19.0904   | Textile Science                             |
+| 19.0905   | Apparel and Textile Marketing Management   |
+| 19.0906   | Fashion and Fabric Consultant               |
+| 19.0999   | Apparel and Textiles, Other                 |
+
+So why does Academic Analytics not pick a better peer group for comparisons? 
+
+It turns out, that Academic Analytics relies on the submitting organization to provide CIP codes:
+
+> CIP Codes (to units and Ph.D. programs as classified in institution’s system)
+> Note that while CIP Codes are referenced in the creation of the Academic Analytics Taxonomy and are requested in the submission instructions, they are currently used for reference only.
+> Reporting by CIP is not available.
+> Not all requested fields are available in the comparative database.
+> Some data remain incomplete because institutions have not submitted those fields.
+> However, they are archived because they may prove useful for clients and Academic Analytics, particularly in the data matching processes.
+
+So, at some point someone at UNL listed TMFD as "Consumer and Human Sciences, various" instead of the proper CIP code, and it is TMFD's job to find the error, get someone in ORI to listen to the problem and fix the error, and then hope that the metrics are updated before their APC hearing. 
+Ultimately, there just is not enough time for that process to occur, even if ORI was willing to engage and fix the analysis. 
+:::
 
 ## Awards
 
@@ -708,12 +762,16 @@ This is one reason why Academic Analytics compares within discipline and not acr
 
 ### Book Disciplines and Book Data
 
-While the book data from Academic Analytics is overall quite high quality, it does have some issues in that it is dependent on publisher reporting. The statistics department found at least one book which was misreported by the publisher, affecting the totals.
+While the book data from Academic Analytics is overall quite high quality, it does have some issues in that it is dependent on publisher reporting. 
+The statistics department found at least one book which was misreported by the publisher, affecting the totals.
 More importantly, individuals do not have access to Academic Analytics -- typically, only unit leads have access. 
 Unit leads have neither the time nor the precise information to audit this information for correctness and follow up to ensure that it is fixed. 
 These errors are likely more consequential for small departments, particularly in disciplines that are not book-centric as measured by Academic Analytics weights. 
 
-In addition, books are normalized by average tenure-track headcount without accounting for apportionment. Most (but not all) books published are research-centric, with textbooks as the exception. However, even textbooks are typically written while on research leave. As a result, it is probably more reasonable to normalize this value by average research FTEs rather than average tenure-track FTE. 
+Books published by faculty members in the department during the decade-long interval are not included if the faculty member left the department or retired before 2024, despite the fact that these individuals contributed to the reputation of the department during the decade of interest. 
+Dr. Walter Stroup published 3 extremely well-respected and popular books between 2014 and 2023, but these are not counted in the department metrics, even though Dr. Stroup was a past chair of the department and is an important part of our reputation for excellence, even after his retirement.
+
+In addition, books are normalized by average tenure-track headcount without accounting for apportionment. Most (but not all) books published are research-centric, with textbooks as the exception. However, even textbooks are typically written while on research leave. As a result, it is probably more reasonable to normalize this value by average research FTEs rather than average number of tenure-track FTEs. 
 
 :::
 
@@ -724,12 +782,17 @@ In addition, books are normalized by average tenure-track headcount without acco
 ::: callout
 ### Citation Window
 
-The choice to use Academic Analytics (2020-2023) citations is not discipline-neutral. 
+The choice to use Academic Analytics citations is not discipline-neutral. 
 The InCites citation window is 10 years, which is long enough for most disciplines. 
-A citation interval of $<4$ years might be fine for computer science and some engineering disciplines, but papers in many human-subjects and foundational disciplines (basic science, math, humanities) have a longer shelf-life.
-In some disciplines (statistics, math), however, papers can reach peak average citation frequency after 15 years or more (Galiani & Galvez 2017). 
+However, Academic Analytics citation counts for the statistics department are lower than the corresponding citation counts from InCites -- 77 vs. 127 for Susan Vanderplas, for example. 
+In some disciplines (statistics, math), papers can reach peak average citation frequency after 15 years or more (Galiani & Galvez 2017). 
 
 >  Galiani, Sebastian and Gálvez, Ramiro H., The Life Cycle of Scholarly Articles Across Fields of Research (May 2, 2017). [http://dx.doi.org/10.2139/ssrn.2964565](http://dx.doi.org/10.2139/ssrn.2964565)
+
+When interpreting 10-year citation counts, it is also important to consider the age of the department. 
+For instance, consider Dr. Vanderplas, who received her Ph.D. in 2015. It is unlikely that she had any highly cited papers before she received her Ph.D., and even unlikely in the years immediately after receiving her Ph.D., as young researchers are often not cited as frequently as more established colleagues. 
+A department made up of primarily assistant and associate professors will be at a very large disadvantage relative to more established departments. 
+If the number of people in the department is also small, the variability in citation counts also becomes a factor.
 
 :::
 
@@ -782,7 +845,7 @@ Note that we do *not* recommend comparing departments based on that z-score, bec
 
 ::: callout
 
-### Problems with `research_awards_growth_inc_nuf_fy20_fy24`
+### Problems with `research_awards_growth_inc_nuf_fy20_fy24` {#sec-probs-cauchy}
 
 Of all of the random variables created in this analysis, the most problematic from a statistical theory perspective might be `research_awards_growth_inc_nuf_fy20_fy24`.
 This is the ratio of two differences, where we might reasonably model each value in the numerator as a normal random variable with mean $\mu_d$ and standard deviation $\sigma_d$ ($d$ for department), and each value in the denominator as random variables with mean $\mu_u$ and standard deviation $\sigma_u$ ($u$ for university). The problem with this is that the two differences, $\mu_{d,2024} - \mu_{d,2020}$  and $\mu_{u,2024} - \mu_{u,2020}$ have mean zero, which leads to a $\frac{0}{0}$ situation that is mathematically undefined.
@@ -866,7 +929,7 @@ While these factors are related to department productivity, no amount of work by
 Moreover, the description of interpretation implies that these are normally distributed variables, but e.g. share of growth is necessarily confined to a value between 0 and 1, which is decidedly not normal because the normal distribution has support over the entire real line (that is, every value between $-\infty$ and $\infty$ has a positive, theoretically non-zero probability, though of course the values far from the mean of the distribution are expected to be infinitesimal). 
 
 When a metric consists of a ratio of two values, as many of these metrics do, it is even less likely that the random quantity has a normal distribution. In fact, if the numerator and denominator both have mean zero, the ratio is Cauchy distributed, and Cauchy variables do not have estimable means or variance -- you can calculate a value for observed data, but it does not mean anything or converge to anything and is not an estimator of any useful quantity. While the problem is not quite as dramatic when the means of both distributions are nonzero, it is still important to be cautious because there are a number of different [ratio distributions](https://en.wikipedia.org/wiki/Ratio_distribution) which might be relevant and not all of them are "nice". 
-This might be expected to be the case with a variable like `budget_to_sch_2024`. 
+This might be expected to be the case with a variable like `budget_to_sch_2024`, and it is almost certainly also true of `instructional_sch_4Y_share_growth`
 
 Ultimately, just because you *can* calculate a z-value doesn't ensure that it has meaning in the context of the data. 
 Even if it would *seem* to have meaning, and every point is taken from the same reference distribution, if the values are ratios, it would probably be good to check with a statistician before proceeding, because it is *very* easy to end up in a nonsensical mathematical situation. 
