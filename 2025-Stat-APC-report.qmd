@@ -6,6 +6,7 @@ warning: false
 error: false
 echo: false
 number-sections: true
+number-depth: 6
 toc-depth: 3
 toc: true
 format:
@@ -33,6 +34,7 @@ library(kableExtra)
 library(readxl)
 theme_set(theme_bw())
 library(patchwork)
+library(forcats)
 ```
 
 # Introduction
@@ -67,7 +69,7 @@ The distributed model has been tried before at UNL, within both IANR and the Col
 @sec-dept-analysis discusses statistics within the University of Nebraska System, with a focus on the University of Nebraska -- Lincoln. 
 @sec-history-dept provides a brief history of the Statistics Department at UNL and its associated graduate and undergraduate programs, along with the rationale used to motivate past changes to the department structure. 
 This historical data is used to assess the plan to move toward a distributed model of embedding statisticians within other departments on campus.  
-@sec-role-dept examines the role of the Statistics Department on campus, outlining its interactions with the teaching, research, and extension missions within the university. @sec-nu-stats examines other clusters of statistical expertise within the University of Nebraska system, including related departments at UNL, Biostatistics at UNMC and Mathematics departments at UNO and UNK. 
+@sec-role-dept examines the role of the Statistics Department on campus, outlining its integration with the teaching, research, and extension missions within the university. @sec-nu-stats examines other clusters of statistical expertise within the University of Nebraska system, including related departments at UNL, Biostatistics at UNMC and Mathematics departments at UNO and UNK. 
 These additional clusters of statistical knowledge are critically assessed to determine whether any other unit or the combination of all other units have the capacity to replace the functions of the Statistics department without hiring additional FTEs and reducing the savings from the proposed elimination of the department. 
 
 
@@ -94,7 +96,7 @@ Under the current proposal, only one FTE would be responsible for statistical co
 This reduction would take UNL back to 1957 in the amount of statistical consulting assistance available across campus. Without graduate students at the SC3L, who currently provide over 100 hours per week of dedicated consulting time, the preservation of a single FTE for statistical consulting represents a dramatic reduction in capacity during a period of greatly increased demand across IANR as well as the wider university.
 :::
 
-- 1968 - [UNL attempts to create a School of Computational Sciences with two departments: Computer Science and Statistics, but it fails. Instead, the Mathematics Department is renamed the Department of Mathematics and Statistics to account for the growing relevance of Statistics across the university.](https://math.unl.edu/statistics-history-unl/).
+- 1968 - [UNL attempts to create a School of Computational Sciences with two departments: Computer Science and Statistics, but it fails. Instead, the Mathematics Department is renamed the Department of Mathematics and Statistics to account for the growing relevance of Statistics across the university.](https://math.unl.edu/statistics-history-unl/)
 
 - 1968 - Dr. Wilfred Schutz becomes head of the UNL Statistics Laboratory. At this point, the Statistics laboratory consists of Dr. Schutz, one additional faculty member, a data processing programmer, a computer operator, data entry personnel, and a secretary. Faculty members hold academic appointments in Agronomy. 
 
@@ -127,7 +129,7 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
   - A separate department will enrich the research of statisticians who are currently in the departments of Mathematics and Biometry
 :::
     
-- 2000 - A largely-autonomous Division of Statistics is created within the Department of Mathematics and Statistics with a focus area in survey sampling to support the Gallup Research Center. Some faculty transfer tenure homes into the department from Biometry and Sociology ([2001 Mathematics & Statistics APR Self-Study](documentation/2001-MathStats-Apr-SelfStudy.pdf), pg 14).
+- 2000 - A largely-autonomous Division of Statistics is created within the Department of Mathematics and Statistics with a focus area in survey sampling to support the Gallup Research Center ([2001 Mathematics & Statistics APR Self-Study](documentation/2001-MathStats-Apr-SelfStudy.pdf), pg 14).
 
 - 2003 - The Statistics Department is founded from the Department of Biometry (IANR) and the Statistics faculty from the Department of Mathematics and Statistics ([2005 Statistics APR](documentation/2005-STAT-APR-Report.pdf), pg 3)
 
@@ -153,7 +155,7 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 
   - Graduate program enrollment reductions (no more than 5/1 student/faculty ratio)
   - More collaborative and cross-listed courses with Departments of Mathematics and Computer Science.
-  - Creation of an undergraduate program and a 2+3 BS+MS statistics program.
+  - Creation of an undergraduate program and a 3+2 BS+MS statistics program.
   - Use of Online/blended delivery and flipped classroom approaches to improve learning and reduce instructional costs.
   - Hiring a Professor of Practice position to cover program administration, advising, and instructional needs.
   
@@ -188,7 +190,7 @@ These courses facilitate research across the university, in a way that is diffic
 In addition to introductory courses, however, graduate students in other departments often need additional course work in experimental design and specific areas of statistical methodology, such as Bayesian statistics or statistical genetics. 
 Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately. 
 
-> The training my own students receive from Statistics -- from coursework, from collaborators, and from Statistics faculty on their thesis and dissertation committees -- is essential to our ability to win and execute upon large federal research awards. Our institute's capacity to train students whose expertise bridges quantitative techniques and in the field understanding of crop systems is why I receive e-mails from Corteva, Syngenta, and Bayer asking when my next lab's next PhDs will be graduating.    
+> The training my own students receive from Statistics -- from coursework, from collaborators, and from Statistics faculty on their thesis and dissertation committees -- is essential to our ability to win and execute upon large federal research awards. Our institute's capacity to train students whose expertise bridges quantitative techniques and in the field understanding of crop systems is why I receive e-mails from Corteva, Syngenta, and Bayer asking when my lab's next PhDs will be graduating.    
 > -- [James Schnable, Letter to APC](letters/James Schnable.pdf)
 
 On the research side, a statistics department should have collaborations with many scientific departments across campus, assisting with the development of new methodology as well as consulting on the appropriate established methodology to use. 
@@ -201,7 +203,7 @@ A major research university without a statistics department is as difficult to i
 > -- [David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow](letters/David Banks.pdf)
 
 While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, and causal inference,  statistics departments typically have experts in experimental design relevant to important programs across campus: at UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, statistical computing and simulation, Bayesian methodology, and operations research.
-A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are collocated. 
+A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are co-located. 
 Under a distributed model, someone might have to search directory information within 12-15 departments^[As we have tried to do when assembling this report -- it is not an easy or efficient process.], and it is likely that they  may not find the right person in any case. 
 
 Decentralized statisticians also exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics. 
@@ -211,12 +213,11 @@ Similarly, tools like `rmarkdown` and `quarto` (which were used to assemble the 
 Within UNL, these tools are used in agronomy, agricultural economics, biosystems engineering, the School of Natural Resources, journalism, and psychology^[This is only a partial list assembled from members of the R User Group on campus and other collaborators -- there may well be others.]. 
 Collaboration between statisticians produces research that makes science better and more efficient for everyone, but this is difficult or impossible to prioritize under a distributed or service model where embedded statisticians are evaluated based on discipline-specific contributions.
 
-> A centralized Statistics Department provides essential consulting, collaboration, and
-training for research across all colleges. Dispersing faculty into a "distributed model" weakens this role and undermines interdisciplinary strength.
+> A centralized Statistics Department provides essential consulting, collaboration, and training for research across all colleges. Dispersing faculty into a "distributed model" weakens this role and undermines interdisciplinary strength.
 > -- [Brani Vidakovic, H.O. Hartley Chair and Department Head, Department of Statistics, Texas A&M University](letters/LetterVidakovic_TAMU.pdf)
 
 However, we can also evaluate the purported efficiency of a distributed model by examining the resources currently available across the NU system in Statistics. 
-If there is excess capacity of faculty with statistical expertise outside the Statistics department, then perhaps the inefficiencies of workin in the distributed model would be countered by the savings from eliminating the department.
+If there is excess capacity of faculty with statistical expertise outside the Statistics department, then perhaps the inefficiencies of the distributed model would be countered by the savings from eliminating the department.
 However, this is not the case, as demonstrated in the next section. 
 
 
@@ -245,11 +246,13 @@ Ultimately, however, there are clearly insufficient FTEs available at UNL in sta
 
 
 The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Biomedical Informatics.
-Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D. from the Statistics department at UNL (see @tbl-unmc-biostats for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. 
+Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D. in Statistics at UNL^[Technically, one of these Ph.D.s was issued by the Department of Mathematics and Statistics before the formation of the Statistics department.] (see @tbl-unmc-biostats for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. 
 While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.
 
 Biostatisticians apply statistical methods to medicine, and must cultivate a specific set of skills for collaborating with doctors that are distinct from collaboration skills required for working with other academic disciplines. 
 A Biostatistics department is not sufficient to serve as the center of a statistical practice that supports the many non-medical disciplines that are important to the state of Nebraska: agriculture, animal science, population genetics (animal and plant), engineering, social sciences, education, business, physics, chemistry, and biology. 
+In addition, @tbl-sc3l-clients shows that UNMC already utilizes the SC3L (or did, until policy changed so that only IANR clients can access free statistical consulting). 
+This suggests that UNMC Biostats does not have the excess capacity to help fill statistical needs at UNL. 
 @sec-peer-analysis includes a discussion of peer R1 and AAU institutions, many of whom maintain both statistics and biostatistics departments. 
 
 There is also a Mathematics department at UNO which offers statistics coursework and a data science program. 
@@ -307,7 +310,7 @@ UNL Statistics has (based on data through December 2023) an SRI of 0.4 based on 
 Academic Analytics also offers the ability to compute an SRI based on a custom comparison group; using only AAU universities, the department's custom SRI is -0.1.
 
 Importantly, however, because SRI is the result of discipline-specific weights, it **cannot** be used as a faithful performance measure across disciplines directly. 
-Each discipline has a different distributional parameters (mean and standard deviation) for the SRI values. Comparing across disciplines without accounting for these distributional differences is not only incorrect but extremely misleading. 
+Each discipline has different distributional parameters (mean and standard deviation) for the SRI values. Comparing across disciplines without accounting for these distributional differences is not only incorrect but extremely misleading. 
 Academic Analytics stresses the importance of [using the SRI (and any other metric) only for comparisons within taxonomy peers](documentation/Scholarly Research Index (Peer Analysis_Benchmarking) _ Portal Support.pdf). This is violated two-fold with the metrics used in the performance across units: departments are not at the same taxonomy level as stand-alone programs; and 'peers' are defined discipline specific. 
 The document further elaborates the method for aggregating faculty within units. The key step here is to "Calculate each faculty member's rank within the taxonomy, for each metric". The discipline specific SRI rank is directly related to the SRI percentile.
 
@@ -323,7 +326,7 @@ What matters is whether departments are doing good work as measured by compariso
 #| echo: false
 #| fig-height: 10
 #| fig-width: 9
-#| fig-cap: "UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked."
+#| fig-cap: "UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked. Where two SRI percentiles are provided (indicating different fields or different types of departments), the higher percentile is used for the ranking. "
 #| label: fig-sri-percentile-all-depts
 
 
@@ -361,27 +364,48 @@ merger2 <- c("Entomology", "Plant Pathology")
 
 
 unl_depts_sum <- unl_depts_sum |> 
-  mutate(Unit = reorder(factor(Unit), `SRI Percentile`, function(x) median(x))) |>
-  mutate(Quintile = cut_number((-1)*`SRI Percentile`, 5),
+  mutate(Unit = reorder(factor(Unit), `SRI Percentile`, function(x) max(x))) |>
+  group_by(Unit) |>
+  mutate(sri_max = max(`SRI Percentile`)) |>
+  ungroup() |>
+  mutate(Quintile = cut_number((-1)*sri_max, 5),
          Proposed = ifelse(short_name %in% eliminate, "Eliminate", 
                            ifelse(short_name %in% merger1, "Merger1",
                                  ifelse(short_name %in% merger2, "Merger2", "Not Mentioned")))) |>
   mutate(rank_label = sprintf("%d / %d", `SRI Rank`, `Number of Units`))
 
+
+unl_depts_sum_dept_label <- unl_depts_sum |> 
+  group_by(Unit) |>
+  slice_max(`SRI Percentile`, with_ties = T) |>
+  select(Unit, Quintile, `SRI Percentile`, Proposed, short_name)  |>
+  unique()
+
+unl_depts_sum_label <- unl_depts_sum |> 
+  group_by(Unit) |>
+  slice_max(`SRI Percentile`, with_ties = T) |>
+  mutate(rank_label = sprintf("%d / %d", `SRI Rank`, `Number of Units`)) |>
+  select(Unit, Quintile, Proposed, rank_label, short_name) |>
+  unique()
+
+unl_depts_labels <- left_join(unl_depts_sum_dept_label, unl_depts_sum_label) |>
+  left_join(select(unl_depts_sum, Unit, short_name)) |>
+  unique()
+
 unl_depts_sum |>
   ggplot(aes(x = `SRI Percentile`, y = Unit)) + 
   geom_point(size = 3, aes(colour = Proposed)) + 
-  geom_text(aes(x = `SRI Percentile`, label = short_name, colour = Proposed), nudge_x = -2, hjust = 1) + 
+  geom_text(data = unl_depts_labels, aes(x = `SRI Percentile`, label = short_name, colour = Proposed), nudge_x = -2, hjust = 1) + 
   theme_bw() + 
   ylab("") + 
   ggtitle("Units at UNL ranked by SRI Percentile compared to all Academic Analytics peers") +
   facet_grid(Quintile~., space="free", scale="free") +
   theme(strip.text = element_text(size=0)) + 
-  scale_x_continuous(limits = c(0, 110), expand=expand_scale(mult = c(.1, 0), add = c(.1, 0))) +
+  scale_x_continuous(limits = c(0, 110), expand=expand_scale(mult = c(.2, 0), add = c(.1, 0))) +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
         plot.title.position = "plot", legend.location = "plot", legend.position = c(0, 1), legend.justification = c(-0.01, 1.01)) + 
   scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) +
-  geom_text(aes(label=rank_label), x = 105, hjust=1, colour = "grey40")
+  geom_text(data = unl_depts_labels, aes(label=rank_label), x = 108, hjust=1, colour = "grey40")
 
 ```
 
@@ -471,6 +495,10 @@ stats_full_dot |>
 
 What is remarkable is that UNL does all of this with a department that is very small relative to its peers, as shown in @fig-size-by-class. 
 It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty (13 tenure-track professors and a 30% FTE teaching professor of practice) while keeping research productivity high. 
+
+::: {.content-visible when-format="pdf"}
+\clearpage
+:::
 
 ```{r}
 #| fig-width: 10
@@ -577,18 +605,25 @@ In addition, Stat 218, 380, 801, and 802 regularly benefit from statistical rese
 We use professors of practice for this comparison rather than adjuncts both because it seems unlikely that 25 courses could be assigned to adjuncts with statistical training, given that most people with graduate degrees in Statistics can make more freelancing as data scientists than they would be compensated for teaching courses. 
 Certainly, it seems likely that the FTEs which are being eliminated will not be available to teach courses at adjunct rates. 
 
-The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include courses not identified by IANR, such as Stat 462 and Stat 463, which are required for the Actuarial Science degree in Business and the Actuarial Science Mathematics concentration. 
-Two additional Stat 300/400 level courses are required for the Mathematics, Statistics, and Data Science focus area within the Math department beyond Stat 380. 
+The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include courses not identified by IANR, such as Stat 462 and Stat 463, which are required for the Actuarial Science degrees in Business and CAS. 
+Two additional Stat 300/400 level courses are required beyond Stat 380 for the Mathematics, Statistics, and Data Science focus area within the Math department. 
 The Digital Agriculture minor also requires Stat 151 and 251, computing courses developed for the Statistics undergraduate major. 
 The Agricultural Economics Ph.D. requires Stat 882, and the Finance Ph.D. requires 9 hours of graduate Statistics coursework (it is quite possible that Stat 882 and 883 would be preferable to 801 and 802 for Finance majors). 
-This analysis does not consider the fate of the Data Science programs in CAS and COE, which would lose the Statistics focus area that is primarily made up of courses designed for the Statistics and Data Analytics major and the Statistics minor. 
+This analysis does not consider the fate of the Data Science programs in CAS and COE, which would lose between one and three courses in the data science core as well as the statistics focus area that is primarily made up of courses designed for the Statistics and Data Analytics major and the Statistics minor. 
 In order to support these additional courses, an additional professor of practice would likely be required, reducing the FTE savings from eliminating the department to 8. 
 
-The department's teaching metrics are also not representative of recent changes we have made in order to be more efficient. 
-We have recently increased class sizes for Stat 218, but have not been able to increase section sizes beyond approximately 80 students per section due to a lack of availability for large lecture halls. In past years, Stat 218 sections were more often 30 or 45 students each -- we have made these changes to increase instructional efficiency as a result of the initial metrics, but of course none of these changes have been reflected in the numbers because data after 2024 is not included. 
-Similarly, we began offering Stat 801 and 802 online in order to better support outstate students in various IANR programs, but this new modality has not been available for long enough to change the enrollment metrics. 
-The department has been consistently working to increase instructional efficiency, even as we roll out a new undergraduate curriculum without additional FTE to support that program, however, it takes time to move our courses to larger city campus classrooms because of the relative lack of large classrooms on East campus, and ultimately there is a limit to the capacity of these classrooms that provides an upper limit on efficiency increases. 
+The department's teaching metrics are also not representative of recent changes we have made in order to be more efficient and open our general education courses up to more students. 
 
+- We have recently increased class sizes for Stat 218 from 30-45 students to 80 students per section. 
+This change reduced the number of GTAs from 24 to 20, producing savings of approximately $200k. 
+These changes were made in response to requests from IANR leadership as well as a desire to increase efficiency, but the change took time to implement: we had to work with scheduling on City campus to reserve larger lecture halls that are not as common on East campus. 
+As a result, none of these changes are reflected in the metrics because data after 2024 is not included. 
+Ultimately, our ability to increase instructional efficiency for high enrollment courses is limited by the availability of large lecture halls that can accommodate 150+ students. 
+
+- We began offering Stat 801 and 802 online in order to better support outstate students in various IANR programs, but this new modality has not been available for long enough to change enrollment metrics. 
+
+We also have great potential to open up and advertise other courses to departments across campus: Stat 850 and Stat 870 are both courses that should appeal to graduate students in many programs. 
+In addition, it is quite likely that the number of SDAN majors will increase over the next several years, as we graduate our first cohort and have the ability to advertise their  
 
 > Over the course of my education, I studied at multiple universities, but UNL was different. The Statistics Department stood out for its supportive faculty who invested in my growth as a researcher and professional. In particular, my advisor, Prof. Ghosh, provided mentorship and encouragement that shaped my life in ways no other institution did. I also want to acknowledge the immense support I received from UNL during the COVID-19 pandemic. That sense of care and community left a lasting impression on me and made me proud to be part of UNL.
 > -- [Ramesh Aravind, Ph.D., UNL Statistics. Data Scientist, Travelers Insurance.](letters/Ramesh Aravind.pdf)
@@ -622,10 +657,27 @@ The current proposal maintains 1 FTE of the current 13 FTE in the Statistics dep
 consulting <- read_xlsx("data-analysis/data/SC3L_client_count.xlsx", col_types = c("numeric", "text", "numeric", "skip", "skip", "skip")) |>
   mutate(Department = str_remove(Department, "Department of ") |> str_replace("Arts and Sciences", "CAS") |>
            str_replace("SVMBS", "SVBMS") |> str_replace("Services", "Sciences")) |>
-  filter(Department != "Total")
-consulting |> pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum) |>
+  filter(Department != "Total") |>
+  mutate(Department = str_replace(Department, "Need to convert SPS.*","Other")|>
+           str_replace("Statistics|of.Testing|stat.testing", "Other")) |>
+  group_by(Department, Year) |>
+  summarize(NumClients = sum(NumClients, na.rm = T)) |>
+  group_by(Department) |>
+  mutate(Total = sum(NumClients, na.rm = T)) |>
+  ungroup() |>
+  mutate(Department = factor(Department, levels = sort(unique(Department)), ordered = T) |>
+           fct_relevel("Other", after=Inf)) |>
+  mutate(UNMC = Department%in%c("Oral Radiology", "Dental Hygiene", "UNMC", "Birth Outcomes and Water Research"),
+         UNK = str_detect(Department, "UNK")) |>
+  pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum) 
+consulting |> 
+  left_join(unique(select(consulting, Department, Total))) |>
+  select(Department, `2020`:`2025`, Total) |>
   arrange(Department) |>
-  kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNO, UNMC, and UNK. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.")
+  kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNMC (teal) and UNK (gold), as well as local organizations, such as Southwest Fire & Rescue. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.") |>
+  kable_styling(latex_options = "striped") |>
+  row_spec(which(consulting$UNMC), background = "#7dfaff") |>
+  row_spec(which(consulting$UNK), background = "#ffd785")
 ```
 
 As @tbl-sc3l-clients shows, the SC3L handles a large number of projects over the course of a single year. 
@@ -699,6 +751,11 @@ Nebraska is a unique state in many ways, but it is not unique in the demand for 
 
 Hiring in statistics is robust in academia and in industry. The UNL statistics department helps meet the growing demand for data scientists and statisticians within Nebraska, but we were also surprised how many of our graduates work remotely and live in Nebraska, contributing to the local economy while working for large national companies. 
 This serves a dual function that is important for the state -- these students can live close to families and support aging parents while working high-paying jobs and paying state and local taxes accordingly. 
+
+
+::: {.content-visible when-format="pdf"}
+\clearpage
+:::
 
 > From the student perspective, this department has been crucial to my academic growth, as well as that of my peers, both inside and outside the program. Before attending graduate school, I worked as a Business Intelligence Analyst in data analytics at Sandhills Global, one of Nebraska's major employers of UNL graduates. I left that full-time role to pursue a Master's in Statistics, seeking a stronger foundation in statistical theory and methods to prepare for a career as a Data Scientist on Sandhills' Research & Development team. Even after only a year in the program, I returned to Sandhills as a Data Science intern last summer and was able to make meaningful contributions. My training in Experimental Design, Linear Models, and Bayesian Statistics directly supported improvements to the internal AI-powered chatbots in Sandhills' Retrieval Augmented Generation pipeline. My coursework in Mathematical Statistics and Statistical Computing allowed me to build a Lead Quality Meter to classify sales leads as high, medium, or low quality, ultimately increasing sales and reducing time spent manually routing clients. Sandhills Global is just one of many examples of employers who have benefited from statistics graduates from UNL. Alumni from this department are working in key roles at First National Bank of Omaha, Mutual of Omaha, Hudl, Nelnet, and many other large companies, applying their statistical training in ways that strengthen Nebraska's economy. Recruiting outside talent to Nebraska is already difficult; it is therefore imperative to prepare in-state graduates with formal, rigorous statistical training. Since UNL houses the only dedicated Statistics Department in the state, eliminating it would force future students to leave Nebraska to study statistics and would weaken the state's ability to meet growing workforce demands in agriculture, healthcare, business, and technology.
 > -- [Arian Alai, MS/Ph.D. student in Statistics](letters/Arian Alai-MSstudent.docx.pdf)
@@ -924,7 +981,7 @@ filter(metrics, department == "Statistics", college == "CASNR") |>
   ylab("") + 
   facet_wrap(~metric, scales = "free_y") + guides(color = "none") + ylim(c(0, NA)) + 
   geom_vline(aes(xintercept = 2022), linetype = "dotted") + 
-  annotate(geom = "text", x = 2022, y = 0, label = "SADM BS program begins")
+  annotate(geom = "text", x = 2022, y = 0, label = "SDAN BS program begins")
 
 ```
 
@@ -1083,20 +1140,9 @@ That is, the only other collection of a significant number of statisticians in t
 @fig-stat-courses-majors shows the proportion of majors and nonmajors in statistics courses: the proportion of nonmajors is sufficiently high to demonstrate that we provide critical instruction for programs across UNL. 
 
 > [T]he decision to close the statistics department does not reflect that philosophy ["vertical cuts"], as the work of Statistics supports that of every other unit within IANR, and many across the university. The training and teaching provided by Statistics faculty is critical to the training of the vast majority of graduate students throughout IANR who work on projects relevant to agronomy, plant breeding, animal science, and value-added agriculture. 
->
-> The training my own students receive from Statistics -- from coursework, from collaborators,
-and from Statistics faculty on their thesis and dissertation committees -- is essential to our
-ability to win and execute upon large federal research awards. Our institute's capacity to train
-students whose expertise bridges quantitative techniques and in the field understanding of crop
-systems is why I receive e-mails from Corteva, Syngenta, and Bayer asking when my next lab's
-next PhDs will be graduating.
 > -- [Professor James Schnable, Nebraska Corn Checkoff Presidential Chair, Department of Agronomy & Horticulture](letters/James Schnable.pdf)
 
-> The Statistics Department is irreplaceable. Its contributions span education, research, and economic
-development, touching every student, every faculty member, and every industry in Nebraska.
-Eliminating this department would harm education, cripple interdisciplinary research, weaken the
-state’s workforce, and undermine Nebraska’s ability to compete in the AI- and IT-driven economy of
-the future.
+> The Statistics Department is irreplaceable. Its contributions span education, research, and economic development, touching every student, every faculty member, and every industry in Nebraska. Eliminating this department would harm education, cripple interdisciplinary research, weaken the state’s workforce, and undermine Nebraska’s ability to compete in the AI- and IT-driven economy of the future.
 > -- [Zhenghong Tang, Professor & Associate Dean for Research & Innovation, College of Architecture](letters/Zhenghong Tang-CRPchairUNL.pdf)
 
 We feel that both objective quantitative and subjective qualitative evidence supports the fact that the statistics department and its programs are essential to the university and the state of Nebraska.
@@ -1173,7 +1219,13 @@ As such, criteria 1.2.6 supports APC recommending that UNL keep the Statistics d
 
 >    7. The program represents a substantial capital investment in specialized physical plant or equipment that could not be effectively redirected to alternative uses.
 
+The Statistics program has invested significant sweat equity in developing our SDAN major, but we expect that this is not what the criteria refers to. 
+In reality, Statistics is relatively inexpensive for the value it provides to the university - we require only chalkboards, paper, computers, and coffee to function (and the university isn't expected to provide the coffee). 
+
 >    8. The program is central to maintaining the university’s affirmative action goals.
+
+Statistics is an incredibly diverse field - unlike Mathematics and most other STEM fields, Statistics has an approximately even distribution of men and women.
+We also have considerable racial diversity in the field, which helps us to recruit graduate students who self-pay from other countries. 
 
 >    9. The program gives the University of Nebraska-Lincoln its distinctive character.
 
@@ -1203,7 +1255,7 @@ However, we will acknowledge that there is some friction in offering our undergr
 > Indeed, workforce realities cut the same way. Student demand for statistics and data science is sustained and high, and employers across tech, biotech, finance, climate, and government hire at every degree level. Closing a department in the face of that demand misaligns the university with student interest and employers’ need, ceding enrollments, tuition, and partnerships to peer institutions that are expanding, often by re-forming as “Statistics & Data Science” and integrating computation with inference.
 > -- [Michele Guindani, Professor, UCLA Biostatistics](letters/Guindani_UCLAbiostat.pdf)
 
-We think it likely that enrollment would be higher if our undergraduate program were located within the School of Computing (thinking back to the 1968 plan to create a School of Computing with Statistics and Computer Science departments) or within the College of Arts and Sciences. 
+We think it likely that enrollment would be higher if our undergraduate program were located within the School of Computing (thinking back to the 1968 plan to create a School of Computing with Statistics and Computer Science departments) or within the College of Arts and Sciences^[An informal survey of current students suggests the CASNR general education requirements are perceived as less useful or relevant than similar requirements in CAS and COE.]. 
 Regardless, every expectation is that enrollment in our undergraduate programs will continue to increase for some time. Our graduate programs may increase in demand, but capacity will continue to be primarily determined by the number of faculty, as graduate students require a substantial investment of faculty time. 
 Thus, under criteria 1.3.3, reduction in the size of the department is inadvisable. 
 
@@ -1221,7 +1273,7 @@ This suggests that reduction is inadvisable under criteria 1.3.4.
 
 Cutting the Department of Statistics will have significant and lasting effects on the undergraduate program in the Department of Mathematics.
 Elimination of courses will be most deeply felt by students majoring in CAS Data Science and by students pursuing the Statistics and Data Science Option and Mathematical Finance Option within the Mathematics major.
-We were relieved to see IANR’s plan to continue to offer STAT 218, 318, 380, 462, and 463, which means there would be sufficient Statistics courses offered to complete the Data Science major and the Math major on the Mathematical Finance and the Statistics and Data Science options. 
+We were relieved to see IANR’s plan to continue to offer STAT 218, 318, 380, 462, and 463, which means there would be sufficient Statistics courses offered to complete the Data Science major and the Math major on the Mathematical Finance and the Statistics and Data Science options^[The public plan released by IANR does not include 318, 462, and 463, which have been identified as essential by CAS. Strikeouts have been used to show the original words but clarify the inaccuracies.].
 However, the Statistical Modeling focus area of the Data Science major would likely need to be eliminated or greatly revised considering the proposed cuts. 
 There would also be far fewer Statistics course options available with the Statistics and Data Science option of the Math major.
 
@@ -1272,7 +1324,7 @@ library(kableExtra)
 tmp <- teaching1 |>
   set_names(c("Program", "Level", "College", "Classes")) |>
   mutate(Level = str_replace_all(Level, c("Undergrad" = "UG", "Grad" = "G"))) |>
-  mutate(highlight = str_detect(Program, "Digital.Agriculture|Actuarial|Data.Science|Agricultural.Economics|Finance,.PhD") |> as.numeric())
+  mutate(highlight = str_detect(Program, "Digital.Agriculture|Actuarial|Data.Science|Agricultural.Economics,.PhD|Finance,.PhD") |> as.numeric())
 
 select(tmp, -highlight) |>
   kable(rownames = F, caption="Statistics courses required by other programs across campus. The budget proposal calls for maintaining some statistics courses; programs which require courses that will not be offered are highlighted.") |>
@@ -1290,7 +1342,7 @@ Similarly, we believe that Stat 349, Technical Skills for Statisticians, might b
 
 Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. 
 Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. 
-The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician" - Nate Silver, Joint Statistical Meetings, 2013 have been uttered at different points as the phrase "data science" caught on. 
+The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician^[Nate Silver, Joint Statistical Meetings, 2013.]" have been uttered at different points as the phrase "data science" caught on. 
 
 The proposed budget reduction plan does not account for the costs of teaching Stat 218, 380, 801, 802, and 870. 
 Currently, some of these courses are taught by graduate TAs, who will no longer exist if the graduate program is closed. 
@@ -1312,7 +1364,7 @@ These additional courses may be reflected in the metrics in some ways -- it is p
 
 However, we do not think that this is the case: research output in the department has been relatively steady over the last 5 years, and some of the faculty most burdened by course development have also had record numbers of publications accepted. 
 
-What is clear is that the additional resources promised by IANR to allow the department to successfully develop, deliver, and grow the undergraduate SADM and Data Science programs never arrived. 
+What is clear is that the additional resources promised by IANR to allow the department to successfully develop, deliver, and grow the undergraduate SDAN and Data Science programs never arrived. 
 Faculty have been so busy developing the courses to ensure that students can graduate on time that we have not had additional time or energy to devote to recruitment and outreach across campus. 
 The proposed elimination of our department sends signals across campus that:
 
@@ -1411,11 +1463,14 @@ More recent graduates also highlight the local, national, and international dema
 Our graduate students sometimes fall in love with the state and don't want to leave, finding jobs that enrich Nebraska's economy. 
 UNL's statistics programs directly counter "brain drain", providing local employers with an important source of trained professionals in in-demand fields. 
 
-> I am not from Nebraska originally and did not consider moving here prior to receiving an o�er from the statistics department. However, once I got to Lincoln I not only learned a lot but fell in love with the area. I was thrilled when I got a job as a data analyst in Omaha. My employers told me that I was hired specifically because of my experience in the statistics department.    
+> I am not from Nebraska originally and did not consider moving here prior to receiving an offer from the statistics department. However, once I got to Lincoln I not only learned a lot but fell in love with the area. I was thrilled when I got a job as a data analyst in Omaha. My employers told me that I was hired specifically because of my experience in the statistics department.    
 > ...    
 > I have never been surrounded by as many smart, caring, and hard-working people as I was in the Department of Statistics. Nearly all of these people, similar to myself, come from out of state, with many coming from out of the country. All of these people gave up their old lives to come be a part of UNL, the city of Lincoln, and the state of Nebraska. Without another program like ours in the state, they and future potential students will take their great talents elsewhere and contribute to the “brain drain” happening in Nebraska. I previously mentioned how much I love the area, but if this decision is finalized, I am concerned about the long-term outlook of the state and my future here.
 > -- [Ryan Lalicker, MS Statistics, 2025](letters/Ryan Lalicker-MSalum.pdf)
 
+Our department provides opportunities for students to get an education that will improve their economic prospects and the state's economy as well. 
+Statistics Ph.D.s working in industry have a median salary of \$195,000 ([ASA 2020 compensation survey](documentation/YCR-2020WorkandSalarySurvey.pdf), pg 13), while those with a M.S. working in industry have a median salary of \$150,000. 
+Getting a graduate degree in statistics can meaningfully change a student's economic outlook. 
 
 > Impact on graduate students    
 > I am a Nebraska native, who was able to attend UNL thanks to a Regents Scholarship. Without the grants and graduate assistantships I received through the Department of Statistics, I would not have been able to afford graduate school, and most likely would have left Nebraska. Instead, I discovered a passion for statistics and data science education because I was encouraged to experiment and take risks as an instructor. I built a career in academia and industry as a data science educator because of the opportunities I had at the department.
@@ -1446,15 +1501,19 @@ Statistics maintains joint degree programs with other disciplines, which provide
 > From my experience, students who strengthen their analytical abilities through statistics are better prepared for the evolving workforce. The discipline fosters critical thinking, data literacy, and problem-solving—skills that are essential in research, industry, and government. When paired with fields like economics, these abilities create graduates who are adaptable and highly sought after.
 > -- [Mariana Saenz-Ayala, Ph.D. Economics and Statistics & Associate Professor of Economics, Georgia Southern University](letters/Mariana SaenzAyala - UNL grad.pdf)
 
-Our graduates often consider themselves part of the department even after they have graduated and begun professional careers. 
+Our graduates often consider themselves part of the department even after they have graduated and begun professional careers, highlighting just how much of a community students have at UNL. 
+It is hard to rebuild this type of culture, but it is critically important both for student retention and for alumni fundraising once current students have gone on to get well-paying jobs. 
 
 > While I am sure that every other department on the chopping block is also defending their department relentlessly and is arguing as hard as we are, I hope you consider that the Statistics Department stands out among all the other departments on your list. The statistics department is the only department that fosters tools, research, and analysis, that will address emerging challenges in a data-rich world. Not to mention, the ever-growing fields like AI and Machine Learning that require a fundamental knowledge of Statistics and Data Science.
 > -- [Paulus Hermanto, MS Statistics, 2023](letters/Paulus Hermanto - UNL grad.pdf)
 
-Our current students gave up careers and stable employment to come to this department because of its reputation for excellence.
+Our current students gave up careers and stable employment to come to this department because of its reputation for excellence. 
 
 > I moved to the U.S. nearly two months ago to begin my Master's/Ph.D. in Statistics at UNL. Before coming here, I had a very stable life and a good job as a math teacher in Vietnam, where I had worked for 8 years. A lot of people asked me if it was worth it when I gave up a very stable job, good income, and familiarity to start over in a new country. But I persisted that my dream was to gain a deep knowledge and research skills in statistics. I believed that UNL was the right place to make that dream come true. I chose UNL over another school in Ohio that also offered me funding because I believed in UNL's reputation and commitment to excellence.
 > -- [Thu Dang, current MS/Ph.D. student](letters/ThuDang.pdf) (Ms. Dang began classes at UNL in Fall 2025)
+
+
+The community our students find in the department, and the traditions among the graduate students (such as the midwesterners taking everyone from tropical regions coat shopping in mid-October to ensure they are well equipped for winter) are very important parts of our departmental culture. 
 
 > As a first year, native Nebraskan PhD student in statistics I feel inclined to share my thoughts and feelings on the proposed budget cuts. I feel the proposed budget cuts would be a grave injustice not only for the faculty and students of statistics department but for the state of Nebraska as a whole. I have lived in Nebraska for the past 22 years of my life and have seen the impact which statistics and data driven solutions can provide.    
 >    
@@ -1465,10 +1524,11 @@ Our current students gave up careers and stable employment to come to this depar
 > If UNL cuts their statistics program I do intend to transfer to another Big Ten university. The reason I choose Nebraska is because of my personal ties to this state, my love of the genuinely caring helpful faculty, and the familial feeling on the third floor of Hardin Hall. Our department provides services to other departments including offering necessary classes to help others gain meaningful data driven insights along with analyses for others thesis's and dissertations. We collaborate across fields to further research at the Nebraska's only R1 institution. I believe our department is a crucial part to UNL's standing as an R1 institution and plays a vital role in getting Nebraska back into the AAU.
 > -- [Thomas Spoehr, MS/Ph.D. student in Statistics](letters/ThomasSpoehr_MSstudent.docx.pdf) (Mr. Spoehr started his coursework in Fall 2025)
 
+Ultimately, the graduate programs at UNL are increasing in visibility and in academic rankings not only because of the department's efforts to continuously improve our programs, but because of our graduates -- the relationships they built and the education they received through our programs is the foundation for a promising future, if the APC and Chancellor reconsider the proposal to eliminate the department. 
+
 > My experience at UNL was not only academically enriching but also personally rewarding. The friendships and professional relationships I built during my time there continue to support my career. Similarly, my fellow graduates share my view that the education we received was unparalleled, empowering us to excel as educators, researchers, and colleagues. I urge the university leadership to reconsider the elimination of the Department of Statistics. Preserving and strengthening this department is crucial for the continued success and excellence of UNL.
 > -- [Marina Ptukhina, Ph.D., Associate Professor, Department of Mathematics and Statistics, Whitman College](letters/MarinaPtukhina-StatPhDgrad-WhitmanU.pdf)
 
-Ultimately, the graduate programs at UNL are increasing in visibility and in academic rankings not only because of the department's efforts to continuously improve our programs, but because of our graduates -- the relationships they built and the education they received through our programs is the foundation for a promising future, if the APC and Chancellor reconsider the proposal to eliminate the department. 
 
 # Concentrated vs. Distributed Statistics Model
 
@@ -1486,7 +1546,7 @@ This model was not successful, both because funding was outpaced by demand and b
 > -- [1993 Biometry APR Self Study, pg 35](documentation/1993-Biometry-APR-SelfStudy.pdf)
 
 
-Consider these two stories from separate halves of campus detailing attempts to find a home for Statisticians across campus during the late 1960s and 1970s: 
+Consider these two anecdotes from separate halves of campus detailing attempts to find a home for Statisticians across campus during the late 1960s and 1970s: 
 
 > [T]he proposal to create a separate department was broached anew in 1968 to Dean Peter McGrath of the Arts and Sciences College. He agreed that the proposal had merit and a decision was made to create a School of Computational Sciences in the College with two academic departments, namely Statistics and Computer Science. ... The administration then changed its mind and decided that the best alternative would be to recognize the existence of mathematical statistics as a program by changing the name of the Department of Mathematics to the Department of Mathematics and Statistics. 
 > -- [Statistics History at UNL (Math Department, ~1998)](https://math.unl.edu/statistics-history-unl/)
@@ -1521,7 +1581,7 @@ Clearly, the distributed model did not work well as it initially evolved in depa
 > -- [Aimee Schwab-McCoy, UNL Statistics Ph.D. and Senior Manager for Content Authoring -- Data Science, Mathematics, and Statistics, Wiley](letters/Aimee Schwab-McCoy-Senior Manager-Wiley-UNL_grad.pdf)
 
 
-::: {layout-ncol=2}
+::: {layout="[45,-10,45]"}
 
 ![Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the centralized model.](images/statistics-central.excalidraw.png){#fig-cenetralized-bubbles}
 
@@ -1648,62 +1708,64 @@ tbl |>
 #| message: false
 #| warning: false
 
-url <- "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/directory/index.php"
+# url <- "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/directory/index.php"
+# 
+# doc <- read_html(url)
+# 
+# tmp <- tibble(
+#   name = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/p/text()") |> xml_text(),
+#   role = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/div/p[1]/text()") |> xml_text(),
+#   page = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/a") |> xml_attr("href")
+# ) |>
+#   mutate(
+#     phd = str_detect(name, "Ph.?D.?") | str_detect(name, "DSc"),
+#     name = str_remove(name, ",? ?Ph\\.?D\\.?") |> str_remove(", DSc"),
+#     page = paste0("https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/directory/", page),
+#     pagecontent = map(page, read_html)
+#   )
+# 
+# get_degree <- function(doc) {
+#   res <- xml_find_all(doc, "//*/section[@id='Education']") |> xml_text() |> unique() |> stringr::str_remove("Education\\s{1,}") |> str_split("\\n")
+#   res <- unlist(res) |> str_trim()
+#   res <- str_replace_all(res, c("Ph\\.D\\.,? ?" = "PhD ", "D\\.Sc\\.," =  "DSc", "Doctorate of Educational Studies:" = "DEd ", " in " = " ", "B\\.S\\.,? ?" = "BS ", "M\\.S\\.,? ?" = "MS ", "B\\.A\\.,? ?" = "BA "))
+# 
+#   res <- res[nchar(res)>0]
+#   res <- str_extract_all(res, "((?:PhD|DEd|DSc|MS|BS) [A-z ]*)") |> unlist()
+# 
+#   res <- tibble(degree = str_extract(res, "(PhD|DEd|DSc|MS|BS)", group = 1),
+#          discipline = str_remove(res, degree) |> str_trim()) |>
+#     mutate(degree = factor(degree, levels = c("BS", "BA", "MS", "DEd", "DSc", "PhD"))) |>
+#     arrange(desc(degree)) |>
+#     filter(row_number() == 1)
+# 
+# 
+#   if (length(res) == 0) return(tibble(degree = NA_character_, discipline = NA_character_)) else return(res)
+# }
+# 
+# tmp <- tmp |> mutate(
+#   degree = map(pagecontent, get_degree)
+# )
+# select(tmp, name, role, phd, degree) |>
+#   filter(str_detect(role, "Professor")) |>
+#   unnest_wider(degree) |>
+#   mutate(discipline = if_else(str_detect(discipline, "University"), "Mathematics", discipline)) |>
+#   select(-phd) |>
+#   arrange(desc(discipline)) |>
+#   mutate(degree = paste(degree, discipline, sep = ", ")) |>
+#   select(-discipline) |>
+#   set_names(c("Name", "Rank", "Degree")) |>
+#   mutate(Degree = str_replace_all(Degree, c("PhD" = "Ph.D.", "DSc" = "D.Sc.", "DEd" = "D.Ed."))) |>
+# write_csv(file = "data-analysis/data/uno-math.csv")
 
-doc <- read_html(url)
-
-tmp <- tibble(
-  name = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/p/text()") |> xml_text(),
-  role = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/div/p[1]/text()") |> xml_text(),
-  page = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/a") |> xml_attr("href") 
-) |>
-  mutate(
-    phd = str_detect(name, "Ph.?D.?") | str_detect(name, "DSc"),
-    name = str_remove(name, ",? ?Ph\\.?D\\.?") |> str_remove(", DSc"),
-    page = paste0("https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/directory/", page),
-    pagecontent = map(page, read_html)
-  )
-
-get_degree <- function(doc) {
-  res <- xml_find_all(doc, "//*/section[@id='Education']") |> xml_text() |> unique() |> stringr::str_remove("Education\\s{1,}") |> str_split("\\n")
-  res <- unlist(res) |> str_trim()
-  res <- str_replace_all(res, c("Ph\\.D\\.,? ?" = "PhD ", "D\\.Sc\\.," =  "DSc", "Doctorate of Educational Studies:" = "DEd ", " in " = " ", "B\\.S\\.,? ?" = "BS ", "M\\.S\\.,? ?" = "MS ", "B\\.A\\.,? ?" = "BA "))
-  
-  res <- res[nchar(res)>0]
-  res <- str_extract_all(res, "((?:PhD|DEd|DSc|MS|BS) [A-z ]*)") |> unlist()
-  
-  res <- tibble(degree = str_extract(res, "(PhD|DEd|DSc|MS|BS)", group = 1),
-         discipline = str_remove(res, degree) |> str_trim()) |>
-    mutate(degree = factor(degree, levels = c("BS", "BA", "MS", "DEd", "DSc", "PhD"))) |>
-    arrange(desc(degree)) |>
-    filter(row_number() == 1)
-  
-
-  if (length(res) == 0) return(tibble(degree = NA_character_, discipline = NA_character_)) else return(res)
-}
-
-tmp <- tmp |> mutate(
-  degree = map(pagecontent, get_degree)
-)
-
-select(tmp, name, role, phd, degree) |>
-  filter(str_detect(role, "Professor")) |>
-  unnest_wider(degree) |>
-  mutate(discipline = if_else(str_detect(discipline, "University"), "Mathematics", discipline)) |>
-  select(-phd) |>
-  arrange(desc(discipline)) |>
-  mutate(degree = paste(degree, discipline, sep = ", ")) |>
-  select(-discipline) |>
-  set_names(c("Name", "Rank", "Degree")) |>
-  mutate(Degree = str_replace_all(Degree, c("PhD" = "Ph.D.", "DSc" = "D.Sc.", "DEd" = "D.Ed."))) |>
+read_csv("data-analysis/data/uno-math.csv") |>
   knitr::kable(caption = "Tenured and Tenure-track faculty in the Mathematics Department at University of Nebraska -- Omaha", label = "tbl-uno-math")
 
 ```
 
 
-## Problems with the Metrics {#sec-metric-problems}
+## Problems with the Analysis of Research and Teaching Data {#sec-metric-problems}
 
-### Provision of Data and Interactive Consultation Process
+### Provision of Data and Interactive Consultation Process {#sec-process}
 
 APC Procedures Section 2.2:
 
@@ -1712,20 +1774,26 @@ APC Procedures Section 2.2:
 
 APC Procedures Section 2.3:
 
-> The process shall ensure that administrators, faculty, students, and staff are consulted. A shared definition of the word “consultation” is essential to ensure there is ample opportunity for advice prior to recommendations being developed. Consultation is **more than just giving and receiving information**; it allows all parties the opportunity and the time necessary to **explore and offer alternatives before administrative decisions are made**. Deans, directors,2 chairs and heads shall follow procedures as stipulated in their college and unit bylaws and allow advice, input, and discussion by faculty, staff, and, to the extent appropriate, students prior to proposals being submitted by unit administrators. Such consultation is intended to give administrators, students, staff, and faculty an opportunity for substantive interactions that go beyond simply sharing information.
+> The process shall ensure that administrators, faculty, students, and staff are consulted. A shared definition of the word “consultation” is essential to ensure there is ample opportunity for advice prior to recommendations being developed. Consultation is **more than just giving and receiving information**; it allows all parties the opportunity and the time necessary to **explore and offer alternatives before administrative decisions are made**. Deans, directors, chairs and heads shall follow procedures as stipulated in their college and unit bylaws and allow advice, input, and discussion by faculty, staff, and, to the extent appropriate, students prior to proposals being submitted by unit administrators. Such consultation is intended to give administrators, students, staff, and faculty an opportunity for substantive interactions that go beyond simply sharing information.
 > One of the keys to the success of this process will be the manner with which the information considered at various stages is handled. In the early stages, it will be critical that those individuals responsible for developing budget reduction/reallocation proposals have an opportunity for candid discussions regarding the wide range of options open to them. Such candor is likely to occur only if participants are assured that the discussions will remain confidential. As the process moves forward and proposals are developed, it is essential that the scope of these working discussions expand to include units potentially affected by the proposals prior to public release.
 
 Throughout this process, units have been unable to access the data used to compute the metrics. 
-The Statistics department has identified that some of the grant numbers used seem to be incorrect, but have not been able to get the source numbers or computations from ORI. XXX TBD -- meeting tomorrow XXX
-Moreover, the numbers for SCH seem to be off by a factor of 10 in 2020 relative to what they should be. 
-The department has made enquiries about these issues, but has not made any progress with the making corrections component of the process. 
+Some of the identified issues: 
 
-Now, the statistics department received their own metrics in June, but, without any contextual information, it is hard to interpret the values (even with the codebook). 
+- Some of the grant numbers used for Statistics seem to be incorrect (e.g. one faculty member brought in more than the total for the department over the period listed), but we have not been able to get the source numbers or computations from ORI. 
+
+- The numbers for SCH seem to be off by a factor of 10 in 2020 relative to what they should be, across all departments.
+
+- The number of people in the department and apportionments listed do not match the ORI calculations for %FTE in e.g. research. 
+
+The department has made enquiries about these issues, but has not made any progress in making corrections to the metrics used. 
+
+The statistics department received their own metrics in June, but, without any contextual information, it is hard to interpret the values (even with the codebook). 
 As any statistician knows, a single data point (particularly in a multi-dimensional domain) is useless; data gains power only through comparison to relevant reference distributions.
 The inability to consult with upper administration and to correct data and processes which are not reliable is *critical* to a fair budget process. 
 The statistics department has been denied this chance.
 
-In addition, it appears that the registrar and the graduate college have been instructed not to provide departments with any data related to the budget process. XXX Attach emails from EDAD XXX
+In addition, it appears that the registrar and the [graduate college](documentation/edad-data-request.pdf) have been instructed not to provide departments with any data related to the budget process. 
 This creates an us-vs-them environment where departments proposed for elimination are frozen out of the university and not allowed to share in governance processes or counter the facts presented within the proposal.
 This is not how the APC process should unfold.
 
@@ -1734,19 +1802,38 @@ This is not how the APC process should unfold.
 
 There are many data quality problems which were discovered after the Chancellor's proposal but which have not been corrected. 
 The poor data quality and documentation of the data used to assemble the quantitative metrics, and the reliance on this data in the face of identified data quality issues and systematic biases clearly indicates that the administration's committment to metric-driven improvement is at best limited to metrics that can be easily pulled from databases with minimal quality control. 
-However, it is difficult to verify or correct data quality issues (as is required by the APC process -- departments must be given the opportunity to correct the metrics and explain their performance) when the administration has instructed departments around campus not to share data associated with the budget reduction process^[.
+However, it is difficult to verify or correct data quality issues without access to the full data, which has not been provided, as detailed in @sec-process.
 
-Moreover, it is clear that whoever designed the data reduction method used in this analysis had internalized the idea of variable standardization but was unfamiliar with the central goal of statistics: interpreting and understanding data within it's real-world context.
+A few documented issues with the data are worth a mention: 
+
+- In Academic Analytics, 12 out of 1275 faculty at UNL have a degree year of 1900. Spot-checks of two of these faculty suggest that someone enterd the degree year as 19 when it should have been 2019. However, if there are any faculty at UNL who received their degrees in 1900, they would be particularly strong candidates for VSIP. 
+
+- One faculty member in the statistics department was excluded from the analysis because [their apportionment was incorrectly recorded by HR](documentation/clarke-appointment-issues.pdf). This affects department productivity metrics as well as headcount calculations, but it also revealed differences between the budgeted salary information posted [online in spreadsheet form](https://nebraska.edu/-/media/projects/unca/offices-policies/business-and-finance-office/docs/budget-salary-information/2025-2026/3-budgeted-employees-as-of-july-1-2025.xlsx), the information available in the [PDF Personnel Rosters](https://nebraska.edu/-/media/projects/unca/offices-policies/business-and-finance-office/docs/budget-salary-information/2025-2026/personnel_rosters_2025_2026.pdf), and the information compiled by ORI. If departments cannot even determine how headcount was calculated, how are they supposed to correct errors in the calculations?
+
+- In Academic Analytics, TMFD's comparison group was listed as "Consumer and Human Sciences, various". Academic Analytics relies on the organization to submit the correct CIP code for the department, suggesting that someone at UNL entered the wrong CIP code. That this was not caught by ORI or another office involved in assembling the relevant data raises questions about the data validation process -- or whether any data validation was performed at all. 
+
+- We could not validate the grant numbers for our department, and confirmed with ORI that we did not have access to the necessary binary variable to replicate the ORI analysis -- and ORI would not release the individual data that would allow us to validate the calculations as described. Attempts to replicate `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` suggest that there is either a problem with the data or the description of how the data was calculated:
+    - If we multiply the 0.362 value for statistics (before it is converted to a z-score) by the state permanent budget from 2025-26 (just a rough estimate),  we get `r sprintf("$%6.2f", 0.362*1329241)`. 
+    - A single PI in the department brought in 1.2 million dollars in grant money during the 2020-2024 period, but this variable does not appear to have been normalized by the number of FTE in the department (which is itself a potential explanation for the department size correlation). 
+    - The total amount of grant money brought in over the 5 year period within the department suggests that the number was not normalized by the number of years either.
+
+
+
+### Analysis Method
+
+**This section has been written with an audience of non-quantitative individuals in mind. Those with mathematical or statistical training can find a more detailed explanation in @sec-codebook-analysis.**
+
+
+Moreover, it is clear that whoever designed the data reduction method used in this analysis had internalized the idea of variable standardization but was unfamiliar with the central goal of statistics: interpreting and understanding data within its real-world context.
 No amount of numerical sophistication will fix an underlying mismatch between the data which is available and the data needed to answer the question of interest. 
 The questions of interest to UNL should be:
 
-- "which departments perform poorly relative to their peers?" followed by 
+- "which departments perform well or poorly relative to their peers?" followed by 
 - "which departments have relatively little impact on other departments within the university and could thus be eliminated without cascading failures?"
 
 Instead, the analysis focuses on identifying departments which are different from other departments at UNL across a variety of metrics intended for discipline-specific comparisons. 
 It is reasonable, for instance, to compare the per-capita grant funding brought in by one Statistics department to the per-capita grant funding brought in by another Statistics department at a different university. 
 It would even be reasonable to compute this quantity for many departments across the country and to assemble a distribution of values or rank the department of interest compared to its peers. 
-
 However, apart from the SRI metric, which will be addressed separately, this is not what has been done, and it demonstrates a fundamental lack of understanding of the concept of a population: 
 
 > a set of similar items or events which is of interest for some question or experiment. A statistical population can be a group of existing objects or a hypothetical and potentially infinite group of objects conceived as a generalization from experience. -- [Wikipedia, definition of "statistical population"](https://en.wikipedia.org/wiki/Statistical_population)
@@ -1758,13 +1845,89 @@ Ultimately, it is not reasonable to expect that the EDAD department would offer 
 Thus, it is also not reasonable to explicitly compare these departments and their constitutent programs and course offerings.
 As graduate students are only a fraction of the students on campus, it is not reasonable to compare SCH generated at the graduate level in one department to SCH generated at both undergraduate and graduate levels in others.
 
-This problem persists across research funding. 
+This problem persists across both research and teaching metrics. 
 SRI, a measure created by Academic Analytics, is perhaps the exception to this rule, but only in that it accounts for discipline-specific norms with respect to research outputs. 
 Unfortunately, UNL's administration used a custom SRI value which compares UNL departments to public AAU institutions, and then took that value and used it to compare UNL departments to each other across discipline boundaries.
 @sec-metric-sri-problems has more detail on SRI, but the broader issue of comparing numbers across departments which are not fundamentally similar is pervasive throughout both the research and instructional metrics. 
 For instance, grants in English are not similarly sized to those in Physics and Astronomy, Agronomy, or Engineering, because English professors typically do not require large amounts of expensive equipment to complete their research.
 As a result, it does not make sense to group these departments into the same distribution, which is what the analysis implicitly does by calculating a z-score for each variable. 
 
+There is also a clear relationship between the size of the department and its fate under the current budget proposal, as shown in @tbl-dept-size. Of the 6 programs proposed for elimination, 5 are in the smallest 10 departments on campus. 
+This suggests that either the administration was specifically selecting small programs for elimination, or that the metrics used to identify candidates for elimination were biased against smaller departments, perhaps unintentionally. 
+
+Unit | Size | Proposal
+--- | --- | ---
+Community and Regional Planning |  	4 | Eliminate
+Landscape Architecture | 	4 | Eliminate
+Broadcasting |  	8 | 
+Textiles, Merchandising, and Fashion Design |  	8 | Eliminate
+Agricultural Leadership, Education and Communication |  	9 | Combine (1)
+Educational Administration |  	10 | Eliminate
+Marketing |  	10 | 
+Philosophy |  	10 |
+Statistics |  	11 | Eliminate
+Interior Design |  	12 | 
+Accountancy |  	13 |
+Economics |  	13 |
+Modern Languages and Literatures |  	13 |
+Political Science |  	15 |
+Advertising |  	16 |
+Classics and Religious Studies |  	16 |
+Communication Studies |  	16 |
+Finance |  	16 |
+News and Editorial |  	16 |
+Nutrition and Health Sciences |  	16 |
+Plant Pathology |  	16 | Combine (2)
+Veterinary Medicine and Biomedical Sciences |  	16 |
+Educational Psychology |  	17 |
+Management |  	17 |
+Child, Youth and Family Studies |  	18 |
+Entomology |  	20 | Combine (2)
+Food Science and Technology |  	20 |
+Biochemistry |  	21 |
+History |  	21 |
+Teaching, Learning and Teacher Education |  	21 |
+Architecture |  	22 |
+Agricultural Economics |  	23 | Combine (1)
+Chemistry |  	23 |
+Sociology |  	26 |
+Supply Chain Management and Analytics |  	26 |
+Chemical and Biomolecular Engineering |  	28 |
+Special Education and Communication Disorders |  	28 |
+Mathematics |  	30 |
+Biological Systems Engineering |  	34 |
+Earth and Atmospheric Sciences |  	34 | Eliminate
+Music |  	34 |
+Animal Science |  	35 |
+Psychology |  	35 |
+English |  	36 |
+Biological Sciences |  	38 |
+Art, Art History and Design |  	42 |
+Theatre and Film, Johnny Carson |  	42 |
+Global Integrative Studies |  	45 |
+Natural Resources |  	45 |
+Civil and Environmental Engineering |  	56 |
+Physics and Astronomy |  	58 |
+Computing |  	64 |
+Mechanical and Materials Engineering |  	66 |
+Electrical and Computer Engineering |  	68 |
+Architectural Engineering |  	69 |
+Agronomy and Horticulture |  	108 |
+
+: Department Size and Budget Proposal Status {#tbl-dept-size}
+
+Smaller departments can have higher variability in year-to-year grant awards, citation counts, and other productivity metrics. 
+Instructional metrics can very easily be thrown off by faculty development or FMLA leave, which does not appear to be accounted for in the FTE metrics^[For instance, Dr. Vanderplas was on intermittent FMLA in Fall 2021 after having a baby. She taught a course because the department did not have enough FTE to teach the required courses (hence the "intermittent" FMLA), but the documented expectation was that research would not occur during the 12 weeks of FMLA leave.]
+Small departments are also far more disrupted by turnover events, because one event in a unit of size 4 or 8 is a large proportion of the unit -- and, given that research productivity metrics do not include faculty who have left the unit, a large loss in measured productivity.
+
+The problems with the analysis do not stop with the idea of using the correct comparison group, the lack of consideration for variability in the size of the department.
+In the eagerness to create the right combination of values, the analyst conducting this analysis inadvertently did the statistical equivalent of dividing by zero. 
+The resulting variables (this problem is found in both research and teaching metrics) would, statistically, have no estimable mean and infinite variance^[Numerical data with this distribution can be averaged, but the average will not converge to anything as the number of observations increases -- that is, there is no information that is gained from the averaging process.] -- which is not what you want if the next step is to take that variable and create a z-score. 
+Ultimately, this z-score contains no information -- but by then averaging it with the other research or teaching z-scores, all of the downstream calculations also contain no useful information. 
+
+We won't bore you with the statistical proofs and properties, but this is ultimately just one smoking gun suggesting that the metrics used in the analysis are **completely unreliable**. 
+
+**As this problem affects both the research and teaching metrics, it is the opinion of the department as statisticians (rather than as faculty whose jobs are on the line) that the analysis should be re-done in consultation with a professionally certified statistician (the P-Stat credential is issued by the American Statistical Association).**
 
 
 ### Use of Scholarly Research Index {#sec-metric-sri-problems}
@@ -1817,9 +1980,17 @@ Then, if the goal is to assess the department's performance, two reasonable appr
 
 The UNL research z-score is created by standardizing each input measure with respect to all departments on campus before computing an unweighted average of each component z-score to form a single research index for each department.
 This is fundamentally problematic, as the SRI measure used by academic analytics not only incorporates many of the components used (federal expenditures, awards, books, citations), but also because the discipline-specific weightings are intended to allow for comparison within-disciplines, and they are being used here as a cross-discipline comparison. 
-That is, the z-score method indicates a fundamental understanding of both the Academic Analytics (and AAU) metrics and the appropriate use of statistical methods. 
+That is, the z-score method indicates a fundamental misunderstanding of both the Academic Analytics (and AAU) metrics and the appropriate use of statistical methods. 
 It would be quite reasonable to use the SRI percentile for each department, which compares the department's research reputation relative to other departments in the same area, compute a normal quantile from the percentile, and then use that z-score to represent the department's research reputation. 
 This would also allow for use when averaging z-scores from other research metrics to produce a single research summary; which is a practice that is reductive and not particularly effective, but is also not definitively wrong. 
+
+More problematic is the use of standardization on variables that are ratios -- in particular, those which might be expected to have a 0/0 form in distribution. 
+That is, in both research and teaching, some quantity is observed at two different time points for a department and for the university as a whole. The difference between time points is then made into a ratio of department difference divided by university difference. 
+Without strong assumptions about the increase in grant funding or instructional SCH, the reasonable way to model this quantity would be to assume that the mean at each time point is the same, leading to a 0/0 expected value (mean), which is undefined mathematically. This distribution has no mean and does not have finite variance, which is only complicated by the immediate standardization of these variables to create a z-score.
+Ultimately, this contaminates both instructional and research z-score averages, because **everything this type of variable touches becomes not-estimable**.
+
+As a result, **both the research and teaching z-scores are statistically meaningless** - they do not provide any information on the departments, because of the properties of distributions which have no mean and no variance due to (essentially) dividing by zero. 
+Relying on these metrics to inform decisions is fundamentally incorrect and essentially ensures the decision will be at best random, and at worst systematically biased.
 
 ### Custom UNL Research Metrics 
 
@@ -1853,3 +2024,843 @@ This has the effect of biasing the metrics toward book-centric disciplines at th
 When combined with the fact that grant award totals vary widely between disciplines (for instance, Statistics doesn't require any lab equipment or supplies, so grants tend to fund students, travel, and summer salary), the metrics assembled by UNL are fundamentally unsuitable for cross-discipline comparisons. 
 Pitting departments against each other using these metrics could be the result of a lack of understanding of statistics, or it could be that the metrics were assembled to produce a specific set of acceptable outcomes. 
 In either case, however, it does not reflect particularly well on the UNL administration. 
+
+## A Statistical Analysis of Metric Inputs and Calculations {#sec-codebook-analysis}
+
+
+This document contains a reorganized version of the code book provided to departments.
+The code book describes how the various measures used to evaluate departments were assembled and calculated.
+Measure definitions have been rearranged to form coherent categories (the [original document](documentation/Measure Definitions 5_16_25.pdf) is difficult to follow in part because derivative measures are sometimes not close to their inputs). 
+
+::: {.callout-warning #wrn-demo}
+Comments on the validity of various measures are contained in highlighted blocks to differentiate them from the official metric definitions.
+In most cases, these comments are focused on the problems discovered by the Statistics department, however, it seems likely that most issues cut across many departments.
+:::
+
+### General Descriptors
+#### Identifiers
+
+1.1.1 `lowest_level_key` Numeric key of lowest level unit.
+
+1.1.2 `lowest_level_short_name` Short name of lowest level unit.
+
+1.1.3 `lowest_level_name` Full name of lowest level unit.
+
+1.2 `vcvp` Vice Chancellor that unit belongs to: EVC or IANR.
+
+1.3 `college` College for units that belong to a college.
+
+1.4 `department` Department for units that belong to an academic department.
+
+1.5 `has_finance_org` Indicator variable: 1 if the unit has a financial org, 0 otherwise.
+
+1.6 `has_acad_org` Indicator variable: 1 if the unit has a academic org, 0 otherwise.
+
+1.7 `has_hr_org` Indicator variable: 1 if the unit has a HR org, 0 otherwise.
+
+1.8 `acad_end_year` Academic ending year. E.g., 2024 for 2023-2024 AY.
+
+#### Budget
+
+
+1.17 `original_sa_budget` Original state-aided budget (total). Original budget includes all permanent funding as of July 1. Temporary funding and cash carryforwards are excluded. This also shows up at Budget in final metrics.
+
+1.18 `original_sa_budget_gse` Original state-aided budget with General State-Aided fund subtype.
+
+1.19 `original_sa_budget_dt` Original state-aided budget with Differential Tuition fund subtype.
+
+1.20 `original_sa_budget_poe` Original state-aided budget with Programs of Excellence fund subtype.
+
+1.21 `original_sa_budget_other` Original state-aided budget with other fund subtypes, including Distance Education, Facilities & Administrative, Tobacco and etc.
+
+---
+
+1.32 `teaching_outlay` Appointment budgeted salary * appointment teaching apportionment (%) summed for unit.
+
+1.95 `instruction_budget` Original state-aided budget multiplied by teaching fte as a percentage of total fte for unit.
+
+
+1.33 `research_outlay` Appointment budgeted salary * appointment research apportionment (%) summed for unit.
+
+1.96 `research_budget` Original state-aided budget multiplied by research fte as a percentage of total fte for unit.
+
+
+1.34 `service_outlay` Appointment budgeted salary * appointment service apportionment (%) summed for unit.
+
+1.97 `service_budget` Original state-aided budget multiplied by service fte as a percentage of total fte for unit.
+
+
+1.35 `extension_outlay` Appointment budgeted salary * appointment extension apportionment (%) summed for unit.
+
+1.98 `extension_budget` Original state-aided budget multiplied by extension fte as a percentage of total fte for unit.
+
+
+1.36 `admin_outlay` Appointment budgeted salary * appointment administration apportionment (%) summed for unit.
+
+1.99 `admin_budget` Original state-aided budget multiplied by admin fte as a percentage of total fte for unit.
+
+---
+
+1.72 `budget_from_evc_file_state_appropriated_budget` State-aided budget.
+
+1.991 `total_realizable_base_tuition_less_budget` This is estimated by `total_realizable_base_tuition` (1.49) less original state-aided budget, apportioned for `percent_teaching` (also `instruction_budget`, see 1.95 above).
+
+
+#### Appointments & Headcount
+::: {.callout-warning #wrn-apportionment}
+
+##### Apportionment problem: Partial-year data not included
+
+This information seems to have been assembled from a source that does not take into account mid-year hires. 
+Susan Vanderplas started at UNL in January 2020 and has a 20% Extension appointment, so for the 2019-2020 academic year, she would have been paid for between 5 and 6 months, depending on how 9-month contracts are handled. 
+The Details tab of the metrics show a 0.0 percent extension FTE appointment for 2020, with subsequent years matching the 0.200 in the appointment.
+
+:::
+
+::: {.callout-warning #wrn-headcount}
+##### Headcount problem: Lack of Public Data Confirmation
+
+There is relatively little clarity to be had about how apportionment was counted in these metrics. 
+The only public data available to us is the [UN System Budget & Salary Information](https://nebraska.edu/offices-policies/business-finance/budget-and-planning), which contains spreadsheets ("Budgeted Employees as of...") and PDF documents ("University of Nebraska Salary Information"). Historical data is available.
+
+The salary **spreadsheets** appear to show the cost distribution for a position (e.g. where the money comes from), but only when the position is more complicated than just having funding from multiple departments indicating a partial appointment, as shown in @fig-salary-sources. 
+This happens most frequently when someone has administrative responsibilities in addition to standard research or teaching responsibilities. 
+
+![An example of someone with multiple salary sources -- a fellowship, a normal professor salary, and a director position that comes from non-state-aided funds.](images/salary-position-info.png){#fig-salary-sources}
+
+The **PDF tables of salary information** show a set of information that sometimes matches, but sometimes does not.
+
+![](images/roster-position-info.png){#fig-position-information}
+
+It seems *likely* that the proportions in the FTE column (next from the last) of @fig-position-information would represent the apportionment, but that doesn't seem to always match what the individual understood their apportionment to be. 
+When apportionments change, the university is supposed to provide written notice of the new contractual arrangement and it should be signed. 
+In at least one case in Statistics, we could not find paperwork to match the effort allocation reported in the PDF FTE column.
+More importantly, however, it seems that the FTE column in the PDF doesn't match the information assembled by the office of research and innovation to allocate research productivity to departments.
+
+What this boils down to is that the Statistics department cannot get administration to explain why their numbers for people (and fractional people) in the department don't match the administrations numbers. 
+That is, we don't even count department members the same way!
+Note that the individuals in question are longstanding members of the department who have e.g. taught Statistics courses, advised students, served on hiring committees - this issue spans most of the decade of research productivity metrics, and as a result, the impact cannot be assumed to be insignificant.
+
+Perhaps if we could get data which matches our paperwork (if those columns exist in a database) and compare the different metrics, it would be possible to agree on a standard methodology for apportioning research productivity. 
+These decisions happen in every data analysis, but we teach our students to (1) document the options which existed, (2) justify their selection of a particular option, and (3) conduct a sensitivity analysis after the analysis to see how much the results change based on the selection of a different way to measure a variable. 
+The Office of Research and Innovation apparently did not do any of these things -- and they also will not provide us with the data to validate their numbers ourselves. 
+
+:::
+
+1.9 `appointment_apportionment_fte` Total apportioned FTE across all appointments.
+
+1.10 `appointment_apportionment_percent_teaching_fte` Sum of faculty teaching apportionment by appointment times FTE by unit.
+
+1.11 `appointment_apportionment_percent_research_fte` Sum of faculty research apportionment by appointment times FTE by unit.
+
+1.12 `appointment_apportionment_percent_service_fte` Sum of faculty service apportionment by appointment times FTE by unit.
+
+1.13 `appointment_apportionment_percent_extension_fte` Sum of faculty extension apportionment by appointment times FTE by unit.
+
+1.14 `appointment_apportionment_percent_admin_fte` Sum of faculty admin apportionment by appointment times FTE by unit.
+
+1.15 `total_instructor_fte` Sum of `appointment_apportionment_fte` by unit.
+
+::: {.callout-warning #wrn-instructor-fte}
+
+##### Instructor FTE Problem
+
+This metric definition doesn't make any sense. There is a single column of `appointment_apportionment_fte` for each unit. 
+
+If instead, this is intended to mean the sum of `appointment_apportionment_percent_teaching_fte` through `appointment_apportionment_percent_admin_fte`, it doesn't make sense either, because those values should sum to `appointment_apportionment_fte` instead.
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-instructor-fte
+
+library(dplyr)
+library(magrittr)
+library(readxl)
+metrics <- read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet="Detail")
+options(knitr.kable.NA = '')
+
+tmp <- metrics |>
+group_by(lowest_level_short_name, department) |>
+  mutate(instructor_appointment_ratio = total_instructor_fte/appointment_apportionment_fte) |>
+ungroup() |>
+  filter(acad_end_year == 2024 & total_instructor_fte>0) |>
+  select(department, total_instructor_fte, appointment_apportionment_fte, instructor_appointment_ratio) |>
+  na.omit() |>
+  arrange(desc(instructor_appointment_ratio)) |>
+  mutate(rank = 1:n()) |>
+  select(rank, department, ratio = instructor_appointment_ratio)
+
+bind_rows(
+  head(tmp, 15),
+  data.frame(rank = NA, department = "...", ratio = NA),
+  tail(tmp, 15)
+) |> 
+set_names(c("Rank", "Dept", "Ratio")) |>
+knitr::kable(digits = c(0, 0, 3), caption = "Top and Bottom 15 departments by ratio of total instructor FTE to appointment apportionment FTE. Only departments with nonzero total instructor FTE are included.") 
+```
+
+It is not clear what this is measuring, but departments which seem to have more extension-focused non-teaching appointments seem to be lower on the list. 
+Departments which have more professors of practice seem to be higher on the list. 
+
+:::
+
+---
+
+1.37 `percent_teaching` `sum(appointment_apportionment_percent_teaching_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no teaching apportionment.
+
+1.38 `percent_research` `sum(appointment_apportionment_percent_research_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no research apportionment.
+
+1.39 `percent_service` `sum(appointment_apportionment_percent_service_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no service apportionment.
+
+1.40 `percent_extension` `sum(appointment_apportionment_percent_extension_fte) / sum(appointment_apportionment_fte)` for unit. This is set to zero when there is no extension apportionment.
+
+1.41 `percent_admin` `sum(appointment_apportionment_percent_admin_fte) / sum(appointment_apportionment_fte) for unit`. This is set to zero when there is no admin apportionment.
+
+---
+
+1.66 `t_tt_headcount_2014_2023_avg` The average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center. Headcounts were assigned to departments using the HR tenure org unit.
+
+::: {.callout-warning #wrn-research-ntt}
+##### Research Contributions by NTT Professors
+
+Our department had a long-time Professor of Practice, Kathy Hanford, who had a research and teaching apportionment and was the professor in charge of the SC3L. She retired at the end of 2023, so she *should* be included in most of our metrics, but isn't because she was not tenure track. 
+She does, however, count against our budget. 
+Her research productivity, grant productivity, and collaborations across campus should count when evaluating the department's importance within UNL, but they do not currently. 
+The focus on tenure track positions to the exclusion of all others is incredibly damaging, particularly when a department is as small as we are. 
+If Kathy had been hired more recently, the position would have likely been tenure track (and when the position was posted to find her replacement, it was posted as tenure track). 
+The current head of SC3L, Dr. Reka Howard, is an associate professor in the department.
+:::
+
+::: {.callout-warning #wrn-per-capita}
+
+##### Per-capita measures
+
+Different denominators are used to measure per-capita productivity in teaching and research across the analysis. 
+In some cases, these are reasonable (e.g. it is reasonable to use total teaching FTE to calculate SCH per FTE values), but in others, these differences seem to arise primarily from the desire to conform to Academic Analytics or AAU metrics. 
+While it is understandable that our administration wants to use metrics from other organizations rather than develop their own (this document exists because they don't have the statistics training to design effective measures of variables of interest), this leads to significant and strange differences in productivity measures.
+It would be a far more coherent overall **analysis** if admin had used a single set of FTE measures consistently, rather than switching these measures up for different variables. 
+
+:::
+
+
+1.50 `vsip_eligible_n` The count of VSIP-eligible tenure-track faculty as of summer, 2026. If this follows past methodology, this is the count of faculty who:
+
+- are tenured
+- are 62 years of age as of their eligibility date: June 30, 2026 (FY contract length) or August 27, 2026 (AY contract length)
+- have 10 years of service as of their eligibility date
+
+This is an estimate. At present, it is impossible to determine how many would meet the final criterion: No accepted retirement contract/letter in place.
+
+1.51 `vsip_eligible_pct` The proportion of the unit’s tenure-track faculty who would be eligible for VSIP in summer, 2026.
+
+::: {.callout-warning #wrn-vsip}
+##### VSIP percentage
+
+Tracking this makes sense, but it's unclear how this metric might factor into a final decision to combine or eliminate departments. Is it better to eliminate a department with a high percentage of VSIP eligible faculty, since the department might not be able to function after VSIP anyways? Or would it be better to eliminate a department without VSIP eligible faculty, since those savings won't be double-counted by both VSIP and the elimination of the department, as the current analysis seems to do for the departments which will be combined (ALEC and Agricultural Economics, Entomology and Plant Pathology). 
+
+:::
+
+### Research
+
+::: {.callout-warning #wrn-z-scores-research}
+##### Z-scores for research
+
+There are so many problems with the constitutent components of the research metrics (even before they are standardized) that the resulting research average z-score is utterly unreliable and not useful for cross-department comparison. 
+
+Fundamentally, as statisticians, if you take the average of standardized garbage, you still get garbage. Garbage in, garbage out, or GIGO, is a fairly standard abbreviation used to describe this problem.
+
+:::
+
+1.57 `research_average` (Research Average z-score) Average research z-score with non-departmental units (including Dean’s offices) removed.
+
+1.58 `research_avg_z_score_equally_weighted` Alternate calculation of research average with non-departmental units included in population with zero research productivity.
+
+1.83 `comments` Comments from ORI regarding research metrics, their crosswalk to instructional units, etc.
+
+#### SRI
+
+1.82 `sri_aau_public_peers` Academic Analytics SRI score when comparing units to Public AAU Institutions. If a unit has multiple SRI scores available, they were averaged.
+
+
+> The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate the research performance of individuals and entities with respect to 
+> 
+> 1. scholarly products, such as conference proceedings, research articles, books, and book chapters, 
+> 2. recognition from the community in form of citations and awards, and 
+> 3. federal sponsoring of research projects measured by the number of grants and their amounts.
+> 
+> Different disciplines operate differently. 
+> The weighting of each of these measures is therefore adjusted discipline specific (based on a factor analysis by Academic Analytics). 
+
+1.59 `sri_aau_public_peers_z_score` Z score of sri_aau_public_peers
+
+
+::: {.callout-warning #wrn-sri-1}
+
+##### SRI Problem 1 - Averaging Multiple SRI scores
+
+Some departments have multiple SRI scores generated by Academic Analytics. 
+
+In some disciplines, departments might be book-focused or article focused, or might have members with different focuses. 
+Examples in @fig-sri-multi-values include Communication Studies, Sociology, Advertising, Landscape Architecture, Interior Design, and Broadcasting, among others. 
+
+Another reason a department might have multiple SRI scores is that it is composed of multiple different disciplines. 
+Examples in @fig-sri-multi-values include Agronomy & Horticulture, Earth and Atmospheric Sciences, the School of Computing, Physics and Astronomy, and Electrical and Computer Engineering.
+
+When there are two different norms within a discipline, SRI scores were reportedly averaged to create a mean SRI value. 
+This is incorrect - because these values have different distributions, averaging them does not produce a meaningful result with a valid comparison distribution. 
+A more reasonable combination method would be to evaluate each score to get a distributional measure (quantile, percentile, rank), and then to take the maximum  of that measure - the departments peers would know what the focus area of the department is and which focus would be more appropriate. 
+
+In the case of a hybrid department, the scores were also averaged. 
+This approach is also not reasonable, as SRI distributions are not the same across disciplines. 
+It is critically important to go through the distribution, calculating a rank, percentile, or quantile rather than using averages. 
+Then, if the goal is to assess the department's performance, two reasonable approaches could be used to aggregate the percentile or quantile scores:
+
+- take a weighted average of the percentile or quantile scores, with weight determined by the composition of the department. 
+- take the maximum of the percentile or quantile scores in order to assess the overall opinion of the work done within the department in a community of peers. This makes more sense if the goal is to model how other people see UNL's departments, as people tend to remember outstanding work in the field more than they remember or consider average work. 
+
+:::
+::: {.callout-warning #wrn-sri-2}
+
+##### SRI Problem 2 - Cross-Department Comparisons
+
+It is **completely inappropriate** to use SRI values to compare departments to other departments within the same university. 
+SRI values have a distribution that is discipline specific, with different means and variances. 
+As-is they are not comparable outside of that distribution, as shown in @tbl-sri-incomparable
+
+
+```{r}
+#| label: tbl-sri-incomparable
+#| echo: false
+#| tbl-cap: "Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree."
+unl_depts |> filter(SRI==.4) |>
+  select(Unit, SRI, `SRI Percentile`, `Number of Units`, `SRI Rank`) |>
+  arrange(desc(`SRI Percentile`)) |>
+  knitr::kable()
+```
+
+Calculating a mean and standard deviation to create a z-score for SRI values across disciplines destroys any information which could have been found in the SRI measure.
+
+Note that this is *not* an objection to SRI as a concept. 
+It seems that SRI is a more fair method of comparison than other attempts to replicate SRI used in the budget reduction process, because at least all departments across a discipline are compared using the same (sometimes flawed) data^[Academic Analytics analysts are very aware of the flaws in their data. If UNL wants to improve as an institution, one way to facilitate that would be to have PIs to ask e.g. federal grant agencies other than NIH and NSF to report data to Academic Analytics, as this would likely help us. Another option is for UNL to actually talk to analysts at Academic Analytics and to ensure that UNL follows statistical validation procedures that are as well thought out as AcA's procedures.].
+As it is, the metrics assembled by UNL, while applied to all departments equally, have unequal effects on different departments because the metrics used favor one discipline over another due to norms within that discipline.
+The problem with SRI is that it must be used in the context for which it was intended: comparing departments to other similar departments.
+The misuse of SRI results in eliminating programs which compare perfectly well to both Academic Analytics institutions and to AAU peers, as shown in @fig-sri-percentile-all-depts. 
+
+While we do not have access to the complete data for all departments and their comparison units, we do have access to the statistics data, which is shown in @fig-sri-by-class. 
+The statistics department's SRI value is at the top of the non-AAU R1 institutions, and is well within the bounds of the SRI range of AAU institutions.
+Note that we would not expect that a department be at the top of the AAU university SRI values (which is why the custom SRI score isn't that useful, though the percentile is somewhat helpful) -- what is necessary is for the department's SRI to be above the minimum (preferably comfortably above) of the comparable AAU department SRI values. 
+
+**Problem** Under the UNL proposed method (using the SRI relative to public AAU institutions), it seems that custom SRI is used instead of percentile. This renders any calculations done on SRI, and any calculations which use `sri_aau_public_peers` or `sri_aau_public_peers_z_score`, functionally meaningless as they are not comparing values drawn from the same distribution to each other. Without a common reference distribution, it is inappropriate to pool values by calculating a common mean and variance, and then to use that common mean and variance to produce a z-score. 
+
+**Solution** SRI should be converted to a percentile (or corresponding quantile, if the goal is a z-score), and in disciplines without sufficient comparison departments, there will be a lot of variability in the percentile (which should be treated as an estimate). 
+SRI should be used to evaluate research productivity instead of attempting to create a multi-metric that adds additional weight to awards, books, citations, and grants x3, as Academic Analytics has already done the factor analysis to determine which of these are relevant to which disciplines. 
+
+**Theory & Statistical Rationale**
+The Glivenko-Cantelli theorem guarantees that as  $n\rightarrow\infty$ the empirical CDF (eCDF) converges to the distribution CDF [demonstration via WolframAlpha](https://demonstrations.wolfram.com/ConvergenceOfTheEmpiricalDistributionFunctionOfASample/). 
+While there is no guideline for sufficient $n$, the eCDF will be extremely blocky and step-function like at first, and as $n$ increases, the average distance between discontinuity points will decrease, producing an increasingly smooth function. 
+The variance of the estimated percentile can be estimated by treating the percentile as a proportion and using a [binomial confidence interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval) to get a sense of the variability. Then, this binomial confidence interval can be mapped back to normal quantiles if a z-score range is desired.  
+
+:::
+::: {.callout-warning #wrn-sri-3}
+##### SRI Problem 3 - Comparison Groups and TMFD
+
+The case of Textiles, Merchandising, and Fashion Design illustrates the problem of comparison groups quite nicely.
+TMFD is in the bottom quintile - ranked 25 out of 41 peers - in @fig-sri-percentile-all-depts. 
+Except the department should have 127 peers, because every land-grant university has a similar department. 
+Looking more closely, we find that the peer group for the department in Academic Analytics is listed as "Consumer and Human Sciences, various". 
+Word of caution: whenever someone describes your work as 'something with', 'various', or 'whatever', they don't really know what you are doing.
+So why doesn't Academic Analytics know what TMDF does?
+
+
+Academic Analytics uses CIP (Classification of Instructional Programs) codes defined by the National Center for Education Statistics to create peer groups.
+Merely glancing over the [Textile related cip codes](https://nces.ed.gov/ipeds/cipcode/cipdetail.aspx?y=56&cipid=90647), it is clear that there are more fitting choices than ‘Consumer and Human Sciences, various’:
+
+| CIP Code   | Program Name                                 |
+|-----------|---------------------------------------------|
+| 19.0901   | Apparel and Textiles, General               |
+| 19.0902   | Apparel and Textile Manufacture             |
+| 19.0904   | Textile Science                             |
+| 19.0905   | Apparel and Textile Marketing Management   |
+| 19.0906   | Fashion and Fabric Consultant               |
+| 19.0999   | Apparel and Textiles, Other                 |
+
+So why does Academic Analytics not pick a better peer group for comparisons? 
+
+It turns out, that Academic Analytics relies on the submitting organization to provide CIP codes:
+
+> CIP Codes (to units and Ph.D. programs as classified in institution’s system)
+> Note that while CIP Codes are referenced in the creation of the Academic Analytics Taxonomy and are requested in the submission instructions, they are currently used for reference only.
+> Reporting by CIP is not available.
+> Not all requested fields are available in the comparative database.
+> Some data remain incomplete because institutions have not submitted those fields.
+> However, they are archived because they may prove useful for clients and Academic Analytics, particularly in the data matching processes.
+
+So, at some point someone at UNL listed TMFD as "Consumer and Human Sciences, various" instead of the proper CIP code, and it is TMFD's job to find the error, get someone in ORI to listen to the problem and fix the error, and then hope that the metrics are updated before their APC hearing. 
+Ultimately, there just is not enough time for that process to occur, even if ORI was willing to engage and fix the analysis. 
+:::
+
+#### Awards
+
+
+1.68 `awards_ltd_2023_total` NCR highly prestigious awards, including national academy memberships in engineering, medicine and science. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only awards for T/TT faculty in benchmarked AcA units is reported to the AAU. Highly prestigious awards are tracked over the life of the faculty member’s career and are credited to the institution where they are currently employed. Once a faculty member retires or leaves an institution, their highly prestigious awards are no longer included in the data reported to AAU. Put another way, the highly prestigious awards follow the faculty member.
+From the AAU Membership Policy: AAU collects the number of faculty members by institution receiving awards, fellowships, and memberships in the National Research Council (NRC) list of highly prestigious awards that included: research/scholarship awards, teaching awards, prestigious fellowships or memberships in honorary societies. Each data year represents the faculty’s lifetime honors and awards, not new honors and awards. University of Maryland, College Park data includes University of Maryland, Baltimore beginning in 2019. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced under a license agreement with Academic Analytics. http://academicanalytics.com/ . The list of the NRC highly prestigious awards can be found at: National Research Council List of Highly Prestigious Awards | Association of
+American Universities (AAU). Memberships in the National Academies (NAS, NAE, NAM) compiled from the membership lists of each academy; lists can be found at: National Academy of Sciences: http://www.nasonline.org/member-directory/, National Academy of Engineering: http://www.nae.edu/default.aspx?id=20412, National Academy of Medicine: https://nam.edu/directory-search-form/
+
+
+::: {.callout-warning #wrn-awards}
+
+Award comparisons should be made within discipline, not across disciplines, as the AAU list of prestigious awards does not include the [AERA](https://www.aera.net/About-AERA/AERA-Awards) awards for education. 
+As the national academies listed do not induct professors teaching in education, it is irrational to compare e.g. the physics department, whose members could conceivably be inducted into the NAS, NAE, or both depending on the subfield. 
+This is one reason why Academic Analytics compares within discipline and not across disciplines.
+
+:::
+
+1.79 `awards_normalized` `awards_ltd_2023_total` divided by `t_tt_headcount_2014_2023_avg.`
+
+1.63 `awards_normalized_z_score` Z score of `awards_normalized` Normalized highly prestigious awards, fellowships and memberships as defined by the AAU membership policy for awards received LTD up to 2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+#### Books
+
+
+1.69 `books_2014_2023_total` The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. Book publications reported to AAU by AcA include books, casebooks, edited volumes, encyclopedias, and textbooks. AcA book types not reported include journals, proceedings, study guides and book chapters. Book publications are credited to departments based on the author’s HR tenure org unit. From the AAU Membership Policy: The total number of books published by the institution for the most recent ten-year period. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced under a license agreement with Academic Analytics. http://academicanalytics.com/
+
+1.80 `books_normalized` `books_2014_2023_total` divided by `t_tt_headcount_2014_2023_avg`
+
+1.64 `books_normalized_z_score` Z score of `books_normalized` Normalized book publications as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+::: {.callout-warning #wrn-book-disciplines}
+
+##### Book Disciplines and Book Data
+
+While the book data from Academic Analytics is overall quite high quality, it does have some issues in that it is dependent on publisher reporting. 
+The statistics department found at least one book which was misreported by the publisher, affecting the totals.
+More importantly, individuals do not have access to Academic Analytics -- typically, only unit leads have access. 
+Unit leads have neither the time nor the precise information to audit this information for correctness and follow up to ensure that it is fixed. 
+These errors are likely more consequential for small departments, particularly in disciplines that are not book-centric as measured by Academic Analytics weights. 
+
+Books published by faculty members in the department during the decade-long interval are not included if the faculty member left the department or retired before 2024, despite the fact that these individuals contributed to the reputation of the department during the decade of interest. 
+Dr. Walter Stroup published 3 extremely well-respected and popular books between 2014 and 2023, but these are not counted in the department metrics, even though Dr. Stroup was a past chair of the department and is an important part of our reputation for excellence, even after his retirement.
+
+In addition, books are normalized by average tenure-track headcount without accounting for apportionment. Most (but not all) books published are research-centric, with textbooks as the exception. However, even textbooks are typically written while on research leave. As a result, it is probably more reasonable to normalize this value by average research FTEs rather than average number of tenure-track FTEs. 
+
+:::
+
+#### Citations
+
+1.70 `citations_2014_2023_avg` The average number of citations on peer-reviewed articles for the most recent ten-year period. AcA reports citations in the year of the publication. Citations for articles coauthored by more than one UNL faculty member have been split equally across authors. AAU uses Web of Science InCites for the citations data. UNL does not currently subscribe to InCites and so is using Academic Analytics to track and report this data. Citations are credited to departments based on the author’s HR tenure org unit. From the AAU Membership Policy: Average number of times an institution’s Web of Science Documents have collectively been cited for the most recent ten-year period. InCitesTM, Clarivate (2023). Web of Science. ® These data are reproduced under a license agreement from Clarivate. http://incites.clarivate.com/
+
+::: {.callout-warning #wrn-citation-window}
+
+##### Citation Window
+
+The choice to use Academic Analytics citations is not discipline-neutral. 
+The InCites citation window is 10 years, which is long enough for most disciplines. 
+However, Academic Analytics citation counts for the statistics department are lower than the corresponding citation counts from InCites -- 77 vs. 127 for Susan Vanderplas, for example. 
+In some disciplines (statistics, math), papers can reach peak average citation frequency after 15 years or more (Galiani & Galvez 2017). 
+
+>  Galiani, Sebastian and Gálvez, Ramiro H., The Life Cycle of Scholarly Articles Across Fields of Research (May 2, 2017). [http://dx.doi.org/10.2139/ssrn.2964565](http://dx.doi.org/10.2139/ssrn.2964565)
+
+When interpreting 10-year citation counts, it is also important to consider the age of the department. 
+For instance, consider Dr. Vanderplas, who received her Ph.D. in 2015. It is unlikely that she had any highly cited papers before she received her Ph.D., and even unlikely in the years immediately after receiving her Ph.D., as young researchers are often not cited as frequently as more established colleagues. 
+A department made up of primarily assistant and associate professors will be at a very large disadvantage relative to more established departments. 
+If the number of people in the department is also small, the variability in citation counts also becomes a factor.
+
+:::
+
+1.81 `citations_normalized` `citations_2014_2023_avg` divided by `t_tt_headcount_2014_2023_avg.`
+
+::: {.callout-warning #wrn-citation-norm}
+##### Citation normalization
+
+Normalizing citations by tenure-track headcount instead of by effective research FTE is problematic. 
+Some departments have a significant number of non-TT faculty in research/extension positions who contribute to the scholarly literature in their field. 
+In addition, some departments have a vastly different apportionment between research and teaching, and this would translate into different publication rates and accumulation of citations.
+
+These factors are more critical when they are used to compare across departments within a university -- when Academic Analytics makes comparisons using tenure-track headcount, that leaves out some information, but it would be expected to hurt similar departments similarly. 
+This is not the case when using these metrics to compare across departments -- in these situations, discipline specific norms must be accounted for in some way. 
+:::
+
+1.65 `citations_normalized_z_score` Z score of `citations_normalized` Normalized citations as defined by the AAU membership policy (using Academic Analytics as a proxy for InCites) for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+::: {.callout-warning #wrn-citation-count}
+##### Citation counts
+
+Citation counts differ wildly by discipline, and are affected both by how many researchers and papers there are in the discipline and by citation norms within that discipline. 
+Using z-scores makes the assumption that all departments are from a similar distribution (which is clearly not the case). 
+Comparing departments on normalized citations ensures that these discipline-specific norms dominate the signal, which biases a metric that might have been intended to indicate department research quality and reception so that it just becomes a signal for citation norms and research appointment practices. 
+:::
+
+
+#### Research Awards Inc NUF
+
+::: {.callout-warning #wrn-grant-metrics}
+##### Grant Metric Problems
+
+All of the grant metrics are affected by a common flaw: disciplines do not (usually) compete against each other within a university for awards^[The Fulbright program might be one common exception, as it allows applications from many different disciplines. However, this would likely fall under "Awards" more generally instead of research awards/grants.]. Rather, the English department might get awards from the National Endowment for the Arts or various private foundations. The Physics department likely gets grants primarily from NSF, and Engineering departments have some options - NSF, Dept of Energy, Department of Defense. Life sciences might get grants from NSF, but also NIH, CDC, Dept of Health, and the Veterans Administration. Agriculture grants will primarily come from USDA but may also come from NSF, NIH,  and others because ultimately agriculture spans both applied and hard science topics across a wide range of applications. 
+
+What is important about this is that the amount of funding available (and size of available grants) is dramatically different between departments. That is, departments cannot be thought of as one single population!
+It is clear that someone putting these metrics together paid enough attention in a statistics class to remember how to compute a z-score, but apparently they missed the part where it makes no sense to compute z-scores when you don't have a defined reference population. 
+Or, in this case, when you absurdly claim that something that is clearly a mixture of several populations can be used as a single reference population.
+
+Ignoring population heterogeneity (having multiple groups with different values in a population) is a common precursor to [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox), where a trend of the overall data reverses direction once the groups are accounted for in the model.
+Without the raw data for the individuals across the university, we cannot conclusively demonstrate that this is what is happening, but it seems possible. 
+Alternate explanations are that the data quality is not particularly good (also possible).
+In any case, the research award metrics ultimately cannot be used for doing more than differentiating low-grant fields from high-grant fields. 
+
+In addition, smaller departments will have more variability in grant funding year-to-year than larger departments. When funding rates are low (10-20%), small departments may have $0 grant funding in one year and several awards come through in subsequent years, while large departments will have a more consistent funding level. 
+While it is not clear how funding is counted on an annual basis (e.g. whether `research_awards_growth_inc_nuf_fy2020_total_research_awards` counts awards which started in 2020, were awarded in 2020, or incremental funding on multi-year awards that happened to be received by the university in 2020), if funding is counted at the award level and not the amount received per year, this measure gets to be even more "lumpy" and inconsistent from year to year. 
+When taking a ratio of differences, as in `research_awards_growth_inc_nuf_percent_of_total`, this inconsistent behavior becomes even more problematic. It would be far better to fit a trend line with 4 or even 10 years of per-capita funding data to each department, and then do inference based on the slope of that line, generating a confidence interval or even a z-score for the slope of the line.
+Note that we do *not* recommend comparing departments based on that z-score, because the amount of funding available will be conditional on the department discipline, and picking winners and losers within UNL based on federal grant funding availability is short-sighted. Metrics are useful for description even when they are not used for inference. 
+
+:::
+
+::: {.callout-warning #wrn-cauchy-research}
+
+##### Problems with `research_awards_growth_inc_nuf_fy20_fy24`
+
+Of all of the random variables created in this analysis, the most problematic from a statistical theory perspective might be `research_awards_growth_inc_nuf_fy20_fy24` (and its instructional companion, `instructional_sch_4Y_share_growth`).
+This is the ratio of two differences, where we might reasonably model each value in the numerator as a normal random variable with mean $\mu_d$ and standard deviation $\sigma_d$ ($d$ for department), and each value in the denominator as random variables with mean $\mu_u$ and standard deviation $\sigma_u$ ($u$ for university). The problem with this is that the two differences, $\mu_{d,2024} - \mu_{d,2020}$  and $\mu_{u,2024} - \mu_{u,2020}$ have mean zero, which leads to a $\frac{0}{0}$ situation that is mathematically undefined.
+
+In statistical terms, if the numerator and denominator have mean 0, then the random variable representing the ratio is **Cauchy** distributed. Cauchy distributions are heavy-tailed (values far away from the mean are much more likely than they would be with a normal distribution), that is, they generate extreme values more frequency. 
+Cauchy distributions are difficult to work with because they do not have a (meaningful) mean or a standard deviation. 
+It is possible to generate draws from a Cauchy distribution, and even to take the mean and standard deviation of those draws, but the values do not describe anything useful about the underlying data. The mean will never converge to a single value, even with a million or billion samples, unlike nearly every other common distribution.
+
+As a result, calculating the z-score for something that has or might be expected to have a Cauchy distribution is fundamentally problematic, because neither the mean or the standard deviation will have any real-world meaning or even be numerically stable. The Central Limit Theorem requires that variables have finite variance precisely because of the counterexample of the Cauchy distribution.
+
+Cauchy random variables are typically not covered in undergraduate math-stat and probability courses, except perhaps a mention in passing. That they arise so readily in this type of analysis is just another example why it is fundamentally necessary to have graduate statistical training or oversight in order to use complex functions of random variables to make practical decisions that will hold up under scrutiny. 
+
+:::
+
+
+1.74 `research_awards_growth_inc_nuf_fy2020_total_research_awards` Total sponsored research awards received in FY2020. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+
+1.75 `research_awards_growth_inc_nuf_fy2024_total_research_awards` Total sponsored research awards received in FY2024. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This includes purpose code research only. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+
+1.76 `research_awards_growth_inc_nuf_fy20_fy24` `research_awards_growth_inc_nuf_fy2024_total_research_awards` minus
+`research_awards_growth_inc_nuf_fy2020_total_research_awards` Growth of sponsored research awards from FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. This was calculated by taking the dollar growth over the time period of FY24 – FY20 as a percentage of total growth for the institution resulting in that unit’s share of the overall growth dollars for the institution over the reported time period.
+
+
+1.77 `research_awards_growth_inc_nuf_percent_of_total` `research_awards_growth_inc_nuf_fy20_fy24` for the department/unit divided by `research_awards_growth_inc_nuf_fy20_fy24` for UNL as a whole
+
+
+1.61 `research_awards_growth_inc_nuf_z_score` Z score of `research_awards_growth_inc_nuf_fy20_fy24`
+
+
+#### Total Sponsored Awards Inc NUF RSCH PUB SERV TEACH
+
+1.71 `average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` Average annual sponsored awards received in FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. Purpose codes reported include research, teaching and public service which are summed and divided by total state appropriated budget. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+
+
+1.73 `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` `Average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` divided by `budget_from_evc_file_state_appropriated_budget` Average sponsored awards for FY20-24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation, for purpose codes research, teaching and public service divided by total state appropriated budget.
+
+::: {.callout-warning #wrn-total-sponsored}
+##### Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
+It's unclear why the `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` indicator was divided by total state appropriated budget, but the numbers for Statistics grants are all over the place. 
+For instance, if we multiply the 0.362 value for statistics (before it is converted to a z-score) by the state permanent budget from 2025-26,  we get `r 0.362*1329241`. 
+One PI in the department brought in 1.2 million dollars in grant money during the 2020-2024 period.
+Thus, we have had a difficult time validating these numbers in any way. 
+:::
+
+1.60 `awards_budget_inc_nuf_z_score` Z score of `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`
+
+#### P1 Expenditures
+
+1.67 `p1_expenditures_2014_2023_avg` The average competitively funded federal research support as defined by the AAU membership policy, federal research expenditures less USDA research expenditures adding in awards from USDA Agriculture Food and Research Initiative (AFRI). Expenditures and AFRI awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.
+From the AAU Membership Policy: Competitively funded federal research support: federal R&D expenditures. A ten-year average of federal research expenditures (including S&E and non-S&E) adjusted to exclude USDA formula-allocated research expenditures. This indicator includes obligations for the AFRI program funded by USDA. National Science Foundation (NSF) Survey of Research and Development Expenditures at Universities and Colleges/Higher Education Research and Development Survey (HERD), data for the most recently available ten-year average. AFRI Obligations, data for the ten years that match the years from HERD. 
+
+1.78 `p1_expenditures_normalized` `p1_expenditures_2014_2023_avg` divided by `t_tt_headcount_2014_2023_avg.`
+
+
+1.62 `p1_expenditures_normalized_z_score` Z score of `p1_expenditures_normalized` Normalized competitively funded federal research expenditures as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
+
+
+### Teaching
+
+::: {.callout-warning #wrn-data-validation}
+##### Data Lockout and Validation
+
+It is hard to validate the teaching metrics, because the administration has directed the registrar's office and the graduate college "not to distribute data related to proposed budget reductions at this time" ([email between Sarah Zuckerman and Debra Hope, Graduate College](documentation/Fw_ Sarah Z - EDAD Data Request.eml)). 
+
+The Statistics department had similar trouble getting data from Chad Brasil, though most of it could be assembled (sometimes manually) using published Tableau dashboards. 
+As a result, it is much harder to comment on or validate the teaching metrics. 
+There are likely similar problems with the way variables were assembled, but because of the administrative lockout, we cannot do the necessary detective work to identify those problems.
+:::
+
+##### Enrollment
+
+1.42 `U_major_n` Count of undergraduate majors, including non-primary majors.
+1.44 `G_major_n` Count of graduate majors, including non-primary majors.
+1.46 `P_major_n` Count of professional majors, including non-primary majors.
+1.87 `majors` Sum of U, G, and P majors (all majors).
+
+---
+
+1.22 `major_completions_bachelor_degree` Count of all Bachelors completions within major (including non-primary majors).
+
+1.24 `major_completions_two_years_college` Count of all graduate certificate completions within major (including non-primary majors).
+
+1.26 `major_completions_masters_degree` Count of all Masters completions within major (including non-primary majors).
+
+1.28 `major_completions_doctorate_degree` Count of all Doctorate completions within major (including non-primary majors).
+
+1.30 `major_completions_post_masters` Count of all Post Masters completions within major (including non-primary majors).
+
+---
+
+1.43 `U_primary_major_n` Count of undergraduate primary majors.
+
+1.45 `G_primary_major_n` Count of graduate primary majors.
+
+1.47 `P_primary_major_n` Count of professional primary majors.
+
+---
+
+1.23 `degree_n_bachelor_degree` Count of all Bachelors degrees with attached major (primary)
+
+1.25 `degree_n_two_years_college` Count of all graduate certificates with attached major (primary).
+
+1.27 `degree_n_masters_degree` Count of all Masters degrees with attached major (primary).
+
+1.29 `degree_n_doctorate_degree` Count of all Doctorate degrees with attached major (primary).
+
+1.31 `degree_n_post_masters` Count of all Post Masters degrees with attached major (primary).
+
+1.88 `degrees` Sum of Bachelors, Masters, Doctorate, and Post Masters primary degrees
+
+---
+
+
+1.89 `ratio_completions_majors` Ratio of all degree completions (all majors attached to a degree) to all majors, including non-primary.
+
+::: {.callout-warning #wrn-major-completion}
+##### Completions to Majors for New Programs
+
+The statistics department has a new undergraduate program that, for AY 2024 (the last AY with statistics), had two cohorts of students. 
+These students are included in the denominator as majors, but could not possibly have completed the program. As a result, of course, the department looks like we have a large dropout rate or are otherwise performing poorly. 
+
+It would be more reasonable to exclude new majors from this count until the program is mature and has all cohorts filled. 
+In prior years, the statistics department has  hovered around a 25% - 28% completion ratio, which reflects that our MS students take approximately 2 years to finish and our Ph.D. students take between 4 and 6 years to finish. We fully expect that our ratio will return to about that level when our undergraduate program is mature (if, of course, the university decides to keep this program), but it will likely decrease until that point, because we continued adding students who will take 4 years to graduate in AY 2025, and our first cohort is not expected to graduate until 2026. 
+
+:::
+
+
+---
+
+1.871 `minors_U` Count of all undergraduate students in one or more minors offered by the unit.
+
+1.872 `minors_G` Count of all graduate students in one or more minors offered by the unit.
+
+---
+
+
+1.86 `enrollment` Sum of U, G, and P unduplicated AY headcount
+
+1.94 `average_enrollment` Mean of unduplicated enrollment headcount by unit.
+
+---
+
+1.93 `all_majors_share_growth` Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.
+
+
+1.53 `retention_rate` First-year to second-year retention rate (cohort = AY - 1).
+
+1.54 `avg_retention_rate` Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.
+
+1.55 `grad_rate6` Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.
+
+1.56 `avg_grad6` Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.
+
+::: {.callout-warning #wrn-grad-rates}
+##### Graduation Rates Shouldn't Be Pooled
+
+Most undergraduate programs take 4 years to complete. Most MS programs take 1-2 years to complete. Ph.D. programs vary considerably, but post-MS work might take between 2 to 4 years to complete, assuming the MS work transfers.
+
+It is utterly confusing, then, to compute six-year graduation rates when the expected time to degree completion is so widely variable -- six years is enough time for 5 different MS cohorts to complete their degrees, but only 2-3 undergraduate and Ph.D. cohorts! It's also not uncommon for statistics students to get an MS and a PhD within 6 years - are those students counted twice?
+
+Ultimately, graduation rates should be computed separately for each program, and if those are then averaged somehow that would be at least potentially sensible. But it is important to consider expected time to degree when computing graduation rates. 
+
+:::
+
+#### SCH & Tuition
+
+
+1.48 `sch` Sum of course SCH by owner of course subject code.
+
+::: {.callout-warning #wrn-2020-anomalies}
+##### 2020 anomalies
+
+The SCH reported for AY 2020 are almost universally off by a factor of around 10. This anomaly needs to be tracked down and investigated, because while it may not affect any department differently, it puts the provenance of the data and the quality control measures in question.
+Systematic errors are a red flag to go back and consider whether the data quality is sufficiently high to be making decisions based on this data.
+:::
+
+1.49 `total_realizable_base_tuition` sch by course career and student residency times base tuition rate. For AY2024, these rates were:
+Career | Resident | Non-resident
+--- | --- | ---
+UG | \$268 | \$859
+G/P |  \$353 | \$1031
+
+1.52 `instructor_sch` The logic for Instructional SCH is:
+
+- If a course prefix maps to a “unit” that is instructed by a faculty member with an appointment in that “unit” then the SCH will be assigned to that “unit”.
+- If a course prefix maps to a “unit” that is instructed by a faculty member WITHOUT an appointment in that “unit” then the SCH will be assigned to the “unit” where the faculty member has their largest percentage of appointment (primary appointment home).
+- If a course maps to a “unit” that is instructed by a faculty member without an appointment e.g., no instructor of record recorded, then the SCH is assigned to the “unit” according to the course prefix. 
+
+
+1.84 `instructional_sch` Sum of SCH attributed to instructors’ home departments. The formula takes the percentages designated to each instructor in Peoplesoft.
+`Sum(Section SCH x Instructor %)`
+
+![](images/instructional-sch-calc.png)
+
+
+1.90 `instructional_sch_to_instructional_fte` Instructional SCH divided by apportioned teaching FTE
+
+1.91 `average_instructional_sch` Mean of instructional SCH by unit.
+
+1.92 `instructional_sch_4Y_share_growth` Change in share (percentage) of total instructional SCH from AY2020 to AY2024.
+
+::: {.callout-warning #wrn-cauchy-teaching}
+##### Problem: `instructional_sch_4Y_share_growth` 
+
+This is another variable which is likely Cauchy distributed (see @wrn-cauchy-research), that is, it is the statistical equivalent of dividing by zero - the mean of the numerator is likely to be zero (in distribution) and the mean of the denominator is likely to be zero (in distribution) -- each year's SCH would be expected to be sampled from the same distribution at the department and university level. 
+
+The problem is that these variables do not have a distribution mean and have infinite variance. 
+It is obviously possible to take the average of observations from this distribution, but the average will never converge (unlike samples from almost any other distribution - the average of an increasing number of samples will converge to the distribution mean, but only if the distribution has finite variance). 
+
+Taking a variable like this, and then calculating the mean and standard deviation across departments to standardize these variables makes this even more problematic, because it removes any meaningful information in the variable.
+Then, averaging these z-scores as part of an omnibus instructional z-score only serves to erase any meaningful information in the instructional z-score. 
+
+These problems exist in both the instructional and research z-scores, which renders the entire metric analysis statistically uninformative. Cauchy random variables are the bane of every statistics graduate student's existence - they are primarily useful for counterexamples in proofs, but when they pop up in practice, they are always a pain to deal with, and if you don't handle them correctly, they will ruin everything.
+
+Unfortunately, the UNL administration will learn this the hard way, either by acknowledging the issue and reworking the budget reduction plan, or by eliminating highly ranked and high-performing departments because of a badly-executed statistical analysis.
+
+:::
+
+
+#### Ratios
+
+::: {.callout-warning #wrn-ratios-nightmare}
+##### Ratios are Stochastic Nightmares
+
+The variability of calculated ratios complicates statistical analysis. 
+
+If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other "statistical moments" (these variables have a Cauchy distribution, which does not have a mean). 
+This does not mean that you can't take the average of Cauchy distributed random variables -- it only means that that number does not have any real-world meaning. 
+
+Even when the variables don't have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value. 
+
+:::
+
+1.85 `budget_to_sch` total original state aided budget divided by SCH
+
+1.16 `instructional_sch_to_instructional_fte` Sum of each instructor’s section instruction percentage times section sch by home department of appointment divided by `total_instructor_fte.`
+
+
+### Instructional Z-scores in Institutional Metrics
+
+All z-scores (also known as standardized or normalized scores) were calculated as the
+difference of the actual metric and the mean of the metric for included units divided by the
+standard deviation of the included units’ metrics. 
+
+It measures the number of standard deviations a metric is from the mean. 
+In a normal distribution, approximately two-thirds of scores fall within +/- 1 standard deviation of the mean. 
+Approximately 95% of cases fall within +/- 1.96 standard deviations of the mean. 
+Traditionally – but not universally – cases beyond the 1.96 standard deviation threshold are considered outliers.
+
+::: {.callout-warning #wrn-instruction-z-prob}
+
+##### Instructional Z-score Problem
+
+While standardizing scores is common practice in some circumstances, it is problematic as used here, in part because it assumes that there is a single common distribution used for these values. 
+For instance, disciplines that only have graduate programs cannot be assumed to have the same distribution of SCH because of much lower numbers of graduate students. 
+It is utterly ridiculous to compare these programs to programs such as math or english who teach large numbers of nonmajor undergraduate service courses and will have SCH values on a vastly different scale. 
+Departments **do not** have quantities which can be said to be "identically distributed" (in statistical parlance) even if you assume that the instructional metrics are reflective of a distribution of department performance, because not every department is competing in every pool.
+At minimum, it would be necessary to do some assessment of whether a course is primarily taken by majors or nonmajors, and then compare service teaching load separately from major teaching load, and undergraduate hours separately from graduate hours. 
+Even under this system, it is probably necessary to "bin" departments based on the number of service courses taught/required on an annual basis, because e.g. Math will teach Calc 1, 2, 3, but Chemistry might teach an elective introductory course that counts for a science prerequisite, and the structural differences between these two departments and their relationship to other majors offered on campus matter significantly. 
+While these factors are related to department productivity, no amount of work by the EDAD department is going to ensure that they teach every undergraduate STEM major an introductory service course, and as such it is ridiculous to compare SCH between EDAD and MATH or PHYS or STAT. 
+
+Moreover, the description of interpretation implies that these are normally distributed variables, but e.g. share of growth is necessarily confined to a value between 0 and 1, which is decidedly not normal because the normal distribution has support over the entire real line (that is, every value between $-\infty$ and $\infty$ has a positive, theoretically non-zero probability, though of course the values far from the mean of the distribution are expected to be infinitesimal). 
+
+When a metric consists of a ratio of two values, as many of these metrics do, it is even less likely that the random quantity has a normal distribution. In fact, if the numerator and denominator both have mean zero, the ratio is Cauchy distributed, and Cauchy variables do not have estimable means or variance -- you can calculate a value for observed data, but it does not mean anything or converge to anything and is not an estimator of any useful quantity. While the problem is not quite as dramatic when the means of both distributions are nonzero, it is still important to be cautious because there are a number of different [ratio distributions](https://en.wikipedia.org/wiki/Ratio_distribution) which might be relevant and not all of them are "nice". 
+This might be expected to be the case with a variable like `budget_to_sch_2024`, and it is almost certainly also true of `instructional_sch_4Y_share_growth`
+
+Ultimately, just because you *can* calculate a z-value doesn't ensure that it has meaning in the context of the data. 
+Even if it would *seem* to have meaning, and every point is taken from the same reference distribution, if the values are ratios, it would probably be good to check with a statistician before proceeding, because it is *very* easy to end up in a nonsensical mathematical situation. 
+
+:::
+
+2.10 `instructional_average` Mean of instructional z-scores.
+
+2.11 `research_average` (Research Average z-score) Mean of research z-scores
+
+2.12 `overall_average` Mean of instructional and research average z-scores.
+
+---
+
+2.1 `zinstructional_sch_4Y_share_growth` Standardized `instructional_sch_4Y_share_growth`
+
+2.2 `zall_majors_share_growth` Standardized `all_majors_share_growth`
+
+2.3 `zinstructional_sch_2024` Standardized `instructional_sch_2024`
+
+2.4 `ztotal_majors_n_2024` Standardized `total_majors_n_2024`
+
+2.5 `zinstructional_sch_to_instructional_fte_2024` Standardized `instructional_sch_to_instructional_fte_2024`
+
+2.6 `zbudget_to_sch_2024` Standardized `budget_to_sch_2024`
+
+2.7 `znet_realizable_tuition_less_budget_2024` Standardized `net_realizable_tuition_less_budget_2024`
+
+2.8 `zavg_retention_rate_2024` Standardized `avg_retention_rate_2024`
+
+2.9 `zratio_completions_majors_2024` Standardized completions (all majors) to majors.
+
+---
+
+2.14 `instruction_weight` `percent_teaching / (percent_teaching + percent_research)`. This is set to zero when the denominator is zero.
+
+2.15 `research_weight` `percent_research / (percent_teaching + percent_research)`. This is set to zero when the denominator is zero.
+
+2.13 `weighted_overall_average` Mean of `instructional_average` and research average weighted by `instruction_weight` and `research_weight` respectively.
+
+---
+
+2.16 `mad_instructional_sch_4Y_share_growth` Standardized `instructional_sch_4Y_share_growth` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.17 `mad_all_majors_share_growth` Standardized `all_majors_share_growth` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.18 `mad_instructional_sch_2024` Standardized `instructional_sch_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.19 `mad_total_majors_n_2024` Standardized `total_majors_n_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.20 `mad_instructional_sch_to_instructional_fte_2024` Standardized `instructional_sch_to_instructional_fte_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.21 `mad_budget_to_sch_2024` Standardized `budget_to_sch_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.22 `mad_net_realizable_tuition_less_budget_2024` Standardized `net_realizable_tuition_less_budget_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.23 `mad_avg_retention_rate_2024` Standardized `avg_retention_rate_2024` using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+2.24 `mad_ratio_completions_majors_2024` Standardized completions (all majors) to majors using median and median absolute deviation (MAD). MAD was scaled using `sd(x) / mad(x, const = 1)` method.
+
+---
+
+2.25 `pool_znstructional_sch_4Y_share_growth` Standardized `instructional_sch_4Y_share_growth` within discipline pool.
+
+2.26 `pool_zall_majors_share_growth` Standardized `all_majors_share_growth` within discipline pool.
+
+2.27 `pool_zinstructional_sch_2024` Standardized `instructional_sch_2024` within discipline pool.
+
+2.28 `pool_ztotal_majors_n_2024` Standardized `total_majors_n_2024` within discipline pool.
+
+2.29 `pool_zinstructional_sch_to_instructional_fte_2024` Standardized `instructional_sch_to_instructional_fte_2024` within discipline pool.
+
+2.30 `pool_zbudget_to_sch_2024` Standardized `budget_to_sch_2024` within discipline pool.
+
+2.31 `pool_znet_realizable_tuition_less_budget_2024` Standardized `net_realizable_tuition_less_budget_2024` within discipline pool.
+
+2.32 `pool_zavg_retention_rate_2024` Standardized `avg_retention_rate_2024` within discipline pool.
+
+2.9 `pool_zratio_completions_majors_2024` Standardized completions (all majors) to majors within discipline pool.

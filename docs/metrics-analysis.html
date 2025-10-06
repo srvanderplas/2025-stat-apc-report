@@ -93,14 +93,17 @@ window.Quarto = {
 
 
 <p>This document contains a reorganized version of the code book provided to departments. The code book describes how the various measures used to evaluate departments were assembled and calculated. Measure definitions have been rearranged to form coherent categories (the <a href="documentation/Measure%20Definitions%205_16_25.pdf">original document</a> is difficult to follow in part because derivative measures are sometimes not close to their inputs).</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
+<div id="wrn-demo" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Warning&nbsp;1
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Comments on the validity of various measures are contained in highlighted blocks to differentiate them from the official metric definitions. In most cases, these comments are focused on the problems discovered by the Statistics department, however, it seems likely that most issues cut across many departments.</p>
-</div>
 </div>
 </div>
 <section id="general-descriptors" class="level1" data-number="1">
@@ -142,26 +145,26 @@ window.Quarto = {
 </section>
 <section id="appointments-headcount" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="appointments-headcount"><span class="header-section-number">1.3</span> Appointments &amp; Headcount</h2>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-apportionment" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Apportionment problem: Partial-year data not included
+Warning&nbsp;2: Apportionment problem: Partial-year data not included
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>This information seems to have been assembled from a source that does not take into account mid-year hires. Susan Vanderplas started at UNL in January 2020 and has a 20% Extension appointment, so for the 2019-2020 academic year, she would have been paid for between 5 and 6 months, depending on how 9-month contracts are handled. The Details tab of the metrics show a 0.0 percent extension FTE appointment for 2020, with subsequent years matching the 0.200 in the appointment.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-headcount" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Headcount problem: Lack of Public Data Confirmation
+Warning&nbsp;3: Headcount problem: Lack of Public Data Confirmation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -200,13 +203,13 @@ Figure&nbsp;2
 <p>1.13 <code>appointment_apportionment_percent_extension_fte</code> Sum of faculty extension apportionment by appointment times FTE by unit.</p>
 <p>1.14 <code>appointment_apportionment_percent_admin_fte</code> Sum of faculty admin apportionment by appointment times FTE by unit.</p>
 <p>1.15 <code>total_instructor_fte</code> Sum of <code>appointment_apportionment_fte</code> by unit.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-instructor-fte" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Instructor FTE Problem
+Warning&nbsp;4: Instructor FTE Problem
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -407,26 +410,26 @@ Table&nbsp;1: Top and Bottom 15 departments by ratio of total instructor FTE to 
 <p>1.41 <code>percent_admin</code> <code>sum(appointment_apportionment_percent_admin_fte) / sum(appointment_apportionment_fte) for unit</code>. This is set to zero when there is no admin apportionment.</p>
 <hr>
 <p>1.66 <code>t_tt_headcount_2014_2023_avg</code> The average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center. Headcounts were assigned to departments using the HR tenure org unit.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-research-ntt" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Research Contributions by NTT Professors
+Warning&nbsp;5: Research Contributions by NTT Professors
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Our department had a long-time Professor of Practice, Kathy Hanford, who had a research and teaching apportionment and was the professor in charge of the SC3L. She retired at the end of 2023, so she <em>should</em> be included in most of our metrics, but isn’t because she was not tenure track. She does, however, count against our budget. Her research productivity, grant productivity, and collaborations across campus should count when evaluating the department’s importance within UNL, but they do not currently. The focus on tenure track positions to the exclusion of all others is incredibly damaging, particularly when a department is as small as we are. If Kathy had been hired more recently, the position would have likely been tenure track (and when the position was posted to find her replacement, it was posted as tenure track). The current head of SC3L, Dr.&nbsp;Reka Howard, is an associate professor in the department.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-per-capita" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Per-capita measures
+Warning&nbsp;6: Per-capita measures
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -441,13 +444,13 @@ Per-capita measures
 </ul>
 <p>This is an estimate. At present, it is impossible to determine how many would meet the final criterion: No accepted retirement contract/letter in place.</p>
 <p>1.51 <code>vsip_eligible_pct</code> The proportion of the unit’s tenure-track faculty who would be eligible for VSIP in summer, 2026.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-vsip" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-VSIP percentage
+Warning&nbsp;7: VSIP percentage
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -456,162 +459,15 @@ VSIP percentage
 </div>
 </section>
 </section>
-<section id="teaching" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Teaching</h1>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<section id="research" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Research</h1>
+<div id="wrn-z-scores-research" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Data Lockout and Validation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is hard to validate the teaching metrics, because the administration has directed the registrar’s office and the graduate college “not to distribute data related to proposed budget reductions at this time” (<a href="documentation/Fw_%20Sarah%20Z%20-%20EDAD%20Data%20Request.eml">email between Sarah Zuckerman and Debra Hope, Graduate College</a>).</p>
-<p>The Statistics department had similar trouble getting data from Chad Brasil, though most of it could be assembled (sometimes manually) using published Tableau dashboards. As a result, it is much harder to comment on or validate the teaching metrics. There are likely similar problems with the way variables were assembled, but because of the administrative lockout, we cannot do the necessary detective work to identify those problems.</p>
-</div>
-</div>
-<section id="enrollment" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="enrollment"><span class="header-section-number">2.1</span> Enrollment</h2>
-<p>1.42 <code>U_major_n</code> Count of undergraduate majors, including non-primary majors. 1.44 <code>G_major_n</code> Count of graduate majors, including non-primary majors. 1.46 <code>P_major_n</code> Count of professional majors, including non-primary majors. 1.87 <code>majors</code> Sum of U, G, and P majors (all majors).</p>
-<hr>
-<p>1.22 <code>major_completions_bachelor_degree</code> Count of all Bachelors completions within major (including non-primary majors).</p>
-<p>1.24 <code>major_completions_two_years_college</code> Count of all graduate certificate completions within major (including non-primary majors).</p>
-<p>1.26 <code>major_completions_masters_degree</code> Count of all Masters completions within major (including non-primary majors).</p>
-<p>1.28 <code>major_completions_doctorate_degree</code> Count of all Doctorate completions within major (including non-primary majors).</p>
-<p>1.30 <code>major_completions_post_masters</code> Count of all Post Masters completions within major (including non-primary majors).</p>
-<hr>
-<p>1.43 <code>U_primary_major_n</code> Count of undergraduate primary majors.</p>
-<p>1.45 <code>G_primary_major_n</code> Count of graduate primary majors.</p>
-<p>1.47 <code>P_primary_major_n</code> Count of professional primary majors.</p>
-<hr>
-<p>1.23 <code>degree_n_bachelor_degree</code> Count of all Bachelors degrees with attached major (primary)</p>
-<p>1.25 <code>degree_n_two_years_college</code> Count of all graduate certificates with attached major (primary).</p>
-<p>1.27 <code>degree_n_masters_degree</code> Count of all Masters degrees with attached major (primary).</p>
-<p>1.29 <code>degree_n_doctorate_degree</code> Count of all Doctorate degrees with attached major (primary).</p>
-<p>1.31 <code>degree_n_post_masters</code> Count of all Post Masters degrees with attached major (primary).</p>
-<p>1.88 <code>degrees</code> Sum of Bachelors, Masters, Doctorate, and Post Masters primary degrees</p>
-<hr>
-<p>1.89 <code>ratio_completions_majors</code> Ratio of all degree completions (all majors attached to a degree) to all majors, including non-primary.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Completions to Majors for New Programs
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The statistics department has a new undergraduate program that, for AY 2024 (the last AY with statistics), had two cohorts of students. These students are included in the denominator as majors, but could not possibly have completed the program. As a result, of course, the department looks like we have a large dropout rate or are otherwise performing poorly.</p>
-<p>It would be more reasonable to exclude new majors from this count until the program is mature and has all cohorts filled. In prior years, the statistics department has hovered around a 25% - 28% completion ratio, which reflects that our MS students take approximately 2 years to finish and our Ph.D.&nbsp;students take between 4 and 6 years to finish. We fully expect that our ratio will return to about that level when our undergraduate program is mature (if, of course, the university decides to keep this program), but it will likely decrease until that point, because we continued adding students who will take 4 years to graduate in AY 2025, and our first cohort is not expected to graduate until 2026.</p>
-</div>
-</div>
-<hr>
-<p>1.871 <code>minors_U</code> Count of all undergraduate students in one or more minors offered by the unit.</p>
-<p>1.872 <code>minors_G</code> Count of all graduate students in one or more minors offered by the unit.</p>
-<hr>
-<p>1.86 <code>enrollment</code> Sum of U, G, and P unduplicated AY headcount</p>
-<p>1.94 <code>average_enrollment</code> Mean of unduplicated enrollment headcount by unit.</p>
-<hr>
-<p>1.93 <code>all_majors_share_growth</code> Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.</p>
-<p>1.53 <code>retention_rate</code> First-year to second-year retention rate (cohort = AY - 1).</p>
-<p>1.54 <code>avg_retention_rate</code> Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.</p>
-<p>1.55 <code>grad_rate6</code> Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.</p>
-<p>1.56 <code>avg_grad6</code> Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Graduation Rates Shouldn’t Be Pooled
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Most undergraduate programs take 4 years to complete. Most MS programs take 1-2 years to complete. Ph.D.&nbsp;programs vary considerably, but post-MS work might take between 2 to 4 years to complete, assuming the MS work transfers.</p>
-<p>It is utterly confusing, then, to compute six-year graduation rates when the expected time to degree completion is so widely variable – six years is enough time for 5 different MS cohorts to complete their degrees, but only 2-3 undergraduate and Ph.D.&nbsp;cohorts! It’s also not uncommon for statistics students to get an MS and a PhD within 6 years - are those students counted twice?</p>
-<p>Ultimately, graduation rates should be computed separately for each program, and if those are then averaged somehow that would be at least potentially sensible. But it is important to consider expected time to degree when computing graduation rates.</p>
-</div>
-</div>
-</section>
-<section id="sch-tuition" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sch-tuition"><span class="header-section-number">2.2</span> SCH &amp; Tuition</h2>
-<p>1.48 <code>sch</code> Sum of course SCH by owner of course subject code.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-2020 anomalies
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The SCH reported for AY 2020 are almost universally off by a factor of around 10. This anomaly needs to be tracked down and investigated, because while it may not affect any department differently, it puts the provenance of the data and the quality control measures in question. Systematic errors are a red flag to go back and consider whether the data quality is sufficiently high to be making decisions based on this data.</p>
-</div>
-</div>
-<p>1.49 <code>total_realizable_base_tuition</code> sch by course career and student residency times base tuition rate. For AY2024, these rates were: Career | Resident | Non-resident — | — | — UG | $268 | $859 G/P | $353 | $1031</p>
-<p>1.52 <code>instructor_sch</code> The logic for Instructional SCH is:</p>
-<ul>
-<li>If a course prefix maps to a “unit” that is instructed by a faculty member with an appointment in that “unit” then the SCH will be assigned to that “unit”.</li>
-<li>If a course prefix maps to a “unit” that is instructed by a faculty member WITHOUT an appointment in that “unit” then the SCH will be assigned to the “unit” where the faculty member has their largest percentage of appointment (primary appointment home).</li>
-<li>If a course maps to a “unit” that is instructed by a faculty member without an appointment e.g., no instructor of record recorded, then the SCH is assigned to the “unit” according to the course prefix.</li>
-</ul>
-<p>1.84 <code>instructional_sch</code> Sum of SCH attributed to instructors’ home departments. The formula takes the percentages designated to each instructor in Peoplesoft. <code>Sum(Section SCH x Instructor %)</code></p>
-<p><img src="images/instructional-sch-calc.png" class="img-fluid"></p>
-<p>1.90 <code>instructional_sch_to_instructional_fte</code> Instructional SCH divided by apportioned teaching FTE</p>
-<p>1.91 <code>average_instructional_sch</code> Mean of instructional SCH by unit.</p>
-<p>1.92 <code>instructional_sch_4Y_share_growth</code> Change in share (percentage) of total instructional SCH from AY2020 to AY2024.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Problem: Calculating the Share of Growth
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is another variable which is likely Cauchy distributed (see <strong>?@sec-probs-cauchy</strong>), that is, it is the statistical equivalent of dividing by zero - the mean of the numerator is likely to be zero (in distribution) and the mean of the denominator is likely to be zero (in distribution) – each year’s SCH would be expected to be sampled from the same distribution at the department and university level.</p>
-<p>The problem is that these variables do not have a distribution mean and have infinite variance. It is obviously possible to take the average of observations from this distribution, but the average will never converge (unlike samples from almost any other distribution - the average of an increasing number of samples will converge to the distribution mean, but only if the distribution has finite variance).</p>
-<p>Taking a variable like this, and then calculating the mean and standard deviation across departments to standardize these variables makes this even more problematic, because it removes any meaningful information in the variable. Then, averaging these z-scores as part of an omnibus instructional z-score only serves to erase any meaningful information in the instructional z-score.</p>
-<p>These problems exist in both the instructional and research z-scores, which renders the entire metric analysis statistically uninformative. Cauchy random variables are the bane of every statistics graduate student’s existence - they are primarily useful for counterexamples in proofs, but when they pop up in practice, they are always a pain to deal with, and if you don’t handle them correctly, they will ruin everything.</p>
-<p>Unfortunately, the UNL administration will learn this the hard way, either by acknowledging the issue and reworking the budget reduction plan, or by eliminating highly ranked and high-performing departments because of a badly-executed statistical analysis.</p>
-</div>
-</div>
-</section>
-<section id="ratios" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="ratios"><span class="header-section-number">2.3</span> Ratios</h2>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ratios are Stochastic Nightmares
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The variability of calculated ratios complicates statistical analysis.</p>
-<p>If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other “statistical moments” (these variables have a Cauchy distribution, which does not have a mean). This does not mean that you can’t take the average of Cauchy distributed random variables – it only means that that number does not have any real-world meaning.</p>
-<p>Even when the variables don’t have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value.</p>
-</div>
-</div>
-<p>1.85 <code>budget_to_sch</code> total original state aided budget divided by SCH</p>
-<p>1.16 <code>instructional_sch_to_instructional_fte</code> Sum of each instructor’s section instruction percentage times section sch by home department of appointment divided by <code>total_instructor_fte.</code></p>
-</section>
-</section>
-<section id="research" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Research</h1>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Z-scores for research
+Warning&nbsp;8: Z-scores for research
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -622,8 +478,8 @@ Z-scores for research
 <p>1.57 <code>research_average</code> (Research Average z-score) Average research z-score with non-departmental units (including Dean’s offices) removed.</p>
 <p>1.58 <code>research_avg_z_score_equally_weighted</code> Alternate calculation of research average with non-departmental units included in population with zero research productivity.</p>
 <p>1.83 <code>comments</code> Comments from ORI regarding research metrics, their crosswalk to instructional units, etc.</p>
-<section id="sri" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="sri"><span class="header-section-number">3.1</span> SRI</h2>
+<section id="sri" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sri"><span class="header-section-number">2.1</span> SRI</h2>
 <p>1.82 <code>sri_aau_public_peers</code> Academic Analytics SRI score when comparing units to Public AAU Institutions. If a unit has multiple SRI scores available, they were averaged.</p>
 <blockquote class="blockquote">
 <p>The Scholarly Research Index (SRI) is a measure developed by Academic Analytics to evaluate the research performance of individuals and entities with respect to</p>
@@ -635,13 +491,13 @@ Z-scores for research
 <p>Different disciplines operate differently. The weighting of each of these measures is therefore adjusted discipline specific (based on a factor analysis by Academic Analytics).</p>
 </blockquote>
 <p>1.59 <code>sri_aau_public_peers_z_score</code> Z score of sri_aau_public_peers</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-sri-1" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-SRI Problem 1 - Averaging Multiple SRI scores
+Warning&nbsp;9: SRI Problem 1 - Averaging Multiple SRI scores
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -670,13 +526,13 @@ Figure&nbsp;3: Some units at UNL have multiple SRI values, either because differ
 </ul>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-sri-2" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-SRI Problem 2 - Cross-Department Comparisons
+Warning&nbsp;10: SRI Problem 2 - Cross-Department Comparisons
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -780,9 +636,6 @@ Table&nbsp;2: Departments at UNL with an SRI of 0.4 (calculated using all AcA un
 <p>Calculating a mean and standard deviation to create a z-score for SRI values across disciplines destroys any information which could have been found in the SRI measure.</p>
 <p>Note that this is <em>not</em> an objection to SRI as a concept. It seems that SRI is a more fair method of comparison than other attempts to replicate SRI used in the budget reduction process, because at least all departments across a discipline are compared using the same (sometimes flawed) data<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. As it is, the metrics assembled by UNL, while applied to all departments equally, have unequal effects on different departments because the metrics used favor one discipline over another due to norms within that discipline. The problem with SRI is that it must be used in the context for which it was intended: comparing departments to other similar departments. The misuse of SRI results in eliminating programs which compare perfectly well to both Academic Analytics institutions and to AAU peers, as shown in <a href="#fig-sri-percentile-all-depts" class="quarto-xref">Figure&nbsp;4</a>.</p>
 <p>While we do not have access to the complete data for all departments and their comparison units, we do have access to the statistics data, which is shown in <a href="#fig-sri-by-class" class="quarto-xref">Figure&nbsp;5</a>. The statistics department’s SRI value is at the top of the non-AAU R1 institutions, and is well within the bounds of the SRI range of AAU institutions. Note that we would not expect that a department be at the top of the AAU university SRI values (which is why the custom SRI score isn’t that useful, though the percentile is somewhat helpful) – what is necessary is for the department’s SRI to be above the minimum (preferably comfortably above) of the comparable AAU department SRI values.</p>
-<p><strong>Problem</strong> Under the UNL proposed method (using the SRI relative to public AAU institutions), it seems that custom SRI is used instead of percentile. This renders any calculations done on SRI, and any calculations which use <code>sri_aau_public_peers</code> or <code>sri_aau_public_peers_z_score</code>, functionally meaningless as they are not comparing values drawn from the same distribution to each other. Without a common reference distribution, it is inappropriate to pool values by calculating a common mean and variance, and then to use that common mean and variance to produce a z-score.</p>
-<p><strong>Solution</strong> SRI should be converted to a percentile (or corresponding quantile, if the goal is a z-score), and in disciplines without sufficient comparison departments, there will be a lot of variability in the percentile (which should be treated as an estimate). SRI should be used to evaluate research productivity instead of attempting to create a multi-metric that adds additional weight to awards, books, citations, and grants x3, as Academic Analytics has already done the factor analysis to determine which of these are relevant to which disciplines.</p>
-<p><strong>Theory &amp; Statistical Rationale</strong> The Glivenko-Cantelli theorem guarantees that as <span class="math inline">\(n\rightarrow\infty\)</span> the empirical CDF (eCDF) converges to the distribution CDF <a href="https://demonstrations.wolfram.com/ConvergenceOfTheEmpiricalDistributionFunctionOfASample/">demonstration via WolframAlpha</a>. While there is no guideline for sufficient <span class="math inline">\(n\)</span>, the eCDF will be extremely blocky and step-function like at first, and as <span class="math inline">\(n\)</span> increases, the average distance between discontinuity points will decrease, producing an increasingly smooth function. The variance of the estimated percentile can be estimated by treating the percentile as a proportion and using a <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">binomial confidence interval</a> to get a sense of the variability. Then, this binomial confidence interval can be mapped back to normal quantiles if a z-score range is desired.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-sri-percentile-all-depts" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -811,15 +664,18 @@ Figure&nbsp;5: Research performance (SRI percentile) of units by classification.
 </div>
 </div>
 </div>
+<p><strong>Problem</strong> Under the UNL proposed method (using the SRI relative to public AAU institutions), it seems that custom SRI is used instead of percentile. This renders any calculations done on SRI, and any calculations which use <code>sri_aau_public_peers</code> or <code>sri_aau_public_peers_z_score</code>, functionally meaningless as they are not comparing values drawn from the same distribution to each other. Without a common reference distribution, it is inappropriate to pool values by calculating a common mean and variance, and then to use that common mean and variance to produce a z-score.</p>
+<p><strong>Solution</strong> SRI should be converted to a percentile (or corresponding quantile, if the goal is a z-score), and in disciplines without sufficient comparison departments, there will be a lot of variability in the percentile (which should be treated as an estimate). SRI should be used to evaluate research productivity instead of attempting to create a multi-metric that adds additional weight to awards, books, citations, and grants x3, as Academic Analytics has already done the factor analysis to determine which of these are relevant to which disciplines.</p>
+<p><strong>Theory &amp; Statistical Rationale</strong> The Glivenko-Cantelli theorem guarantees that as <span class="math inline">\(n\rightarrow\infty\)</span> the empirical CDF (eCDF) converges to the distribution CDF <a href="https://demonstrations.wolfram.com/ConvergenceOfTheEmpiricalDistributionFunctionOfASample/">demonstration via WolframAlpha</a>. While there is no guideline for sufficient <span class="math inline">\(n\)</span>, the eCDF will be extremely blocky and step-function like at first, and as <span class="math inline">\(n\)</span> increases, the average distance between discontinuity points will decrease, producing an increasingly smooth function. The variance of the estimated percentile can be estimated by treating the percentile as a proportion and using a <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">binomial confidence interval</a> to get a sense of the variability. Then, this binomial confidence interval can be mapped back to normal quantiles if a z-score range is desired.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-sri-3" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-SRI Problem 3 - Comparison Groups and TMFD
+Warning&nbsp;11: SRI Problem 3 - Comparison Groups and TMFD
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -868,34 +724,37 @@ SRI Problem 3 - Comparison Groups and TMFD
 </div>
 </div>
 </section>
-<section id="awards" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="awards"><span class="header-section-number">3.2</span> Awards</h2>
+<section id="awards" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="awards"><span class="header-section-number">2.2</span> Awards</h2>
 <p>1.68 <code>awards_ltd_2023_total</code> NCR highly prestigious awards, including national academy memberships in engineering, medicine and science. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only awards for T/TT faculty in benchmarked AcA units is reported to the AAU. Highly prestigious awards are tracked over the life of the faculty member’s career and are credited to the institution where they are currently employed. Once a faculty member retires or leaves an institution, their highly prestigious awards are no longer included in the data reported to AAU. Put another way, the highly prestigious awards follow the faculty member. From the AAU Membership Policy: AAU collects the number of faculty members by institution receiving awards, fellowships, and memberships in the National Research Council (NRC) list of highly prestigious awards that included: research/scholarship awards, teaching awards, prestigious fellowships or memberships in honorary societies. Each data year represents the faculty’s lifetime honors and awards, not new honors and awards. University of Maryland, College Park data includes University of Maryland, Baltimore beginning in 2019. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced under a license agreement with Academic Analytics. http://academicanalytics.com/ . The list of the NRC highly prestigious awards can be found at: National Research Council List of Highly Prestigious Awards | Association of American Universities (AAU). Memberships in the National Academies (NAS, NAE, NAM) compiled from the membership lists of each academy; lists can be found at: National Academy of Sciences: http://www.nasonline.org/member-directory/, National Academy of Engineering: http://www.nae.edu/default.aspx?id=20412, National Academy of Medicine: https://nam.edu/directory-search-form/</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
+<div id="wrn-awards" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Warning&nbsp;12
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Award comparisons should be made within discipline, not across disciplines, as the AAU list of prestigious awards does not include the <a href="https://www.aera.net/About-AERA/AERA-Awards">AERA</a> awards for education. As the national academies listed do not induct professors teaching in education, it is irrational to compare e.g.&nbsp;the physics department, whose members could conceivably be inducted into the NAS, NAE, or both depending on the subfield. This is one reason why Academic Analytics compares within discipline and not across disciplines.</p>
-</div>
 </div>
 </div>
 <p>1.79 <code>awards_normalized</code> <code>awards_ltd_2023_total</code> divided by <code>t_tt_headcount_2014_2023_avg.</code></p>
 <p>1.63 <code>awards_normalized_z_score</code> Z score of <code>awards_normalized</code> Normalized highly prestigious awards, fellowships and memberships as defined by the AAU membership policy for awards received LTD up to 2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.</p>
 </section>
-<section id="books" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="books"><span class="header-section-number">3.3</span> Books</h2>
+<section id="books" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="books"><span class="header-section-number">2.3</span> Books</h2>
 <p>1.69 <code>books_2014_2023_total</code> The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. Book publications reported to AAU by AcA include books, casebooks, edited volumes, encyclopedias, and textbooks. AcA book types not reported include journals, proceedings, study guides and book chapters. Book publications are credited to departments based on the author’s HR tenure org unit. From the AAU Membership Policy: The total number of books published by the institution for the most recent ten-year period. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced under a license agreement with Academic Analytics. http://academicanalytics.com/</p>
 <p>1.80 <code>books_normalized</code> <code>books_2014_2023_total</code> divided by <code>t_tt_headcount_2014_2023_avg</code></p>
 <p>1.64 <code>books_normalized_z_score</code> Z score of <code>books_normalized</code> Normalized book publications as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-book-disciplines" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Book Disciplines and Book Data
+Warning&nbsp;13: Book Disciplines and Book Data
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -905,16 +764,16 @@ Book Disciplines and Book Data
 </div>
 </div>
 </section>
-<section id="citations" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="citations"><span class="header-section-number">3.4</span> Citations</h2>
+<section id="citations" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="citations"><span class="header-section-number">2.4</span> Citations</h2>
 <p>1.70 <code>citations_2014_2023_avg</code> The average number of citations on peer-reviewed articles for the most recent ten-year period. AcA reports citations in the year of the publication. Citations for articles coauthored by more than one UNL faculty member have been split equally across authors. AAU uses Web of Science InCites for the citations data. UNL does not currently subscribe to InCites and so is using Academic Analytics to track and report this data. Citations are credited to departments based on the author’s HR tenure org unit. From the AAU Membership Policy: Average number of times an institution’s Web of Science Documents have collectively been cited for the most recent ten-year period. InCitesTM, Clarivate (2023). Web of Science. ® These data are reproduced under a license agreement from Clarivate. http://incites.clarivate.com/</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-citation-window" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Citation Window
+Warning&nbsp;14: Citation Window
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -926,13 +785,13 @@ Citation Window
 </div>
 </div>
 <p>1.81 <code>citations_normalized</code> <code>citations_2014_2023_avg</code> divided by <code>t_tt_headcount_2014_2023_avg.</code></p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-citation-norm" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Citation normalization
+Warning&nbsp;15: Citation normalization
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -941,13 +800,13 @@ Citation normalization
 </div>
 </div>
 <p>1.65 <code>citations_normalized_z_score</code> Z score of <code>citations_normalized</code> Normalized citations as defined by the AAU membership policy (using Academic Analytics as a proxy for InCites) for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-citation-count" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Citation counts
+Warning&nbsp;16: Citation counts
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -955,15 +814,15 @@ Citation counts
 </div>
 </div>
 </section>
-<section id="research-awards-inc-nuf" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="research-awards-inc-nuf"><span class="header-section-number">3.5</span> Research Awards Inc NUF</h2>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<section id="research-awards-inc-nuf" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="research-awards-inc-nuf"><span class="header-section-number">2.5</span> Research Awards Inc NUF</h2>
+<div id="wrn-grant-metrics" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Grant Metric Problems
+Warning&nbsp;17: Grant Metric Problems
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -973,17 +832,17 @@ Grant Metric Problems
 <p>In addition, smaller departments will have more variability in grant funding year-to-year than larger departments. When funding rates are low (10-20%), small departments may have $0 grant funding in one year and several awards come through in subsequent years, while large departments will have a more consistent funding level. While it is not clear how funding is counted on an annual basis (e.g.&nbsp;whether <code>research_awards_growth_inc_nuf_fy2020_total_research_awards</code> counts awards which started in 2020, were awarded in 2020, or incremental funding on multi-year awards that happened to be received by the university in 2020), if funding is counted at the award level and not the amount received per year, this measure gets to be even more “lumpy” and inconsistent from year to year. When taking a ratio of differences, as in <code>research_awards_growth_inc_nuf_percent_of_total</code>, this inconsistent behavior becomes even more problematic. It would be far better to fit a trend line with 4 or even 10 years of per-capita funding data to each department, and then do inference based on the slope of that line, generating a confidence interval or even a z-score for the slope of the line. Note that we do <em>not</em> recommend comparing departments based on that z-score, because the amount of funding available will be conditional on the department discipline, and picking winners and losers within UNL based on federal grant funding availability is short-sighted. Metrics are useful for description even when they are not used for inference.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-cauchy-research" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Problems with <code>research_awards_growth_inc_nuf_fy20_fy24</code>
+Warning&nbsp;18: Problems with <code>research_awards_growth_inc_nuf_fy20_fy24</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Of all of the random variables created in this analysis, the most problematic from a statistical theory perspective might be <code>research_awards_growth_inc_nuf_fy20_fy24</code>. This is the ratio of two differences, where we might reasonably model each value in the numerator as a normal random variable with mean <span class="math inline">\(\mu_d\)</span> and standard deviation <span class="math inline">\(\sigma_d\)</span> (<span class="math inline">\(d\)</span> for department), and each value in the denominator as random variables with mean <span class="math inline">\(\mu_u\)</span> and standard deviation <span class="math inline">\(\sigma_u\)</span> (<span class="math inline">\(u\)</span> for university). The problem with this is that the two differences, <span class="math inline">\(\mu_{d,2024} - \mu_{d,2020}\)</span> and <span class="math inline">\(\mu_{u,2024} - \mu_{u,2020}\)</span> have mean zero, which leads to a <span class="math inline">\(\frac{0}{0}\)</span> situation that is mathematically undefined.</p>
+<p>Of all of the random variables created in this analysis, the most problematic from a statistical theory perspective might be <code>research_awards_growth_inc_nuf_fy20_fy24</code> (and its instructional companion, <code>instructional_sch_4Y_share_growth</code>). This is the ratio of two differences, where we might reasonably model each value in the numerator as a normal random variable with mean <span class="math inline">\(\mu_d\)</span> and standard deviation <span class="math inline">\(\sigma_d\)</span> (<span class="math inline">\(d\)</span> for department), and each value in the denominator as random variables with mean <span class="math inline">\(\mu_u\)</span> and standard deviation <span class="math inline">\(\sigma_u\)</span> (<span class="math inline">\(u\)</span> for university). The problem with this is that the two differences, <span class="math inline">\(\mu_{d,2024} - \mu_{d,2020}\)</span> and <span class="math inline">\(\mu_{u,2024} - \mu_{u,2020}\)</span> have mean zero, which leads to a <span class="math inline">\(\frac{0}{0}\)</span> situation that is mathematically undefined.</p>
 <p>In statistical terms, if the numerator and denominator have mean 0, then the random variable representing the ratio is <strong>Cauchy</strong> distributed. Cauchy distributions are heavy-tailed (values far away from the mean are much more likely than they would be with a normal distribution), that is, they generate extreme values more frequency. Cauchy distributions are difficult to work with because they do not have a (meaningful) mean or a standard deviation. It is possible to generate draws from a Cauchy distribution, and even to take the mean and standard deviation of those draws, but the values do not describe anything useful about the underlying data. The mean will never converge to a single value, even with a million or billion samples, unlike nearly every other common distribution.</p>
 <p>As a result, calculating the z-score for something that has or might be expected to have a Cauchy distribution is fundamentally problematic, because neither the mean or the standard deviation will have any real-world meaning or even be numerically stable. The Central Limit Theorem requires that variables have finite variance precisely because of the counterexample of the Cauchy distribution.</p>
 <p>Cauchy random variables are typically not covered in undergraduate math-stat and probability courses, except perhaps a mention in passing. That they arise so readily in this type of analysis is just another example why it is fundamentally necessary to have graduate statistical training or oversight in order to use complex functions of random variables to make practical decisions that will hold up under scrutiny.</p>
@@ -995,17 +854,17 @@ Problems with <code>research_awards_growth_inc_nuf_fy20_fy24</code>
 <p>1.77 <code>research_awards_growth_inc_nuf_percent_of_total</code> <code>research_awards_growth_inc_nuf_fy20_fy24</code> for the department/unit divided by <code>research_awards_growth_inc_nuf_fy20_fy24</code> for UNL as a whole</p>
 <p>1.61 <code>research_awards_growth_inc_nuf_z_score</code> Z score of <code>research_awards_growth_inc_nuf_fy20_fy24</code></p>
 </section>
-<section id="total-sponsored-awards-inc-nuf-rsch-pub-serv-teach" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="total-sponsored-awards-inc-nuf-rsch-pub-serv-teach"><span class="header-section-number">3.6</span> Total Sponsored Awards Inc NUF RSCH PUB SERV TEACH</h2>
+<section id="total-sponsored-awards-inc-nuf-rsch-pub-serv-teach" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="total-sponsored-awards-inc-nuf-rsch-pub-serv-teach"><span class="header-section-number">2.6</span> Total Sponsored Awards Inc NUF RSCH PUB SERV TEACH</h2>
 <p>1.71 <code>average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024</code> Average annual sponsored awards received in FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. Purpose codes reported include research, teaching and public service which are summed and divided by total state appropriated budget. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments.</p>
 <p>1.73 <code>total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget</code> <code>Average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024</code> divided by <code>budget_from_evc_file_state_appropriated_budget</code> Average sponsored awards for FY20-24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation, for purpose codes research, teaching and public service divided by total state appropriated budget.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-total-sponsored" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
+Warning&nbsp;19: Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1014,24 +873,171 @@ Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budg
 </div>
 <p>1.60 <code>awards_budget_inc_nuf_z_score</code> Z score of <code>total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget</code></p>
 </section>
-<section id="p1-expenditures" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="p1-expenditures"><span class="header-section-number">3.7</span> P1 Expenditures</h2>
+<section id="p1-expenditures" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="p1-expenditures"><span class="header-section-number">2.7</span> P1 Expenditures</h2>
 <p>1.67 <code>p1_expenditures_2014_2023_avg</code> The average competitively funded federal research support as defined by the AAU membership policy, federal research expenditures less USDA research expenditures adding in awards from USDA Agriculture Food and Research Initiative (AFRI). Expenditures and AFRI awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual’s HR tenure org unit, primary org unit and any secondary appointments. From the AAU Membership Policy: Competitively funded federal research support: federal R&amp;D expenditures. A ten-year average of federal research expenditures (including S&amp;E and non-S&amp;E) adjusted to exclude USDA formula-allocated research expenditures. This indicator includes obligations for the AFRI program funded by USDA. National Science Foundation (NSF) Survey of Research and Development Expenditures at Universities and Colleges/Higher Education Research and Development Survey (HERD), data for the most recently available ten-year average. AFRI Obligations, data for the ten years that match the years from HERD.</p>
 <p>1.78 <code>p1_expenditures_normalized</code> <code>p1_expenditures_2014_2023_avg</code> divided by <code>t_tt_headcount_2014_2023_avg.</code></p>
 <p>1.62 <code>p1_expenditures_normalized_z_score</code> Z score of <code>p1_expenditures_normalized</code> Normalized competitively funded federal research expenditures as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.</p>
+</section>
+</section>
+<section id="teaching" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Teaching</h1>
+<div id="wrn-data-validation" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;20: Data Lockout and Validation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is hard to validate the teaching metrics, because the administration has directed the registrar’s office and the graduate college “not to distribute data related to proposed budget reductions at this time” (<a href="documentation/Fw_%20Sarah%20Z%20-%20EDAD%20Data%20Request.eml">email between Sarah Zuckerman and Debra Hope, Graduate College</a>).</p>
+<p>The Statistics department had similar trouble getting data from Chad Brasil, though most of it could be assembled (sometimes manually) using published Tableau dashboards. As a result, it is much harder to comment on or validate the teaching metrics. There are likely similar problems with the way variables were assembled, but because of the administrative lockout, we cannot do the necessary detective work to identify those problems.</p>
+</div>
+</div>
+<section id="enrollment" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="enrollment"><span class="header-section-number">3.0.1</span> Enrollment</h3>
+<p>1.42 <code>U_major_n</code> Count of undergraduate majors, including non-primary majors. 1.44 <code>G_major_n</code> Count of graduate majors, including non-primary majors. 1.46 <code>P_major_n</code> Count of professional majors, including non-primary majors. 1.87 <code>majors</code> Sum of U, G, and P majors (all majors).</p>
+<hr>
+<p>1.22 <code>major_completions_bachelor_degree</code> Count of all Bachelors completions within major (including non-primary majors).</p>
+<p>1.24 <code>major_completions_two_years_college</code> Count of all graduate certificate completions within major (including non-primary majors).</p>
+<p>1.26 <code>major_completions_masters_degree</code> Count of all Masters completions within major (including non-primary majors).</p>
+<p>1.28 <code>major_completions_doctorate_degree</code> Count of all Doctorate completions within major (including non-primary majors).</p>
+<p>1.30 <code>major_completions_post_masters</code> Count of all Post Masters completions within major (including non-primary majors).</p>
+<hr>
+<p>1.43 <code>U_primary_major_n</code> Count of undergraduate primary majors.</p>
+<p>1.45 <code>G_primary_major_n</code> Count of graduate primary majors.</p>
+<p>1.47 <code>P_primary_major_n</code> Count of professional primary majors.</p>
+<hr>
+<p>1.23 <code>degree_n_bachelor_degree</code> Count of all Bachelors degrees with attached major (primary)</p>
+<p>1.25 <code>degree_n_two_years_college</code> Count of all graduate certificates with attached major (primary).</p>
+<p>1.27 <code>degree_n_masters_degree</code> Count of all Masters degrees with attached major (primary).</p>
+<p>1.29 <code>degree_n_doctorate_degree</code> Count of all Doctorate degrees with attached major (primary).</p>
+<p>1.31 <code>degree_n_post_masters</code> Count of all Post Masters degrees with attached major (primary).</p>
+<p>1.88 <code>degrees</code> Sum of Bachelors, Masters, Doctorate, and Post Masters primary degrees</p>
+<hr>
+<p>1.89 <code>ratio_completions_majors</code> Ratio of all degree completions (all majors attached to a degree) to all majors, including non-primary.</p>
+<div id="wrn-major-completion" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;21: Completions to Majors for New Programs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The statistics department has a new undergraduate program that, for AY 2024 (the last AY with statistics), had two cohorts of students. These students are included in the denominator as majors, but could not possibly have completed the program. As a result, of course, the department looks like we have a large dropout rate or are otherwise performing poorly.</p>
+<p>It would be more reasonable to exclude new majors from this count until the program is mature and has all cohorts filled. In prior years, the statistics department has hovered around a 25% - 28% completion ratio, which reflects that our MS students take approximately 2 years to finish and our Ph.D.&nbsp;students take between 4 and 6 years to finish. We fully expect that our ratio will return to about that level when our undergraduate program is mature (if, of course, the university decides to keep this program), but it will likely decrease until that point, because we continued adding students who will take 4 years to graduate in AY 2025, and our first cohort is not expected to graduate until 2026.</p>
+</div>
+</div>
+<hr>
+<p>1.871 <code>minors_U</code> Count of all undergraduate students in one or more minors offered by the unit.</p>
+<p>1.872 <code>minors_G</code> Count of all graduate students in one or more minors offered by the unit.</p>
+<hr>
+<p>1.86 <code>enrollment</code> Sum of U, G, and P unduplicated AY headcount</p>
+<p>1.94 <code>average_enrollment</code> Mean of unduplicated enrollment headcount by unit.</p>
+<hr>
+<p>1.93 <code>all_majors_share_growth</code> Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.</p>
+<p>1.53 <code>retention_rate</code> First-year to second-year retention rate (cohort = AY - 1).</p>
+<p>1.54 <code>avg_retention_rate</code> Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.</p>
+<p>1.55 <code>grad_rate6</code> Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.</p>
+<p>1.56 <code>avg_grad6</code> Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.</p>
+<div id="wrn-grad-rates" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;22: Graduation Rates Shouldn’t Be Pooled
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most undergraduate programs take 4 years to complete. Most MS programs take 1-2 years to complete. Ph.D.&nbsp;programs vary considerably, but post-MS work might take between 2 to 4 years to complete, assuming the MS work transfers.</p>
+<p>It is utterly confusing, then, to compute six-year graduation rates when the expected time to degree completion is so widely variable – six years is enough time for 5 different MS cohorts to complete their degrees, but only 2-3 undergraduate and Ph.D.&nbsp;cohorts! It’s also not uncommon for statistics students to get an MS and a PhD within 6 years - are those students counted twice?</p>
+<p>Ultimately, graduation rates should be computed separately for each program, and if those are then averaged somehow that would be at least potentially sensible. But it is important to consider expected time to degree when computing graduation rates.</p>
+</div>
+</div>
+</section>
+<section id="sch-tuition" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sch-tuition"><span class="header-section-number">3.1</span> SCH &amp; Tuition</h2>
+<p>1.48 <code>sch</code> Sum of course SCH by owner of course subject code.</p>
+<div id="wrn-2020-anomalies" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;23: 2020 anomalies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The SCH reported for AY 2020 are almost universally off by a factor of around 10. This anomaly needs to be tracked down and investigated, because while it may not affect any department differently, it puts the provenance of the data and the quality control measures in question. Systematic errors are a red flag to go back and consider whether the data quality is sufficiently high to be making decisions based on this data.</p>
+</div>
+</div>
+<p>1.49 <code>total_realizable_base_tuition</code> sch by course career and student residency times base tuition rate. For AY2024, these rates were: Career | Resident | Non-resident — | — | — UG | $268 | $859 G/P | $353 | $1031</p>
+<p>1.52 <code>instructor_sch</code> The logic for Instructional SCH is:</p>
+<ul>
+<li>If a course prefix maps to a “unit” that is instructed by a faculty member with an appointment in that “unit” then the SCH will be assigned to that “unit”.</li>
+<li>If a course prefix maps to a “unit” that is instructed by a faculty member WITHOUT an appointment in that “unit” then the SCH will be assigned to the “unit” where the faculty member has their largest percentage of appointment (primary appointment home).</li>
+<li>If a course maps to a “unit” that is instructed by a faculty member without an appointment e.g., no instructor of record recorded, then the SCH is assigned to the “unit” according to the course prefix.</li>
+</ul>
+<p>1.84 <code>instructional_sch</code> Sum of SCH attributed to instructors’ home departments. The formula takes the percentages designated to each instructor in Peoplesoft. <code>Sum(Section SCH x Instructor %)</code></p>
+<p><img src="images/instructional-sch-calc.png" class="img-fluid"></p>
+<p>1.90 <code>instructional_sch_to_instructional_fte</code> Instructional SCH divided by apportioned teaching FTE</p>
+<p>1.91 <code>average_instructional_sch</code> Mean of instructional SCH by unit.</p>
+<p>1.92 <code>instructional_sch_4Y_share_growth</code> Change in share (percentage) of total instructional SCH from AY2020 to AY2024.</p>
+<div id="wrn-cauchy-teaching" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;24: Problem: <code>instructional_sch_4Y_share_growth</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is another variable which is likely Cauchy distributed (see <a href="#wrn-cauchy-research" class="quarto-xref">Warning&nbsp;18</a>), that is, it is the statistical equivalent of dividing by zero - the mean of the numerator is likely to be zero (in distribution) and the mean of the denominator is likely to be zero (in distribution) – each year’s SCH would be expected to be sampled from the same distribution at the department and university level.</p>
+<p>The problem is that these variables do not have a distribution mean and have infinite variance. It is obviously possible to take the average of observations from this distribution, but the average will never converge (unlike samples from almost any other distribution - the average of an increasing number of samples will converge to the distribution mean, but only if the distribution has finite variance).</p>
+<p>Taking a variable like this, and then calculating the mean and standard deviation across departments to standardize these variables makes this even more problematic, because it removes any meaningful information in the variable. Then, averaging these z-scores as part of an omnibus instructional z-score only serves to erase any meaningful information in the instructional z-score.</p>
+<p>These problems exist in both the instructional and research z-scores, which renders the entire metric analysis statistically uninformative. Cauchy random variables are the bane of every statistics graduate student’s existence - they are primarily useful for counterexamples in proofs, but when they pop up in practice, they are always a pain to deal with, and if you don’t handle them correctly, they will ruin everything.</p>
+<p>Unfortunately, the UNL administration will learn this the hard way, either by acknowledging the issue and reworking the budget reduction plan, or by eliminating highly ranked and high-performing departments because of a badly-executed statistical analysis.</p>
+</div>
+</div>
+</section>
+<section id="ratios" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="ratios"><span class="header-section-number">3.2</span> Ratios</h2>
+<div id="wrn-ratios-nightmare" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;25: Ratios are Stochastic Nightmares
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The variability of calculated ratios complicates statistical analysis.</p>
+<p>If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other “statistical moments” (these variables have a Cauchy distribution, which does not have a mean). This does not mean that you can’t take the average of Cauchy distributed random variables – it only means that that number does not have any real-world meaning.</p>
+<p>Even when the variables don’t have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value.</p>
+</div>
+</div>
+<p>1.85 <code>budget_to_sch</code> total original state aided budget divided by SCH</p>
+<p>1.16 <code>instructional_sch_to_instructional_fte</code> Sum of each instructor’s section instruction percentage times section sch by home department of appointment divided by <code>total_instructor_fte.</code></p>
 </section>
 </section>
 <section id="instructional-z-scores-in-institutional-metrics" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Instructional Z-scores in Institutional Metrics</h1>
 <p>All z-scores (also known as standardized or normalized scores) were calculated as the difference of the actual metric and the mean of the metric for included units divided by the standard deviation of the included units’ metrics.</p>
 <p>It measures the number of standard deviations a metric is from the mean. In a normal distribution, approximately two-thirds of scores fall within +/- 1 standard deviation of the mean. Approximately 95% of cases fall within +/- 1.96 standard deviations of the mean. Traditionally – but not universally – cases beyond the 1.96 standard deviation threshold are considered outliers.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div id="wrn-instruction-z-prob" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Instructional Z-score Problem
+Warning&nbsp;26: Instructional Z-score Problem
 </div>
 </div>
 <div class="callout-body-container callout-body">
