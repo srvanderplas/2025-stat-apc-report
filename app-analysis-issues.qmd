@@ -118,7 +118,7 @@ This suggests that either the administration was specifically selecting small pr
 
 eliminate <- c("Statistics", 
                "Educational Administration", 
-               "Landscape Architecture", 
+               "Landscape Architecture Program", 
                "Community and Regional Planning", 
                "Earth and Atmospheric Sciences",
                "Textiles, Merchandising, and Fashion Design")
