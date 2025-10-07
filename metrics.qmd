@@ -24,6 +24,7 @@ library(forcats)
 We begin this section by acknowledging that it is *hard* to assemble fully correct data that correctly represents our department, and that the task to assemble all of the (correct) data for all departments and stand-alone programs on campus is indeed a difficult one.
 We teach several courses in our department which describe how to build a data pipeline, from collection to cleaning to visualization, and we believe having a resource on campus which can consult on these tasks is fundamentally important to both the research and administration of the university.
 Our students are taught to consider the impact of the decisions which are made during assembly of a data pipeline when conducting the resulting statistical analysis and whether numbers are comparable and not an instance of "apples" to "oranges"; it is this step that is most obviously missing from the metrics provided to APC to justify the budget reduction plan. 
+
 The department would be more than happy to assist with future projects evaluating the performance of units across campus; integrating the methodology and data into a course as a service learning opportunity would have very real benefits.
 This data is both extremely interesting and provides an excellent demonstration of the importance of a variety of concepts from data documentation to reproducibility and the different varieties of messy data which often appear in real-world analyses. 
 
