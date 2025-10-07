@@ -1,0 +1,118 @@
+
+# Statistics Faculty in the UN System {.appendix}
+
+```{r}
+#| include: false
+library(rvest)
+library(xml2)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(tidyr)
+library(tibble)
+library(readr)
+library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
+theme_set(theme_bw())
+library(patchwork)
+library(forcats)
+```
+
+```{r}
+#| label: tbl-unmc-biostats
+
+tbl <- tribble(~Name, ~Rank, ~Research, ~Degree,
+      
+"Jerrod Anzalone", "Assistant Professor", "Electronic Health Record Data", "Ph.D., Biomedical Informatics, UNMC",
+"Su Chen", "Associate Professor", "", "Ph.D., Statistics, Oklahoma State University",
+"Hongying (Daisy) Dai", "Professor & Associate Dean of Research", "Tobacco policy surveys and modeling, GWAS methods, Social media disease surveillance methods", "Ph.D., Statistics, University of Kentucky",
+"Ran Dai", "Assistant Professor", "High dimensional & nonparametric inference", "Ph.D., Statistics, Univ. of Chicago",
+"Jianghu (James) Dong", "Assistant Professor", "Functional data analysis, longitudinal analysis, clinical trials", "Ph.D., Statistics, Simon Fraser University",
+"Yeongjin Gwon", "Associate Professor", "Bayesian data integration, adaptive clinical trial design", "Ph.D., Statistics, Univ. of Connecticut",
+"Gleb Haynatzki", "Professor", "Survival analysis, cancer epidemiology", "Ph.D., Statistics and Applied Probability, Univ. of California",
+"Yunju Im", "Assistant Professor", "Bayesian hierarchical mixture models", "Ph.D., Statistics, Univ. of Iowa",
+"Jane Meza", "Professor", "Small area estimation", "Ph.D., Statistics, UNL",
+"Harlan R Sayles", "Assistant Professor", "Survey methods, Meta-analysis", "Ph.D., Biostatistics, UNMC",
+"Kendra Schmid", "Professor", "Shape Analysis, Statistics Education", "Ph.D., Statistics, UNL",
+"Lynette Smith", "Associate Professor", "Cancer biomarker development", "Ph.D., Statistics, UNL",
+"Megan Tesar", "Assistant Professor", "Spatial statistics, statistics education", "Ph.D., Statistics, UNL",
+"Christopher S. Wichman", "Associate Professor", "Network analysis", "Ph.D., Statistics, UNL",
+"Fang Yu", "Professor", "High dimensional data, clinical trials", "Ph.D., Statistics, Univ. of Connecticut",
+"Yin Zhang", "Professor", "Non- and semi-parametric inference, clinical trial design", "Ph.D., Statistics, Univ. of Washington") |>
+  select(1, 2, 4) |> 
+  separate_wider_regex(Degree, c("Degree" = "Ph\\.D\\.", "Discipline" = ",[A-z ]*", "Institution" = ", .*?$")) |>
+  unite(col = Degree, Degree, Discipline, sep = "") |>
+  mutate(Institution = str_remove(Institution, ", ")) |>
+  mutate(Institution = factor(Institution, levels = unique(c("UNL", "UNMC", unique(Institution))))) 
+
+
+tbl |>
+  arrange(Institution) |>
+  
+  knitr::kable(caption = "Tenured and tenure-track faculty in the Biostatistics Department at UNMC", label = "tbl-unmc-biostats")
+```
+
+
+```{r}
+#| label: tbl-uno-math
+#| echo: false
+#| message: false
+#| warning: false
+
+# url <- "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/directory/index.php"
+# 
+# doc <- read_html(url)
+# 
+# tmp <- tibble(
+#   name = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/p/text()") |> xml_text(),
+#   role = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/div/p[1]/text()") |> xml_text(),
+#   page = xml_find_all(doc, "//*/div/div[1]/section[contains(@class,'d-flex')]/div/div/a") |> xml_attr("href")
+# ) |>
+#   mutate(
+#     phd = str_detect(name, "Ph.?D.?") | str_detect(name, "DSc"),
+#     name = str_remove(name, ",? ?Ph\\.?D\\.?") |> str_remove(", DSc"),
+#     page = paste0("https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/directory/", page),
+#     pagecontent = map(page, read_html)
+#   )
+# 
+# get_degree <- function(doc) {
+#   res <- xml_find_all(doc, "//*/section[@id='Education']") |> xml_text() |> unique() |> stringr::str_remove("Education\\s{1,}") |> str_split("\\n")
+#   res <- unlist(res) |> str_trim()
+#   res <- str_replace_all(res, c("Ph\\.D\\.,? ?" = "PhD ", "D\\.Sc\\.," =  "DSc", "Doctorate of Educational Studies:" = "DEd ", " in " = " ", "B\\.S\\.,? ?" = "BS ", "M\\.S\\.,? ?" = "MS ", "B\\.A\\.,? ?" = "BA "))
+# 
+#   res <- res[nchar(res)>0]
+#   res <- str_extract_all(res, "((?:PhD|DEd|DSc|MS|BS) [A-z ]*)") |> unlist()
+# 
+#   res <- tibble(degree = str_extract(res, "(PhD|DEd|DSc|MS|BS)", group = 1),
+#          discipline = str_remove(res, degree) |> str_trim()) |>
+#     mutate(degree = factor(degree, levels = c("BS", "BA", "MS", "DEd", "DSc", "PhD"))) |>
+#     arrange(desc(degree)) |>
+#     filter(row_number() == 1)
+# 
+# 
+#   if (length(res) == 0) return(tibble(degree = NA_character_, discipline = NA_character_)) else return(res)
+# }
+# 
+# tmp <- tmp |> mutate(
+#   degree = map(pagecontent, get_degree)
+# )
+# select(tmp, name, role, phd, degree) |>
+#   filter(str_detect(role, "Professor")) |>
+#   unnest_wider(degree) |>
+#   mutate(discipline = if_else(str_detect(discipline, "University"), "Mathematics", discipline)) |>
+#   select(-phd) |>
+#   arrange(desc(discipline)) |>
+#   mutate(degree = paste(degree, discipline, sep = ", ")) |>
+#   select(-discipline) |>
+#   set_names(c("Name", "Rank", "Degree")) |>
+#   mutate(Degree = str_replace_all(Degree, c("PhD" = "Ph.D.", "DSc" = "D.Sc.", "DEd" = "D.Ed."))) |>
+# write_csv(file = "data-analysis/data/uno-math.csv")
+
+readr::read_csv("data-analysis/data/uno-math.csv") |>
+  knitr::kable(caption = "Tenured and Tenure-track faculty in the Mathematics Department at University of Nebraska -- Omaha", label = "tbl-uno-math")
+
+```
+

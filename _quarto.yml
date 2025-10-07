@@ -1,5 +1,40 @@
 project:
-  title: "2025-Stat-APC-report"
+  type: book
   output-dir: docs
+
+book:
+  title: "Statistics: An Essential Department for a Modern R1 University"
+  date: today
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - unl-stats-dept.qmd
+    - metrics.qmd
+    - peer-analysis.qmd
+    - program-analysis.qmd
+    - centralized.qmd
+    - evaluating-budget.qmd
+    - future.qmd
+    - app-faculty-system.qmd
+    - app-analysis-issues.qmd
+    - app-metrics-analysis.qmd
+    - 2025-Stat-APC-report.qmd
+number-sections: true
+number-depth: 6
+toc-depth: 3
+toc: true
+
+message: false
+warning: false
+error: false
+echo: false
+
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
 
 

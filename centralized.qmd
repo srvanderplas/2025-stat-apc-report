@@ -1,0 +1,130 @@
+# Centralized vs. Distributed Statistics Model
+
+```{r}
+#| include: false
+library(rvest)
+library(xml2)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(tidyr)
+library(tibble)
+library(readr)
+library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
+theme_set(theme_bw())
+library(patchwork)
+library(forcats)
+```
+
+## An Historical View of the Distributed Model
+
+> The effort now apparently underway at University of Nebraska—to disestablish the statistics
+department and disperse and/or scatter data analysis throughout campus—is a throwback to 100
+years ago and will only land us in the same situation as we encountered then.
+ -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+The administration's proposal to move to a distributed model for statistical expertise across the university is not a new one -- it has been tried before at UNL and describes the period between roughly 1900 and 2003, where statisticians within Math, Sociology, Psychology, Industrial Engineering, and Computer Science were scattered throughout City campus, and various incarnations of consulting service centers and the Biometry department served IANR's need for agricultural statistics support. 
+This model was not successful, both because funding was outpaced by demand and because it became challenging to recruit qualified statisticians without having a Statistics department. 
+
+> Maintaining the status quo will result in a decline of the quality of Biometry services. The decline will occur because of professional stagnation and because of exhaustion. Biometry faculty can only respond to a finite number of requests for their services. They are currently at that limit.
+> -- [1993 Biometry APR Self Study, pg 35](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+
+Consider these two anecdotes from separate halves of campus detailing attempts to find a home for Statisticians across campus during the late 1960s and 1970s: 
+
+> [T]he proposal to create a separate department was broached anew in 1968 to Dean Peter McGrath of the Arts and Sciences College. He agreed that the proposal had merit and a decision was made to create a School of Computational Sciences in the College with two academic departments, namely Statistics and Computer Science. ... The administration then changed its mind and decided that the best alternative would be to recognize the existence of mathematical statistics as a program by changing the name of the Department of Mathematics to the Department of Mathematics and Statistics. 
+> -- [Statistics History at UNL (Math Department, ~1998)](https://math.unl.edu/statistics-history-unl/)
+
+> In the early 1970's, there was a discussion of an area program in statistics involving the statistical faculty from the Department of Mathematics, the Biometrics Center (now the Department of Biometry), the Department of Educational Psychology, and other departments having faculty statisticians. In 1985, a committee was formed to study the feasibility of combining the statistical faculty of the Department of Mathematics & Statistics and the Biometrics Center into a Department of Statistics. 
+> -- [1993 Biometry APR Self Study, pg 31](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+Obviously, the creation of a centralized department of Statistics did not actually happen until 2003. 
+The awkward split of responsibilities between Biometry and Statistics also made it difficult to form cross-campus collaborations. 
+These disadvantages are common knowledge within Statistics departments across the country, and are well documented both in our discipline's scientific literature and within our written and oral history.
+
+> The lack of lifelong training of faculty devoted to rigorous data analysis and its methodology on campus means that it will be difficult for researchers seeking large interdisciplinary grants to find data analysis experts on campus and for graduate students, post docs etc. to find rigorous training. And that means that University of Nebraska will be at a disadvantage in competing for grants against other universities that continue to support strong, centralized statistics programs. Those programs produce an identifiable resource on campus that offers data analysis experts who can support work on campus funded by NIH, NSF and DOD.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+
+> "Demand for statistics instruction at both the graduate and undergraduate level has grown since World War II, paralleling the growth in interest in statistics nationwide. The growth of statistics at UNL has been hampered both by its lack of visibility within a Department of Mathematics and Statistics and by the fact that the resources which support undergraduate instruction in statistics have been spread across so many departments." 
+> -- [Statistics History at UNL (Math Department, ~1998)](https://math.unl.edu/statistics-history-unl/)
+
+Clearly, the distributed model did not work well as it initially evolved in departments across campus at UNL. However, we can briefly consider the pros and cons of each model (distributed and centralized) to consider how it might look if implemented today.
+
+
+> After reviewing the provided rationale, I believe the "distributive model" being considered reflects a fundamental misunderstanding of statistics as a discipline, its potential growth and widespread relevance. While numerous disciplines certainly utilize statistical methods, these methods exist because of the dedicated work of professional statisticians. In a world where all organizations rely on analytics for decision-making, the role of statisticians in developing and validating new techniques is more crucial than ever. The statistics major recently established at UNL represents a forward-thinking investment in your university's future, since data-related careers continue to offer exceptional opportunities for graduates with four-year degrees.
+> -- [Peggy Hart, Ph.D. Statistics, UNL. Associate Professor of Mathematics & Data Analytics, Doane University](letters/PeggyHart-UNLmathStatAlum_DoaneProf.pdf)
+
+> [P]lease think carefully about the fact that this model (the distributed model) has been tried before on many campuses and found wanting, in numerous ways. The current "statistics department model" has proven itself time and again on campus after campus.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+## Comparing the Distributed and Centralized Models
+
+> A modest proposal    
+> Faculty in all departments are skilled academic writers and communicators. Rather that dissolving the Department of Statistics, consider applying the "distributed" model to English and Communications. Faculty can teach writing and communication courses within their departments, resulting in much higher savings than dissolving the Department of Statistics. Ridiculous? If other departments are able to teach statistics effectively, why not writing and communication? Or perhaps, statistics instruction and research, which is vital to a vibrant research community, is best left to statisticians.
+> -- [Aimee Schwab-McCoy, UNL Statistics Ph.D. and Senior Manager for Content Authoring -- Data Science, Mathematics, and Statistics, Wiley](letters/Aimee Schwab-McCoy-Senior Manager-Wiley-UNL_grad.pdf)
+
+
+::: {layout="[45,-10,45]"}
+
+![Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the centralized model.](images/statistics-central.excalidraw.png){#fig-centralized-bubbles}
+
+![Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the decentralized model.](images/statistics-decentralized.excalidraw.png){#fig-decentralized-bubbles}
+
+:::
+
+| Mission | Centralized Model | Distributed Model | 
+| --- | ------ | ------ |
+| Faculty Recruitment | Departments can (but do not have to) hire "quant" experts, split appointments (even across colleges) are used to handle joint courses and facilitate collaboration between departments. Statisticians are willing to come to an up-and-coming statistics department that is seen as a valuable part of the university infrastructure. | Statistics experts ("quants") are embedded in domain departments to teach statistics courses. Recruiting qualified faculty is difficult. |
+| Teaching | Service courses are taught primarily by the Statistics department with coordination from other departments to calibrate course offerings | Service courses are taught in departments across UNL: Psychology, Educational Psychology, Sociology, QQPM, Agronomy, Animal Science, SNR, Engineering, Computer Science, Mathematics |
+| Advising | Statistics faculty often serve on outside committees to provide statistical advice on student projects, building collaborations across departments. | Department experts serve on all committees for graduate students within the discipline. |
+| Consulting | SC3L provides consulting. Funding provided from any college which wants to have statistical consulting resources available to faculty. | A single consultant is available for IANR faculty. There is consistently insufficient time available to meet demand for consulting across colleges. | 
+| Service | The statistics department is a resource described in grant applications like other "common good" resources across campus, like HCC and ORI. Statistics faculty are readily located to assist with collaborative grant projects. | Statistical support for grants is provided by distributed faculty (if one with the right expertise can be located, see @fig-decentralized-bubbles) or by faculty at other institutions outside of Nebraska. Research quality may suffer and proposals may be seen as less competitive by funders. | 
+| Degree Programs | Statistics BS, MS, and Ph.D. programs are located within the Statistics Department. | No statistics major or advanced statistics coursework is offered to students at any level | 
+
+
+> The few well-known statisticians in the country have positions elsewhere from which it would be impossible to dislodge them with the bait to be offered; for though the department wishes to have statistics taught as an auxiliary to the study of X, it feels that there must be no question of the tail wagging the dog, and that economy is appropriate in this connection.
+> -- [Harold Hotelling, The Teaching of Statistics (1940)](documentation/Hotelling-TeachingStatistics-1940.pdf)
+
+A more modern expression of the same sentiment was received in one of the letters sent in support of the department:
+
+> I think it is flawed reasoning to expect that the needs for excellence in statistics at UNL can be instead obtained through "a distributed model that leverages expertise embedded across IANR, UNL and the NU system" for the following reasons: (1) To achieve excellence in statistics, you need to be able to attract and retain the most talented statisticians – most are much less likely to be recruitable to UNL if they don't have a Department of Statistics to call their academic home; (2) Statisticians working in other Departments are often overloaded with responsibilities to their own Department – for example, statisticians in our School of Medicine or in our Cancer Center have very little time for teaching and mentoring, as their primary responsibility is grant-related and project-related research; (3) Such a model would make it much more difficult to efficiently coordinate service teaching of statistics throughout the whole university system; (4) Such a distributed model would lead to intellectual isolation of your statisticians.
+> -- [Daniel E. Weeks, Ph.D. and Professor of Human Genetics and Biostatistics, University of Pittsburgh School of Public Health](letters/Weeks_pittsburgh.pdf)
+
+It is more efficient to offer courses in linear mixed models under a statistics prefix than to teach separate courses for Agronomy, Animal Science, Engineering, Psychology, and Sociology across five departments with five instructors. 
+While it may be necessary to offer two courses (one which accommodates the lack of linear algebra or calculus prerequisite work), this is still a substantial savings over offering five separate courses. 
+One failing of a distributed model where statisticians are embedded within each department is that it results in duplication of effort across departments, and if departments cannot hire someone with statistical expertise AND domain expertise, then it becomes difficult for that department to meet the needs of both students and faculty. 
+
+The psychology department has tended to keep their statistics expertise in-house even with the existence of the Statistics department. 
+Yet, they have had some trouble finding someone to teach their courses on Multilevel modeling (or, in statistical parlance, linear mixed-effects models). 
+This highlights one major problem with the "distributed model" -- **it is hard to find domain experts who are also experts in quantitative and statistical methods, and often, these experts demand more money than statisticians who are trained to work across a variety of domains**.
+Even when these experts can be found, they are highly in demand and may be unwilling to move to a university that does not also have a statistics department. 
+Thus, the distributed model is in many ways set up to fail, as it makes assumptions about the availability of statistical expertise that are at odds with the economic demand for statistical skills in industry and government. 
+Ultimately, those who are interested in quantitative methods will often choose to get a more flexible degree in Statistics rather than a specialized degree in Quantitative Psychology, because they can "play in everyone's backyard" with the Statistics degree. 
+
+> In the early 1990s, Columbia's Statistics department was very small (fewer than five faculty) and at risk of closure. Instead of eliminating it, the university supported a strategy to build—notably a world-renowned MA in Statistics program that attracted talent and generated resources for the university. Today, Columbia Statistics ranks among the top five departments nationally, with 27 ladder faculty—larger than our Mathematics department. That outcome was only possible because the institution chose to invest in a foundational discipline rather than dismantle it.
+>  -- [Bodhi Sen, Professor and Chair, Department of Statistics, Columbia University](letters/Bodhisattva Sen.pdf)
+
+In reality, UNL currently does not have a fully centralized model, and the real efficiencies that could come from a centralized model remain at least partially unrealized. 
+Take the Computer Science and Computer Engineering department, which offers courses such as CSCE 100 (Introduction to Informatics), CSCE 155T (Computer Science I: Informatics Focus), CSCE 320 (Data Analysis), CSCE 411 (Data Modeling for Systems Development), CSCE 412 (Data Visualization), CSCE 420 (Introduction to Natural Language Processing), CSCE 474 (Introduction to Data Mining), CSCE 478 (Introduction to Machine Learning). 
+One or two individuals who were appointed to have 49% responsibility in CSCE and 51% responsibility in STAT would be able to reduce duplication between CSCE and Statistics by working to determine which classes could be cross-listed, which courses might exist in both departments, and which courses should remain separate because of discipline specific focuses, much as courses in CSCE and ECEN are often, but not always, cross-listed.
+In other departments, there are courses which could clearly be merged with statistics courses, such as ECEN 305 and MECH 321, which seems to cover similar topics to STAT 380. ECEN 305 and STAT 380 are listed as equivalent prerequisites for ECEN 453, Computational and Systems Biology, indicating that there is some awareness of this duplication in the ECEN and STAT departments. 
+In a wider array of departments, CRIM 300, EDPS 459, ECON 215 are all equivalent to STAT 218 and acknowledged in the catalog as mutually exclusive for degree credit. 
+
+Of course, this efficiency would only be possible with cooperation, but it might be feasible to become more efficient as a university if the right SCH attribution model were used or if the STAT department was collocated within e.g. the School of Computing. 
+
+In Psychology, courses like PSYC 350 (Research Methods and Data Analysis), PSYC 450 (Advanced Research Design and Data Analysis), and PSYC 451 (Multivariate Research Design and Data Analysis) certainly involve a large proportion of statistical instruction, though they also teach topics that are not covered in statistical methods courses, like the use of APA format and how to write a literature review (PSYC 350). 
+However, dual appointments might be useful here as well - it may be easier to recruit someone to a Statistics department with a particular focus on social science represented by a joint appointment in psychology. 
+This may also be more palatable to the psychology department, as they place a particular emphasis on students learning methods within the context of psychological problems. 
+Professors with dual appointments might alleviate concerns about psychology methods courses being taught by statisticians.
+
+Political Science (POLS 287, Data Analysis in Political Science) and Sociology (SOCI 430, Advanced Social Network Analysis, SOCI 465, Survey Design and Analysis) also have courses which would be considered well within the realm of statistics. 
+Again, we are not suggesting that these courses should be taught solely in or by the statistics department, should it continue to exist, but that we could work out some sort of cross-listing and teaching responsibility agreement so that all of our programs become more efficient and our students have access to more electives and opportunities. 
+Ideally this would come with joint appointments to reinforce inter-department communication and build stronger ties between the Statistics department and units in CAS and COE. 
+
+The reality is that a truly centralized model is more efficient university-wide. 
+What is more important than the organizational structure, however, is maintaining the statistics Ph.D., MS, and Statistics and Data Analytics BS programs, so that Nebraska's students continue to have these educational options and Nebraska businesses have the ability to recruit highly qualified employees from a market that increasingly demands skill in data analytics across a wide range of different positions. 
