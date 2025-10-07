@@ -1,4 +1,4 @@
-# A Statistical Analysis of Metric Inputs and Calculations {#sec-codebook-analysis .appendix}
+# A Statistical Commentary on the Metric Inputs and Calculations {#sec-codebook-analysis .appendix}
 
 ```{r}
 #| include: false

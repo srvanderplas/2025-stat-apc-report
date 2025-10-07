@@ -5,6 +5,7 @@
 #| include: false
 library(rvest)
 library(xml2)
+library(readr)
 library(dplyr)
 library(purrr)
 library(stringr)
@@ -111,66 +112,30 @@ As a result, it does not make sense to group these departments into the same dis
 There is also a clear relationship between the size of the department and its fate under the current budget proposal, as shown in @tbl-dept-size. Of the 6 programs proposed for elimination, 5 are in the smallest 10 departments on campus. 
 This suggests that either the administration was specifically selecting small programs for elimination, or that the metrics used to identify candidates for elimination were biased against smaller departments, perhaps unintentionally. 
 
-Unit | Size | Proposal
---- | --- | ---
-Community and Regional Planning |  	4 | Eliminate
-Landscape Architecture | 	4 | Eliminate
-Broadcasting |  	8 | 
-Textiles, Merchandising, and Fashion Design |  	8 | Eliminate
-Agricultural Leadership, Education and Communication |  	9 | Combine (1)
-Educational Administration |  	10 | Eliminate
-Marketing |  	10 | 
-Philosophy |  	10 |
-Statistics |  	11 | Eliminate
-Interior Design |  	12 | 
-Accountancy |  	13 |
-Economics |  	13 |
-Modern Languages and Literatures |  	13 |
-Political Science |  	15 |
-Advertising |  	16 |
-Classics and Religious Studies |  	16 |
-Communication Studies |  	16 |
-Finance |  	16 |
-News and Editorial |  	16 |
-Nutrition and Health Sciences |  	16 |
-Plant Pathology |  	16 | Combine (2)
-Veterinary Medicine and Biomedical Sciences |  	16 |
-Educational Psychology |  	17 |
-Management |  	17 |
-Child, Youth and Family Studies |  	18 |
-Entomology |  	20 | Combine (2)
-Food Science and Technology |  	20 |
-Biochemistry |  	21 |
-History |  	21 |
-Teaching, Learning and Teacher Education |  	21 |
-Architecture |  	22 |
-Agricultural Economics |  	23 | Combine (1)
-Chemistry |  	23 |
-Sociology |  	26 |
-Supply Chain Management and Analytics |  	26 |
-Chemical and Biomolecular Engineering |  	28 |
-Special Education and Communication Disorders |  	28 |
-Mathematics |  	30 |
-Biological Systems Engineering |  	34 |
-Earth and Atmospheric Sciences |  	34 | Eliminate
-Music |  	34 |
-Animal Science |  	35 |
-Psychology |  	35 |
-English |  	36 |
-Biological Sciences |  	38 |
-Art, Art History and Design |  	42 |
-Theatre and Film, Johnny Carson |  	42 |
-Global Integrative Studies |  	45 |
-Natural Resources |  	45 |
-Civil and Environmental Engineering |  	56 |
-Physics and Astronomy |  	58 |
-Computing |  	64 |
-Mechanical and Materials Engineering |  	66 |
-Electrical and Computer Engineering |  	68 |
-Architectural Engineering |  	69 |
-Agronomy and Horticulture |  	108 |
 
-: Department Size and Budget Proposal Status {#tbl-dept-size}
+```{r}
+#| label: tbl-dept-size
+
+eliminate <- c("Statistics", 
+               "Educational Administration", 
+               "Landscape Architecture", 
+               "Community and Regional Planning", 
+               "Earth and Atmospheric Sciences",
+               "Textiles, Merchandising, and Fashion Design")
+
+merger1 <- c("Agricultural Economics", "Agricultural Leadership, Education and Communication")
+merger2 <- c("Entomology", "Plant Pathology")
+
+read_csv("data-analysis/data/academic-analytics/ri_department_faculty_2025-9-27_9-22-45.csv") |>
+  group_by(unitname) |>
+  count() |>
+  arrange(n) |> 
+  mutate(unitname = str_remove(unitname, ", Department of$") |>
+           str_remove(",? School of$"))  |>
+  rename(Unit = unitname, Size = n) |>
+  mutate(Status = if_else(Unit %in% eliminate, "Eliminate", if_else(Unit %in% merger1, "Combine (1)", if_else(Unit %in% merger2, "Combine (2)", "")))) |>
+  knitr::kable(caption = "Department Size and Budget Proposal Status")
+```
 
 Smaller departments can have higher variability in year-to-year grant awards, citation counts, and other productivity metrics. 
 Instructional metrics can very easily be thrown off by faculty development or FMLA leave, which does not appear to be accounted for in the FTE metrics^[For instance, Dr. Vanderplas was on intermittent FMLA in Fall 2021 after having a baby. She taught a course because the department did not have enough FTE to teach the required courses (hence the "intermittent" FMLA), but the documented expectation was that research would not occur during the 12 weeks of FMLA leave.]

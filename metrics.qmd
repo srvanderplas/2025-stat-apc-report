@@ -480,8 +480,8 @@ Faculty (Hanford, Stanke, Clarke) might not have a research component in Statist
 #| message: false
 #| warning: false
 #| echo: false
-#| fig-height: 10
-#| fig-width: 9
+#| fig-width: 6
+#| out-width: "100%"
 #| fig-cap: "Network of collaborations by the members of the UNL Statistics Department with other units across UNL."
 #| label: fig-aca-collaborations
 
@@ -539,10 +539,6 @@ Nebraska is a unique state in many ways, but it is not unique in the demand for 
 Hiring in statistics is robust in academia and in industry. The UNL statistics department helps meet the growing demand for data scientists and statisticians within Nebraska, but we were also surprised how many of our graduates work remotely and live in Nebraska, contributing to the local economy while working for large national companies. 
 This serves a dual function that is important for the state -- these students can live close to families and support aging parents while working high-paying jobs and paying state and local taxes accordingly. 
 
-
-::: {.content-visible when-format="pdf"}
-\clearpage
-:::
 
 > From the student perspective, this department has been crucial to my academic growth, as well as that of my peers, both inside and outside the program. Before attending graduate school, I worked as a Business Intelligence Analyst in data analytics at Sandhills Global, one of Nebraska's major employers of UNL graduates. I left that full-time role to pursue a Master's in Statistics, seeking a stronger foundation in statistical theory and methods to prepare for a career as a Data Scientist on Sandhills' Research & Development team. Even after only a year in the program, I returned to Sandhills as a Data Science intern last summer and was able to make meaningful contributions. My training in Experimental Design, Linear Models, and Bayesian Statistics directly supported improvements to the internal AI-powered chatbots in Sandhills' Retrieval Augmented Generation pipeline. My coursework in Mathematical Statistics and Statistical Computing allowed me to build a Lead Quality Meter to classify sales leads as high, medium, or low quality, ultimately increasing sales and reducing time spent manually routing clients. Sandhills Global is just one of many examples of employers who have benefited from statistics graduates from UNL. Alumni from this department are working in key roles at First National Bank of Omaha, Mutual of Omaha, Hudl, Nelnet, and many other large companies, applying their statistical training in ways that strengthen Nebraska's economy. Recruiting outside talent to Nebraska is already difficult; it is therefore imperative to prepare in-state graduates with formal, rigorous statistical training. Since UNL houses the only dedicated Statistics Department in the state, eliminating it would force future students to leave Nebraska to study statistics and would weaken the state's ability to meet growing workforce demands in agriculture, healthcare, business, and technology.
 > -- [Arian Alai, MS/Ph.D. student in Statistics](letters/Arian Alai-MSstudent.docx.pdf)

@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-e1615be2c113e74b0a69323fdd91d2e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -162,30 +165,41 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning for the Future</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-faculty-system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistics Faculty in the UN System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Statistics Faculty in the UN System</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-analysis-issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Problems with the Analysis of Research and Teaching Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Problems with the Analysis of Research and Teaching Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-metrics-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A Statistical Analysis of Metric Inputs and Calculations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">A Statistical Commentary on the Metric Inputs and Calculations</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2025-Stat-APC-report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2025-Stat-APC-report.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">2025-Stat-APC-report.html</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -227,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>We begin this section by acknowledging that it is <em>hard</em> to assemble fully correct data that correctly represents our department, and that the task to assemble all of the (correct) data for all departments and stand-alone programs on campus is indeed a difficult one. We teach several courses in our department which describe how to build a data pipeline, from collection to cleaning to visualization, and we believe having a resource on campus which can consult on these tasks is fundamentally important to both the research and administration of the university. Our students are taught to consider the impact of the decisions which are made during assembly of a data pipeline when conducting the resulting statistical analysis and whether numbers are comparable and not an instance of “apples” to “oranges”; it is this step that is most obviously missing from the metrics provided to APC to justify the budget reduction plan. The department would be more than happy to assist with future projects evaluating the performance of units across campus; integrating the methodology and data into a course as a service learning opportunity would have very real benefits. This data is both extremely interesting and provides an excellent demonstration of the importance of a variety of concepts from data documentation to reproducibility and the different varieties of messy data which often appear in real-world analyses.</p>
-<p>However, we would be remiss if we did not note that administration has access to resources which have not been made available to departments seeking to understand how the relevant metrics were assembled. Ultimately, these issues are not particularly relevant to the importance of the Statistics department within the University of Nebraska ecosystem, and so we will defer discussion of most of the issues<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to <a href="app-analysis-issues.html" class="quarto-xref"><span>Chapter 11</span></a>, which documents issues with the data itself, and <a href="app-metrics-analysis.html" class="quarto-xref"><span>Chapter 12</span></a>, which documents issues with the way variables were assembled and calculated.</p>
+<p>However, we would be remiss if we did not note that administration has access to resources which have not been made available to departments seeking to understand how the relevant metrics were assembled. Ultimately, these issues are not particularly relevant to the importance of the Statistics department within the University of Nebraska ecosystem, and so we will defer discussion of most of the issues<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to <a href="app-analysis-issues.html" class="quarto-xref"><span>Appendix B</span></a>, which documents issues with the data itself, and <a href="app-metrics-analysis.html" class="quarto-xref"><span>Appendix C</span></a>, which documents issues with the way variables were assembled and calculated.</p>
 <blockquote class="blockquote">
 <p><strong>Evaluation Metrics.</strong> As a social scientist who regularly constructs and evaluates composite indicators, I am dismayed by the metrics being used to evaluate programs during this budget reduction process. These metrics are inherently and irreparably flawed in their conceptualization, operationalization, and measurement. The inconsistent time frames across individual variables, the lack of weighting for different indicators, and discrepancies in the underlying data are just a few of the problems plaguing these metrics. These data are inadequate and misleading and should not be used for such high-stakes purposes, or, frankly, for any purpose.<br>
 Furthermore, this process has failed to engage experts on campus in identifying the individual metrics, operationalizing the variables, constructing the composite indicators, gathering the data, and analyzing and drawing conclusions from the data. This failure or unwillingness to engage with campus experts, including, most notably, faculty in the Department of Statistics who are now at risk of losing their jobs, is negligent. We all would take care to remember that quantitative metrics, if poorly conceived, are neither neutral nor “strategic.”… I encourage members of the APC and the Office of the Chancellor to draft and seek solutions that rely on accurate and well-conceived data, minimize disruptions to students’ degree completion and faculty members’ career paths, and ultimately break us out of this vicious cycle of continued budget reductions. – <a href="letters/Hillebrecht-PoliSci-UNL.pdf">Courtney Hillebrecht, Ph.D., Chair and Professor, Department of Political Science</a></p>
@@ -310,7 +324,7 @@ Table&nbsp;4.1: Academic Analytics weights used to evaluate statistics departmen
 <div id="fig-sri-percentile-all-depts" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sri-percentile-all-depts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="metrics_files/figure-html/fig-sri-percentile-all-depts-1.png" class="img-fluid figure-img" width="864">
+<a href="metrics_files/figure-html/fig-sri-percentile-all-depts-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;4.1: UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked. Where two SRI percentiles are provided (indicating different fields or different types of departments), the higher percentile is used for the ranking."><img src="metrics_files/figure-html/fig-sri-percentile-all-depts-1.png" class="img-fluid figure-img" width="864"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sri-percentile-all-depts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1: UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked. Where two SRI percentiles are provided (indicating different fields or different types of departments), the higher percentile is used for the ranking.
@@ -328,7 +342,7 @@ Figure&nbsp;4.1: UNL Units ranked by SRI percentile compared to peer departments
 <div id="fig-sri-by-class" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sri-by-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="metrics_files/figure-html/fig-sri-by-class-1.png" class="img-fluid figure-img" width="960">
+<a href="metrics_files/figure-html/fig-sri-by-class-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;4.2: Research performance (SRI percentile) of units by classification. UNL is performing extremely well compared to its peers and has better performance than many AAU institutions."><img src="metrics_files/figure-html/fig-sri-by-class-1.png" class="img-fluid figure-img" width="960"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sri-by-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.2: Research performance (SRI percentile) of units by classification. UNL is performing extremely well compared to its peers and has better performance than many AAU institutions.
@@ -343,7 +357,7 @@ Figure&nbsp;4.2: Research performance (SRI percentile) of units by classificatio
 <div id="fig-size-by-class" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-size-by-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="metrics_files/figure-html/fig-size-by-class-1.png" class="img-fluid figure-img" width="960">
+<a href="metrics_files/figure-html/fig-size-by-class-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;4.3: Size of Statistics-related Units at each institution. UNL is managing to handle all of its BS, MS, and PhD programs within a department that is extremely small relative to peer institutions at both R1 and AAU institutions."><img src="metrics_files/figure-html/fig-size-by-class-1.png" class="img-fluid figure-img" width="960"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-size-by-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.3: Size of Statistics-related Units at each institution. UNL is managing to handle all of its BS, MS, and PhD programs within a department that is extremely small relative to peer institutions at both R1 and AAU institutions.
@@ -1048,7 +1062,7 @@ What is missing from this view are any collaborations with members of the Statis
 <div id="fig-aca-collaborations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-aca-collaborations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/AcA-Collaborations.png" class="img-fluid figure-img" width="1822">
+<a href="images/AcA-Collaborations.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4.4: Network of collaborations by the members of the UNL Statistics Department with other units across UNL."><img src="images/AcA-Collaborations.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aca-collaborations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.4: Network of collaborations by the members of the UNL Statistics Department with other units across UNL.
@@ -1543,6 +1557,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
