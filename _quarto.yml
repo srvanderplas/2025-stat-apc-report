@@ -20,6 +20,9 @@ book:
     - app-analysis-issues.qmd
     - app-metrics-analysis.qmd
     - 2025-Stat-APC-report.qmd
+
+  downloads: [pdf]
+
 number-sections: true
 number-depth: 6
 toc-depth: 3
@@ -32,6 +35,7 @@ warning: false
 error: false
 echo: false
 
+format-links: [html,pdf]
 
 format:
   html:
