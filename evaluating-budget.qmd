@@ -1,0 +1,89 @@
+
+# Evaluating the Budget Proposal Realistically
+
+```{r}
+#| include: false
+library(rvest)
+library(xml2)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(tidyr)
+library(tibble)
+library(readr)
+library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
+theme_set(theme_bw())
+library(patchwork)
+library(forcats)
+```
+
+## Statistical Cross-disciplinary Collaboration & Consulting Lab {#sec-sc3l-budget}
+
+Let us consider the proposed scenario of retaining SC3L for providing statistical consultation to IANR faculty, staff, post-docs and students. 
+Currently, the SC3L is headed by a director who is a tenured associate professor of Statistics with more than 9 years of experience in consulting.
+There are 5 Statistics graduate research assistants who directly work with the clients. 
+These GRAs are senior Statistics PhD students who are required to take Stat 821, 822, 882, 883, 825 before they are eligible to receive the GRA; only the best students across these courses are selected to work at the SC3L. 
+Additionally, students enrolled in Stat 825 and Stat 930 play important supporting role in resolving the research problems that are brought to the SC3L. 
+Clearly, the SC3L is a **team effort** that requires that requires each member to have completed advanced Master or PhD level Statistics courses. 
+
+Eliminating the BS/MS/PhD programs in Statistics will also eliminate that team. 
+So, the SC3L cannot be retained in current form under the proposed elimination.
+
+
+What other forms of SC3L could be envisioned that operates with the same efficiency?
+
+- Hiring PoPs? 
+  - Between 2020-2025, the SC3L has served $\approx 131$ clients per year. This implies that the combined powers of a director and five graduate students can allocate about 3 days to each client. It is not feasible for a single PoP to take on the workload of the entire SC3L team. The number of meetings combined with the amount of non-meeting work (computer programming, checking models, writing reports) would make it impossible for one person to complete this work efficiently. 
+  - Consequences: The research conducted by IANR faculty, staff, post-docs, and students, as well as other units, will suffer. This will become an impediment to achieving the  "Extraordinary Research" ideal of Odyssey to the Extraordinary.
+  
+- One PoP and a team of graduate students? 
+  - The current plan eliminates the statistics graduate and undergraduate degree programs along with all of their core classes. Thus, there will be no graduate students in Statistics to staff the desk, and no courses to train these students (or students from other disciplines). Without training, this version of the SC3L would be ineffective. 
+  
+- Two POPs?
+  - This configuration has a better chance of achieving the same efficiency as we currently have, if we can acquire them. To solve the problems handled by SC3L, we need highly skilled statisticians with enough experience in handling different types of complex data. Such experience can come either through PhD training in Statistics or an extensive stint in industry (or both). A recent Ph.D. graduate is likely to be the most cost effective option. Even in the unlikely event that such a person could be recruited, how much would they cost? The American Statistical Association periodically publishes a salary survey among statisticians. From the last round of survey (circa 2021) it appears that an entry level statistics instructor (analog of PoP) costs [approximately 3/4 of the salary of an entry-level assistant professor in statistics](https://www.amstat.org/docs/default-source/amstat-documents/ycr-2021-2022-academicsalaryreport.pdf). Hiring 2 PoPs to manage an SC3L is equivalent to 1.5 FTE. The net 12 FTE savings is not realistic. 
+  
+It is more likely that the SC3L will require at least 1.5-2 FTE to maintain, even without the associated statistics department programs, leaving a cost savings of 11-11.5 FTE. 
+It is possible that these PoPs could be moved to soft money positions, like those in Biostatistics programs. However, our department went through a grueling hiring cycle to try to locate a tenured hard-money director of the SC3L and ended up hiring internally instead because we could not attract someone qualified. Based on that experience, we can confidently predict that IANR will not find a trained Ph.D. statistician who is willing to take a soft-money PoP role at UNL. 
+
+In truth, it will likely be hard to recruit *any* statistical expertise to UNL after the publicity surrounding this budget proposal. Statistics is an incredibly in-demand field, so who would risk moving to Nebraska if the university is not committed to the role of a statistics department at a public, R1, Big Ten, land grant institution? 
+
+## General Education Courses {#sec-fte-calc-teaching}
+
+Next, who teaches Stat 218, 380, 801, 802, and 870?
+
+Currently, the Statistics department offers approximately 17 sections of Stat 218 (8 in fall, 7 in spring, and 2 in summer), in addition to 6 sections of Stat 380, and two sections of 801 (with 2 sections of lab each) and 802. Stat 870 is offered less frequently, so we will exclude it from this analysis. 
+The courses identified to be kept require 25 sections across 4 preps; we estimate that this would require at least 3 professors of practice to teach (assuming a 4-4 load) which are not accounted for by the current budget reduction plan. 
+These FTEs would need to be subtracted from the savings listed, yielding only 9 FTE savings for cutting four programs (BS in Statistics, BS in Data Science from CASNR, MS in Statistics, and Ph.D. in Statistics). 
+
+We use professors of practice for this comparison rather than adjuncts both because it seems unlikely that 25 courses could be assigned to adjuncts with statistical training, given that most people with graduate degrees in Statistics can make more freelancing as data scientists than they would be compensated for teaching courses. 
+Certainly, it seems likely that the FTEs which are being eliminated will not be available to teach courses at adjunct rates. 
+
+The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include courses not identified by IANR, such as Stat 462 and Stat 463, which are required for the Actuarial Science degrees in Business and CAS. 
+Two additional Stat 300/400 level courses are required beyond Stat 380 for the Mathematics, Statistics, and Data Science focus area within the Math department. 
+The Digital Agriculture minor also requires Stat 151 and 251, computing courses developed for the Statistics undergraduate major. 
+The Agricultural Economics Ph.D. requires Stat 882, and the Finance Ph.D. requires 9 hours of graduate Statistics coursework (it is quite possible that Stat 882 and 883 would be preferable to 801 and 802 for Finance majors). 
+This analysis does not consider the fate of the Data Science programs in CAS and COE, which would lose between one and three courses in the data science core as well as the statistics focus area that is primarily made up of courses designed for the Statistics and Data Analytics major and the Statistics minor. 
+In order to support these additional courses, an additional professor of practice would likely be required, reducing the FTE savings from eliminating the department to 9, or 7 if the SC3L is kept as planned. 
+
+Calculations | FTE
+--- | ---
+Current Department FTE | 13
+FTE required for 218, 380, 801, 802 | -3
+FTE required for 151, 251, 462, 463, 882 | -1
+FTE required for SC3L | -2
+Total | 7
+
+## Grant Funding Losses
+
+Elimination of the department of Statistics will lead to the loss of already-promised federal funding from NSF and NIH, among others. 
+In total, there is about $1M of federal grant money that Statistics faculty have as PIs, as of October 2025.  
+Termination will lead to permanent loss of these research restricted dollars (a vital AAU metric).
+
+
+
+The net savings from eliminating the department -- even if current tuition revenues are not included and we only count the salary expenditures -- is only about $300K. 
+This is a completely reasonable amount to generate with only the current faculty, by overhauling the structure of our MS courses, increasing the number of majors in our SDAN program through outreach efforts, and differential tuition. 

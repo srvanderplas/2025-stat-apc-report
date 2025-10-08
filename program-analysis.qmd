@@ -1,0 +1,651 @@
+
+# Program Analysis {#sec-program-analysis}
+
+```{r}
+#| include: false
+library(rvest)
+library(xml2)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(tidyr)
+library(tibble)
+library(readr)
+library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
+theme_set(theme_bw())
+library(patchwork)
+library(forcats)
+```
+
+> UNL has the vision to invest in statistics for decades, having started with its roots in Biometry and mathematics, and creating a Department of Statistics. The department is an invisible backbone on your campus with an impeccable impact. It not only does its own fundamental research in statistics and data science, but also has a significant impact on the research and discoveries across the campus and across Nebraska. It is the only department in all of Nebraska that offers doctoral degrees in Statistics (UNMC offers a PhD in Biostatistics). My sincere concern is the irreversible damage a decision to abolish your statistics department will have not only on your campus, but also in the state of Nebraska. I just wonder as a Dean (not just as a statistician) whether the university is, unfortunately, killing the goose that lays a golden egg.
+> -- [Sastry Pantula, Dean, College of Natural Sciences, California State University](letters/Sastry Pantula UNL_Letter-1.pdf)
+
+## APC Criteria
+
+The APC procedures specify criteria for the reduction or elimination of academic programs. 
+We will address each set of criteria separately to both show that the criteria in support of reduction or elimination are not met and to show that the criteria indicating that elimination is inadvisable are satisfied. 
+These are taken from APC [Criteria for program evaluation](https://apc.unl.edu/procedures-be-invoked-significant-budget-reallocations-and-reductions/criteria/). 
+
+### Addressing the Criteria in Support of Reduction
+
+>  1. The program's present and probable future demand is insufficient to justify its maintenance at existing levels of support. Insufficient demand may be indicated by significant decline in one or more of these areas over a protracted period:    
+> 
+>    1. the number of completed applications for admission to the program;
+>    2. the student credit hours generated in lower division, upper division, professional, and/or graduate level courses in the program;
+>    3. the number of students who complete majors or degrees in the program;
+>    4. in the case of instructional programs designed to prepare graduates for specific employment, the market demand for graduates of the program;
+>    5. in the case of service programs, the level of demand for the service provided;
+>    6. in the case of research programs, the quality and quantity of research being conducted;
+>    7. in the case of research programs, the level of external funding, given the relative availability of funds.
+
+Of the fastest growing occupations identified by the Bureau of Labor Statistics, Data Scienctists, Actuaries, and Operations research analysts are 4th, 8th, and 9th, respectively. All involve statistical training, and many data science jobs would have been advertised as requiring a statistics degree even 5 years ago. However, even if we confine ourself to Statisticians, the BLS expects 9% growth in statistics positions over the next decade, which is considerably faster growth than most other professions. 
+Thus, we can see that the market demand for graduates of our programs at all levels is there. 
+In addition, while statistics does not pull in grants which are comparable in size to those in lab-based sciences that require laboratory equipment, AI is one of the stated research priorities of the current administration. 
+Most deep learning and large language models are built on a fundamental foundation of statistics. 
+
+> The number of U.S. undergraduates earning degrees in statistics has increased more than six-fold since 2010, with over 5,500 bachelors degrees awarded in 2023, with the number of institutions offering such programs nearly doubling over the same period (from 95 to 184). At the Master's level, statistics degrees have increased 150% since 2010 to 5,150 in 2023, while data science and analytics-related degrees increased an astonishing 15-fold to more than 12,000 in that period. The number of universities granting statistics and data-intensive degrees also grew from 70 to 300. These trends reflect the central role of statistics and data science in today's workforce; the financial benefit to UNL, Nebraska, and the overall U.S. economy cannot be overstated. 
+> -- [Brad Carlin, UNL Math & Statistics alumni, former faculty at CMU and University of Minnesota Statistics, President of Biostatistical Consulting](letters/CarlinBrad_10_2_25_Regents.pdf)
+
+While we are early in our undergraduate program, and have not yet existed long enough to graduate our first class, we expect that the increased demand for data scientists and statisticians should result in increased enrollment in the program over the near term, so long as we have sufficient support from the university for advertising and recruiting. 
+Of course, it is easier to recruit students when it is possible to make statements about graduates having found jobs, or continued on to graduate school. For instance, we can advertise our Ph.D. program by saying that all graduates have found employment in their field, whether in academia, government, or industry. 
+It is somewhat harder to recruit new students before the program has graduated its first class.
+This is one reason why the [NE Coordinating Commission for Postsecondary Education](https://ccpe.nebraska.gov/sites/default/files/AP_Guidelines_Review%20of%20Existing%20Instructional%20Programs.pdf) rules require a five-year period to evaluate program enrollment and graduation rates. 
+
+Given the demand for statistics and data science education, Criteria 1.1.1.1-7 cannot be used to support elimination of the department^[It will take some work to undo the damage from the public proposal to eliminate the program, but we believe the economic conditions are sufficient to make this a worthwhile investment for UNL. 
+@sec-future discusses several options for the future of the program which could mitigate this obstacle and could significantly improve enrollment in the program.]. 
+
+>  2. The program would normally be expected to be accredited but is not; or it is exposed to a substantial risk of loss of accreditation. If the program is not appropriate for accreditation, the program has been deemed to be of a quality or size that raises questions concerning its viability or continuation.
+
+The graduate statistics program at UNL has been increasing in ranking over the past 5-10 years. It is seen as a small-but-quality program within our discipline, and our graduates all get jobs working within their field of study, whether in industry, government, or academia. 
+
+Our undergraduate statistics program is known for having a high proportion of statistics coursework, which is why many of our current students selected this program over Data Science and over programs at other institutions. 
+While our undergraduate curriculum is still young, it was favorably evaluated at our last APR, which occurred before the first cohort started. 
+
+> "The undergraduate program plan is an outstanding one -- we are impressed by the vision and effort that has gone into this already. We think this is very important for UNL and the State of Nebraska, given the enormous demand for people who are highly trained in statistics. Based on what has been observed nationwide, we expect this program to grow very quickly -- potentially to hundreds of majors in the near future. Hence, developing and teaching thee courses, as well as addressing student advising needs will require considerable resources in terms of faculty and staff. It is important to be cognizant of the amount of time and effort to build this program. We note that three members of the external review team are in large statistics departments that have many more tenure-track faculty and teaching faculty than Statistics at Nebraska. Even with our resources, we have found it to be a challenging undertaking to find the people hours necessary to build new majors." - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+Thus, we do not believe criteria 1.1.2 applies to the statistics department; it should not be used to support our elimination. 
+
+
+> 3. The program's productivity relative to the university's investment in faculty, staff, and equipment, facilities, or other resources has declined significantly.
+> 
+>    1. In the case of instructional programs, a significant decline in productivity might be indicated by a decrease in the generation of student credit hours of all courses per full-time equivalent (FTE) faculty over the past five years relative to UNL enrollment trends and by a low level of student credit hours per full-time equivalent (FTE) faculty in comparison to that of UNL's peer institutions and/or similar programs at UNL.
+>    2. In the case of non-instructional programs, productivity shall, where possible, be measured in terms of units of output appropriate to the program's mission.
+
+```{r}
+#| label: fig-instructional-sch-fte
+#| fig-cap: "The department's instructional SCH generated between 2020 and 2024 has not significantly decreased (a horizontal line can easily be drawn across the standard error band, indicating that the slope of the line is not significantly different from zero). The SCH per teaching FTE has stayed almost constant over the 5-year period evaluated in the budget process. Meanwhile, teaching FTE has declined, but the decline is also not statistically significant. What seems clear is that any decrease in instructional SCH generated directly correlates to the decrease in teaching FTE. Thus, the department's instructional productivity has remained consistent despite introducing the Statistics and Data Analytics BS program in 2022 and the Data Science BS program(s) across colleges in 2023."
+#| fig-width: 8
+#| fig-height: 3
+metrics <- read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet= "Detail")
+filter(metrics, department == "Statistics", college == "CASNR") |>
+  select(acad_end_year, instructional_sch, teaching_fte = appointment_apportionment_percent_teaching_fte) |>
+  mutate(sch_per_teaching_fte = instructional_sch/teaching_fte) |>
+  pivot_longer(-acad_end_year, names_to = "metric", values_to = "value") |>
+  ggplot(aes(x = acad_end_year, y= value, color = metric)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  ylab("") + 
+  facet_wrap(~metric, scales = "free_y") + guides(color = "none") + ylim(c(0, NA)) + 
+  geom_vline(aes(xintercept = 2022), linetype = "dotted") + 
+  annotate(geom = "text", x = 2022, y = 0, label = "SDAN BS program begins")
+
+```
+
+Figure @fig-instructional-sch-fte shows that the instructional productivity of the statistics department has not effectively changed (panel 2) over the 2020-2024 period. 
+We suspect that this quantity is likely to actually increase if numbers from 2024-25 and 2025-26 were included, as our programs are maturing and we have taken steps to increase class size and instructional efficiency since our new chair was hired in Summer 2024. 
+None of these changes are reflected in the assembled metrics. 
+
+However, we are not just an instructional program - we also have research, extension, and collaboration/service missions. Our productivity in these areas has also not decreased relative to the number of people in the department and their time in rank -- it is normal for younger faculty to have fewer collaborative relationships, as these develop over the course of a career and can require a significant years-long investment before meaningful products such as co-authored papers are produced.
+
+On any of these criteria, however, the department's productivity has remained high relative to the standards of our field. 
+Thus, we do not believe criteria 1.1.3 apply to our department. 
+
+>    4. The instructional productivity of a program is substantially less than the average for UNL as a whole. The level of instruction and the mode of instruction appropriate to the program shall be considered, including particularly the average number of contact hours carried by the faculty.
+
+The instructional productivity of the department has increased significantly in the past year as the department increased section sizes for Stat 218, reducing the number of Statistics students funded through teaching. 
+However, these changes are not included in the instructional metrics, because that data is more than a year old. 
+In addition, there are expected inefficiencies that occur at the beginning of a new program - initial classes are small and are expected to grow (if the program is given adequate support). 
+Our instructional efficiency is comparable to other departments with similar profiles, such as Mathematics: we have graduate students who assist with teaching general education courses, but major courses are primarily taught by faculty. 
+
+>    5. The program's reduction or elimination will not substantially impair the viability or quality of other UNL programs.
+
+The elimination of the statistics department **will damage** the viability of programs in Actuarial Science, Data Science, Agronomy, Agricultural Economics, and others, as shown in @tbl-stat-courses-reqd. 
+
+```{r}
+#| label: fig-stat-courses-majors
+#| fig-cap: "Statistics course average enrollment by major/nonmajor. Agronomy students . Stat 218 and 380 have been omitted to make comparisons easier. Many statistics courses serve students across a variety of outside programs."
+#| fig-width: 8
+#| fig-height: 5
+
+
+enrollment_counts <- read_xlsx("data-analysis/data/Enrollment Counts.xlsx", col_types = c("text", "numeric", "numeric", "numeric", "numeric", "text", "skip", "skip", "skip", "skip"))|>
+  select(Course:Agro) |>
+  rename(Agronomy = Agro) |>
+  mutate(Course_Number = str_extract(Course, ".*(\\d{3}).?", group = 1),
+         Course_Number = as.numeric(Course_Number)) |>
+  mutate(Graduate = Course_Number > 500) |>
+  mutate(Course = str_replace(Course, "\\.0$", ""))
+
+colors <- c("Stat" = "grey", "Other" = "#619cff", "Agronomy" = "#00ba38")
+
+ug <- filter(enrollment_counts, !Graduate) |>
+  group_by(Course_Number) |>
+  summarize(years = n(), Count = sum(Count, na.rm = T), NonMajor = sum(NonMajor, na.rm = T), Agronomy = sum(Agronomy, na.rm = T), Stat = Count - NonMajor, Other = NonMajor - Agronomy) |>
+  select(Course_Number, years, Stat, Other, Agronomy) |>
+  pivot_longer(-c(Course_Number, years), names_to = "Major", values_to = "Count") |>
+  mutate(Per_Year = Count/years,
+         Major = factor(Major, levels = c("Stat", "Agronomy", "Other" ), ordered = T)) |>
+  ggplot(aes(x = factor(Course_Number), y = Per_Year, fill = Major)) + 
+  geom_col(position = "stack", color = "black") + 
+  scale_fill_manual("Program", values = colors) +
+  ylab("Average Enrollment (Total Enrollment/# Years Offered)") + 
+  xlab("Undergrad Courses") + 
+  ylim(c(0,100)) + 
+  guides(fill = 'none') + coord_flip() + 
+  annotate(y = 50, x = "494", label = "462/463: MATH/ACTS students", geom = "text", vjust = 0.5, hjust = 0)+ 
+  annotate(y = 50, x = "318", label = "318: STAT minors & Data Science majors", geom = "text", vjust = 0.5, hjust = 0)
+
+grad <- filter(enrollment_counts, Graduate) |>
+  group_by(Course_Number) |>
+  summarize(years = n(), Count = sum(Count, na.rm = T), NonMajor = sum(NonMajor, na.rm = T), Agronomy = sum(Agronomy, na.rm = T), Stat = Count - NonMajor, Other = NonMajor - Agronomy) |>
+  select(Course_Number, years, Stat, Other, Agronomy) |>
+  pivot_longer(-c(Course_Number, years), names_to = "Major", values_to = "Count") |>
+  mutate(Per_Year = Count/years,
+         Major = factor(Major, levels = c("Stat", "Agronomy", "Other" ), ordered = T)) |>
+  ggplot(aes(x = factor(Course_Number), y = Per_Year, fill = Major)) + 
+  geom_col(position = "stack", color = "black") + 
+  scale_fill_manual("Program", values = colors) +
+  ylab("Average Enrollment (Total Enrollment/# Years Offered)") + 
+  xlab("Graduate Courses") + 
+  ylim(c(0,100)) + 
+  theme(legend.position = "inside", legend.position.inside = c(1, 1), legend.justification = c(1.01, 1.01)) + coord_flip() + 
+  annotate (y = 25, x = "811", label = "811/812: Teacher Education", geom = "text", hjust = 0, vjust = 0) 
+
+# enrollment_counts |> group_by(Graduate) |> summarize(courses = length(unique(Course_Number)))
+
+ug + grad + plot_layout(widths = c(16, 18), axes = "collect") + 
+  theme(legend.position.inside = c(1, 1))
+```
+
+In addition, specific graduate statistics courses other than Stat 801/802/870 are often required by committees in Agronomy, Engineering, and other disciplines.
+
+> My background is in quantitative genetics and plant improvement—I owned my own company for 30 years, worked for a multi-national corporation, and spent nearly 7 years as a faculty member in the Department of Agronomy and Horticulture... The proposal to eliminate the Department of Statistics at UN-L will deliver a severe blow to all the biological sciences at UN-L, but especially the Plant and Animal Sciences graduate programs (who already collaborate extensively to offer many courses together in these statistically related disciplines). It will effectively eliminate our ability to offer most graduate degrees in these disciplines, or relegate our graduate programs to the "minor leagues."
+> -- [Thomas C. Hoegemeyer, Ph.D.](letters/ThomasHoegemeyer.pdf)
+
+It is clear that the current proposal to eliminate all statistics courses on campus other than 218, 380, 801, 802, and 870 will dramatically hurt programs across campus. 
+Thus, under criteria 1.1.5, the program elimination cannot be justified. 
+
+
+>    6. The program's contribution to the UNL missions of instruction, research, and service is sufficiently marginal not to justify maintenance of its present size.
+
+The Statistics department at UNL has around 13 FTE, and yet manages to offer a BS, MS, and Ph.D. program, undergraduate and graduate minors, and a large number of courses which are required or necessary for other degree programs. 
+This contribution to the teaching mission of the university is significant.
+
+However, the contributions of the statistics department extend to the research mission as well, though in statistics these contributions are considered service rather than research.
+While we train graduate students from other disciplines, we also have collaborations across campus, assisting other faculty and graduate students with their research.
+Many of these collaborations are not documented in coauthored papers or grants, because statisticians view collaboration and consulting as part of the job, and as long as it isn't a commitment involving large amounts of time (say, more than 1 day/week), we do not usually require compensation and simply hope that the collaboration will eventually lead to coauthored papers.
+
+Up until this budget reduction proposal, this "unseen" component of faculty labor seemed to be well understood in IANR, and was also reflected in P&T evaluations of statistics faculty. 
+Faculty in Statistics have helped to design extension web applications to share research findings from Biosystems Engineering with farmers, assisted with the visualization of observational data in Animal Science, discussed visualization methods with qualitative researchers in CEHS, and more. 
+
+In addition to those contributions to other disciplines research, research in statistics has the potential to impact both our field and other fields in interesting ways. 
+Statistics faculty regularly publish software packages to make our methodological research available to others.
+Some of the packages available on CRAN (a software repository for R statistical software) authored or coauthored by UNL faculty include: `GGally` (103,575), `bulletr` (294), `cmcR` (483), `cmpsR` (317), `ggmosaic` (16,697), `ggparallel` (1,245), `ggpcp` (6,376), `lvplot` (3,511), `nullabor` (8,086), `productplots` (16,266), `qqplotr` (24,677), `rotations` (748), `toolmaRk` (213), `x3ptools` (1,379), `ggenealogy` (332), `highlightr` (176), `dmtl` (271), `tidychangepoint` (231). 
+Numbers shown in parentheses are the 30-day download counts as of October 4, 2025 from CRAN repositories (additional downloads may have occurred via GitHub). 
+
+Section @sec-metrics-research details our research ranking compared to other statistics departments among AAU universities. 
+It is clear that our department is punching well above our weight per FTE across many different dimensions of the teaching, research, service, and extension missions at UNL. 
+We have been, for several years, the "little department that could". 
+As a result, we do not believe criteria 1.1.6 applies to our department either. 
+
+
+
+
+### Addressing the Criteria Indicating that Elimination is Inadvisable
+
+>    1. The program has achieved a national or international reputation for quality as indicated by objective evaluations.
+
+The UNL statistics department is recognized by many leading statisticians as a small, but powerful program:
+
+- "The department is highly visible, and internationally recognized for its contributions
+to education and both collaborative and methodological research. At a time when the amount of
+data is exploding and misinformation is spreading across the internet (and increasingly, even being
+promoted by some of our own elected leaders), the need for UNL to be a leader in the promotion
+of statistical literacy is more acute than ever." -- [Brad Carlin, UNL Math & Statistics alumni, former faculty at CMU and University of Minnesota Statistics, President of Biostatistical Consulting](letters/CarlinBrad_10_2_25_Regents.pdf)
+
+- "The University of Nebraska has a distinguished record, which I believe must not have been adequately captured in whatever statistics you may have been given; and their work has been valuable to me personally. In fact, during the pandemic, I spent a great deal of time studying publications from the University of Nebraska's Statistics Department. I later invited faculty members from University of Nebraska to speak at the Stanford statistics seminar and also arranged meetings with people in the health sciences industry who were interested in using group testing ideas from which the Statistics Department of the University of Nebraska is a pioneer to solve an urgent problem — scaling Covid tests to larger user populations when few PCR machines are available. This type of work will be essential the next time we have new public health emergencies." -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+- "This is a small but globally impactful unit that significantly enhances the university's reputation." -- [Dianne Cook, Professor of Statistics, Monash Business School. ASA Fellow, R Foundation Board Member, International Statistical Institute Member](letters/DiCook.pdf)
+
+- "UNL Statistics has made significant contributions to the field, and includes several highly-influential researchers whose work has had a profound impact. I have personally worked with two of your faculty — Professor Heike Hofmann and Professor Susan VanderPlas — of whom I have the highest respect. Professor Hofmann is a leading figure in data visualization, whose work has shaped how data is presented and understood globally. Professor VanderPlas is a rising star in statistical computing and statistical graphics, who recently won a prestigious NSF career award." -- [Rob Hyndman, Professor of Statistics and former Chair, Department of Econometrics & Business Statistics, Monash University](letters/Rob_Hyndman.pdf)
+
+- "I visited UNL this summer as Program Chair of the IISA 2025 conference, a major international meeting that brought leading statisticians and probabilists to campus. I was struck by how lovely and modern the IISA 2025 venue was—the infrastructure was first-rate; I genuinely found myself wishing we had something like that at Columbia. Sourav Chatterjee (Stanford)— arguably the most influential probabilist/statistician of his generation—delivered a keynote, underscoring the scholarly profile UNL can attract. I met many members of your department; they were collegial, ambitious, and committed to elevating UNL's stature. In particular, Prof. Bertrand Clarke is a distinguished scholar whom I hold in the highest regard—an asset to UNL. The department is trying to grow; in a moment when Statistics, Data Science, and AI are central to society and the economy, abolishing a statistics department makes no sense." -- [Bodhi Sen, Professor and Chair, Department of Statistics, Columbia University](letters/Bodhisattva Sen.pdf)
+
+- "Statistics is a small department with outsized impact on IANR -- it is remarkable how much the department is accomplishing with the relatively small number of faculty." -- [2021 APR Team Report](documentation/2021-STAT-APR-Report.pdf)
+
+- "The undergraduate program plan is an outstanding one -- we are impressed by the vision and effort that has gone into this already. We think this is very important for UNL and the State of Nebraska, given the enormous demand for people who are highly trained in statistics." -- [2021 APR Team Report](documentation/2021-STAT-APR-Report.pdf)
+
+While the APR reports are the closest we can come to objective evaluations, the time period over which evaluations can be obtained is limited, given that we have not had an undergraduate program for very long. 
+The department's rating in US News and World Report is #66. 
+While USNWR uses methodology that has [frequently been criticized](https://www.insidehighered.com/opinion/views/2023/10/09/why-new-us-news-rankings-are-flawed-opinion), we provide information here because it demonstrates both the growth of the field and the increased perception of the statistics department. 
+In 2010, when rankings began for statistics programs, UNL was not listed (only 22 Statistics departments and 8 Biostat departments were included)^[USNWR does not archive past rankings, so this information was obtained from a contemporaneous [graduate cafe forum post](https://forum.thegradcafe.com/topic/12360-thoughts-on-new-rankings-for-stats-programs/), which is suboptimal but necessary for obtaining historical information.].
+In 2014, [UNL was listed as RNP (essentially, unranked)](https://web.archive.org/web/20170524203540/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4). 
+In 2018, [UNL was not listed at all](https://web.archive.org/web/20180525103026/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4) but the number of universities in the list had increased to 98 ranked statistics and/or biostatistics departments. 
+In 2022, [UNL was ranked 66th among 101 universities](https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings), indicating a steep increase in the perception of the department. 
+
+The rankings are updated every 4 years. 
+If UNL closes the statistics department, will it discover in May 2026 that we should have been a point of pride for the university?
+We strongly believe that under criteria 1.2.1, the department's reputation is sufficiently good to recommend against its elimination. 
+
+>    2. The program supplies significant instruction, research, or service that UNL is better equipped to supply than other colleges or universities.
+
+The UNL statistics program supplies instruction, research, and service to UNL which cannot be easily supplied by other universities. As the next point demonstrates, we are alone within the state of Nebraska in providing both graduate and undergraduate degrees in Statistics. 
+That is, the only other collection of a significant number of statisticians in the state is UNMC Biostatistics, but they fill a very different niche in the research ecosystem of the state and are ill-equipped to serve both the medical school and UNL researchers. 
+
+@tbl-stat-courses-reqd provides a list of degree programs which require statistics courses which will not be taught under the current budget plan. 
+@fig-stat-courses-majors shows the proportion of majors and nonmajors in statistics courses: the proportion of nonmajors is sufficiently high to demonstrate that we provide critical instruction for programs across UNL. 
+
+> [T]he decision to close the statistics department does not reflect that philosophy ["vertical cuts"], as the work of Statistics supports that of every other unit within IANR, and many across the university. The training and teaching provided by Statistics faculty is critical to the training of the vast majority of graduate students throughout IANR who work on projects relevant to agronomy, plant breeding, animal science, and value-added agriculture. 
+> -- [Professor James Schnable, Nebraska Corn Checkoff Presidential Chair, Department of Agronomy & Horticulture](letters/James Schnable.pdf)
+
+> The Statistics Department is irreplaceable. Its contributions span education, research, and economic development, touching every student, every faculty member, and every industry in Nebraska. Eliminating this department would harm education, cripple interdisciplinary research, weaken the state's workforce, and undermine Nebraska's ability to compete in the AI- and IT-driven economy of the future.
+> -- [Zhenghong Tang, Professor & Associate Dean for Research & Innovation, College of Architecture](letters/Zhenghong Tang-CRPchairUNL.pdf)
+
+We feel that both objective quantitative and subjective qualitative evidence supports the fact that the statistics department and its programs are essential to the university and the state of Nebraska.
+Thus, under criteria 1.2.2, the APC should recommend the department and its programs be retained.
+
+>    3. The program is the only one of its kind within the State of Nebraska.
+
+The colleges and universities in the state of Nebraska:
+
+School | Undergraduate | Graduate | Notes
+--- | --- | --- | ---
+Chadron State | [Minor](https://www.csc.edu/academics/mathematics/degree-programs--information/) |  | 
+Peru State | | | 
+UNK | [Minor](https://catalog.unk.edu/undergraduate/departments-programs/mathematics-statistics/statistics-minor/) | | 
+UNL | [BS](https://catalog.unl.edu/undergraduate/agricultural-sciences-natural-resources/statistics-data-analytics/#fouryearplanstext), [BS Data Science](https://catalog.unl.edu/undergraduate/agricultural-sciences-natural-resources/data-science/#majortext) | [MS](https://graduate.unl.edu/academics/programs/STAT-MS/), [Ph.D.](https://graduate.unl.edu/academics/programs/STAT-PHD/) Statistics | 
+UNO | [Stat Conc,](https://catalog.unomaha.edu/undergraduate/college-arts-sciences/mathematics/mathematics-bs/statistics-conc/) in Math degree | [MS](https://catalog.unomaha.edu/graduate/degree-programs-certificates-minors/data-science/#requirementstext) Data Science | only 6 hours of STAT req'd for either program
+UNMC |  | [MS](https://catalog.unmc.edu/graduate-studies/programs-requirements/msdegrees/mbios/), [Ph.D.](https://catalog.unmc.edu/graduate-studies/programs-requirements/phd/biostats/) in Biostatistics | 
+Wayne State |  |  | 
+Creighton | [BS Data Science](https://catalog.creighton.edu/undergraduate/arts-sciences/data-science/data-science-major/index.html) |  | 
+Doane | [BS Math and Data Analytics](https://www.doane.edu/programs/mathematics-data-analytics) |  | 
+Hastings College | [BS Actuarial Science](https://www.hastings.edu/academics/undergraduate-majors/mathematics/) |  | 
+Nebraska Weslyan | [BS Data Analytics](https://www.nebrwesleyan.edu/academics/majors-and-minors/mathematics-and-computer-science/degrees/data-analytics-ba-bs-0) |  | In-major courses offered fully remote through other institutions.
+Bellevue University | [BS Data Science](https://www.bellevue.edu/degrees/bachelor/data-science-bs/) | [MS Data Science](https://www.bellevue.edu/degrees/master/data-science-ms/) | Fully online, 36 hrs in-major
+College of Saint Mary |  |  | [Only Math BS](https://www.csm.edu/academics/arts-science/mathematics)
+Concordia University |  |  | [Only Math BA/BS](https://www.cune.edu/academics/undergraduate/mathematics/courses)
+Midland University |  |  | [Only Math BS](https://www.midlandu.edu/academics/luther-college-of-arts-sciences/mathematics/)
+Nebraska Methodist College |  |  | 
+Union Adventist University |  |  | [Only Applied Math BS](https://uau.edu/math)
+York University |  |  | [Only Math BA](https://www.york.edu/registrar/catalog/2023-2024-catalog.pdf#page=145)
+
+: Colleges and Universities offering undergraduate and graduate degrees in Nebraska. While some institutions offer programs in Data Science, UNL is the only university offering a BS, MS, or Ph.D. in Statistics. Institutions only offering theological degrees, medical degrees, or associates degrees have been excluded from this table to save space. {#tbl-stat-programs}
+
+@tbl-stat-programs demonstrates that UNL's statistics programs are unique within the state. 
+Other universities may offer programs in Data Science or Analytics, but these typically involve much less coursework in Statistics and will equip students for different jobs which focus on visualization or management of data rather than the analysis of data to produce useful insights. 
+@sec-ms-prog-analysis includes a discussion of how these undergraduate Data Science and Data Analytics programs actually drive demand for UNL's MS program, rather than competing with UNL's BS in Statistics and Data Analytics degree. 
+Clearly, under criteria 1.2.3, elimination of our department and its programs is inadvisable. 
+
+
+>    4. The program is an essential program for every university.
+
+Statistics programs and coursework are essential for every university with programs in science, technology, mathematics, and engineering; statistics coursework is also essential for developing quantitative reasoning skills in all undergraduate and graduate students. 
+
+>    5. The program's elimination would have a substantially negative impact on education and societal concerns in Nebraska.
+
+In an era of misinformation and "alternative facts", the quantitative reasoning skills students gain from statistics courses are of primary importance, helping students evaluate claims and evidence using the scientific method. 
+In addition, however, Nebraska's economy is at least significantly based on agriculture. 
+The digital agriculture revolution has begun, and requires many more individuals to have some familiarity with data analysis and statistical computing skills. 
+The digital agriculture minor at UNL requires three Statistics courses, two of which are primarily statistical computing. 
+If the statistics program were eliminated, the minor's curriculum would have to change, and would likely require at least 6 hours of coursework in computer science or the development of corresponding courses within CASNR, but without the expertise of the statistics faculty (several of us specialize in various aspects of statistical computing). 
+
+> Although I have no discipline expertise in those other departments, I do know that Statistics has an advantage that none of the others possess. Because I wrote in support of the Department's planned undergraduate program in February, 2021, I know that the first cohort of students is not expected to graduate until later this year or next. Evidence from our experience here at NC State University as well as from other math/stat/cs/quantitative departments across the United States, suggests very strongly that the nascent undergraduate program will grow by leaps and bounds. Simply stated, Statistics education and training is a growth industry and will be for some time (at least until AI replaces all of us). It strikes me as shortsighted to pull the rug out from under a program that in a few years time has very strong potential to be a dean's and provost's bragging point. In the four years since the decision was made to start the new undergraduate program, the reasons for doing so, the wisdom of doing so, and the ROI of doing so, have all strengthened considerably.
+> -- [Leonard A. Stefanski, Alumni Distinguished Professor, Statistics, NCSU](letters/Len Stefanski-NCSU.pdf)
+
+"Data Science" has likewise been a buzzword over the past decade, and the data science BS programs take approximately 1/3 of their coursework from Statistics. Data science without statistics has no Science -- statistics is the glue that holds the discipline together. The loss of the statistics department at UNL would seriously damage both the reputation of the program and the course offerings in Data Science, leading to difficulties across the College of Arts and Sciences and the School of Computing. 
+These programs are essential for Nebraska students to be able to obtain training in a growing field that is only more in demand as "AI" becomes the new buzzword. 
+Thus, under criteria 1.2.5, it is unwise to eliminate the statistics department. 
+
+>    6. The program's elimination would result in substantial loss of revenue currently derived from grants, contracts, endowments or gifts.
+
+The letters received during the APC feedback process make this argument better than we could: 
+
+> Disbanding the department incurs immediate costs such as teach-outs, redistribution of general education and graduate methods courses, and the loss of central consulting capacity. It also leads to longer-term reductions in tuition revenue and partnerships. Equally important, grant competitiveness impressively declines: NIH, NSF, and other agencies increasingly require statisticians as co-investigators and insist on prespecified analyses, rigorous design, and reproducible workflows. Proposals lacking these elements tend to perform worse, resulting in fewer awards and a smaller overhead base for the university in the future. In my experience, the lack of a statistician among the core investigators on a research grant has almost always been a notable weakness in every panel I have been involved with, even with the new grant format. 
+> -- [Michele Guindani, Professor, UCLA Biostatistics, ASA Fellow, ISI elected member, ISBA Fellow, past Editor in Chief of Bayesian Analysis, Statistics Membership Engagement Chair, AAAS](letters/Guindani_UCLAbiostat.pdf)
+
+
+> In addition, the Department of Statistics, both via teaching and consulting has been and continues to be an integral part of the research performed by IANR and the Beadle Center. These groups continue to garner a large share of the total research grants awarded to the University. Statistics faculty are consistently integral to the design, analysis, and interpretation of nationally important studies. If we are serious about remaining an "R1" university, much less regaining AAU status, we absolutely need these people, the courses they teach, and the help they provide. In my professional judgment this is best done by retaining a stand-alone Department of Statistics. The alternative is to hire MOST of these professors as faculty in other departments—they are integral to our success.
+>
+>My wife and I have donated nearly a million dollars to UN-L, and have helped raise millions more through the University of Nebraska Foundation—you are welcome to check with them. I see no reason to continue if UN-L can no longer have strong programs in these fields.
+> -- [Thomas C. Hoegemeyer, Ph.D.](letters/ThomasHoegemeyer.pdf)
+
+It is clear that the reputation damage to UNL from eliminating the department will increase the scrutiny of grants written by UNL PIs at NSF, NIH, and other federal agencies. 
+In addition, UNL alumni recognize that eliminating statistics has a profound effect on the competitiveness of UNL programs, and this will have an effect on donations through the NU foundation as well as direct donations to the university. 
+As such, criteria 1.2.6 supports APC recommending that UNL keep the Statistics department and programs intact. 
+
+>    7. The program represents a substantial capital investment in specialized physical plant or equipment that could not be effectively redirected to alternative uses.
+
+The Statistics program has invested significant sweat equity in developing our SDAN major, but we expect that this is not what the criteria refers to. 
+In reality, Statistics is relatively inexpensive for the value it provides to the university - we require only chalkboards, paper, computers, and coffee to function (and the university isn't expected to provide the coffee). 
+
+>    8. The program is central to maintaining the university's affirmative action goals.
+
+Statistics is an incredibly diverse field - unlike Mathematics and most other STEM fields, Statistics has an approximately even distribution of men and women.
+We also have considerable racial diversity in the field, which helps us to recruit graduate students who self-pay from other countries. 
+
+>    9. The program gives the University of Nebraska-Lincoln its distinctive character.
+
+UNL is well known for agronomy, engineering, and business programs, including prestigious programs such as the Raikes school. 
+All of these fields heavily depend on statistics, and require coursework in statistics as well as input from statisticians to successfully compete for research grants. 
+While the department may not give UNL its distinctive character, it functions as very necessary but often invisible structural support for a number of UNL's most distinctive programs. 
+As a result, under criteria 1.2.9, the department should not be eliminated. 
+
+### Addressing Criteria Indicating that Reduction is Inadvisable
+
+
+>    1. The program's nature is such that reduction would impair the critical mass necessary to have adequate quality.
+
+The statistics department is operating on the minimum FTE which could reasonably offer programs at the undergraduate, MS, and Ph.D. levels. 
+Any reduction in headcount would force the department to choose between the undergraduate programs that are predicted to increase the profitability of the department in the future, and the graduate programs that facilitate the consulting, service, and research missions of the department. 
+
+>    2. The program cannot be reduced without a substantial risk to accreditation.
+
+Statistics programs are not externally accredited, but criteria 1.3.1 addresses the risks of reduction to our programs. 
+
+>    3. Current projections indicate that demand for the program or its graduates will increase substantially within the next five years.
+
+Every external opinion suggests that BS programs in Statistics and Data science are experiencing increasing enrollment and that economic demand for graduates of these programs is also increasing. 
+We strongly believe that enrollment in the statistics and data science programs will increase once we begin graduating students and can advertise based on their job or graduate school placement. 
+However, we will acknowledge that there is some friction in offering our undergraduate program within the College of Ag Science and Natural Resources. Current students suggest that CASNR prerequisites and general education requirements are unappealing relative to the freedom of CAS and COE requirements, which may account for the low enrollment in CASNR's data science program. 
+
+> Indeed, workforce realities cut the same way. Student demand for statistics and data science is sustained and high, and employers across tech, biotech, finance, climate, and government hire at every degree level. Closing a department in the face of that demand misaligns the university with student interest and employers' need, ceding enrollments, tuition, and partnerships to peer institutions that are expanding, often by re-forming as "Statistics & Data Science" and integrating computation with inference.
+> -- [Michele Guindani, Professor, UCLA Biostatistics](letters/Guindani_UCLAbiostat.pdf)
+
+We think it likely that enrollment would be higher if our undergraduate program were located within the School of Computing (thinking back to the 1968 plan to create a School of Computing with Statistics and Computer Science departments) or within the College of Arts and Sciences^[An informal survey of current students suggests the CASNR general education requirements are perceived as less useful or relevant than similar requirements in CAS and COE.]. 
+Regardless, every expectation is that enrollment in our undergraduate programs will continue to increase for some time. Our graduate programs may increase in demand, but capacity will continue to be primarily determined by the number of faculty, as graduate students require a substantial investment of faculty time. 
+Thus, under criteria 1.3.3, reduction in the size of the department is inadvisable. 
+
+>    4. Scholarly research or creative activity of the faculty within this program, as shown by publications, creative productions, honors and awards, external funding, or other objective measure, is higher than others in the same or related peer disciplines.
+
+@fig-sri-by-class shows that UNL's statistics department has a scholarly research index (as computed by Academic Analytics) comparable to AAU universities and at the top of non-AAU R1 institutions. 
+This suggests that reduction is inadvisable under criteria 1.3.4. 
+
+
+## Effects of Proposed Cuts on Outside Programs
+
+> Statistics departments have been flourishing across the country. They are vital in terms of being at the foundation of Data Science. They bring in more external funding per capita than almost every department on a Liberal Arts campus. They provide support and an invaluable resource for research investigation across the entire institution. should be viewed as one of the most valued groups on the campus. I can assure you, speaking as a former Department chair and long time faculty member, that this is certainly the perspective of Duke University. ...    
+> This elimination decision, if enacted, would dismantle a vibrant department that has long served as a cornerstone of fundamental research in Statistics, interdisciplinary research, graduate education, and statistical consulting across the university and beyond. I strongly urge you to reconsider this drastic action.
+> -- [Alan E. Gelfand, James B. Duke Professor of Statistical Science and Professor of Environmental Science and Policy, Duke University.](letters/Allan Gelfand.pdf)
+
+### Mathematics
+
+[*This section was contributed by Alex Zupan, Undergraduate Chair, Mathematics, and Doug Pellatz, Senior Academic Advisor, College of Arts and Sciences*](documentation/Effects of Proposed Cuts to Undergraduate Program-Math.docx)
+
+Cutting the Department of Statistics will have significant and lasting effects on the undergraduate program in the Department of Mathematics.
+Elimination of courses will be most deeply felt by students majoring in CAS Data Science and by students pursuing the Statistics and Data Science Option and Mathematical Finance Option within the Mathematics major.
+We were relieved to see IANR's plan to continue to offer STAT 218, 318, 380, 462, and 463, which means there would be sufficient Statistics courses offered to complete the Data Science major and the Math major on the Mathematical Finance and the Statistics and Data Science options^[The public plan released by IANR does not include 318, 462, and 463, which have been identified as essential by CAS. As a result, there would not be sufficient Statistics courses to complete the Data Science major, or the Mathematics degree with  Finance or the Statistics and Data Science options.].
+However, the Statistical Modeling focus area of the Data Science major would likely need to be eliminated or greatly revised considering the proposed cuts. 
+There would also be far fewer Statistics course options available with the Statistics and Data Science option of the Math major.
+
+As of the beginning of the fall 2025 semester, a total of 26 students had declared a Math major within the Statistics and Data Science option, and 21 students had declared within the Mathematical Finance option.
+The number of students graduating in the former option has been continuously increasing since the introduction of this option in 2020.
+The CAS Data Science major has seen even more dramatic increases, with 17 declared majors in the fall of 2023, 59 declared majors in the fall of 2024, and 83 declared majors in the fall of 2025.
+The curriculum for these majors is well-balanced between Math, Computer Science, and Statistics courses, with input and shared leadership among all three departments, and we view this major as one of the most interdisciplinary majors in the university. 
+Losing the statistics department would be a significant blow to this valued interdisciplinarity.
+
+One motivating factor for the steep growth curve of the Data Science program is a strong positive jobs outlook.
+This field is highly regarded across disciplines.
+In a 2023 conversation with Stephen Cooper, the former Director of the Raikes program, he declared that within five years, he expected most Raikes students would have Data Science as one of their majors.
+Cutting one of the three pillars of the Data Science major would almost certainly hamper this growth.
+Students graduating within the Statistics and Data Science option of the Math major have thus far had excellent internship and career prospects.
+When they graduate, we ask students to fill out a voluntary exit survey, and in 2024 and 2025, students in this option have reported completing internships at companies such as Kiewit, 84.51°, the Federal Reserve Bank of Kansas City, and they report having jobs as data scientists, software engineers, and a number of other positions.  
+This field and its employment prospects are enjoying a wave of growth and popularity, and we can choose to grow with it, or we can hamstring our efforts with cuts that may ultimately prove to be shortsighted.
+
+Finally, we understand that statistics courses will continue to be taught at UNL, but we have grave concerns about the long-term ability of the university to attract high-achieving statistics faculty with modern knowledge about a quickly evolving field, the type of faculty members who can provide high-quality instruction to our majors and who have the expertise to lead undergraduate research projects in data science.  
+The department has been in conversations about our curriculum with Bill Anderson, a retired data science expert who held leadership positions at Microsoft, United Healthcare, and Ford, and who has consulted for senior design groups within the Raikes School. 
+In a recent meeting, Bill reported that the use of statistics in the real world is dramatically changing.  
+The meteoric rise of AI tools has enabled data scientists to implement new solutions with unprecedented speed, but according to Bill, these solutions require statistics for measurement – to determine to what extent new techniques are working and whether they are reliable, ethical, and fair – and the industry has not yet fully realized this need. 
+Our Data Science majors, with their unique synthesis of mathematical, computing, and statistical knowledge are well-positioned to be leaders in their fields upon graduating from UNL, and without a thriving Department of Statistics, we may not be able to continue making this assertion with confidence.
+
+### University-Wide Impact
+
+```{r}
+#| include: false
+library(readxl)
+teaching1 <- read_xlsx("data-analysis/data/2-Statistics Impacts - Teaching.xlsx", sheet = 1)
+```
+
+The statistics department teaches courses which are required for degree programs across the university. 
+
+> The plan proposes to strategically deploy a portion of state-appropriated funds to continue to offer: 
+> 
+> - Critical student competencies. Undergraduate and graduate students would continue to gain essential skills in statistics and data analytics for their future careers. We anticipate course offerings would include STAT 218, STAT 380, STAT 801, STAT 802, STAT 870, complemented by additional coursework in R programming, bioinformatics, computational biology, quantitative genetics/genomics, and data analysis interpretation and visualization offered through other units. 
+
+Unfortunately, the budget proposal has massively under-estimated the importance of statistics in curricula across campus, as shown in @tbl-stat-courses-reqd.
+
+```{r}
+#| label: tbl-stat-courses-reqd
+#| message: false
+#| echo: false
+#| warning: false
+library(magrittr)
+library(knitr)
+library(kableExtra)
+tmp <- teaching1 |>
+  set_names(c("Program", "Level", "College", "Classes")) |>
+  mutate(Level = str_replace_all(Level, c("Undergrad" = "UG", "Grad" = "G"))) |>
+  mutate(highlight = str_detect(Program, "Digital.Agriculture|Actuarial|Data.Science|Agricultural.Economics,.PhD|Finance,.PhD") |> as.numeric())
+
+select(tmp, -highlight) |>
+  kable(rownames = F, caption="Statistics courses required by other programs across campus. The budget proposal calls for maintaining some statistics courses; programs which require courses that will not be offered are highlighted.") |>
+  kable_styling(latex_options = "striped") |>
+  row_spec(which(tmp$highlight == 1), background = "yellow") |>
+  column_spec(1, width = "15em") |>
+  column_spec(4, width = "15em")
+```
+
+In addition to the listed courses, many graduate statistics courses are taken as electives (or graduate committee-level requirements) to ensure that students have appropriate quantitative training for their research topics and fields. 
+Courses like Stat 850 -- Computing Tools for Statistics -- teach R and python "data wrangling" skills, data visualization, reproducible research, and statistical simulation. 
+The undergraduate computing sequence, Stat 151, 251, and 351, are similarly useful across multiple disciplines, though these courses were developed for the statistics undergraduate program. 
+Relatively quickly after the courses were created, the Digital Agriculture minor was created with the requirement that students take Stat 151 and 251. 
+Similarly, we believe that Stat 349, Technical Skills for Statisticians, might be useful to students in Computer Science who need a technical writing course, though this potential was only identified recently, and we would need to get ACE 2 certification for the course.  
+
+Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. 
+Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. 
+The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician^[Nate Silver, Joint Statistical Meetings, 2013.]" have been uttered at different points as the phrase "data science" caught on. 
+
+The proposed budget reduction plan does not account for the costs of teaching Stat 218, 380, 801, 802, and 870. 
+Currently, some of these courses are taught by graduate TAs, who will no longer exist if the graduate program is closed. 
+The remainder of the courses are taught by Statistics faculty, who are slated to be eliminated as well.
+The one remaining head of consulting cannot physically teach all of the sections of Stat 218 which are currently taught, let alone teaching 380, 801, 802, and 870 on top of the Stat 218 courses.
+Stat 218 is taken by approximately 20% of undergraduates at UNL and is an extremely important course for building quantitative literacy among undergraduate students. 
+Without a plan to ensure that Stat 218 is taught by people who understand statistical pedagogy, this proposal will majorly weaken quantitative education at UNL and diminish the value of a UNL degree. 
+
+## Undergraduate Program
+
+At the request of the CASNR Dean, our department has implemented an undergraduate program in Statistics and Data Analytics (approved 2021, first cohort 2022) and is an important component of the undergraduate Data Science programs in CASNR, School of Computing, and the College of Arts and Science (approved 2022). 
+The undergraduate program requires 51 hours of statistics coursework, making it unique within the ecosystem of undergraduate statistics programs; this was a deciding factor for several of our current students who chose UNL over other universities offering statistics degrees. 
+
+The department has developed the new courses for this program^[Course development has occurred without course releases, representing a significant increase in effective teaching workload and requiring unpaid work during the summer and winter breaks to prepare 1-2 new preps every academic year for some of the faculty in the department.], and has implemented this program without any additional TT faculty or professors of practice positions intended to assist with the additional course load. 
+These additional courses may be reflected in the metrics in some ways -- it is possible that research output might have decreased slightly given the large increase in teaching and course design load, as was predicted by the review team in the 2021 APR if we did not continue to increase the department size to manage the increased course load. 
+
+> The main resources needed to implement the undergraduate Statistics and Data Analytics major and the forthcoming Statistical Data Science major are people and energy. The major requires the development of a considerable number of new courses. To develop these courses with only the existing faculty would require major sacrificees to faculty research programs and to their ability to collaborate with IANR and other faculty at UNL. New faculty will need to be hired to develop coursework for the majors.
+> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+However, we do not think that this is the case: research output in the department has been relatively steady over the last 5 years, and some of the faculty most burdened by course development have also had record numbers of publications accepted. 
+
+What is clear is that the additional resources promised by IANR to allow the department to successfully develop, deliver, and grow the undergraduate SDAN and Data Science programs never arrived. 
+Faculty have been so busy developing the courses to ensure that students can graduate on time that we have not had additional time or energy to devote to recruitment and outreach across campus. 
+The proposed elimination of our department sends signals across campus that:
+
+- new program development will put your department at risk during the inevitable next round of budget cuts, as the metrics won't account for the development of the program, and 
+- extending the department beyond current FTE on the promise of future resources is not a risk worth taking.
+
+New program development is an **investment** in the future of the university and an investment in the people of this state, which should pay dividends to the people of the state through increased economic activity, better educational opportunities, and increased quality of life. 
+Eliminating the statistics department before we can graduate our first cohorts of Statistics undergraduates is like buying a new stock offering high and selling during a dip, losing money and also the opportunity to capitalize on the gains as the stock matures. 
+
+
+> The development of new undergraduate majors is very important not only to UNL but more broadly to the state of Nebraska given the urgent need for highly trained statisticians and data scientists. Furthermore, this program will generate substantial resources for IANR; the department needs resources to develop, deliver, and grow these programs. 
+> - [2021 APR Report](documentation/2021-STAT-APR-Report.pdf)
+
+CCPE guidelines require that programs have been operating for at least 5 years (and more practically, 9 years) before evaluation, because 5-year graduation rates and cohort sizes are part of the evaluation criteria. 
+The Statistics BS program has only been operating for 3 years, making an evaluation of the program based on cohort sizes very premature. 
+
+> As you will be aware, the department has recently established an innovative undergraduate programme designed to train the computationally skilled applied statisticians and data scientists that the private and public sectors everywhere (in my experience) are trying to find. The first cohort will graduate soon. The department has significant expertise in this area, and your institution is about to see the benefits. 
+> -- [Thomas Lumley, Chair of Biostatistics, Professor of Statistics, University of Auckland](letters/Thomas Lumley.pdf)
+
+Many of the internal and external letters urged the university to reinvest in the statistics department. 
+
+> This is not the moment to dismantle capacity—it is the moment to strengthen it. UNL should not only
+preserve but actively invest in the Statistics Department, building on its proven strengths in data science, analytics, and applied research. Doing so will ensure that UNL fulfills its mission as a land-
+grant institution, supports Nebraska's industries, and positions the university for long-term success in an increasingly data-driven world.
+> -- [Zhenghong Tang, Professor and Associate Dean for Research and Innovation, College of Architecture](letters/Zhenghong Tang-CRPchairUNL.pdf)
+
+
+## Graduate Programs {#sec-ms-prog-analysis}
+
+UNL's MS program serves as an integral part of the ecosystem of statistics and data science in Nebraska. 
+
+
+> Doane has maintained a productive relationship with UNL's Statistics graduate programs. We utilize Dr. Chris Bilder's excellent textbook in our MTH316 Categorical Analysis course, and several of our alumni have successfully matriculated to your program. Two of our alumni will complete their master's degrees this spring, fortunately before any potential program closure. Three of our current seniors are planning to apply this spring, assuming the program remains available. Our successful alumni who completed UNL's Statistics program include these leaders, who have risen to the top of their organizations: 
+> 
+> 1. Billy Garver, UNL Statistics M.S., 2013, Chief Compliance Officer & Co-owner, Leibman Financial Services, Louisville, NE *Donated over $100,000 to Doane last year*
+> 2. Julie Couton, UNL Statistics Ph.D., 2017, Senior Data Scientist, Incredible Health
+> 3. Katie Kallenbach, UNL Statistics M.S., 2012, Statistician, USDA
+> 4. Zack Gabelhouse, UNL Statistics M.S., 2005, Director of Client Strategy, Deluxe Corporation
+> 
+> -- [Peggy Hart, Ph.D. Statistics, UNL. Associate Professor of Mathematics & Data Analytics, Doane University](letters/PeggyHart-UNLmathStatAlum_DoaneProf.pdf)
+
+
+UNL tried to establish a Ph.D. program for at least 50 years before it was actually established in 2003 with the formation of the Department of Statistics. 
+It is worth examining the motivating factors behind the creation of the Ph.D. program before examining the program itself.
+
+In the 1993 Biometry APR Self-Study, the following reasons were provided; they have been summarized here for brevity, but can be found on pages 28-30 of the [self-study report](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+- Graduate student recruiting: good students will want a program that offers a Ph.D. in addition to a M.S. 
+- Research efficiency: accumulated consulting-inspired research problems can be addressed by graduate students. 
+- Consulting efficiency: consulting-inspired research and methodology development fuels Ph.D. dissertations. In addition, graduate students can do statistical consulting, providing additional capacity. 
+- Teaching efficiency: Labs for graduate courses cannot be easily taught by MS students until they have taken the course. 
+- Faculty professional development: time constraints limit faculty ability to develop new areas of expertise.
+- Enhanced value of Biometry to IANR, UNL, and Nebraska. Statistical quality control improves economic efficiency. A Ph.D. program could make meaningful contributions to the state economy. 
+
+The graduate programs at UNL were motivated primarily by the consulting and service missions of the Biometry department. 
+Corresponding programs in Mathematics & Statistics on City campus provided the ability to get Math degrees with concentrations, focus areas, or minors in Statistics, and seem to have developed from demand rather than necessity. 
+
+If the department of Statistics is eliminated along with its programs, leaving only 1 FTE to do statistical consulting, that one person will very quickly find themselves inundated with more work than one person could do in a decade. 
+The consulting desk currently requires the support of 5 graduate statistics students who work at least 100 hours a week on consulting problems (the true total is likely higher). 
+
+In addition, development of new methodology in statistics and in applied domains including agronomy and animal science, the natural product of statistical consulting, will effectively cease.
+The current proposal indicates that Stat 801 and 802 will continue to be offered; these are the graduate courses which required graduate TA support in 1993 and still require that support today^[Under the current program, however, graduate statistics students no longer take Stat 801 and 802.]. 
+
+Our graduate students are extremely in-demand: to our knowledge, every MS and Ph.D. graduate in statistics has found work in their field, whether in industry, government, or academia. 
+Many of these students mentions feeling uniquely empowered to work in *many* fields using their Statistics degree.
+This sentiment goes back to John W. Tukey: ["The best thing about being a statistician," he once told a colleague, "is that you get to play in everyone's backyard."](https://www.stat.berkeley.edu/~brill/Papers/copssbrill.pdf).
+
+We feel that it is more effective to allow our graduate students and graduates to speak about the UNL Statistics program - it is well designed, though like any other program could use some updates, but it is far more important to show how effective it is at equipping students for careers in Statistics. 
+
+> When I graduated, I felt like a kid in a candy shop – I could take my newly acquired skills into literally any industry. I eventually landed in retail marketing. In my first job, even though my co-workers were all data analysts and modelers, none of them had a background in Statistics, so it was rewarding to help improve our processes with more statistically sound methods, improving turnaround timing, accuracy, and insights.
+> -- [Dana Cracker, MS Statistics (2008) from UNL](letters/DanaCraker-MSgrad.pdf)
+
+While the department has produced excellent researchers who are very well known in the field, these same graduates remember the department not only as laying the foundation for their academic and economic success, but for its supportive environment and mentoring. 
+While this quote is long, it is still only a fraction of the original letter, and the story is important for motivating the importance of statistics to this state as well as highlighting unique characteristics of this department's programs.
+
+> I would like to explain how the Department of Statistics transformed me—a first-generation college graduate and son of a living Nebraska veteran who has spent 49 years paralyzed—from a mediocre high school graduate to a full professor at an R1 university by age 38.    
+> ...    
+> As a Lincoln native, I was a first-generation college applicant with close to the bare minimum requirements to be admitted as an undergraduate student at UNL. I was fortunate to have Chapter 35 GI Bill benefits and a tuition waiver from the Nebraska Department of Veterans Affairs. This enabled me to fully dedicate myself to the fisheries and wildlife program within the School of Natural Resources. Very early in my undergraduate career, I realized two things. First, while I found the fisheries and wildlife undergraduate program fun, engaging, and beneficial, a career directly in that field was better suited for students with tremendous family support, both financially and in caregiving. Second, I could still do what I love —working on important environmental problems —and get paid well as a statistician. And so, I forged a path forward and created a program that should have but didn't exist at UNL. I took about a dozen statistics and related classes. I engaged with several current faculty members in the Department of Statistics, who were instrumental in ensuring I succeeded in upper-level and even graduate-level statistics classes during my undergraduate studies and helped with my UCARE project. I graduated in 2010 with Highest Distinction and 169 credit hours (enough for a triple major at most universities). But it was 2010, there was a financial crisis, no jobs and all I had was a nearly worthless degree in fisheries and wildlife. With little or no job prospects, I remember thinking that it sure would have been nice to have an undergraduate degree in statistics at UNL—something most other R1 universities have. Sure, I had an undergraduate experience that resulted in four published scientific papers, but having that statistics degree would have made me employable. I would also like to add that I did all this while being the sole caretaker for my father, the Nebraskan veteran who has spent 49 years paralyzed and still lives in Lincoln.    
+> ...   
+In what I can only describe as pure luck, UNL landed an NSF IGERT award in 2009, and I was fortunate to be selected to be part of that program. This was by far the best-paying "job" I could find at the time. This enabled me to obtain a graduate fellowship and pursue the first joint PhD in Statistics and Natural Resources Sciences, which I finished in three years and nine months. And again, I did all of this as the sole caretaker for my father, which included a gruesome injury that resulted in a leg amputation during my first year as a PhD student. I am truly grateful for the faculty of the Department of Statistics at UNL, who created an environment where I could thrive despite what was going on in my personal life.    
+> ...    
+> The rest of the story is short and academic. I would write my first 500+ page graduate-level textbook on Bayesian statistics by age 32, tenured at age 34, co-director of an institute at age 36, and full professor with 80+ published papers by age 38. While all of these personal boasts are research-heavy, I am most proud of my teaching evaluations and students. Statistics, unlike many of the undergraduate degrees offered at UNL, enables students from lower-and middle-class Nebraska families a path to an engaging, fun and well-paying career.
+> -- [Trevor Hefley, Ph.D. Statistics, UNL. Professor & Co-director, Institute for Digital Agriculture and Advanced Analytics, Kansas State University](letters/Hefley_PhDgrad.pdf)
+
+More recent graduates also highlight the local, national, and international demand for Statistics degrees and the economic success that comes along with a graduate degree from our department. 
+
+> I am a 2023 PhD graduate from the Department of Statistics at UNL. I earned my BS in Statistics in 2011, my MS in 2018, and finally my PhD in 2023. My connection to statistics goes back even further since my father worked as a Statistician for the Government of India for more than 35 years. This field has been an inseparable part of my life, and I owe much of my career success to the excellent training and mentorship I received at UNL. I currently work in the technology industry as an Artificial Intelligence engineer, building large-scale solutions that are used globally.     
+> ... 
+> Graduates of the department have consistently shown their value in the job market. Many of my peers went on to work for the US government, leading universities, major insurance companies, and global technology firms. Personally, I was able to intern at LinkedIn and IBM and later received offers from Meta, Adobe, Travelers Insurance, Liberty Mutual, Mutual of Omaha, and Hudl. These opportunities would not have been possible without the rigorous training I received at UNL. The department's track record in placing graduates in top positions is also a powerful tool for recruiting future students.
+> -- [Ved Piyush, Ph.D. Statistics (2023), UNL](letters/VedPiyushPhD.pdf)
+
+Our students are equipped to work as consultants, professors, and researchers across university systems. 
+
+> The Statistics Department played a defining role in my academic and professional journey. Through my time as a graduate student, I gained extensive teaching experience in undergraduate statistics courses, worked on consulting projects as part of my coursework, and received continuous support and mentorship from faculty. These experiences equipped me with the skills and confidence I now rely on in my career as an Assistant Professor of Statistics. Without the training and guidance of this department, I would not be where I am today.
+> -- [Aleena Chanda, Ph.D. Statistics (2025), Assistant Professor, Juniata College.](letters/AleenaChanda-PhDgrad.pdf)
+
+Our graduate students sometimes fall in love with the state and don't want to leave, finding jobs that enrich Nebraska's economy. 
+UNL's statistics programs directly counter "brain drain", providing local employers with an important source of trained professionals in in-demand fields. 
+
+> I am not from Nebraska originally and did not consider moving here prior to receiving an offer from the statistics department. However, once I got to Lincoln I not only learned a lot but fell in love with the area. I was thrilled when I got a job as a data analyst in Omaha. My employers told me that I was hired specifically because of my experience in the statistics department.    
+> ...    
+> I have never been surrounded by as many smart, caring, and hard-working people as I was in the Department of Statistics. Nearly all of these people, similar to myself, come from out of state, with many coming from out of the country. All of these people gave up their old lives to come be a part of UNL, the city of Lincoln, and the state of Nebraska. Without another program like ours in the state, they and future potential students will take their great talents elsewhere and contribute to the "brain drain" happening in Nebraska. I previously mentioned how much I love the area, but if this decision is finalized, I am concerned about the long-term outlook of the state and my future here.
+> -- [Ryan Lalicker, MS Statistics, 2025](letters/Ryan Lalicker-MSalum.pdf)
+
+Our department provides opportunities for students to get an education that will improve their economic prospects and the state's economy as well. 
+Statistics Ph.D.s working in industry have a median salary of \$195,000 ([ASA 2020 compensation survey](documentation/YCR-2020WorkandSalarySurvey.pdf), pg 13), while those with a M.S. working in industry have a median salary of \$150,000. 
+Getting a graduate degree in statistics can meaningfully change a student's economic outlook. 
+
+> Impact on graduate students    
+> I am a Nebraska native, who was able to attend UNL thanks to a Regents Scholarship. Without the grants and graduate assistantships I received through the Department of Statistics, I would not have been able to afford graduate school, and most likely would have left Nebraska. Instead, I discovered a passion for statistics and data science education because I was encouraged to experiment and take risks as an instructor. I built a career in academia and industry as a data science educator because of the opportunities I had at the department.
+> -- [Aimee Schwab-McCoy, Senior Manager for Content Authoring -- Data Science, Mathematics, and Statistics, Wiley](letters/Aimee Schwab-McCoy-Senior Manager-Wiley-UNL_grad.pdf)
+
+While not all of our statistics graduates stay in Nebraska, many go on to make important contributions in a variety of fields, including pharmaceuticals and drug regulation, that are incredibly important to ensuring quality of life for Nebraskans. 
+
+> As a graduate student (2005-2010), I was approached by my PhD advisor Walt Stroup, professor and Chair of the Department of Statistics at the time, with the opportunity to become a member along with him of the Product Quality Research Institute (PQRI) Stability Shelf Life Working Group (SSL WG) to expand their initial research on shelf life estimation. I accepted this opportunity and was able to work along with members of industry, academia, and FDA to assess the current methodologies for shelf life estimation of pharmaceutical products. This research led to my dissertation topic and completion of my PhD requirements.    
+> The UNL faculty's extensive knowledge and expertise proved vital in helping me communicate statistical aspects to the SSL WG, allowing me to bridge the gap between academic/statistical theory and real world problems in ways non-statisticians could understand. The opportunity to become a member of the SSL WG provided valuable experiences in collaborative research and impact outside the UNL community. 
+> The Department of Statistics provided me the academic background and developed my consulting skills, allowing me to analyze data from clinical trials and successfully explain statistical concepts to drug developers and researchers at Novartis. My education provided invaluable influence on my professional development and involvement in bringing several new drugs to market at Novartis.
+> -- [Michelle Quinlan, Ph.D. Statistics and Director of Biostatistics, Early Development Analytics, Novartis Corporation](letters/MichelleQuinlanPhDgrad.docx.pdf)
+
+Many students mention the consulting projects that helped them build the skills they rely on as professional statisticians, demonstrating that not only is SC3L important to the IANR research community and to many departments across UNL, but it is also an important component of our graduate training. UNL requires consulting training at both the MS and Ph.D. level, and these classes support the help desk while ensuring that every UNL graduate is prepared to collaborate and consult with non-statisticians, carefully applying statistical training to domain problems. 
+
+> During my time in the department, I benefited from exceptional faculty mentorship, rigorous training, and a vibrant intellectual community that continues to shape my work as a Biomedical Data Scientist at the University of Kentucky (UKY). My work colleagues and faculty mentor at UKY complemented my statistical consulting and collaboration skills, as well as the knowledge I learned on the statistics fundamentals. I would never have been in the place I was leaving graduate school if not for the support of the faculty in this department. Their comprehensive curriculum over the years, including experimental design, regression, multivariate, and categorical analyses, spatial and time-series modeling, and more, prepared students to enter the workforce with highly sought-after skills.
+> In addition to my own training, I contributed to the department's growth by working alongside Dr. Kathy Hanford, Dr. Reka Howard, Dr. Walt Stroup, and Dr. Bert Clarke to strengthen the Statistical Consulting and Cross Collaboration Lab (SC3L). The SC3L has become a cornerstone of research support across the university, assisting countless students and faculty in producing higher-quality, more rigorous research. Graduate students and faculty in the department have served as collaborators or consultants on hundreds, if not thousands, of research projects, theses, dissertations, and peer-reviewed manuscripts. These contributions are foundational to maintaining UNL's status as a top-tier R1 research university. Without this support, students across the university would lose access to critical expertise in applying statistical methods to their research. At the same time, aspiring statisticians would be deprived of the hands-on experience with real- world data and collaborative projects. This type of training is essential for their development as professionals and would disappear without the Department.
+> -- [Kelsey Karnik, Ph.D. and Biomedical Data Scientist, University of Kentucky](letters/Kelsey Karnik-PhDalum.pdf)
+
+Others highlight the importance of the mentoring and relationships built at UNL; these intangibles cannot be captured by metrics but are extremely important, both in demonstrating impact within a field, and in demonstrating the culture within the department. 
+
+> During my time at UNL, two professors in particular had a lasting impact on my career. Dr. Erin Blankenship, my first instructor at UNL and later my PhD advisor, sparked in me both a love of statistics and of teaching through her contagious passion and patient mentorship. She guided me through my dissertation with just the right balance of support and independence, and she remains a trusted colleague and collaborator to this day. I also had the privilege of learning from Dr. Chris Bilder, whose clear, detailed instruction provided a model of excellence in teaching. The courses I later developed at NKU in categorical data analysis and applied multivariate analysis were directly inspired by his classes, and I continue to draw on the foundation he built for me. Faculty like Dr. Blankenship and Dr. Bilder exemplify the kind of expertise and dedication that make UNL's statistics program so impactful, not only to students but to the broader academic community.
+> -- [Jacqueline Herman, Ph.D., Professor and Statistics Program Coordinator, Northern Kentucky University](letters/Jacqueline Herman.pdf)
+
+The mentoring and relationships continue to be important long after students have graduated, as they continue to talk with professors in the department about interesting problems they have encountered.
+
+> Beyond my initial education, the Statistics Department has remained an invaluable resource throughout my career. The ability to consult with my former professors when facing complex statistical challenges has been critical to my success. This ongoing support underscores the department's role not only in educating students but also in fostering a lifelong connection with alumni who contribute to society and the economy.
+> -- [Qingwen Zhao, MS Biometry, 1996. President AM Solutions, LLC](letters/zhao_MS.pdf)
+
+Statistics maintains joint degree programs with other disciplines, which provide students with the opportunity to pursue interdisciplinary studies during their graduate training as well as in their later careers. 
+
+> Statistics has been a cornerstone of my academic and professional growth. Pursuing a joint Ph.D. in Economics and Statistics gave me a deeper analytical foundation and sharper research skills than economics alone could provide. Because of this combined training, I entered the job market with a distinct advantage. Employers across sectors increasingly value candidates who can apply statistical reasoning to complex economic and policy questions, and this dual expertise opened opportunities that would not have been available otherwise.
+> Today, I serve as an external faculty member in a statistical consulting unit, even though my primary appointment is in a different college. This role allows me to collaborate across disciplines, demonstrating how statistical skills complement and enhance work in economics, business, the social sciences, and beyond.
+> From my experience, students who strengthen their analytical abilities through statistics are better prepared for the evolving workforce. The discipline fosters critical thinking, data literacy, and problem-solving—skills that are essential in research, industry, and government. When paired with fields like economics, these abilities create graduates who are adaptable and highly sought after.
+> -- [Mariana Saenz-Ayala, Ph.D. Economics and Statistics & Associate Professor of Economics, Georgia Southern University](letters/Mariana SaenzAyala - UNL grad.pdf)
+
+Our graduates often consider themselves part of the department even after they have graduated and begun professional careers, highlighting just how much of a community students have at UNL. 
+It is hard to rebuild this type of culture, but it is critically important both for student retention and for alumni fundraising once current students have gone on to get well-paying jobs. 
+
+> While I am sure that every other department on the chopping block is also defending their department relentlessly and is arguing as hard as we are, I hope you consider that the Statistics Department stands out among all the other departments on your list. The statistics department is the only department that fosters tools, research, and analysis, that will address emerging challenges in a data-rich world. Not to mention, the ever-growing fields like AI and Machine Learning that require a fundamental knowledge of Statistics and Data Science.
+> -- [Paulus Hermanto, MS Statistics, 2023](letters/Paulus Hermanto - UNL grad.pdf)
+
+Our current students gave up careers and stable employment to come to this department because of its reputation for excellence. 
+
+> I moved to the U.S. nearly two months ago to begin my Master's/Ph.D. in Statistics at UNL. Before coming here, I had a very stable life and a good job as a math teacher in Vietnam, where I had worked for 8 years. A lot of people asked me if it was worth it when I gave up a very stable job, good income, and familiarity to start over in a new country. But I persisted that my dream was to gain a deep knowledge and research skills in statistics. I believed that UNL was the right place to make that dream come true. I chose UNL over another school in Ohio that also offered me funding because I believed in UNL's reputation and commitment to excellence.
+> -- [Thu Dang, current MS/Ph.D. student](letters/ThuDang.pdf) (Ms. Dang began classes at UNL in Fall 2025)
+
+
+The community our students find in the department, and the traditions among the graduate students (such as the midwesterners taking everyone from tropical regions coat shopping in mid-October to ensure they are well equipped for winter) are very important parts of our departmental culture. 
+
+> As a first year, native Nebraskan PhD student in statistics I feel inclined to share my thoughts and feelings on the proposed budget cuts. I feel the proposed budget cuts would be a grave injustice not only for the faculty and students of statistics department but for the state of Nebraska as a whole. I have lived in Nebraska for the past 22 years of my life and have seen the impact which statistics and data driven solutions can provide.    
+>    
+> I already have a master's degree in mathematics from UNO and I received an internship at Smeal Fire Apparatus in Snyder, NE this past summer where I worked as a Supply Chain and Logistics intern. With my gained analytical experience I was able to create an automated vendor quality assessment system which in turn increased profitability for the company. This not only benefited me but because of what I did this helped us switch vendors and enable the shop to be able to meet quarterly goals which resulted in a plant wide bonuses. Not only did this leave a good impression with my superiors, but enabled two hundred fellow Nebraskans to have more money to spend in the economy of Nebraska. With a PhD in Statistics and a desire to stay in state after graduation more meaningful procedures would be created to continue to not only generate myself an income but help Nebraskan citizens. A PhD in Statistics would give me more skills to continue to do work like this for the industry throughout the state.    
+>    
+> However, not only have I seen the impact of statistics at my place of work but in the agricultural sector. My fiancee is from a farm and getting seeds which yield the best crops is a means to an income for her family. These seeds are developed in labs and tested. These results are verified and analyzed through statistical means. Cutting the statistics department would partially eliminate the state's ability to perform important agricultural analysis which improve the state's primary economic sector. Since UNL is the only university in the state with a PhD in statistics, eliminating people valuable to agricultural sector seems counterproductive to statewide economic hopes.    
+>    
+> If UNL cuts their statistics program I do intend to transfer to another Big Ten university. The reason I choose Nebraska is because of my personal ties to this state, my love of the genuinely caring helpful faculty, and the familial feeling on the third floor of Hardin Hall. Our department provides services to other departments including offering necessary classes to help others gain meaningful data driven insights along with analyses for others thesis's and dissertations. We collaborate across fields to further research at the Nebraska's only R1 institution. I believe our department is a crucial part to UNL's standing as an R1 institution and plays a vital role in getting Nebraska back into the AAU.
+> -- [Thomas Spoehr, MS/Ph.D. student in Statistics](letters/ThomasSpoehr_MSstudent.docx.pdf) (Mr. Spoehr started his coursework in Fall 2025)
+
+Ultimately, the graduate programs at UNL are increasing in visibility and in academic rankings not only because of the department's efforts to continuously improve our programs, but because of our graduates -- the relationships they built and the education they received through our programs is the foundation for a promising future, if the APC and Chancellor reconsider the proposal to eliminate the department. 
+
+> My experience at UNL was not only academically enriching but also personally rewarding. The friendships and professional relationships I built during my time there continue to support my career. Similarly, my fellow graduates share my view that the education we received was unparalleled, empowering us to excel as educators, researchers, and colleagues. I urge the university leadership to reconsider the elimination of the Department of Statistics. Preserving and strengthening this department is crucial for the continued success and excellence of UNL.
+> -- [Marina Ptukhina, Ph.D., Associate Professor, Department of Mathematics and Statistics, Whitman College](letters/MarinaPtukhina-StatPhDgrad-WhitmanU.pdf)
+

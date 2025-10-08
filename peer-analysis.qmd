@@ -1,0 +1,165 @@
+
+# Peer Analysis {#sec-peer-analysis}
+
+```{r}
+#| include: false
+library(rvest)
+library(xml2)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(tidyr)
+library(tibble)
+library(readr)
+library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
+theme_set(theme_bw())
+library(patchwork)
+library(forcats)
+```
+
+> The University of Nebraska-Lincoln's proposal to abolish its Department of Statistics and terminate all tenured and tenure-track faculty is a deeply alarming decision that threatens the integrity of a core STEM discipline. This move undermines the university's mission as a comprehensive, research-intensive, land-grant institution and contradicts the principles of academic excellence and innovation.
+> -- [David Matterson, Director, National Institute of Statistical Sciences](letters/DavidMatterson_NISS.pdf)
+
+
+```{r}
+#| include: false
+universities <- read_excel("data-analysis/data/University Statistics Departments.xlsx", sheet = 2) |>
+  mutate(Name=str_remove(Name, ", The$")|>
+           str_replace_all(" ?[,-]{1,} ?", " ") |>
+           str_replace_all("A & M", "A&M") |>
+           str_replace_all("St Louis", "St. Louis") |>
+           str_replace_all("Illinois Urbana Champaign", "Illinois at Urbana Champaign") |>
+           str_remove_all(" in the City of New York") |>
+           str_remove_all(".Seattle.Campus|.Knoxville|.Columbia|.Fort.Collins|.at.Raleigh|.College.Station|.Ann.Arbor|.Pittsburgh.Campus") |> 
+           str_remove_all(" and Agricultural & Mechani.*") |> 
+           str_remove_all("/Anschutz Medical Campus") |>
+           str_remove_all(" Main Campus$") |> str_trim()) |>
+  mutate(Public = str_detect(Classification, "Public"))
+universities <- universities |>
+  set_names(str_replace_all(names(universities), "[ /]", "_")) |>
+  mutate(Bachelors_Statistics = if_else(Bachelors_Statistics=="NA", NA_character_, Bachelors_Statistics)) |>
+  mutate(has_some_stat = !is.na(Statistics) | !is.na(Biostatistics) | !is.na(Data_Science),
+         has_non_biostat = !is.na(Statistics) | !is.na(Data_Science),
+         has_non_biostat_non_medical =  !has_non_biostat & is.na(Bachelors_Statistics))
+
+r1 <- filter(universities, R1)
+
+landgrant <- filter(universities, Land_Grant)
+big10 <- filter(universities, Big_Ten)
+aau <- filter(universities, AAU)
+pubaau <- filter(universities, AAU & Public)
+
+
+stat_acad_anal <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv") |>
+  mutate(institutionname=str_remove(institutionname, ", The$")|>
+           str_replace_all(" ?[,-]{1,} ?", " ") |>
+           str_replace_all("Carolina Charlotte", "Carolina at Charlotte") |>
+           str_remove_all(".Knoxville|.University.Park|.State.University.of.New.York$") |> str_trim())
+joint_data <- full_join(universities, stat_acad_anal, by = c("Name" = "institutionname")) |>
+  mutate(R2 = is.na(R1)) |>
+  mutate(R1 = if_else(is.na(R1), FALSE, R1),
+         Big_Ten = if_else(is.na(Big_Ten), FALSE, Big_Ten),
+         AAU = if_else(is.na(AAU), FALSE, AAU)) |>
+  select(Name, Classification:Statistics, unitname, everything()) |>
+  mutate(Bachelors_Statistics = if_else(Bachelors_Statistics=="NA", NA_character_, Bachelors_Statistics),
+         Bachelors_Statistics = if_else(Bachelors_Statistics=="TRUE", "Statistics", Bachelors_Statistics))
+
+```
+
+There is an incredible diversity of both names and structures for housing statisticians within units across R1 and AAU universities, as touched on by Len Stefanski, former chair of the NCSU Statistics Department (the oldest and largest department in the country). 
+
+> That is why the news that UNL was considering abolishing Statistics came as such a shock. Especially, in light of the overwhelming and pervasive interest in Data Science, Data Analytics, and related areas. Statistics is The Science in Data Science. It is incomprehensible that any scientific organization would want to back away from Statistics at a time when so many are increasing their investment in Statistics. There are very few major universities that do not have departments of statistics or departments of mathematics and statistics (and the trend among the latter is to separate out statistics from mathematics as Wake Forest University has done very recently). Many major universities have both departments of statistics and departments of biostatistics. The presence of statistics departments at so many major universities is due to the fact that great research (in any discipline) is not possible without statistics. In addition to the impact of statistics on research of all types, the demand for students with degrees in Statistics (undergraduate and graduate) has never been stronger, and their career prospects have never been greater.
+> -- [Leonard A. Stefanski, Professor, Department of Statistics, North Carolina State University](letters/Len Stefanski-NCSU.pdf)
+
+For the purposes of this analysis, there are two characteristics which seem to be particularly important: 
+
+- A group of statisticians located in the same department (whether that is called Statistics, Data Science, or Mathematics & Statistics), where 
+- The department offers programs in Statistics at the undergraduate or graduate level
+
+We exclude from this "big tent" biostatistics departments, not because they don't serve a similar role, but because many universities have both Statistics and Biostatistics departments^[The statistics department is typically on the main campus and the biostatistics department is typically located within the medical school organizational structure.], and so we track Biostatistics as a separate (but closely related) discipline. 
+Note that our approach differs from the Academic Analytics tracking of Statistics as a discipline, but the conclusions of this analysis are largely the same using either approach.
+
+## R1 Universities
+Of the `r nrow(r1)` R1 universities, 
+only `r sum(!r1$has_some_stat)` does not have a stand-alone statistics, biostatistics, or data science department.
+If we exclude biostatistics, only `r sum(!r1$has_non_biostat)` do not have a stand-alone statistics or data science department, and of these, `r sum(r1$has_non_biostat_non_medical)` are medical schools which do not grant undergraduate degrees outside of the health sciences^[R1 Universities offering non-medical undergraduate degrees without a Statistics or Data Science department: `r filter(r1, !has_non_biostat, !has_non_biostat_non_medical)$Name |> paste(collapse = ", ")`.    
+Medical institutions with only a biostatistics presence on campus: `r filter(r1, !has_non_biostat, has_non_biostat_non_medical)$Name |> paste(collapse = ", ")`]. 
+
+> Agencies such as NIH, NSF, USDA, and DOE expect a strong institutional presence in
+statistics when awarding large research grants. Eliminating the department will send a
+negative signal to funders, and the resulting shortfall in research funding will, over time, exceed the current budget savings.    
+> -- [Brani Vidakovic, Chair, Texas A&M and former Program Director, National Science Foundation](letters/LetterVidakovic_TAMU.pdf)
+
+## Land Grant Universities
+
+> Every flagship university should have a strong and visible statistics department. Statistics is not only a standalone field but also a vital support system for nearly every discipline on campus. A dedicated department fosters innovation in theory and methodology, equips students with critical skills that are increasingly in demand across industries, and strengthens the university's ability to contribute to research that addresses society's most pressing challenges. Maintaining, supporting and further investing in a statistics department is a clear signal of a university's commitment to excellence, interdisciplinary collaboration, and leadership in a data-driven world.
+> -- [Alexander Aue, Professor of Statistics, Program Director, Interdisciplinary Major in Data Science, UC Davis](letters/Alexander Aue.pdf)
+
+If we instead consider our `r nrow(landgrant)` land-grant peers, 
+all `r sum(landgrant$has_some_stat)` have a stand-alone statistics or data science department, and `r sum(is.na(landgrant$Biostatistics))` also have a biostatistics department. 
+That is, UNL would be alone among land-grant institutions if the proposed elimination of the Statistics department goes through. 
+Statistics departments are essential for state flagship land-grant universities that drive the economic progress of the state through research and innovation in both theoretical and applied fields. 
+We support research in departments across campus and fundamentally enable the university to fulfill the land-grant mission that was so central to our institution's founding.
+
+> Disbanding Statistics would immediately weaken UNL's standing as a comprehensive, research‐intensive institution. It would jeopardize collaborations across colleges, with federal agencies, industry, and other universities, and risk signaling a retreat from UNL's land-grant mission.
+> -- [Thomas Lee, Distinguished Professor of Statistics, UC Davis](letters/UNL_Statistics_Support_Letter_ThomasLee.pdf)
+
+## Big Ten Universities
+
+> Eliminating the department would not only discredit UNL's national reputation but also dismantle a critical hub for collaboration, teaching, and discovery. Thirteen out of fourteen Big Ten universities maintain stand-alone statistics departments because they recognize the strategic importance of the discipline. As a proud statistics major from one of those institutions, I can personally attest to the transformative value of a dedicated statistics department in shaping my own education and career, and in fostering a culture of analytical rigor, interdisciplinary collaboration, and continuous innovation. UNL's decision would set a dangerous precedent in which foundational academic units can be dismantled despite their centrality to institutional success and societal progress. 
+> -- [David Matterson, Director, National Institute of Statistical Sciences](letters/DavidMatterson_NISS.pdf)
+
+We should note that Dr. Matterson's statistics on Big Ten membership might be slightly out of date, but the conclusion is the same. Of the `r nrow(big10)` Big Ten universities, only University of Oregon does not have a cluster of statisticians on campus, and they are actively hiring statisticians to fill a School of Data Science. One additional university (Indiana) has proposed its Statistics department for elimination; however, according to Academic Analytics data, its department seems to have only 7 faculty and has an SRI percentile of 38.2. 
+
+## AAU Universities
+
+If instead we compare to the `r nrow(aau)` AAU universities,
+all `r sum(aau$has_some_stat)` have a stand-alone statistics, biostatistics, or data science department and only `r sum(!aau$has_non_biostat)` do not have a statistics or data science department^[AAU universities without a statistics or data science department: `r filter(aau, !has_non_biostat)$Name |> paste(collapse = ", ")`].
+
+Faculty outside the department of Statistics recognize the essential function we serve and the threat to the University's standing among its peers if the Statistics department is eliminated: 
+
+> Every AAU member university and every Big Ten university maintains a Department of Statistics (or an equivalent stand-alone unit) as a core component of their research infrastructure. Eliminating ours would immediately place UNL at a disadvantage relative to our peers and signal a retreat from the standards of excellence required for AAU membership.    
+> -- [David Hyten, Letter to APC](letters/Letter of support for Stats department_Hyten.pdf)
+
+And this assessment is shared by the chairs of other Big Ten statistics departments: 
+
+> Moreover, dissolving the Statistics Department will make it difficult, if not impossible, for UNL to achieve its goal of rejoining the Association of American Universities (AAU).
+> -- [Big Ten Statistics Department Chairs](letters/Big10_UNL_Letter.pdf)
+
+
+### Public AAU Universities
+
+The administration has defined the `r nrow(pubaau)` public AAU universities to be their preferred comparison group. 
+All `r sum(pubaau$has_some_stat)` have a stand-alone statistics or data science department (excluding biostatistics), and `r sum(!is.na(pubaau$Biostatistics))` also have a biostatistics department. 
+Thus, even if UNL and UNMC merge at some point in the future, we will be in good company among other public AAU institutions in having both a Statistics and Biostatistics department, as these serve different functions. 
+
+## Conclusion
+
+While it is often desirable to be unique in a field, eliminating the statistics department would be more akin to notoriety. 
+Statistics expertise is **essential** to the function of a modern R1 land-grant institution, particularly in a state where there is not another competing R1 institution which might serve researchers at both schools.
+We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its R1 status threatened.
+The proposed elimination of the department has threatened UNL's international reputation, but going through with that elimination would have dire consequences for the institution's standing among its peers.
+
+> Statistics is the backbone of modern research across all fields, from agriculture and medicine to engineering and social sciences. The expertise provided by statisticians is essential for designing experiments, analyzing data, and interpreting results. Without a dedicated Statistics Department, UNL will lose its competitive edge in research and innovation, and a fall in research quality and rankings is inevitable.
+> -- Rob Hyndman, Monash University, Australia. 
+
+The Statistics department has assembled letters from a truly international array of scientists and statisticians, each expressing opposition and confusion as to the elimination of the Statistics department. 
+Hungarian statisticians, Pakistani historians and statisticians, Australian professors, and a wide swath of very well known statisticians from AAU and R1 schools across the country have written letters on our behalf.
+They cite many obvious arguments: the increased demand for statistics degrees and a workforce with data manipulation skills, the importance of statistics to a research university, and the important of statistical education across many undergraduate and graduate degree programs. 
+Ultimately, the totality of these letters suggest that UNL will lose standing on the international stage, among its peers at land-grant universities, among Big Ten universities, and among the AAU member universities. 
+
+> You might be surprised to learn that while I'm a historian from Islamabad, Pakistan, the news of the proposed closure of the statistics department at the University of Nebraska (Lincoln) has also been making waves on my university's faculty groups and forums. I suspect that this proposal has created a global moment for the University of Nebraska (Lincoln), albeit one in which its decision-making does not seem consistent with the pursuit of learning for which the institution is otherwise known for.    
+> ...    
+> As strange as it sounds for a traditionally descriptive discipline like history, but the study of statistics is one of the vital elements in our understanding of how human societies have evolved. You might be familiar with Paul Kennedy's now classic study The Rise and Fall of the Great Powers or Peter Turchin's Ages of Discord (a structural and demographic analysis of US history), or any number of other works that deal with economic history (like Piketty's Capital in the 21st Century). These historical or philosophical studies draw upon statistical information and concepts to explain our past, our present, and our future.    
+>    
+> My own mathematics skills are rudimentary but thanks to countless statisticians, many of them based at universities and public sector organizations, and many more who produce vital work in the public domain, I can draw upon a range of insights that strengthen my discipline in numerous ways. I sincerely hope that your university will reconsider the proposed departmental closure and keep the statistics program going.
+> -- [Dr. Ilhan Naiz, Professor of History, Quaid-i-Azam University, Islamabad, Pakistan](letters/IlhanNiaz-Quaid-i-AzamUniversity.pdf)
+
+Statistics departments provide many services which are essential to modern research universities. 
+At UNL, the statistics department also provides unique, valuable, and essential programs within the educational ecosystem of Nebraska. 
+In addition, the department provides essential support for many other programs across the university. 
+These contributions are discussed in @sec-program-analysis.

@@ -1,0 +1,571 @@
+
+# Metrics {#sec-metrics}
+
+```{r}
+#| include: false
+library(rvest)
+library(xml2)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(tidyr)
+library(tibble)
+library(readr)
+library(ggplot2)
+library(knitr)
+options(knitr.kable.NA = '')
+library(kableExtra)
+library(readxl)
+theme_set(theme_bw())
+library(patchwork)
+library(forcats)
+```
+
+We begin this section by acknowledging that it is *hard* to assemble fully correct data that correctly represents our department, and that the task to assemble all of the (correct) data for all departments and stand-alone programs on campus is indeed a difficult one.
+We teach several courses in our department which describe how to build a data pipeline, from collection to cleaning to visualization, and we believe having a resource on campus which can consult on these tasks is fundamentally important to both the research and administration of the university.
+Our students are taught to consider the impact of the decisions which are made during assembly of a data pipeline when conducting the resulting statistical analysis and whether numbers are comparable and not an instance of "apples" to "oranges"; it is this step that is most obviously missing from the metrics provided to APC to justify the budget reduction plan. 
+
+The department would be more than happy to assist with future projects evaluating the performance of units across campus; integrating the methodology and data into a course as a service learning opportunity would have very real benefits.
+This data is both extremely interesting and provides an excellent demonstration of the importance of a variety of concepts from data documentation to reproducibility and the different varieties of messy data which often appear in real-world analyses. 
+
+However, we would be remiss if we did not note that administration has access to resources which have not been made available to departments seeking to understand how the relevant metrics were assembled. 
+Ultimately, these issues are not particularly relevant to the importance of the Statistics department within the University of Nebraska ecosystem, and so we will defer discussion of most of the issues^[Not all identified issues are outlined in those sections, because our priority is in preserving our programs and department rather than engaging in pedantry. We have opted to save resources and only detail the worst offenses in the data analysis which resulted in our unit being targeted for elimination.] to @sec-metric-problems, which documents issues with the data itself, and @sec-codebook-analysis, which documents issues with the way variables were assembled and calculated. 
+
+
+> **Evaluation Metrics.** As a social scientist who regularly constructs and evaluates composite indicators, I am dismayed by the metrics being used to evaluate programs during this budget reduction process. These metrics are inherently and irreparably flawed in their conceptualization, operationalization, and measurement. The inconsistent time frames across individual variables, the lack of weighting for different indicators, and discrepancies in the underlying data are just a few of the problems plaguing these metrics. These data are inadequate and misleading and should not be used for such high-stakes purposes, or, frankly, for any purpose.    
+> Furthermore, this process has failed to engage experts on campus in identifying the individual metrics, operationalizing the variables, constructing the composite indicators, gathering the data, and analyzing and drawing conclusions from the data. This failure or unwillingness to engage with campus experts, including, most notably, faculty in the Department of Statistics who are now at risk of losing their jobs, is negligent. We all would take care to remember that quantitative metrics, if poorly conceived, are neither neutral nor "strategic."...
+> I encourage members of the APC and the Office of the Chancellor to draft and seek solutions that rely on accurate and well-conceived data, minimize disruptions to students' degree completion and faculty members' career paths, and ultimately break us out of this vicious cycle of continued budget reductions. 
+> -- [Courtney Hillebrecht, Ph.D., Chair and Professor, Department of Political Science](letters/Hillebrecht-PoliSci-UNL.pdf)
+
+## Research {#sec-metrics-research}
+
+We start by acknowledging that clearly, quantitative measures were important in the decision to propose the elimination of our department. 
+However, that is not the only way to measure research effectiveness.
+
+> In my current work with Prof. Jennifer Clarke on an international project testing a phenotyping tool PlantEye from Phenospex campany for precision agriculture, I lead experimental design, training, and data collection, while Prof. Clarke will apply advanced statistical models to analyze the results. I have come to realize that working without expert statisticians is like trying to navigate a ship without a compass - the data may exist, but the path to meaningful conclusions is lost. Losing the Department of Statistics faculty would not only hinder these critical analyses but could compromise international collaborations and the opportunity to bring advanced phenotyping system to UNL, as the strength of these partnerships relies on statistical expertise. Beyond direct research collaborations, the departmental seminars have been invaluable for me as non-statisticians, providing the knowledge and confidence to apply statistical methods in my research and strengthen grant proposals.
+> -- [Dr.  Seema Sahay, Center for Plant Science Innovation](letters/PSI Support for Department of Statistics.pdf)
+
+---
+
+The Scholarly Research Index (SRI) is a measure developed by Academic Analytics 
+to evaluate the research performance of individuals and entities with respect to (1) scholarly products, such as conference proceedings, research articles, books, and book chapters, 
+(2) recognition from the community in form of citations and awards, and 
+(3) federal sponsoring of research projects measured by the number of grants and their amounts.
+
+Different disciplines operate differently. 
+The weighting of each of these measures is discipline specific (based on a factor analysis by Academic Analytics); the weights for statistics are shown in @tbl-metrics-aa-stat-weights.
+
+::: column-margin
+
+| Category    | Weight |
+|-------------|-------:|
+| Articles    | 18     |
+| Awards      | 19     |
+| Books       | 5      |
+| Chapters    | 5      |
+| Citations   | 20     |
+| Conf Procs  | 11     |
+| Grant $     | 22     |
+| Patents     | 0      |
+| Trials      | 0      |
+| **Total**   | **100** |
+
+: Academic Analytics weights used to evaluate statistics department research performance and impact. {#tbl-metrics-aa-stat-weights}
+
+:::
+
+UNL Statistics has (based on data through December 2023) an SRI of 0.4 based on all R1 and R2 institutions tracked by Academic Analytics. 
+Academic Analytics also offers the ability to compute an SRI based on a custom comparison group; using only AAU universities, the department's custom SRI is -0.1.
+
+Importantly, however, because SRI is the result of discipline-specific weights, it **cannot** be used as a faithful performance measure across disciplines directly. 
+Each discipline has different distributional parameters (mean and standard deviation) for the SRI values. Comparing across disciplines without accounting for these distributional differences is not only incorrect but extremely misleading. 
+Academic Analytics stresses the importance of [using the SRI (and any other metric) only for comparisons within taxonomy peers](documentation/Scholarly Research Index (Peer Analysis_Benchmarking) _ Portal Support.pdf). This is violated two-fold with the metrics used in the performance across units: departments are not at the same taxonomy level as stand-alone programs; and 'peers' are defined discipline specific. 
+The document further elaborates the method for aggregating faculty within units. The key step here is to "Calculate each faculty member's rank within the taxonomy, for each metric". The discipline specific SRI rank is directly related to the SRI percentile.
+
+@fig-sri-percentile-all-depts shows the SRI percentile for each department on campus when compared to other R1 and R2 departments. 
+While several departments which have been proposed to be eliminated are indeed performing below the median, many departments are also above-average in their respective fields. 
+We teach statistics students to carefully consider the appropriate comparison population and the real-world meaning of the numbers they use in analyses; it is important that UNL's administration does the same.
+After all, it is less important that Statistics publishes the same amount of papers or generates the same amount of grant funding as Physics, because grants in those fields cover different things (statisticians don't need particle accelerators very frequently) and publication norms are also different.
+What matters is whether departments are doing good work as measured by comparisons to the appropriate peers, both actual and aspirational. 
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-height: 10
+#| fig-width: 9
+#| fig-cap: "UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked. Where two SRI percentiles are provided (indicating different fields or different types of departments), the higher percentile is used for the ranking. "
+#| label: fig-sri-percentile-all-depts
+
+
+unl_depts <- read_csv("data-analysis/data/Institution - Comparing Units - Departments.csv")
+
+unl_depts <-unl_depts |> 
+  separate_wider_delim(
+    cols=Discipline, delim=" - ", names=c("Toss", "Focus"), 
+    too_few="align_start") |>
+  mutate(
+    Focus = ifelse(is.na(Focus), "Single Discipline", Focus),
+    short_name = gsub(", Department of","", Unit), 
+    short_name = gsub(",? (Johnny Carson )?School of","", short_name),
+    short_name = gsub(" Engineering", " Engr", short_name),
+    short_name = gsub(" Program", "", short_name)) |>
+  select(-Toss) # toss the left-over string
+
+
+unl_depts_sum <- unl_depts |> 
+  group_by(Unit,  short_name, `Number of Units`) |> 
+  summarize(`SRI Percentile` = max(`SRI Percentile`),
+            `SRI Rank` = max(`SRI Rank`)
+            ) |> 
+  ungroup()
+  
+eliminate <- c("Statistics", 
+               "Educational Administration", 
+               "Landscape Architecture", 
+               "Community and Regional Planning", 
+               "Earth and Atmospheric Sciences",
+               "Textiles, Merchandising, and Fashion Design")
+
+merger1 <- c("Agricultural Economics", "Agricultural Leadership, Education and Communication")
+merger2 <- c("Entomology", "Plant Pathology")
+
+
+unl_depts_sum <- unl_depts_sum |> 
+  mutate(Unit = reorder(factor(Unit), `SRI Percentile`, function(x) max(x))) |>
+  group_by(Unit) |>
+  mutate(sri_max = max(`SRI Percentile`)) |>
+  ungroup() |>
+  mutate(Quintile = cut_number((-1)*sri_max, 5),
+         Proposed = ifelse(short_name %in% eliminate, "Eliminate", 
+                           ifelse(short_name %in% merger1, "Merger1",
+                                 ifelse(short_name %in% merger2, "Merger2", "Not Mentioned")))) |>
+  mutate(rank_label = sprintf("%d / %d", `SRI Rank`, `Number of Units`))
+
+
+unl_depts_sum_dept_label <- unl_depts_sum |> 
+  group_by(Unit) |>
+  slice_max(`SRI Percentile`, with_ties = T) |>
+  select(Unit, Quintile, `SRI Percentile`, Proposed, short_name)  |>
+  unique()
+
+unl_depts_sum_label <- unl_depts_sum |> 
+  group_by(Unit) |>
+  slice_max(`SRI Percentile`, with_ties = T) |>
+  mutate(rank_label = sprintf("%d / %d", `SRI Rank`, `Number of Units`)) |>
+  select(Unit, Quintile, Proposed, rank_label, short_name) |>
+  unique()
+
+unl_depts_labels <- left_join(unl_depts_sum_dept_label, unl_depts_sum_label) |>
+  left_join(select(unl_depts_sum, Unit, short_name)) |>
+  unique()
+
+unl_depts_sum |>
+  ggplot(aes(x = `SRI Percentile`, y = Unit)) + 
+  geom_point(size = 3, aes(colour = Proposed)) + 
+  geom_text(data = unl_depts_labels, aes(x = `SRI Percentile`, label = short_name, colour = Proposed), nudge_x = -2, hjust = 1) + 
+  theme_bw() + 
+  ylab("") + 
+  ggtitle("Units at UNL ranked by SRI Percentile compared to all Academic Analytics peers") +
+  facet_grid(Quintile~., space="free", scale="free") +
+  theme(strip.text = element_text(size=0)) + 
+  scale_x_continuous(limits = c(0, 110), expand=expand_scale(mult = c(.2, 0), add = c(.1, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
+        plot.title.position = "plot", legend.location = "plot", legend.position = c(0, 1), legend.justification = c(-0.01, 1.01)) + 
+  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) +
+  geom_text(data = unl_depts_labels, aes(label=rank_label), x = 108, hjust=1, colour = "grey40")
+
+```
+
+UNL's ranking indicates that the Statistics department's research productivity and recognition is better than 75% of other R1 and R2 institutions. 
+Comparing the Statistics department's SRI to other Statistics departments (@fig-sri-by-class), it is clear that the UNL Statistics department performs better than several well-respected AAU and Big Ten institutions. 
+If the Statistics department is eliminated, it is likely to hurt UNL's case to be readmitted to the AAU, even though our SRI is below the mean for AAU institutions, because we are performing within the range expected of statistics departments at AAU institutions. 
+
+> [Y]our statistics department is punching above its weight. Bertrand and Jennifer Clarke have written the bible on predictive statistics. When Covid-19 was at its height, Chris Bilder was advising the state of Nebraska on group testing, and his methodology was used. Bhaskar Bhattacharya has published seminal work in the Annals of Statistics, which is Holy Grail of mathematical statistics. Erin Blankenship is one of the world leaders in agricultural statistics. Heike Hofmann was recently hired from Iowa State, and she is a Fellow of the American Statistical Association, and there are several others in your department who outshine even her. 
+> -- [David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow](letters/David Banks.pdf)
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7.5
+#| fig-cap: "Research performance (SRI percentile) of units by classification. UNL is performing extremely well compared to its peers and has better performance than many AAU institutions."
+#| label: fig-sri-by-class
+#| message: false
+#| warning: false
+#| echo: false
+
+
+unis <- read_csv("data-analysis/data/Institution - Comparing Institutions.csv")
+stats_r12 <- read_csv("data-analysis/data/Statistics, Department of - Benchmarking - R12.csv")
+stats_full <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv")
+
+
+r12 <- unis |> slice(grep("Doctoral Universities", Carnegie)) |>
+  mutate(`AAU Member` = ifelse(is.na(`AAU Member`), " Not", `AAU Member`))
+r12 <- r12 |> left_join(stats_r12 |> select(Institution_Id,Unit, SRI), by = c("Institution_id"="Institution_Id")) 
+stats_full <- stats_full |> left_join(unis |> select(Institution_id, Carnegie, `AAU Member`, `Land Grant`), 
+                        by = c("institutionid"="Institution_id"))
+
+colors <- tibble(
+  institutionname = c("University of Nebraska - Lincoln", 
+                      "Stanford University", 
+                      "University of California, Berkeley", 
+                      "Harvard University",
+                      "Purdue University",
+                      "Michigan State University",
+                      "Iowa State University",
+                      "University of Virginia", 
+                      "University of Maryland, College Park",
+                      "Virginia Polytechnic Institute and State University",
+                      "Ohio State University, The",
+                      "University of California, Irvine", 
+                      "Texas A&M University", 
+                      "University of South Florida",
+                      "Indiana University - Bloomington"),
+  shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
+                "Mich. State", "ISU", "UVA", "Maryland", "Virginia Tech", 
+                "Ohio State", "UC Irvine", "Texas A&M", "USF", "Indiana"),
+  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", "#18453b", "#c8102e", "#232D4B", "#e21833", "#68293b", "#BA0C2F", "#0C2340", "#500000", "#006747", "#990000"),
+  nudge_x = c(0, 0, 0.05, .05, 0, 
+              -0.05, 0, 0, -0.05, .19, 
+              0, 0, .17, 0, -0.125),
+  nudge_y = c(0.2, -0.15, 0.2, 0.3, 0.25, 
+              -0.35, -0.2, -0.25, -0.25, -0.15, 
+              0.35, -0.15, -0.4, -0.15, -0.075)
+)
+
+stats_full_dot <- stats_full |>
+  select(institutionname, facultycount, sri, Carnegie, `AAU Member`) |>
+  mutate(
+    Carnegie_short = 
+      ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+             ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+    Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  ) |>
+  left_join(colors) |>
+  mutate(color = if_else(is.na(color), "grey", color)) |>
+  mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other")))
+
+stats_full_dot |> 
+  ggplot(aes(x = sri, y = Carnegie_short)) + 
+  geom_dotplot(aes(fill = color), 
+               dotsize=.4, stackdir = "center", binwidth = 0.1, stackgroups = T)  + 
+  scale_fill_identity() + 
+  scale_color_identity() + 
+  facet_grid(classification~., scale="free", space="free") + 
+  theme_bw() + 
+  xlab("SRI") + ylab("") + 
+  ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
+  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, color != "grey" & !is.na(nudge_x)),
+            nudge_x = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_x, 
+            nudge_y = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_y) 
+
+```
+
+What is remarkable is that UNL does all of this with a department that is very small relative to its peers, as shown in @fig-size-by-class. 
+It should be noted that UNL offers a full complement of statistics degrees and supports the data science program with this small faculty (13 tenure-track professors and a 30% FTE teaching professor of practice) while keeping research productivity high. 
+
+::: {.content-visible when-format="pdf"}
+\clearpage
+:::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7.5
+#| fig-cap: "Size of Statistics-related Units at each institution. UNL is managing to handle all of its BS, MS, and PhD programs within a department that is extremely small relative to peer institutions at both R1 and AAU institutions."
+#| label: fig-size-by-class
+#| message: false
+#| warning: false
+#| echo: false
+
+
+colors <- tibble(
+  institutionname = c("University of Nebraska - Lincoln", 
+                      "Stanford University", 
+                      "University of California, Berkeley", 
+                      "Harvard University",
+                      "Purdue University",
+                      "Arizona State University",
+                      "Iowa State University",
+                      "University of Virginia", 
+                      "University of Maryland, College Park",
+                      "Virginia Polytechnic Institute and State University",
+                      "Ohio State University, The",
+                      "University of California, Irvine", 
+                      "Texas A&M University", 
+                      "Boston University",
+                      "Indiana University - Bloomington",
+                      "University of North Carolina Charlotte",
+                      "University of Massachusetts Amherst",
+                      "Auburn University",
+                      "North Dakota State University",
+                      "Duke University"),
+  shortname = c("UNL", "Stanford", "Berkeley", "Harvard", "Purdue",
+                "Arizona State", "ISU", "UVA", "Maryland", "Virginia Tech", 
+                "Ohio State", "UC Irvine", "Texas A&M", "Boston U", "Indiana",
+                "UNC Charlotte", "UMass", "Auburn", "NDSU", "Duke"),
+  color = c("#d00000", "#8C1515", "#002676", "#a51c30", "#000000", 
+            "#8C1D40", "#c8102e", "#232D4B", "#e21833", "#68293b", 
+            "#BA0C2F", "#0C2340", "#500000", "#CC0000", "#990000", 
+            "#005035", "#881c1c", "#0C2340", "#0a5640", "#003087"),
+  nudge_x = c( 0,  2,  0,  0,  1, 
+               0,  0,  0,  0,  3, 
+               0, -2,  3,  0, -4,
+              -2,  3,  0,  0,  -1),
+  nudge_y = c( 0.2 , -0.2, -0.3, -0.4,  0.1 , 
+              -0.1 , -0.1,  0.2,  0.1, -0.25, 
+               0.25, -0.2, -0.2, -0.1,  0   ,
+              -0.2 ,  0  ,  0.1, -0.2,  -0.2)
+) 
+
+stats_full_dot <- stats_full |>
+  select(institutionname, unitname, facultycount, sri, Carnegie, `AAU Member`) |>
+  mutate(
+    Carnegie_short = 
+      ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+             ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+    Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  ) |>
+  left_join(colors) |>
+  mutate(color = if_else(is.na(color), "grey", color)) |>
+  mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other"))) |>
+  arrange(institutionname, unitname) |>
+  mutate(shortname = if_else(shortname == "UNC Charlotte", paste(shortname, str_remove(unitname, ",.*$") |> str_replace("Mathematics and Statistics", "Math & Stats"), sep = "\n"), shortname))
+
+
+stats_full_dot |>
+  ggplot(aes(x = facultycount, y = Carnegie_short, fill = color)) + 
+  geom_dotplot(stackdir = "center", binwidth = 1, stackgroups = T)  +  
+  facet_grid(classification~., scale="free", space="free") + 
+  theme_bw() + 
+  scale_color_identity() + scale_fill_identity() + 
+  xlab("Number of Faculty") + ylab("") + 
+  ggtitle("Size of Statistics Departments by Carnegie Classification and AAU membership") +
+  geom_text(
+    aes(label = shortname, color = color), 
+    data = filter(stats_full_dot, color != "grey"),
+    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x, 
+    nudge_y = filter(stats_full_dot, color != "grey")$nudge_y)
+
+  
+```
+
+
+> A central development in scientific publishing and scientific procedure over the last century has been the onset of data rich studies and the deployment of concepts and tools involving rigorous statistical methodology for data analysis. These concepts and tools have largely been invented, carried out, promoted, and taught in statistics departments nationwide and worldwide. Today there are hundreds of thousands of papers yearly in clinical medicine and computational science that publish their results and clinch their arguments with statistical tests and procedures.    
+>     
+> Although rigorous methods are demanding, difficult and in certain senses forbidding, they bring great benefits in terms of research efficiency. Instead of inconclusive research, in which we have no confidence, we get actual conclusions in which we have confidence. Still, some non-statisticians who have not been trained in these concepts and methods may not be aware of the threats to scientific validity which arise if the rigor is allowed to slip away. In fact, in the last decade we have become able to peruse the entire body of scientific literature as a dataset, and to recognize the uneven quality and rigor of studies, as well as the proliferation of poor studies, which contaminate the corpus and now begin to undermine public confidence and funding.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+## Teaching
+
+> I strongly urge the Academic Planning Committee to ... recognize that statistical education is not a "service" add-on but a foundational element in many academic disciplines, and a strategic asset for UNL and the State.
+> -- [Professor Aemal Khattack, Civil and Electrical Engineering, UNL. Director, Mid-American Transportation Center](letters/Aemal Khattack Civil_UNL.pdf)
+
+The Statistics department has high-SCH service courses, which the budget proposal recognizes and plans to continue. 
+However, it is not clear how these courses will be taught - currently, they are taught by a combination of graduate students with training in statistics pedagogy and tenure-track faculty. 
+The [1993 Biometry APR Self Study](documentation/1993-Biometry-APR-SelfStudy.pdf) (pg 29) documented the challenges of appropriately staffing e.g. 801 and 802 labs when motivating their desire to start a Ph.D. program: 
+
+> Enhanced teaching. Biometry has a number of classes with labs. We are constantly struggling to place graduate students with an appropriate background as lab instructors. For example, our M.S. students are required to take BIOM 802 (Experimental Design), which has a lab. They cannot teach the lab until they have had the course themselves... In general, Ph.D. level graduate students can make a variety of contributions to the teaching program that faculty do not have the time to make and M.S. students lack the background to make.
+
+@sec-fte-calc-teaching estimates that at least 3 PoP positions would be required to maintain the 15 sections of 80 students in Stat 218 and additional sections of Stat 380, 801, 802, and 870 which would be maintained in the IANR proposal (approximately 25 sections per year). 
+Keeping the sections of 318, 462, and 463 necessary to fulfill requirements in engineering and actuarial science programs would likely require an additional PoP, for a total of 4. 
+Thus, the savings from the elimination of the statistics department are actually not nearly as high as expected: 4 FTE are required for teaching and 2 FTE are required for maintaining the SC3L, for a net of 7 FTE savings under the more specific details released by IANR on September 12. 
+
+Stat 218, 380, 801, and 802 regularly benefit from statistical research (for instance, an experiential learning activity in Stat 218 is used to introduce data visualization topics to students), and these benefits would disappear if all statistics coursework was offered by teaching-only professors of practice. 
+However, this is not the only problem. 
+Eliminating the many graduate courses we offer to both statistics and outside students would hurt researchers and graduate programs across the university.
+
+> Due to the development of specialized experimental designs in agriculture, we can rigorously analyze both field and greenhouse data to extract the most relevant and significant conclusions from our data. With the rise of large data sets, training in multivariate statistics has become essential. I cannot imagine a student of mine who is not trained in the statistical analysis of data. Statistical training has been an integral component for all students in my laboratory. Statistical analysis is a fundamental skill that every scientist needs to understand, both in academia and industry.
+> -- [Dr. Daniel Schachtman, Center for Plant Sciences Innovation](letters/PSI Support for Department of Statistics.pdf)
+
+> The training that my students receive from the statistics faculty is essential for the design of experiments and evaluation of the significance of the result. It is the foundation to advance our knowledge of plant science that is the basis to improve agriculture production. Consequently, eliminating statistic department severely compromises our research competence that benefits Nebraska agriculture production.
+> -- [Dr. Bin Yu, Center for Plant Sciences Innovation](letters/PSI Support for Department of Statistics.pdf)
+
+Ultimately, the department's teaching metrics are not representative of recent changes we have made in order to be more efficient and open our general education courses up to more students. 
+
+- We have recently increased class sizes for Stat 218 from 30-45 students to 80 students per section. 
+This change reduced the number of GTAs from 24 to 20, producing savings of approximately $200k. 
+These changes were made in response to requests from IANR leadership as well as a desire to increase efficiency, but the change took time to implement: we had to work with scheduling on City campus to reserve larger lecture halls that are not as common on East campus. 
+As a result, none of these changes are reflected in the metrics because data after 2024 is not included. 
+Ultimately, our ability to increase instructional efficiency more is limited by the availability of large lecture halls that can accommodate 150+ students. 
+
+- We began offering Stat 801 and 802 online in order to better support outstate students in various IANR programs, but this new modality has not been available for long enough to change enrollment metrics. 
+
+We also have great potential to open up and advertise other courses to departments across campus: Stat 850 and Stat 870 are both courses that should appeal to graduate students in many programs. 
+In addition, it is quite likely that the number of SDAN majors will increase over the next several years, as we graduate our first cohort and have the ability to advertise their  
+
+> Over the course of my education, I studied at multiple universities, but UNL was different. The Statistics Department stood out for its supportive faculty who invested in my growth as a researcher and professional. In particular, my advisor, Prof. Ghosh, provided mentorship and encouragement that shaped my life in ways no other institution did. I also want to acknowledge the immense support I received from UNL during the COVID-19 pandemic. That sense of care and community left a lasting impression on me and made me proud to be part of UNL.
+> -- [Ramesh Aravind, Ph.D., UNL Statistics. Data Scientist, Travelers Insurance.](letters/Ramesh Aravind.pdf)
+
+Current students in other disciplines recognize the importance of the department to both their education and their research.
+
+> As a PhD student in another department, I am disheartened by the committee's recommendation to eliminate the Department of Statistics and I urge the committee to reconsider. The department plays an integral role in graduate-level education across disciplines. Elimination of the department means limiting enrollment options for students seeking to learn from statistics experts, while placing undue strain on the faculty who teach related coursework in applied disciplines. Further, the Department of Statistics actively supports the research interests of the university as a whole through direct instruction, extension, outreach, and consulting. For me, personally, the resources and support offered by the department have been indispensable as I work toward becoming an independent researcher in my field who is sufficiently versed in statistical analysis methods to conduct high-quality investigations. My work would not be as analytically rigorous without the guidance and teaching provided by the department, and I am certain this is true for other graduate students and faculty alike. UNL's research activity, ability to attain grant funding via a variety of mechanisms, graduate student recruitment, and graduate level education standards will be dramatically impacted if the committee chooses to eliminate the Department of Statistics.
+> -- [Caitlin Cloud, Doctoral Student, Sensorimotor Integration for Swallowing and Communication Laboratory, Department of Special Education and Communication Disorders](letters/CaitlinCloud-UNLstudent.pdf)
+
+## Consulting
+
+In 1957, the seeds of the Statistics Department were planted with the founding of the Statistical Laboratory, which would provide statistical computing and consulting services to IANR.
+The consulting mission of the laboratory motivated the creation of the MS program in Biometry and the Ph.D. program in Statistics so that the department could meet more of the demand for statistical consultation and assistance with experimental design and statistical computing tasks.
+
+>  ...advanced graduate students can do routine statistical consulting on their own. This improves everybody's access to statistical consulting and frees the faculty to concentrate on more difficult consulting problems.  In Spring semester, 1993, Biometry instituted a "Help Desk" staffed by a graduate student. The response has been very good; she has been very busy with a variety of problems. 
+> - [1993 Biometry APR Self-Study, pg 29](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+It is important to note that even in 1993, it was clear that the 8 tenured or tenure-track faculty in Biometry could not meet the demand within IANR for statistical consulting. 
+
+> Yet the demand for statistical consulting and collaborative research is extensive at IANR. Any compromise in the quality of service provided by Biometry would translate as an immediate loss in the quality and quantity of research possible at IANR. 
+> - [1993 Biometry APR Self-Study, pg 34](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+The current proposal maintains 1 FTE of the current 13 FTE in the Statistics department, which is well below even 1957 levels of funding and support. 
+
+```{r}
+#| label: tbl-sc3l-clients
+#| message: false
+#| warning: false
+#| echo: false
+
+consulting <- read_xlsx("data-analysis/data/SC3L_client_count.xlsx", col_types = c("numeric", "text", "numeric", "skip", "skip", "skip")) |>
+  mutate(Department = str_remove(Department, "Department of ") |> str_replace("Arts and Sciences", "CAS") |>
+           str_replace("SVMBS", "SVBMS") |> str_replace("Services", "Sciences")) |>
+  filter(Department != "Total") |>
+  mutate(Department = str_replace(Department, "Need to convert SPS.*","Other")|>
+           str_replace("Statistics|of.Testing|stat.testing", "Other")) |>
+  group_by(Department, Year) |>
+  summarize(NumClients = sum(NumClients, na.rm = T)) |>
+  group_by(Department) |>
+  mutate(Total = sum(NumClients, na.rm = T)) |>
+  ungroup() |>
+  mutate(Department = factor(Department, levels = sort(unique(Department)), ordered = T) |>
+           fct_relevel("Other", after=Inf)) |>
+  mutate(UNMC = Department%in%c("Oral Radiology", "Dental Hygiene", "UNMC", "Birth Outcomes and Water Research"),
+         UNK = str_detect(Department, "UNK")) |>
+  pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum) 
+consulting |> 
+  left_join(unique(select(consulting, Department, Total))) |>
+  select(Department, `2020`:`2025`, Total) |>
+  arrange(Department) |>
+  kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNMC (teal) and UNK (gold), as well as local organizations, such as Southwest Fire & Rescue. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.") |>
+  kable_styling(latex_options = "striped") |>
+  row_spec(which(consulting$UNMC), background = "#7dfaff") |>
+  row_spec(which(consulting$UNK), background = "#ffd785")
+```
+
+As @tbl-sc3l-clients shows, the SC3L handles a large number of projects over the course of a single year. 
+Many of these projects are graduate research in other departments, and result in publications which only sometimes include the SC3L consultant and only rarely include any Statistics faculty. 
+**These contributions to the research activity across the university and system are simply not counted in the metrics**, as graduate student papers are not counted in the department's metrics. 
+
+Moreover, Kathy Hanford, the head of the SC3L until her retirement in 2023, had a Professor of Practice position, which means her research outputs are not counted in the department's contributions, both because she was not in a tenure-track position, and because she retired in December 2023 and was thus not in the department when the data were assembled. 
+
+Currently, the SC3L employs five graduate students for 20 hours a week each, though they generally work on SC3L projects more than the 20 hours/week required by their funding. 
+There is no way that the single FTE dedicated to the SC3L under the current budget can manage this workload. 
+In addition, under new rules imposed by IANR, this 100 hours per week (plus the SC3L director's time) is devoted only to IANR projects. 
+The demand for consulting services in other colleges and units is surely much higher!
+@sec-future discusses possible resolutions for the mismatch between IANR interests and the ability for all researchers at UNL to access statistical consulting services. 
+
+> Historians have looked into the practice of statistical data analysis during that earlier era. For example, Stephen Stigler of University of Chicago has an excellent article called "The History of Statistics in 1933". He showed that in those days there were earnest and hard-working data analysts who were not schooled in the kinds of patterns one might see in noisy data that had explainable causes recurring again and again from study to study. Instead, there was a great deal of wasted time and effort in those days, when people just didn't understand what they were seeing. They either thought they were seeing something real that was only an artifact, or they were ignoring patterns and tendencies that were fundamental and very important but were overlooked through lack of the right tools or simple awareness.
+> -- [David Donoho, Professor of Statistics, Stanford University](letters/David Donoho-Stanford.pdf)
+
+That our graduate students are the primary point of contact for many consulting projects hides quite a bit of collaborative and consulting work from the UNL metrics - often, it is the students who are co-authors on papers, and they do not show up in Academic Analytics. 
+The plant pathology department (quickly aided by other departments on campus) set up a survey to demonstrate how many collaborations may not be present in the metrics; a spreadsheet with results can be found [here](data-analysis/data/UNL Dept. of Statistics Collaborations_2025 Survey Responses_Updated 10 6 2025.xlsx). 
+Without the graduate students supported by the SC3L, UNL risks publishing studies which are the product of faulty statistical analysis, or which employ sub-optimal experimental designs. 
+This will slowly erode the reputation of other departments on campus, and will make UNL less competitive for federal funding. 
+
+**Ultimately, reducing the consulting resources on campus threatens the ability of UNL to maintain its status as a Big Ten, land-grant, AAU-aspiring R1 university.**
+
+## Collaboration
+
+The Statistics department at UNL is currently well connected with other entities across UNL, mostly units on East Campus. 
+@fig-aca-collaborations shows a network of collaborations as recorded by Academic Analytics.  
+What is missing from this view are any collaborations with members of the Statistics Department who were not included in Academic Analytics by an oversight of the UNL administration. 
+Faculty (Hanford, Stanke, Clarke) might not have a research component in Statistics, but their professional practice in Statistics enables researchers across campus to do their research. 
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-width: 6
+#| out-width: "100%"
+#| fig-cap: "Network of collaborations by the members of the UNL Statistics Department with other units across UNL."
+#| label: fig-aca-collaborations
+
+knitr::include_graphics("images/AcA-Collaborations.png")
+```
+
+The number of grants might seem low, but only grants with a non-zero dollar contribution to a Statistics faculty member are included.
+The mission of the Statistics Department has been to first and foremost serve the institution. 
+As such we have agreed to be involved in grants without being officially acknowledged by receiving a non-zero percentage of the incentive, and in some cases, we are not even formally listed on the grants. 
+Statistics faculty are also often involved by advising joint students, which is not documented in any of the metrics, though presumably that data is available to administration. 
+
+
+> The Cultivate ACCESS team successfully secured $750,000 in USDA funding, in part because of the strength Erin [Blankenship] brought to our proposals through her nationally recognized expertise in data science and statistics education.     
+> Eliminating the Department of Statistics would have profound consequences for programs like ours. Without a home department, the university risks losing faculty who bring both technical knowledge and the ability to bridge disciplines. Erin’s work demonstrates the irreplaceable value of Statistics to interdisciplinary collaborations that directly serve students, strengthen teacher preparation, and enhance the university’s research and outreach mission.    
+> We strongly urge you to preserve the Department of Statistics. Doing so ensures that the university can continue to deliver the kinds of student outcomes and external partnerships that are central to AAU priorities and to the university’s future success.
+> -- [Cultivate ACCESS Leadership Team](letters/CA letter of support for statistics.pdf)
+
+Some of our department members have been told that the research done in statistics -- that is, the research published in statistics journals, rather than domain journals -- is no longer considered "in alignment" with IANR and possibly UNL strategic goals. 
+There is a faulty assumption at the core of this idea -- there is not a clear divide between statistics research and domain-specific consulting. 
+The two co-evolve, as Statistics research is often the product of domain specific questions. 
+There is a cross-pollination effect whereby consulting projects raise statistics questions that are more abstract, leading to a split where the domain-level project is solved first and the more abstract problem is solved later and published in Statistics. 
+Then, the formal methodology in the statistics literature can be applied to other domains with similar problems and slight variations.
+This admittedly complex process takes time to bear fruit, which is why consulting relationships take time to build and evolve.
+
+> The Department of Statistics is not an isolated entity; it is an indispensable partner for us and for many other departments on campus. ...
+> **Instrumental for Research and Funding** The success of our research and our ability to secure external funding are directly tied to the expertise of the Statistics department. Our faculty members have relied on this partnership to secure significant external grants, including multiple projects funded by the National Science Foundation (NSF). This is not a coincidence. Modern plant science is a data-intensive discipline, and robust statistical analysis is essential for designing experiments, interpreting complex datasets, and validating research findings. Without in-house statistical collaboration, our faculty's ability to compete for large-scale federal funding—like that from the National Science Foundation (NSF)—would be severely diminished.
+> 
+> The department's value extends beyond formal collaboration. The department is essential to the education of our STEM undergraduates and graduate students, as well as informal mentorship and collaboration that are vital for both new and established faculty.
+> Dr. Nathan Butler: "I have not had the opportunity to formally collaborate with stats faculty but have had useful in-person conversations with Susan VanderPlas and Dixon Vimalajeewa towards addressing research problems I'm interested in as a new faculty member, Erin Blankenship for providing an essential course (STAT 801) for my first graduate student, and Jennifer Clarke for recruiting me to UNL as the Director of the Quantitative Life Science Initiative."
+> -- [Center for Plant Science Innovation](letters/PSI Support for Department of Statistics.pdf)
+
+There is the perception that collaborations across units have suffered from the recent retirement of highly-collaborative faculty. 
+The administration has (informally) expressed a wish to see more collaborations within the Statistics Department, and while we are cognizant of this, collaborations take time to build before any measurable outcomes (papers, grants, students) can be documented. 
+There is always a replacement cycle in any ecosystem, and while it is true that some old-growth trees have recently fallen, there are many saplings growing quickly to take their place in the forest. 
+All of the metrics used to analyze the department are **lagging indicators** -- the work is done more than a year before the paper is officially published^[Some journals in Statistics have a backlog of 2-3 years after the paper is accepted before it appears in print!] or the grant is submitted, and then there is another year or more before the product is officially documented by Academic Analytics. 
+
+UNL is large, and the East/City campus divide can make it difficult to find the right collaborators - while the UNL Statistics department has many people who are excellent in their niches, it can be hard for non-statisticians to determine which person has the right expertise for their project.
+It might be more effective for the administration to facilitate opportunities for new faculty to meet established researchers in other departments - "speed dating for statisticians?" to set up the right conditions for these interdisciplinary collaborations to grow and mature. 
+Alternately, a Statistics department with resources and additional capacity might host these events ourselves. 
+
+> With current staff and teaching commitments, any expansion of services is not reasonable. Any increase in one form of consulting or research activity will require either an increase in consulting resources or a reduction in some other activity. 
+> - [1993 Biometry APR Self-Study, pg 34](documentation/1993-Biometry-APR-SelfStudy.pdf)
+
+
+## Economic and Social Impact
+
+> In a recent reciprocal visit to OPS schools in Omaha, it was very apparent that STATISTICS interest is up in our K-12 students as many on a student panel spoke about their interest in having a career that involves statistics or data science. These students are correct in pursuing that interest as, future career opportunities in statistics and data science are expected to grow substantially across numerous industries, including healthcare, finance, and technology, driven by the increasing volume of data and the demand for data-driven decision-making. Key roles include Data Scientists, Statisticians, Operations Research Analysts, and Data Engineers, all requiring strong tech skills and specialized knowledge in areas like machine learning, AI, and big data. If we cut this department my question is where will Nebraskan students get an in-depth passionate education in Statistics and Data science?
+> -- [Tammera Mittelstet, Ph.D., CASNR Statewide Education and Career Pathways Coordinator](letters/Tammy Mittelstet-STATISTICSLetter of Support.docx.pdf)
+
+Nebraska is a unique state in many ways, but it is not unique in the demand for statisticians, data scientists, and those with the quantitative skills necessary to build applications that support data-driven decision making across industries. 
+
+>  Many state, local, and private sector organizations rely on well-trained statisticians: in transportation engineering, public health, agriculture, environmental modeling, economics, technology, social policy, etc. Eliminating the department weakens the workforce. The removal of this program would damage UNL's reputation: for research, for graduate education, for interdisciplinary collaboration. Stand-alone departments that anchor quantitative and analytical research are core to being a research university.
+> -- [Professor Aemal Khattack, Civil and Electrical Engineering, UNL. Director, Mid-American Transportation Center](letters/Aemal Khattack Civil_UNL.pdf)
+
+Hiring in statistics is robust in academia and in industry. The UNL statistics department helps meet the growing demand for data scientists and statisticians within Nebraska, but we were also surprised how many of our graduates work remotely and live in Nebraska, contributing to the local economy while working for large national companies. 
+This serves a dual function that is important for the state -- these students can live close to families and support aging parents while working high-paying jobs and paying state and local taxes accordingly. 
+
+
+> From the student perspective, this department has been crucial to my academic growth, as well as that of my peers, both inside and outside the program. Before attending graduate school, I worked as a Business Intelligence Analyst in data analytics at Sandhills Global, one of Nebraska's major employers of UNL graduates. I left that full-time role to pursue a Master's in Statistics, seeking a stronger foundation in statistical theory and methods to prepare for a career as a Data Scientist on Sandhills' Research & Development team. Even after only a year in the program, I returned to Sandhills as a Data Science intern last summer and was able to make meaningful contributions. My training in Experimental Design, Linear Models, and Bayesian Statistics directly supported improvements to the internal AI-powered chatbots in Sandhills' Retrieval Augmented Generation pipeline. My coursework in Mathematical Statistics and Statistical Computing allowed me to build a Lead Quality Meter to classify sales leads as high, medium, or low quality, ultimately increasing sales and reducing time spent manually routing clients. Sandhills Global is just one of many examples of employers who have benefited from statistics graduates from UNL. Alumni from this department are working in key roles at First National Bank of Omaha, Mutual of Omaha, Hudl, Nelnet, and many other large companies, applying their statistical training in ways that strengthen Nebraska's economy. Recruiting outside talent to Nebraska is already difficult; it is therefore imperative to prepare in-state graduates with formal, rigorous statistical training. Since UNL houses the only dedicated Statistics Department in the state, eliminating it would force future students to leave Nebraska to study statistics and would weaken the state's ability to meet growing workforce demands in agriculture, healthcare, business, and technology.
+> -- [Arian Alai, MS/Ph.D. student in Statistics](letters/Arian Alai-MSstudent.docx.pdf)
+
+The demand for statistical training will only grow as AI becomes more prevalent, as AI is, fundamentally, a combination of linear models, trained on data. 
+Statistics is a critical component of AI, and without statistical training, people risk misusing AI tools, with potentially disastrous consequences. 
+It is critically important to Nebraska and also to UNL that we continue to train statisticians who can provide this expertise.
+
+> Furthermore, the decision to close a statistics department runs contrary to national and global academic trends. At a time when universities are expanding their quantitative programs to meet the explosive demand for data scientists and analysts, eliminating a strong and respected department is a shortsighted move. It is particularly important now, in the age of artificial intelligence, that students have a strong statistical foundation. Without it, they risk misusing AI tools for statistical analysis without truly understanding or being able to check the output, potentially leading to flawed research and even academic plagiarism.
+> -- [Dr. Ladányi Márta, Professor, Hungarian University of Agriculture and Life Sciences, Institute of Mathematics and Basic Science](letters/Ladanyi Marta.pdf)
+
+In addition to the economic consequences, there are also social impacts to eliminating a statistics department and its faculty.
+Our faculty are collaborators on a number of critical research and social projects around the university, including the Nebraska Food for Health Center, the  Quantitative Life Sciences Institute, the Center for Plant Science Innovation, and a variety of Hatch projects.
+Moreover, Dr. Susan Vanderplas and Dr. Heike Hofmann are well known in forensic science for their efforts to assist public defenders with proper assessment of scientific support for forensic evidence as well as their efforts to develop new quantitative methods for assessing firearms evidence.
+Without a dedicated statistics department, it would not be possible to connect people needing assistance with statistics, from public defenders to plant geneticists, with the statistician that has the expertise to help solve the problem.
+These collaborations -- many of them uncaptured by university metrics^[Dr. Vanderplas has written legal briefs or consulted pro bono on for 11 cases across 10 jurisdictions since 2020, helping to overturn precedent for admissibility of forensic evidence on at least three occasions (legal proceedings move even slower than most peer review processes, so these collaborations take even more time to bear fruit).] -- are another consequence of having an active, engaged, and connected statistics department within state land-grant universities like University of Nebraska.
+
+> You are all undoubtedly familiar with the phrase "lies, damned lies, and statistics" which highlights how armchair statisticians can torment numbers to any end imaginable. Every day in criminal courts across Nebraska, witnesses come to court confidently and unknowingly abusing statistics that can hurt innocent people. Many defense lawyers aren’t yet even aware how this is happening, but **statisticians in your department are some of the first in the country to study and work to systematically right those wrongs.** That work is just the beginning, and many other deeply flawed forensic fields are rooted in the same amateur application of statistics.
+> Please reconsider the proposal to eliminate your Statistics Department. An unchecked forensic industry's impact on the legal system is just one consequence of a society that doesn't value statistics. In our moment, when anyone can manufacture "facts" to be disseminated to the world with the click of a mouse, statistics are one of the last defenses of reality. The public desperately needs robust statistics departments.
+> -- [Peter Conley, Deputy Capital Public Defender, Kansas Death Penalty Defense Unit](letters/Conley-Kansas-Death-Penalty-Defense-Unit.pdf)
+
+
+The statistics department at UNL has also been developing plans to improve statistical education across the state in K-12 education, in addition to fulfilling our research, teaching, extension, and service missions within the university.
+
+> In my role as CASNR Statewide Education and Career Pathways Coordinator I have witnessed first-hand this small but mighty department’s vision for the future and preparation for the increase workforce needs in STATS and Data Science. Just two days prior to this proposed budget cut announcement I was sitting with the STATS department and the State Director of NJAS (Nebraska Junior Academy of Sciences) developing a plan for the creation and dissemination of basic statistics teaching modules to support the K-12 teachers and students across the state of Nebraska as they develop their statistical analysis for science fair projects; a need voiced by teachers, regional science fair directors, and science fair judges. We had a plan for implementation starting in December, that now must be paused due to this proposed budget cut.
+> -- [Tammera Mittelstet, Ph.D., CASNR Statewide Education and Career Pathways Coordinator](letters/Tammy Mittelstet-STATISTICSLetter of Support.docx.pdf)
+
+In both the measurable and difficult-to-measure components which could be used to evaluate a department, the UNL statistics department is excellent. 
+We are productive in our own research and teaching, but we are also extremely collaborative, and our students and faculty also serve the wider university research mission by  providing consulting services. 
