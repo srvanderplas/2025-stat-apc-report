@@ -180,7 +180,7 @@ There are several units within UNL that maintain some statistical expertise in-h
 At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research:
 
 - the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. However, they clearly have expertise in some aspects of statistics and measurement. 
-- the Psychology department has a quantitative emphasis for their Ph.D. program. 
+- the Psychology department has a [quantitative concentration for their Ph.D. program](https://psychology.unl.edu/group/4/concentration-quantitative-methods/), but it is difficult to identify which faculty members have quantitative expertise. 
 - the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology, but they do survey research and have expertise that isn't currently available within the Statistics department. 
 - the Economics department. Econometrics has some overlap with Statistics. There are three faculty (Yifan Gong, Christopher Mann, Federico Zincenko) who mention Econometrics as a research area within this department. 
 - the Agricultural Economics department. There is some overlap with statistics in discipline, but it is difficult to identify any specific faculty who might have the expertise and interest to do Statistics work. None of the faculty appear to have Ph.D.s in Statistics. 

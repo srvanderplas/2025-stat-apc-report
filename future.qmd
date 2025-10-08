@@ -73,8 +73,7 @@ We firmly believe that this process will set our department up for success and p
 
 ## A Bold Proposal: Institutional Efficiency and Data Science
 
-Our department was created from a union of the Biometry department on East campus and the Statistics portion of the Mathematics and Statistics department on City campus. Indeed, the first APR in the Department of Statistics identified the possibility that we would be viewed primarily as an East campus biometry program.
-
+Our department was created from a union of the Biometry department on East campus and the Statistics portion of the Mathematics and Statistics department on City campus. Indeed, the first APR in the Department of Statistics identified the possibility that we would be viewed primarily as an East campus Biometry program.
 
 > The Team recommends that the department actively expand its City Campus presence. This can be accomplished in several ways. First, given the potential for DoS faculty and students to interact with researchers in the biological sciences on the City Campus, the Team suggests that the faculty consider broadening the Department's "biometry" objective to "biological statistics" or another suitable term that is inclusive of this new set of collaborators...
 > Unless the Department continues to expand its research presence on City Campus, it may ultimately be viewed by many as primarily an East Campus biometry program. This would not only be a disservice to the broader capabilities of the Department, but limit its future growth in emerging research areas present there.
@@ -84,6 +83,8 @@ Our department was created from a union of the Biometry department on East campu
 While the name Biometry seems to have faded, there is the perception that Statistics isn't a good collaborator on City campus -- though, there are signs that this is changing, and even this budget process has helped our department build stronger ties on City campus with units that are proposed for elimination as well as units that recognize the importance of our discipline.
 We have (also) been frustrated by the difficulties in building good collaborations across both campuses.
 Our hope is that the systematic rethinking of our department during the budget proposal process might afford us the opportunity to make positive change, so that we can serve all of the departments across campus.
+
+---
 
 Our ties to IANR are extremely strong, and are unlikely to be jeoparodized by a rearrangement, but there are many institutional barriers to increased institutional efficiency.
 Throughout this report, we have commented on the possible use of dual appointments to build bridges between statistics and other departments. 
