@@ -1097,6 +1097,19 @@ Warning&nbsp;C.21: Completions to Majors for New Programs
 <p>1.93 <code>all_majors_share_growth</code> Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.</p>
 <p>1.53 <code>retention_rate</code> First-year to second-year retention rate (cohort = AY - 1).</p>
 <p>1.54 <code>avg_retention_rate</code> Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.</p>
+<div id="wrn-retention-rates" class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;C.22: Retention rates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Average retention rates for new programs were nullified, even if they were good. However, as discussed in <a href="#wrn-major-completion" class="quarto-xref">Warning&nbsp;<span>C.21</span></a>, there was no such nullification for the ratio of completions to majors for new programs, even though this value is equally misleading when a program is too new to have graduates. Inconsistencies in how censoring for new programs is applied causes problems – it is important to think carefully about how to ensure that measures do not produce misleading results for edge cases.</p>
+</div>
+</div>
 <p>1.55 <code>grad_rate6</code> Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.</p>
 <p>1.56 <code>avg_grad6</code> Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.</p>
 <div id="wrn-grad-rates" class="callout callout-style-default callout-warning callout-titled">
@@ -1105,7 +1118,7 @@ Warning&nbsp;C.21: Completions to Majors for New Programs
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;C.22: Graduation Rates Shouldn’t Be Pooled
+Warning&nbsp;C.23: Graduation Rates Shouldn’t Be Pooled
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1124,7 +1137,7 @@ Warning&nbsp;C.22: Graduation Rates Shouldn’t Be Pooled
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;C.23: 2020 anomalies
+Warning&nbsp;C.24: 2020 anomalies
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1149,7 +1162,7 @@ Warning&nbsp;C.23: 2020 anomalies
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;C.24: Problem: <code>instructional_sch_4Y_share_growth</code>
+Warning&nbsp;C.25: Problem: <code>instructional_sch_4Y_share_growth</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1169,11 +1182,11 @@ Warning&nbsp;C.24: Problem: <code>instructional_sch_4Y_share_growth</code>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;C.25: Ratios are Stochastic Nightmares
+Warning&nbsp;C.26: Ratios are Stochastic Nightmares
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The variability of calculated ratios complicates statistical analysis.</p>
+<p>The variability of calculated ratios complicates statistical analysis. While in some cases ratios are necessary, <strong>extreme</strong> care must be taken to ensure that there is no possibility of the ratio having a 0 in the denominator, either in observations or in the distribution (that is, it’s also bad if the <strong>distribution</strong> of the denominator has a mean of 0, even if no recorded observations actually have a mean of 0).</p>
 <p>If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other “statistical moments” (these variables have a Cauchy distribution, which does not have a mean). This does not mean that you can’t take the average of Cauchy distributed random variables – it only means that that number does not have any real-world meaning.</p>
 <p>Even when the variables don’t have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value.</p>
 </div>
@@ -1192,7 +1205,7 @@ Warning&nbsp;C.25: Ratios are Stochastic Nightmares
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning&nbsp;C.26: Instructional Z-score Problem
+Warning&nbsp;C.27: Instructional Z-score Problem
 </div>
 </div>
 <div class="callout-body-container callout-body">

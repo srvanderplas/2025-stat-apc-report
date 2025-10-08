@@ -47,6 +47,8 @@ Thus, we can see that the market demand for graduates of our programs at all lev
 In addition, while statistics does not pull in grants which are comparable in size to those in lab-based sciences that require laboratory equipment, AI is one of the stated research priorities of the current administration. 
 Most deep learning and large language models are built on a fundamental foundation of statistics. 
 
+![Statistics degrees by degree level and data science bachelor’s degrees awarded in the United States, from [Amstat News, 2024-11-05](https://magazine.amstat.org/blog/2024/11/05/data-science-analytics-degrees-see-explosive-growth/)](images/Statdegreefig2.png){#fig-stat-growth width="50%"}
+
 > The number of U.S. undergraduates earning degrees in statistics has increased more than six-fold since 2010, with over 5,500 bachelors degrees awarded in 2023, with the number of institutions offering such programs nearly doubling over the same period (from 95 to 184). At the Master's level, statistics degrees have increased 150% since 2010 to 5,150 in 2023, while data science and analytics-related degrees increased an astonishing 15-fold to more than 12,000 in that period. The number of universities granting statistics and data-intensive degrees also grew from 70 to 300. These trends reflect the central role of statistics and data science in today's workforce; the financial benefit to UNL, Nebraska, and the overall U.S. economy cannot be overstated. 
 > -- [Brad Carlin, UNL Math & Statistics alumni, former faculty at CMU and University of Minnesota Statistics, President of Biostatistical Consulting](letters/CarlinBrad_10_2_25_Regents.pdf)
 

@@ -692,10 +692,17 @@ In prior years, the statistics department has  hovered around a 25% - 28% comple
 
 1.93 `all_majors_share_growth` Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.
 
-
 1.53 `retention_rate` First-year to second-year retention rate (cohort = AY - 1).
 
 1.54 `avg_retention_rate` Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.
+
+::: {.callout-warning #wrn-retention-rates}
+### Retention rates
+
+Average retention rates for new programs were nullified, even if they were good. However, as discussed in @wrn-major-completion, there was no such nullification for the ratio of completions to majors for new programs, even though this value is equally misleading when a program is too new to have graduates.
+Inconsistencies in how censoring for new programs is applied causes problems -- it is important to think carefully about how to ensure that measures do not produce misleading results for edge cases. 
+
+:::
 
 1.55 `grad_rate6` Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.
 
@@ -773,12 +780,12 @@ Unfortunately, the UNL administration will learn this the hard way, either by ac
 #### Ratios are Stochastic Nightmares
 
 The variability of calculated ratios complicates statistical analysis. 
+While in some cases ratios are necessary, **extreme** care must be taken to ensure that there is no possibility of the ratio having a 0  in the denominator, either in observations or in the distribution (that is, it's also bad if the **distribution** of the denominator has a mean of 0, even if no recorded observations actually have a mean of 0). 
 
 If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other "statistical moments" (these variables have a Cauchy distribution, which does not have a mean). 
 This does not mean that you can't take the average of Cauchy distributed random variables -- it only means that that number does not have any real-world meaning. 
 
 Even when the variables don't have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value. 
-
 :::
 
 1.85 `budget_to_sch` total original state aided budget divided by SCH

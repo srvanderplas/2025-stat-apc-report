@@ -81,7 +81,7 @@ For the purposes of this analysis, there are two characteristics which seem to b
 - A group of statisticians located in the same department (whether that is called Statistics, Data Science, or Mathematics & Statistics), where 
 - The department offers programs in Statistics at the undergraduate or graduate level
 
-We exclude from this "big tent" biostatistics departments, not because they don't serve a similar role, but because many universities have both Statistics and Biostatistics departments^[The statistics department is typically on the main campus and the biostatistics department is typically located within the medical school organizational structure.], and so we track Biostatistics as a separate (but closely related) discipline. 
+We exclude from this "big tent" Biostatistics departments, not because they don't serve a similar role, but because many universities have both Statistics and Biostatistics departments^[The statistics department is typically on the main campus and the Biostatistics department is typically located within the medical school organizational structure.], and so we track Biostatistics as a separate (but closely related) discipline. 
 Note that our approach differs from the Academic Analytics tracking of Statistics as a discipline, but the conclusions of this analysis are largely the same using either approach.
 
 ```{r}

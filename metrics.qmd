@@ -42,7 +42,8 @@ Ultimately, these issues are not particularly relevant to the importance of the 
 We start by acknowledging that clearly, quantitative measures were important in the decision to propose the elimination of our department. 
 However, that is not the only way to measure research effectiveness.
 
-> In my current work with Prof. Jennifer Clarke on an international project testing a phenotyping tool PlantEye from Phenospex campany for precision agriculture, I lead experimental design, training, and data collection, while Prof. Clarke will apply advanced statistical models to analyze the results. I have come to realize that working without expert statisticians is like trying to navigate a ship without a compass - the data may exist, but the path to meaningful conclusions is lost. Losing the Department of Statistics faculty would not only hinder these critical analyses but could compromise international collaborations and the opportunity to bring advanced phenotyping system to UNL, as the strength of these partnerships relies on statistical expertise. Beyond direct research collaborations, the departmental seminars have been invaluable for me as non-statisticians, providing the knowledge and confidence to apply statistical methods in my research and strengthen grant proposals.
+
+> I have come to realize that working without expert statisticians is like trying to navigate a ship without a compass - the data may exist, but the path to meaningful conclusions is lost. Losing the Department of Statistics faculty would not only hinder these critical analyses but could compromise international collaborations and the opportunity to bring advanced phenotyping system to UNL, as the strength of these partnerships relies on statistical expertise. Beyond direct research collaborations, the departmental seminars have been invaluable for me as non-statisticians, providing the knowledge and confidence to apply statistical methods in my research and strengthen grant proposals.
 > -- [Dr.  Seema Sahay, Center for Plant Science Innovation](letters/PSI Support for Department of Statistics.pdf)
 
 ---
@@ -92,8 +93,8 @@ What matters is whether departments are doing good work as measured by compariso
 #| message: false
 #| warning: false
 #| echo: false
-#| fig-height: 10
-#| fig-width: 9
+#| fig-height: 9
+#| fig-width: 7
 #| fig-cap: "UNL Units ranked by SRI percentile compared to peer departments in Academic Analytics. Points are colored by the budget proposal status. Some of the departments proposed to be eliminated are extremely well ranked. Where two SRI percentiles are provided (indicating different fields or different types of departments), the higher percentile is used for the ranking. "
 #| label: fig-sri-percentile-all-depts
 
@@ -477,17 +478,8 @@ The Statistics department at UNL is currently well connected with other entities
 What is missing from this view are any collaborations with members of the Statistics Department who were not included in Academic Analytics by an oversight of the UNL administration. 
 Faculty (Hanford, Stanke, Clarke) might not have a research component in Statistics, but their professional practice in Statistics enables researchers across campus to do their research. 
 
-```{r}
-#| message: false
-#| warning: false
-#| echo: false
-#| fig-width: 6
-#| out-width: "100%"
-#| fig-cap: "Network of collaborations by the members of the UNL Statistics Department with other units across UNL."
-#| label: fig-aca-collaborations
+![Network of collaborations by the members of the UNL Statistics Department with other units across UNL.](images/AcA-Collaborations.png){width="100%" #fig-aca-collaborations}
 
-knitr::include_graphics("images/AcA-Collaborations.png")
-```
 
 The number of grants might seem low, but only grants with a non-zero dollar contribution to a Statistics faculty member are included.
 The mission of the Statistics Department has been to first and foremost serve the institution. 
