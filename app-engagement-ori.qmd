@@ -1,4 +1,4 @@
-# Attempts to Document Metrics and Data Issues {#sec-ori-metrics}
+# Notifying Administration of Metrics and Data Issues {#sec-ori-metrics}
 
 On September 26, members of the statistics department contacted several members of the Office of Research and Innovation and the team reported to be responsible for assembling the data and the analysis of the data used as quantitative measures of department performance during the budget reduction process.
 
@@ -37,7 +37,7 @@ As we only had data from statistics, that was the only data we could use to demo
 
 ---
 
-> <name>, that's not the issue we want to discuss. The issue is the way that UNL has used SRI - a z-score is fundamentally inappropriate for this comparison. This has several implications beyond statistics that I want to make you aware of ??? there are at least 11 departments that are absolutely hurt by the way the averaging process was performed. I recognize that SRI isn't the only metric used (but that is itself a concern ??? there are some other issues with how the research metrics are put together). 
+> \<name\>, that's not the issue we want to discuss. The issue is the way that UNL has used SRI - a z-score is fundamentally inappropriate for this comparison. This has several implications beyond statistics that I want to make you aware of ??? there are at least 11 departments that are absolutely hurt by the way the averaging process was performed. I recognize that SRI isn't the only metric used (but that is itself a concern ??? there are some other issues with how the research metrics are put together). 
 
 > For what it's worth, we confirmed our interpretation of this issue with someone at Academic Analytics before we reached out. So while yes, this has some implications for our department, it has many more implications in terms of how the decisions were made to cut departments overall. If you're willing to meet at some point today I would be happy to stop by. 
 
@@ -56,13 +56,9 @@ I am also worried about the fallout from excluding the performance of 1/4th of t
 
 Finally, we received a positive response from the Office of Research and Innovation: 
 
-> <We> would be happy to meet with you on Monday morning. Can it work to schedule 30 minutes sometime between 8-9:30 am? We can meet in 301 Canfield Administration. Let us know if there is a time that can work.
+> \<We\> would be happy to meet with you on Monday morning. Can it work to schedule 30 minutes sometime between 8-9:30 am? We can meet in 301 Canfield Administration. Let us know if there is a time that can work.
 
-We set a time (8 am, Sept 29) and presented the following slides^[If you are viewing the PDF version of this, you can find the slides at http://srvanderplas.github.io/2025-stat-apc-report/statistics-slides.html]: 
-
-
-<iframe src='http://srvanderplas.github.io/2025-stat-apc-report/data-analysis/statistics-slides.html' height='800px' width='500px'></iframe>
-
+We set a time (8 am, Sept 29) and presented [slides](http://srvanderplas.github.io/2025-stat-apc-report/statistics-slides.html) (http://srvanderplas.github.io/2025-stat-apc-report/statistics-slides.html) describing the problems we had identified to date.  
 
 ---
 

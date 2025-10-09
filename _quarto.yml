@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  post-render:
+    - ./post-render
 
 book:
   title: "Statistics: An Essential Department for a Modern R1 University"

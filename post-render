@@ -1,4 +1,4 @@
 #!/bin/bash
 
-quarto render statistics-slides.qmd && cp statistics-slides.html docs/ && cp -r statistics-slides_files docs/
-quarto render response-to-ori.qmd && cp response-to-ori.html docs/ && cp -r response-to-ori_files docs/
+quarto render statistics-slides.qmd && mv -f statistics-slides.html docs/ && mv -f statistics-slides_files docs/
+quarto render response-to-ori.qmd && mv -f response-to-ori.html docs/ && mv -f response-to-ori_files docs/
