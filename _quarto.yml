@@ -19,6 +19,7 @@ book:
     - app-faculty-system.qmd
     - app-analysis-issues.qmd
     - app-metrics-analysis.qmd
+    - app-engagement-ori.qmd
     - 2025-Stat-APC-report.qmd
 
   downloads: [pdf]
