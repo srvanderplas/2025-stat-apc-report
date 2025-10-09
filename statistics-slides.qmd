@@ -9,7 +9,7 @@ format:
     transition: slide
     background-transition: fade
     navigation-mode: vertical
-    logo: N.svg
+    logo: libs/N.svg
 ---
 
 ## Scholarly Research Index (SRI)
