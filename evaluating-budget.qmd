@@ -1,5 +1,5 @@
 
-# Evaluating the Budget Proposal Realistically
+# Evaluating the Budget Proposal Realistically {#sec-evaluating-budget}
 
 ```{r}
 #| include: false
@@ -30,11 +30,13 @@ These GRAs are senior Statistics PhD students who are required to take Stat 821,
 Additionally, students enrolled in Stat 825 and Stat 930 play important supporting role in resolving the research problems that are brought to the SC3L. 
 Clearly, the SC3L is a **team effort** that requires that requires each member to have completed advanced Master or PhD level Statistics courses. 
 
-Eliminating the BS/MS/PhD programs in Statistics will also eliminate that team. 
+Eliminating the BS/MS/PhD programs in Statistics will also eliminate most of that team. 
 So, the SC3L cannot be retained in current form under the proposed elimination.
+Note that the MS and Ph.D. Statistics programs were formed by the desire to increase consulting and collaboration capacity within the department while providing students with experiential learning and training in consulting methods. 
+That is, our programs exist in part because of a desire to provide better service to the university. 
 
 
-What other forms of SC3L could be envisioned that operates with the same efficiency?
+What other forms of SC3L could be envisioned that operate with similar efficiency?
 
 - Hiring PoPs? 
   - Between 2020-2025, the SC3L has served $\approx 131$ clients per year. This implies that the combined powers of a director and five graduate students can allocate about 3 days to each client. It is not feasible for a single PoP to take on the workload of the entire SC3L team. The number of meetings combined with the amount of non-meeting work (computer programming, checking models, writing reports) would make it impossible for one person to complete this work efficiently. 
@@ -42,31 +44,42 @@ What other forms of SC3L could be envisioned that operates with the same efficie
   
 - One PoP and a team of graduate students? 
   - The current plan eliminates the statistics graduate and undergraduate degree programs along with all of their core classes. Thus, there will be no graduate students in Statistics to staff the desk, and no courses to train these students (or students from other disciplines). Without training, this version of the SC3L would be ineffective. 
+  - Could graduate students be recruited from other departments, such as Agronomy? Perhaps, but these students have much less quantitative background, and with the elimination of the statistics graduate program, there is no clear way to provide these students with the training they would need in order to be functional. The quality of consulting available on campus under this plan would be extremely low, and the PoP would be *less* efficient because of the need to train outside students while handling an extreme load for consulting. 
   
 - Two POPs?
-  - This configuration has a better chance of achieving the same efficiency as we currently have, if we can acquire them. To solve the problems handled by SC3L, we need highly skilled statisticians with enough experience in handling different types of complex data. Such experience can come either through PhD training in Statistics or an extensive stint in industry (or both). A recent Ph.D. graduate is likely to be the most cost effective option. Even in the unlikely event that such a person could be recruited, how much would they cost? The American Statistical Association periodically publishes a salary survey among statisticians. From the last round of survey (circa 2021) it appears that an entry level statistics instructor (analog of PoP) costs [approximately 3/4 of the salary of an entry-level assistant professor in statistics](https://www.amstat.org/docs/default-source/amstat-documents/ycr-2021-2022-academicsalaryreport.pdf). Hiring 2 PoPs to manage an SC3L is equivalent to 1.5 FTE. The net 12 FTE savings is not realistic. 
+  - This configuration has a better chance of achieving the same efficiency as we currently have, **if people willing to take the positions can be located**. To solve the problems handled by SC3L, we need highly skilled statisticians with enough experience in handling different types of complex data. Such experience can come either through PhD training in Statistics or an extensive stint in industry (or both). A recent Ph.D. graduate is likely to be the most cost effective option. Even in the unlikely event that such a person could be recruited, how much would they cost? The American Statistical Association periodically publishes a salary survey among statisticians. From the last round of survey (circa 2021) it appears that an entry level statistics instructor (analog of PoP) costs [approximately 3/4 of the salary of an entry-level assistant professor in statistics](https://www.amstat.org/docs/default-source/amstat-documents/ycr-2021-2022-academicsalaryreport.pdf). However, someone with this profile is more likely to accept an industry job because the same consulting skills useful in the SC3L are much better compensated in industry. It is likely that it would cost more than 2 FTE from the current department to find someone willing to handle the workload of the SC3L. The net 12 FTE savings is not realistic. 
   
-It is more likely that the SC3L will require at least 1.5-2 FTE to maintain, even without the associated statistics department programs, leaving a cost savings of 11-11.5 FTE. 
-It is possible that these PoPs could be moved to soft money positions, like those in Biostatistics programs. However, our department went through a grueling hiring cycle to try to locate a tenured hard-money director of the SC3L and ended up hiring internally instead because we could not attract someone qualified. Based on that experience, we can confidently predict that IANR will not find a trained Ph.D. statistician who is willing to take a soft-money PoP role at UNL. 
+The SC3L will require at least 2 FTE to maintain, even without the associated statistics department programs, leaving a cost savings of 11 FTE relative to the current 13 FTE. 
+It is possible that these PoPs could be moved to soft money positions, like those in Biostatistics programs. 
+However, our department went through a grueling hiring cycle to try to locate a tenured hard-money director of the SC3L and ended up hiring internally instead because we could not attract someone qualified. 
+Based on that experience, we can confidently predict that IANR will not find a trained Ph.D. statistician who is willing to take a soft-money PoP role at UNL. 
+It seems unlikely that IANR will be able to find someone willing to take a PoP role to run the SC3L, given that we could not find someone willing to take a tenured position. 
+If the administration proceeds with this proposed cut in its current form, it seems likely that they will fail to recruit the consulting expertise necessary to even have a statistics presence on campus, leaving researchers in a terrible position. 
+Many grants took for granted the existence of the SC3L and free consulting services, or the willingness of members of the Statistics department to collaborate without being listed as a co-PI on the grant. 
+What will happen to these projects without statisticians on campus?
 
-In truth, it will likely be hard to recruit *any* statistical expertise to UNL after the publicity surrounding this budget proposal. Statistics is an incredibly in-demand field, so who would risk moving to Nebraska if the university is not committed to the role of a statistics department at a public, R1, Big Ten, land grant institution? 
+In truth, it will likely be hard to recruit *any* statistical expertise to UNL after the publicity surrounding this budget proposal. 
+Statistics is an incredibly in-demand field, so who would risk moving to Nebraska if the university does not understand or appreciate the role of a statistics department within a public land grant institution? 
 
 ## General Education Courses {#sec-fte-calc-teaching}
 
 Next, who teaches Stat 218, 380, 801, 802, and 870?
 
-Currently, the Statistics department offers approximately 17 sections of Stat 218 (8 in fall, 7 in spring, and 2 in summer), in addition to 6 sections of Stat 380, and two sections of 801 (with 2 sections of lab each) and 802. Stat 870 is offered less frequently, so we will exclude it from this analysis. 
-The courses identified to be kept require 25 sections across 4 preps; we estimate that this would require at least 3 professors of practice to teach (assuming a 4-4 load) which are not accounted for by the current budget reduction plan. 
+Currently, the Statistics department offers approximately 17 sections of Stat 218 (8 in fall, 7 in spring, and 2 in summer), in addition to 6 sections of Stat 380, and two sections of 801 (with 2 sections of lab each) and 802. Stat 870 is offered less frequently, so we will exclude it from this analysis in order to produce conservative estimates. 
+The courses identified to be kept require 25 sections per year across 4 preps; we estimate that this would require at least 3 professors of practice to teach (assuming a 4-4 load) which are not accounted for by the current budget reduction plan. 
 These FTEs would need to be subtracted from the savings listed, yielding only 9 FTE savings for cutting four programs (BS in Statistics, BS in Data Science from CASNR, MS in Statistics, and Ph.D. in Statistics). 
 
 We use professors of practice for this comparison rather than adjuncts both because it seems unlikely that 25 courses could be assigned to adjuncts with statistical training, given that most people with graduate degrees in Statistics can make more freelancing as data scientists than they would be compensated for teaching courses. 
-Certainly, it seems likely that the FTEs which are being eliminated will not be available to teach courses at adjunct rates. 
+Certainly, it seems likely that the FTEs which are being eliminated will not be available to teach courses at adjunct rates, as many other Big Ten and AAU institutions are hiring, and some institutions have multiple positions^[This leads to the ironic possibility that members of the Statistics department may make it into the AAU long before Nebraska does, particularly if this proposal goes through.]. 
 
-The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include courses not identified by IANR, such as Stat 462 and Stat 463, which are required for the Actuarial Science degrees in Business and CAS. 
+The calculations for how many PoPs would be required to teach current Statistics courses that drive revenue generation for the department does not include essential courses identified by other colleges, such as Stat 462 and Stat 463, which are required for the Actuarial Science degrees in Business and CAS. 
 Two additional Stat 300/400 level courses are required beyond Stat 380 for the Mathematics, Statistics, and Data Science focus area within the Math department. 
 The Digital Agriculture minor also requires Stat 151 and 251, computing courses developed for the Statistics undergraduate major. 
 The Agricultural Economics Ph.D. requires Stat 882, and the Finance Ph.D. requires 9 hours of graduate Statistics coursework (it is quite possible that Stat 882 and 883 would be preferable to 801 and 802 for Finance majors). 
-This analysis does not consider the fate of the Data Science programs in CAS and COE, which would lose between one and three courses in the data science core as well as the statistics focus area that is primarily made up of courses designed for the Statistics and Data Analytics major and the Statistics minor. 
+
+This analysis does not consider the fate of the Data Science programs in CAS and COE, which would lose between one and three courses in the data science core as well as the statistics focus area that is primarily made up of courses designed for the Statistics and Data Analytics major and the Statistics minor, as selecting a minimal subset of these courses will still damage the flexibility within the Data Science program and may lead to students selecting other majors rather than Data Science. 
+
+
 In order to support these additional courses, an additional professor of practice would likely be required, reducing the FTE savings from eliminating the department to 9, or 7 if the SC3L is kept as planned. 
 
 Calculations | FTE
@@ -77,11 +90,20 @@ FTE required for 151, 251, 462, 463, 882 | -1
 FTE required for SC3L | -2
 Total | 7
 
+It is important to note that this is not an apples-to-apples comparison. 6 PoPs (2 for SC3L, 4 for teaching) cannot possibly maintain the quality of the educational and research contributions the Statistics department maintains -- there is simply not enough time in the day to meet the demands of PoP positions and stay current on new developments in Statistics. 
+The quality of statistical education and consulting under this distributed/PoP/adjunct model will inevitably degrade. 
+Without a centralized unit facilitating course coordination, the variability in course quality will increase, eventually leading to the types of concerns that were raised during the 2005 Statistics APR, where the quality of 801/802 were of concern in part due to the lack of coordination during the upheaval of trying to combine the Biometry and Statistics core within the Math Department. 
+
 ## Grant Funding Losses
 
 Elimination of the department of Statistics will lead to the loss of already-promised federal funding from NSF and NIH, among others. 
 In total, there is more than $1M of federal grant money that Statistics faculty have as PIs, as of October 2025.  
 Termination will lead to permanent loss of these research restricted dollars (a vital AAU metric).
+
+It is not possible to calculate the loss of research dollars due to the damage to UNL's reputation, but several letters in support of the department raise this issue (and the authors of those letters are individuals who have served at high levels within federal funding agencies). 
+Statistical collaborators are a resource just like the Holland Computing Center or the greenhouses and fields available for ag research or the labs and equipment available for other scientific disciplines. 
+UNL has very publicly announced that they do not prioritize this resource, and funding agencies will undoubtedly be aware of this issue when evaluating grants from UNL PIs. 
+In an era where federal agencies are looking for any excuse to deny funds to universities, this is a risky position to take as an institution. 
 
 
 ## Tuition Generation

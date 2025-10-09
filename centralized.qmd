@@ -1,4 +1,4 @@
-# Centralized vs. Distributed Statistics Model
+# Centralized vs. Distributed Statistics Model {#sec-centralized}
 
 ```{r}
 #| include: false
@@ -83,7 +83,7 @@ Clearly, the distributed model did not work well as it initially evolved in depa
 | Teaching | Service courses are taught primarily by the Statistics department with coordination from other departments to calibrate course offerings | Service courses are taught in departments across UNL: Psychology, Educational Psychology, Sociology, QQPM, Agronomy, Animal Science, SNR, Engineering, Computer Science, Mathematics |
 | Advising | Statistics faculty often serve on outside committees to provide statistical advice on student projects, building collaborations across departments. | Department experts serve on all committees for graduate students within the discipline. |
 | Consulting | SC3L provides consulting. Funding provided from any college which wants to have statistical consulting resources available to faculty. | A single consultant is available for IANR faculty. There is consistently insufficient time available to meet demand for consulting across colleges. | 
-| Service | The statistics department is a resource described in grant applications like other "common good" resources across campus, like HCC and ORI. Statistics faculty are readily located to assist with collaborative grant projects. | Statistical support for grants is provided by distributed faculty (if one with the right expertise can be located, see @fig-decentralized-bubbles) or by faculty at other institutions outside of Nebraska. Research quality may suffer and proposals may be seen as less competitive by funders. | 
+| Service | The statistics department is a resource described in grant applications like other "common good" resources across campus, like HCC and ORI. Statistics faculty are readily located to assist with collaborative grant projects. | Statistical support for grants is provided by distributed faculty (if one with the right expertise can be located, see @fig-decentralized-bubbles) or by faculty at other institutions outside of Nebraska. Research quality may suffer and proposals may be seen as less competitive by funding agencies. | 
 | Degree Programs | Statistics BS, MS, and Ph.D. programs are located within the Statistics Department. | No statistics major or advanced statistics coursework is offered to students at any level | 
 
 
@@ -128,3 +128,13 @@ Ideally this would come with joint appointments to reinforce inter-department co
 
 The reality is that a truly centralized model is more efficient university-wide. 
 What is more important than the organizational structure, however, is maintaining the statistics Ph.D., MS, and Statistics and Data Analytics BS programs, so that Nebraska's students continue to have these educational options and Nebraska businesses have the ability to recruit highly qualified employees from a market that increasingly demands skill in data analytics across a wide range of different positions. 
+
+
+## Conclusion
+
+- In a time of ever-present budget constraints, there are greater efficiencies to be found from cross-listing or deduplicating courses than there are from eliminating the Statistics department. Courses like ECON 215, CRIM 300, and EDPS 459 are all considered equivalent to STAT 218, and STAT 218 is offered across more time slots, providing greater student choice. We could even work out a system similar to Computer Science 155X, where different sections of the course use examples which are specific to different disciplines. Innovation along these lines would reduce teaching demands across several departments while still ensuring quality statistics education. 
+
+- Cross-appointments between departments would increase ties between Statistics and departments on City campus such as Sociology, EDPS, Psychology, and Computer Science. This would increase the centralization of quantitative data expertise across campus, making finding the right statistician to collaborate with much simpler for researchers. 
+
+- Maintaining statistics programs is more important than maintaining a centralized department of Statistics, because it is critically important to continue to offer training in Statistics, both for the Nebraska economy and for our students, who use the high probability of a well-paying job to ensure their future economic stability. If statistics professors are at least located within a unit where we can be found, we can continue to serve the research, service, and extension missions of the university, but without our faculty, the teaching mission of the university will be seriously damaged.
+

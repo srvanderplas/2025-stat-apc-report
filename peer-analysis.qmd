@@ -160,7 +160,7 @@ We support research in departments across campus and fundamentally enable the un
 > Disbanding Statistics would immediately weaken UNL's standing as a comprehensive, research‐intensive institution. It would jeopardize collaborations across colleges, with federal agencies, industry, and other universities, and risk signaling a retreat from UNL's land-grant mission.
 > -- [Thomas Lee, Distinguished Professor of Statistics, UC Davis](letters/UNL_Statistics_Support_Letter_ThomasLee.pdf)
 
-UNL Statistics ranks `r rank_lg` of `r n_lg` land grant university statistics departments, or in the `r sprintf("%0.2f", percentile_lg)`th percentile. 
+UNL Statistics ranks `r rank_lg`th of `r n_lg` land grant university statistics departments, or in the `r sprintf("%0.2f", percentile_lg)`th percentile. 
 
 
 ## Big Ten Universities
@@ -168,9 +168,9 @@ UNL Statistics ranks `r rank_lg` of `r n_lg` land grant university statistics de
 > Eliminating the department would not only discredit UNL's national reputation but also dismantle a critical hub for collaboration, teaching, and discovery. Thirteen out of fourteen Big Ten universities maintain stand-alone statistics departments because they recognize the strategic importance of the discipline. As a proud statistics major from one of those institutions, I can personally attest to the transformative value of a dedicated statistics department in shaping my own education and career, and in fostering a culture of analytical rigor, interdisciplinary collaboration, and continuous innovation. UNL's decision would set a dangerous precedent in which foundational academic units can be dismantled despite their centrality to institutional success and societal progress. 
 > -- [David Matterson, Director, National Institute of Statistical Sciences](letters/DavidMatterson_NISS.pdf)
 
-We should note that Dr. Matterson's statistics on Big Ten membership might be slightly out of date, but the conclusion is the same. Of the `r nrow(big10)` Big Ten universities, only University of Oregon does not have a cluster of statisticians on campus, and they are actively hiring statisticians to fill a School of Data Science. Academic Analytics also does not have a SRI for University of Southern California, perhaps because they have a combined Mathematics & Statistics department. One additional university (Indiana) has proposed its Statistics department for elimination; however, according to Academic Analytics data, its department seems to have only 7 faculty and has an SRI percentile of 38.2. 
+We should note that Dr. Matterson's statistics on Big Ten membership might be slightly out of date, but the conclusion is the same. Of the `r nrow(big10)` Big Ten universities, only University of Oregon does not have a cluster of statisticians on campus, and they are actively hiring statisticians to fill a School of Data Science. Academic Analytics also does not have a SRI for University of Southern California, perhaps because they have a combined Mathematics & Statistics department. One additional university (Indiana) has proposed its Statistics department for elimination; however, according to Academic Analytics data, its department seems to have only 7 faculty and has an SRI percentile of 38.2^[Within the discipline, the sense is that Indiana has had funding and staffing problems for years that go well beyond rankings; its closure may occur but it will be an extreme outlier in a discipline where universities are hiring multiple statisticians each academic year to grow programs in response to demand.]. 
 
-UNL Statistics ranks `r rank_b10` of `r n_b10` Big Ten university statistics departments, or in the `r sprintf("%0.2f", percentile_b10)`th percentile. 
+UNL Statistics ranks `r rank_b10`th of `r n_b10` Big Ten university statistics departments, or in the `r sprintf("%0.2f", percentile_b10)`th percentile. 
 
 
 ```{r}
@@ -284,7 +284,7 @@ And this assessment is shared by the chairs of other Big Ten statistics departme
 > Moreover, dissolving the Statistics Department will make it difficult, if not impossible, for UNL to achieve its goal of rejoining the Association of American Universities (AAU).
 > -- [Big Ten Statistics Department Chairs](letters/Big10_UNL_Letter.pdf)
 
-UNL Statistics ranks `r rank_aau` of `r n_aau` AAU statistics departments, or in the `r sprintf("%0.2f", percentile_aau)`th percentile. 
+UNL Statistics ranks `r rank_aau`rd of `r n_aau` AAU statistics departments, or in the `r sprintf("%0.2f", percentile_aau)`th percentile. 
 
 
 ### Public AAU Universities
@@ -293,15 +293,17 @@ UNL Statistics ranks `r rank_aau` of `r n_aau` AAU statistics departments, or in
 The administration has defined the `r nrow(pubaau)` public AAU universities to be their preferred comparison group. 
 All `r sum(pubaau$has_some_stat)` have a stand-alone statistics or data science department (excluding biostatistics), and `r sum(!is.na(pubaau$Biostatistics))` also have a biostatistics department. 
 Thus, even if UNL and UNMC merge at some point in the future, we will be in good company among other public AAU institutions in having both a Statistics and Biostatistics department, as these serve different functions. 
-UNL Statistics ranks `r rank_public_aau` of `r n_public_aau` public university statistics departments in the AAU, or in the `r sprintf("%0.2f", percentile_public_aau)` percentile. 
+UNL Statistics ranks `r rank_public_aau`rd of `r n_public_aau` public university statistics departments in the AAU, or in the `r sprintf("%0.2f", percentile_public_aau)`th percentile. 
 
 
 ## Conclusion
 
-While it is often desirable to be unique in a field, eliminating the statistics department would be more akin to notoriety. 
+While it is often desirable to be unique in a field, eliminating the statistics department would be more akin to notoriety or disgrace.  
 Statistics expertise is **essential** to the function of a modern R1 land-grant institution, particularly in a state where there is not another competing R1 institution which might serve researchers at both schools.
-We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its R1 status threatened.
+We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its place in the Big Ten threatened. 
+If it continues on the same course, even the R1 status of the university could be in jeopardy.
 The proposed elimination of the department has threatened UNL's international reputation, but going through with that elimination would have dire consequences for the institution's standing among its peers.
+This damage will take multiple generations to repair^[Or a *very* significant investment of funding both from philanthropy and from the university itself to demonstrate a lasting commitment to the discipline.], even if the administration sees the error of eliminating our department relatively quickly. 
 
 > Statistics is the backbone of modern research across all fields, from agriculture and medicine to engineering and social sciences. The expertise provided by statisticians is essential for designing experiments, analyzing data, and interpreting results. Without a dedicated Statistics Department, UNL will lose its competitive edge in research and innovation, and a fall in research quality and rankings is inevitable.
 > -- Rob Hyndman, Monash University, Australia. 

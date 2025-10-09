@@ -437,16 +437,21 @@ consulting <- read_xlsx("data-analysis/data/SC3L_client_count.xlsx", col_types =
   mutate(Department = factor(Department, levels = sort(unique(Department)), ordered = T) |>
            fct_relevel("Other", after=Inf)) |>
   mutate(UNMC = Department%in%c("Oral Radiology", "Dental Hygiene", "UNMC", "Birth Outcomes and Water Research"),
-         UNK = str_detect(Department, "UNK")) |>
-  pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum) 
-consulting |> 
-  left_join(unique(select(consulting, Department, Total))) |>
+         UNK = str_detect(Department, "UNK")) 
+
+consulting_wide <- consulting |>
+  pivot_wider(names_from = "Year", values_from = "NumClients", values_fill = NA, values_fn=sum)  |>
+  left_join(unique(select(consulting, Department, Total)))
+
+total_row <- consulting_wide |> ungroup() |> summarize(Department = "Total", across(c(`2020`, `2021`, `2022`, `2023`, `2024`, `2025`, Total), ~sum(., na.rm = T)))
+consulting_wide |>
   select(Department, `2020`:`2025`, Total) |>
-  arrange(Department) |>
+  arrange(Department) |> 
+  bind_rows(total_row) |>
   kable(caption = "SC3L clients, 2020-2025. The SC3L is essential for research in departments across campus, but also has worked with clients from UNMC (teal) and UNK (gold), as well as local organizations, such as Southwest Fire & Rescue. Ultimately, the entire university system would be hurt by the proposal to eliminate the Statistics department, because the SC3L is staffed by statistics graduate students. One supervisor cannot reasonably perform the consulting tasks currently handled by 5 students working 20+ hours a week.") |>
   kable_styling(latex_options = "striped") |>
-  row_spec(which(consulting$UNMC), background = "#7dfaff") |>
-  row_spec(which(consulting$UNK), background = "#ffd785")
+  row_spec(which(consulting_wide$UNMC), background = "#7dfaff") |>
+  row_spec(which(consulting_wide$UNK), background = "#ffd785")
 ```
 
 As @tbl-sc3l-clients shows, the SC3L handles a large number of projects over the course of a single year. 
@@ -499,6 +504,10 @@ There is a cross-pollination effect whereby consulting projects raise statistics
 Then, the formal methodology in the statistics literature can be applied to other domains with similar problems and slight variations.
 This admittedly complex process takes time to bear fruit, which is why consulting relationships take time to build and evolve.
 
+A university that considers statistical research as "not in alignment" with strategic goals will quickly (within 3-5 years) find itself behind in curriculum and statistical support to other fields.
+This will hamper recruiting of undergraduate and graduate students, research efforts, and recruitment of faculty within fields that depend on statistical expertise. 
+Statistics is somewhat like sports medicine -- an invisible discipline to spectators, but an essential component of an athletics department that wishes to keep athletes performing at peak levels. 
+
 > The Department of Statistics is not an isolated entity; it is an indispensable partner for us and for many other departments on campus. ...
 > **Instrumental for Research and Funding** The success of our research and our ability to secure external funding are directly tied to the expertise of the Statistics department. Our faculty members have relied on this partnership to secure significant external grants, including multiple projects funded by the National Science Foundation (NSF). This is not a coincidence. Modern plant science is a data-intensive discipline, and robust statistical analysis is essential for designing experiments, interpreting complex datasets, and validating research findings. Without in-house statistical collaboration, our faculty's ability to compete for large-scale federal funding—like that from the National Science Foundation (NSF)—would be severely diminished.
 > 
@@ -547,7 +556,7 @@ In addition to the economic consequences, there are also social impacts to elimi
 Our faculty are collaborators on a number of critical research and social projects around the university, including the Nebraska Food for Health Center, the  Quantitative Life Sciences Institute, the Center for Plant Science Innovation, and a variety of Hatch projects.
 Moreover, Dr. Susan Vanderplas and Dr. Heike Hofmann are well known in forensic science for their efforts to assist public defenders with proper assessment of scientific support for forensic evidence as well as their efforts to develop new quantitative methods for assessing firearms evidence.
 Without a dedicated statistics department, it would not be possible to connect people needing assistance with statistics, from public defenders to plant geneticists, with the statistician that has the expertise to help solve the problem.
-These collaborations -- many of them uncaptured by university metrics^[Dr. Vanderplas has written legal briefs or consulted pro bono on for 11 cases across 10 jurisdictions since 2020, helping to overturn precedent for admissibility of forensic evidence on at least three occasions (legal proceedings move even slower than most peer review processes, so these collaborations take even more time to bear fruit).] -- are another consequence of having an active, engaged, and connected statistics department within state land-grant universities like University of Nebraska.
+These collaborations -- many of them un-captured by university metrics^[Dr. Vanderplas has written legal briefs or consulted pro bono on for 11 cases across 10 jurisdictions since 2020, helping to overturn precedent for admissibility of forensic evidence on at least three occasions (legal proceedings move even slower than most peer review processes, so these collaborations take even more time to bear fruit).] -- are another consequence of having an active, engaged, and connected statistics department within state land-grant universities like University of Nebraska.
 
 > You are all undoubtedly familiar with the phrase "lies, damned lies, and statistics" which highlights how armchair statisticians can torment numbers to any end imaginable. Every day in criminal courts across Nebraska, witnesses come to court confidently and unknowingly abusing statistics that can hurt innocent people. Many defense lawyers aren’t yet even aware how this is happening, but **statisticians in your department are some of the first in the country to study and work to systematically right those wrongs.** That work is just the beginning, and many other deeply flawed forensic fields are rooted in the same amateur application of statistics.
 > Please reconsider the proposal to eliminate your Statistics Department. An unchecked forensic industry's impact on the legal system is just one consequence of a society that doesn't value statistics. In our moment, when anyone can manufacture "facts" to be disseminated to the world with the click of a mouse, statistics are one of the last defenses of reality. The public desperately needs robust statistics departments.

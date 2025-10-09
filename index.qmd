@@ -38,3 +38,6 @@ Important links:
 - [Detailed statistical analysis of variables used in the budget proposal analysis](app-metrics-analysis.qmd)
 
 - [Analysis of problems with the data used in the budget proposal analysis](app-analysis-issues.qmd)
+
+If you are viewing a PDF copy of this report or viewing a printout of the report, all of the supporting documentation (APR reports, letters, etc) can be found at https://srvanderplas.github.io/2025-stat-apc-report/ (HTML version with links) or at https://github.com/srvanderplas/2025-stat-apc-report/. 
+Statisticians care very much about scientific reproducibility, and so we have done our best to provide the sources, data, and code to support this analysis. 
