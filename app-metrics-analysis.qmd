@@ -1,4 +1,4 @@
-# A Statistical Analysis of Metric Inputs and Calculations {#sec-codebook-analysis .appendix}
+# A Statistical Commentary on the Metric Inputs and Calculations {#sec-codebook-analysis .appendix}
 
 ```{r}
 #| include: false
@@ -29,8 +29,8 @@ Comments on the validity of various measures are contained in highlighted blocks
 In most cases, these comments are focused on the problems discovered by the Statistics department, however, it seems likely that most issues cut across many departments.
 :::
 
-### General Descriptors
-#### Identifiers
+## General Descriptors
+### Identifiers
 
 1.1.1 `lowest_level_key` Numeric key of lowest level unit.
 
@@ -52,7 +52,7 @@ In most cases, these comments are focused on the problems discovered by the Stat
 
 1.8 `acad_end_year` Academic ending year. E.g., 2024 for 2023-2024 AY.
 
-#### Budget
+### Budget
 
 
 1.17 `original_sa_budget` Original state-aided budget (total). Original budget includes all permanent funding as of July 1. Temporary funding and cash carryforwards are excluded. This also shows up at Budget in final metrics.
@@ -98,10 +98,10 @@ In most cases, these comments are focused on the problems discovered by the Stat
 1.991 `total_realizable_base_tuition_less_budget` This is estimated by `total_realizable_base_tuition` (1.49) less original state-aided budget, apportioned for `percent_teaching` (also `instruction_budget`, see 1.95 above).
 
 
-#### Appointments & Headcount
+### Appointments & Headcount
 ::: {.callout-warning #wrn-apportionment}
 
-##### Apportionment problem: Partial-year data not included
+#### Apportionment problem: Partial-year data not included
 
 This information seems to have been assembled from a source that does not take into account mid-year hires. 
 Susan Vanderplas started at UNL in January 2020 and has a 20% Extension appointment, so for the 2019-2020 academic year, she would have been paid for between 5 and 6 months, depending on how 9-month contracts are handled. 
@@ -110,7 +110,7 @@ The Details tab of the metrics show a 0.0 percent extension FTE appointment for 
 :::
 
 ::: {.callout-warning #wrn-headcount}
-##### Headcount problem: Lack of Public Data Confirmation
+#### Headcount problem: Lack of Public Data Confirmation
 
 There is relatively little clarity to be had about how apportionment was counted in these metrics. 
 The only public data available to us is the [UN System Budget & Salary Information](https://nebraska.edu/offices-policies/business-finance/budget-and-planning), which contains spreadsheets ("Budgeted Employees as of...") and PDF documents ("University of Nebraska Salary Information"). Historical data is available.
@@ -155,7 +155,7 @@ The Office of Research and Innovation apparently did not do any of these things 
 
 ::: {.callout-warning #wrn-instructor-fte}
 
-##### Instructor FTE Problem
+#### Instructor FTE Problem
 
 This metric definition doesn't make any sense. There is a single column of `appointment_apportionment_fte` for each unit. 
 
@@ -216,7 +216,7 @@ Departments which have more professors of practice seem to be higher on the list
 1.66 `t_tt_headcount_2014_2023_avg` The average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center. Headcounts were assigned to departments using the HR tenure org unit.
 
 ::: {.callout-warning #wrn-research-ntt}
-##### Research Contributions by NTT Professors
+#### Research Contributions by NTT Professors
 
 Our department had a long-time Professor of Practice, Kathy Hanford, who had a research and teaching apportionment and was the professor in charge of the SC3L. She retired at the end of 2023, so she *should* be included in most of our metrics, but isn't because she was not tenure track. 
 She does, however, count against our budget. 
@@ -228,7 +228,7 @@ The current head of SC3L, Dr. Reka Howard, is an associate professor in the depa
 
 ::: {.callout-warning #wrn-per-capita}
 
-##### Per-capita measures
+#### Per-capita measures
 
 Different denominators are used to measure per-capita productivity in teaching and research across the analysis. 
 In some cases, these are reasonable (e.g. it is reasonable to use total teaching FTE to calculate SCH per FTE values), but in others, these differences seem to arise primarily from the desire to conform to Academic Analytics or AAU metrics. 
@@ -249,16 +249,16 @@ This is an estimate. At present, it is impossible to determine how many would me
 1.51 `vsip_eligible_pct` The proportion of the unit's tenure-track faculty who would be eligible for VSIP in summer, 2026.
 
 ::: {.callout-warning #wrn-vsip}
-##### VSIP percentage
+#### VSIP percentage
 
 Tracking this makes sense, but it's unclear how this metric might factor into a final decision to combine or eliminate departments. Is it better to eliminate a department with a high percentage of VSIP eligible faculty, since the department might not be able to function after VSIP anyways? Or would it be better to eliminate a department without VSIP eligible faculty, since those savings won't be double-counted by both VSIP and the elimination of the department, as the current analysis seems to do for the departments which will be combined (ALEC and Agricultural Economics, Entomology and Plant Pathology). 
 
 :::
 
-### Research
+## Research
 
 ::: {.callout-warning #wrn-z-scores-research}
-##### Z-scores for research
+#### Z-scores for research
 
 There are so many problems with the constitutent components of the research metrics (even before they are standardized) that the resulting research average z-score is utterly unreliable and not useful for cross-department comparison. 
 
@@ -272,7 +272,7 @@ Fundamentally, as statisticians, if you take the average of standardized garbage
 
 1.83 `comments` Comments from ORI regarding research metrics, their crosswalk to instructional units, etc.
 
-#### SRI
+### SRI
 
 1.82 `sri_aau_public_peers` Academic Analytics SRI score when comparing units to Public AAU Institutions. If a unit has multiple SRI scores available, they were averaged.
 
@@ -291,7 +291,7 @@ Fundamentally, as statisticians, if you take the average of standardized garbage
 
 ::: {.callout-warning #wrn-sri-1}
 
-##### SRI Problem 1 - Averaging Multiple SRI scores
+#### SRI Problem 1 - Averaging Multiple SRI scores
 
 Some departments have multiple SRI scores generated by Academic Analytics. 
 
@@ -316,7 +316,7 @@ Then, if the goal is to assess the department's performance, two reasonable appr
 :::
 ::: {.callout-warning #wrn-sri-2}
 
-##### SRI Problem 2 - Cross-Department Comparisons
+#### SRI Problem 2 - Cross-Department Comparisons
 
 It is **completely inappropriate** to use SRI values to compare departments to other departments within the same university. 
 SRI values have a distribution that is discipline specific, with different means and variances. 
@@ -393,7 +393,7 @@ The variance of the estimated percentile can be estimated by treating the percen
 
 :::
 ::: {.callout-warning #wrn-sri-3}
-##### SRI Problem 3 - Comparison Groups and TMFD
+#### SRI Problem 3 - Comparison Groups and TMFD
 
 The case of Textiles, Merchandising, and Fashion Design illustrates the problem of comparison groups quite nicely.
 TMFD is in the bottom quintile - ranked 25 out of 41 peers - in @fig-sri-percentile-all-depts. 
@@ -430,7 +430,7 @@ So, at some point someone at UNL listed TMFD as "Consumer and Human Sciences, va
 Ultimately, there just is not enough time for that process to occur, even if ORI was willing to engage and fix the analysis. 
 :::
 
-#### Awards
+### Awards
 
 
 1.68 `awards_ltd_2023_total` NCR highly prestigious awards, including national academy memberships in engineering, medicine and science. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only awards for T/TT faculty in benchmarked AcA units is reported to the AAU. Highly prestigious awards are tracked over the life of the faculty member's career and are credited to the institution where they are currently employed. Once a faculty member retires or leaves an institution, their highly prestigious awards are no longer included in the data reported to AAU. Put another way, the highly prestigious awards follow the faculty member.
@@ -450,7 +450,7 @@ This is one reason why Academic Analytics compares within discipline and not acr
 
 1.63 `awards_normalized_z_score` Z score of `awards_normalized` Normalized highly prestigious awards, fellowships and memberships as defined by the AAU membership policy for awards received LTD up to 2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
 
-#### Books
+### Books
 
 
 1.69 `books_2014_2023_total` The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. Book publications reported to AAU by AcA include books, casebooks, edited volumes, encyclopedias, and textbooks. AcA book types not reported include journals, proceedings, study guides and book chapters. Book publications are credited to departments based on the author's HR tenure org unit. From the AAU Membership Policy: The total number of books published by the institution for the most recent ten-year period. The Faculty Scholarly Productivity (FSP) Database. These data are reproduced under a license agreement with Academic Analytics. http://academicanalytics.com/
@@ -461,7 +461,7 @@ This is one reason why Academic Analytics compares within discipline and not acr
 
 ::: {.callout-warning #wrn-book-disciplines}
 
-##### Book Disciplines and Book Data
+#### Book Disciplines and Book Data
 
 While the book data from Academic Analytics is overall quite high quality, it does have some issues in that it is dependent on publisher reporting. 
 The statistics department found at least one book which was misreported by the publisher, affecting the totals.
@@ -476,13 +476,13 @@ In addition, books are normalized by average tenure-track headcount without acco
 
 :::
 
-#### Citations
+### Citations
 
 1.70 `citations_2014_2023_avg` The average number of citations on peer-reviewed articles for the most recent ten-year period. AcA reports citations in the year of the publication. Citations for articles coauthored by more than one UNL faculty member have been split equally across authors. AAU uses Web of Science InCites for the citations data. UNL does not currently subscribe to InCites and so is using Academic Analytics to track and report this data. Citations are credited to departments based on the author's HR tenure org unit. From the AAU Membership Policy: Average number of times an institution's Web of Science Documents have collectively been cited for the most recent ten-year period. InCitesTM, Clarivate (2023). Web of Science. ® These data are reproduced under a license agreement from Clarivate. http://incites.clarivate.com/
 
 ::: {.callout-warning #wrn-citation-window}
 
-##### Citation Window
+#### Citation Window
 
 The choice to use Academic Analytics citations is not discipline-neutral. 
 The InCites citation window is 10 years, which is long enough for most disciplines. 
@@ -501,7 +501,7 @@ If the number of people in the department is also small, the variability in cita
 1.81 `citations_normalized` `citations_2014_2023_avg` divided by `t_tt_headcount_2014_2023_avg.`
 
 ::: {.callout-warning #wrn-citation-norm}
-##### Citation normalization
+#### Citation normalization
 
 Normalizing citations by tenure-track headcount instead of by effective research FTE is problematic. 
 Some departments have a significant number of non-TT faculty in research/extension positions who contribute to the scholarly literature in their field. 
@@ -514,7 +514,7 @@ This is not the case when using these metrics to compare across departments -- i
 1.65 `citations_normalized_z_score` Z score of `citations_normalized` Normalized citations as defined by the AAU membership policy (using Academic Analytics as a proxy for InCites) for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
 
 ::: {.callout-warning #wrn-citation-count}
-##### Citation counts
+#### Citation counts
 
 Citation counts differ wildly by discipline, and are affected both by how many researchers and papers there are in the discipline and by citation norms within that discipline. 
 Using z-scores makes the assumption that all departments are from a similar distribution (which is clearly not the case). 
@@ -522,10 +522,10 @@ Comparing departments on normalized citations ensures that these discipline-spec
 :::
 
 
-#### Research Awards Inc NUF
+### Research Awards Inc NUF
 
 ::: {.callout-warning #wrn-grant-metrics}
-##### Grant Metric Problems
+#### Grant Metric Problems
 
 All of the grant metrics are affected by a common flaw: disciplines do not (usually) compete against each other within a university for awards^[The Fulbright program might be one common exception, as it allows applications from many different disciplines. However, this would likely fall under "Awards" more generally instead of research awards/grants.]. Rather, the English department might get awards from the National Endowment for the Arts or various private foundations. The Physics department likely gets grants primarily from NSF, and Engineering departments have some options - NSF, Dept of Energy, Department of Defense. Life sciences might get grants from NSF, but also NIH, CDC, Dept of Health, and the Veterans Administration. Agriculture grants will primarily come from USDA but may also come from NSF, NIH,  and others because ultimately agriculture spans both applied and hard science topics across a wide range of applications. 
 
@@ -547,7 +547,7 @@ Note that we do *not* recommend comparing departments based on that z-score, bec
 
 ::: {.callout-warning #wrn-cauchy-research}
 
-##### Problems with `research_awards_growth_inc_nuf_fy20_fy24`
+#### Problems with `research_awards_growth_inc_nuf_fy20_fy24`
 
 Of all of the random variables created in this analysis, the most problematic from a statistical theory perspective might be `research_awards_growth_inc_nuf_fy20_fy24` (and its instructional companion, `instructional_sch_4Y_share_growth`).
 This is the ratio of two differences, where we might reasonably model each value in the numerator as a normal random variable with mean $\mu_d$ and standard deviation $\sigma_d$ ($d$ for department), and each value in the denominator as random variables with mean $\mu_u$ and standard deviation $\sigma_u$ ($u$ for university). The problem with this is that the two differences, $\mu_{d,2024} - \mu_{d,2020}$  and $\mu_{u,2024} - \mu_{u,2020}$ have mean zero, which leads to a $\frac{0}{0}$ situation that is mathematically undefined.
@@ -577,7 +577,7 @@ Cauchy random variables are typically not covered in undergraduate math-stat and
 1.61 `research_awards_growth_inc_nuf_z_score` Z score of `research_awards_growth_inc_nuf_fy20_fy24`
 
 
-#### Total Sponsored Awards Inc NUF RSCH PUB SERV TEACH
+### Total Sponsored Awards Inc NUF RSCH PUB SERV TEACH
 
 1.71 `average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` Average annual sponsored awards received in FY20 to FY24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation. Purpose codes reported include research, teaching and public service which are summed and divided by total state appropriated budget. Awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual's HR tenure org unit, primary org unit and any secondary appointments.
 
@@ -585,7 +585,7 @@ Cauchy random variables are typically not covered in undergraduate math-stat and
 1.73 `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` `Average_total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_fy2020_fy2024` divided by `budget_from_evc_file_state_appropriated_budget` Average sponsored awards for FY20-24. Included are all sponsor types: federal, industry, state agencies, associations/nonprofits and the NU Foundation, for purpose codes research, teaching and public service divided by total state appropriated budget.
 
 ::: {.callout-warning #wrn-total-sponsored}
-##### Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
+#### Problems with total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
 It's unclear why the `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget` indicator was divided by total state appropriated budget, but the numbers for Statistics grants are all over the place. 
 For instance, if we multiply the 0.362 value for statistics (before it is converted to a z-score) by the state permanent budget from 2025-26,  we get `r 0.362*1329241`. 
 One PI in the department brought in 1.2 million dollars in grant money during the 2020-2024 period.
@@ -594,7 +594,7 @@ Thus, we have had a difficult time validating these numbers in any way.
 
 1.60 `awards_budget_inc_nuf_z_score` Z score of `total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget`
 
-#### P1 Expenditures
+### P1 Expenditures
 
 1.67 `p1_expenditures_2014_2023_avg` The average competitively funded federal research support as defined by the AAU membership policy, federal research expenditures less USDA research expenditures adding in awards from USDA Agriculture Food and Research Initiative (AFRI). Expenditures and AFRI awards are credited to departments using NuRamp routing forms. For PI/co-PIs who routed their credit through a unit outside a department, efforts were made to credit a department using the individual's HR tenure org unit, primary org unit and any secondary appointments.
 From the AAU Membership Policy: Competitively funded federal research support: federal R&D expenditures. A ten-year average of federal research expenditures (including S&E and non-S&E) adjusted to exclude USDA formula-allocated research expenditures. This indicator includes obligations for the AFRI program funded by USDA. National Science Foundation (NSF) Survey of Research and Development Expenditures at Universities and Colleges/Higher Education Research and Development Survey (HERD), data for the most recently available ten-year average. AFRI Obligations, data for the ten years that match the years from HERD. 
@@ -605,10 +605,10 @@ From the AAU Membership Policy: Competitively funded federal research support: f
 1.62 `p1_expenditures_normalized_z_score` Z score of `p1_expenditures_normalized` Normalized competitively funded federal research expenditures as defined by the AAU membership policy for the time period of FY2014 to FY2023. Data is normalized by the average T/TT faculty headcount over the same time period as reported to IPEDS.
 
 
-### Teaching
+## Teaching
 
 ::: {.callout-warning #wrn-data-validation}
-##### Data Lockout and Validation
+#### Data Lockout and Validation
 
 It is hard to validate the teaching metrics, because the administration has directed the registrar's office and the graduate college "not to distribute data related to proposed budget reductions at this time" ([email between Sarah Zuckerman and Debra Hope, Graduate College](documentation/Fw_ Sarah Z - EDAD Data Request.eml)). 
 
@@ -617,7 +617,7 @@ As a result, it is much harder to comment on or validate the teaching metrics.
 There are likely similar problems with the way variables were assembled, but because of the administrative lockout, we cannot do the necessary detective work to identify those problems.
 :::
 
-##### Enrollment
+#### Enrollment
 
 1.42 `U_major_n` Count of undergraduate majors, including non-primary majors.
 1.44 `G_major_n` Count of graduate majors, including non-primary majors.
@@ -664,7 +664,7 @@ There are likely similar problems with the way variables were assembled, but bec
 1.89 `ratio_completions_majors` Ratio of all degree completions (all majors attached to a degree) to all majors, including non-primary.
 
 ::: {.callout-warning #wrn-major-completion}
-##### Completions to Majors for New Programs
+#### Completions to Majors for New Programs
 
 The statistics department has a new undergraduate program that, for AY 2024 (the last AY with statistics), had two cohorts of students. 
 These students are included in the denominator as majors, but could not possibly have completed the program. As a result, of course, the department looks like we have a large dropout rate or are otherwise performing poorly. 
@@ -692,17 +692,24 @@ In prior years, the statistics department has  hovered around a 25% - 28% comple
 
 1.93 `all_majors_share_growth` Change in share (percentage) of total (duplicated) majors from AY2020 to AY2024.
 
-
 1.53 `retention_rate` First-year to second-year retention rate (cohort = AY - 1).
 
 1.54 `avg_retention_rate` Average of first-year to second-year retention rates of last 5 cohorts. Note that average retention rates for units with average starting cohorts less than 5 were nullified.
+
+::: {.callout-warning #wrn-retention-rates}
+### Retention rates
+
+Average retention rates for new programs were nullified, even if they were good. However, as discussed in @wrn-major-completion, there was no such nullification for the ratio of completions to majors for new programs, even though this value is equally misleading when a program is too new to have graduates.
+Inconsistencies in how censoring for new programs is applied causes problems -- it is important to think carefully about how to ensure that measures do not produce misleading results for edge cases. 
+
+:::
 
 1.55 `grad_rate6` Six-year graduation rate (cohort = AY - 5). Graduation rate includes students that graduated from UNL.
 
 1.56 `avg_grad6` Average of six-year graduation rates of last 5 cohorts. Note that average graduation rates for units with average starting cohorts less than 5 were nullified.
 
 ::: {.callout-warning #wrn-grad-rates}
-##### Graduation Rates Shouldn't Be Pooled
+#### Graduation Rates Shouldn't Be Pooled
 
 Most undergraduate programs take 4 years to complete. Most MS programs take 1-2 years to complete. Ph.D. programs vary considerably, but post-MS work might take between 2 to 4 years to complete, assuming the MS work transfers.
 
@@ -712,13 +719,13 @@ Ultimately, graduation rates should be computed separately for each program, and
 
 :::
 
-#### SCH & Tuition
+### SCH & Tuition
 
 
 1.48 `sch` Sum of course SCH by owner of course subject code.
 
 ::: {.callout-warning #wrn-2020-anomalies}
-##### 2020 anomalies
+#### 2020 anomalies
 
 The SCH reported for AY 2020 are almost universally off by a factor of around 10. This anomaly needs to be tracked down and investigated, because while it may not affect any department differently, it puts the provenance of the data and the quality control measures in question.
 Systematic errors are a red flag to go back and consider whether the data quality is sufficiently high to be making decisions based on this data.
@@ -750,7 +757,7 @@ G/P |  \$353 | \$1031
 1.92 `instructional_sch_4Y_share_growth` Change in share (percentage) of total instructional SCH from AY2020 to AY2024.
 
 ::: {.callout-warning #wrn-cauchy-teaching}
-##### Problem: `instructional_sch_4Y_share_growth` 
+#### Problem: `instructional_sch_4Y_share_growth` 
 
 This is another variable which is likely Cauchy distributed (see @wrn-cauchy-research), that is, it is the statistical equivalent of dividing by zero - the mean of the numerator is likely to be zero (in distribution) and the mean of the denominator is likely to be zero (in distribution) -- each year's SCH would be expected to be sampled from the same distribution at the department and university level. 
 
@@ -767,18 +774,18 @@ Unfortunately, the UNL administration will learn this the hard way, either by ac
 :::
 
 
-#### Ratios
+### Ratios
 
 ::: {.callout-warning #wrn-ratios-nightmare}
-##### Ratios are Stochastic Nightmares
+#### Ratios are Stochastic Nightmares
 
 The variability of calculated ratios complicates statistical analysis. 
+While in some cases ratios are necessary, **extreme** care must be taken to ensure that there is no possibility of the ratio having a 0  in the denominator, either in observations or in the distribution (that is, it's also bad if the **distribution** of the denominator has a mean of 0, even if no recorded observations actually have a mean of 0). 
 
 If a ratio is taken of variables with mean zero, the resulting random variable does not have a mean, standard deviation, or any other "statistical moments" (these variables have a Cauchy distribution, which does not have a mean). 
 This does not mean that you can't take the average of Cauchy distributed random variables -- it only means that that number does not have any real-world meaning. 
 
 Even when the variables don't have zero mean, taking ratios of numbers like this that have some stochastic noise can be problematic, as variability in the denominator has an outsized effect on the overall value. 
-
 :::
 
 1.85 `budget_to_sch` total original state aided budget divided by SCH
@@ -786,7 +793,7 @@ Even when the variables don't have zero mean, taking ratios of numbers like this
 1.16 `instructional_sch_to_instructional_fte` Sum of each instructor's section instruction percentage times section sch by home department of appointment divided by `total_instructor_fte.`
 
 
-### Instructional Z-scores in Institutional Metrics
+## Instructional Z-scores in Institutional Metrics
 
 All z-scores (also known as standardized or normalized scores) were calculated as the
 difference of the actual metric and the mean of the metric for included units divided by the
@@ -799,7 +806,7 @@ Traditionally – but not universally – cases beyond the 1.96 standard deviati
 
 ::: {.callout-warning #wrn-instruction-z-prob}
 
-##### Instructional Z-score Problem
+#### Instructional Z-score Problem
 
 While standardizing scores is common practice in some circumstances, it is problematic as used here, in part because it assumes that there is a single common distribution used for these values. 
 For instance, disciplines that only have graduate programs cannot be assumed to have the same distribution of SCH because of much lower numbers of graduate students. 

@@ -15,26 +15,40 @@ book:
     - centralized.qmd
     - evaluating-budget.qmd
     - future.qmd
+  appendices:
     - app-faculty-system.qmd
     - app-analysis-issues.qmd
     - app-metrics-analysis.qmd
     - 2025-Stat-APC-report.qmd
+
+  downloads: [pdf]
+
 number-sections: true
 number-depth: 6
 toc-depth: 3
 toc: true
+
+lightbox: true
 
 message: false
 warning: false
 error: false
 echo: false
 
+format-links: [html,pdf]
 
 format:
   html:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    geometry:
+    - left=1in
+    - right=0.5in
+    - textwidth=5.4in
+    - marginparsep=.1in
+    - marginparwidth=1.5in
+
 
 
 

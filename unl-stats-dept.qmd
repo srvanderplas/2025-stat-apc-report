@@ -108,6 +108,10 @@ This reduction would take UNL back to 1957 in the amount of statistical consulti
 
 - June 2022 - [Data Science Major approved by Board of Regents with programs in CASNR, CAS, and Engineering](https://ccpe.nebraska.gov/sites/default/files/AP_UNL%20Data%20Sciences%20BA%20BS%20Proposal.pdf)
 
+::: column-margin
+![The **Science** in Data Science is Statistics](images/stat-ds-math-cs.png){#fig-stat-ds-math-cs}
+:::
+
 - Fall 2022 - First Statistics and Data Analytics freshman cohort begins classes
 
 - Spring 2026 - First Statistics and Data Analytics cohort expected to graduate
@@ -127,7 +131,7 @@ A statistics department provides a number of services within the campus ecosyste
 - The department provides graduate training in statistical methods (Stat 801, 802) and in computing and data visualization (Stat 850). These courses facilitate research across the university, in a way that is important, but difficult to explicitly measure. 
 - Graduate committees often recommend additional coursework in Statistics: experimental design, specific methodologies (e.g. Bayesian statistics), computational methods, or statistical genetics.
 
-Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately. 
+Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately, and the quality of coursework (and consulting) degrades, because domain experts do not have the time to keep up with new developments in statistics as well as the domain field. 
 
 > The training my own students receive from Statistics -- from coursework, from collaborators, and from Statistics faculty on their thesis and dissertation committees -- is essential to our ability to win and execute upon large federal research awards. Our institute's capacity to train students whose expertise bridges quantitative techniques and in the field understanding of crop systems is why I receive e-mails from Corteva, Syngenta, and Bayer asking when my lab's next PhDs will be graduating.    
 > -- [James Schnable, Letter to APC](letters/James Schnable.pdf)
@@ -141,16 +145,30 @@ A major research university without a statistics department is as difficult to i
 > But statistics doesn't just feed agronomy. It provided the necessary confirmation of the Higgs boson in physics. It undergirds the risk analyses that drive medical therapies, business decisions, insurance, and the amelioration of climate change. English professors use latent Dirichlet allocation to identify themes in literature. Philosophy faculty study the implications of Bayes' Rule for rationality and coherence. Chemists, entomologists and historians all employ statistics on a regular basis, either on their own or through collaboration with research statisticians.
 > -- [David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow](letters/David Banks.pdf)
 
-While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, and causal inference, statistics departments typically have experts in experimental design relevant to important programs across campus.
+### Comparing Statistics to Biostatistics
+
+While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, longitudinal data analysis, and causal inference, statistics departments typically have experts in experimental design relevant to important programs across campus.
 At UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, statistical computing and simulation, Bayesian methodology, and operations research.
 
-A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are co-located. 
-Under a distributed model, someone might have to search directory information within 12-15 departments^[As we have tried to do when assembling this report -- it is not an easy or efficient process.], and it is likely that they  may not find the right person in any case. @fig-centralized-bubbles and @fig-decentralized-bubbles demonstrate the number of connections necessary to find the right statistical expertise under both the centralized and decentralized models.  
+In addition, the funding model for biostatistics departments is extremely different than those in statistics departments: biostatistics faculty are usually soft-money positions and as a result work on specific grant projects. 
+In general, they are not available for collaborations without a grant attached, which makes it harder for them to serve as a general campus resource available to everyone. 
+
+Finally, biostatistics is tethered to medical data and as a result is very applied. Medical studies tend to have longer-term data collection cycles, which extends the "product cycle" of biostatistics research. 
+"Regular" statistics, on the other hand, has no such limit - because we are typically funded by "hard" money, we can juggle projects and pick up new collaborations quickly, leading to shorter "product cycles" and faster developments. 
+The field of statistics is currently changing rapidly, with new AI and Machine Learning methods, the availability of more computing power than ever before, and an explosion of the amount of data available that was not produced by controlled experiments. 
+
+### Centralized and Decentralized Models
+
+A centralized statistics department has a much better chance to keep up with all of these changes! 
+If the department is located in a way to be accessible to the entire campus, it can supercharge the research in a number of fields, making contributions across campus. 
+It is much more efficient to have a central group labeled as "Statistics" that can be easily contacted for help by other disciplines on campus than to have Statisticians with different expertise embedded within each department -- or worse, to have non-statisticians with some quantitative training embedded in those departments as the sole statistical resource available to researchers in that department. 
+Under a distributed model, someone might have to search directory information within 12-15 departments^[As we have tried to do when assembling this report -- it is not an easy or efficient process.], and it is likely that they  may not find the right person in any case. @fig-centralized-bubbles and @fig-decentralized-bubbles shows the number of connections necessary to find the right statistical expertise under both the centralized and decentralized models.  
 
 > A centralized Statistics Department provides essential consulting, collaboration, and training for research across all colleges. Dispersing faculty into a "distributed model" weakens this role and undermines interdisciplinary strength.
 > -- [Brani Vidakovic, H.O. Hartley Chair and Department Head, Department of Statistics, Texas A&M University](letters/LetterVidakovic_TAMU.pdf)
 
 Decentralized statisticians also exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics. 
+A more thorough analysis of the centralized vs. decentralized models is provided in @sec-centralized.
 
 ::: {.callout-note collapse=true}
 ### Example: Statistics Research Products under a Centralized Model
@@ -159,13 +177,18 @@ As an example, the charts and graphs used to show the metrics of each UNL depart
 
 It is hard to imagine such tools being developed under a distributed model: they are the product of statistics research, and they are now widely used across quantitative disciplines. 
 Similarly, tools like `rmarkdown` and `quarto` (which were used to assemble the charts into a document that was shared across the university) are direct descendants of research products of the Iowa State Statistics department in the same era, and they are now gold-standard tools for reproducible research across the sciences, in addition to making reporting easier within e.g. business and administrative units. 
-Within UNL, these tools are used in agronomy, agricultural economics, biosystems engineering, the School of Natural Resources, journalism, and psychology^[This is only a partial list assembled from members of the R User Group on campus and other collaborators -- there may well be others.]. 
+Within UNL, these tools are used in agronomy, agricultural economics, bio-systems engineering, the School of Natural Resources, journalism, and psychology^[This is only a partial list assembled from members of the R User Group on campus and other collaborators -- there may well be others.]. 
 :::
 
 Collaboration between statisticians produces research that makes science better and more efficient for everyone, but this is difficult or impossible to prioritize under a distributed or service model where embedded statisticians are evaluated based on discipline-specific contributions.
+The question is not just about optimizing the budget: it is also important to ensure that the **quality** of services available across campus is maintained, particularly for services which affect research, teaching, extension, and service. 
+It is possible to do "battlefield surgery" and amputate a foot with an axe, and certainly much cheaper than the surgery and hospital stay, even with insurance. 
+However, the outcomes are demonstrably worse - gangrene, sepsis, tissue damage, ongoing nerve pain, and even shock during the operation leading to death. 
+The "amputation" of the statistics department will have a similar effect on UNL -- it will damage the reputation of the university, the competitiveness for external funding, the educational options available to students, and the Nebraska economy by limiting the number of students graduating with statistics training necessary for digital ag and data science jobs. 
 
-We can also evaluate the purported efficiency of a distributed model by examining the resources currently available across the NU system in Statistics. 
+However, just to demonstrate that the "distributed model" will not work even if it incorporates resources across the UN system, we examine the statistical expertise available at UNMC, UNO, and UNK. 
 If there is excess capacity of faculty with statistical expertise outside the Statistics department, then perhaps the inefficiencies of the distributed model would be countered by the savings from eliminating the department.
+It seems likely that the reputational damage and economic losses would not be addressed under this type of distributed model, but it is possible that some teaching and consulting duties could be absorbed by other UN system campuses. 
 However, this is not the case, as demonstrated in the next section. 
 
 
@@ -176,25 +199,38 @@ There are several units within UNL that maintain some statistical expertise in-h
 At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research:
 
 - the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. However, they clearly have expertise in some aspects of statistics and measurement. 
-- the Psychology department has a quantitative emphasis for their Ph.D. program. 
+- the Psychology department has a [quantitative concentration for their Ph.D. program](https://psychology.unl.edu/group/4/concentration-quantitative-methods/), but it is difficult to identify which faculty members have quantitative expertise. 
 - the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology, but they do survey research and have expertise that isn't currently available within the Statistics department. 
 - the Economics department. Econometrics has some overlap with Statistics. There are three faculty (Yifan Gong, Christopher Mann, Federico Zincenko) who mention Econometrics as a research area within this department. 
-- the Agricultural Economics department. There is some overlap with statistics in discipline, but it is difficult to identify any specific faculty who might have the expertise and interest to do Statistics work. None of the faculty appear to have Ph.D.s in Statistics. 
+- the Agricultural Economics department. There is some overlap with statistics in discipline, but it is difficult to identify any specific faculty who might have the expertise and interest to do Statistics work. None of the faculty appear to have Ph.D.s in Statistics, however, Taro Mieno teaches spatial modeling and clearly has some statistical expertise. 
 - the Actuarial Science program. Three tenured or tenure-track faculty (Colin Ramsay, Mostafa Mashayekhi, Graham Liu) affiliated with Actuarial Science have Ph.D.s in Statistics or Actuarial Science. 
-- the Supply Chain Management & Analytics program. None of the faculty have Ph.D.s in Statistics, but seven tenured or tenure-track faculty have degrees in business analytics, operations management, or supply chain management. These degrees are not comparable to statistics in terms of theoretical training that would support development of new statistical methodology but might suffice to cover some of the coursework currently offered in the Statistics department.
+- the Supply Chain Management & Analytics program. None of the faculty have Ph.D.s in Statistics, but seven tenured or tenure-track faculty have degrees in business analytics, operations management, or supply chain management. These degrees are not comparable to statistics in terms of theoretical training that would support development of new statistical methodology but might suffice to cover some of the coursework currently offered in the Statistics department at a lower level. More importantly, SCMA focuses on teaching students how to interface between statisticians and managers, which is an important skill, but does not lend itself to actually *doing* statistical modeling. 
 <!-- Yunxia (Peter) Zhu, Yingchao Lan, Erkut Sonmez, Scott Swenseth, Esma Gel, Wesley Boyce, Shengchao Zhuang -->
 
 @sec-metrics discusses the ways that the Statistics department interacts with other portions of campus. 
 Faculty within the College of Business (Econometrics, Actuarial Science, Supply Chain Management & Analytics) represent perhaps the closest group outside of the Statistics department within UNL, but none have degrees in Statistics, and while some of the courses taught in the College of Business may touch on topics such as forecasting, simulation, and modeling, the faculty within the college have specialized to apply these techniques to business and finance, and it seems unlikely that they have extra capacity. 
 
-Ultimately, however, there are clearly insufficient FTEs available at UNL in statistics-adjacent fields that could reasonably take over the teaching, collaboration, consulting, and research functions which are fulfilled by the Department of Statistics, particularly when the existing demands on those FTEs are considered. 
+Ultimately, however, while there are individuals with quantitative expertise on campus, there is little excess capacity from which to re-create the services provided by the UNL Statistics department under the distributed model. 
+It is unrealistic to expect that these domain experts would be able to replace the consulting and collaboration functions available within our department. 
+In addition, while many of these faculty are excellent instructors, a distributed model results in replication of coursework across departments, which is hardly efficient. 
+As time passes, the instructors of these distributed courses will not have time to keep up with new developments within statistics, and instructional quality will degrade. 
+While this will not be noticeable at first, graduate students will receive less statistical training across disciplines, which will slow the pace of research and lead to costly mistakes in both experimental design and analysis. 
+These issues will accumulate, causing UNL's research reputation to suffer.
+At the same time, the capacity for consulting and collaboration on statistical problems across campus will massively decrease overnight. 
+This change will have a much more immediate impact on UNL's research infrastructure, as PIs have to budget for outside statistical consulting services and, if that is not feasible due to reductions in federal funding, the DIY approach will result in immediate degradation in research quality. 
+This may lead to embarrassing retractions of papers, reduction in grant funding (federal agencies care about the quality of available statistics resources), and more studies that are confined to the file drawer because of inefficient and under powered statistical methods. 
 
+
+In addition, our survey found that in some cases, departments listed above had found it difficult to fill quantitative positions and offer the necessary quantitative courses. 
+This is an indication that perhaps the distributed model might suffer from the same types of problems as were encountered in Statistics in the late 1990s and early 2000s - quantitative faculty would rather be part of a Statistics department than be quantitative experts in domain departments. 
+[Dan Nettleton](https://www.stat.iastate.edu/people/dan-nettleton) and [Partha Lahiri](https://jpsm.umd.edu/facultyprofile/lahiri/partha) left UNL's Mathematics and Statistics department in the late 1990s and early 2000s for Statistics departments elsewhere with a group of experts.
+Statistics is an inherently collaborative discipline -- the idea of single quantitative people in domain departments is akin, in some ways, to academic solitary confinement. 
 
 > As a tenured Professor and Associate Chair of the Statistics Department at Cornell University, I've seen firsthand that the belief that data science programs can replace the foundational role of statistics departments is not just misguided, it's fundamentally flawed. While data science is a valuable and growing field, it is built upon the theoretical and methodological foundations developed within statistics. Data science programs rely on statistics departments for core instruction in probability, inference, modeling, and experimental design. Without a dedicated statistics faculty, data science curricula risk becoming superficial, lacking the depth and rigor necessary for high-quality research and decision-making. Moreover, statistics departments are essential for advancing the theoretical underpinnings of data science itself, ensuring that innovation in machine learning, causal inference, risk assessment, and uncertainty quantification is grounded in sound methodology.
 > -- [David Matterson, Director, National Institute of Statistical Sciences](letters/DavidMatterson_NISS.pdf)
 
-
-The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Biomedical Informatics.
+Is there capacity available at UNMC? 
+The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Bio-medical Informatics.
 Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D. in Statistics at UNL^[Technically, one of these Ph.D.s was issued by the Department of Mathematics and Statistics before the formation of the Statistics department.] (see @tbl-unmc-biostats for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. 
 While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.
 

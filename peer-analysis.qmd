@@ -35,6 +35,7 @@ universities <- read_excel("data-analysis/data/University Statistics Departments
            str_replace_all("Illinois Urbana Champaign", "Illinois at Urbana Champaign") |>
            str_remove_all(" in the City of New York") |>
            str_remove_all(".Seattle.Campus|.Knoxville|.Columbia|.Fort.Collins|.at.Raleigh|.College.Station|.Ann.Arbor|.Pittsburgh.Campus") |> 
+           str_remove_all(" University New Brunswick") |>
            str_remove_all(" and Agricultural & Mechani.*") |> 
            str_remove_all("/Anschutz Medical Campus") |>
            str_remove_all(" Main Campus$") |> str_trim()) |>
@@ -58,7 +59,7 @@ stat_acad_anal <- read_csv("data-analysis/data/academic-analytics/Statistics, De
   mutate(institutionname=str_remove(institutionname, ", The$")|>
            str_replace_all(" ?[,-]{1,} ?", " ") |>
            str_replace_all("Carolina Charlotte", "Carolina at Charlotte") |>
-           str_remove_all(".Knoxville|.University.Park|.State.University.of.New.York$") |> str_trim())
+           str_remove_all(".Knoxville|.University.Park|.State.University.of.New.York|.New.Brunswick$") |> str_trim())
 joint_data <- full_join(universities, stat_acad_anal, by = c("Name" = "institutionname")) |>
   mutate(R2 = is.na(R1)) |>
   mutate(R1 = if_else(is.na(R1), FALSE, R1),
@@ -80,8 +81,55 @@ For the purposes of this analysis, there are two characteristics which seem to b
 - A group of statisticians located in the same department (whether that is called Statistics, Data Science, or Mathematics & Statistics), where 
 - The department offers programs in Statistics at the undergraduate or graduate level
 
-We exclude from this "big tent" biostatistics departments, not because they don't serve a similar role, but because many universities have both Statistics and Biostatistics departments^[The statistics department is typically on the main campus and the biostatistics department is typically located within the medical school organizational structure.], and so we track Biostatistics as a separate (but closely related) discipline. 
+We exclude from this "big tent" Biostatistics departments, not because they don't serve a similar role, but because many universities have both Statistics and Biostatistics departments^[The statistics department is typically on the main campus and the Biostatistics department is typically located within the medical school organizational structure.], and so we track Biostatistics as a separate (but closely related) discipline. 
 Note that our approach differs from the Academic Analytics tracking of Statistics as a discipline, but the conclusions of this analysis are largely the same using either approach.
+
+```{r}
+rank_by_var <- function(data, value_var, name_var, name) {
+  data_sort <- data |> rename(var = matches(value_var)) |> arrange(desc(var))
+  idx <- grep(name, data_sort[[name_var]])
+  if(length(idx) > 1) 
+    stop(sprintf("Multiple values found for <%s>", name))
+  if(length(idx) == 0) 
+    stop(sprintf("No values found for <%s>", name))
+  
+  min(which(data_sort$var == as.numeric(data_sort$var[idx])))
+}
+percentile <- function(rank, n) {
+  (n-rank+1)/n*100
+}
+
+```
+
+```{r}
+
+stats_public_r1 <-  joint_data |> filter((Public & R1 & !is.na(sri)) | Name == "University of Nebraska Lincoln") 
+rank_public_r1 <- stats_public_r1 |> select(Name:AAU, sri) |> rank_by_var ("sri", "Name", "Lincoln")
+n_public_r1 <- nrow(stats_public_r1)
+percentile_public_r1 <- percentile(rank_public_r1, n_public_r1)
+
+stats_lg <-  joint_data |> filter((Public & Land_Grant & !is.na(sri)) | Name == "University of Nebraska Lincoln") 
+rank_lg <- stats_lg |> select(Name:AAU, sri) |> rank_by_var ("sri", "Name", "Lincoln")
+n_lg <- nrow(stats_lg)
+percentile_lg <- percentile(rank_lg, n_lg)
+
+
+stats_b10 <-  joint_data |> filter((Big_Ten & !is.na(sri)) | Name == "University of Nebraska Lincoln") 
+rank_b10 <- stats_b10 |> select(Name:AAU, sri) |> rank_by_var ("sri", "Name", "Lincoln")
+n_b10 <- nrow(stats_b10)
+percentile_b10 <- percentile(rank_b10, n_b10)
+
+stats_aau <-  joint_data |> filter((AAU & !is.na(sri)) | Name == "University of Nebraska Lincoln") 
+rank_aau <- stats_aau |> select(Name:AAU, sri) |> rank_by_var ("sri", "Name", "Lincoln")
+n_aau <- nrow(stats_aau)
+percentile_aau <- percentile(rank_aau, n_aau)
+
+stats_public_aau <-  joint_data |> filter((Public & AAU & !is.na(sri)) | Name == "University of Nebraska Lincoln") 
+rank_public_aau <- stats_public_aau |> select(Name:AAU, sri) |> rank_by_var ("sri", "Name", "Lincoln")
+n_public_aau <- nrow(stats_public_aau)
+percentile_public_aau <- percentile(rank_public_aau, n_public_aau)
+```
+
 
 ## R1 Universities
 Of the `r nrow(r1)` R1 universities, 
@@ -93,6 +141,10 @@ Medical institutions with only a biostatistics presence on campus: `r filter(r1,
 statistics when awarding large research grants. Eliminating the department will send a
 negative signal to funders, and the resulting shortfall in research funding will, over time, exceed the current budget savings.    
 > -- [Brani Vidakovic, Chair, Texas A&M and former Program Director, National Science Foundation](letters/LetterVidakovic_TAMU.pdf)
+
+
+UNL Statistics ranks `r rank_public_r1` of `r n_public_r1` R1 university statistics departments, or in the `r sprintf("%0.2f", percentile_public_r1)`th percentile. 
+
 
 ## Land Grant Universities
 
@@ -108,12 +160,114 @@ We support research in departments across campus and fundamentally enable the un
 > Disbanding Statistics would immediately weaken UNL's standing as a comprehensive, research‐intensive institution. It would jeopardize collaborations across colleges, with federal agencies, industry, and other universities, and risk signaling a retreat from UNL's land-grant mission.
 > -- [Thomas Lee, Distinguished Professor of Statistics, UC Davis](letters/UNL_Statistics_Support_Letter_ThomasLee.pdf)
 
+UNL Statistics ranks `r rank_lg`th of `r n_lg` land grant university statistics departments, or in the `r sprintf("%0.2f", percentile_lg)`th percentile. 
+
+
 ## Big Ten Universities
 
 > Eliminating the department would not only discredit UNL's national reputation but also dismantle a critical hub for collaboration, teaching, and discovery. Thirteen out of fourteen Big Ten universities maintain stand-alone statistics departments because they recognize the strategic importance of the discipline. As a proud statistics major from one of those institutions, I can personally attest to the transformative value of a dedicated statistics department in shaping my own education and career, and in fostering a culture of analytical rigor, interdisciplinary collaboration, and continuous innovation. UNL's decision would set a dangerous precedent in which foundational academic units can be dismantled despite their centrality to institutional success and societal progress. 
 > -- [David Matterson, Director, National Institute of Statistical Sciences](letters/DavidMatterson_NISS.pdf)
 
-We should note that Dr. Matterson's statistics on Big Ten membership might be slightly out of date, but the conclusion is the same. Of the `r nrow(big10)` Big Ten universities, only University of Oregon does not have a cluster of statisticians on campus, and they are actively hiring statisticians to fill a School of Data Science. One additional university (Indiana) has proposed its Statistics department for elimination; however, according to Academic Analytics data, its department seems to have only 7 faculty and has an SRI percentile of 38.2. 
+We should note that Dr. Matterson's statistics on Big Ten membership might be slightly out of date, but the conclusion is the same. Of the `r nrow(big10)` Big Ten universities, only University of Oregon does not have a cluster of statisticians on campus, and they are actively hiring statisticians to fill a School of Data Science. Academic Analytics also does not have a SRI for University of Southern California, perhaps because they have a combined Mathematics & Statistics department. One additional university (Indiana) has proposed its Statistics department for elimination; however, according to Academic Analytics data, its department seems to have only 7 faculty and has an SRI percentile of 38.2^[Within the discipline, the sense is that Indiana has had funding and staffing problems for years that go well beyond rankings; its closure may occur but it will be an extreme outlier in a discipline where universities are hiring multiple statisticians each academic year to grow programs in response to demand.]. 
+
+UNL Statistics ranks `r rank_b10`th of `r n_b10` Big Ten university statistics departments, or in the `r sprintf("%0.2f", percentile_b10)`th percentile. 
+
+
+```{r}
+#| fig-width: 8
+#| fig-height: 5
+#| fig-cap: "Comparison of UNL to other Big Ten statistics departments. UNL's SRI is just slightly below the median of all Big Ten statistics unit SRIs. USC and Oregon are not shown because Academic Analytics does not have statistics research ratings for those universities."
+library(ggrepel)
+# Read the CSV file
+big10 <- read_csv("data-analysis/data/big10_universities_18_with_abbr.csv")
+
+# Separate the primary and secondary color hex codes
+# big10 <- big10 %>%
+#   separate(colors_hex, into = c("primary_color", "secondary_color"),
+#            sep = " / ", fill = "right", remove = FALSE)
+big10$bigten <- "Big Ten"
+
+
+unis <- read_csv("data-analysis/data/Institution - Comparing Institutions.csv")
+stats_r12 <- read_csv("data-analysis/data/Statistics, Department of - Benchmarking - R12.csv")
+stats_full <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv")
+
+
+r12 <- unis |> slice(grep("Doctoral Universities", Carnegie)) |>
+  mutate(`AAU Member` = ifelse(is.na(`AAU Member`), " Not", `AAU Member`))
+r12 <- r12 |> left_join(stats_r12 |> select(Institution_Id,Unit, SRI), by = c("Institution_id"="Institution_Id")) 
+stats_full <- stats_full |> left_join(unis |> select(Institution_id, Carnegie, `AAU Member`, `Land Grant`), 
+                                      by = c("institutionid"="Institution_id")) 
+
+stats_full_ten <- stats_full |>
+  select(institutionid, institutionname, facultycount, sri, Carnegie, `AAU Member`) |>
+  mutate(
+    Carnegie_short = 
+      ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+             ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+    Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  ) |> left_join(big10, by=c("institutionname"="institution")) |>
+  filter(!Carnegie_short == "Other") 
+
+
+stats_full_ten <- stats_full_ten |> 
+  mutate(primary_color = ifelse(is.na(primary_color), "grey40", primary_color),
+         secondary_color = ifelse(is.na(secondary_color), "grey", secondary_color)) |>
+  mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> 
+    factor(levels = c("AAU", "R1", "R2", "Other"), 
+           labels = c("AAU + R1", "Not AAU + R1", "R2", "Other"))) |>
+  mutate(stroke = ifelse(primary_color=="grey40", .5, 5)) |>
+  mutate(
+    nudge_x = case_when(
+      abbreviation == "IOWA" ~ -0.15,
+      abbreviation == "PURDUE" ~ -0.1,
+      abbreviation == "NU" ~ 0,
+      abbreviation == "UMICH" ~ 0.06,
+      abbreviation == "UCLA" ~ 0.04,
+      abbreviation == "UW" ~ -0.1,
+      abbreviation == "RUTGERS" ~ -0.09,
+      abbreviation == "UMD" ~ 0,
+      abbreviation == "WISC" ~ 0.12,
+      abbreviation == "UMN" ~ 0.12,
+      abbreviation == "OSU" ~ -0.1,
+      abbreviation == "MSU" ~ 0,
+      abbreviation == "UIUC" ~ -0.03,
+      .default = nudge_x),
+    nudge_y = case_when(
+      abbreviation == "IU" ~ -0.2,
+      abbreviation == "IOWA" ~ 0,
+      abbreviation == "PURDUE" ~ -.3,
+      abbreviation == "NU" ~ 0.2,
+      abbreviation == "MSU" ~ 0.33,
+      abbreviation == "UMD" ~ 0.2,
+      abbreviation == "RUTGERS" ~ -0.39,
+      abbreviation == "UIUC" ~ -0.52,
+      abbreviation == "PSU" ~ -0.27,
+      abbreviation == "WISC" ~ -0.25,
+      abbreviation == "UMN" ~ -0.37,
+      abbreviation == "UW" ~ -0.1,
+      abbreviation == "UCLA" ~ 0.32,
+      abbreviation == "UMICH" ~ 0.2,
+      abbreviation == "OSU" ~ -0.15,
+      .default = nudge_y),
+    abbreviation = if_else(abbreviation == "NEB", "UNL", abbreviation)
+  )
+
+stats_full_ten |>
+  ggplot(aes(x = sri, y = Carnegie_short)) + 
+  geom_dotplot(aes(fill = secondary_color, colour = primary_color, stroke=stroke),
+               dotsize=.4, stackdir = "center", binwidth = 0.075, stackgroups = T, binpositions = "all") +
+  geom_text(aes(label = abbreviation, color = primary_color), nudge_x = stats_full_ten$nudge_x, nudge_y = stats_full_ten$nudge_y) + 
+  scale_fill_identity() + 
+  scale_color_identity() + 
+  facet_grid(classification~., scale="free", space="free") + 
+  theme_bw() + 
+  xlab("SRI") + ylab("") + 
+  ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU")
+
+
+
+```
 
 ## AAU Universities
 
@@ -130,19 +284,26 @@ And this assessment is shared by the chairs of other Big Ten statistics departme
 > Moreover, dissolving the Statistics Department will make it difficult, if not impossible, for UNL to achieve its goal of rejoining the Association of American Universities (AAU).
 > -- [Big Ten Statistics Department Chairs](letters/Big10_UNL_Letter.pdf)
 
+UNL Statistics ranks `r rank_aau`rd of `r n_aau` AAU statistics departments, or in the `r sprintf("%0.2f", percentile_aau)`th percentile. 
+
 
 ### Public AAU Universities
+
 
 The administration has defined the `r nrow(pubaau)` public AAU universities to be their preferred comparison group. 
 All `r sum(pubaau$has_some_stat)` have a stand-alone statistics or data science department (excluding biostatistics), and `r sum(!is.na(pubaau$Biostatistics))` also have a biostatistics department. 
 Thus, even if UNL and UNMC merge at some point in the future, we will be in good company among other public AAU institutions in having both a Statistics and Biostatistics department, as these serve different functions. 
+UNL Statistics ranks `r rank_public_aau`rd of `r n_public_aau` public university statistics departments in the AAU, or in the `r sprintf("%0.2f", percentile_public_aau)`th percentile. 
+
 
 ## Conclusion
 
-While it is often desirable to be unique in a field, eliminating the statistics department would be more akin to notoriety. 
+While it is often desirable to be unique in a field, eliminating the statistics department would be more akin to notoriety or disgrace.  
 Statistics expertise is **essential** to the function of a modern R1 land-grant institution, particularly in a state where there is not another competing R1 institution which might serve researchers at both schools.
-We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its R1 status threatened.
+We fear that if the Statistics department is cut, UNL will soon lose not only any hope of rejoining the AAU, but may also find its place in the Big Ten threatened. 
+If it continues on the same course, even the R1 status of the university could be in jeopardy.
 The proposed elimination of the department has threatened UNL's international reputation, but going through with that elimination would have dire consequences for the institution's standing among its peers.
+This damage will take multiple generations to repair^[Or a *very* significant investment of funding both from philanthropy and from the university itself to demonstrate a lasting commitment to the discipline.], even if the administration sees the error of eliminating our department relatively quickly. 
 
 > Statistics is the backbone of modern research across all fields, from agriculture and medicine to engineering and social sciences. The expertise provided by statisticians is essential for designing experiments, analyzing data, and interpreting results. Without a dedicated Statistics Department, UNL will lose its competitive edge in research and innovation, and a fall in research quality and rankings is inevitable.
 > -- Rob Hyndman, Monash University, Australia. 

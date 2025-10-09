@@ -1,3 +1,4 @@
+
 # Introduction
 
 ```{r}
@@ -47,6 +48,10 @@ These additional clusters of statistical knowledge are critically assessed to de
 @sec-peer-analysis discusses the presence of statistics departments within the AAU, Big Ten, R1, and land-grant classifications, examining the viability of a distributed model based on data from peer institutions.
 
 @sec-program-analysis examines the programs housed within the Statistics department as well as important contributions made by the department to other programs, and evaluates the impact of closing the department on the university and the state. 
+
+@sec-centralized examines the decentralized model for statistics proposed by the administration, how it has held up historically, and how it might function now compared to a centralized model. 
+
+@sec-evaluating-budget considers the actual budget savings from eliminating the department compared to expected future revenue, grants, and programs. The elimination of the department will not save as much money as anticipated AND will lead to reduced quality of statistics education, competitiveness for grants, and less effective research across campus. 
 
 @sec-future provides an alternative plan to situate the Statistics department within the university in a way that will best position UNL to rejoin the AAU and serve the state of Nebraska by strengthening research, teaching, and extension missions of the university. 
 

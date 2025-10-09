@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-e1615be2c113e74b0a69323fdd91d2e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Statistics: An Essential Department for a Modern R1 University</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Statistics--An-Essential-Department-for-a-Modern-R1-University.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -160,30 +166,41 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning for the Future</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-faculty-system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistics Faculty in the UN System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Statistics Faculty in the UN System</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-analysis-issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Problems with the Analysis of Research and Teaching Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Problems with the Analysis of Research and Teaching Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-metrics-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A Statistical Analysis of Metric Inputs and Calculations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">A Statistical Commentary on the Metric Inputs and Calculations</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2025-Stat-APC-report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2025-Stat-APC-report.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">2025-Stat-APC-report.html</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -195,13 +212,17 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sec-history-dept" id="toc-sec-history-dept" class="nav-link active" data-scroll-target="#sec-history-dept"><span class="header-section-number">3.1</span> History of the Department</a></li>
-  <li><a href="#sec-role-dept" id="toc-sec-role-dept" class="nav-link" data-scroll-target="#sec-role-dept"><span class="header-section-number">3.2</span> The Role of a Statistics Department</a></li>
+  <li><a href="#sec-role-dept" id="toc-sec-role-dept" class="nav-link" data-scroll-target="#sec-role-dept"><span class="header-section-number">3.2</span> The Role of a Statistics Department</a>
+  <ul class="collapse">
+  <li><a href="#comparing-statistics-to-biostatistics" id="toc-comparing-statistics-to-biostatistics" class="nav-link" data-scroll-target="#comparing-statistics-to-biostatistics"><span class="header-section-number">3.2.1</span> Comparing Statistics to Biostatistics</a></li>
+  <li><a href="#centralized-and-decentralized-models" id="toc-centralized-and-decentralized-models" class="nav-link" data-scroll-target="#centralized-and-decentralized-models"><span class="header-section-number">3.2.2</span> Centralized and Decentralized Models</a></li>
+  </ul></li>
   <li><a href="#sec-nu-stats" id="toc-sec-nu-stats" class="nav-link" data-scroll-target="#sec-nu-stats"><span class="header-section-number">3.3</span> NU System Statistics Expertise</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -222,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sec-history-dept" class="level2" data-number="3.1">
+<section id="sec-history-dept" class="level2 page-columns page-full" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-history-dept"><span class="header-section-number">3.1</span> History of the Department</h2>
 <!-- https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1000&context=statisticsdeptdocs -->
 <ul>
@@ -341,6 +362,20 @@ Specific Recommendations
 <li><p>2021 - <a href="documentation/2021-STAT-APR-Report.pdf">APR team recommends</a> increasing the number of tenure-track faculty to 20, hiring several teaching faculty to increase instructional efficiency and capacity, and adding departmental administrators to ensure program success.</p></li>
 <li><p>Fall 2021 - <a href="https://ccpe.nebraska.gov/sites/default/files/UNL%20Creation%20BS%20in%20Stats%20%20Data%20Analytics_08162021.pdf">Statistics and Data Analytics major approved by the Board of Regents</a></p></li>
 <li><p>June 2022 - <a href="https://ccpe.nebraska.gov/sites/default/files/AP_UNL%20Data%20Sciences%20BA%20BS%20Proposal.pdf">Data Science Major approved by Board of Regents with programs in CASNR, CAS, and Engineering</a></p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-stat-ds-math-cs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stat-ds-math-cs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/stat-ds-math-cs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;3.1: The Science in Data Science is Statistics"><img src="images/stat-ds-math-cs.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-ds-math-cs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: The <strong>Science</strong> in Data Science is Statistics
+</figcaption>
+</figure>
+</div>
+</div></div><ul>
 <li><p>Fall 2022 - First Statistics and Data Analytics freshman cohort begins classes</p></li>
 <li><p>Spring 2026 - First Statistics and Data Analytics cohort expected to graduate</p></li>
 </ul>
@@ -358,7 +393,7 @@ Specific Recommendations
 <li>The department provides graduate training in statistical methods (Stat 801, 802) and in computing and data visualization (Stat 850). These courses facilitate research across the university, in a way that is important, but difficult to explicitly measure.</li>
 <li>Graduate committees often recommend additional coursework in Statistics: experimental design, specific methodologies (e.g.&nbsp;Bayesian statistics), computational methods, or statistical genetics.</li>
 </ul>
-<p>Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately.</p>
+<p>Without a centralized statistics department and the expertise of statistics faculty, each department must solve the problem of providing this coursework separately, and the quality of coursework (and consulting) degrades, because domain experts do not have the time to keep up with new developments in statistics as well as the domain field.</p>
 <blockquote class="blockquote">
 <p>The training my own students receive from Statistics – from coursework, from collaborators, and from Statistics faculty on their thesis and dissertation committees – is essential to our ability to win and execute upon large federal research awards. Our institute’s capacity to train students whose expertise bridges quantitative techniques and in the field understanding of crop systems is why I receive e-mails from Corteva, Syngenta, and Bayer asking when my lab’s next PhDs will be graduating.<br>
 – <a href="letters/James Schnable.pdf">James Schnable, Letter to APC</a></p>
@@ -367,12 +402,19 @@ Specific Recommendations
 <blockquote class="blockquote">
 <p>Statistics is the midwife to all other departments. UNL has a strong agricultural mission and a proud track record in agronomy. So does statistics. My field was started by Sir Ronald Fisher, who worked to analyze agricultural data at the Rothamsted Experimental Station before moving on to University College London and eventually the University of Cambridge. The work that Fisher did laid the mathematical foundation for continual improvement of yields. His co-founding of statistical genetics has been the basis for nearly all improvement in agriculture over the last 100 years (aside from the Haber-Bosch process, which gave us plentiful fertilizer). But statistics doesn’t just feed agronomy. It provided the necessary confirmation of the Higgs boson in physics. It undergirds the risk analyses that drive medical therapies, business decisions, insurance, and the amelioration of climate change. English professors use latent Dirichlet allocation to identify themes in literature. Philosophy faculty study the implications of Bayes’ Rule for rationality and coherence. Chemists, entomologists and historians all employ statistics on a regular basis, either on their own or through collaboration with research statisticians. – <a href="letters/David Banks.pdf">David Banks, Duke University Statistics Department, ASA Fellow, IMS Fellow, AAAS Fellow</a></p>
 </blockquote>
-<p>While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, and causal inference, statistics departments typically have experts in experimental design relevant to important programs across campus. At UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, statistical computing and simulation, Bayesian methodology, and operations research.</p>
-<p>A centralized statistics department that is set up to collaborate with quantitative disciplines on campus is more efficient than a distributed set of statisticians scattered across many different departments, because it is easier to find the statistician with the right expertise when they are co-located. Under a distributed model, someone might have to search directory information within 12-15 departments<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and it is likely that they may not find the right person in any case. <a href="centralized.html#fig-centralized-bubbles" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> and <a href="centralized.html#fig-decentralized-bubbles" class="quarto-xref">Figure&nbsp;<span>7.2</span></a> demonstrate the number of connections necessary to find the right statistical expertise under both the centralized and decentralized models.</p>
+<section id="comparing-statistics-to-biostatistics" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="comparing-statistics-to-biostatistics"><span class="header-section-number">3.2.1</span> Comparing Statistics to Biostatistics</h3>
+<p>While biostatistics departments are generally composed of individuals who assist medical schools with clinical trials, survival analyses, longitudinal data analysis, and causal inference, statistics departments typically have experts in experimental design relevant to important programs across campus. At UNL, that would include agricultural field experiments, population genetics for plants and animals, engineering factorial experiments and quality control, survey sampling to support social science, statistical computing and simulation, Bayesian methodology, and operations research.</p>
+<p>In addition, the funding model for biostatistics departments is extremely different than those in statistics departments: biostatistics faculty are usually soft-money positions and as a result work on specific grant projects. In general, they are not available for collaborations without a grant attached, which makes it harder for them to serve as a general campus resource available to everyone.</p>
+<p>Finally, biostatistics is tethered to medical data and as a result is very applied. Medical studies tend to have longer-term data collection cycles, which extends the “product cycle” of biostatistics research. “Regular” statistics, on the other hand, has no such limit - because we are typically funded by “hard” money, we can juggle projects and pick up new collaborations quickly, leading to shorter “product cycles” and faster developments. The field of statistics is currently changing rapidly, with new AI and Machine Learning methods, the availability of more computing power than ever before, and an explosion of the amount of data available that was not produced by controlled experiments.</p>
+</section>
+<section id="centralized-and-decentralized-models" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="centralized-and-decentralized-models"><span class="header-section-number">3.2.2</span> Centralized and Decentralized Models</h3>
+<p>A centralized statistics department has a much better chance to keep up with all of these changes! If the department is located in a way to be accessible to the entire campus, it can supercharge the research in a number of fields, making contributions across campus. It is much more efficient to have a central group labeled as “Statistics” that can be easily contacted for help by other disciplines on campus than to have Statisticians with different expertise embedded within each department – or worse, to have non-statisticians with some quantitative training embedded in those departments as the sole statistical resource available to researchers in that department. Under a distributed model, someone might have to search directory information within 12-15 departments<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and it is likely that they may not find the right person in any case. <a href="centralized.html#fig-centralized-bubbles" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> and <a href="centralized.html#fig-decentralized-bubbles" class="quarto-xref">Figure&nbsp;<span>7.2</span></a> shows the number of connections necessary to find the right statistical expertise under both the centralized and decentralized models.</p>
 <blockquote class="blockquote">
 <p>A centralized Statistics Department provides essential consulting, collaboration, and training for research across all colleges. Dispersing faculty into a “distributed model” weakens this role and undermines interdisciplinary strength. – <a href="letters/LetterVidakovic_TAMU.pdf">Brani Vidakovic, H.O. Hartley Chair and Department Head, Department of Statistics, Texas A&amp;M University</a></p>
 </blockquote>
-<p>Decentralized statisticians also exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics.</p>
+<p>Decentralized statisticians also exist in a service role, publishing research papers that may develop their disciplines but which often do not make contributions to the discipline of statistics. A more thorough analysis of the centralized vs.&nbsp;decentralized models is provided in <a href="centralized.html" class="quarto-xref"><span>Chapter 7</span></a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -386,12 +428,13 @@ Example: Statistics Research Products under a Centralized Model
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As an example, the charts and graphs used to show the metrics of each UNL department were created with <code>ggplot2</code>, <code>plotly</code> and <code>knitr</code>, all tools developed at Iowa State under the supervision of Dr.&nbsp;Heike Hofmann, who is now in the UNL Statistics department.</p>
-<p>It is hard to imagine such tools being developed under a distributed model: they are the product of statistics research, and they are now widely used across quantitative disciplines. Similarly, tools like <code>rmarkdown</code> and <code>quarto</code> (which were used to assemble the charts into a document that was shared across the university) are direct descendants of research products of the Iowa State Statistics department in the same era, and they are now gold-standard tools for reproducible research across the sciences, in addition to making reporting easier within e.g.&nbsp;business and administrative units. Within UNL, these tools are used in agronomy, agricultural economics, biosystems engineering, the School of Natural Resources, journalism, and psychology<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>It is hard to imagine such tools being developed under a distributed model: they are the product of statistics research, and they are now widely used across quantitative disciplines. Similarly, tools like <code>rmarkdown</code> and <code>quarto</code> (which were used to assemble the charts into a document that was shared across the university) are direct descendants of research products of the Iowa State Statistics department in the same era, and they are now gold-standard tools for reproducible research across the sciences, in addition to making reporting easier within e.g.&nbsp;business and administrative units. Within UNL, these tools are used in agronomy, agricultural economics, bio-systems engineering, the School of Natural Resources, journalism, and psychology<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 </div>
 </div>
 </div>
-<p>Collaboration between statisticians produces research that makes science better and more efficient for everyone, but this is difficult or impossible to prioritize under a distributed or service model where embedded statisticians are evaluated based on discipline-specific contributions.</p>
-<p>We can also evaluate the purported efficiency of a distributed model by examining the resources currently available across the NU system in Statistics. If there is excess capacity of faculty with statistical expertise outside the Statistics department, then perhaps the inefficiencies of the distributed model would be countered by the savings from eliminating the department. However, this is not the case, as demonstrated in the next section.</p>
+<p>Collaboration between statisticians produces research that makes science better and more efficient for everyone, but this is difficult or impossible to prioritize under a distributed or service model where embedded statisticians are evaluated based on discipline-specific contributions. The question is not just about optimizing the budget: it is also important to ensure that the <strong>quality</strong> of services available across campus is maintained, particularly for services which affect research, teaching, extension, and service. It is possible to do “battlefield surgery” and amputate a foot with an axe, and certainly much cheaper than the surgery and hospital stay, even with insurance. However, the outcomes are demonstrably worse - gangrene, sepsis, tissue damage, ongoing nerve pain, and even shock during the operation leading to death. The “amputation” of the statistics department will have a similar effect on UNL – it will damage the reputation of the university, the competitiveness for external funding, the educational options available to students, and the Nebraska economy by limiting the number of students graduating with statistics training necessary for digital ag and data science jobs.</p>
+<p>However, just to demonstrate that the “distributed model” will not work even if it incorporates resources across the UN system, we examine the statistical expertise available at UNMC, UNO, and UNK. If there is excess capacity of faculty with statistical expertise outside the Statistics department, then perhaps the inefficiencies of the distributed model would be countered by the savings from eliminating the department. It seems likely that the reputational damage and economic losses would not be addressed under this type of distributed model, but it is possible that some teaching and consulting duties could be absorbed by other UN system campuses. However, this is not the case, as demonstrated in the next section.</p>
+</section>
 </section>
 <section id="sec-nu-stats" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="sec-nu-stats"><span class="header-section-number">3.3</span> NU System Statistics Expertise</h2>
@@ -399,24 +442,25 @@ Example: Statistics Research Products under a Centralized Model
 <p>At UNL, in addition to the Statistics department, some departments have overlap with Statistics in coursework and/or research:</p>
 <ul>
 <li>the Quantitative, Qualitative, and Psychometrics (QQPM) department, which focuses on educational statistics and measurement. None of the faculty have Ph.D.s in Statistics; they are distributed between QQPM, Educational Psychology, and Psychology programs. However, they clearly have expertise in some aspects of statistics and measurement.</li>
-<li>the Psychology department has a quantitative emphasis for their Ph.D.&nbsp;program.</li>
+<li>the Psychology department has a <a href="https://psychology.unl.edu/group/4/concentration-quantitative-methods/">quantitative concentration for their Ph.D.&nbsp;program</a>, but it is difficult to identify which faculty members have quantitative expertise.</li>
 <li>the Sociology department has two faculty (Kristen Olson, Jolene Smyth) who specialize in survey research methods. Their Ph.D.s are in Survey Methodology and Sociology, but they do survey research and have expertise that isn’t currently available within the Statistics department.</li>
 <li>the Economics department. Econometrics has some overlap with Statistics. There are three faculty (Yifan Gong, Christopher Mann, Federico Zincenko) who mention Econometrics as a research area within this department.</li>
-<li>the Agricultural Economics department. There is some overlap with statistics in discipline, but it is difficult to identify any specific faculty who might have the expertise and interest to do Statistics work. None of the faculty appear to have Ph.D.s in Statistics.</li>
+<li>the Agricultural Economics department. There is some overlap with statistics in discipline, but it is difficult to identify any specific faculty who might have the expertise and interest to do Statistics work. None of the faculty appear to have Ph.D.s in Statistics, however, Taro Mieno teaches spatial modeling and clearly has some statistical expertise.</li>
 <li>the Actuarial Science program. Three tenured or tenure-track faculty (Colin Ramsay, Mostafa Mashayekhi, Graham Liu) affiliated with Actuarial Science have Ph.D.s in Statistics or Actuarial Science.</li>
-<li>the Supply Chain Management &amp; Analytics program. None of the faculty have Ph.D.s in Statistics, but seven tenured or tenure-track faculty have degrees in business analytics, operations management, or supply chain management. These degrees are not comparable to statistics in terms of theoretical training that would support development of new statistical methodology but might suffice to cover some of the coursework currently offered in the Statistics department. <!-- Yunxia (Peter) Zhu, Yingchao Lan, Erkut Sonmez, Scott Swenseth, Esma Gel, Wesley Boyce, Shengchao Zhuang --></li>
+<li>the Supply Chain Management &amp; Analytics program. None of the faculty have Ph.D.s in Statistics, but seven tenured or tenure-track faculty have degrees in business analytics, operations management, or supply chain management. These degrees are not comparable to statistics in terms of theoretical training that would support development of new statistical methodology but might suffice to cover some of the coursework currently offered in the Statistics department at a lower level. More importantly, SCMA focuses on teaching students how to interface between statisticians and managers, which is an important skill, but does not lend itself to actually <em>doing</em> statistical modeling. <!-- Yunxia (Peter) Zhu, Yingchao Lan, Erkut Sonmez, Scott Swenseth, Esma Gel, Wesley Boyce, Shengchao Zhuang --></li>
 </ul>
 <p><a href="metrics.html" class="quarto-xref"><span>Chapter 4</span></a> discusses the ways that the Statistics department interacts with other portions of campus. Faculty within the College of Business (Econometrics, Actuarial Science, Supply Chain Management &amp; Analytics) represent perhaps the closest group outside of the Statistics department within UNL, but none have degrees in Statistics, and while some of the courses taught in the College of Business may touch on topics such as forecasting, simulation, and modeling, the faculty within the college have specialized to apply these techniques to business and finance, and it seems unlikely that they have extra capacity.</p>
-<p>Ultimately, however, there are clearly insufficient FTEs available at UNL in statistics-adjacent fields that could reasonably take over the teaching, collaboration, consulting, and research functions which are fulfilled by the Department of Statistics, particularly when the existing demands on those FTEs are considered.</p>
+<p>Ultimately, however, while there are individuals with quantitative expertise on campus, there is little excess capacity from which to re-create the services provided by the UNL Statistics department under the distributed model. It is unrealistic to expect that these domain experts would be able to replace the consulting and collaboration functions available within our department. In addition, while many of these faculty are excellent instructors, a distributed model results in replication of coursework across departments, which is hardly efficient. As time passes, the instructors of these distributed courses will not have time to keep up with new developments within statistics, and instructional quality will degrade. While this will not be noticeable at first, graduate students will receive less statistical training across disciplines, which will slow the pace of research and lead to costly mistakes in both experimental design and analysis. These issues will accumulate, causing UNL’s research reputation to suffer. At the same time, the capacity for consulting and collaboration on statistical problems across campus will massively decrease overnight. This change will have a much more immediate impact on UNL’s research infrastructure, as PIs have to budget for outside statistical consulting services and, if that is not feasible due to reductions in federal funding, the DIY approach will result in immediate degradation in research quality. This may lead to embarrassing retractions of papers, reduction in grant funding (federal agencies care about the quality of available statistics resources), and more studies that are confined to the file drawer because of inefficient and under powered statistical methods.</p>
+<p>In addition, our survey found that in some cases, departments listed above had found it difficult to fill quantitative positions and offer the necessary quantitative courses. This is an indication that perhaps the distributed model might suffer from the same types of problems as were encountered in Statistics in the late 1990s and early 2000s - quantitative faculty would rather be part of a Statistics department than be quantitative experts in domain departments. <a href="https://www.stat.iastate.edu/people/dan-nettleton">Dan Nettleton</a> and <a href="https://jpsm.umd.edu/facultyprofile/lahiri/partha">Partha Lahiri</a> left UNL’s Mathematics and Statistics department in the late 1990s and early 2000s for Statistics departments elsewhere with a group of experts. Statistics is an inherently collaborative discipline – the idea of single quantitative people in domain departments is akin, in some ways, to academic solitary confinement.</p>
 <blockquote class="blockquote">
 <p>As a tenured Professor and Associate Chair of the Statistics Department at Cornell University, I’ve seen firsthand that the belief that data science programs can replace the foundational role of statistics departments is not just misguided, it’s fundamentally flawed. While data science is a valuable and growing field, it is built upon the theoretical and methodological foundations developed within statistics. Data science programs rely on statistics departments for core instruction in probability, inference, modeling, and experimental design. Without a dedicated statistics faculty, data science curricula risk becoming superficial, lacking the depth and rigor necessary for high-quality research and decision-making. Moreover, statistics departments are essential for advancing the theoretical underpinnings of data science itself, ensuring that innovation in machine learning, causal inference, risk assessment, and uncertainty quantification is grounded in sound methodology. – <a href="letters/DavidMatterson_NISS.pdf">David Matterson, Director, National Institute of Statistical Sciences</a></p>
 </blockquote>
-<p>The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Biomedical Informatics. Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D.&nbsp;in Statistics at UNL<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (see <a href="app-faculty-system.html#tbl-unmc-biostats" class="quarto-xref">Table&nbsp;<span>10.1</span></a> for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.</p>
+<p>Is there capacity available at UNMC? The Biostatistics department at UNMC has sixteen faculty members, and of these, fourteen have Ph.D.s in Statistics rather than Biostatistics; the remaining individuals received their Ph.D.s from UNMC in Biostatistics and Bio-medical Informatics. Moreover, five of the sixteen tenured or tenure-track faculty received their Ph.D.&nbsp;in Statistics at UNL<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (see <a href="app-faculty-system.html#tbl-unmc-biostats" class="quarto-xref">Table&nbsp;<span>A.1</span></a> for a full list), an indication that the Statistics department at UNL actually serves to enrich Biostats at UNMC, rather than being a redundancy within the UN system. While Biostatisticians at UNMC do valuable work that contributes to research methodology in statistics, many of the papers listed in different research areas were published before the faculty member joined UNMC - that is, the broader methodological papers were written as part of their doctoral work in Statistics.</p>
 <blockquote class="blockquote">
 <p>More generally, statisticians are an important component of a research university: statisticians not only do their own research (in forensics or data visualisation, for example); they improve other people’s research. I am aware your institution has a Biostatistics department, but statisticians (like everyone else) specialise – they will typically not have the expertise to support research areas where the Statistics department specialises, even if they have the spare capacity. – <a href="letters/Thomas Lumley.pdf">Dr.&nbsp;Thomas Lumley, Chair of Biostatistics, University of Auckland</a></p>
 </blockquote>
 <p>Biostatisticians apply statistical methods to medicine, and must cultivate a specific set of skills for collaborating with doctors that are distinct from collaboration skills required for working with other academic disciplines. A Biostatistics department is not sufficient to serve as the center of a statistical practice that supports the many non-medical disciplines that are important to the state of Nebraska: agriculture, animal science, population genetics (animal and plant), engineering, social sciences, education, business, physics, chemistry, and biology. In addition, <a href="metrics.html#tbl-sc3l-clients" class="quarto-xref">Table&nbsp;<span>4.2</span></a> shows that UNMC already utilizes the SC3L (or did, until policy changed so that only IANR clients can access free statistical consulting). This suggests that UNMC Biostats does not have the excess capacity to help fill statistical needs at UNL. <a href="peer-analysis.html" class="quarto-xref"><span>Chapter 5</span></a> includes a discussion of peer R1 and AAU institutions, many of whom maintain both statistics and biostatistics departments.</p>
-<p>There is also a Mathematics department at UNO which offers statistics coursework and a data science program. Of the 18 tenured and tenure-track faculty in this department, there are three with statistics Ph.D.s (see <a href="app-faculty-system.html#tbl-uno-math" class="quarto-xref">Table&nbsp;<span>10.2</span></a> for a full list). UNO is not an R1 university, and faculty there have a much heavier teaching load than faculty at UNL; consequently, it stands to reason that the UNO Mathematics department would not be able to significantly alleviate the statistics need across the university that would be created through the proposed elimination of the Statistics department in favor of a distributed model.</p>
+<p>There is also a Mathematics department at UNO which offers statistics coursework and a data science program. Of the 18 tenured and tenure-track faculty in this department, there are three with statistics Ph.D.s (see <a href="app-faculty-system.html#tbl-uno-math" class="quarto-xref">Table&nbsp;<span>A.2</span></a> for a full list). UNO is not an R1 university, and faculty there have a much heavier teaching load than faculty at UNL; consequently, it stands to reason that the UNO Mathematics department would not be able to significantly alleviate the statistics need across the university that would be created through the proposed elimination of the Statistics department in favor of a distributed model.</p>
 <p>The University of Nebraska - Kearney has a mathematics and statistics department which does not appear to contain any statisticians, according to the research interests listed on the faculty web pages. Moreover, as UNK does not have a statistics program at any level, it stands to reason that UNK Mathematics &amp; Statistics faculty will not be able to help UNL with its proposal to use a distributed model for the university’s statistics instruction, collaboration, consulting, and research needs.</p>
 <blockquote class="blockquote">
 <p>For UNL to “unilaterally disarm” and drop statistical thinking from its teaching, research, and service missions would do an enormous disservice to the state, and ultimately be counterproductive for UNL. – <a href="letters/CarlinBrad_10_2_25_Regents.pdf">Brad Carlin, UNL Math &amp; Statistics alumni, former faculty at CMU and University of Minnesota Statistics, President of Biostatistical Consulting</a></p>
@@ -864,6 +908,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

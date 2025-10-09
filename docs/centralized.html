@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-e1615be2c113e74b0a69323fdd91d2e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -97,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Statistics: An Essential Department for a Modern R1 University</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Statistics--An-Essential-Department-for-a-Modern-R1-University.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -160,30 +166,41 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planning for the Future</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-faculty-system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Statistics Faculty in the UN System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Statistics Faculty in the UN System</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-analysis-issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Problems with the Analysis of Research and Teaching Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Problems with the Analysis of Research and Teaching Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-metrics-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">A Statistical Analysis of Metric Inputs and Calculations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">A Statistical Commentary on the Metric Inputs and Calculations</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2025-Stat-APC-report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2025-Stat-APC-report.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">2025-Stat-APC-report.html</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -196,6 +213,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#an-historical-view-of-the-distributed-model" id="toc-an-historical-view-of-the-distributed-model" class="nav-link active" data-scroll-target="#an-historical-view-of-the-distributed-model"><span class="header-section-number">7.1</span> An Historical View of the Distributed Model</a></li>
   <li><a href="#comparing-the-distributed-and-centralized-models" id="toc-comparing-the-distributed-and-centralized-models" class="nav-link" data-scroll-target="#comparing-the-distributed-and-centralized-models"><span class="header-section-number">7.2</span> Comparing the Distributed and Centralized Models</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.3</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Centralized vs.&nbsp;Distributed Statistics Model</span></h1>
+<h1 class="title"><span id="sec-centralized" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Centralized vs.&nbsp;Distributed Statistics Model</span></span></h1>
 </div>
 
 
@@ -267,7 +285,7 @@ Faculty in all departments are skilled academic writers and communicators. Rathe
 <div id="fig-centralized-bubbles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-centralized-bubbles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/statistics-central.excalidraw.png" class="img-fluid figure-img">
+<a href="images/statistics-central.excalidraw.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;7.1: Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the centralized model."><img src="images/statistics-central.excalidraw.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-centralized-bubbles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.1: Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the centralized model.
@@ -282,7 +300,7 @@ Figure&nbsp;7.1: Connections between departments that must exist to find the rig
 <div id="fig-decentralized-bubbles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-decentralized-bubbles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/statistics-decentralized.excalidraw.png" class="img-fluid figure-img">
+<a href="images/statistics-decentralized.excalidraw.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;7.2: Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the decentralized model."><img src="images/statistics-decentralized.excalidraw.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decentralized-bubbles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.2: Connections between departments that must exist to find the right statistical expertise and to coordinate statistics courses in the decentralized model.
@@ -329,7 +347,7 @@ Figure&nbsp;7.2: Connections between departments that must exist to find the rig
 <tr class="odd">
 <td>Service</td>
 <td>The statistics department is a resource described in grant applications like other “common good” resources across campus, like HCC and ORI. Statistics faculty are readily located to assist with collaborative grant projects.</td>
-<td>Statistical support for grants is provided by distributed faculty (if one with the right expertise can be located, see <a href="#fig-decentralized-bubbles" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>) or by faculty at other institutions outside of Nebraska. Research quality may suffer and proposals may be seen as less competitive by funders.</td>
+<td>Statistical support for grants is provided by distributed faculty (if one with the right expertise can be located, see <a href="#fig-decentralized-bubbles" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>) or by faculty at other institutions outside of Nebraska. Research quality may suffer and proposals may be seen as less competitive by funding agencies.</td>
 </tr>
 <tr class="even">
 <td>Degree Programs</td>
@@ -355,6 +373,14 @@ Figure&nbsp;7.2: Connections between departments that must exist to find the rig
 <p>In Psychology, courses like PSYC 350 (Research Methods and Data Analysis), PSYC 450 (Advanced Research Design and Data Analysis), and PSYC 451 (Multivariate Research Design and Data Analysis) certainly involve a large proportion of statistical instruction, though they also teach topics that are not covered in statistical methods courses, like the use of APA format and how to write a literature review (PSYC 350). However, dual appointments might be useful here as well - it may be easier to recruit someone to a Statistics department with a particular focus on social science represented by a joint appointment in psychology. This may also be more palatable to the psychology department, as they place a particular emphasis on students learning methods within the context of psychological problems. Professors with dual appointments might alleviate concerns about psychology methods courses being taught by statisticians.</p>
 <p>Political Science (POLS 287, Data Analysis in Political Science) and Sociology (SOCI 430, Advanced Social Network Analysis, SOCI 465, Survey Design and Analysis) also have courses which would be considered well within the realm of statistics. Again, we are not suggesting that these courses should be taught solely in or by the statistics department, should it continue to exist, but that we could work out some sort of cross-listing and teaching responsibility agreement so that all of our programs become more efficient and our students have access to more electives and opportunities. Ideally this would come with joint appointments to reinforce inter-department communication and build stronger ties between the Statistics department and units in CAS and COE.</p>
 <p>The reality is that a truly centralized model is more efficient university-wide. What is more important than the organizational structure, however, is maintaining the statistics Ph.D., MS, and Statistics and Data Analytics BS programs, so that Nebraska’s students continue to have these educational options and Nebraska businesses have the ability to recruit highly qualified employees from a market that increasingly demands skill in data analytics across a wide range of different positions.</p>
+</section>
+<section id="conclusion" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.3</span> Conclusion</h2>
+<ul>
+<li><p>In a time of ever-present budget constraints, there are greater efficiencies to be found from cross-listing or deduplicating courses than there are from eliminating the Statistics department. Courses like ECON 215, CRIM 300, and EDPS 459 are all considered equivalent to STAT 218, and STAT 218 is offered across more time slots, providing greater student choice. We could even work out a system similar to Computer Science 155X, where different sections of the course use examples which are specific to different disciplines. Innovation along these lines would reduce teaching demands across several departments while still ensuring quality statistics education.</p></li>
+<li><p>Cross-appointments between departments would increase ties between Statistics and departments on City campus such as Sociology, EDPS, Psychology, and Computer Science. This would increase the centralization of quantitative data expertise across campus, making finding the right statistician to collaborate with much simpler for researchers.</p></li>
+<li><p>Maintaining statistics programs is more important than maintaining a centralized department of Statistics, because it is critically important to continue to offer training in Statistics, both for the Nebraska economy and for our students, who use the high probability of a well-paying job to ensure their future economic stability. If statistics professors are at least located within a unit where we can be found, we can continue to serve the research, service, and extension missions of the university, but without our faculty, the teaching mission of the university will be seriously damaged.</p></li>
+</ul>
 
 
 </section>
@@ -790,6 +816,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

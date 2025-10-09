@@ -42,10 +42,12 @@ These are taken from APC [Criteria for program evaluation](https://apc.unl.edu/p
 >    6. in the case of research programs, the quality and quantity of research being conducted;
 >    7. in the case of research programs, the level of external funding, given the relative availability of funds.
 
-Of the fastest growing occupations identified by the Bureau of Labor Statistics, Data Scienctists, Actuaries, and Operations research analysts are 4th, 8th, and 9th, respectively. All involve statistical training, and many data science jobs would have been advertised as requiring a statistics degree even 5 years ago. However, even if we confine ourself to Statisticians, the BLS expects 9% growth in statistics positions over the next decade, which is considerably faster growth than most other professions. 
+Of the fastest growing occupations identified by the Bureau of Labor Statistics, Data Scientists, Actuaries, and Operations research analysts are 4th, 8th, and 9th, respectively. All involve statistical training, and many data science jobs would have been advertised as requiring a statistics degree even 5 years ago. However, even if we confine ourselves to positions explicitly labeled as statistician, the BLS expects 9% growth in these positions over the next decade, which is considerably faster growth than most other professions. 
 Thus, we can see that the market demand for graduates of our programs at all levels is there. 
 In addition, while statistics does not pull in grants which are comparable in size to those in lab-based sciences that require laboratory equipment, AI is one of the stated research priorities of the current administration. 
 Most deep learning and large language models are built on a fundamental foundation of statistics. 
+
+![Statistics degrees by degree level and data science bachelor’s degrees awarded in the United States, from [Amstat News, 2024-11-05](https://magazine.amstat.org/blog/2024/11/05/data-science-analytics-degrees-see-explosive-growth/)](images/Statdegreefig2.png){#fig-stat-growth width="50%"}
 
 > The number of U.S. undergraduates earning degrees in statistics has increased more than six-fold since 2010, with over 5,500 bachelors degrees awarded in 2023, with the number of institutions offering such programs nearly doubling over the same period (from 95 to 184). At the Master's level, statistics degrees have increased 150% since 2010 to 5,150 in 2023, while data science and analytics-related degrees increased an astonishing 15-fold to more than 12,000 in that period. The number of universities granting statistics and data-intensive degrees also grew from 70 to 300. These trends reflect the central role of statistics and data science in today's workforce; the financial benefit to UNL, Nebraska, and the overall U.S. economy cannot be overstated. 
 > -- [Brad Carlin, UNL Math & Statistics alumni, former faculty at CMU and University of Minnesota Statistics, President of Biostatistical Consulting](letters/CarlinBrad_10_2_25_Regents.pdf)
@@ -190,7 +192,7 @@ While we train graduate students from other disciplines, we also have collaborat
 Many of these collaborations are not documented in coauthored papers or grants, because statisticians view collaboration and consulting as part of the job, and as long as it isn't a commitment involving large amounts of time (say, more than 1 day/week), we do not usually require compensation and simply hope that the collaboration will eventually lead to coauthored papers.
 
 Up until this budget reduction proposal, this "unseen" component of faculty labor seemed to be well understood in IANR, and was also reflected in P&T evaluations of statistics faculty. 
-Faculty in Statistics have helped to design extension web applications to share research findings from Biosystems Engineering with farmers, assisted with the visualization of observational data in Animal Science, discussed visualization methods with qualitative researchers in CEHS, and more. 
+Faculty in Statistics have helped to design extension web applications to share research findings from Bio-systems Engineering with farmers, assisted with the visualization of observational data in Animal Science, discussed visualization methods with qualitative researchers in CEHS, and more. 
 
 In addition to those contributions to other disciplines research, research in statistics has the potential to impact both our field and other fields in interesting ways. 
 Statistics faculty regularly publish software packages to make our methodological research available to others.
@@ -232,7 +234,7 @@ of statistical literacy is more acute than ever." -- [Brad Carlin, UNL Math & St
 While the APR reports are the closest we can come to objective evaluations, the time period over which evaluations can be obtained is limited, given that we have not had an undergraduate program for very long. 
 The department's rating in US News and World Report is #66. 
 While USNWR uses methodology that has [frequently been criticized](https://www.insidehighered.com/opinion/views/2023/10/09/why-new-us-news-rankings-are-flawed-opinion), we provide information here because it demonstrates both the growth of the field and the increased perception of the statistics department. 
-In 2010, when rankings began for statistics programs, UNL was not listed (only 22 Statistics departments and 8 Biostat departments were included)^[USNWR does not archive past rankings, so this information was obtained from a contemporaneous [graduate cafe forum post](https://forum.thegradcafe.com/topic/12360-thoughts-on-new-rankings-for-stats-programs/), which is suboptimal but necessary for obtaining historical information.].
+In 2010, when rankings began for statistics programs, UNL was not listed (only 22 Statistics departments and 8 Biostat departments were included)^[USNWR does not archive past rankings, so this information was obtained from a contemporaneous [graduate cafe forum post](https://forum.thegradcafe.com/topic/12360-thoughts-on-new-rankings-for-stats-programs/), which is sub optimal but necessary for obtaining historical information.].
 In 2014, [UNL was listed as RNP (essentially, unranked)](https://web.archive.org/web/20170524203540/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4). 
 In 2018, [UNL was not listed at all](https://web.archive.org/web/20180525103026/https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings/page+4) but the number of universities in the list had increased to 98 ranked statistics and/or biostatistics departments. 
 In 2022, [UNL was ranked 66th among 101 universities](https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings), indicating a steep increase in the perception of the department. 
@@ -247,7 +249,7 @@ The UNL statistics program supplies instruction, research, and service to UNL wh
 That is, the only other collection of a significant number of statisticians in the state is UNMC Biostatistics, but they fill a very different niche in the research ecosystem of the state and are ill-equipped to serve both the medical school and UNL researchers. 
 
 @tbl-stat-courses-reqd provides a list of degree programs which require statistics courses which will not be taught under the current budget plan. 
-@fig-stat-courses-majors shows the proportion of majors and nonmajors in statistics courses: the proportion of nonmajors is sufficiently high to demonstrate that we provide critical instruction for programs across UNL. 
+@fig-stat-courses-majors shows the proportion of majors and non majors in statistics courses: the proportion of non majors is sufficiently high to demonstrate that we provide critical instruction for programs across UNL. 
 
 > [T]he decision to close the statistics department does not reflect that philosophy ["vertical cuts"], as the work of Statistics supports that of every other unit within IANR, and many across the university. The training and teaching provided by Statistics faculty is critical to the training of the vast majority of graduate students throughout IANR who work on projects relevant to agronomy, plant breeding, animal science, and value-added agriculture. 
 > -- [Professor James Schnable, Nebraska Corn Checkoff Presidential Chair, Department of Agronomy & Horticulture](letters/James Schnable.pdf)
@@ -268,7 +270,7 @@ Chadron State | [Minor](https://www.csc.edu/academics/mathematics/degree-program
 Peru State | | | 
 UNK | [Minor](https://catalog.unk.edu/undergraduate/departments-programs/mathematics-statistics/statistics-minor/) | | 
 UNL | [BS](https://catalog.unl.edu/undergraduate/agricultural-sciences-natural-resources/statistics-data-analytics/#fouryearplanstext), [BS Data Science](https://catalog.unl.edu/undergraduate/agricultural-sciences-natural-resources/data-science/#majortext) | [MS](https://graduate.unl.edu/academics/programs/STAT-MS/), [Ph.D.](https://graduate.unl.edu/academics/programs/STAT-PHD/) Statistics | 
-UNO | [Stat Conc,](https://catalog.unomaha.edu/undergraduate/college-arts-sciences/mathematics/mathematics-bs/statistics-conc/) in Math degree | [MS](https://catalog.unomaha.edu/graduate/degree-programs-certificates-minors/data-science/#requirementstext) Data Science | only 6 hours of STAT req'd for either program
+UNO | [Stat Conc,](https://catalog.unomaha.edu/undergraduate/college-arts-sciences/mathematics/mathematics-bs/statistics-conc/) in Math degree | [MS](https://catalog.unomaha.edu/graduate/degree-programs-certificates-minors/data-science/#requirementstext) Data Science | only 6 hours of STAT required for either program
 UNMC |  | [MS](https://catalog.unmc.edu/graduate-studies/programs-requirements/msdegrees/mbios/), [Ph.D.](https://catalog.unmc.edu/graduate-studies/programs-requirements/phd/biostats/) in Biostatistics | 
 Wayne State |  |  | 
 Creighton | [BS Data Science](https://catalog.creighton.edu/undergraduate/arts-sciences/data-science/data-science-major/index.html) |  | 
@@ -454,7 +456,7 @@ The undergraduate computing sequence, Stat 151, 251, and 351, are similarly usef
 Relatively quickly after the courses were created, the Digital Agriculture minor was created with the requirement that students take Stat 151 and 251. 
 Similarly, we believe that Stat 349, Technical Skills for Statisticians, might be useful to students in Computer Science who need a technical writing course, though this potential was only identified recently, and we would need to get ACE 2 certification for the course.  
 
-Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statisics undergraduate courses for the major. 
+Statistics is one of three departments participating in the cross-college Data Science majors program; even though CASNR has indicated a desire to eliminate their Data Science option, there are still students in two other colleges who are required to take multiple statistics undergraduate courses for the major. 
 Many focus areas require statistics courses, and the Statistical Modeling option would be impossible to complete without our courses. 
 The credibility of a Data Science degree without the participation of statisticians is questionable - statistics is the foundation of data science, and many variations of "data science is a sexy word for statistician^[Nate Silver, Joint Statistical Meetings, 2013.]" have been uttered at different points as the phrase "data science" caught on. 
 
@@ -543,6 +545,7 @@ In addition, development of new methodology in statistics and in applied domains
 The current proposal indicates that Stat 801 and 802 will continue to be offered; these are the graduate courses which required graduate TA support in 1993 and still require that support today^[Under the current program, however, graduate statistics students no longer take Stat 801 and 802.]. 
 
 Our graduate students are extremely in-demand: to our knowledge, every MS and Ph.D. graduate in statistics has found work in their field, whether in industry, government, or academia. 
+While our undergraduate students have not yet graduated (May 2026 will be the first cohort's graduation date), 
 Many of these students mentions feeling uniquely empowered to work in *many* fields using their Statistics degree.
 This sentiment goes back to John W. Tukey: ["The best thing about being a statistician," he once told a colleague, "is that you get to play in everyone's backyard."](https://www.stat.berkeley.edu/~brill/Papers/copssbrill.pdf).
 
@@ -552,7 +555,7 @@ We feel that it is more effective to allow our graduate students and graduates t
 > -- [Dana Cracker, MS Statistics (2008) from UNL](letters/DanaCraker-MSgrad.pdf)
 
 While the department has produced excellent researchers who are very well known in the field, these same graduates remember the department not only as laying the foundation for their academic and economic success, but for its supportive environment and mentoring. 
-While this quote is long, it is still only a fraction of the original letter, and the story is important for motivating the importance of statistics to this state as well as highlighting unique characteristics of this department's programs.
+While this quote is long, it is still only a fraction of the original letter (and we've trimmed sections for brevity), and the story is important for motivating the importance of statistics to this state as well as highlighting unique characteristics of this department's programs.
 
 > I would like to explain how the Department of Statistics transformed me—a first-generation college graduate and son of a living Nebraska veteran who has spent 49 years paralyzed—from a mediocre high school graduate to a full professor at an R1 university by age 38.    
 > ...    
@@ -585,7 +588,7 @@ UNL's statistics programs directly counter "brain drain", providing local employ
 
 Our department provides opportunities for students to get an education that will improve their economic prospects and the state's economy as well. 
 Statistics Ph.D.s working in industry have a median salary of \$195,000 ([ASA 2020 compensation survey](documentation/YCR-2020WorkandSalarySurvey.pdf), pg 13), while those with a M.S. working in industry have a median salary of \$150,000. 
-Getting a graduate degree in statistics can meaningfully change a student's economic outlook. 
+Getting a graduate degree in statistics can **meaningfully change a student's economic outlook**. 
 
 > Impact on graduate students    
 > I am a Nebraska native, who was able to attend UNL thanks to a Regents Scholarship. Without the grants and graduate assistantships I received through the Department of Statistics, I would not have been able to afford graduate school, and most likely would have left Nebraska. Instead, I discovered a passion for statistics and data science education because I was encouraged to experiment and take risks as an instructor. I built a career in academia and industry as a data science educator because of the opportunities I had at the department.
