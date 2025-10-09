@@ -1,0 +1,61 @@
+Meeting focus
+
+- Need to go through percentiles for SRI
+  - SRI isn't comparable
+  - Limits of percentiles -- comparison group not big enough for eCDF amp
+
+- Variability on department measures based on small departments
+
+- Career stage and young-ness of the department
+
+- p1_expenditures
+682590.663 for stats
+
+The average (over what?) competitively funded (how is this determined?) federal
+research support as defined by the AAU membership policy,
+federal research expenditures less USDA research expenditures
+adding in awards from USDA Agriculture Food and Research Initiative (AFRI).
+
+Expenditures and AFRI awards are credited to departments using NuRamp routing forms.
+For PI/co-PIs who routed their credit through a unit outside a department, efforts were
+made to credit a department using the individual’s HR tenure org unit, primary org unit and
+any secondary appointments.
+
+
+- what is competitive
+- average over what?
+-
+
+citations - 77 vs 127
+
+articles aren't counted but books are
+
+
+
+- sch
+  - 2020 numbers seem off by a factor of 10, but doesn't seem to affect downstream metrics???
+
+- retention rate
+  - lots of churn between stats and data science by design -- lower retention rates doesn't mean this is malfunctioning
+
+- avg retention rate
+  - 5 cohorts don't exist for SDAN so nullified
+
+- grad_rate6
+  - graduation rate doesn't seem to have been nullified even though we couldn't have had graduates. Not sure what the 9% graduation rate comes from???
+
+- research_average
+  - this average is entirely nonsensical and shouldn't be used
+
+- research_avg_z_score_equally_weighted
+  - also badly composed and shouldn't be used
+
+- sri_aau_public_peers_z_score
+  - this has so many problems I don't know where to start
+  - for one, SRI shouldn't be used directly because different distributions AND because comparing apples and oranges
+  - for another, SRI shouldn't be transformed into a z-score because that's nonsense
+
+- awards_budget_inc_nuf_z_score
+  - z-score of total_sponsored_awards_inc_nuf_rsch_pub_serv_teach_avg_awards_budget
+  - This is another poorly created z-score, because z-scores assume a common distribution that doesn't exist when comparing departments to departments outside of the discipline/practice. University-wide normalization here is just going to make large-grant disciplines look really good compared to everyone else.
+

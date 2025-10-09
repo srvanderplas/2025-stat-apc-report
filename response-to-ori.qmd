@@ -1,0 +1,314 @@
+---
+title: "To the Executive Leadership Team and data analytics team"
+format:
+  html: default
+echo: false
+message: false
+warning: false
+---
+
+
+Thank you for your [response](documentation/Response to Statistics.pdf) to our [questions regarding issues](data-analysis/statistics-slides) with some of the metrics and the quality of the data that has led to the proposal for Budget Cuts at UNL. 
+Let me respond to some of the most egregious missteps that we see in the current approach.
+
+# The metrics calculations cannot all be released in full, given the unprecedented size and complexity of these data.
+
+Metrics calculations are (or should be) separate from the data. 
+You can think of the metrics calculations as the formulas connecting and combining cells in spreadsheets. 
+The data are the numbers in the cells. 
+
+We acknowledge that budget cuts and strategic alignments are a hard problem. 
+Unprecedented? - this current approach is certainly unprecedented, but the problem is not. 
+Neither is the size of the data, at least for statisticians and computer scientists. 
+
+The complexity of the data can always be broken down by following the hierarchy that the data encodes. 
+Giving each unit access to its individual level data - i.e. the performance, publications, grants, books, citations, and courses attributed to each faculty member over the review period, as well as the numbers for each of the course sections that went into the instructional scores,  would enable each unit to vet the correctness of the data on which they are evaluated.
+
+The most probable reason that you are not willing to give this level of detail to the units is that it will **demonstrate** the extent of the dramatic problems that are hiding within the averages you provided to the units. 
+Not aligning individual faculty members with their performance is leading to a systematic under count of a unit's actual research performance compared to the budgeted costs and 'average FTE'. And, as detailed below, the impact of this undercount is uneven i.e. undercounting is more detrimental to smaller units. 
+
+Choosing ten years as a review period for research performance is a long time. 
+
+In the Statistics Department, this means that only three faculty members (out of an 'average' FTE of 12.3) contributed data across the full time frame. 
+In that time frame, the Department has seen faculty retirements, new faculty hires, and also has had faculty leave for other universities. 
+All of those individuals are counted in the denominator of 'average FTE'. 
+None of their performance measures are included in your numerators. 
+Besides the disrespect of not acknowledging the contributions these faculty members, this approach skews the numbers against small departments. 
+
+We have heard that 'every unit is treated the same' in response to our multiple complaints (identified issues with the [metrics](app-metrics-analysis) and the [analysis](app-metrics-analysis) are available for reference). 
+The impact of this treatment affects different sized units differently. 
+It is not surprising then, that out of the ten smallest units at UNL that have an SRI, six were targeted by the allegedly normalized metrics. 
+Ask your friendly neighborhood statistician how likely this happens by chance (they can even give you a p-value).
+There is highly significant evidence that these metrics are not properly normalized, so that the elimination of small departments is significantly more likely than large departments using the approach UNL administration described. 
+
+# Bad Decisions Imperil Public Higher Education in Nebraska
+
+> At this late stage in the process, the metrics themselves won’t be changed.
+
+The unwillingness to see that mistakes have been made in the process is a disservice to UNL, the Nebraska University System and ultimately, the people of Nebraska.
+
+
+Let me explain why the current proposal is extremely short-sighted, using the example of the Statistics Department.
+I will also use the SRI (Scholarly Research Index) as the main measure, since it represents an evaluation for the research performance of each department by independent, qualified researchers at Academic Analytics who understand the importance of a reference population. 
+
+
+```{r packages}
+library(tidyverse)
+```
+
+```{r}
+stats_full <- read.csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv")
+unis <- read_csv("data-analysis/data/Institution - Comparing Institutions.csv")
+stats_full <- stats_full |> 
+  left_join(unis |> 
+              select(Institution_id, Carnegie, `AAU Member`, `Land Grant`, Sector),
+                                      by = c("institutionid"="Institution_id"))
+
+unl <- stats_full |> slice(grep("Lincoln", institutionname))
+unl_depts <- read.csv("data-analysis/data/Institution - Comparing Units - Departments.csv")
+
+
+eliminate <- c("Statistics", "Educational Administration", "Landscape Architecture Program", 
+                   "Community and Regional Planning", "Earth and Atmospheric Sciences",
+                   "Textiles, Merchandising, and Fashion Design")
+
+merger1 <- c("Agricultural Economics", "Agricultural Leadership, Education and Communication")
+
+merger2 <- c("Entomology", "Plant Pathology")
+
+realign <- c(merger1, merger2, "Journalism", "Interior Design", "Sports Communication", "Advertising", "Architecture", "Finance")
+
+unl_depts <-unl_depts |> 
+  separate_wider_delim(
+    cols=Discipline, delim=" - ", names=c("Toss", "Focus"), 
+    too_few="align_start") |>
+  mutate(
+    Focus = ifelse(is.na(Focus), "Single Discipline", Focus),
+    short_name = gsub(", Department of","", Unit), 
+    short_name = gsub(", School of","", short_name)) |>
+  select(-Toss) # toss the left-over string
+
+```
+
+
+Nationwide, there are `r nrow(stats_full)` entities that Academic Analytics recognizes as peers to the UNL Statistics Departments. 
+
+
+
+
+```{r}
+rank_by_var <- function(data, value_var, name_var, name) {
+  stopifnot(value_var %in% names(data))
+  
+  data_sort <- data |> mutate(var = data[[value_var]]) |> arrange(desc(var))
+  idx <- grep(name, data_sort[[name_var]])
+  if(length(idx) > 1) 
+  stop(sprintf("Multiple values found for <%s>", name))
+  if(length(idx) == 0) 
+  stop(sprintf("No values found for <%s>", name))
+
+  min(which(data_sort$var == as.numeric(data_sort$var[idx])))
+}
+
+percentile <- function(rank, n) {
+  (n-rank+1)/n*100
+}
+
+rank_to_score <- function(rank, n, c=3/8, best=1) {
+  if (best == 1) rank <- n - rank + 1
+  Q <- (rank-c)/(n - 2*c +1)
+
+  qnorm(Q)
+}
+
+```
+
+```{r}
+stats_public <- stats_full |> filter(Sector=="Public") 
+rank_public <- stats_public |> rank_by_var ("sri", "institutionname", "Lincoln")
+n_public <- nrow(stats_public)
+```
+
+Among these peers, UNL Stats ranks `r unl$sri_rank`th (on par with `r stats_full |> filter(sri_rank==unl$sri_rank) |> nrow()` other departments).
+When reducing the number of peer departments to the ones at public universities, the rank of the UNL Stats department becomes `r rank_public`th out of `r n_public`, putting UNL Stats at the `r round(percentile(rank_public, n_public),1)`th Percentile.
+
+```{r}
+#| fig-width: 10
+#| fig-cap: Dot plot of the standing of the Statistics Department at UNL (NEB) within all of its 123 peer departments at Public Universities. Facets show rankings according to University classification. Fellow Big Ten teams are marked in color. Statistics at NEB is operating at the top of non-AAU R1 universities and playing in the middle of the pack compared to Statistics Departments at public AAUs
+
+library(tidyverse)
+
+# Read the CSV file
+big10 <- read_csv("data-analysis/data/big10_universities_18_with_abbr.csv")
+
+# Separate the primary and secondary color hex codes
+# big10 <- big10 %>%
+#   separate(colors_hex, into = c("primary_color", "secondary_color"),
+#            sep = " / ", fill = "right", remove = FALSE)
+big10$bigten <- "Big Ten"
+
+
+unis <- read_csv("data-analysis/data/Institution - Comparing Institutions.csv")
+stats_r12 <- read_csv("data-analysis/data/Statistics, Department of - Benchmarking - R12.csv")
+stats_full <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv")
+
+
+r12 <- unis |> slice(grep("Doctoral Universities", Carnegie)) |>
+  mutate(`AAU Member` = ifelse(is.na(`AAU Member`), " Not", `AAU Member`))
+r12 <- r12 |> left_join(stats_r12 |> select(Institution_Id,Unit, SRI), by = c("Institution_id"="Institution_Id"))
+stats_full <- stats_full |> left_join(unis |> select(Institution_id, Carnegie, `AAU Member`, `Land Grant`, Sector),
+                                      by = c("institutionid"="Institution_id"))
+
+
+stats_full_ten <- stats_full |>
+  select(institutionname, facultycount, sri, Carnegie, `AAU Member`, Sector) |>
+  mutate(
+    Carnegie_short =
+      ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+             ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+    Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  ) |> left_join(big10, by=c("institutionname"="institution"))
+
+
+stats_full_ten <- stats_full_ten |>
+  mutate(primary_color = ifelse(is.na(primary_color), "grey40", primary_color),
+         secondary_color = ifelse(is.na(secondary_color), "grey", secondary_color)) |>
+  mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |>
+    factor(levels = c("AAU", "R1", "R2", "Other"),
+           labels = c("AAU + R1", "Not AAU + R1", "R2", "Other"))) |>
+  mutate(stroke = ifelse(primary_color=="grey40", .5, 5))
+
+
+stats_full_ten |>
+  filter(Sector=="Public") |>
+  ggplot(aes(x = sri, y = Carnegie_short)) +
+  geom_dotplot(aes(fill = secondary_color, colour = primary_color, stroke=stroke),
+               dotsize=.4, stackdir = "center", binwidth = 0.075, stackgroups = T)  +
+  scale_fill_identity() +
+  scale_color_identity() +
+  facet_grid(classification~., scale="free", space="free") +
+  theme_bw() +
+  xlab("SRI") + ylab("") +
+  ggtitle("SRI of Statistics Departments at Public Universities \nby Carnegie Classification and members of AAU") +
+  geom_text(aes(label = abbreviation, color = primary_color),
+            data = filter(stats_full_ten, secondary_color != "grey"),
+            nudge_x = filter(stats_full_ten, secondary_color != "grey" & !is.na(nudge_x))$nudge_x,
+            nudge_y = filter(stats_full_ten, secondary_color != "grey" & !is.na(nudge_x))$nudge_y)
+
+```
+
+
+```{r}
+stats_aau <- stats_public |> filter(`AAU Member` == "AAU Member" | institutionname=="University of Nebraska - Lincoln") 
+rank_aau <- stats_aau |> rank_by_var ("sri", "institutionname", "Lincoln")
+n_aau <- nrow(stats_aau)
+```
+
+When comparing the Statistics Department to its Public Peers at AAU, the rank of UNL Stats is `r rank_aau` out of `r n_aau`.
+
+The UNL Stats score used in the budget process comes out at -.1 (it should be 0 but - for statistics at least -  whoever put the data together forgot to also select 'public' in the Sector, oops). 
+Compared to other departments at UNL, this is still an OK indicator that the Stats Department is good even for AAU standards. 
+
+
+What has been completely overlooked by the UNL Executive Leadership Team is that this metric can also be used to compare the relative importance of disciplines to the AAU. 
+Using the SRI as the response in a Rasch model ... really unimportant details - talk to your friendly neighborhood statistician, if you still can. 
+The idea is that every time there is a test with multiple questions, we can evaluate the difficulty of a question based on the students' answers. 
+
+Similarly, we can evaluate which disciplines are strategically important to AAU based on the SRIs given to each discipline compared to that discipline's overall SRI. 
+Large differences indicate disciplines in which AAU schools have stronger performing departments than universities nationwide. 
+
+```{r warning = FALSE, message = FALSE}
+tabled <- readxl::read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet = "Detail")
+teaching <- readxl::read_xlsx("data-analysis/data/tabled_department_metrics.xlsx")
+
+tabled_sri <- tabled |> filter(!is.na(sri)) |> filter(!is.na(department))
+
+
+unl_depts <- unl_depts |> 
+  mutate(
+    Unit_name = gsub(", School of", "", Unit),
+    Unit_name = gsub(", Department of", "", Unit_name)
+  )
+tabled_sri$unit_name <- gsub(".*School of ", "", tabled_sri$lowest_level_name)
+
+matches <- expand.grid("tabled_unit_name" = unique(tabled_sri$unit_name), "Unit_name" = unique(unl_depts$Unit_name)) %>%
+  mutate(distance = stringdist::stringdist(tabled_unit_name, Unit_name, method = "jw"))  # Jaro–Winkler distance
+
+best_match <- matches |> group_by(tabled_unit_name) |>  slice_min(distance, n = 1) %>%
+  ungroup()
+
+# Journalism is not in the right category
+
+joined_sri <- best_match |>
+  left_join(tabled_sri, by = c("tabled_unit_name"="unit_name")) %>%
+  left_join(unl_depts |> filter(SRI==max(SRI), .by="Unit_id"), by = "Unit_name") 
+
+joined_sri <- joined_sri |>
+  mutate(
+    Unit_name = ifelse(tabled_unit_name=="Journalism", "Journalism", Unit_name))
+
+joined_sri <- joined_sri |> left_join(teaching |> mutate(lowest_level_key=parse_number(lowest_level_key)))
+
+joined_sri <- joined_sri |> mutate(
+  fate = ifelse(Unit_name %in% eliminate, "Elimination", 
+                ifelse(Unit_name %in% realign, "Realign", "Safe"))
+)
+```
+
+
+And what we see below is that **in the strategic alignment of the budget cut process several disciplines that are highly valued at AAU schools are proposed to be eliminated**. 
+The Executive Leadership Team's faulty analysis^[Or, really, the faulty analysis done by their quantitative dogsbodies, as we're sure the ELT didn't analyze the data themselves.] risks the reputation of UNL and the chances that UNL gets back into the AAU.
+The decisions they made based on this faulty understanding of the metrics will hurt Nebraskans.
+
+```{r}
+#| fig-height: 7.75
+#| fig-width: 7
+#| fig-cap: Dot plot of the importance of a unit/discipline for AAU compared to all universities. In color all disciplines with units at UNL affected by the budget cut. Several departments with highly important disciplines for AAU are slated for elimination.
+
+joined_sri |> 
+  filter(Unit_name != "Textiles, Manufacturing and Fashion Design") |>
+  mutate(
+    diff_SRI_sri = round(SRI - sri,2),
+    Unit_name = reorder(factor(Unit_name), diff_SRI_sri),
+    Proposed = ifelse(short_name %in% eliminate, "Eliminate", 
+                           ifelse(short_name %in% merger1, "Merger1",
+                                 ifelse(short_name %in% merger2, "Merger2", "Not Mentioned"))),
+    show = ifelse(Proposed=="Not Mentioned", -0.001, +0.001),
+    ranks = rank(diff_SRI_sri+show, ties.method = "random"),
+    Quintile = cut_number((-1)*ranks, 5)
+    ) |>
+  group_by(Proposed) |> 
+  ggplot(aes(x = SRI-sri, y = Unit_name)) + 
+  geom_point(aes(colour = Proposed), size = 3) + 
+  ggtitle("Ranking of Disciplines: Importance of Discipline in AAU") +
+  xlab("Discipline SRI") + ylab("") +
+  theme_bw() +
+  facet_grid(Quintile~., space = "free", scale="free") +
+  theme(strip.text = element_text(size=0)) + 
+  geom_text(aes(label = short_name, x = -.3, colour = Proposed), hjust = 0,
+            size = 3) +
+  scale_x_continuous(expand=c(.01,.01), limits=c(-.3,1)) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) 
+
+```
+
+
+# We have confirmed that the University Libraries does[sic] not subscribe to InCites or any similar tool
+
+It is quite surprising what one can find when one reads. 
+
+From the 
+[InCites Benchmarking Analytics](https://clarivate.com/academia-government/scientific-and-academic-research/research-funding-analytics/incites-benchmarking-analytics/), we find that InCites uses Web of Science as its data source.
+
+![](images/incites-analytics.png)
+
+[UNL Libraries provide personal access to Web of Science](https://www-webofscience-com.libproxy.unl.edu/wos/woscc/smart-search), thus providing access to the same data used by InCites. 
+
+![Access to Web of Science through UNL Library](images/web-of-science-unl.png)
+
+![Web of Science is also listed as a database by UNL Library](images/databases-unl-library.png)
+
+
+From a statistical perspective, it looks like the same amount of care was given to the assembly of the metrics and the data for the budget cut process at UNL as for the confirmation of no access to InCites.
+After all, who cares if data is missing as long as it's missing for all departments?

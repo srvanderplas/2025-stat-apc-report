@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  post-render:
+    - ./post-render
 
 book:
   title: "Statistics: An Essential Department for a Modern R1 University"
@@ -19,6 +21,7 @@ book:
     - app-faculty-system.qmd
     - app-analysis-issues.qmd
     - app-metrics-analysis.qmd
+    - app-engagement-ori.qmd
     - 2025-Stat-APC-report.qmd
 
   downloads: [pdf]

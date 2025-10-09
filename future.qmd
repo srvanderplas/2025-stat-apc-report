@@ -63,9 +63,9 @@ Our 2021 APR report suggested that certificates and online graduate degrees shou
 ### Restructuring the Statistics MS
 
 As the MS in Data Science is established, we will work to restructure our graduate curriculum, reducing our MS in Statistics to 30 hours and laying a foundation for offering an online MS in Statistics in the future. 
-We will explore the 400/800 crosslisting model employed by computer science and engineering as well as other departments in IANR, to determine which courses it might work for, and which courses would be better served by separate sections of graduate and undergraduate students.
+We will explore the 400/800 cross listing model employed by computer science and engineering as well as other departments in IANR, to determine which courses it might work for, and which courses would be better served by separate sections of graduate and undergraduate students.
 
-While there are some statistics courses which may not be easily crosslisted (the methods core of 821,822,823 is a particular challenge), we hope that redesigning the MS will allow us to streamline our curriculum and take advantage of the innovative and statistics-intensive bachelors curriculum without overtaxing our faculty.
+While there are some statistics courses which may not be easily cross listed (the methods core of 821,822,823 is a particular challenge), we hope that redesigning the MS will allow us to streamline our curriculum and take advantage of the innovative and statistics-intensive bachelors curriculum without overtaxing our faculty.
 We will also pursue offering some of our computing workshops and courses as digital badges and certificates, providing an additional revenue stream.
 
 We firmly believe that this process will set our department up for success and profitability moving forward.
@@ -86,7 +86,7 @@ Our hope is that the systematic rethinking of our department during the budget p
 
 ---
 
-Our ties to IANR are extremely strong, and are unlikely to be jeoparodized by a rearrangement, but there are many institutional barriers to increased institutional efficiency.
+Our ties to IANR are extremely strong, and are unlikely to be jeopardized by a rearrangement, but there are many institutional barriers to increased institutional efficiency.
 Throughout this report, we have commented on the possible use of dual appointments to build bridges between statistics and other departments. 
 This combines the strengths of the distributed model (close ties with applied domain departments) with the strengths of the centralized model (a single department responsible for teaching statistics courses across campus, and a single point of contact for assistance with statistics). 
 Ultimately, whether we are housed within IANR, CAS, COE, or a new college dedicated to data science, we believe it would be helpful to make use of dual appointments liberally, so that there are effective ties built between departments on both City and East campus. 
@@ -100,7 +100,7 @@ However, we would like to note that we are open to alternative homes that would 
 > -- [Dr. Petronella Radu, Chair, Mathematics Department, UNL](letters/PetronelaRadu-Feedback_Program_Elimination.pdf)
 
 
-In particular, we believe there would be some efficiencies if we were to revisit the 1968 plan to form a School of Computing to house both Statistics and Computer science (of course, since the School of Computing already exists, it might need a more modern name), with the possibility of cooperation from Math and even Business (specifically Supply Chain Managemet & Analytics, Actuarial Science, and possibly Economics). 
+In particular, we believe there would be some efficiencies if we were to revisit the 1968 plan to form a School of Computing to house both Statistics and Computer science (of course, since the School of Computing already exists, it might need a more modern name), with the possibility of cooperation from Math and even Business (specifically Supply Chain Management & Analytics, Actuarial Science, and possibly Economics). 
 Indeed, this is the strategy suggested by one of the experts in our field:
 
 > Student demand for statistics and data science is sustained and high, and employers across tech, biotech, finance, climate, and government hire at every degree level. Closing a department in the face of that demand misaligns the university with student interest and employers' need, ceding enrollments, tuition, and partnerships to peer institutions that are expanding, often by re-forming as "Statistics & Data Science" and integrating computation with inference.
@@ -130,7 +130,7 @@ Our department powers the research engine across the university.
 We urge the APC and the Senior Leadership team to consider an admittedly bold counter proposal: Create a college or school of data science that will collaborate with departments across campus on research projects and grants, provide consulting services, and prepare students for jobs in a data-centric economy.
 
 This proposal is partially based on Dr. Gold's Odyssey to the Extraordinary objective "Partnerships & Alignment Across NU" -- by housing the statistics department within a structure designed with collaboration in mind, we will be more readily able to assist with research topics across the university, filling niches that e.g. UNMC Biostatistics does not currently fill within UNMC and also assisting UNO and UNK researchers as the occasion presents itself. 
-It also alignes nicely with "Creating Sustainable Value, Effectiveness and Efficiency", as we will be able to raise possible issues of redundant courses across departments through dual-appointed positions within those departments. As departments continue to feel the pain of efficiency and repeated cuts, both departments will benefit from shared courses that reduce the required instructional FTE and make the faculty infrastructure across the university more robust. 
+It also aligns nicely with "Creating Sustainable Value, Effectiveness and Efficiency", as we will be able to raise possible issues of redundant courses across departments through dual-appointed positions within those departments. As departments continue to feel the pain of efficiency and repeated cuts, both departments will benefit from shared courses that reduce the required instructional FTE and make the faculty infrastructure across the university more robust. 
 Finally, this proposal aligns with "Data Driven Decisions and Related Communication", in that we are streamlining human resources and research and instructional needs by setting up HR structures that facilitate cross-departmental communication. 
 
 
@@ -160,8 +160,6 @@ As has been discussed throughout this report, statistics departments were formed
 - Partnerships Across Nebraska    
 Our department has been actively working to collaborate with P-12 institutions to provide service learning projects for Stat 325 (Zoo school data analysis) and to provide modules about statistical analysis for those competing in the science fair. 
 
-
-Ultimately, the suggestion
 
 ## Out-of-the-Box Suggestions
 

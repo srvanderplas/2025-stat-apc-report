@@ -1,0 +1,433 @@
+---
+title: "Use of Metrics"
+subtitle: "Budget Cuts Process"
+date: '2025-09-29'
+engine: knitr
+type: slides
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+    navigation-mode: vertical
+    logo: libs/N.svg
+---
+
+## Scholarly Research Index (SRI)
+
+- measure developed by Academic Analytics to assess research performance of individuals and entities 
+
+- captures nine metrics: amount of Grant dollars, number of Articles, Awards, Books, Chapters, Conference Proceedings, Patents, and Trials. 
+
+- different disciplines operate differently: metrics are combined into SRI with different weights
+
+## Discipline specific weights
+
+```{r}
+library(tidyverse)
+library(DT)
+#library(ggpcp)
+unl_depts <- read_csv("data-analysis/data/academic-analytics/Institution - Comparing Units - Departments.csv")
+
+unl_depts <-unl_depts |> 
+  separate_wider_delim(
+    cols=Discipline, delim=" - ", names=c("Toss", "Focus"), 
+    too_few="align_start") |>
+  mutate(
+    Focus = ifelse(is.na(Focus), "Single Discipline", Focus),
+    short_name = gsub(", Department of","", Unit), 
+    short_name = gsub(", School of","", short_name)) |>
+  select(-Toss) # toss the left-over string
+
+
+# unl_depts <- unl_depts |>
+#   mutate(
+#     Unit = reorder(factor(Unit), SRI),
+#     across(contains("Weight"), parse_number)
+#   ) 
+# 
+# unl_depts |> 
+#   rename_with(.fn = function(var_name)  gsub(" Weight", "", var_name)) |> 
+#   pcp_select(Unit, `Awards`, `Books`, `Chapters`, 
+#              `Articles`,`Citations`, `Grants`, 
+#              `Conf Proc`, `Patents`, `Trials`) |>
+#   pcp_scale(method = "raw") |>
+#   ggplot(aes_pcp()) + 
+#     geom_pcp() + 
+#     theme_pcp() + 
+#   geom_text(aes(label = Unit), x=1, hjust=1, nudge_x = -.2) + 
+#   scale_x_discrete(expand = expansion(add = c(2, 0)))
+
+# Make a table
+datatable(unl_depts |> select(Unit, contains("Weight")),
+  filter = "top",
+) %>%
+  DT::formatStyle(columns = colnames(.), fontSize = '5%')
+
+```
+
+## Different distributions
+
+- SRI are comparable within discipline (SRI rank, SRI Percentile)
+
+- **SRI are NOT comparable across disciplines**
+
+- Different disciplines have different SRI distributions: SRI $\sim N(\mu_D, \sigma_D)$
+
+# Same SRI - Different SRI Percentiles (Ranks) {.scrollable}
+
+```{css}
+#| echo: false
+
+.reveal .datatables {
+  font-size: small;
+}
+
+```
+
+```{r}
+unl_depts |> filter(SRI==.4) |>
+  select(Unit, SRI, `SRI Percentile`, `SRI Rank`, `Number of Units`) |>
+  arrange(desc(`SRI Percentile`)) |> DT::datatable()
+```
+
+## SRI Percentiles for Comparisons across disciplines
+
+
+- one-to-one correspondence between ranks $R$ and normal scores $S$:
+
+$$
+S \approx  N^{-1}_{\mu, \sigma} \left( 1 - \frac{R-c}{n - 2c + 1} \right)
+$$
+
+For $c = 3/8$ this is the Blom method (Blom 1958).
+
+- for SRI $\sim N(\mu, \sigma_D)$ (same mean $\mu$) use (within discipline) `SRI Percentiles` (removes dependence on $\sigma_D$)
+
+
+##
+
+```{r message = FALSE, fig.height=10, fig.width = 9}
+
+unl_depts_sum <- unl_depts |> 
+  filter(`SRI Percentile` == max(`SRI Percentile`), .by = Unit) 
+  
+eliminate <- c("Statistics", "Educational Administration", "Landscape Architecture Program", 
+                   "Community and Regional Planning", "Earth and Atmospheric Sciences",
+                   "Textiles, Merchandising, and Fashion Design")
+
+merger1 <- c("Agricultural Economics", "Agricultural Leadership, Education and Communication")
+
+merger2 <- c("Entomology", "Plant Pathology")
+
+
+unl_depts_sum <- unl_depts_sum |> 
+  mutate(Unit = reorder(factor(Unit), `SRI Percentile`, function(x) median(x))) |>
+  mutate(Quintile = cut_number((-1)*`SRI Percentile`, 5),
+         Proposed = ifelse(short_name %in% eliminate, "Eliminate", 
+                           ifelse(short_name %in% merger1, "Merger1",
+                                 ifelse(short_name %in% merger2, "Merger2", "Not Mentioned")))) |>
+  mutate(rank_label = sprintf("%d / %d", `SRI Rank`, `Number of Units`))
+
+unl_depts_sum |>
+  ggplot(aes(x = `SRI Percentile`, y = Unit)) + 
+  geom_point(size = 3, aes(colour = Proposed)) + 
+  theme_bw() + 
+  ylab("") + 
+  ggtitle("Units at UNL\nranked by their standing compared to peers") +
+  facet_grid(Quintile~., space="free", scale="free") +
+  theme(strip.text = element_text(size=0)) + 
+  geom_text(aes(label = short_name, x = -5, colour = Proposed), hjust = 0) + 
+  scale_x_continuous(expand=c(.01,.01), limits=c(-5,110)) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) + 
+  geom_text(aes(label=rank_label), x = 110, hjust=1, colour = "grey40")
+
+```
+
+## Comparison to AAU
+
+- 'Custom' Index is not equal to SRI
+- Different $\mu_D$ 
+- Smaller sample sizes 
+
+Suggestion: separate AAU criteria from research average, use `SRI Percentiles` as measure for Departments research
+
+## Statistics in AAU
+
+Every land-grant AAU has a statistics department
+
+```{r}
+unis <- read_csv("data-analysis/data/Institution - Comparing Institutions.csv")
+stats_r12 <- read_csv("data-analysis/data/Statistics, Department of - Benchmarking - R12.csv")
+stats_full <- read_csv("data-analysis/data/academic-analytics/Statistics, Department of - comparison to Stats.csv")
+
+
+r12 <- unis |> slice(grep("Doctoral Universities", Carnegie)) |>
+  mutate(`AAU Member` = ifelse(is.na(`AAU Member`), " Not", `AAU Member`))
+r12 <- r12 |> left_join(stats_r12 |> select(Institution_Id,Unit, SRI), by = c("Institution_id"="Institution_Id")) 
+
+
+stats_full <- stats_full |> left_join(unis |> select(Institution_id, Carnegie, `AAU Member`, `Land Grant`), 
+                        by = c("institutionid"="Institution_id"))
+
+
+
+stats_full <- stats_full |> mutate(
+  Carnegie_short = 
+    ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
+      ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
+  Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
+  )
+stats_full <- stats_full |> 
+  mutate(`AAU Member`= ifelse(is.na(`AAU Member`), "", `AAU Member`), 
+         `AAU Member` = factor(`AAU Member`, levels = c("AAU Member", "")))
+
+
+
+gg <- stats_full |> ggplot(aes(x = sri, y = Carnegie_short)) + 
+  geom_dotplot(dotsize=.4, stackdir = "center", fill="grey", binwidth = 0.1) + 
+  facet_grid(`AAU Member`+Carnegie_short~., scale="free", space="free") + 
+  theme_bw() + 
+  xlab("SRI") + ylab("") + 
+  ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
+  geom_dotplot(data = stats_full |> slice(grep("Lincoln", institutionname)),
+               fill = "#d00000", dotsize=.8, binwidth = 0.075) + 
+  geom_text(aes(label = "UNL Statistics"), stats_full |> slice(grep("Lincoln", institutionname)),
+            colour = "#d00000", size = 5, nudge_y = 0.4) 
+
+# need different colours
+ofcourse <- list(
+  geom_text(aes(label = "Stanford"), 
+            stats_full |> slice(grep("Stanford", institutionname)),
+            size = 5, nudge_y = 0.15),
+  geom_text(aes(label = "Berkeley"), stats_full |> slice(grep("Berkeley", institutionname)),
+            size = 5, nudge_y = 0.35, nudge_x = 0.1),
+  geom_text(aes(label = "Harvard"), stats_full |> slice(grep("Harvard", institutionname)),
+            size = 5, nudge_y = -0.25, nudge_x = 0.1)) 
+
+really <- list(
+  geom_text(aes(label = "Ohio State"), 
+            stats_full |> slice(grep("Ohio", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5, nudge_x = 0.05,
+            size = 5, nudge_y = -0.35),
+  geom_text(aes(label = "Purdue"), 
+            stats_full |> slice(grep("Purdue", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5, nudge_x = 0.05,
+            size = 5, nudge_y = 0.35),
+  geom_text(aes(label = "Michigan State"), 
+            stats_full |> slice(grep("Michigan State", institutionname)),
+            hjust=0.5,
+            size = 5, nudge_y = 0.55),
+  geom_text(aes(label = "ISU"), 
+            stats_full |> slice(grep("Iowa State", institutionname)),
+            hjust=0.5,
+            size = 5, nudge_y = -0.35),
+  geom_text(aes(label = "UVA"), 
+            stats_full |> slice(grep("Virginia", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5,
+            size = 5, nudge_y = -0.30),
+  geom_text(aes(label = "Maryland"), 
+            stats_full |> slice(grep("Maryland", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+            hjust=0.5,
+            size = 5, nudge_y = -0.4)) 
+
+gg + ofcourse  + really
+  
+```
+
+
+## Books {.smaller}
+
+::: columns
+::: {.column width="80%"} 
+Analysis of Categorical Data with R
+
+- 1st edition came out October 2014, but was reported by publisher in December 2013.
+- 2nd edition missed the university's cutoff.
+
+Predictive Statistics
+
+- Only Bertrand Clarke got credit. Jennifer Clarke has a fractional apportionment in Statisics, but the book doesn't appear in her record at all.
+
+
+:::
+:::{.column width="20%"}
+![](https://images.routledge.com/common/jackets/crclarge/978036755/9780367553234.jpg){width="100%"}
+![](https://m.media-amazon.com/images/I/51PnGZ-BXnL._SY425_.jpg){width="100%"}
+:::
+:::
+
+## Books
+
+- In small departments that aren't book-centric, these issues matter a *lot* 
+  - no assessment of variability
+
+- Data accuracy: Academic Analytics errs on the side of caution
+
+  - Hard to get individual access to check records and fix issues
+  - Department chairs have access but don't have time to audit everything    
+  (and didn't know how important it would be!)
+
+## Citations
+`citations_2014_2023_avg`
+
+> AAU uses Web of Science InCites for the citations data. UNL does not currently subscribe to InCites and so is using Academic Analytics to track and report this data.
+
+- Incorrect: UNL Library has InCites access
+
+- Academic Analytics citations are 2020-2023 (4 years) vs. 10 years
+
+- Short window = preference "fast" disciplines (CS) and hurt:
+  - longitudinal or human subjects research
+  - foundational research (stats, math)
+  - disciplines with longer publication/review cycles
+
+## Citations {.smaller}
+
+::: columns
+
+::: {.column width="40%"}
+![](images/time-to-citation.png)
+:::
+::: {.column width="60%"}
+Galiani, Sebastian and Gálvez, Ramiro H. (2017), “The Life Cycle of Scholarly Articles Across Fields of Research.” [http://dx.doi.org/10.2139/ssrn.2964565](http://dx.doi.org/10.2139/ssrn.2964565)
+
+- The mean citation number differs by field
+
+- The trajectory of citations differs by field
+  - increasing in Statistics, Math, Finance, Economics, Sociology
+  - level off in Political Science, Psychology
+  - "peak" in Astronomy, Biochem, Biology, Medicine
+
+- Timing of citation curves is very field-specific
+
+- 4 years hits the peak citation rate in only very fast moving fields
+
+:::
+:::
+
+
+
+## Grants
+
+- Counts 3.xx times (depending on discipline SRI weights)
+
+  - fraction of input to `sri_aau_public_peers_z_score`
+  - `research_awards_growth_inc_nuf_z_score`
+  - `awards_budget_inc_nuf_z_score`
+  - `p1_expenditures_normalized_z_score`
+
+- Each of these representations have 
+  - quality issues (source data)
+  - meaning issues
+
+## Grants
+```{r}
+library(tibble)
+library(viridis)
+grant_funding_22 <- tribble(  ~Agency, 	~Computer_sciences_and_mathematics, 	~Environmental_sciences, ~Life_sciences, 	~Physical_sciences, 	~Psychology, 	~Social_sciences, 	~Engineering ,  ~Other_fields,
+"DOD",1.92,0.55,0.94,0.42,0.10,0.05,4.86,1.32,"DOE",1.69,0.34,0.54,5.13,0.00,0.00,2.93,0.47,"NASA",0.00,1.74,0.10,3.57,0.00,0.00,1.85,0.05,"NSF",1.23,1.03,0.79,1.33,0.03,0.19,1.05,1.24,"USDA",0.03,0.02,2.26,0.13,0.01,0.19,0.11,0.11,"DOC",0.26,0.62,0.09,0.28,0.00,0.09,0.33,0.02,"VA",0.00,0.00,1.61,0.00,0.00,0.00,0.00,0.00,"Other,agencies",0.13,0.64,1.29,0.17,0.02,0.25,0.97,0.42
+) |>
+  pivot_longer(-Agency, names_to = "Field", values_to = "Funding") |>
+  mutate(Field = str_replace_all(Field, "_", " "),
+         Agency = fct_reorder(Agency, Funding, .fun = sum)) |>
+  group_by(Field) |>
+  mutate(Tot = sum(Funding)) |>
+  ungroup() |>
+  mutate(Field = factor(Field) |> fct_reorder(Tot))
+
+ggplot(grant_funding_22, aes(x = Field, y = Funding, fill = Agency)) + 
+  geom_col() + 
+  coord_flip() + 
+  ylab("Funding (Billions)") + 
+  scale_fill_viridis(discrete=T) + 
+  theme_bw() +
+  theme(legend.location = "plot", legend.position = c(1, 0), 
+        legend.justification = c(1.01, -0.01)) + 
+  ggtitle("Federal Funding by Discipline, FY2022")
+```
+
+[Data Source](https://ncses.nsf.gov/pubs/nsb20246/federal-support-for-u-s-r-d)
+
+
+
+## Grants {.r-fit-text}
+
+- No ability to trace individual contributions to totals even given metric definitions
+  
+  - lead PI vs. coPI
+  - listed but effective % of 0
+  - which grants count for which metrics
+  
+- SC3L & Stat department: work for grants without being *on* the grant
+
+
+## Grants (ideally)
+
+- Better documentation
+
+- Individual and Department level reports
+    - Every grant within the time period
+    - Whether and how it contributes to each metric
+
+- Transparent correction process
+
+- This should be automated -- like budget reports
+
+## Grants {.scrollable}
+
+```{r}
+indiv_grants <- map_df(list.files("data-analysis/data/grants", full.names = T), read_csv) |>
+  filter(!is.na(`Projected Start Date`)) |>
+  mutate(across(matches("Date"), mdy)) 
+
+indiv_grants <- indiv_grants |>
+  mutate(Requested=parse_number(Requested), Awarded = parse_number(Awarded))
+
+indiv_sub <- indiv_grants |>
+  arrange(`Projected End Date`) |>
+  filter(`Projected End Date` >= ymd("20200101")) 
+
+DT::datatable(select(indiv_sub, -Star, -Campus, -Status))
+```
+
+
+
+## Grants {.smaller}
+`research_awards_growth_inc_nuf_z_score`     `research_awards_growth_inc_nuf_fy2020_total_research_awards`    
+`research_awards_growth_inc_nuf_fy2024_total_research_awards`
+
+- Not per-capita (FTE in research or overall)
+- Growth as a % of UNL growth will favor:
+
+  - Departments with large grants due to discipline
+  - Departments with many people
+  
+- Variability from year-to-year is much larger with 
+
+  - smaller departments
+  - shorter grant periods
+
+## Grants
+`p1_expenditures_normalized`
+
+- `p1_expenditures_2014_2023_avg`/`t_tt_headcount_2014_2023_avg` doesn't take into account apportionments
+
+- which department spends the money doesn't always map to % effort on the grant
+
+- all other issues with grant funding comparisons across disciplines also apply
+
+
+## Articles
+
+- Books count as a separate research factor
+
+- Article- and Conference-publication centric disciplines are disadvantaged  
+
+- SRI Percentile accounts for this problem
+
+- Re-creating SRI weightings without articles gives an incomplete picture
+
+
+
+
