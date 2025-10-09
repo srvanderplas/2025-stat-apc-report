@@ -1,9 +1,7 @@
 ---
 title: "To the Executive Leadership Team and data analytics team"
-format:  
-  docx: default
+format:
   html: default
-  pdf: default
 echo: false
 message: false
 warning: false
@@ -197,8 +195,6 @@ stats_full_ten |>
             nudge_x = filter(stats_full_ten, secondary_color != "grey" & !is.na(nudge_x))$nudge_x,
             nudge_y = filter(stats_full_ten, secondary_color != "grey" & !is.na(nudge_x))$nudge_y)
 
-
-
 ```
 
 
@@ -265,9 +261,9 @@ The Executive Leadership Team's faulty analysis^[Or, really, the faulty analysis
 The decisions they made based on this faulty understanding of the metrics will hurt Nebraskans.
 
 ```{r}
-#| fig-height: 7
-#| fig-width: 5
-#| fig-cap: Dot plot of the importance of a unit/discipline for AAU compared to all universities.
+#| fig-height: 7.75
+#| fig-width: 7
+#| fig-cap: Dot plot of the importance of a unit/discipline for AAU compared to all universities. In color all disciplines with units at UNL affected by the budget cut. Several departments with highly important disciplines for AAU are slated for elimination.
 
 joined_sri |> 
   filter(Unit_name != "Textiles, Manufacturing and Fashion Design") |>
@@ -289,7 +285,8 @@ joined_sri |>
   theme_bw() +
   facet_grid(Quintile~., space = "free", scale="free") +
   theme(strip.text = element_text(size=0)) + 
-  geom_text(aes(label = short_name, x = -.3, colour = Proposed), hjust = 0) +
+  geom_text(aes(label = short_name, x = -.3, colour = Proposed), hjust = 0,
+            size = 3) +
   scale_x_continuous(expand=c(.01,.01), limits=c(-.3,1)) +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) 
