@@ -1,6 +1,6 @@
 ---
 title: "To the Executive Leadership Team and data analytics team"
-format: 
+format:  
   docx: default
   html: default
   pdf: default
@@ -24,15 +24,14 @@ Unprecedented? - this current approach is certainly unprecedented, but the probl
 Neither is the size of the data, at least for statisticians and computer scientists. 
 
 The complexity of the data can always be broken down by following the hierarchy that the data encodes. 
-Giving each unit access to its individual level data - i.e. the performance, publications, grants, books, citations, and courses attributed to each faculty member over the review period, as well as the numbers for each of the course sections that went into the instructional scores. 
-This data would enable each unit to vet the correctness of the data on which they are evaluated.
+Giving each unit access to its individual level data - i.e. the performance, publications, grants, books, citations, and courses attributed to each faculty member over the review period, as well as the numbers for each of the course sections that went into the instructional scores,  would enable each unit to vet the correctness of the data on which they are evaluated.
 
-The reason that you are not willing to give this level of detail to the units is that it will **demonstrate** the extent of the dramatic problems that are hiding within the averages you provided to the units. 
-Not aligning individual faculty members with their performance is leading to a systematic under count of a unit's actual research performance compared to the budgeted costs and 'average FTE'.
+The most probable reason that you are not willing to give this level of detail to the units is that it will **demonstrate** the extent of the dramatic problems that are hiding within the averages you provided to the units. 
+Not aligning individual faculty members with their performance is leading to a systematic under count of a unit's actual research performance compared to the budgeted costs and 'average FTE'. And, as detailed below, the impact of this undercount is uneven i.e. undercounting is more detrimental to smaller units. 
 
 Choosing ten years as a review period for research performance is a long time. 
 
-In the Statistics Department, this means that only three faculty members (out of an 'average' FTE of 11.9) contributed data across the full time frame. 
+In the Statistics Department, this means that only three faculty members (out of an 'average' FTE of 12.3) contributed data across the full time frame. 
 In that time frame, the Department has seen faculty retirements, new faculty hires, and also has had faculty leave for other universities. 
 All of those individuals are counted in the denominator of 'average FTE'. 
 None of their performance measures are included in your numerators. 
@@ -262,7 +261,7 @@ joined_sri <- joined_sri |> mutate(
 
 
 And what we see below is that **in the strategic alignment of the budget cut process several disciplines that are highly valued at AAU schools are proposed to be eliminated**. 
-The Executive Leadership Team's faulty analysis^[Or, really, the faulty analysis done by their quantitative flunkies, as we're sure the ELT didn't analyze the data themselves.] risks the reputation of UNL and the chances that UNL gets back into the AAU.
+The Executive Leadership Team's faulty analysis^[Or, really, the faulty analysis done by their quantitative dogsbodies, as we're sure the ELT didn't analyze the data themselves.] risks the reputation of UNL and the chances that UNL gets back into the AAU.
 The decisions they made based on this faulty understanding of the metrics will hurt Nebraskans.
 
 ```{r}
