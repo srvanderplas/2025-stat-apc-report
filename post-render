@@ -2,3 +2,4 @@
 
 quarto render statistics-slides.qmd && mv -f statistics-slides.html docs/ && cp -r statistics-slides_files docs/ && rm -rf statistics-slides_files
 quarto render response-to-ori.qmd && mv -f response-to-ori.html docs/ && cp -r response-to-ori_files docs/ && rm -rf response-to-ori_files
+cp images/* docs/images/
