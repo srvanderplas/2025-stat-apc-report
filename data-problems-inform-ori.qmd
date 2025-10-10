@@ -1,0 +1,53 @@
+---
+title: "To the Executive Leadership Team and data analytics team"
+format:
+  html: default
+echo: false
+message: false
+warning: false
+---
+
+I would like to officially make you aware of data discrepancies we have found in the [documents](#documents) shared with the Statistics Department on Sep 17, 2025.
+
+
+
+| Metric | Used | Actual |
+|-----------|-----------|-----------|
+| sri      | -.1   | [0](#sri)   |
+| awards_ltd_2023_total     | 0   | [12](#awards)   |
+| citations_2014_2023_avg     | 311.617   | [4670](#citations)/9.160 = 509.8253  |
+
+Please refer to the screenshots below for a documentation of the numbers that should have been used in the evaluation of the Statistics department. 
+
+
+
+# Documentation
+
+### sri 
+
+Comparison of UNL Stats to **Public** AAU
+
+![](images/unl-stats-public-aau.png)
+
+### awards
+
+Number of lifetime awards in the department
+
+![](images/awards-unl-stats.png)
+
+### citations
+
+The metric `citations_2014_2023_avg` is most likely documented as: 
+
+> `citations_normalized`: The total number of books published over the time period 2014-2023. The data source AAU uses for highly prestigious awards is Academic Analytics (AcA) and only books published for T/TT faculty in benchmarked AcA units are reported to the AAU. This is normalized by the average of the full-time employees with faculty status who are on the tenure track or tenured as reported to the National Center for Education Statistics IPEDS Data Center.
+
+Our best guess is that 'total number of books published' should actually be the number of citations. During our meeting on Monday, Sep 29, we were emphatically informed by Becky Zavalla that she had personally downloaded the number of citations for the correct time frame of 2014 to 2023. Evidently this is not the case. 
+
+The reported number of average citations for Statistics is 311.617.
+
+Assuming that the "average" is referring to `t_tt_headcount_2014_2023_avg` recorded as 9.160, we use that number to divide the actual number of of citations for the time frame 2014-2023 reported by Academic Analytics as 4670.
+
+![](images/citations-should-be.png)
+# documents
+
+![](images/email.png)
