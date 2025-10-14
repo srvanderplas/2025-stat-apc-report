@@ -173,8 +173,8 @@ unl_depts_sum |>
   scale_x_continuous(limits = c(0, 110), expand=expand_scale(mult = c(.2, 0), add = c(.1, 0))) +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
         plot.title.position = "plot", legend.location = "plot", legend.position = c(0, 1), legend.justification = c(-0.01, 1.01)) + 
-  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) +
-  geom_text(data = unl_depts_labels, aes(label=rank_label), x = 108, hjust=1, colour = "grey40")
+  scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40")) #+
+  # geom_text(data = unl_depts_labels, aes(label=rank_label), x = 108, hjust=1, colour = "grey40")
 
 ```
 
@@ -256,7 +256,7 @@ stats_full_dot |>
   theme_bw() + 
   xlab("SRI") + ylab("") + 
   ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
-  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, color != "grey" & !is.na(nudge_x)),
+  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, shortname=="UNL", color != "grey" & !is.na(nudge_x)),
             nudge_x = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_x, 
             nudge_y = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_y) 
 
@@ -342,9 +342,9 @@ stats_full_dot |>
   xlab("Number of Faculty") + ylab("") + 
   ggtitle("Size of Statistics Departments by Carnegie Classification and AAU membership") +
   geom_text(
-    aes(label = shortname, color = color), 
-    data = filter(stats_full_dot, color != "grey"),
-    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x, 
+    aes(label = shortname, color = color),
+    data = filter(stats_full_dot, shortname=="UNL", color != "grey"),
+    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x,
     nudge_y = filter(stats_full_dot, color != "grey")$nudge_y)
 
   

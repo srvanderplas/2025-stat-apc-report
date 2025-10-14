@@ -488,7 +488,7 @@ stats_full_dot |>
   theme_bw() + 
   xlab("SRI") + ylab("") + 
   ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
-  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, color != "grey" & !is.na(nudge_x)),
+  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, shortname=="UNL", color != "grey" & !is.na(nudge_x)),
             nudge_x = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_x, 
             nudge_y = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_y) 
 
