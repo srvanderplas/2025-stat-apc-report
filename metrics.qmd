@@ -243,8 +243,10 @@ stats_full_dot <- stats_full |>
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |>
   left_join(colors) |>
-  mutate(color = if_else(is.na(color), "grey", color)) |>
+  mutate(color = if_else(institutionname != "University of Nebraska - Lincoln", "grey", color)) |>
   mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other")))
+
+unl <- stats_full_dot |> filter(institutionname=="University of Nebraska - Lincoln")
 
 stats_full_dot |> 
   ggplot(aes(x = sri, y = Carnegie_short)) + 
@@ -255,10 +257,8 @@ stats_full_dot |>
   facet_grid(classification~., scale="free", space="free") + 
   theme_bw() + 
   xlab("SRI") + ylab("") + 
-  ggtitle("SRI of Statistics Departments by Carnegie Classification and members of AAU") +
-  geom_text(aes(label = shortname, color = color), data = filter(stats_full_dot, shortname=="UNL", color != "grey" & !is.na(nudge_x)),
-            nudge_x = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_x, 
-            nudge_y = filter(stats_full_dot, color != "grey" & !is.na(nudge_x))$nudge_y) 
+  ggtitle("SRI of Statistics Departments\n by Carnegie Classification and members of AAU") +
+  geom_text(aes(label = shortname, color = color), nudge_y =-.25, data = unl) 
 
 ```
 
@@ -327,7 +327,7 @@ stats_full_dot <- stats_full |>
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |>
   left_join(colors) |>
-  mutate(color = if_else(is.na(color), "grey", color)) |>
+  mutate(color = if_else(institutionname!="University of Nebraska - Lincoln", "grey", color)) |>
   mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other"))) |>
   arrange(institutionname, unitname) |>
   mutate(shortname = if_else(shortname == "UNC Charlotte", paste(shortname, str_remove(unitname, ",.*$") |> str_replace("Mathematics and Statistics", "Math & Stats"), sep = "\n"), shortname))
@@ -343,9 +343,7 @@ stats_full_dot |>
   ggtitle("Size of Statistics Departments by Carnegie Classification and AAU membership") +
   geom_text(
     aes(label = shortname, color = color),
-    data = filter(stats_full_dot, shortname=="UNL", color != "grey"),
-    nudge_x = filter(stats_full_dot, color != "grey")$nudge_x,
-    nudge_y = filter(stats_full_dot, color != "grey")$nudge_y)
+    data = filter(stats_full_dot, shortname=="UNL", color != "grey"))
 
   
 ```
