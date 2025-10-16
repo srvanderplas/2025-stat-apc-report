@@ -374,9 +374,9 @@ As-is they are not comparable outside of that distribution, as shown in @tbl-sri
 ```{r}
 #| label: tbl-sri-incomparable
 #| echo: false
-#| tbl-cap: "Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree."
+#| tbl-cap: "Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree. Ranks removed pursuant to the [Provost's letter](2025 1014 Academic Analytics.pdf)."
 unl_depts |> filter(SRI==.4) |>
-  select(Unit, SRI, `SRI Percentile`, `Number of Units`, `SRI Rank`) |>
+  select(Unit, SRI, `SRI Percentile`, `Number of Units`) |>
   arrange(desc(`SRI Percentile`)) |>
   knitr::kable()
 ```
@@ -410,7 +410,7 @@ unl_depts_sum |>
   ggtitle("Units at UNL ranked by SRI Percentile compared to all Academic Analytics peers") +
   facet_grid(Quintile~., space="free", scale="free") +
   theme(strip.text = element_text(size=0)) + 
-  scale_x_continuous(limits = c(0, 100), expand=expand_scale(mult = c(.1, 0), add = c(.1, 0))) +
+  scale_x_continuous("SRI Percentile (vs. all departments in AcA)", limits = c(0, 100), expand=expand_scale(mult = c(.1, 0), add = c(.1, 0))) +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
         plot.title.position = "plot", legend.location = "plot", legend.position = c(0, 1), legend.justification = c(-0.01, 1.01)) + 
   scale_colour_manual(values = c( "#d00000", "#249ab5", "#f58a1f", "grey40"))
@@ -475,7 +475,7 @@ stats_full_dot <- stats_full |>
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |>
   left_join(colors) |>
-  mutate(color = if_else(is.na(color), "grey", color)) |>
+  mutate(color = if_else(is.na(color) | shortname != "UNL", "grey", color)) |>
   mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other")))
 
 stats_full_dot |> 
