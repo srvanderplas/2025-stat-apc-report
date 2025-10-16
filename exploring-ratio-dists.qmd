@@ -1,0 +1,81 @@
+---
+title: "Ratio Distributions"
+author: "Susan Vanderplas"
+---
+
+This analysis considers the possible issues with `instructional_sch_4Y_share_growth` and `research_awards_growth_inc_nuf_fy20_fy24` variables. 
+Both variables are formulated roughly as
+
+$$\frac{X_{2024} - X_{2020}}{Y_{2024}-Y_{2020}},$$
+
+where $X_{t}\sim f(x, \alpha)$ and $Y_t\sim f(y,\beta)$ -- that is, where we might expect that both X and Y have a common distribution function (whatever it might be), with independent and identically distributed observations taken on a yearly basis. 
+
+That is, the goal is clearly to describe the percent of the university's growth attributable to a single department. 
+However, these variables are ill formed, in ways that are demonstrable conceptually as well as mathematically. 
+
+For one thing, there is no guarantee that either student credit hours or research awards have uniformly increased betwen 2020 and 2024. 
+2020 is a tricky year for a lot of reasons, which makes it a problematic baseline. 
+But, there are also factors within a department, like retirements in small departments, that might affect both research awards and credit hours generated -- these factors do not appear to be normalized by department size, which further complicates the problem.
+
+Suppose there is a relatively simple university where there are three departments with 5, 15, and 35 individuals. 
+Each individual teaches 4 3-credit courses per year, and course enrollment is randomly distributed between 5 (the minimum required to make) and 30 (the enrollment cap) students per course. 
+We can describe this with a truncated normal distribution where the un-truncated distribution has mean=25, sd = 10, and we limit the possible outcomes to between 5 and 30, with any values rounded to the nearest whole number. 
+In actuality, we should truncate the distribution at 4.5 and 30.5 to ensure that everything that would round up to 5 or down to 30 is included.  
+
+```{r}
+library(tidyverse)
+library(truncdist)
+
+class_size_dist <- tibble(x = seq(4.5, 30.5, .001), y = dtrunc(x, "norm", 4.5, 30.5, mean = 25, sd = 10)) |>
+  mutate(rounded = round(x)) |>
+  group_by(rounded) |>
+  summarize(yint = sum(y*.001))
+
+class_size_mean <- with(class_size_dist, sum(yint*rounded))
+class_size_dist |>
+  # select(rounded, yint) |>
+  ggplot(aes(x = rounded, y = yint)) + geom_col() + 
+  annotate(geom = "text", x = -Inf, y = Inf, label = sprintf("Mean = %.02f", class_size_mean), hjust = -0.1, vjust = 1.2) + 
+  ylab("Density") + xlab("Class Size")
+
+```
+
+
+We will assume that our three departments are all equally popular and teach only the courses which they can staff with the department's members teaching a 2-2 load. 
+
+What do the ratios of department SCH to institutional SCH look like?
+
+```{r}
+set.seed(20492803)
+class_dist <- function(x) round(rtrunc(x, "norm", 4.5, 30.5, mean = 25, sd = 10))
+
+sch_results <- tibble(department = c("Small", "Med", "Large"), faculty = c(5, 15, 35)) |>
+  crossing(year = c(2020:2024), iteration = 1:1000) |>
+  mutate(faculty_id = map(faculty, ~tibble(faculty_id = 1:.))) |>
+  unnest(faculty_id) |>
+  mutate(course_id = map(faculty_id, ~tibble(faculty_course_id = 1:4))) |>
+  unnest(course_id) |>
+  mutate(enrollment = class_dist(n()), sch = 3*enrollment) 
+
+sch_sum <- sch_results |> group_by(iteration, department, year) |> summarize(sch = sum(sch), enrollment = mean(enrollment)) 
+
+overall_5y_sum <- sch_results |>
+  group_by(iteration, year) |>
+  summarize(sch = sum(sch), enrollment = mean(enrollment)) |>
+  summarize(total_sch_2024_2020 = sch[5]-sch[1])
+
+
+sch_5y_sum <- sch_sum |>
+  left_join(overall_5y_sum) |>
+  group_by(iteration, department) |>
+  arrange(year) |>
+  summarize(total_sch_2024_2020 = unique(total_sch_2024_2020), 
+            sch_2024_2020 = sch[5]-sch[1], 
+            share_growth_2024_2020 = sch_2024_2020/total_sch_2024_2020)
+
+
+ggplot(sch_5y_sum, aes(x = department, y=share_growth_2024_2020)) + geom_point()
+
+
+```
+

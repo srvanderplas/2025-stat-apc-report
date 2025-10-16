@@ -188,7 +188,7 @@ If the Statistics department is eliminated, it is likely to hurt UNL's case to b
 ```{r}
 #| fig-width: 10
 #| fig-height: 7.5
-#| fig-cap: "Research performance (SRI percentile) of units by classification. UNL is performing extremely well compared to its peers and has better performance than many AAU institutions."
+#| fig-cap: "Research performance (SRI percentile) of units by classification. UNL is performing extremely well compared to its peers and has better performance than many AAU institutions. Land grant institutions are shown in green, with UNL in red (also labeled). This chart has been modified at the request of [UNL's Provost and general counsel](2025 1014 Academic Analytics.pdf) to remove labeled departments that are well-known to have good statistics programs; they have been replaced by a generic comparison to other land grant institutions."
 #| label: fig-sri-by-class
 #| message: false
 #| warning: false
@@ -235,15 +235,18 @@ colors <- tibble(
 )
 
 stats_full_dot <- stats_full |>
-  select(institutionname, facultycount, sri, Carnegie, `AAU Member`) |>
+  select(institutionname, facultycount, sri, Carnegie, `AAU Member`, `Land Grant`) |>
   mutate(
     Carnegie_short = 
       ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
              ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |>
-  left_join(colors) |>
-  mutate(color = if_else(institutionname != "University of Nebraska - Lincoln", "grey", color)) |>
+  mutate(
+    color = if_else(`Land Grant` == "Land Grant", "#006747", "grey"),
+    color = if_else(institutionname != "University of Nebraska - Lincoln", color, "#d00000"),
+    shortname = if_else(institutionname == "University of Nebraska - Lincoln", "UNL", "NA")
+  ) |>
   mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other")))
 
 unl <- stats_full_dot |> filter(institutionname=="University of Nebraska - Lincoln")
@@ -257,7 +260,7 @@ stats_full_dot |>
   facet_grid(classification~., scale="free", space="free") + 
   theme_bw() + 
   xlab("SRI") + ylab("") + 
-  ggtitle("SRI of Statistics Departments\n by Carnegie Classification and members of AAU") +
+  ggtitle("SRI of Statistics Departments by Carnegie Classification and AAU membership") +
   geom_text(aes(label = shortname, color = color), nudge_y =-.25, data = unl) 
 
 ```
@@ -272,7 +275,7 @@ It should be noted that UNL offers a full complement of statistics degrees and s
 ```{r}
 #| fig-width: 10
 #| fig-height: 7.5
-#| fig-cap: "Size of Statistics-related Units at each institution. UNL is managing to handle all of its BS, MS, and PhD programs within a department that is extremely small relative to peer institutions at both R1 and AAU institutions."
+#| fig-cap: "Size of Statistics-related Units at each institution. UNL is managing to handle all of its BS, MS, and PhD programs within a department that is extremely small relative to peer institutions at both R1 and AAU institutions.  This chart has been modified at the request of [UNL's Provost and general counsel](2025 1014 Academic Analytics.pdf) to remove labeled departments that are outliers and/or universities with good statistics programs; they have been replaced by a generic comparison to other land grant institutions."
 #| label: fig-size-by-class
 #| message: false
 #| warning: false
@@ -319,7 +322,7 @@ colors <- tibble(
 ) 
 
 stats_full_dot <- stats_full |>
-  select(institutionname, unitname, facultycount, sri, Carnegie, `AAU Member`) |>
+  select(institutionname, unitname, facultycount, sri, Carnegie, `AAU Member`, `Land Grant`) |>
   mutate(
     Carnegie_short = 
       ifelse(Carnegie == "Doctoral Universities: Very High Research Activity", "R1",
@@ -327,7 +330,11 @@ stats_full_dot <- stats_full |>
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |>
   left_join(colors) |>
-  mutate(color = if_else(institutionname!="University of Nebraska - Lincoln", "grey", color)) |>
+  mutate(
+    color = if_else(`Land Grant` == "Land Grant", "#006747", "grey"),
+    color = if_else(institutionname != "University of Nebraska - Lincoln", color, "#d00000"),
+    shortname = if_else(institutionname == "University of Nebraska - Lincoln", "UNL", "NA")
+  ) |>
   mutate(classification = if_else(!is.na(`AAU Member`), "AAU", Carnegie_short) |> factor(levels = c("AAU", "R1", "R2", "Other"), labels = c("AAU + R1", "Not AAU + R1", "R2", "Other"))) |>
   arrange(institutionname, unitname) |>
   mutate(shortname = if_else(shortname == "UNC Charlotte", paste(shortname, str_remove(unitname, ",.*$") |> str_replace("Mathematics and Statistics", "Math & Stats"), sep = "\n"), shortname))
@@ -343,7 +350,7 @@ stats_full_dot |>
   ggtitle("Size of Statistics Departments by Carnegie Classification and AAU membership") +
   geom_text(
     aes(label = shortname, color = color),
-    data = filter(stats_full_dot, shortname=="UNL", color != "grey"))
+    data = filter(stats_full_dot, shortname=="UNL", color != "grey"), nudge_x = 0, nudge_y = .2)
 
   
 ```

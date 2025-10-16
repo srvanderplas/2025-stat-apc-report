@@ -326,7 +326,7 @@ As-is they are not comparable outside of that distribution, as shown in @tbl-sri
 ```{r}
 #| label: tbl-sri-incomparable
 #| echo: false
-#| tbl-cap: "Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree."
+#| tbl-cap: "Departments at UNL with an SRI of 0.4 (calculated using all AcA universities), but with considerable variance in SRI percentile. Note that while the SRI values and percentiles would be different if the comparison population were limited to public AAU universities, the concept is still important. Changing or reducing the comparison population only changes how many universities are available for eCDF estimation and percentile calculation and shifts the population mean and variance to some degree. SRI rank has been removed from this table at the request of the [UNL provost and general counsel](2025 1014 Academic Analytics.pdf)."
 
 
 
@@ -364,7 +364,7 @@ merger2 <- c("Entomology", "Plant Pathology")
 
 
 unl_depts |> filter(SRI==.4) |>
-  select(Unit, SRI, `SRI Percentile`, `Number of Units`, `SRI Rank`) |>
+  select(Unit, SRI, `SRI Percentile`, `Number of Units`) |>
   arrange(desc(`SRI Percentile`)) |>
   knitr::kable()
 ```
