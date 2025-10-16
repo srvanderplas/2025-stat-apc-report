@@ -182,7 +182,7 @@ Rankings among Big Ten statistics departments have been [removed at the request 
 ```{r}
 #| fig-width: 8
 #| fig-height: 5
-#| fig-cap: "Comparison of UNL to other Big Ten statistics departments. UNL's SRI is just slightly below the median of all Big Ten statistics unit SRIs. USC and Oregon are not shown because Academic Analytics does not have statistics research ratings for those universities."
+#| fig-cap: "Comparison of UNL to other Big Ten statistics departments. UNL's SRI is just slightly below the median of all Big Ten statistics unit SRIs. USC and Oregon are not shown because Academic Analytics does not have statistics research ratings for those universities. Big Ten universities are shown in blue, with UNL in red. The original figure showed school colors and but was modified [at the request of general counsel](2025 1014 Academic Analytics.pdf)."
 library(ggrepel)
 # Read the CSV file
 big10 <- read_csv("data-analysis/data/big10_universities_18_with_abbr.csv")
@@ -213,7 +213,9 @@ stats_full_ten <- stats_full |>
              ifelse(Carnegie == "Doctoral Universities: High Research Activity", "R2", "Other")),
     Carnegie_short = factor(Carnegie_short, levels =c("R1", "R2", "Other"))
   ) |> left_join(big10, by=c("institutionname"="institution")) |>
-  filter(!Carnegie_short == "Other") 
+  filter(!Carnegie_short == "Other") |>
+  mutate(primary_color = ifelse(abbreviation=="UNL", "#d00000", "#0088CE"),
+         secondary_color = ifelse(abbreviation=="UNL", "#d00000", "#0088CE"))
 
 
 stats_full_ten <- stats_full_ten |> 
@@ -261,7 +263,7 @@ stats_full_ten <- stats_full_ten |>
 
 stats_full_ten |>
   ggplot(aes(x = sri, y = Carnegie_short)) + 
-  geom_dotplot(aes(fill = secondary_color, colour = primary_color, stroke=stroke),
+  geom_dotplot(aes(fill = primary_color, color = primary_color),
                dotsize=.4, stackdir = "center", binwidth = 0.075, stackgroups = T, binpositions = "all") +
   # geom_text(aes(label = abbreviation, color = primary_color), nudge_x = stats_full_ten$nudge_x, nudge_y = stats_full_ten$nudge_y) + 
   scale_fill_identity() + 
@@ -270,8 +272,6 @@ stats_full_ten |>
   theme_bw() + 
   xlab("SRI") + ylab("") + 
   ggtitle("SRI of Statistics Departments by Carnegie Classification and AAU membership")
-
-
 
 ```
 
