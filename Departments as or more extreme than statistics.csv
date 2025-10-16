@@ -1,0 +1,125 @@
+"","department","lowest_level_short_name","lowest_level_name","num_research_sub_zero","num_research_NA","num_instr_sub_zero","num_instr_NA","as_or_more_extreme_stats"
+"1","Advertising & Public Relations","ADPR","Advertising & Public Relations",7,0,3,0,FALSE
+"2","Agricultural Economics","Ag Econ","Agricultural Economics",6,0,7,0,TRUE
+"3","Agricultural Leadership, Education and Communication","ALEC","Agricultural Leadership, Education and Communication",5,0,5,0,TRUE
+"4","Agronomy and Horticulture","AGHT","Agronomy and Horticulture",3,0,5,0,FALSE
+"5","Animal Science","An Sci","Animal Science",5,0,6,0,TRUE
+"6","Anthropology","ANTH","Anthropology",0,7,NA,NA,FALSE
+"7","Architecture","ARCH","Architecture",5,0,4,0,TRUE
+"8","Biochemistry","Biochem","Biochemistry",2,0,4,0,FALSE
+"9","Biological Systems Engineering","BSE","Biological Systems Engineering",3,0,7,0,FALSE
+"10","Biotechnology","Biotechnology","Biotechnology",0,7,NA,NA,FALSE
+"11","Broadcasting","BRDC","Broadcasting",7,0,6,0,TRUE
+"12","Center for Great Plains Studies","GPSP","Center for Great Plains Studies",0,7,NA,NA,FALSE
+"13","Center on Children Families & the Law","CCFL","Center on Children Families & the Law",0,7,NA,NA,FALSE
+"14","Chemical & Biomolecular Engineering","CHME","Chemical & Biomolecular Engineering",3,0,7,0,FALSE
+"15","Chemistry","CHEM","Chemistry",3,0,4,0,FALSE
+"16","Child, Youth & Family Studies","CYAF","Child, Youth & Family Studies",0,7,NA,NA,FALSE
+"17","Child, Youth & Family Studies","CYAF","Child, Youth & Family Studies (IANR + CEHS)",7,0,3,0,FALSE
+"18","Civil and Environmental Engineering","CIVE","Civil and Environmental Engineering",0,7,NA,NA,FALSE
+"19","Civil and Environmental Engineering","CIVE-Linc","Civil and Environmental Engineering (Lincoln + Omaha)",2,0,6,0,FALSE
+"20","Civil and Environmental Engineering","CIVE-Omaha","Civil and Environmental Engineering - Omaha",0,7,NA,NA,FALSE
+"21","Classics & Religious Studies","CLAS","Classics & Religious Studies",4,0,3,1,FALSE
+"22","Communication Studies","COMM","Communication Studies",5,0,4,0,TRUE
+"23","Community & Regional Planning","CRPL","Community & Regional Planning",3,0,4,1,FALSE
+"24","Computer Science & Engineering","CSCE","Computer Science & Engineering",0,7,NA,NA,FALSE
+"25","Durham School of Architectural Engineering & Construction","Durham","Durham School of Architectural Engineering & Construction",5,0,4,0,TRUE
+"26","Earth and Atmospheric Sciences","EARTH","Earth and Atmospheric Sciences",5,0,8,0,TRUE
+"27","Economics","ECON","Economics",6,0,3,0,FALSE
+"28","Educational Administration","EDAD","Educational Administration",5,0,7,1,TRUE
+"29","Educational Psychology","BUROS","Buros Center for Testing",0,7,NA,NA,FALSE
+"30","Educational Psychology","EDPS","Educational Psychology",3,0,3,1,FALSE
+"31","Educational Psychology","Inst Innov","Center for Instructional Innovation",0,7,NA,NA,FALSE
+"32","Electrical & Computer Engineering","ECEN","Electrical & Computer Engineering",3,0,7,0,FALSE
+"33","English","ENGL","English",4,0,6,0,TRUE
+"34","Entomology","Entomology","Entomology",5,0,5,1,TRUE
+"35","Ethnic Studies","ETHN","Ethnic Studies",4,1,7,1,TRUE
+"36","Finance","FINA","Finance (Finance + Actuarial Sci)",7,0,3,0,FALSE
+"37","Food Science and Technology","FDST","Food Science and Technology",2,0,5,0,FALSE
+"38","Geography","GEOG","Geography",0,7,NA,NA,FALSE
+"39","Glenn Korff School of Music","MUSC","Glenn Korff School of Music",7,0,3,0,FALSE
+"40","History","HIST","History",4,0,4,0,TRUE
+"41","Interior Design","IDES","Interior Design",7,0,6,0,TRUE
+"42","Johnny Carson School of Theatre & Film","THEA","Johnny Carson School of Theatre & Film (Carson Ctr + THEA)",7,0,7,0,TRUE
+"43","Journalism","Journalism","Journalism",7,0,6,0,TRUE
+"44","Landscape Architecture","LARC","Landscape Architecture",7,0,7,1,TRUE
+"45","Management","ENTR","Center for Entrepreneurship",0,7,NA,NA,FALSE
+"46","Management","MNGT","Management",6,0,1,0,FALSE
+"47","Marketing","MRKT","Marketing",7,0,0,0,FALSE
+"48","Mathematics","CSMCE","Center for Science, Mathematics & Computer Education",6,1,2,5,FALSE
+"49","Mathematics","MATH","Mathematics",6,0,3,0,FALSE
+"50","Mechanical & Materials Engineering","MME","Mechanical & Materials Engineering",4,0,4,0,TRUE
+"51","Midwest Roadside Safety Facility","MRSF","Midwest Roadside Safety Facility",0,7,NA,NA,FALSE
+"52","Modern Languages & Literatures","MODLANG","Modern Languages & Literatures",5,0,5,0,TRUE
+"53","NE Center for Research on Children, Youth, Families & Schools","CYFS","NE Center for Research on Children, Youth, Families & Schools",0,7,NA,NA,FALSE
+"54","Nutrition & Health Sciences","NHS","Nutrition & Health Sciences (IANR + CEHS)",3,0,4,0,FALSE
+"55","Nutrition & Health Sciences","NUTR","Nutrition & Health Sciences",0,7,NA,NA,FALSE
+"56","Philosophy","PHIL","Philosophy",6,0,5,1,TRUE
+"57","Physics & Astronomy","PHYS","Physics & Astronomy",2,0,5,0,FALSE
+"58","Plant Health","Plant Health","Plant Health",0,7,NA,NA,FALSE
+"59","Plant Pathology","Plant Path","Plant Pathology",4,0,7,1,TRUE
+"60","Plant Science","Plant Science","Plant Science",0,7,NA,NA,FALSE
+"61","Political Science","POLS","Political Science",5,0,6,0,TRUE
+"62","Program in English as a Second Language","PIESL","Program in English as a Second Language",0,7,NA,NA,FALSE
+"63","Psychology","PSYC","Psychology",2,0,2,0,FALSE
+"64","School of Accountancy","ACCT","School of Accountancy",6,0,0,0,FALSE
+"65","School of Art, Art History & Design","ART","School of Art, Art History & Design",7,0,4,0,TRUE
+"66","School of Biological Sciences","BIOS","School of Biological Sciences",3,0,1,0,FALSE
+"67","School of Computing","School of Computing","School of Computing (CAS + ENGR)",1,0,3,0,FALSE
+"68","School of Global Integrative Studies","SGIS","School of Global Integrative Studies (GIS + Anthropology)",5,0,4,0,TRUE
+"69","School of Natural Resources","CDS","Survey Division - School of Natural Resources",0,7,NA,NA,FALSE
+"70","School of Natural Resources","NCFWRU","Nebraska Coop Fish & Wildlife Research",6,1,1,8,FALSE
+"71","School of Natural Resources","SNR","School of Natural Resources",1,0,6,0,FALSE
+"72","School of Veterinary Medicine and Biomedical Sciences","GPVEC","Great Plains Veterinary Educational Center",0,7,NA,NA,FALSE
+"73","School of Veterinary Medicine and Biomedical Sciences","ISU/UNL Coop Vet Med","ISU/UNL Coop Vet Med Education Program",0,7,NA,NA,FALSE
+"74","School of Veterinary Medicine and Biomedical Sciences","VMBS","School of Veterinary Medicine and Biomedical Sciences",3,0,9,0,FALSE
+"75","School of Veterinary Medicine and Biomedical Sciences",NA,"Veterinary Diagnostic Center",0,7,NA,NA,FALSE
+"76","Sociology","BOSR","Bureau of Sociological Research",0,7,NA,NA,FALSE
+"77","Sociology","SOCI","Sociology",4,0,7,0,TRUE
+"78","Special Education and Communication Disorders","SPED","Special Education and Communication Disorders",5,0,3,0,FALSE
+"79","Sports Communication","SportsComm","Sports Communication",6,1,3,2,FALSE
+"80","Statistics","STAT","Statistics",0,7,NA,NA,FALSE
+"81","Statistics","Statistics","Statistics",4,0,4,1,TRUE
+"82","Supply Chain Management & Analytics","SCMA","Supply Chain Management & Analytics",4,0,2,0,FALSE
+"83","Survey Research & Methodology","SRAM","Survey Research & Methodology",0,7,NA,NA,FALSE
+"84","Teaching, Learning & Teacher Education","PIXEL","Pixel Lab",0,7,NA,NA,FALSE
+"85","Teaching, Learning & Teacher Education","TLTE","Teaching, Learning & Teacher Education",6,0,4,0,TRUE
+"86","Textiles, Merchandising & Fashion Design","IQSC","International Quilt Study Center",0,7,NA,NA,FALSE
+"87","Textiles, Merchandising & Fashion Design","TMFD","Textiles, Merchandising & Fashion Design",0,7,NA,NA,FALSE
+"88","Textiles, Merchandising & Fashion Design","TMFD","Textiles, Merchandising & Fashion Design (IANR + CEHS)",5,0,8,0,TRUE
+"89","Women's & Gender Studies","WMNS","Women's & Gender Studies",4,1,7,1,TRUE
+"90",NA,"ANDRILL","Antarctic Drilling Program",0,7,NA,NA,FALSE
+"91",NA,"Actuarial Science","Actuarial Science",0,7,NA,NA,FALSE
+"92",NA,"BBR","Bureau of Business Research",0,7,NA,NA,FALSE
+"93",NA,"BPAC Business Center","BPAC Business Center",0,7,NA,NA,FALSE
+"94",NA,"BPDF","Biological Process Development Facility",0,7,NA,NA,FALSE
+"95",NA,"Bus Coops","Business Cooperatives",0,7,NA,NA,FALSE
+"96",NA,"CAS","College of Arts & Sciences (Dean's Office)",5,1,6,0,TRUE
+"97",NA,"CASNR","College of Agricultural Sciences and Natural Resources (Dean's Office)",4,1,6,0,TRUE
+"98",NA,"CEHS","College of Education & Human Sciences",0,7,NA,NA,FALSE
+"99",NA,"CEHS","College of Education & Human Sciences (IANR + EVC Dean's Office)",0,7,6,2,FALSE
+"100",NA,"COA","College of Architecture + COA Dean's Office",6,1,3,4,FALSE
+"101",NA,"COA Dean","Dean's Office",0,7,NA,NA,FALSE
+"102",NA,"COJMC","College of Journalism & Mass Communications (Dean's Office)",6,1,1,6,FALSE
+"103",NA,"Carson Ctr","Carson Center for Emerging Media Arts",0,7,NA,NA,FALSE
+"104",NA,"CoB","College of Business (Dean's Office)",6,1,5,0,TRUE
+"105",NA,"ENGR","College of Engineering + Omaha Dean's Office",5,1,6,0,TRUE
+"106",NA,"ENVR","Environmental Studies",0,7,NA,NA,FALSE
+"107",NA,"EconEd","Economic Education",0,7,NA,NA,FALSE
+"108",NA,"Engler Entrepreneurship","Engler Agribusiness Entrepreneurship Program",0,7,NA,NA,FALSE
+"109",NA,"Engr Dean-Omaha","Engineering Dean's Office - Omaha",0,7,NA,NA,FALSE
+"110",NA,"FPA","Hixson-Lied Fine & Performing Arts (Dean's Office)",0,7,3,3,FALSE
+"111",NA,"Forensic Sci","Forensic Science",0,7,NA,NA,FALSE
+"112",NA,"GLST","Global Studies",0,7,NA,NA,FALSE
+"113",NA,"GRAD","Graduate Studies",6,1,3,3,FALSE
+"114",NA,"Grassland Studies Ctr","Center for Grassland Studies",0,7,NA,NA,FALSE
+"115",NA,"HRHA","Human Rights & Humanitarian Affairs",0,7,NA,NA,FALSE
+"116",NA,"JUDS","Harris Center for Judaic Studies",0,7,NA,NA,FALSE
+"117",NA,"LAW","College of Law",5,1,2,1,FALSE
+"118",NA,"LIBR","University Libraries",0,7,NA,NA,FALSE
+"119",NA,"MATC","Mid-America Transportation Center",0,7,NA,NA,FALSE
+"120",NA,"NCIBC","NE Center for Integrated Biomolecular Communication",0,7,NA,NA,FALSE
+"121",NA,"NTC","Nebraska Transportation Center",0,7,NA,NA,FALSE
+"122",NA,"RDAR","Rural Drug Addiction Research Center",0,7,NA,NA,FALSE
+"123",NA,"ROSS","Mary Riepma Ross Media Arts Center",0,7,NA,NA,FALSE
+"124",NA,"Raikes","Jeffrey S Raikes School of Computer Science & Management (RKS + ENGR BSSEs)",6,1,4,4,TRUE
