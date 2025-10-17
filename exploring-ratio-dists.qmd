@@ -43,11 +43,12 @@ class_size_dist |>
 
 We will assume that our three departments are all equally popular and teach only the courses which they can staff with the department's members teaching a 2-2 load. 
 
-What do the ratios of department SCH to institutional SCH look like?
 
 ```{r}
-set.seed(20492803)
 class_dist <- function(x) round(rtrunc(x, "norm", 4.5, 30.5, mean = 25, sd = 10))
+
+if(!exists("data-analysis/simulation-ratio.Rdata")) {
+  set.seed(20492803)
 
 sch_results <- tibble(department = c("Small", "Med", "Large"), faculty = c(5, 15, 35)) |>
   crossing(year = c(2020:2024), iteration = 1:1000) |>
@@ -57,8 +58,26 @@ sch_results <- tibble(department = c("Small", "Med", "Large"), faculty = c(5, 15
   unnest(course_id) |>
   mutate(enrollment = class_dist(n()), sch = 3*enrollment) 
 
+save(sch_results, file = "data-analysis/simulation-ratio.Rdata")
+} else {
+  load("data-analysis/simulation-ratio.Rdata")
+}
+
+```
+
+
+The simulation assumes that each year is approximately the same distribution. 
+That is probably not completely accurate (enrollment changes, etc.) but is probably not totally off-base for this extremely simplified scenario where we also only have 3 departments. 
+
+```{r}
 sch_sum <- sch_results |> group_by(iteration, department, year) |> summarize(sch = sum(sch), enrollment = mean(enrollment)) 
 
+ggplot(sch_sum, aes(x = year, y = sch, color = department, group = interaction(department, iteration))) + geom_line()
+```
+
+
+
+```{r}
 overall_5y_sum <- sch_results |>
   group_by(iteration, year) |>
   summarize(sch = sum(sch), enrollment = mean(enrollment)) |>
@@ -74,8 +93,11 @@ sch_5y_sum <- sch_sum |>
             share_growth_2024_2020 = sch_2024_2020/total_sch_2024_2020)
 
 
-ggplot(sch_5y_sum, aes(x = department, y=share_growth_2024_2020)) + geom_point()
+ggplot(sch_5y_sum, aes(x = department, y=share_growth_2024_2020, group = iteration)) + geom_line()
 
 
 ```
+
+
+What do the ratios of department SCH to institutional SCH look like? 
 
