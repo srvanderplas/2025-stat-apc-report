@@ -196,42 +196,42 @@ gg <- stats_full |> ggplot(aes(x = sri, y = Carnegie_short)) +
             colour = "#d00000", size = 5, nudge_y = 0.4) 
 
 # need different colours
-ofcourse <- list(
-  geom_text(aes(label = "Stanford"), 
-            stats_full |> slice(grep("Stanford", institutionname)),
-            size = 5, nudge_y = 0.15),
-  geom_text(aes(label = "Berkeley"), stats_full |> slice(grep("Berkeley", institutionname)),
-            size = 5, nudge_y = 0.35, nudge_x = 0.1),
-  geom_text(aes(label = "Harvard"), stats_full |> slice(grep("Harvard", institutionname)),
-            size = 5, nudge_y = -0.25, nudge_x = 0.1)) 
+# ofcourse <- list(
+#   geom_text(aes(label = "Stanford"), 
+#             stats_full |> slice(grep("Stanford", institutionname)),
+#             size = 5, nudge_y = 0.15),
+#   geom_text(aes(label = "Berkeley"), stats_full |> slice(grep("Berkeley", institutionname)),
+#             size = 5, nudge_y = 0.35, nudge_x = 0.1),
+#   geom_text(aes(label = "Harvard"), stats_full |> slice(grep("Harvard", institutionname)),
+#             size = 5, nudge_y = -0.25, nudge_x = 0.1)) 
+# 
+# really <- list(
+#   geom_text(aes(label = "Ohio State"), 
+#             stats_full |> slice(grep("Ohio", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+#             hjust=0.5, nudge_x = 0.05,
+#             size = 5, nudge_y = -0.35),
+#   geom_text(aes(label = "Purdue"), 
+#             stats_full |> slice(grep("Purdue", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+#             hjust=0.5, nudge_x = 0.05,
+#             size = 5, nudge_y = 0.35),
+#   geom_text(aes(label = "Michigan State"), 
+#             stats_full |> slice(grep("Michigan State", institutionname)),
+#             hjust=0.5,
+#             size = 5, nudge_y = 0.55),
+#   geom_text(aes(label = "ISU"), 
+#             stats_full |> slice(grep("Iowa State", institutionname)),
+#             hjust=0.5,
+#             size = 5, nudge_y = -0.35),
+#   geom_text(aes(label = "UVA"), 
+#             stats_full |> slice(grep("Virginia", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+#             hjust=0.5,
+#             size = 5, nudge_y = -0.30),
+#   geom_text(aes(label = "Maryland"), 
+#             stats_full |> slice(grep("Maryland", institutionname)) |> filter(`AAU Member` == "AAU Member"),
+#             hjust=0.5,
+#             size = 5, nudge_y = -0.4)) 
 
-really <- list(
-  geom_text(aes(label = "Ohio State"), 
-            stats_full |> slice(grep("Ohio", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5, nudge_x = 0.05,
-            size = 5, nudge_y = -0.35),
-  geom_text(aes(label = "Purdue"), 
-            stats_full |> slice(grep("Purdue", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5, nudge_x = 0.05,
-            size = 5, nudge_y = 0.35),
-  geom_text(aes(label = "Michigan State"), 
-            stats_full |> slice(grep("Michigan State", institutionname)),
-            hjust=0.5,
-            size = 5, nudge_y = 0.55),
-  geom_text(aes(label = "ISU"), 
-            stats_full |> slice(grep("Iowa State", institutionname)),
-            hjust=0.5,
-            size = 5, nudge_y = -0.35),
-  geom_text(aes(label = "UVA"), 
-            stats_full |> slice(grep("Virginia", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5,
-            size = 5, nudge_y = -0.30),
-  geom_text(aes(label = "Maryland"), 
-            stats_full |> slice(grep("Maryland", institutionname)) |> filter(`AAU Member` == "AAU Member"),
-            hjust=0.5,
-            size = 5, nudge_y = -0.4)) 
-
-gg + ofcourse  + really
+gg #+ ofcourse  + really
   
 ```
 

@@ -21,7 +21,42 @@ ggplot(metrics, aes(awards_normalized,books_normalized)) + geom_point() +
 ggplot(metrics, aes(x = sri)) + geom_dotplot()
 
 
-metrics2 <- read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet=1)
+
+metrics2 <- read_xlsx("data-analysis/data/tabled_department_metrics.xlsx", sheet=1) |>
+  mutate(lowest_level_key = as.numeric(lowest_level_key))
+
+metrics_all <- left_join(metrics, metrics2)
+
+affected <- c("EDAD", "EARTH", "Statistics", "CRPL", "LARC", "TMFD")
+ggplot(metrics_all, aes(x = instructional_sch_4Y_share_growth,
+                     y = all_majors_share_growth)) +
+  geom_point() +
+  geom_text(data = filter(metrics_all, lowest_level_short_name %in% affected),
+            aes(label = lowest_level_short_name)) +
+  coord_fixed()
+metrics_all |>
+  filter(!is.na(sch) & !is.na(majors)) |>
+ggplot( aes(x = sch,
+                        y = majors)) +
+  facet_wrap(~acad_end_year, scales = "free_x", drop = T) +
+  geom_point() +
+  geom_text(data = filter(metrics_all, lowest_level_short_name %in% affected),
+            aes(label = lowest_level_short_name))
+
+
+metrics_all |>
+  filter(!is.na(instructional_sch_to_instructional_fte) &
+           !is.na(budget_to_sch) &
+           lowest_level_short_name!="LIBR" &
+           !is.na(department)) |>
+  ggplot( aes(x = instructional_sch_to_instructional_fte,
+              y = budget_to_sch)) +
+  facet_wrap(~acad_end_year, scales = "free_x", drop = T) +
+  geom_point() +
+  geom_text(data = filter(metrics_all, lowest_level_short_name %in% affected),
+            aes(label = lowest_level_short_name))
+
+
 
 instructional_metrics_long <- select(metrics2, department, lowest_level_short_name, lowest_level_name, starts_with("z")) |>
   pivot_longer(-c(1:3), names_to = "metric", values_to = "value")
